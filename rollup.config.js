@@ -1,13 +1,13 @@
-import svgr from '@svgr/rollup';
-import dts from 'rollup-plugin-dts';
-import url from '@rollup/plugin-url';
-import image from '@rollup/plugin-image';
-import terser from '@rollup/plugin-terser';
-import commonjs from '@rollup/plugin-commonjs';
-import typescript from '@rollup/plugin-typescript';
-import { nodeResolve } from '@rollup/plugin-node-resolve';
+const svgr = require('@svgr/rollup');
+const dts = require('rollup-plugin-dts');
+const url = require('@rollup/plugin-url');
+const image = require('@rollup/plugin-image');
+const terser = require('@rollup/plugin-terser');
+const commonjs = require('@rollup/plugin-commonjs');
+const typescript = require('@rollup/plugin-typescript');
+const { nodeResolve } = require('@rollup/plugin-node-resolve');
 
-export default [
+module.exports = [
   {
     input: 'src/index.ts',
     output: [
@@ -39,6 +39,6 @@ export default [
   {
     input: 'dist/esm/types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-    plugins: [dts()],
+    plugins: [dts.default()],
   },
 ];
