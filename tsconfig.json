@@ -11,17 +11,13 @@
     "extendedDiagnostics": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+    "module": "ESNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
     "declaration": true,
-    "declarationDir": "dist"
-  },
-  "parserOptions": {
-    "project": ["./tsconfig.json"]
-  },
-  "include": ["src"]
+    "declarationDir": "types"
+  }
 }

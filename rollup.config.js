@@ -1,48 +1,44 @@
 import svgr from '@svgr/rollup';
+import dts from 'rollup-plugin-dts';
 import url from '@rollup/plugin-url';
 import image from '@rollup/plugin-image';
 import terser from '@rollup/plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
-import typescript from 'rollup-plugin-typescript2';
+import typescript from '@rollup/plugin-typescript';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 
-export default {
-  input: 'src/index.ts',
-  output: [
-    {
-      dir: 'dist',
-      format: 'cjs',
-      sourcemap: true,
-      exports: 'named',
-    },
-  ],
-  preserveModules: true,
-  plugins: [
-    svgr({
-      svgoConfig: {
-        plugins: [
-          {
-            name: 'preset-default',
-            params: {
-              overrides: {
-                removeViewBox: false,
-                mergePaths: false,
-              },
-            },
-          },
-          'prefixIds',
-        ],
+export default [
+  {
+    input: 'src/index.ts',
+    output: [
+      {
+        file: 'dist/cjs/index.js',
+        format: 'cjs',
+        sourcemap: true,
       },
-    }),
-    url(),
-    image(),
-    terser(),
-    commonjs(),
-    typescript({
-      useTsconfigDeclarationDir: true,
-      tsconfigOverride: {
-        exclude: ['src/setupTests.ts', '**/*.stories.tsx'],
+      {
+        file: 'dist/esm/index.js',
+        format: 'esm',
+        sourcemap: true,
       },
-    }),
-  ],
-  external: ['react', 'react-dom'],
-};
+    ],
+    plugins: [
+      url(),
+      image(),
+      terser(),
+      commonjs(),
+      nodeResolve(),
+      svgr({ icon: true }),
+      typescript({
+        tsconfig: './tsconfig.json',
+        exclude: ['**/*.stories.tsx'],
+      }),
+    ],
+    external: ['react', 'react-dom'],
+  },
+  {
+    input: 'dist/esm/types/index.d.ts',
+    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
+    plugins: [dts()],
+  },
+];
