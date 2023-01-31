@@ -13,7 +13,7 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "pub": "rm -rf dist && npm run build && npm run publish",
+    "pub": "rm -rf dist && npm run build && npm publish",
     "sb": "start-storybook -p 6006",
     "b-sb": "build-storybook"
   },
