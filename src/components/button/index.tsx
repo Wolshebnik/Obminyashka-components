@@ -1,22 +1,22 @@
 import { ButtonProps } from './types';
-import './button.css';
+import { StyledButton } from './styles';
 
 export const Button = ({
-  primary = false,
+  label,
   size = 'medium',
   backgroundColor,
-  label,
+  styleType = 'primary',
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
-    <button
+    <StyledButton
+      size={size}
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      styleType={styleType}
       style={{ backgroundColor }}
       {...props}
     >
       {label}
-    </button>
+    </StyledButton>
   );
 };
