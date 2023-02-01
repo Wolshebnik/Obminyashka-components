@@ -24,7 +24,6 @@ const getSize = (size: 'small' | 'medium' | 'large') => {
 
 export const StyledButton = styled.button`
   display: inline-block;
-  padding: 10px 20px;
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   border: 0;

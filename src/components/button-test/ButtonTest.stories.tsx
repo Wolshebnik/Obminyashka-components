@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ButtonTest } from './index';
 
 export default {
-  title: 'Example/Button',
+  title: 'Example/ButtonTest',
   component: ButtonTest,
   argTypes: {
     onClick: { action: 'Click' },
