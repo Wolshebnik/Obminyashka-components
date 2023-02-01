@@ -60,3 +60,4 @@ Thumbs.db
 
 # NPM github
 .npmrc
+storybook-static
