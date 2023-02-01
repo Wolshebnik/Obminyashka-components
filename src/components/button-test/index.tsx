@@ -1,7 +1,7 @@
 import { ButtonProps } from './types';
 import { StyledButton } from './styles';
 
-export const Button = ({
+export const ButtonTest = ({
   label,
   size = 'medium',
   backgroundColor,
