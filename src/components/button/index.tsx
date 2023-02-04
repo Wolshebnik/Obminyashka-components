@@ -1,4 +1,5 @@
 import { Loader } from '../loader';
+import { ButtonProps, ButtonType } from './types';
 import { StyledButton, WrapIcon } from './styles';
 
 const Button = ({
@@ -11,11 +12,11 @@ const Button = ({
   lHeight,
   isLoading,
   disabling,
-  onClick = null,
-  type = 'button',
+  onClick,
+  type = ButtonType.Button,
   whatClass = null,
   ...props
-}) => (
+}: ButtonProps) => (
   <StyledButton
     mb={mb}
     type={type}
