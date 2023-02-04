@@ -1,7 +1,8 @@
 import { H2 } from './styles';
+import { ITitle } from './types';
 
-const Title = ({ whatClass = '', text, style }) => (
-  <H2 className={whatClass} style={style}>
+const Title = ({ text, style } : ITitle) => (
+  <H2 style={style}>
     {text}
   </H2>
 );
