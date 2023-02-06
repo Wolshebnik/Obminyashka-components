@@ -9,7 +9,81 @@ export default {
   title: 'Button',
   component: Button,
   argTypes: {
-    onClick: { action: 'Click' },
+    type: {
+      name: 'Type',
+      type: { name: 'string', required: true },
+      description: 'Button type',
+      defaultValue: 'button',
+      options: ['submit', 'reset', 'button'],
+      control: { type: 'select' },
+    },
+    bold: {
+      name: 'Bold',
+      type: { name: 'boolean' },
+      description: 'CSS font-weight bold',
+      defaultValue: false,
+      control: { type: 'boolean' },
+    },
+    text: {
+      name: 'Label',
+      type: { name: 'string' },
+      description: 'Button label',
+      defaultValue: 'button',
+      control: { type: 'text' },
+    },
+    width: {
+      name: 'Width',
+      type: { name: 'string' },
+      description: 'CSS width',
+      control: { type: 'text' },
+    },
+    style: {
+      name: 'Style',
+      type: { name: 'string' },
+      description: 'CSS in-line styles',
+      control: { type: 'text' },
+    },
+    lHeight: {
+      name: 'Line-height',
+      type: { name: 'string' },
+      description: 'CSS line-height',
+      control: { type: 'text' },
+    },
+    disabled: {
+      name: 'Disabled',
+      type: { name: 'boolean' },
+      description: 'HTML property "disabled"',
+      defaultValue: false,
+      control: { type: 'boolean' },
+    },
+    colorType: {
+      name: 'Color-type',
+      type: { name: 'string' },
+      description: 'Color type',
+      defaultValue: 'blue',
+      control: { type: 'select' },
+      options: ['blue', 'green'],
+    },
+    orderRight: {
+      name: 'Order right',
+      type: { name: 'boolean' },
+      description: 'Set icon right',
+      defaultValue: false,
+      control: { type: 'boolean' },
+    },
+    /*     icon: {
+      name: 'Icon',
+      type: {name: "string"},
+      description: "icon",
+      control: {type: "select"},
+      options: [Plus, "green"],
+    }, */
+    onClick: {
+      name: 'onClick',
+      type: { name: 'function' },
+      description: 'Handler click',
+      action: 'Click',
+    },
   },
 } as ComponentMeta<typeof Button>;
 

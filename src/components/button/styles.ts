@@ -9,6 +9,7 @@ export const StyledButton = styled.button<IStyledButton>`
   align-items: center;
   gap: 10px;
   height: 49px;
+  padding: 0 22px;
   color: #fdf9ff;
   font-style: normal;
   font-size: 16px;
@@ -19,7 +20,7 @@ export const StyledButton = styled.button<IStyledButton>`
   cursor: pointer;
   outline: none;
 
-  ${({ width, bold, theme, lHeight, colorType }) => css`
+  ${({ width, bold, lHeight, colorType }) => css`
     width: ${width};
     font-weight: ${bold ? 'bold' : 'normal'};
     background-color: ${button[colorType].bg};
@@ -48,7 +49,7 @@ export const StyledButton = styled.button<IStyledButton>`
 
 export const WrapIcon = styled.span<{ orderRight?: boolean }>`
   line-height: 0;
-  margin-left: 8px;
+  //margin-left: 8px;
   order: ${({ orderRight }) => (orderRight ? 1 : 0)};
   flex-shrink: 0;
 `;
