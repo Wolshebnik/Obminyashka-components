@@ -1,15 +1,17 @@
 import { useNavigate } from 'react-router-dom';
 
-import { ReactComponent as ChevronSvg } from 'assets/icons/chevron-left.svg';
+import {Icon} from '..';
 
 import * as Styles from './styles';
+import { IBackButton } from './types';
 
-const BackButton = ({ onClick, icon, text, ...props }) => {
+const BackButton = ({ onClick, icon, text, ...props }:IBackButton) => {
   const navigate = useNavigate();
 
   return (
+
     <Styles.Button onClick={onClick || (() => navigate(-1))} {...props}>
-      <Styles.Icon>{icon || <ChevronSvg />}</Styles.Icon>
+      <Styles.Icon>{icon || <Icon.ChevronLeft />}</Styles.Icon>
       {text && <Styles.Text>{text}</Styles.Text>}
     </Styles.Button>
   );
