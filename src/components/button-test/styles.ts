@@ -41,7 +41,7 @@ export const StyledButton = styled.button`
     ${styleType === 'primary' &&
     css`
       color: white;
-      background-color: ${({ theme }) => theme.colors.default.btnBlue};
+      background-color: ${({ theme }) => theme.colors.btnBlue};
     `}
 
     ${styleType === 'secondary' &&

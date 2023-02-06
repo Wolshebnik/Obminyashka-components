@@ -20,6 +20,6 @@ const colorsDefault = Object.freeze({
   white: '#FFFFFF',
 });
 
-const COLORS = Object.freeze({ default: colorsDefault });
+const COLORS = Object.freeze({ ...colorsDefault });
 
 export { COLORS };
