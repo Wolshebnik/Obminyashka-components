@@ -12,7 +12,6 @@ addDecorator((story) => (
   <ThemeWrap>
     <GlobalStyles />
     <MemoryRouter>{story()}</MemoryRouter>
-    {/* {story()} */}
   </ThemeWrap>
 ));
 

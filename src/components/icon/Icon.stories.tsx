@@ -5,7 +5,7 @@ import { AllIcons } from './all-icons';
 import { Icon as IconComponent } from '..';
 
 export default {
-  type: 'Icon',
+  title: 'Icons/Icons',
   component: AllIcons,
 } as ComponentMeta<typeof AllIcons>;
 
