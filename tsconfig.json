@@ -19,5 +19,5 @@
     "jsx": "react-jsx",
     "declaration": true,
     "declarationDir": "types"
-  }
+  },
 }
