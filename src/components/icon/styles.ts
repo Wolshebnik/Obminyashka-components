@@ -10,7 +10,7 @@ export const SvgColor = styled.div`
     > svg {
       path,
       circle {
-        fill: ${theme.colors.default.blackColorText};
+        fill: ${theme.colors.blackColorText};
       }
     }
   `}
