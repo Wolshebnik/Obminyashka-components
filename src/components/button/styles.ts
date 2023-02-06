@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
-import { ColorType, IStyledButton } from './types';
 import { button } from './helper';
+import { IStyledButton } from './types';
 
 export const StyledButton = styled.button<IStyledButton>`
   display: flex;
@@ -49,6 +49,6 @@ export const StyledButton = styled.button<IStyledButton>`
 export const WrapIcon = styled.span<{ orderRight?: boolean }>`
   line-height: 0;
   margin-left: 8px;
-  order: ${({orderRight}) => (orderRight ? 1 : 0)};
+  order: ${({ orderRight }) => (orderRight ? 1 : 0)};
   flex-shrink: 0;
 `;

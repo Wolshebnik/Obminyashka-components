@@ -4,7 +4,6 @@ import { ReactComponent as Plus } from '../../assets/icons/plus.svg';
 import { ReactComponent as Google } from '../../assets/icons/google.svg';
 
 import { Button } from '.';
-import { ColorType } from './types';
 
 export default {
   title: 'Button',
@@ -25,7 +24,7 @@ export const GreenButton = Template.bind({});
 GreenButton.args = {
   text: 'Button',
   icon: <Plus />,
-  colorType: 'green'
+  colorType: 'green',
 };
 
 export const ButtonIcon = Template.bind({});
