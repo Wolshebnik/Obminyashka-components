@@ -1,19 +1,25 @@
-export enum ButtonType {
-    Button = "button",
-    Submit = "submit",
-    Reset = "reset",
+import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from "react";
+
+export type ColorType = "blue" | 'green'
+
+interface CustomButton extends DetailedHTMLProps<
+ButtonHTMLAttributes<HTMLButtonElement>,
+HTMLButtonElement
+> {
+
 }
-export interface ButtonProps {
-    mb?: string,
-    bold?: boolean,
-    icon?: string,
-    text?: string,
-    width: string,
-    style?: any, // I don't find this property in StyledButton component
-    lHeight?: string,
-    isLoading?: boolean,
-    disabling?: boolean, // don't find this property
-    onClick(): void,
-    type: ButtonType,
-    whatClass: string | null,
+export interface IButton extends Omit<CustomButton, 'ref'> {
+  icon?: ReactNode;
+  text?: string;
+  width: string;
+  bold?: boolean;
+  lHeight?: string;
+  isLoading?: boolean;
+  colorType?: ColorType;
+  orderRight?: boolean;
+
+}
+
+export interface IStyledButton extends Pick<IButton, "width" | "lHeight" | "bold" | "orderRight" > {
+    colorType: ColorType,
 }

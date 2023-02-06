@@ -1,9 +1,8 @@
 import { Loader } from '../loader';
-import { ButtonProps, ButtonType } from './types';
+import { IButton,  } from './types';
 import { StyledButton, WrapIcon } from './styles';
 
 const Button = ({
-  mb,
   bold,
   icon,
   text,
@@ -11,26 +10,27 @@ const Button = ({
   style,
   lHeight,
   isLoading,
-  disabling,
+  disabled,
   onClick,
-  type = ButtonType.Button,
-  whatClass = null,
+  type = 'button',
+  colorType = "blue",
+  orderRight,
   ...props
-}: ButtonProps) => (
+}: IButton) => (
   <StyledButton
-    mb={mb}
     type={type}
     bold={bold}
     width={width}
     style={style}
     lHeight={lHeight}
-    disabled={disabling}
-    className={whatClass}
+    disabled={disabled}
     onClick={!isLoading ? onClick : undefined}
+    orderRight={orderRight}
+    colorType={colorType}
     {...props}
   >
+    {icon && <WrapIcon orderRight={orderRight}>{icon}</WrapIcon>} 
     {isLoading ? <Loader /> : text}
-    {icon && <WrapIcon>{icon}</WrapIcon>}
   </StyledButton>
 );
 export { Button };

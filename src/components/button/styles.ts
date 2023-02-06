@@ -1,15 +1,13 @@
 import styled, { css } from 'styled-components';
 
-export const WrapIcon = styled.span`
-  line-height: 0;
-  margin-left: 8px;
-  order: 0;
-`;
+import { ColorType, IStyledButton } from './types';
+import { button } from './helper';
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.button<IStyledButton>`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   height: 49px;
   color: #fdf9ff;
   font-style: normal;
@@ -21,20 +19,14 @@ export const StyledButton = styled.button`
   cursor: pointer;
   outline: none;
 
-  ${({ width, bold, mb, theme, lHeight }) => css`
+  ${({ width, bold, theme, lHeight, colorType }) => css`
     width: ${width};
     font-weight: ${bold ? 'bold' : 'normal'};
-    background-color: ${theme.colors.btnBlue};
+    background-color: ${button[colorType].bg};
     line-height: ${lHeight || '20px'};
 
-    ${mb &&
-    css`
-      margin-bottom: ${mb};
-    `}
-
     &:hover {
-      cursor: pointer;
-      background-color: ${theme.colors.btnBlueHover};
+      background-color: ${button[colorType].hover};
       > span > svg {
         path {
           transition: all 0.3s ease;
@@ -44,12 +36,19 @@ export const StyledButton = styled.button`
     }
 
     &:active {
-      background-color: ${theme.colors.btnBlueActive};
+      background-color: ${button[colorType].active};
     }
 
     &:disabled {
-      background-color: ${theme.colors.btnGbDisabled};
+      background-color: ${button[colorType].disable};
       cursor: default;
     }
   `}
+`;
+
+export const WrapIcon = styled.span<{ orderRight?: boolean }>`
+  line-height: 0;
+  margin-left: 8px;
+  order: ${({orderRight}) => (orderRight ? 1 : 0)};
+  flex-shrink: 0;
 `;
