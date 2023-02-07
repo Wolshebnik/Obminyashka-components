@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { PropsWithChildren, useContext } from 'react';
 import { ThemeProvider, DefaultTheme } from 'styled-components';
 
 import { ChildrenProps } from 'types';
@@ -17,4 +17,16 @@ export const ThemeContext = React.createContext<ThemeContextProps>({
 export const ThemeWrap = ({ children }: ChildrenProps): JSX.Element => {
   const { theme } = useContext(ThemeContext);
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+};
+
+export const ThemeContextProvider = ({ children }: PropsWithChildren) => {
+  const value = {
+    theme: {
+      ...LIGHT_THEME,
+    },
+  };
+
+  return (
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+  );
 };
