@@ -15,7 +15,7 @@ const Template: ComponentStory<typeof CheckBox> = (args) => <CheckBox {...args} 
 export const CheckboxDefault = Template.bind({});
 CheckboxDefault.args = {
   gap: 18,
-  text: 'Some',
+  text: 'Checkbox',
   checked: false,
 };
 
@@ -23,6 +23,6 @@ export const CheckboxChecked = Template.bind({});
 CheckboxChecked.args = {
   checked: true,
   margin: 26,
-  text: 'Checked',
+  text: 'checkedCheckbox',
   fontSize: 18,
 };

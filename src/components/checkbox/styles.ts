@@ -11,9 +11,9 @@ const LabelSquare = styled.div<LabelSquareArg>`
   cursor: pointer;
   transition: all ease-in-out 0.3s;
 
-  ${({ checked }) => css`
-    background-color: ${checked && 'blue'};
-    border: 3px solid ${checked ? 'blue' : 'gray'};
+  ${({ theme: { colors }, checked }) => css`
+    background-color: ${checked && colors.btnBlue};
+    border: 3px solid ${checked ? colors.btnBlue : colors.colorGrey};
   `}
   & > svg {
     position: absolute;
@@ -33,10 +33,10 @@ const Label = styled.label<LabelArg>`
   max-width: 679px;
   width: 100%;
 
-  ${({ gap, checked, fontSize }) => css`
+  ${({ theme: { colors }, gap, checked, fontSize }) => css`
     margin-left: ${(gap || 22 + 'px')};
     font-size: ${fontSize || 14 + 'px'};
-    color: ${checked ? 'black' : 'orange'};
+    color: ${checked ? colors.blackColorText : colors.colorTextDisabled};
   `}
 `;
 
@@ -52,7 +52,7 @@ const Div = styled.div<DivArg>`
       ${LabelSquare} {
         & > svg {
           & > path {
-            fill: ${p.checked ? 'white' : 'gray'};
+            fill: ${p.checked ? 'white' : p.theme.colors.colorGrey};
           }
         }
       }

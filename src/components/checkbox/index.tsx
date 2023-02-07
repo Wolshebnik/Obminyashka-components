@@ -1,17 +1,17 @@
-import {ReactComponent as CheckSvg } from '../../assets/icons/Check.svg';
+import { ReactComponent as CheckSvg } from '../../assets/icons/Check.svg';
 
 import { CheckboxProps } from './types';
 import { Div, Label, LabelSquare } from './styles';
 
 
 const CheckBox = ({
-    gap,
-    text,
-    margin,
-    onClick,
-    fontSize,
-    checked = false,
-  }: CheckboxProps) => (
+                    gap,
+                    text,
+                    margin,
+                    onClick,
+                    fontSize,
+                    checked = false,
+                  }: CheckboxProps) => (
   <Div
     margin={margin}
     onClick={onClick}
