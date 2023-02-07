@@ -16,6 +16,7 @@ const LabelSquare = styled.div<LabelSquareArg>`
     background-color: ${checked && theme.colors.btnBlue};
     border: 3px solid ${checked ? theme.colors.btnBlue : theme.colors.colorGrey};
   `}
+  
   & > svg {
     position: absolute;
     top: 50%;
