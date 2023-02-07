@@ -1,27 +1,24 @@
-import { ReactComponent as CheckSvg } from '../../assets/icons/Check.svg';
-
+import * as Icon from '../icon';
 import { CheckboxProps } from './types';
 import { Div, Label, LabelSquare } from './styles';
 
-
 const CheckBox = ({
-                    gap,
-                    text,
-                    margin,
-                    onClick,
-                    fontSize,
-                    checked = false,
-                  }: CheckboxProps) => (
+  gap,
+  text,
+  margin,
+  onClick,
+  fontSize,
+  checked = false,
+  }: CheckboxProps) => (
   <Div
     margin={margin}
     onClick={onClick}
     checked={checked}
   >
     <LabelSquare checked={checked}>
-      <CheckSvg />
+      <Icon.Check />
     </LabelSquare>
 
-    <div>
       <Label
         gap={gap}
         checked={checked}
@@ -29,7 +26,6 @@ const CheckBox = ({
       >
         {text}
       </Label>
-    </div>
   </Div>
 );
 
