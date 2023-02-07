@@ -3,16 +3,18 @@ import { addDecorator } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
 import { withConsole } from '@storybook/addon-console';
 
-import { ThemeWrap } from '../src/context';
+import { ThemeWrap, ThemeContextProvider } from '../src/context';
 import { GlobalStyles } from '../src/styles/globalStyles';
 
 addDecorator((storyFn, context) => withConsole()(storyFn)(context));
 
 addDecorator((story) => (
-  <ThemeWrap>
-    <GlobalStyles />
-    <MemoryRouter>{story()}</MemoryRouter>
-  </ThemeWrap>
+  <ThemeContextProvider>
+    <ThemeWrap>
+      <GlobalStyles />
+      <MemoryRouter>{story()}</MemoryRouter>
+    </ThemeWrap>
+  </ThemeContextProvider>
 ));
 
 export const parameters = {
