@@ -1,6 +1,6 @@
 {
   "name": "@Wolshebnik/obminyashka-components",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Component library",
   "main": "dist/esm/index.js",
   "module": "dist/cjs/index.js",
