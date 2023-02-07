@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import * as Icon from '../icon';
-
 import * as Styles from './styles';
 import { ImageProps } from './types';
 

@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
 import * as Icon from '../icon';
-
 import { Image } from '../image';
 import { AvatarProps } from './types';
 
