@@ -28,7 +28,7 @@ module.exports = [
     plugins: [
       url(),
       image(),
-      // terser(),
+      terser(),
       commonjs(),
       nodeResolve(),
       svgr({
