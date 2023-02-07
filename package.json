@@ -1,6 +1,6 @@
 {
   "name": "@Wolshebnik/obminyashka-components",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Component library",
   "main": "dist/esm/index.js",
   "module": "dist/cjs/index.js",
@@ -41,7 +41,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
-    "@rollup/plugin-alias": "^4.0.3",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-image": "^3.0.2",
     "@rollup/plugin-node-resolve": "^15.0.1",
