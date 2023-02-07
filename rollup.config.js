@@ -3,7 +3,6 @@ const dts = require('rollup-plugin-dts');
 const url = require('@rollup/plugin-url');
 const image = require('@rollup/plugin-image');
 const terser = require('@rollup/plugin-terser');
-const { babel } = require('@rollup/plugin-babel');
 const commonjs = require('@rollup/plugin-commonjs');
 const typescript = require('@rollup/plugin-typescript');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
@@ -28,7 +27,7 @@ module.exports = [
     plugins: [
       url(),
       image(),
-      // terser(),
+      terser(),
       commonjs(),
       nodeResolve(),
       svgr({
@@ -47,7 +46,6 @@ module.exports = [
           ],
         },
       }),
-      babel({ babelHelpers: 'bundled' }),
       typescript({
         tsconfig: './tsconfig.json',
         exclude: ['**/*.stories.tsx'],
