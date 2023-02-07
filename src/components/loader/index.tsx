@@ -1,5 +1,5 @@
-import * as Styles from './styles';
 import { ILoader } from './types';
+import * as Styles from './styles';
 
 const Loader = ({ styleType = 'default' }: ILoader) => (
   <Styles.Wrapper styleType={styleType}>

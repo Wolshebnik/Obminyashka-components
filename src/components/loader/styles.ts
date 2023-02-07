@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
+
 import { IStyledLoader } from './types';
 
 const animation = keyframes`
@@ -17,6 +18,7 @@ const animation = keyframes`
     opacity: 0;
   }
 `;
+
 const linearAnimation = keyframes`
    0% {
         left: -60px;
@@ -50,7 +52,9 @@ export const Wrapper = styled.div<IStyledLoader>`
       top: 0;
       height: 80px;
       width: 50px;
-      background: ${({ theme }) => theme.colors.buttonGradient}
+      background: linear-gradient(
+        ${({ theme }) => theme.colors.buttonGradient}
+      );
       transform: skewX(-45deg);
       animation: 0.8s ${linearAnimation} infinite linear;
     `}
@@ -76,7 +80,6 @@ export const SecondDiv = styled.div<IStyledLoader>`
     ${styleType === 'default' &&
     css`
       ${styleSet};
-
       animation-delay: -0.5s;
     `}
 
