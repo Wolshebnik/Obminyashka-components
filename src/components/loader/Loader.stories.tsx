@@ -8,10 +8,18 @@ export default {
   component: Loader,
 } as ComponentMeta<typeof Loader>;
 
-const Template: ComponentStory<typeof Loader> = () => (
+const Template: ComponentStory<typeof Loader> = (args) => (
   <Background>
-    <Loader />
+    <Loader {...args} />
   </Background>
 );
 
-export const Primary = Template.bind({});
+export const DefaultLoader = Template.bind({});
+DefaultLoader.args = {
+  styleType: 'default',
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  styleType: 'secondary',
+};
