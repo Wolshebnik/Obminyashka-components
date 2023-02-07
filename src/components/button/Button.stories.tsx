@@ -13,7 +13,8 @@ export default {
       name: 'Type',
       type: { name: 'string', required: true },
       description: 'Button type',
-      defaultValue: 'button',
+      table: { defaultValue: 'button' },
+
       options: ['submit', 'reset', 'button'],
       control: { type: 'select' },
     },
@@ -21,14 +22,15 @@ export default {
       name: 'Bold',
       type: { name: 'boolean' },
       description: 'CSS font-weight bold',
-      defaultValue: false,
+      table: { defaultValue: false },
+
       control: { type: 'boolean' },
     },
     text: {
       name: 'Label',
       type: { name: 'string' },
       description: 'Button label',
-      defaultValue: 'button',
+      table: { defaultValue: 'button' },
       control: { type: 'text' },
     },
     width: {
@@ -37,12 +39,12 @@ export default {
       description: 'CSS width',
       control: { type: 'text' },
     },
-    style: {
+    /*     style: {
       name: 'Style',
       type: { name: 'string' },
       description: 'CSS in-line styles',
       control: { type: 'text' },
-    },
+    }, */
     lHeight: {
       name: 'Line-height',
       type: { name: 'string' },
@@ -53,14 +55,16 @@ export default {
       name: 'Disabled',
       type: { name: 'boolean' },
       description: 'HTML property "disabled"',
-      defaultValue: false,
+      table: { defaultValue: false },
+
       control: { type: 'boolean' },
     },
     colorType: {
       name: 'Color-type',
       type: { name: 'string' },
       description: 'Color type',
-      defaultValue: 'blue',
+      table: { defaultValue: 'blue' },
+
       control: { type: 'select' },
       options: ['blue', 'green'],
     },
@@ -68,7 +72,8 @@ export default {
       name: 'Order right',
       type: { name: 'boolean' },
       description: 'Set icon right',
-      defaultValue: false,
+      table: { defaultValue: false },
+
       control: { type: 'boolean' },
     },
     /*     icon: {
