@@ -19,7 +19,8 @@ export interface InputProps extends Omit<CustomInput, 'ref'> {
   error?:string;
   label?: string;
   phone?:boolean;
-  mbInput?:string;
+  inputMB?:string;
+  labelSpanMB?:string;
   iconTopPosition?:string;
   styleType: 'authorization' | 'profile' | 'addAdvert',
 }

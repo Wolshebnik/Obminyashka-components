@@ -22,10 +22,11 @@ const Input = ({
   label,
   value,
   error,
-  styleType ='authorization',
-  mbInput,
+  inputMB,
   placeholder,
+  labelSpanMB,
   iconTopPosition,
+  styleType ='authorization',
   ...props
 }: InputProps) => {
 
@@ -34,11 +35,11 @@ const Input = ({
   const typing = notPasswordType ? type : currentType;
 
   return (
-    <Styles.InputDiv mbInput={mbInput && mbInput}  >
+    <Styles.InputDiv inputMB={inputMB && inputMB}  >
       <Styles.Label styleType={styleType} >
-       <span>{label && label}</span> {/*styles*/}
+       <Styles.LabelSpan styleType={styleType}>{label && label}</Styles.LabelSpan> {/*styles*/}
 
-        <div style={{position:'relative' }}>
+        <Styles.WrapperInputError labelSpanMB={labelSpanMB}>
         { (styleType === 'profile' && phone) &&
         <InputMask
             type={typing}
@@ -50,7 +51,7 @@ const Input = ({
             {...props}
         >
 
-          {(inputProps)=> <Styles.Input  error={ error && error } {...inputProps} disableUnderline/>}
+          {(inputProps)=> <Styles.Input error={ error && error } {...inputProps} disableUnderline/>}
 
             </InputMask>
         }
@@ -71,7 +72,7 @@ const Input = ({
 
           {error && <Styles.SpanError styleType={styleType} error={ error && error }> { error } </Styles.SpanError>}
 
-        </div>
+        </Styles.WrapperInputError>
       </Styles.Label>
 
     </Styles.InputDiv>
