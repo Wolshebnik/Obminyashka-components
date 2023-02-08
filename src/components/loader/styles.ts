@@ -1,7 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { IStyledLoader } from './types';
-
 const animation = keyframes`
   0% {
     top: 24px;
@@ -36,58 +34,31 @@ export const styleSet = css`
   animation: 1s ${animation} infinite;
 `;
 
-export const Wrapper = styled.div<IStyledLoader>`
-  ${({ styleType }) => css`
-    ${styleType === 'default' &&
-    css`
-      display: inline-block;
-      position: relative;
-      width: 80px;
-      height: 49px;
-    `}
-
-    ${styleType === 'secondary' &&
-    css`
-      position: absolute;
-      top: 0;
-      height: 80px;
-      width: 50px;
-      background: linear-gradient(
-        ${({ theme }) => theme.colors.buttonGradient}
-      );
-      transform: skewX(-45deg);
-      animation: 0.8s ${linearAnimation} infinite linear;
-    `}
-  `}
+export const LdsRipple = styled.div`
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 49px;
 `;
 
-export const FirstDiv = styled.div<IStyledLoader>`
-  ${({ styleType }) => css`
-    ${styleType === 'default' &&
-    css`
-      ${styleSet};
-    `}
-
-    ${styleType === 'secondary' &&
-    css`
-      display: none;
-    `}
-  `}
+export const FirstDiv = styled.div`
+  ${styleSet};
 `;
 
-export const SecondDiv = styled.div<IStyledLoader>`
-  ${({ styleType }) => css`
-    ${styleType === 'default' &&
-    css`
-      ${styleSet};
-      animation-delay: -0.5s;
-    `}
+export const SecondDiv = styled.div`
+  ${styleSet};
 
-    ${styleType === 'secondary' &&
-    css`
-      display: none;
-    `}
-  `}
+  animation-delay: -0.5s;
+`;
+
+export const LdsLinear = styled.div`
+  position: absolute;
+  top: 0;
+  height: 100px;
+  width: 50px;
+  background: linear-gradient(${({ theme }) => theme.colors.buttonGradient});
+  transform: skewX(-45deg);
+  animation: 0.8s ${linearAnimation} infinite linear;
 `;
 
 export const Background = styled.div`
@@ -98,4 +69,5 @@ export const Background = styled.div`
   height: 50px;
   background: ${({ theme }) => theme.colors.btnBlue};
   border-radius: 25px;
+  overflow: hidden;
 `;

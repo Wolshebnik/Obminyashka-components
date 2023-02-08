@@ -1,11 +1,15 @@
 import { ILoader } from './types';
 import * as Styles from './styles';
 
-const Loader = ({ styleType = 'default' }: ILoader) => (
-  <Styles.Wrapper styleType={styleType}>
-    <Styles.FirstDiv styleType={styleType} />
-    <Styles.SecondDiv styleType={styleType} />
-  </Styles.Wrapper>
-);
+export const Loader = ({ styleType = 'default' }: ILoader) => (
+  <>
+    {styleType === 'default' && (
+      <Styles.LdsRipple>
+        <Styles.FirstDiv />
+        <Styles.SecondDiv />
+      </Styles.LdsRipple>
+    )}
 
-export { Loader };
+    {styleType === 'secondary' && <Styles.LdsLinear />}
+  </>
+);
