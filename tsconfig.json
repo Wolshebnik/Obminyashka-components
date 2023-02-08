@@ -19,5 +19,9 @@
     "jsx": "react-jsx",
     "declaration": true,
     "declarationDir": "types"
-  }
+  },
+  "include": ["src", "src/types/custom.d.ts"],
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
 }
