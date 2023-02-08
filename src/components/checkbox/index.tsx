@@ -10,6 +10,7 @@ const CheckBox = ({
   fontSize,
   checked = false,
   }: CheckboxProps) => (
+
   <Div
     margin={margin}
     onClick={onClick}
