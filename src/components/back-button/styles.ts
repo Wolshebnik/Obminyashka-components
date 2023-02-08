@@ -16,7 +16,10 @@ export const Text = styled.span`
 `;
 
 export const Icon = styled.span`
-  height: 24px;
+  > svg {
+    height: 24px;
+    width: 24px;
+  }
 
   ${({ theme }) => css`
     > svg > path {
