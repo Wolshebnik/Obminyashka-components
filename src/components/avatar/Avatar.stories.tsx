@@ -1,46 +1,22 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Avatar } from './index';
+import { Avatar } from '.';
 import { image } from './mock';
+import { argTypes } from './argTypes';
 
 export default {
   title: 'Avatar',
   component: Avatar,
-  argTypes: {
-    width: {
-      name: 'width',
-      type: { name: 'number' },
-      description: 'CSS width',
-      table: {
-        type: { summary: 'number' },
-        defaultValue: { summary: 28 },
-      },
-      control: { type: 'number' },
-    },
-    height: {
-      name: 'height',
-      type: { name: 'number' },
-      description: 'CSS height',
-      table: {
-        type: { summary: 'number' },
-        defaultValue: { summary: 28 },
-      },
-      control: { type: 'number' },
-    },
-    source: {
-      name: 'source',
-      type: { name: 'string' },
-      description: 'Image',
-      table: {
-        type: { summary: 'string' },
-      },
-    },
-  },
+  argTypes,
 } as ComponentMeta<typeof Avatar>;
 
 const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
+
 export const AvatarDefault = Template.bind({});
-AvatarDefault.args = {
+AvatarDefault.args = {};
+
+export const AvatarWithImage = Template.bind({});
+AvatarWithImage.args = {
   source: image,
 };
 
