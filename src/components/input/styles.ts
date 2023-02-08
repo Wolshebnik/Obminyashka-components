@@ -1,34 +1,34 @@
 import styled, { css } from 'styled-components';
 
-export const InputDiv= styled.div<{mbInput?:string, styleType?: string}>`
+export const InputDiv = styled.div<{ mbInput?: string; styleType?: string }>`
   position: relative;
 
-    ${({mbInput}) =>css`
+  ${({ mbInput }) => css`
     margin-bottom: ${mbInput ? mbInput : '22px'};
-    
+
     &:last-child {
-     margin-bottom: ${mbInput ? mbInput : '30px'};
-   }
-    `}
+      margin-bottom: ${mbInput ? mbInput : '30px'};
+    }
+  `}
 `;
 
-export const Label = styled.label<{styleType:string}>`
+export const Label = styled.label<{ styleType: string }>`
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 22px;
   color: ${({ theme: { colors } }) => colors.colorGrey};
   cursor: pointer;
-  ${({styleType})=>styleType === 'profile' && `
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-  `}
-
+  ${({ styleType }) =>
+    styleType === 'profile' &&
+    css`
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    `}
 `;
 
-export const InputAuth = styled.input<{error?:string}>`
+export const InputAuth = styled.input<{ error?: string }>`
   padding: 12px 16px;
   width: 100%;
   border-radius: 2px;
@@ -40,17 +40,17 @@ export const InputAuth = styled.input<{error?:string}>`
   line-height: 24px;
   outline: none;
 
-   ${({ theme ,error }) => css`
-   color: ${theme.colors.rightColorText};
-   border: 1px solid ${error ? theme.colors.colorError : 'hsl(0, 0%, 74%)'};
+  ${({ theme, error }) => css`
+    color: ${theme.colors.rightColorText};
+    border: 1px solid ${error ? theme.colors.colorError : 'hsl(0, 0%, 74%)'};
 
     &:focus {
-       border-color: ${error ? theme.colors.colorError : 'hsl(0, 0%, 44%)'};
-     }
-   `}
+      border-color: ${error ? theme.colors.colorError : 'hsl(0, 0%, 44%)'};
+    }
+  `}
 `;
 
-export const Input = styled.input<{error?:string}>`
+export const Input = styled.input<{ error?: string }>`
   display: inline-flex;
   box-sizing: border-box;
   width: 415px;
@@ -73,28 +73,28 @@ export const Input = styled.input<{error?:string}>`
   `}
 
   &::placeholder {
-    color: ${({ theme })=> theme.colors.colorTextDisabled};
+    color: ${({ theme }) => theme.colors.colorTextDisabled};
   }
 `;
 
-export const SpanError = styled.span<{ error?:string , styleType:string  }>`
+export const SpanError = styled.span<{ error?: string; styleType: string }>`
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
 
-  ${({ theme, error , styleType }) => css`
+  ${({ theme, error, styleType }) => css`
     ${InputAuth} {
       border-color: ${error && theme.colors.colorError};
     }
 
     color: ${theme.colors.colorError};
-    
-   ${styleType === 'profile' && `
-    position: absolute;
-    bottom: -17px;
-    left: 0;
-   `}
-  
+
+    ${styleType === 'profile' &&
+    css`
+      position: absolute;
+      bottom: -17px;
+      left: 0;
+    `}
   `}
 `;
