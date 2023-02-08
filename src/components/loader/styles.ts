@@ -47,7 +47,6 @@ export const FirstDiv = styled.div`
 
 export const SecondDiv = styled.div`
   ${styleSet};
-
   animation-delay: -0.5s;
 `;
 
