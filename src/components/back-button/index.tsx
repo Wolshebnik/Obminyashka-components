@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
 import * as Icon from '../icon';
-
 import * as Styles from './styles';
 import { IBackButton } from './types';
 

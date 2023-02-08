@@ -1,8 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import * as Icon from '../icon';
-
 import { BackButton } from '.';
+import * as Icon from '../icon';
 import { argTypes } from './argTypes';
 
 export default {
