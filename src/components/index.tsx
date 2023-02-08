@@ -1,3 +1,5 @@
+export * as Icon from './icon';
+export { Avatar } from './avatar';
 export { BackButton } from './back-button';
 export { ButtonTest } from './button-test';
-export * as Icon from './icon';
+export { Image } from './image';
