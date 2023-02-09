@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Avatar } from '.';
 import { image } from './mock';
-import { argTypes } from './argTypes';
+import { argTypes } from './arg-types';
 
 export default {
   title: 'Avatar',

@@ -1,3 +1,6 @@
+const buttonGradient =
+  '90deg,rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5)';
+
 const colorsDefault = Object.freeze({
   shadow: 'rgba(89, 102, 116, 0.1)',
   colorPopup: '#FDFDFF',
@@ -20,6 +23,6 @@ const colorsDefault = Object.freeze({
   white: '#FFFFFF',
 });
 
-const COLORS = Object.freeze({ ...colorsDefault });
+const COLORS = Object.freeze({ ...colorsDefault, buttonGradient });
 
 export { COLORS };

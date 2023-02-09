@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Title } from '.';
-import { argTypes } from './args';
+import { argTypes } from './arg-types';
 
 export default {
   title: 'Title',

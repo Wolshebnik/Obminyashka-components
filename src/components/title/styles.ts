@@ -7,6 +7,7 @@ export const H2 = styled.h2`
   line-height: 24px;
   font-family: Caveat, cursive;
   color: #11b5ed;
+
   &:before,
   &:after {
     display: inline-block;
@@ -17,9 +18,11 @@ export const H2 = styled.h2`
     background-color: #11b5ed;
     margin-bottom: 5px;
   }
+
   &:before {
     margin-right: 27px;
   }
+  
   &:after {
     margin-left: 27px;
   }
