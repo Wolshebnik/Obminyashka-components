@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Input } from './index';
@@ -12,36 +12,55 @@ export default {
 const Template: ComponentStory<typeof Input> = (args) => {
   const [value, setValue] = useState('');
 
-  if (args.styleType === "profile") {
-    return (
-      <div style={{maxWidth:'600px'} }>
-        <Input value={value} onChange={(e)=>setValue(e.target.value)} {...args} />
-      </div>)
-  } else return  <Input value={value} onChange={(e)=>setValue(e.target.value)} {...args} />
+  return (
+    <Input value={value} onChange={(e) => setValue(e.target.value)} {...args} />
+  );
 };
 
-export const Authorization = Template.bind({});
-Authorization.args = {
-  inputMB:'',
+export const Text = Template.bind({});
+Text.args = {
+  error: '',
   type: 'text',
   name: 'Name',
-  error:'Error',
-  labelSpanMB:'',
-  iconTopPosition:'',
+  inputGap: '',
   label: 'Label text',
-  styleType:'authorization',
-  placeholder: 'Placeholder'
+  inputFlexDirection: '',
+  placeholder: 'Placeholder',
 };
 
-export const Profile = Template.bind({});
-Profile.args = {
-  inputMB:'',
-  phone:true,
+export const Password = Template.bind({});
+Password.args = {
+  error: '',
+  inputGap: '',
   name: 'Name',
+  type: 'password',
+  inputFlexDirection: '',
+  placeholder: 'Placeholder',
+  label: 'Введіть Ваш пароль',
+};
+
+export const Phone = Template.bind({});
+Phone.args = {
+  error: '',
+  type: 'tel',
+  name: 'Name',
+  inputGap: '',
+  label: 'Телефон:',
+  labelColor: 'black',
+  inputMaxWidth: '588px',
+  inputFlexDirection: 'row',
+  placeholder: '+38(999) 999-99-99',
+  inputJustifyContent: 'space-between',
+  wrapperInputErrorWidth: '415px',
+};
+
+export const Error = Template.bind({});
+Error.args = {
   type: 'text',
-  iconTopPosition:'',
+  name: 'Name',
+  inputGap: '',
+  error: 'Error',
   label: 'Label text',
-  styleType:'profile',
-  placeholder: "+38(999) 999-99-99",
-  error:'Не вірний формат телефону',
+  inputFlexDirection: '',
+  placeholder: 'Placeholder',
 };

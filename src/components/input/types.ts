@@ -1,7 +1,4 @@
-import React, {
-  DetailedHTMLProps,
-  InputHTMLAttributes,
-} from 'react';
+import React, { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 
 export interface ShowPasswordType {
   component: React.ReactNode;
@@ -15,12 +12,15 @@ interface CustomInput
   > {}
 
 export interface InputProps extends Omit<CustomInput, 'ref'> {
+  wrapperInputErrorWidth?: string;
   name: string;
-  error?:string;
+  error?: string;
   label?: string;
-  phone?:boolean;
-  inputMB?:string;
-  labelSpanMB?:string;
-  iconTopPosition?:string;
-  styleType: 'authorization' | 'profile' | 'addAdvert',
+  inputGap?: string;
+  labelColor?: string;
+  labelFontSize?: string;
+  inputMaxWidth?: string;
+  labelFontWeight?: number;
+  inputFlexDirection?: string;
+  inputJustifyContent?: string;
 }

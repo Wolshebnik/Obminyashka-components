@@ -1,58 +1,78 @@
 import styled, { css } from 'styled-components';
 
-export const InputDiv = styled.div<{ inputMB?: string, styleType?: string }>`
-  position: relative;
+export const Label = styled.label<{
+  inputGap?: string;
+  inputMaxWidth?: string;
+  inputFlexDirection?: string;
+  inputJustifyContent?: string;
+}>`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 
-    ${({ inputMB }) => css`
-    margin-bottom: ${inputMB ? inputMB : '22px'};
-    
-    &:last-child {
-     margin-bottom: ${inputMB ? inputMB : '30px'};
-   }
-    `}
-`;
-
-export const Label = styled.label<{ styleType: string }>`
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 22px;
   cursor: pointer;
-  
-  ${({ styleType }) => styleType === 'profile' && `
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding-top: 10px;
+
+  ${({
+    inputGap,
+    inputMaxWidth,
+    inputFlexDirection,
+    inputJustifyContent,
+  }) => css`
+    flex-direction: ${inputFlexDirection && inputFlexDirection};
+    justify-content: ${inputJustifyContent && inputJustifyContent};
+    gap: ${inputGap && inputGap};
+    max-width: ${inputMaxWidth && inputMaxWidth};
   `}
 `;
 
-export const LabelSpan = styled.span<{ styleType: string }>`
-  font-size: 14px;
-  font-weight: 400;
+export const LabelSpan = styled.span<{
+  labelColor?: string;
+  labelFontSize?: string;
+  labelFontWeight?: number;
+  inputFlexDirection?: string;
+}>`
+  display: inline-block;
   line-height: 16px;
-  cursor: pointer;
   font-family: inherit;
-  
-  ${({ theme, styleType }) => css`
-  color: ${theme.colors.colorGrey};
-  ${styleType === 'profile' && `
-   margin-top: -16px;     
-   color:${theme.colors.blackColorText};   
-   `};
+  cursor: pointer;
+
+  ${({
+    theme,
+    labelColor,
+    labelFontSize,
+    labelFontWeight,
+    inputFlexDirection,
+  }) => css`
+    ${inputFlexDirection === 'row' && `margin-top: 18px;`}
+    color: ${labelColor ? labelColor : theme.colors.input.textGrey};
+    font-size: ${labelFontSize ? labelFontSize : '14px'};
+    font-weight: ${labelFontWeight ? labelFontWeight : 400};
   `}
 `;
 
-export const WrapperInputError = styled.div<{ labelSpanMB?: string }>`
+export const WrapperInputError = styled.div<{
+  wrapperInputErrorWidth?: string;
+}>`
+  position: relative;
   display: flex;
   flex-direction: column;
-  ${({ labelSpanMB }) => labelSpanMB && `margin-top:${labelSpanMB}`}  
+
+  ${({ wrapperInputErrorWidth }) => css`
+    ${wrapperInputErrorWidth && `width: ${wrapperInputErrorWidth}`};
+  `}
 `;
 
-export const InputAuth = styled.input<{ error?: string }>`
-  padding: 12px 16px;
+export const Input = styled.input<{
+  error?: string;
+  disableUnderline?: boolean;
+  notPasswordType: boolean;
+}>`
   width: 100%;
+
   border-radius: 2px;
   box-sizing: border-box;
   font-family: Roboto, sans-serif;
@@ -62,53 +82,31 @@ export const InputAuth = styled.input<{ error?: string }>`
   line-height: 24px;
   outline: none;
 
-   ${({ theme, error }) => css`
-   color: ${theme.colors.rightColorText};
-   border: 1px solid ${error ? theme.colors.colorError : 'hsl(0, 0%, 74%)'};
-  
+  ${({ theme, error, notPasswordType }) => css`
+    color: ${theme.colors.input.textRight};
+    padding: ${!notPasswordType ? `12px 40px 12px 12px` : `12px 16px `};
+    border: 1px solid
+      ${error ? theme.colors.input.error : theme.colors.input.border};
+
     &:focus {
-       border-color: ${error ? theme.colors.colorError : 'hsl(0, 0%, 44%)'};
-     }
-   `}
-`;
-
-export const Input = styled.input<{ error?: string }>`
-  display: inline-flex;
-  box-sizing: border-box;
-  width: 415px;
-  padding: 9px 16px 9px 16px;
-  border: 1px solid #bcbcbc;
-  border-radius: 2px;
-  outline: none;
-  font-size: 16px;
-  line-height: 16px;
-  font-family: inherit;
-
-  ${({ theme, error }) => css`
-    border: 1px solid ${error ? theme.colors.colorError : 'hsl(0, 0%, 74%)'};
-    color: ${theme.colors.rightColorText};
-
-    &:focus,
-    &:hover {
-      border-color: ${error ? theme.colors.colorError : 'hsl(0, 0%, 44%)'};
+      border-color: ${error
+        ? theme.colors.input.error
+        : theme.colors.input.focus};
     }
-     &::placeholder {
-    color: ${({ theme }) => theme.colors.colorTextDisabled};
-  }
- `}
+  `}
 `;
 
-export const SpanError = styled.span<{ error?: string, styleType: string }>`
+export const SpanError = styled.span<{ error: string }>`
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
- 
+
   ${({ theme, error }) => css`
-    ${InputAuth} {
-      border-color: ${error && theme.colors.colorError};
+    color: ${theme.colors.input.error};
+
+    ${Input} {
+      border-color: ${error && theme.colors.input.error};
     }
-    
-    color: ${theme.colors.colorError};
- `}
+  `}
 `;
