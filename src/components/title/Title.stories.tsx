@@ -13,5 +13,11 @@ const Template: ComponentStory<typeof Title> = (args) => <Title {...args} />;
 
 export const TitleDefault = Template.bind({});
 TitleDefault.args = {
-  text: 'title',
+  text: 'Поточні пропозиції',
+};
+
+export const TitleWithStyles = Template.bind({});
+TitleWithStyles.args = {
+  text: 'Поточні пропозиції',
+  style: { fontSize: 20 },
 };
