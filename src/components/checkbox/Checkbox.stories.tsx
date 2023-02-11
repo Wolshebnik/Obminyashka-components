@@ -13,11 +13,13 @@ export default {
 const Template: ComponentStory<typeof CheckBox> = (args) => {
   const [checked, setChecked] = useState<boolean>(false);
 
-  return (<CheckBox
-    {...args}
-    checked={checked}
-    onChange={() => setChecked(!checked)}
-  />);
+  return (
+    <CheckBox
+      {...args}
+      checked={checked}
+      onChange={() => setChecked(!checked)}
+    />
+  );
 };
 
 export const Checkbox = Template.bind({});
@@ -29,5 +31,6 @@ Checkbox.args = {
 export const RadioButton = Template.bind({});
 RadioButton.args = {
   gap: 18,
+  type: 'radio',
   text: 'RadioBtn',
 };

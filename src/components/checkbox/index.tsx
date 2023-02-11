@@ -14,7 +14,12 @@ export const CheckBox = ({
 }: IInput) => (
   <Styles.Div margin={margin} checked={checked} type={type}>
     <Styles.Label fontSize={fontSize} checked={checked} gap={gap} type={type}>
-      <Styles.Input checked={checked} type={type} onChange={onChange} {...props} />
+      <Styles.Input
+        type={type}
+        checked={checked}
+        onChange={onChange}
+        {...props}
+      />
       <span>{text}</span>
       <Icon.Check />
     </Styles.Label>
