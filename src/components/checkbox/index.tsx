@@ -1,33 +1,22 @@
 import * as Icon from '../icon';
-import { CheckboxProps } from './types';
-import { Div, Label, LabelSquare } from './styles';
+import { IInput } from './types';
+import * as Styles from './styles';
 
-const CheckBox = ({
+export const CheckBox = ({
   gap,
   text,
   margin,
-  onClick,
   fontSize,
+  onChange,
   checked = false,
-  }: CheckboxProps) => (
-
-  <Div
-    margin={margin}
-    onClick={onClick}
-    checked={checked}
-  >
-    <LabelSquare checked={checked}>
+  type = 'checkbox',
+  ...props
+}: IInput) => (
+  <Styles.Div margin={margin} checked={checked} type={type}>
+    <Styles.Label fontSize={fontSize} checked={checked} gap={gap} type={type}>
+      <Styles.Input checked={checked} type={type} onChange={onChange} {...props} />
+      <span>{text}</span>
       <Icon.Check />
-    </LabelSquare>
-
-      <Label
-        gap={gap}
-        checked={checked}
-        fontSize={fontSize}
-      >
-        {text}
-      </Label>
-  </Div>
+    </Styles.Label>
+  </Styles.Div>
 );
-
-export { CheckBox };

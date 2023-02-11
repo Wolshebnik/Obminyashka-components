@@ -1,61 +1,65 @@
 import styled, { css } from 'styled-components';
 
-import { DivArg, LabelArg, LabelSquareArg } from './types';
+import { DivArg, LabelArg, InputArg } from './types';
 
-const LabelSquare = styled.div<LabelSquareArg>`
+export const Input = styled.input<InputArg>`
+  appearance: none;
+  -webkit-appearance: none;
   position: relative;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   width: 17px;
   height: 17px;
   vertical-align: bottom;
   cursor: pointer;
   transition: all ease-in-out 0.3s;
 
-  ${({ theme, checked }) => css`
+  ${({ theme, gap, checked, type }) => css`
+    margin-right: ${gap || 12}px;
     background-color: ${checked && theme.colors.btnBlue};
     border: 3px solid ${checked ? theme.colors.btnBlue : theme.colors.colorGrey};
+    border-radius: ${type === 'radio' ? '50%' : '0'};
   `}
-  
-  & > svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
 `;
 
-const Label = styled.label<LabelArg>`
+export const Label = styled.label<LabelArg>`
+  position: relative;
   display: block;
-  line-height: 17px;
-  cursor: pointer;
   max-width: 679px;
   width: 100%;
+  line-height: 17px;
+  cursor: pointer;
 
-  ${({ theme, gap, checked, fontSize }) => css`
+  ${({ theme, gap, type, checked, fontSize }) => css`
     margin-left: ${gap || 22}px;
     font-size: ${fontSize || 14}px;
     color: ${checked ? theme.colors.blackColorText : theme.colors.colorTextDisabled};
-  `}
-`;
 
-const Div = styled.div<DivArg>`
-  display: flex;
-  transition: all ease-in-out 0.3s;
-
-  ${({ theme, margin, checked }) => css`
-    margin: ${margin || 22}px;
+    & > svg {
+      display: block;
+      position: absolute;
+      top: 8.5px;
+      left: 8.5px;
+      width: 10px;
+      height: 8px;
+      transform: translate(-50%, -50%);
+    }
 
     &:hover {
-      ${LabelSquare} {
-        & > svg {
-          & > path {
-            fill: ${checked ? 'white' : theme.colors.colorGrey};
-          }
+      & > svg {
+        & > path {
+          fill: ${checked ? 'white' : theme.colors.colorGrey};
         }
       }
     }
   `}
 `;
 
-export { Div, Label, LabelSquare };
+export const Div = styled.div<DivArg>`
+  display: flex;
+  transition: all ease-in-out 0.3s;
+
+  ${({ margin }) => css`
+    margin: ${margin || 12}px;
+  `}
+`;

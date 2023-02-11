@@ -1,29 +1,33 @@
+import { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { CheckBox } from './index';
-import { useState } from 'react';
+import { argTypes } from './arg-types';
 
 export default {
-  title: 'CheckBox',
+  title: 'Input',
   component: CheckBox,
-  argTypes: {
-    handleClick: {
-      action: 'Click',
-    },
-  },
+  argTypes,
 } as ComponentMeta<typeof CheckBox>;
 
 const Template: ComponentStory<typeof CheckBox> = (args) => {
   const [checked, setChecked] = useState<boolean>(false);
-  return <CheckBox
+
+  return (<CheckBox
     {...args}
     checked={checked}
-    onClick={() => setChecked(!checked)}
-  />;
+    onChange={() => setChecked(!checked)}
+  />);
 };
 
-export const CheckboxDefault = Template.bind({});
-CheckboxDefault.args = {
+export const Checkbox = Template.bind({});
+Checkbox.args = {
   gap: 18,
   text: 'Checkbox',
+};
+
+export const RadioButton = Template.bind({});
+RadioButton.args = {
+  gap: 18,
+  text: 'RadioBtn',
 };
