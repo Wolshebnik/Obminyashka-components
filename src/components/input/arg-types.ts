@@ -158,7 +158,7 @@ export const argTypes = {
       type: { summary: 'string' },
     },
     control: 'radio',
-    options: ['column', 'row', 'column-reverse', 'row-revers'],
+    options: ['center', 'space-between', 'space-around', 'space-evenly'],
   },
 
   wrapperInputErrorWidth: {

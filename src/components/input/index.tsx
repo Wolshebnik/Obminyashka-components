@@ -9,16 +9,16 @@ const Input = ({
   label,
   value /*     -       */,
   error,
+  inputGap,
   labelColor,
   placeholder,
   type = 'text',
-  inputGap,
   labelFontSize,
   inputMaxWidth,
+  labelFontWeight,
   inputFlexDirection,
   name = 'inputName',
   inputJustifyContent,
-  labelFontWeight,
   wrapperInputErrorWidth,
   ...props
 }: InputProps) => {
