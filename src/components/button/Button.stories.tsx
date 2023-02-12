@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Icon } from '..';
 import { Button } from '.';
+import * as Icon from '../icon';
 import { argTypes } from './arg-types';
 
 export default {
