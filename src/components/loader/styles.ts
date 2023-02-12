@@ -49,6 +49,13 @@ export const SecondDiv = styled.div`
   ${styleSet};
   animation-delay: -0.5s;
 `;
+export const styleWrapper = styled.div`
+  position: relative;
+  width: 220px;
+  height: 50px;
+  border-radius: 25px;
+  overflow: hidden;
+`;
 
 export const LdsLinear = styled.div`
   position: absolute;
@@ -68,5 +75,4 @@ export const Background = styled.div`
   height: 50px;
   background: ${({ theme }) => theme.colors.btnBlue};
   border-radius: 25px;
-  overflow: hidden;
 `;

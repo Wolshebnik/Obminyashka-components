@@ -10,6 +10,10 @@ export const Loader = ({ styleType = 'default' }: ILoader) => (
       </Styles.LdsRipple>
     )}
 
-    {styleType === 'secondary' && <Styles.LdsLinear />}
+    {styleType === 'secondary' && (
+      <Styles.styleWrapper>
+        <Styles.LdsLinear />
+      </Styles.styleWrapper>
+    )}
   </>
 );
