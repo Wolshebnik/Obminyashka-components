@@ -7,6 +7,7 @@ interface CustomButton
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {}
+
 export interface IButton extends Omit<CustomButton, 'ref'> {
   text?: string;
   width?: number;

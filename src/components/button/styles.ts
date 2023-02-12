@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 
-//import { button } from './helper';
 import { IStyledButton } from './types';
 
 export const StyledButton = styled.button<IStyledButton>`
@@ -8,9 +7,8 @@ export const StyledButton = styled.button<IStyledButton>`
   justify-content: center;
   align-items: center;
   gap: 10px;
-  height: 49px;
   padding: 0 22px;
-  color: #fdf9ff;
+  height: 49px;
   font-style: normal;
   font-size: 16px;
   text-transform: uppercase;
@@ -22,12 +20,14 @@ export const StyledButton = styled.button<IStyledButton>`
 
   ${({ theme, width, bold, lHeight, colorType }) => css`
     width: ${width}px;
+    color: ${theme.colors.white};
     font-weight: ${bold ? 'bold' : 'normal'};
-    background-color: ${theme.colors.button[colorType].bg};
     line-height: ${lHeight || 20}px;
+    background-color: ${theme.colors.button[colorType].bg};
 
     &:hover {
       background-color: ${theme.colors.button[colorType].hover};
+
       > span > svg {
         path {
           transition: all 0.3s ease;
@@ -48,10 +48,11 @@ export const StyledButton = styled.button<IStyledButton>`
 `;
 
 export const WrapIcon = styled.span<{ orderRight?: boolean }>`
+  flex-shrink: 0;
   line-height: 0;
   order: ${({ orderRight }) => (orderRight ? 1 : 0)};
-  flex-shrink: 0;
-  &>svg {
+
+  & > svg {
     height: 24px;
     width: 24px;
   }

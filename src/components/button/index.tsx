@@ -1,5 +1,5 @@
-import { IButton } from './types';
 import { Icon } from '..';
+import { IButton } from './types';
 import { StyledButton, WrapIcon } from './styles';
 
 const Button = ({

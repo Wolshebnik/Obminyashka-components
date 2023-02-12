@@ -2,8 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Icon } from '..';
 import { Button } from '.';
-
-import {argTypes} from './arg-types';
+import { argTypes } from './arg-types';
 
 export default {
   title: 'Button',
@@ -21,8 +20,8 @@ BlueButton.args = {
 export const GreenButton = Template.bind({});
 GreenButton.args = {
   text: 'Button',
-  icon: <Icon.Plus />,
   colorType: 'green',
+  icon: <Icon.Plus />,
 };
 
 export const ButtonIcon = Template.bind({});
@@ -34,6 +33,6 @@ ButtonIcon.args = {
 export const ButtonIconRight = Template.bind({});
 ButtonIconRight.args = {
   text: 'Button',
-  icon: <Icon.Google />,
   orderRight: true,
+  icon: <Icon.Google />,
 };

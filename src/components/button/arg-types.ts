@@ -1,10 +1,3 @@
-import React from 'react';
-import { Icon } from '..';
-
-const { Google, Plus } = Icon;
-
-const icons = { Google, Plus };
-
 export const argTypes = {
   type: {
     name: 'type',
@@ -88,7 +81,8 @@ export const argTypes = {
     },
     control: { type: 'boolean' },
   },
-  /* icon: {
+  //TODO
+/*   icon: {
     name: 'icon',
     description: 'React FC icon',
     table: {
