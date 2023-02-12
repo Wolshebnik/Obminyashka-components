@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { button } from './helper';
+//import { button } from './helper';
 import { IStyledButton } from './types';
 
 export const StyledButton = styled.button<IStyledButton>`
@@ -20,14 +20,14 @@ export const StyledButton = styled.button<IStyledButton>`
   cursor: pointer;
   outline: none;
 
-  ${({ width, bold, lHeight, colorType }) => css`
-    width: ${width};
+  ${({ theme, width, bold, lHeight, colorType }) => css`
+    width: ${width}px;
     font-weight: ${bold ? 'bold' : 'normal'};
-    background-color: ${button[colorType].bg};
-    line-height: ${lHeight || '20px'};
+    background-color: ${theme.colors.button[colorType].bg};
+    line-height: ${lHeight || 20}px;
 
     &:hover {
-      background-color: ${button[colorType].hover};
+      background-color: ${theme.colors.button[colorType].hover};
       > span > svg {
         path {
           transition: all 0.3s ease;
@@ -37,11 +37,11 @@ export const StyledButton = styled.button<IStyledButton>`
     }
 
     &:active {
-      background-color: ${button[colorType].active};
+      background-color: ${theme.colors.button[colorType].active};
     }
 
     &:disabled {
-      background-color: ${button[colorType].disable};
+      background-color: ${theme.colors.button[colorType].disable};
       cursor: default;
     }
   `}

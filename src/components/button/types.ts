@@ -8,14 +8,14 @@ interface CustomButton
     HTMLButtonElement
   > {}
 export interface IButton extends Omit<CustomButton, 'ref'> {
-  icon?: ReactNode;
   text?: string;
-  width: string;
+  width?: number;
   bold?: boolean;
+  icon?: ReactNode;
   lHeight?: string;
   isLoading?: boolean;
-  colorType?: ColorType;
   orderRight?: boolean;
+  colorType?: ColorType;
 }
 
 export interface IStyledButton
