@@ -1,6 +1,6 @@
 {
   "name": "@Wolshebnik/obminyashka-components",
-  "version": "0.0.13",
+  "version": "0.0.17",
   "description": "Component library",
   "main": "dist/esm/index.js",
   "module": "dist/cjs/index.js",
@@ -35,6 +35,7 @@
     "react-dom": "^18.2.0",
     "react-responsive": "^9.0.2",
     "react-router-dom": "^6.8.0",
+    "react-tooltip": "^5.7.5",
     "styled-components": "^5.3.6",
     "styled-normalize": "^8.0.7",
     "typescript": "^4.9.4"
