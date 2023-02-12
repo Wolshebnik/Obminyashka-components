@@ -12,7 +12,6 @@ interface CustomInput
   > {}
 
 export interface InputProps extends Omit<CustomInput, 'ref'> {
-  wrapperInputErrorWidth?: string;
   name: string;
   error?: string;
   label?: string;
@@ -23,4 +22,5 @@ export interface InputProps extends Omit<CustomInput, 'ref'> {
   labelFontWeight?: number;
   inputFlexDirection?: string;
   inputJustifyContent?: string;
+  wrapperInputErrorWidth?: string;
 }

@@ -6,19 +6,19 @@ import { showPassword } from './show-password';
 
 const Input = ({
   id,
-  name,
-  type,
   label,
-  value,
+  value /*     -       */,
   error,
-  inputGap,
   labelColor,
   placeholder,
+  type = 'text',
+  inputGap,
   labelFontSize,
   inputMaxWidth,
-  labelFontWeight,
   inputFlexDirection,
+  name = 'inputName',
   inputJustifyContent,
+  labelFontWeight,
   wrapperInputErrorWidth,
   ...props
 }: InputProps) => {

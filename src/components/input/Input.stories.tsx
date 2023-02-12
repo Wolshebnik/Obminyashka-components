@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { argTypes } from './arg-types';
 
 import { Input } from './index';
 
 export default {
   title: 'Input',
   component: Input,
-  argTypes: {},
+  argTypes: argTypes,
 } as ComponentMeta<typeof Input>;
 
 const Template: ComponentStory<typeof Input> = (args) => {
@@ -19,12 +20,12 @@ const Template: ComponentStory<typeof Input> = (args) => {
 
 export const Text = Template.bind({});
 Text.args = {
-  error: '',
+  error: undefined,
+  inputGap: undefined,
   type: 'text',
-  name: 'Name',
-  inputGap: '',
+  name: 'inputName',
   label: 'Label text',
-  inputFlexDirection: '',
+  inputFlexDirection: undefined,
   placeholder: 'Placeholder',
 };
 
@@ -32,7 +33,7 @@ export const Password = Template.bind({});
 Password.args = {
   error: '',
   inputGap: '',
-  name: 'Name',
+  name: 'inputName',
   type: 'password',
   inputFlexDirection: '',
   placeholder: 'Placeholder',
@@ -57,7 +58,7 @@ Phone.args = {
 export const Error = Template.bind({});
 Error.args = {
   type: 'text',
-  name: 'Name',
+  name: 'inputName',
   inputGap: '',
   error: 'Error',
   label: 'Label text',
