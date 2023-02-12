@@ -1,3 +1,10 @@
+import React from 'react';
+import { Icon } from '..';
+
+const { Google, Plus } = Icon;
+
+const icons = { Google, Plus };
+
 export const argTypes = {
   type: {
     name: 'type',
@@ -81,12 +88,17 @@ export const argTypes = {
     },
     control: { type: 'boolean' },
   },
-/*   icon: {
+  /* icon: {
     name: 'icon',
-    type: { name: 'string' },
-    description: 'icon',
-    control: { type: 'select' },
-    options: ['some', 'green'],
+    description: 'React FC icon',
+    table: {
+        type: { summary: 'icon' },
+      },
+    options: Object.keys(icons),
+    mapping: icons,
+    control: {
+        type: 'select', 
+      },
   }, */
   onClick: {
     name: 'onClick',

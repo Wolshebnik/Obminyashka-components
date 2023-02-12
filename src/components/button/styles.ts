@@ -49,7 +49,10 @@ export const StyledButton = styled.button<IStyledButton>`
 
 export const WrapIcon = styled.span<{ orderRight?: boolean }>`
   line-height: 0;
-  //margin-left: 8px;
   order: ${({ orderRight }) => (orderRight ? 1 : 0)};
   flex-shrink: 0;
+  &>svg {
+    height: 24px;
+    width: 24px;
+  }
 `;
