@@ -1,5 +1,5 @@
-import { Icon } from '..';
 import { IButton } from './types';
+import { Loader } from '../loader';
 import { StyledButton, WrapIcon } from './styles';
 
 const Button = ({
@@ -30,8 +30,7 @@ const Button = ({
     {...props}
   >
     {icon && <WrapIcon orderRight={orderRight}>{icon}</WrapIcon>} 
-    {/* TODO:  change Loader on Loader-component*/}
-    {isLoading ? <Icon.Loader /> : text}
+    {isLoading ? <Loader /> : text}
   </StyledButton>
 );
 export { Button };

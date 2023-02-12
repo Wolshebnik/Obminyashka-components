@@ -10,6 +10,15 @@ export const argTypes = {
     options: ['submit', 'reset', 'button'],
     control: { type: 'select' },
   },
+  isLoading: {
+    type: { name: 'boolean' },
+    description: 'Loader',
+    table: {
+      defaultValue: { summary: false },
+      type: { summary: 'boolean' },
+    },
+    control: { type: 'boolean' },
+  },
   bold: {
     name: 'bold',
     type: { name: 'boolean' },
@@ -82,7 +91,7 @@ export const argTypes = {
     control: { type: 'boolean' },
   },
   //TODO
-/*   icon: {
+  /*   icon: {
     name: 'icon',
     description: 'React FC icon',
     table: {
