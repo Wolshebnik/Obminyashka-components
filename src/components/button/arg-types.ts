@@ -22,7 +22,7 @@ export const argTypes = {
     type: { name: 'boolean' },
     description: 'CSS font-weight bold',
     table: {
-      defaultValue: false,
+      defaultValue: { summary: false },
       type: { summary: 'boolean' },
     },
     control: { type: 'boolean' },
@@ -62,7 +62,7 @@ export const argTypes = {
     type: { name: 'boolean' },
     description: 'HTML property "disabled"',
     table: {
-      defaultValue: false,
+      defaultValue: { summary: false },
       type: { summary: 'boolean' },
     },
     control: { type: 'boolean' },
@@ -72,7 +72,7 @@ export const argTypes = {
     type: { name: 'string' },
     description: 'Color type',
     table: {
-      defaultValue: 'blue',
+      defaultValue: { summary: 'blue' },
       type: { summary: 'string' },
     },
     control: { type: 'select' },
@@ -83,7 +83,7 @@ export const argTypes = {
     type: { name: 'boolean' },
     description: 'Set icon right',
     table: {
-      defaultValue: false,
+      defaultValue: { summary: false },
       type: { summary: 'boolean' },
     },
     control: { type: 'boolean' },
