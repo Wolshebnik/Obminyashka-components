@@ -1,10 +1,12 @@
 import InputMask from 'react-input-mask';
 
+import * as Icon from '../icon';
 import * as Styles from './styles';
 import { InputProps } from './types';
 import { showPassword } from './show-password';
 
 const Input = ({
+  onClick /*            -          */,
   id,
   label,
   value /*     -       */,
@@ -23,17 +25,27 @@ const Input = ({
   ...props
 }: InputProps) => {
   const notPasswordType = type !== 'password';
+  const isInputNotEmpty = value?.toString().length !== 0;
+  const isTypeSearch = type === 'search';
+
   const { component, currentType } = showPassword(notPasswordType);
   const typing = notPasswordType ? type : currentType;
+
+  const clearInput = () => {
+    if (props.onChange) {
+      props.onChange('');
+    }
+  };
 
   return (
     <Styles.Label
       inputGap={inputGap}
+      isTypeSearch={isTypeSearch}
       inputMaxWidth={inputMaxWidth}
       inputFlexDirection={inputFlexDirection}
       inputJustifyContent={inputJustifyContent}
     >
-      {label && (
+      {label && !isTypeSearch && (
         <Styles.LabelSpan
           labelColor={labelColor}
           labelFontSize={labelFontSize}
@@ -44,7 +56,16 @@ const Input = ({
         </Styles.LabelSpan>
       )}
 
-      <Styles.WrapperInputError wrapperInputErrorWidth={wrapperInputErrorWidth}>
+      {isTypeSearch && (
+        <Styles.WrapperSearchLink onClick={onClick}>
+          <Icon.Search />
+        </Styles.WrapperSearchLink>
+      )}
+
+      <Styles.WrapperInputError
+        wrapperInputErrorWidth={wrapperInputErrorWidth}
+        isTypeSearch={isTypeSearch}
+      >
         {type === 'tel' && (
           <InputMask
             value={value}
@@ -69,10 +90,18 @@ const Input = ({
             error={error}
             id={id ?? name}
             placeholder={placeholder}
+            isTypeSearch={isTypeSearch}
             notPasswordType={notPasswordType}
             {...props}
           />
         )}
+
+        {isInputNotEmpty && isTypeSearch && (
+          <Styles.WrapperReset onClick={clearInput}>
+            <Icon.Close />
+          </Styles.WrapperReset>
+        )}
+
         {!notPasswordType && component}
 
         {error && <Styles.SpanError error={error}>{error}</Styles.SpanError>}

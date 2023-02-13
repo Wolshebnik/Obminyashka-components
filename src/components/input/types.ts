@@ -1,4 +1,8 @@
-import React, { DetailedHTMLProps, InputHTMLAttributes } from 'react';
+import React, {
+  ChangeEvent,
+  DetailedHTMLProps,
+  InputHTMLAttributes,
+} from 'react';
 
 export interface ShowPasswordType {
   component: React.ReactNode;
@@ -11,11 +15,14 @@ interface CustomInput
     HTMLInputElement
   > {}
 
+type InputOnChangeEventType = ChangeEvent<HTMLInputElement> | string;
+
 export interface InputProps extends Omit<CustomInput, 'ref'> {
   name: string;
   error?: string;
   label?: string;
   inputGap?: string;
+  setValue: Function /*        -----     */;
   labelColor?: string;
   labelFontSize?: string;
   inputMaxWidth?: string;
@@ -23,4 +30,5 @@ export interface InputProps extends Omit<CustomInput, 'ref'> {
   inputFlexDirection?: string;
   inputJustifyContent?: string;
   wrapperInputErrorWidth?: string;
+  onChange?: (e: InputOnChangeEventType) => void;
 }

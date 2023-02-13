@@ -52,7 +52,7 @@ export const argTypes = {
       defaultValue: { summary: 'text' },
     },
     control: 'radio',
-    options: ['text', 'password', 'tel'],
+    options: ['text', 'password', 'tel', 'search'],
   },
 
   name: {

@@ -14,7 +14,11 @@ const Template: ComponentStory<typeof Input> = (args) => {
   const [value, setValue] = useState('');
 
   return (
-    <Input value={value} onChange={(e) => setValue(e.target.value)} {...args} />
+    <Input
+      value={value}
+      onChange={(e) => setValue(typeof e === 'string' ? e : e.target.value)}
+      {...args}
+    />
   );
 };
 
@@ -50,18 +54,25 @@ Phone.args = {
   labelColor: 'black',
   inputMaxWidth: '588px',
   inputFlexDirection: 'row',
+  wrapperInputErrorWidth: '415px',
   placeholder: '+38(999) 999-99-99',
   inputJustifyContent: 'space-between',
-  wrapperInputErrorWidth: '415px',
 };
 
 export const Error = Template.bind({});
 Error.args = {
   type: 'text',
-  name: 'inputName',
   inputGap: '',
   error: 'Error',
+  name: 'inputName',
   label: 'Label text',
   inputFlexDirection: '',
   placeholder: 'Placeholder',
+};
+
+export const Search = Template.bind({});
+Search.args = {
+  type: 'search',
+  name: 'inputName',
+  placeholder: 'Я шукаю...',
 };
