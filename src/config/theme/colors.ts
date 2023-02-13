@@ -43,23 +43,11 @@ const colorsDefault = Object.freeze({
   btnGreen: buttonGreen,
   btnGreenHover: buttonGreenHover,
   btnGreenActive: buttonGreenActive,
-  colorError: '#ff4c4c',
-  colorGrey: '#8E8E8E',
-  btnBlue,
-  btnBlueHover: '#00bfff',
-  btnBlueActive: '#0094ff',
-  btnGreen: '#43b15d',
-  btnGreenHover: '#3c9f53',
-  btnGreenActive: '#008a20',
   colorError,
   colorGrey,
   colorRed: '#ff0000',
-  colorTextDisabled: '#A3A3A3',
   btnGbDisabled: buttonDisabled,
-  rightColorText: '#333333',
-  blackColorText: '#111111',
   colorTextDisabled,
-  btnGbDisabled: '#DADADA',
   rightColorText,
   blackColorText,
   bgContent: '#E5E5E5',
@@ -83,7 +71,11 @@ const button = {
   },
 };
 
-const COLORS = Object.freeze({ ...colorsDefault, button, buttonGradient });
-const COLORS = Object.freeze({ ...colorsDefault, input, buttonGradient });
+const COLORS = Object.freeze({
+  ...colorsDefault,
+  input,
+  button,
+  buttonGradient,
+});
 
 export { COLORS };
