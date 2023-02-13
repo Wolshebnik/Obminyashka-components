@@ -1,6 +1,6 @@
 {
   "name": "@Wolshebnik/obminyashka-components",
-  "version": "0.0.15",
+  "version": "0.0.18",
   "description": "Component library",
   "main": "dist/esm/index.js",
   "module": "dist/cjs/index.js",
@@ -12,9 +12,9 @@
     "registry": "https://npm.pkg.github.com/Wolshebnik"
   },
   "scripts": {
+    "start": "start-storybook -p 6006",
     "build": "rm -rf dist && rollup -c",
     "pub": "rm -rf dist && npm run build && npm publish",
-    "sb": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static"
   },
@@ -34,6 +34,16 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-input-mask": "^3.0.0-alpha.2",
+    "react-responsive": "^9.0.2",
+    "react-router-dom": "^6.8.0",
+    "styled-components": "^5.3.6",
+    "styled-normalize": "^8.0.7",
+    "typescript": "^4.9.4"
+  },
+  "peerDependencies": {
+    "formik": "^2.2.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-responsive": "^9.0.2",
     "react-router-dom": "^6.8.0",
     "styled-components": "^5.3.6",
