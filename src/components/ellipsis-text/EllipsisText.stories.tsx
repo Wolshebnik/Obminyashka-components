@@ -25,8 +25,8 @@ EllipsisTextWithTooltip.args = {
   id: 'tooltip1',
 };
 
-export const EllipsisTextWithAnotherTooltipDirection = Template.bind({});
-EllipsisTextWithAnotherTooltipDirection.args = {
+export const WithAnotherTooltipDirection = Template.bind({});
+WithAnotherTooltipDirection.args = {
   children: <span>{text}</span>,
   id: 'tooltip2',
   place: 'right-start',

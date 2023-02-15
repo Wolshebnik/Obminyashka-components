@@ -14,7 +14,9 @@ export const EllipsisText = ({
 }: ITooltip) => {
   return (
     <>
-      <EllipsisDiv id={id}>{children}</EllipsisDiv>
+      <EllipsisDiv id={id}>
+        <>{children}</>
+      </EllipsisDiv>
 
       <ReactTooltip
         place={place}
