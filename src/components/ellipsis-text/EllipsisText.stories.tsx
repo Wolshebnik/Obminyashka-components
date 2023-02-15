@@ -21,14 +21,14 @@ const Template: ComponentStory<typeof EllipsisText> = (args) => (
 
 export const EllipsisTextWithTooltip = Template.bind({});
 EllipsisTextWithTooltip.args = {
-  children: <span>{text}</span>,
   id: 'tooltip1',
+  children: <span>{text}</span>,
 };
 
 export const WithAnotherTooltipDirection = Template.bind({});
 WithAnotherTooltipDirection.args = {
-  children: <span>{text}</span>,
   id: 'tooltip2',
+  children: text,
   place: 'right-start',
   delayShow: 1000,
   delayHide: 1000,

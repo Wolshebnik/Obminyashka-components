@@ -34,7 +34,7 @@ export const EllipsisDiv = styled.div`
 export const Container = styled.div`
   display: flex;
   justify-content: center;
-  max-width: 150px;
   padding: 10px;
+  max-width: 150px;
   box-sizing: border-box;
 `;
