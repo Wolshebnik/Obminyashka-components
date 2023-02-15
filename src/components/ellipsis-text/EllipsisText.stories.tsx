@@ -29,7 +29,7 @@ export const WithAnotherTooltipDirection = Template.bind({});
 WithAnotherTooltipDirection.args = {
   id: 'tooltip2',
   children: text,
-  place: 'right-start',
   delayShow: 1000,
   delayHide: 1000,
+  place: 'right-start',
 };
