@@ -14,6 +14,9 @@ const buttonDisabled = '#DADADA';
 const buttonGradient =
   '90deg,rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5)';
 
+const ellipsisShadow =
+  '10px 10px 20px rgba(0, 0, 0, 0.3), 0px 31px 32px -24px rgba(0, 0, 0, 1)';
+
 const colorsDefault = Object.freeze({
   shadow: 'rgba(89, 102, 116, 0.1)',
   colorPopup: '#FDFDFF',
@@ -51,6 +54,11 @@ const button = {
   },
 };
 
-const COLORS = Object.freeze({ ...colorsDefault, button, buttonGradient });
+const COLORS = Object.freeze({
+  button,
+  buttonGradient,
+  ellipsisShadow,
+  ...colorsDefault,
+});
 
 export { COLORS };
