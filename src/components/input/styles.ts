@@ -124,6 +124,7 @@ export const WrapperInputError = styled.div<{
 
 export const Input = styled.input<{
   error?: string;
+  autoComplete?: string;
   isTypeSearch?: boolean;
   notPasswordType: boolean;
   disableUnderline?: boolean;

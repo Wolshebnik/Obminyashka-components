@@ -172,4 +172,24 @@ export const argTypes = {
     },
     controls: 'string',
   },
+
+  value: {
+    name: 'Value',
+    type: { name: 'string' },
+    description: `Input element content`,
+    table: {
+      type: { summary: 'string' },
+    },
+    controls: 'string',
+  },
+
+  onClick: {
+    name: 'onClick',
+    type: { name: 'function' },
+    description: `The function to be passed to the search icon.\n\n!!! 
+    Available only for Search type`,
+    table: {
+      type: { summary: 'function' },
+    },
+  },
 };

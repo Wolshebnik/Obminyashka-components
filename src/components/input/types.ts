@@ -22,7 +22,6 @@ export interface InputProps extends Omit<CustomInput, 'ref'> {
   error?: string;
   label?: string;
   inputGap?: string;
-  setValue: Function /*        -----     */;
   labelColor?: string;
   labelFontSize?: string;
   inputMaxWidth?: string;

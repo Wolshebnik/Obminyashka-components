@@ -6,11 +6,11 @@ import { InputProps } from './types';
 import { showPassword } from './show-password';
 
 const Input = ({
-  onClick /*            -          */,
   id,
   label,
-  value /*     -       */,
+  value,
   error,
+  onClick,
   inputGap,
   labelColor,
   placeholder,
@@ -24,9 +24,9 @@ const Input = ({
   wrapperInputErrorWidth,
   ...props
 }: InputProps) => {
+  const isTypeSearch = type === 'search';
   const notPasswordType = type !== 'password';
   const isInputNotEmpty = value?.toString().length !== 0;
-  const isTypeSearch = type === 'search';
 
   const { component, currentType } = showPassword(notPasswordType);
   const typing = notPasswordType ? type : currentType;
@@ -76,8 +76,9 @@ const Input = ({
           >
             <Styles.Input
               error={error}
-              notPasswordType={notPasswordType}
               disableUnderline
+              autoComplete={'off'}
+              notPasswordType={notPasswordType}
             />
           </InputMask>
         )}
@@ -89,6 +90,7 @@ const Input = ({
             type={typing}
             error={error}
             id={id ?? name}
+            autoComplete={'off'}
             placeholder={placeholder}
             isTypeSearch={isTypeSearch}
             notPasswordType={notPasswordType}
