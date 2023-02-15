@@ -31,3 +31,27 @@ export interface InputProps extends Omit<CustomInput, 'ref'> {
   wrapperInputErrorWidth?: string;
   onChange?: (e: InputOnChangeEventType) => void;
 }
+
+export interface ILabel {
+  inputGap?: string;
+  isTypeSearch: boolean;
+  inputMaxWidth?: string;
+  inputFlexDirection?: string;
+  inputJustifyContent?: string;
+}
+
+export interface ILabelSpan extends Pick<ILabel, 'inputFlexDirection'> {
+  labelColor?: string;
+  labelFontSize?: string;
+  labelFontWeight?: number;
+}
+
+export interface IWrapperInputError extends Pick<ILabel, 'isTypeSearch'> {
+  wrapperInputErrorWidth?: string;
+}
+
+export interface IInput extends Pick<ILabel, 'isTypeSearch'> {
+  error?: string;
+  autoComplete?: string;
+  notPasswordType: boolean;
+}

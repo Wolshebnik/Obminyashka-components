@@ -76,8 +76,8 @@ const Input = ({
           >
             <Styles.Input
               error={error}
-              disableUnderline
-              autoComplete={'off'}
+              autoComplete="off"
+              isTypeSearch={isTypeSearch}
               notPasswordType={notPasswordType}
             />
           </InputMask>
@@ -90,7 +90,7 @@ const Input = ({
             type={typing}
             error={error}
             id={id ?? name}
-            autoComplete={'off'}
+            autoComplete="off"
             placeholder={placeholder}
             isTypeSearch={isTypeSearch}
             notPasswordType={notPasswordType}

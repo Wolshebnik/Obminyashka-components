@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { argTypes } from './arg-types';
 
 import { Input } from './index';
+import { argTypes } from './arg-types';
 
 export default {
   title: 'Input',
   component: Input,
-  argTypes: argTypes,
+  argTypes,
 } as ComponentMeta<typeof Input>;
 
 const Template: ComponentStory<typeof Input> = (args) => {
@@ -24,21 +24,21 @@ const Template: ComponentStory<typeof Input> = (args) => {
 
 export const Text = Template.bind({});
 Text.args = {
-  error: undefined,
-  inputGap: undefined,
   type: 'text',
+  error: undefined,
   name: 'inputName',
   label: 'Label text',
-  inputFlexDirection: undefined,
+  inputGap: undefined,
   placeholder: 'Placeholder',
+  inputFlexDirection: undefined,
 };
 
 export const Password = Template.bind({});
 Password.args = {
   error: '',
   inputGap: '',
-  name: 'inputName',
   type: 'password',
+  name: 'inputName',
   inputFlexDirection: '',
   placeholder: 'Placeholder',
   label: 'Введіть Ваш пароль',

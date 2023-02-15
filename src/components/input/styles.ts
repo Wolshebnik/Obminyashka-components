@@ -1,16 +1,11 @@
 import styled, { css } from 'styled-components';
 
-export const Label = styled.label<{
-  inputGap?: string;
-  isTypeSearch: boolean;
-  inputMaxWidth?: string;
-  inputFlexDirection?: string;
-  inputJustifyContent?: string;
-}>`
+import { IInput, ILabel, ILabelSpan, IWrapperInputError } from './types';
+
+export const Label = styled.label<ILabel>`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -22,11 +17,13 @@ export const Label = styled.label<{
     width: 0;
     height: 0;
   }
+
   input[type='text']::-ms-reveal {
     display: none;
     width: 0;
     height: 0;
   }
+
   input[type='search']::-webkit-search-decoration,
   input[type='search']::-webkit-search-cancel-button,
   input[type='search']::-webkit-search-results-button,
@@ -59,12 +56,7 @@ export const Label = styled.label<{
   `}
 `;
 
-export const LabelSpan = styled.span<{
-  labelColor?: string;
-  labelFontSize?: string;
-  labelFontWeight?: number;
-  inputFlexDirection?: string;
-}>`
+export const LabelSpan = styled.span<ILabelSpan>`
   display: inline-block;
   line-height: 16px;
   font-family: inherit;
@@ -94,20 +86,16 @@ export const WrapperSearchLink = styled.div`
   border-radius: 20px;
 
   svg {
-    position: relative;
     width: 22px;
     height: 22px;
 
-    :hover{
+    :hover {
       width: 26px;
       height: 26px;
   }
 `;
 
-export const WrapperInputError = styled.div<{
-  isTypeSearch: boolean;
-  wrapperInputErrorWidth?: string;
-}>`
+export const WrapperInputError = styled.div<IWrapperInputError>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -116,19 +104,13 @@ export const WrapperInputError = styled.div<{
     ${wrapperInputErrorWidth && `width: ${wrapperInputErrorWidth}`};
     ${isTypeSearch &&
     css`
+      padding-right: 40px;
       width: calc(100% - 50px);
-      padding: 0 40px 0 0;
     `}
   `}
 `;
 
-export const Input = styled.input<{
-  error?: string;
-  autoComplete?: string;
-  isTypeSearch?: boolean;
-  notPasswordType: boolean;
-  disableUnderline?: boolean;
-}>`
+export const Input = styled.input<IInput>`
   width: 100%;
   border-radius: 2px;
   box-sizing: border-box;
@@ -140,8 +122,8 @@ export const Input = styled.input<{
   outline: none;
 
   ${({ theme, error, notPasswordType, isTypeSearch }) => css`
-    color: ${theme.colors.input.textRight};
     padding: ${!notPasswordType ? `12px 40px 12px 12px` : `12px 16px `};
+    color: ${theme.colors.input.textRight};
     border: 1px solid
       ${error ? theme.colors.input.error : theme.colors.input.border};
 
@@ -158,9 +140,6 @@ export const Input = styled.input<{
       font-style: italic;
       font-size: 16px;
       line-height: 24px;
-      :focus {
-        background-color: white;
-      }
     `}
   `}
 `;
@@ -175,8 +154,10 @@ export const WrapperReset = styled.div`
   svg {
     width: 24px;
     height: 24px;
+
     :hover {
       transition: 0.33s;
+
       path {
         fill: ${({ theme }) => theme.colors.input.searchBtn};
       }
