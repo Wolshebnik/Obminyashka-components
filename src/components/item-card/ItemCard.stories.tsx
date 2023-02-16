@@ -14,9 +14,6 @@ const Template: ComponentStory<typeof ProductCard> = (args) => (
   <ProductCard {...args} />
 );
 
-// export const ProductCardDefault = Template.bind({});
-// ProductCardDefault.args = {};
-
 export const ProductCardWithItem = Template.bind({});
 ProductCardWithItem.args = {
   city: 'NEW YORK',
