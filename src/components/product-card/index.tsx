@@ -42,7 +42,7 @@ const ProductCard = ({
           <Icon.Location />
 
           <Styles.CitySpan>
-            <EllipsisText id={city}>{city}</EllipsisText>
+            <EllipsisText id={city} place='right'>{city}</EllipsisText>
           </Styles.CitySpan>
         </Styles.LocationIcon>
 

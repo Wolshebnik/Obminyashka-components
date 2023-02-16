@@ -4,7 +4,9 @@ export { Button } from './button';
 export { CheckBox } from './checkbox';
 export { EllipsisText } from './ellipsis-text';
 export { Image } from './image';
+export { InboxMessage } from './inbox-message'
 export { Input } from './input';
 export { Loader } from './loader';
+export { ProductCard } from './product-card'
 export { Title } from './title';
 export * as Icon from './icon';

@@ -7,10 +7,10 @@ const buttonBlueHover = '#00bfff';
 const buttonBlueActive = '#0094ff';
 
 //Green
-const buttonGreen = '#43b15d';
-const buttonGreenHover = '#3c9f53';
-const buttonGreenActive = '#008a20';
 const apple = '#37B82E';
+const buttonGreen = '#43b15d';
+const buttonGreenActive = '#008a20';
+const buttonGreenHover = '#3c9f53';
 const forestGreen = '#32a72a';
 
 //General state
@@ -25,38 +25,38 @@ const colorBorderFocus = '#707070';
 const colorTextDisabled = '#A3A3A3';
 
 //General yellow
-const schoolBusYellow = '#f5d800';
 const corn = '#E0C600';
+const schoolBusYellow = '#f5d800';
 const turbo = '#FEE200';
 
 //General grey
-const silverChalice = '#A0A0A0';
 const dustyGray = '#969696';
 const silver = '#c4c4c4';
+const silverChalice = '#A0A0A0';
 
 const input = Object.freeze({
-  error: colorError,
-  searchBtn: buttonBlue,
-  textGrey: colorGrey,
   border: colorBorder,
+  error: colorError,
   focus: colorBorderFocus,
-  textBlack: blackColorText,
-  textRight: rightColorText,
   searchBorder: activeColor,
+  searchBtn: buttonBlue,
+  textBlack: blackColorText,
   textDisabled: colorTextDisabled,
+  textGrey: colorGrey,
+  textRight: rightColorText,
 });
 
 const inboxMessage = Object.freeze({
-  inboxMessageHover: apple,
   inboxMessageActive: forestGreen,
+  inboxMessageHover: apple,
 });
 
 const itemCard = Object.freeze({
+  avatarFalseDefault: silverChalice,
+  avatarFalseHover: dustyGray,
   avatarTrueActive: corn,
   avatarTrueDefault: turbo,
-  avatarFalseHover: dustyGray,
   avatarTrueHover: schoolBusYellow,
-  avatarFalseDefault: silverChalice,
   borderCard: silver,
 });
 
