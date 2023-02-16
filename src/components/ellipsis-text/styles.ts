@@ -12,15 +12,11 @@ export const ReactTooltip = styled(Tooltip).attrs({
     border-radius: 8px;
     cursor: context-menu;
 
-    ${({ theme }) => css`
-      background-color: ${theme.colors.white};
-      color: ${theme.colors.blackColorText};
-      box-shadow: ${theme.colors.ellipsisShadow};
-    `}
-  }
-
-  &.custom-arrow {
-    background: transparent;
+      ${({ theme }) => css`
+        background-color: ${theme.colors.white};
+        color: ${theme.colors.blackColorText};
+        box-shadow: ${theme.colors.ellipsisShadow};
+      `};
   }
 `;
 

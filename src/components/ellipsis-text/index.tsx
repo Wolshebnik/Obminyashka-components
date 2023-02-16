@@ -7,10 +7,11 @@ const delay = 300;
 
 export const EllipsisText = ({
   id,
+  noArrow = true,
   children,
   delayHide = delay,
   delayShow = delay,
-  place = 'bottom-start',
+  place = 'right-start',
 }: ITooltip) => {
   return (
     <>
@@ -19,6 +20,7 @@ export const EllipsisText = ({
       </EllipsisDiv>
 
       <ReactTooltip
+        noArrow={noArrow}
         place={place}
         anchorId={id}
         delayShow={delayShow}

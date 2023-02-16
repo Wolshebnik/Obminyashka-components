@@ -31,5 +31,5 @@ WithAnotherTooltipDirection.args = {
   children: text,
   delayShow: 1000,
   delayHide: 1000,
-  place: 'right-start',
+  place: 'right',
 };

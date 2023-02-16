@@ -10,6 +10,8 @@ const buttonBlueActive = '#0094ff';
 const buttonGreen = '#43b15d';
 const buttonGreenHover = '#3c9f53';
 const buttonGreenActive = '#008a20';
+const apple = '#37B82E';
+const forestGreen = '#32a72a';
 
 //General state
 const buttonDisabled = '#DADADA';
@@ -21,6 +23,16 @@ const blackColorText = '#111111';
 const rightColorText = '#333333';
 const colorBorderFocus = '#707070';
 const colorTextDisabled = '#A3A3A3';
+
+//General yellow
+const schoolBusYellow = '#f5d800';
+const corn = '#E0C600';
+const turbo = '#FEE200';
+
+//General grey
+const silverChalice = '#A0A0A0';
+const dustyGray = '#969696';
+const silver = '#c4c4c4';
 
 const input = Object.freeze({
   error: colorError,
@@ -34,8 +46,37 @@ const input = Object.freeze({
   textDisabled: colorTextDisabled,
 });
 
+const inboxMessage = Object.freeze({
+  inboxMessageHover: apple,
+  inboxMessageActive: forestGreen,
+});
+
+const itemCard = Object.freeze({
+  avatarTrueActive: corn,
+  avatarTrueDefault: turbo,
+  avatarFalseHover: dustyGray,
+  avatarTrueHover: schoolBusYellow,
+  avatarFalseDefault: silverChalice,
+  borderCard: silver,
+});
+
 const ellipsisShadow =
   '10px 10px 20px rgba(0, 0, 0, 0.3), 0px 31px 32px -24px rgba(0, 0, 0, 1)';
+
+const button = {
+  blue: {
+    bg: buttonBlue,
+    hover: buttonBlueHover,
+    active: buttonBlueActive,
+    disable: buttonDisabled,
+  },
+  green: {
+    bg: buttonGreen,
+    hover: buttonGreenHover,
+    active: buttonGreenActive,
+    disable: buttonDisabled,
+  },
+};
 
 const colorsDefault = Object.freeze({
   shadow: 'rgba(89, 102, 116, 0.1)',
@@ -59,24 +100,11 @@ const colorsDefault = Object.freeze({
   white: '#FFFFFF',
 });
 
-const button = {
-  blue: {
-    bg: buttonBlue,
-    hover: buttonBlueHover,
-    active: buttonBlueActive,
-    disable: buttonDisabled,
-  },
-  green: {
-    bg: buttonGreen,
-    hover: buttonGreenHover,
-    active: buttonGreenActive,
-    disable: buttonDisabled,
-  },
-};
-
 const COLORS = Object.freeze({
   input,
   button,
+  itemCard,
+  inboxMessage,
   buttonGradient,
   ellipsisShadow,
   ...colorsDefault,
