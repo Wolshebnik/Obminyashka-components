@@ -13,6 +13,7 @@ const Button = ({
   isLoading,
   orderRight,
   width = 140,
+  animationType,
   type = 'button',
   colorType = 'blue',
   ...props
@@ -29,8 +30,8 @@ const Button = ({
     onClick={!isLoading ? onClick : undefined}
     {...props}
   >
-    {icon && <WrapIcon orderRight={orderRight}>{icon}</WrapIcon>} 
-    {isLoading ? <Loader /> : text}
+    {icon && <WrapIcon orderRight={orderRight}>{icon}</WrapIcon>}
+    {isLoading ? <Loader animationType={animationType} /> : text}
   </StyledButton>
 );
 export { Button };

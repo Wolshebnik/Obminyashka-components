@@ -36,3 +36,10 @@ ButtonIconRight.args = {
   orderRight: true,
   icon: <Icon.Google />,
 };
+
+export const ButtonAnimation = Template.bind({});
+ButtonAnimation.args = {
+  text: 'button',
+  isLoading: true,
+  animationType: 'secondary',
+};

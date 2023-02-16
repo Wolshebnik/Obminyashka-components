@@ -1,3 +1,3 @@
 export interface ILoader {
-  styleType?: 'default' | 'secondary';
+  animationType?: 'default' | 'secondary';
 }

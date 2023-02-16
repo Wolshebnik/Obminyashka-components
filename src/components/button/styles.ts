@@ -17,6 +17,7 @@ export const StyledButton = styled.button<IStyledButton>`
   transition: background-color 0.3s ease;
   cursor: pointer;
   outline: none;
+  overflow: hidden;
 
   ${({ theme, width, bold, lHeight, colorType }) => css`
     width: ${width}px;
