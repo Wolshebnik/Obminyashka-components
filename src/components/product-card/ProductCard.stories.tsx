@@ -20,8 +20,8 @@ ProductCardWithItem.args = {
   text: 'hoody',
   picture:
     'https://gfx.garnamama.com/pub/products/235/196235/1600x1600/2EI~124024-7.jpg',
-  isFavorite: true,
   avatar: image,
   inboxMessage: 9,
+  isFavorite: true,
   buttonText: 'button',
 };

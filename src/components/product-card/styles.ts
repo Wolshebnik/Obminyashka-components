@@ -74,7 +74,7 @@ export const TextContent = styled.h6`
   height: 37px;
   font-size: 16px;
   line-height: 19px;
-  color: ${({ theme }) => theme.colors.blackColorText};
+  color: ${({ theme: { colors } }) => colors.blackColorText};
   text-align: center;
   -webkit-line-clamp: 2;
   display: -webkit-box;
