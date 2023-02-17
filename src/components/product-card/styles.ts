@@ -74,7 +74,7 @@ export const TextContent = styled.h6`
   height: 37px;
   font-size: 16px;
   line-height: 19px;
-  color: ${({ theme: { colors } }) => colors.blackColorText};
+  color: ${({ theme }) => theme.colors.blackColorText};
   text-align: center;
   -webkit-line-clamp: 2;
   display: -webkit-box;
@@ -98,7 +98,7 @@ export const CitySpan = styled.span`
   margin-left: 8px;
   font-size: 14px;
   z-index: 1;
-  color: ${({ theme: { colors } }) => colors.btnBlueHover};
+  color: ${({ theme }) => theme.colors.btnBlueHover};
 `;
 
 export const ButtonBlock = styled.div`

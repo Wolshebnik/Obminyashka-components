@@ -16,12 +16,12 @@ const Template: ComponentStory<typeof ProductCard> = (args) => (
 
 export const ProductCardWithItem = Template.bind({});
 ProductCardWithItem.args = {
-  city: 'NEW YORK',
   text: 'hoody',
-  picture:
-    'https://gfx.garnamama.com/pub/products/235/196235/1600x1600/2EI~124024-7.jpg',
   avatar: image,
   inboxMessage: 9,
+  city: 'NEW YORK',
   isFavorite: true,
   buttonText: 'button',
+  picture:
+  'https://gfx.garnamama.com/pub/products/235/196235/1600x1600/2EI~124024-7.jpg',
 };
