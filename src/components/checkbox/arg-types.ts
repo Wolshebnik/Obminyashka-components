@@ -1,4 +1,11 @@
 export const argTypes = {
+  name: {
+    name: 'name',
+    type: { name: 'string', required: true },
+    description: 'Name of the input',
+    control: { type: 'string' },
+  },
+
   onChange: {
     name: 'onChange',
     type: { name: 'function' },
