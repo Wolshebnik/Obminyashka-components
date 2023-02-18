@@ -11,6 +11,7 @@ export const Label = styled.label<ILabel>`
   font-size: 14px;
   line-height: 22px;
   cursor: pointer;
+  overflow: hidden;
 
   input[type='text']::-ms-clear {
     display: none;
@@ -82,6 +83,7 @@ export const WrapperSearchLink = styled.div`
   align-items: center;
   width: 40px;
   height: 40px;
+  margin-left: 1px;
   background-color: ${({ theme }) => theme.colors.input.searchBtn};
   border-radius: 20px;
 
@@ -95,8 +97,11 @@ export const WrapperSearchLink = styled.div`
   }
 `;
 
-export const WrapperInputError = styled.div<IWrapperInputError>`
+export const InputIcon = styled.div`
   position: relative;
+`;
+
+export const WrapperInputError = styled.div<IWrapperInputError>`
   display: flex;
   flex-direction: column;
 
@@ -104,7 +109,6 @@ export const WrapperInputError = styled.div<IWrapperInputError>`
     ${wrapperInputErrorWidth && `width: ${wrapperInputErrorWidth}`};
     ${isTypeSearch &&
     css`
-      padding-right: 40px;
       width: calc(100% - 50px);
     `}
   `}
@@ -136,7 +140,7 @@ export const Input = styled.input<IInput>`
     ${isTypeSearch &&
     css`
       border: none;
-      padding: 12px 0 12px 12px;
+      padding: 12px 40px 12px 12px;
       font-style: italic;
       font-size: 16px;
       line-height: 24px;
@@ -146,10 +150,12 @@ export const Input = styled.input<IInput>`
 
 export const WrapperReset = styled.div`
   position: absolute;
-  top: 12px;
+  top: 50%;
   right: 12px;
+  display: flex;
   cursor: pointer;
   transition: 0.33s;
+  transform: translateY(-50%);
 
   svg {
     width: 24px;

@@ -7,16 +7,13 @@ import { WrapIcon } from './styles';
 
 export { showPassword };
 
-const showPassword = (
-  isPassword: boolean,
-  topPosition?: string
-): ShowPasswordType => {
+const showPassword = (isPassword: boolean): ShowPasswordType => {
   const [isShow, setIsShow] = useState(isPassword);
 
   const currentType = useMemo(() => (isShow ? 'text' : 'password'), [isShow]);
 
   const Component = (
-    <WrapIcon onClick={() => setIsShow(!isShow)} topPosition={topPosition}>
+    <WrapIcon onClick={() => setIsShow(!isShow)}>
       {isShow ? <Icon.Eye /> : <Icon.EyeOff />}
     </WrapIcon>
   );

@@ -66,45 +66,47 @@ const Input = ({
         wrapperInputErrorWidth={wrapperInputErrorWidth}
         isTypeSearch={isTypeSearch}
       >
-        {type === 'tel' && (
-          <InputMask
-            value={value}
-            id={name + id}
-            mask="+38(999) 999-99-99"
-            placeholder={placeholder}
-            {...props}
-          >
+        <Styles.InputIcon>
+          {type === 'tel' && (
+            <InputMask
+              value={value}
+              id={name + id}
+              mask="+38(999) 999-99-99"
+              placeholder={placeholder}
+              {...props}
+            >
+              <Styles.Input
+                error={error}
+                autoComplete="off"
+                isTypeSearch={isTypeSearch}
+                notPasswordType={notPasswordType}
+              />
+            </InputMask>
+          )}
+
+          {type !== 'tel' && (
             <Styles.Input
+              name={name}
+              value={value}
+              type={typing}
               error={error}
+              id={id ?? name}
               autoComplete="off"
+              placeholder={placeholder}
               isTypeSearch={isTypeSearch}
               notPasswordType={notPasswordType}
+              {...props}
             />
-          </InputMask>
-        )}
+          )}
 
-        {type !== 'tel' && (
-          <Styles.Input
-            name={name}
-            value={value}
-            type={typing}
-            error={error}
-            id={id ?? name}
-            autoComplete="off"
-            placeholder={placeholder}
-            isTypeSearch={isTypeSearch}
-            notPasswordType={notPasswordType}
-            {...props}
-          />
-        )}
+          {isInputNotEmpty && isTypeSearch && (
+            <Styles.WrapperReset onClick={clearInput}>
+              <Icon.Close />
+            </Styles.WrapperReset>
+          )}
 
-        {isInputNotEmpty && isTypeSearch && (
-          <Styles.WrapperReset onClick={clearInput}>
-            <Icon.Close />
-          </Styles.WrapperReset>
-        )}
-
-        {!notPasswordType && component}
+          {!notPasswordType && component}
+        </Styles.InputIcon>
 
         {error && <Styles.SpanError error={error}>{error}</Styles.SpanError>}
       </Styles.WrapperInputError>
