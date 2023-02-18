@@ -11,7 +11,7 @@ export const CheckBox = ({
   type = 'checkbox',
   ...props
 }: IInput) => (
-  <Styles.Label fontSize={fontSize} checked={checked} gap={gap} type={type}>
+  <Styles.Label gap={gap} type={type} checked={checked} fontSize={fontSize}>
     <Styles.Input
       type={type}
       checked={checked}

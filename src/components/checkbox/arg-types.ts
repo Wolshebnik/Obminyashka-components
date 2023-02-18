@@ -12,14 +12,14 @@ export const argTypes = {
     description: 'gap',
     table: {
       type: { summary: 'number' },
-      defaultValue: { summary: 14 },
+      defaultValue: { summary: 20 },
     },
     control: { type: 'number' },
   },
 
   fontSize: {
     name: 'font-size',
-    type: { name: 'number', required: true },
+    type: { name: 'number' },
     description: 'CSS font-size',
     table: {
       type: { summary: 'number' },

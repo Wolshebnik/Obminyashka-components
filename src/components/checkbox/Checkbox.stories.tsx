@@ -29,7 +29,7 @@ Checkbox.args = {
 
 export const RadioButton = Template.bind({});
 RadioButton.args = {
-  gap: 18,
+  gap: 20,
   type: 'radio',
   text: 'Radio',
 };
