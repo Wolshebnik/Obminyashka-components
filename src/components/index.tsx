@@ -7,4 +7,5 @@ export { Image } from './image';
 export { Input } from './input';
 export { Loader } from './loader';
 export { Title } from './title';
+export { Toast, showMessage } from './toast';
 export * as Icon from './icon';

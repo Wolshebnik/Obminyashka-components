@@ -3,8 +3,9 @@ import { addDecorator } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
 import { withConsole } from '@storybook/addon-console';
 
-import { ThemeWrap, ThemeContextProvider } from '../src/context';
+import { Toast } from '../src/components';
 import { GlobalStyles } from '../src/styles/globalStyles';
+import { ThemeWrap, ThemeContextProvider } from '../src/context';
 
 addDecorator((storyFn, context) => withConsole()(storyFn)(context));
 
@@ -13,6 +14,7 @@ addDecorator((story) => (
     <ThemeWrap>
       <GlobalStyles />
       <MemoryRouter>{story()}</MemoryRouter>
+      <Toast />
     </ThemeWrap>
   </ThemeContextProvider>
 ));
