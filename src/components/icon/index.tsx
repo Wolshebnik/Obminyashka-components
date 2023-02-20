@@ -21,7 +21,7 @@ export { ReactComponent as Next } from 'assets/icons/next.svg';
 export { ReactComponent as Phone } from 'assets/icons/phone.svg';
 export { ReactComponent as Plus } from 'assets/icons/plus.svg';
 export { ReactComponent as Prev } from 'assets/icons/prev.svg';
-export { ReactComponent as ProductPostCheck } from 'assets/icons/ProductPostCheck.svg';
+export { ReactComponent as ProductPostCheck } from 'assets/icons/product-post-check.svg';
 export { ReactComponent as Profile } from 'assets/icons/profile.svg';
 export { ReactComponent as QuestionMark } from 'assets/icons/question-mark.svg';
 export { ReactComponent as Rectangle } from 'assets/icons/rectangle.svg';
