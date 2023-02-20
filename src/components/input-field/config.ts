@@ -5,7 +5,6 @@ export const initialValues: IInitialValues = {
   text: '',
   password: '',
   tel: '',
-  error: '',
 };
 
 export const validationSchema = Yup.object().shape({
@@ -16,9 +15,6 @@ export const validationSchema = Yup.object().shape({
     .required('')
     .default(() => ''),
   tel: Yup.string()
-    .required()
-    .default(() => ''),
-  error: Yup.string()
     .required()
     .default(() => ''),
 });
