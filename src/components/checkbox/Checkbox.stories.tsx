@@ -25,11 +25,13 @@ const Template: ComponentStory<typeof CheckBox> = (args) => {
 export const Checkbox = Template.bind({});
 Checkbox.args = {
   text: 'Checkbox',
+  name: 'checkbox',
 };
 
 export const RadioButton = Template.bind({});
 RadioButton.args = {
-  gap: 18,
+  gap: 20,
   type: 'radio',
   text: 'Radio',
+  name: 'radio',
 };
