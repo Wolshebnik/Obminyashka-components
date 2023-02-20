@@ -23,6 +23,16 @@ export const argTypes = {
     control: { type: 'select' },
     options: ['top', 'bottom', 'left', 'right'],
   },
+  offset: {
+    name: 'Offset',
+    type: { name: 'number' },
+    description: `Space between the tooltip element and anchor element`,
+    table: {
+      defaultValue: { summary: 10 },
+      type: { summary: 'number' },
+    },
+    control: { type: 'number' },
+  },
   delayShow: {
     name: 'delayShow',
     type: { name: 'number' },

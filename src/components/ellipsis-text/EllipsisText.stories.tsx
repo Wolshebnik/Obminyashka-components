@@ -27,10 +27,11 @@ EllipsisTextWithTooltip.args = {
 
 export const TooltipWithArrow = Template.bind({});
 TooltipWithArrow.args = {
+  offset: 20,
   id: 'tooltip2',
+  place: 'right',
   noArrow: false,
   children: text,
   delayShow: 1000,
   delayHide: 1000,
-  place: 'right',
 };
