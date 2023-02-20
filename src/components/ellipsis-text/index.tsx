@@ -8,9 +8,9 @@ const delay = 300;
 export const EllipsisText = ({
   id,
   children,
+  place = 'bottom',
   delayHide = delay,
   delayShow = delay,
-  place = 'bottom-start',
 }: ITooltip) => {
   return (
     <>
