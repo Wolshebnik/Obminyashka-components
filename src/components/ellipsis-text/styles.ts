@@ -3,12 +3,10 @@ import styled, { css } from 'styled-components';
 
 import 'react-tooltip/dist/react-tooltip.css';
 
-export const ReactTooltip = styled(Tooltip).attrs({
-  className: 'custom-tooltip custom-arrow',
-})`
+export const ReactTooltip = styled(Tooltip)`
   &.custom-tooltip {
     padding: 16px;
-    max-width: 400px;
+    max-width: 200px;
     border-radius: 8px;
     cursor: context-menu;
 
@@ -17,10 +15,6 @@ export const ReactTooltip = styled(Tooltip).attrs({
       color: ${theme.colors.blackColorText};
       box-shadow: ${theme.colors.ellipsisShadow};
     `}
-  }
-
-  &.custom-arrow {
-    background: transparent;
   }
 `;
 
@@ -33,6 +27,7 @@ export const EllipsisDiv = styled.div`
 
 export const Container = styled.div`
   display: flex;
+  align-items: center;
   justify-content: center;
   padding: 10px;
   max-width: 150px;

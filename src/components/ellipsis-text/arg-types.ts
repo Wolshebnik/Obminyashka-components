@@ -12,33 +12,16 @@ export const argTypes = {
       type: { summary: 'string' },
     },
   },
-  anchorId: {
-    name: 'AnchorId',
-    type: { name: 'string' },
-    description:
-      'ID reference from the element that the tooltip will be positioned around.',
-    table: {
-      type: { summary: 'string' },
-    },
-  },
   place: {
     name: 'place',
     type: { name: 'string' },
     description: 'Tooltip placement.',
     table: {
-      defaultValue: { summary: 'bottom-start' },
+      defaultValue: { summary: 'bottom' },
       type: { summary: 'string' },
     },
     control: { type: 'select' },
-    options: [
-      'top',
-      'bottom',
-      'bottom-start',
-      'left',
-      'left-start',
-      'right',
-      'right-start',
-    ],
+    options: ['top', 'bottom', 'left', 'right'],
   },
   delayShow: {
     name: 'delayShow',
