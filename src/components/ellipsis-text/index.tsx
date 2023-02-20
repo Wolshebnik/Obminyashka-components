@@ -1,6 +1,6 @@
-import { ITooltip } from 'react-tooltip';
 import { useRef, useEffect, useState } from 'react';
 
+import { ITooltipProps } from './types';
 import 'react-tooltip/dist/react-tooltip.css';
 import { EllipsisDiv, ReactTooltip } from './styles';
 
@@ -9,13 +9,14 @@ const delay = 300;
 export const EllipsisText = ({
   id,
   children,
+  width = 200,
   noArrow = true,
   place = 'bottom',
   delayHide = delay,
   delayShow = delay,
   className = 'custom-tooltip',
   ...props
-}: ITooltip) => {
+}: ITooltipProps) => {
   const ref = useRef<HTMLDivElement | null>(null);
   const [hasToolTip, setToolTip] = useState<boolean>(false);
 
@@ -45,6 +46,7 @@ export const EllipsisText = ({
       {hasToolTip && (
         <ReactTooltip
           id={id}
+          width={width}
           place={place}
           noArrow={noArrow}
           delayShow={delayShow}

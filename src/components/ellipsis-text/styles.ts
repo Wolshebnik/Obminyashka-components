@@ -1,14 +1,18 @@
 import { Tooltip } from 'react-tooltip';
 import styled, { css } from 'styled-components';
 
+import { ITooltipProps } from './types';
 import 'react-tooltip/dist/react-tooltip.css';
 
-export const ReactTooltip = styled(Tooltip)`
+export const ReactTooltip = styled(Tooltip)<ITooltipProps>`
   &.custom-tooltip {
     padding: 16px;
-    max-width: 200px;
     border-radius: 8px;
     cursor: context-menu;
+
+    ${({ width }) => css`
+      max-width: ${width}px;
+    `}
 
     ${({ theme }) => css`
       background-color: ${theme.colors.white};
