@@ -15,11 +15,9 @@ const Template: ComponentStory<typeof Loader> = (args) => (
 );
 
 export const DefaultLoader = Template.bind({});
-DefaultLoader.args = {
-  styleType: 'default',
-};
+DefaultLoader.args = {};
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  styleType: 'secondary',
+  animationType: 'secondary',
 };

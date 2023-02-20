@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export interface IPagination {
-  children: any;
+  children: ReactNode;
   showLessItems?: boolean;
   total: number;
   showTitle?: boolean;
