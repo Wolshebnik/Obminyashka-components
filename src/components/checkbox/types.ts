@@ -9,6 +9,7 @@ export interface CustomInput
   > {}
 
 export interface IInput extends Omit<CustomInput, 'ref'> {
+  name: string;
   gap?: number;
   text?: string;
   fontSize?: number;

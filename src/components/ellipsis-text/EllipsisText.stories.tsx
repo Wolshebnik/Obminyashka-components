@@ -27,9 +27,9 @@ EllipsisTextWithTooltip.args = {
 
 export const WithAnotherTooltipDirection = Template.bind({});
 WithAnotherTooltipDirection.args = {
+  place: 'right',
   id: 'tooltip2',
   children: text,
   delayShow: 1000,
   delayHide: 1000,
-  place: 'right-start',
 };
