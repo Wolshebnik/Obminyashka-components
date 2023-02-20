@@ -6,6 +6,7 @@ export const Input = styled.input<InputArg>`
   appearance: none;
   -webkit-appearance: none;
   position: relative;
+  flex-shrink: 0;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   width: 17px;
@@ -29,7 +30,7 @@ export const Label = styled.label<LabelArg>`
   cursor: pointer;
 
   ${({ theme, gap, checked, fontSize }) => css`
-    gap: ${gap || 12}px;
+    gap: ${gap || 20}px;
     font-size: ${fontSize || 14}px;
     color: ${checked
       ? theme.colors.blackColorText
@@ -43,12 +44,18 @@ export const Label = styled.label<LabelArg>`
       width: 10px;
       height: 8px;
       transform: translate(-50%, -50%);
+
+      & > path {
+        opacity: ${checked ? 1 : 0};
+        transition: 300ms;
+      }
     }
 
     &:hover {
       & > svg {
         & > path {
-          fill: ${checked ? theme.colors.white : theme.colors.colorGrey};
+          opacity: 1;
+          fill: ${!checked && theme.colors.colorGrey};
         }
       }
     }
