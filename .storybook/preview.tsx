@@ -14,7 +14,7 @@ addDecorator((story) => (
     <ThemeWrap>
       <GlobalStyles />
       <MemoryRouter>{story()}</MemoryRouter>
-      <Toast />
+      <Toast limit={5}/>
     </ThemeWrap>
   </ThemeContextProvider>
 ));

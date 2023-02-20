@@ -1,21 +1,22 @@
 import { toast } from 'react-toastify';
+import { ToastContainerProps } from 'react-toastify';
 
-const messageShow = () => {
-  toast.dismiss();
-  toast.clearWaitingQueue();
+const getOptions = (options?: ToastContainerProps) =>
+  options ? options : { autoClose: 3000 };
 
-  return {
-    info: (message: string) => toast.info(message),
-    success: (message: string) => toast.success(message),
-    warn: (message: string) => toast.warn(message),
-    error: (message: string) => toast.error(message),
-  };
-};
+const messageShow = () => ({
+  info: (message: string, options?: ToastContainerProps) => {
+    toast.info(message, getOptions(options));
+  },
+  success: (message: string, options?: ToastContainerProps) => {
+    toast.success(message, getOptions(options));
+  },
+  warn: (message: string, options?: ToastContainerProps) => {
+    toast.warn(message, getOptions(options));
+  },
+  error: (message: string, options?: ToastContainerProps) => {
+    toast.error(message, getOptions(options));
+  },
+});
 
 export const showMessage = messageShow();
-
-// info: (message: string) => {
-//   toast.dismiss();
-//   toast.clearWaitingQueue();
-//   toast.info(message);
-// };
