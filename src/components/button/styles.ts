@@ -19,7 +19,7 @@ export const StyledButton = styled.button<IStyledButton>`
   outline: none;
   overflow: hidden;
 
-  ${({ theme, width, bold, lHeight, colorType }) => css`
+  ${({ theme, width, bold, lHeight, colorType, nativeIcon }) => css`
     width: ${width}px;
     color: ${theme.colors.white};
     font-weight: ${bold ? 'bold' : 'normal'};
@@ -32,7 +32,7 @@ export const StyledButton = styled.button<IStyledButton>`
       > span > svg {
         path {
           transition: all 0.3s ease;
-          fill: white;
+          fill: ${nativeIcon ? null : 'white'};
         }
       }
     }
