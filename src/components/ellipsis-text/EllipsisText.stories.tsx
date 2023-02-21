@@ -25,10 +25,11 @@ EllipsisTextWithTooltip.args = {
   children: <span>{text}</span>,
 };
 
-export const WithAnotherTooltipDirection = Template.bind({});
-WithAnotherTooltipDirection.args = {
+export const TooltipWithArrow = Template.bind({});
+TooltipWithArrow.args = {
+  offset: 20,
+  width: 500,
   id: 'tooltip2',
-  place: 'right',
   children: text,
   delayShow: 1000,
   delayHide: 1000,
