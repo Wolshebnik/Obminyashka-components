@@ -1,16 +1,3 @@
-// Blue
-const buttonBlue = '#12b6ed';
-const buttonBlueHover = '#00bfff';
-const buttonBlueActive = '#0094ff';
-
-//Green
-const buttonGreen = '#43b15d';
-const buttonGreenHover = '#3c9f53';
-const buttonGreenActive = '#008a20';
-
-//General state
-const buttonDisabled = '#DADADA';
-
 const buttonGradient =
   '90deg,rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5)';
 
