@@ -13,7 +13,7 @@ const ProductCard = ({
   picture,
   buttonText,
   isFavorite,
-  margin = 0,
+  margin,
   avatar = '',
   inboxMessage,
 }: ProductCardProps) => {

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 import * as Icon from '../icon';
 
-export const Card = styled.div<{ margin: number }>`
+export const Card = styled.div<{ margin?: number }>`
   position: relative;
   width: 290px;
   height: 419px;
