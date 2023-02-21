@@ -1,13 +1,17 @@
-import { Field } from 'formik';
+import { Field, FieldProps } from 'formik';
 
 import { Input } from '../input';
 import { InputProps } from '../input/types';
-import { fieldProps, InputOnChangeEventType } from './types';
+import { InputOnChangeEventType } from './types';
 
-export const InputField = ({ name, label, ...propsField }: InputProps) => {
+export const InputField = ({ name, label, ...props }: InputProps) => {
   return (
     <Field name={name}>
-      {({ field: { value, onChange, ...props }, meta, form }: fieldProps) => {
+      {({
+        field: { value, onChange, ...fieldProps },
+        meta,
+        form,
+      }: FieldProps) => {
         const error = meta.touched && meta.error ? meta.error : undefined;
         const change = async (newValue: InputOnChangeEventType) => {
           await form.setFieldValue(name, newValue);
@@ -16,12 +20,11 @@ export const InputField = ({ name, label, ...propsField }: InputProps) => {
 
         return (
           <Input
+            {...props}
             label={label}
             error={error}
+            {...fieldProps}
             onChange={(e) => change(typeof e === 'string' ? e : e.target.value)}
-            {...propsField}
-            {...props}
-            name={name}
           />
         );
       }}

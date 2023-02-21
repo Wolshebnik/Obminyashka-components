@@ -1,7 +1,8 @@
-import { Formik, Form } from 'formik';
+import { Formik, Form, FormikValues } from 'formik';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { InputField } from './index';
+import { InputField } from '.';
+import { Button } from '../button';
 import { initialValues, validationSchema } from './config';
 
 export default {
@@ -10,35 +11,37 @@ export default {
 } as ComponentMeta<typeof InputField>;
 
 const Template: ComponentStory<typeof InputField> = (args) => {
+  const onSubmit = (values: FormikValues) => {
+    console.log(values);
+  };
+
   return (
     <Formik
+      onSubmit={onSubmit}
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={(values) => {
-        console.log(values);
-      }}
     >
-      {({ values, touched }) => {
-        console.log(touched);
-        console.log(values);
+      {() => {
         return (
           <Form style={{ display: 'flex', gap: 30, flexDirection: 'column' }}>
             <InputField
-              placeholder="text"
-              label="Enter your login"
               {...args}
               name="text"
+              placeholder="text"
+              label="Enter your login"
             />
 
             <InputField
+              {...args}
+              name="password"
               type="password"
               placeholder="password"
               label="Enter your password"
-              {...args}
-              name="password"
             />
 
             <InputField
+              {...args}
+              name="tel"
               type="tel"
               inputMaxWidth="588px"
               label="Enter your phone"
@@ -46,9 +49,9 @@ const Template: ComponentStory<typeof InputField> = (args) => {
               wrapperInputErrorWidth="415px"
               placeholder="+38(999) 999-99-99"
               inputJustifyContent="space-between"
-              {...args}
-              name="tel"
             />
+
+            <Button type="submit" text="Submit" />
           </Form>
         );
       }}
