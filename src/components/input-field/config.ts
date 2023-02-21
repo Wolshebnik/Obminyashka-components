@@ -2,9 +2,9 @@ import * as Yup from 'yup';
 import { IInitialValues } from './types';
 
 export const initialValues: IInitialValues = {
+  tel: '',
   text: '',
   password: '',
-  tel: '',
 };
 
 export const validationSchema = Yup.object().shape({

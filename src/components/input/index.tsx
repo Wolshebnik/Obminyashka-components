@@ -63,8 +63,8 @@ const Input = ({
       )}
 
       <Styles.WrapperInputError
-        wrapperInputErrorWidth={wrapperInputErrorWidth}
         isTypeSearch={isTypeSearch}
+        wrapperInputErrorWidth={wrapperInputErrorWidth}
       >
         <Styles.InputIcon>
           {type === 'tel' && (

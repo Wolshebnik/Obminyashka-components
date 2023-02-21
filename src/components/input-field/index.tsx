@@ -8,9 +8,9 @@ export const InputField = ({ name, label, ...props }: InputProps) => {
   return (
     <Field name={name}>
       {({
-        field: { value, onChange, ...fieldProps },
         meta,
         form,
+        field: { value, onChange, ...fieldProps },
       }: FieldProps) => {
         const error = meta.touched && meta.error ? meta.error : undefined;
         const change = async (newValue: InputOnChangeEventType) => {
