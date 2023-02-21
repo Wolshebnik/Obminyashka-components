@@ -1,4 +1,4 @@
-export interface ProductCardProps {
+export interface IProductCardProps {
   text: string;
   city: string;
   margin?: number;
@@ -8,8 +8,4 @@ export interface ProductCardProps {
   onClick: () => void;
   isFavorite?: boolean;
   inboxMessage?: number;
-}
-
-export interface InboxMessageProps {
-  inboxMessage: number;
 }

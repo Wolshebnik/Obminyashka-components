@@ -1,3 +1,3 @@
-export interface InboxMessageProps {
+export interface IInboxMessageProps {
   inboxMessage: number;
 }

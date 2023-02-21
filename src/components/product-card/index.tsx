@@ -2,21 +2,21 @@ import * as Icon from '../icon';
 import * as Styles from './styles';
 import { Button } from '../button';
 import { Avatar } from '../avatar';
-import { ProductCardProps } from './types';
+import { IProductCardProps } from './types';
 import { InboxMessage } from '../inbox-message';
 import { EllipsisText } from '../ellipsis-text'; 
 
 const ProductCard = ({
   city,
   text,
+  margin,
   onClick,
   picture,
   buttonText,
   isFavorite,
-  margin,
   avatar = '',
   inboxMessage,
-}: ProductCardProps) => {
+}: IProductCardProps) => {
   return (
     <Styles.Card margin={margin}>
       <Styles.FavoriteMarker isFavorite={isFavorite}>

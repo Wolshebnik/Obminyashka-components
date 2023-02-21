@@ -1,8 +1,8 @@
 import * as Icon from '../icon';
-import { InboxMessageProps } from './types';
+import { IInboxMessageProps } from './types';
 import { InboxDiv, InboxSpan } from './styles';
 
-const InboxMessage = ({ inboxMessage }: InboxMessageProps) => (
+const InboxMessage = ({ inboxMessage }: IInboxMessageProps) => (
   <InboxDiv>
     <Icon.InboxMessage />
     <InboxSpan>{inboxMessage}</InboxSpan>
