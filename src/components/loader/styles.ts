@@ -19,10 +19,10 @@ const animation = keyframes`
 
 const linearAnimation = keyframes`
    0% {
-        left: -60px;
+        left:-40%;
     }
     100% {
-        left: 280px;
+        left: 130%; 
     }
 `;
 
@@ -49,15 +49,20 @@ export const SecondDiv = styled.div`
   ${styleSet};
   animation-delay: -0.5s;
 `;
+export const styleWrapper = styled.div`
+  position: relative;
+  min-width: 100%;
+  height: 50px;
+`;
 
 export const LdsLinear = styled.div`
   position: absolute;
   top: 0;
-  height: 100px;
-  width: 50px;
+  height: 50px;
+  width: 45px;
   background: linear-gradient(${({ theme }) => theme.colors.buttonGradient});
   transform: skewX(-45deg);
-  animation: 0.8s ${linearAnimation} infinite linear;
+  animation: 1.5s ${linearAnimation} infinite linear;
 `;
 
 export const Background = styled.div`
@@ -68,5 +73,4 @@ export const Background = styled.div`
   height: 50px;
   background: ${({ theme }) => theme.colors.btnBlue};
   border-radius: 25px;
-  overflow: hidden;
 `;

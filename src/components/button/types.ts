@@ -17,6 +17,7 @@ export interface IButton extends Omit<CustomButton, 'ref'> {
   isLoading?: boolean;
   orderRight?: boolean;
   colorType?: ColorType;
+  animationType?: 'secondary';
 }
 
 export interface IStyledButton

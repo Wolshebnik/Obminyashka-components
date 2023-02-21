@@ -17,6 +17,7 @@ export const StyledButton = styled.button<IStyledButton>`
   transition: background-color 0.3s ease;
   cursor: pointer;
   outline: none;
+  overflow: hidden;
 
   ${({ theme, width, bold, lHeight, colorType }) => css`
     width: ${width}px;
@@ -48,8 +49,7 @@ export const StyledButton = styled.button<IStyledButton>`
 `;
 
 export const WrapIcon = styled.span<{ orderRight?: boolean }>`
-  flex-shrink: 0;
-  line-height: 0;
+  display: flex;
   order: ${({ orderRight }) => (orderRight ? 1 : 0)};
 
   & > svg {

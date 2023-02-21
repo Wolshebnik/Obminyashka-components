@@ -19,6 +19,16 @@ export const argTypes = {
     },
     control: { type: 'boolean' },
   },
+  animationType: {
+    type: { name: 'string' },
+    description: 'Animation type',
+    table: {
+      defaultValue: { summary: 'default' },
+      type: { summary: 'string' },
+    },
+    control: { type: 'select' },
+    options: ['default', 'secondary'],
+  },
   bold: {
     name: 'bold',
     type: { name: 'boolean' },

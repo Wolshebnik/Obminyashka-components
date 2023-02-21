@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Icon } from '..';
 import { Button } from '.';
+import * as Icon from '../icon';
 import { argTypes } from './arg-types';
 
 export default {
@@ -35,4 +35,11 @@ ButtonIconRight.args = {
   text: 'Button',
   orderRight: true,
   icon: <Icon.Google />,
+};
+
+export const ButtonAnimation = Template.bind({});
+ButtonAnimation.args = {
+  text: 'button',
+  isLoading: true,
+  animationType: 'secondary',
 };

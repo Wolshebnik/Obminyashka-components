@@ -19,5 +19,5 @@ DefaultLoader.args = {};
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  styleType: 'secondary',
+  animationType: 'secondary',
 };

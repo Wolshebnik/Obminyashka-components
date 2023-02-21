@@ -3,6 +3,7 @@ const dts = require('rollup-plugin-dts');
 const url = require('@rollup/plugin-url');
 const image = require('@rollup/plugin-image');
 const terser = require('@rollup/plugin-terser');
+const postcss = require('rollup-plugin-postcss');
 const commonjs = require('@rollup/plugin-commonjs');
 const typescript = require('@rollup/plugin-typescript');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
@@ -49,6 +50,12 @@ module.exports = [
       typescript({
         tsconfig: './tsconfig.json',
         exclude: ['**/*.stories.tsx'],
+      }),
+      postcss({
+        extract: 'index.css',
+        modules: true,
+        use: ['sass'],
+        minimize: true,
       }),
     ],
     external: ['react', 'react-dom'],

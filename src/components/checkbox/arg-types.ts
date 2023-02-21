@@ -1,4 +1,11 @@
 export const argTypes = {
+  name: {
+    name: 'name',
+    type: { name: 'string', required: true },
+    description: 'Name of the input',
+    control: { type: 'string' },
+  },
+
   onChange: {
     name: 'onChange',
     type: { name: 'function' },
@@ -6,31 +13,20 @@ export const argTypes = {
     action: 'change',
   },
 
-  margin: {
-    name: 'margin',
-    type: { name: 'number', required: true },
-    description: 'CSS margin',
-    table: {
-      type: { summary: 'number' },
-      defaultValue: { summary: 12 },
-    },
-    control: { type: 'number' },
-  },
-
   gap: {
     name: 'gap',
-    type: { name: 'number', required: false },
+    type: { name: 'number' },
     description: 'gap',
     table: {
       type: { summary: 'number' },
-      defaultValue: { summary: 14 },
+      defaultValue: { summary: 20 },
     },
     control: { type: 'number' },
   },
 
   fontSize: {
     name: 'font-size',
-    type: { name: 'number', required: true },
+    type: { name: 'number' },
     description: 'CSS font-size',
     table: {
       type: { summary: 'number' },
@@ -41,18 +37,17 @@ export const argTypes = {
 
   text: {
     name: 'text',
-    type: { name: 'string', required: true },
+    type: { name: 'string' },
     description: 'text value of label',
     table: {
-      type: { summary: 'string' },
       defaultValue: { summary: 'Checkbox' },
+      type: { summary: 'string' },
     },
-    control: { type: 'string' },
   },
 
   type: {
     name: 'type',
-    type: { name: 'string', required: true },
+    type: { name: 'string' },
     description: 'type of input',
     table: {
       type: { summary: 'string' },

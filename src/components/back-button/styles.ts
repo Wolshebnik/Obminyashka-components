@@ -16,6 +16,8 @@ export const Text = styled.span`
 `;
 
 export const Icon = styled.span`
+  display: flex;
+
   > svg {
     height: 24px;
     width: 24px;
