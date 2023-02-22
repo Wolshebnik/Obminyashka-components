@@ -8,4 +8,13 @@ export const argTypes = {
       defaultValue: { summary: 'Title' },
     },
   },
+  hiddenDots: {
+    name: 'hiddenDots',
+    type: { name: 'boolean' },
+    description: 'hiddenDots',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: 'true' },
+    },
+  },
 };

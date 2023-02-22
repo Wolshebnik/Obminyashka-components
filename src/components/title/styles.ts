@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const H2 = styled.h2`
   display: flex;
@@ -12,10 +12,13 @@ export const H2 = styled.h2`
   font-family: Caveat, cursive;
 `;
 
-export const Span = styled.span`
-  display: inline-block;
+export const Span = styled.span<{ hiddenDots?: boolean }>`
   width: 11px;
   height: 11px;
-  background-color: ${({ theme }) => theme.colors.btnBlue};
   border-radius: 50%;
+
+  ${({ hiddenDots, theme }) => css`
+    display: ${hiddenDots ? 'none' : 'inline-block'};
+    background-color: ${theme.colors.btnBlue};
+  `}
 `;

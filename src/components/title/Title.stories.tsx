@@ -21,3 +21,9 @@ TitleWithStyles.args = {
   text: 'Поточні пропозиції',
   style: { fontSize: 20 },
 };
+
+export const TitleWithoutDots = Template.bind({});
+TitleWithoutDots.args = {
+  text: 'Поточні пропозиції',
+  hiddenDots: true,
+};
