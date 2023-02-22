@@ -32,7 +32,7 @@ export const StyledButton = styled.button<IStyledButton>`
       > span > svg {
         path {
           transition: all 0.3s ease;
-          fill: ${nativeIcon ? null : 'white'};
+          fill: ${nativeIcon ? null : theme.colors.white};
         }
       }
     }
