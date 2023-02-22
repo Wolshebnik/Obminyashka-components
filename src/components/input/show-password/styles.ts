@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
-export const WrapIcon = styled.div<{ topPosition?: string }>`
+export const WrapIcon = styled.div`
   position: absolute;
-  display: flex;
-  top: ${({ topPosition }) => topPosition || '13px'};
+  top: 50%;
   right: 10px;
+  display: flex;
   cursor: pointer;
+  transform: translateY(-50%);
 
   svg {
     width: 24px;
