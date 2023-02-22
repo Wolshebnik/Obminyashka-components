@@ -7,6 +7,7 @@ import { showPassword } from './show-password';
 
 const Input = ({
   id,
+  type,
   label,
   value,
   error,
@@ -14,7 +15,6 @@ const Input = ({
   inputGap,
   labelColor,
   placeholder,
-  type = 'text',
   labelFontSize,
   inputMaxWidth,
   labelFontWeight,
@@ -31,11 +31,7 @@ const Input = ({
   const { component, currentType } = showPassword(notPasswordType);
   const typing = notPasswordType ? type : currentType;
 
-  const clearInput = () => {
-    if (props.onChange) {
-      props.onChange('');
-    }
-  };
+  const clearInput = () => props.onChange && props.onChange('');
 
   return (
     <Styles.Label
