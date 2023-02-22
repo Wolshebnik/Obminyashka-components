@@ -16,7 +16,8 @@
     "build": "rm -rf dist && rollup -c",
     "pub": "rm -rf dist && npm run build && npm publish",
     "build-storybook": "build-storybook",
-    "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static"
+    "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
