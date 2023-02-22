@@ -5,6 +5,8 @@ import { ShowPasswordType } from 'components/input/types';
 
 import { WrapIcon } from './styles';
 
+export { showPassword };
+
 const showPassword = (isPassword: boolean): ShowPasswordType => {
   const [isShow, setIsShow] = useState(isPassword);
 
@@ -21,5 +23,3 @@ const showPassword = (isPassword: boolean): ShowPasswordType => {
     currentType,
   };
 };
-
-export { showPassword };
