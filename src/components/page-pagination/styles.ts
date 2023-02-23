@@ -24,65 +24,71 @@ export const StylesForPagination = styled.div`
     list-style: none;
   }
 
-  ${({ theme }) => css`
-    .rc-pagination-item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  .rc-pagination-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    list-style: none;
+    border-radius: 50%;
+    outline: 0;
+    cursor: pointer;
+
+    ${({ theme }) => css`
+      color: ${theme.colors.btnBlue};
+      border: 1px solid ${theme.colors.btnBlue};
+    `}
+
+    :hover {
+      transform: scale(1.1, 1.1);
+    }
+
+    :focus {
+      ${({ theme }) => css`
+        color: ${theme.colors.white};
+        background-color: ${theme.colors.btnBlue};
+      `}
+    }
+
+    &-active {
+      ${({ theme }) => css`
+        color: ${theme.colors.white};
+        background-color: ${theme.colors.btnBlue};
+      `}
+
+      :hover {
+        transform: none;
+      }
+    }
+  }
+
+  .rc-pagination-jump-prev,
+  .rc-pagination-jump-next {
+    outline: 0;
+
+    button {
       width: 40px;
       height: 40px;
-      text-align: center;
-      list-style: none;
-      border: 1px solid ${theme.colors.btnBlue};
+      padding-top: 12px;
       border-radius: 50%;
-      color: ${theme.colors.btnBlue};
       outline: 0;
       cursor: pointer;
+
+      ${({ theme }) => css`
+        color: ${theme.colors.btnBlue};
+        border: 1px solid ${theme.colors.btnBlue};
+      `}
 
       :hover {
         transform: scale(1.1, 1.1);
       }
-
-      :focus {
-        color: ${theme.colors.white};
-        background-color: ${theme.colors.btnBlue};
-      }
-
-      &-active {
-        color: ${theme.colors.white};
-        background-color: ${theme.colors.btnBlue};
-
-        :hover {
-          transform: none;
-        }
-      }
     }
-  `}
 
-  .rc-pagination-jump-prev,
-  .rc-pagination-jump-next {
-    ${({ theme }) => css`
-      outline: 0;
-
-      button {
-        width: 40px;
-        height: 40px;
-        padding-top: 12px;
-        border: 1px solid ${theme.colors.btnBlue};
-        border-radius: 50%;
-        color: ${theme.colors.btnBlue};
-        outline: 0;
-        cursor: pointer;
-
-        :hover {
-          transform: scale(1.1, 1.1);
-        }
-      }
-
-      button::after {
-        content: '•••';
-      }
-    `}
+    button::after {
+      content: '•••';
+    }
   }
 
   .rc-pagination-item,
