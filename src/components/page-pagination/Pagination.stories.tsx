@@ -26,19 +26,17 @@ const Template: ComponentStory<typeof PagePagination> = (args) => {
   };
 
   return (
-    <>
-      <PagePagination
-        {...args}
-        onChange={updatePage}
-        current={currentPage}
-        total={allData.length}
-        pageSize={countPerPage}
-      >
-        {collection.map((item: { id: number; title: string }) => (
-          <span key={item.id}>{item.title}</span>
-        ))}
-      </PagePagination>
-    </>
+    <PagePagination
+      {...args}
+      onChange={updatePage}
+      current={currentPage}
+      total={allData.length}
+      pageSize={countPerPage}
+    >
+      {collection.map((item: { id: number; title: string }) => (
+        <span key={item.id}>{item.title}</span>
+      ))}
+    </PagePagination>
   );
 };
 

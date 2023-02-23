@@ -1,13 +1,13 @@
 import { ReactNode } from 'react';
 
 export interface IPagination {
-  children: ReactNode;
-  showLessItems?: boolean;
   total: number;
-  showTitle?: boolean;
   current: number;
   pageSize: number;
-  onChange: (page: number) => void;
+  children: ReactNode;
+  showTitle?: boolean;
   nextIcon: ReactNode;
   prevIcon: ReactNode;
+  showLessItems?: boolean;
+  onChange: (page: number) => void;
 }

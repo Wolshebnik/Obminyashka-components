@@ -10,21 +10,21 @@ export const Container = styled.div`
 `;
 
 export const StylesForPagination = styled.div`
-  ${({ theme }) => css`
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+
+  ul,
+  ol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
-    padding: 0;
-    font-size: 22px;
+    padding: 5px 0;
+    list-style: none;
+  }
 
-    ul,
-    ol {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-      padding: 5px 0;
-      list-style: none;
-    }
-
+  ${({ theme }) => css`
     .rc-pagination-item {
       display: flex;
       justify-content: center;
