@@ -26,7 +26,7 @@ export const EllipsisDiv = styled.div`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  cursor: pointer;
+  cursor: auto;
 `;
 
 export const Container = styled.div`
