@@ -15,6 +15,7 @@ const Button = ({
   width = 140,
   animationType,
   type = 'button',
+  nativeIcon = true,
   colorType = 'blue',
   ...props
 }: IButton) => (
@@ -27,6 +28,7 @@ const Button = ({
     disabled={disabled}
     colorType={colorType}
     orderRight={orderRight}
+    nativeIcon={nativeIcon}
     onClick={!isLoading ? onClick : undefined}
     {...props}
   >

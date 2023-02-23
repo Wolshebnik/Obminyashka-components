@@ -14,7 +14,7 @@ export const argTypes = {
     description: 'hiddenDots',
     table: {
       type: { summary: 'boolean' },
-      defaultValue: { summary: 'true' },
+      defaultValue: { summary: true },
     },
   },
 };

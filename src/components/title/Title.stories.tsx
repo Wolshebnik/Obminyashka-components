@@ -18,12 +18,12 @@ TitleDefault.args = {
 
 export const TitleWithStyles = Template.bind({});
 TitleWithStyles.args = {
-  text: 'Поточні пропозиції',
   style: { fontSize: 20 },
+  text: 'Поточні пропозиції',
 };
 
 export const TitleWithoutDots = Template.bind({});
 TitleWithoutDots.args = {
-  text: 'Поточні пропозиції',
   hiddenDots: true,
+  text: 'Поточні пропозиції',
 };
