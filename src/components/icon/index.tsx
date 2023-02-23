@@ -1,4 +1,6 @@
 export { ReactComponent as Activity } from 'assets/icons/activity.svg';
+export { ReactComponent as ArrowDown } from 'assets/icons/arrow-down.svg';
+export { ReactComponent as ArrowUp } from 'assets/icons/arrow-up.svg';
 export { ReactComponent as Avatar } from 'assets/icons/avatar.svg';
 export { ReactComponent as Bell } from 'assets/icons/bell.svg';
 export { ReactComponent as Camera } from 'assets/icons/camera.svg';
@@ -18,6 +20,7 @@ export { ReactComponent as Loader } from 'assets/icons/loader.svg';
 export { ReactComponent as Location } from 'assets/icons/location.svg';
 export { ReactComponent as Logout } from 'assets/icons/logout.svg';
 export { ReactComponent as Next } from 'assets/icons/next.svg';
+export { ReactComponent as NoPhoto } from 'assets/icons/no-photo.svg';
 export { ReactComponent as Phone } from 'assets/icons/phone.svg';
 export { ReactComponent as Plus } from 'assets/icons/plus.svg';
 export { ReactComponent as Prev } from 'assets/icons/prev.svg';
