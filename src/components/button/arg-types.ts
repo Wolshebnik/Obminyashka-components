@@ -113,6 +113,15 @@ export const argTypes = {
         type: 'select', 
       },
   }, */
+  nativeIcon: {
+    type: { name: 'boolean' },
+    description: 'Don\'t change color icon on hover',
+    table: {
+      defaultValue: { summary: true },
+      type: { summary: 'boolean' },
+    },
+    control: { type: 'boolean' },
+  },
   onClick: {
     name: 'onClick',
     type: { name: 'function' },
