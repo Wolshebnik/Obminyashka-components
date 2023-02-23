@@ -16,11 +16,15 @@ export interface IButton extends Omit<CustomButton, 'ref'> {
   lHeight?: string;
   isLoading?: boolean;
   orderRight?: boolean;
+  nativeIcon?: boolean;
   colorType?: ColorType;
   animationType?: 'secondary';
 }
 
 export interface IStyledButton
-  extends Pick<IButton, 'width' | 'lHeight' | 'bold' | 'orderRight'> {
+  extends Pick<
+    IButton,
+    'width' | 'lHeight' | 'bold' | 'orderRight' | 'nativeIcon'
+  > {
   colorType: ColorType;
 }
