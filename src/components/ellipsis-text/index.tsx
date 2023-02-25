@@ -23,14 +23,19 @@ export const EllipsisText = ({
   const deps: (number | undefined)[] = [
     ref?.current?.offsetWidth,
     ref?.current?.scrollWidth,
+    ref?.current?.offsetHeight,
+    ref?.current?.scrollHeight,
   ];
 
   useEffect(() => {
     const offsetWidth: number = ref?.current?.offsetWidth || 0;
+    const offsetHeight: number = ref?.current?.offsetHeight || 0;
     const scrollWidth: number = ref?.current?.scrollWidth || 0;
+    const scrollHeight: number = ref?.current?.scrollHeight || 0;
     const widthRatio: number = scrollWidth / offsetWidth;
+    const heightRatio: number = scrollHeight / offsetHeight;
 
-    if (widthRatio > 1.0) {
+    if (widthRatio > 1.0 || heightRatio > 1.5) {
       setToolTip(true);
     } else {
       setToolTip(false);
