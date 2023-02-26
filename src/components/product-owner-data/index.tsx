@@ -1,4 +1,3 @@
-// import { getTranslatedText } from 'components/local/localization';
 import * as Styles from './styles';
 import { Avatar } from '../avatar';
 import { EllipsisText } from '../ellipsis-text';
@@ -10,7 +9,9 @@ const ProductOwnerData = ({
   date,
   city,
   phone,
-  translatedText,
+  translatedTextDate,
+  translatedTextCity,
+  translatedTextPhone,
 }: IProductOwnerDataProps) => {
   return (
     <Styles.Container>
@@ -26,43 +27,45 @@ const ProductOwnerData = ({
 
       <Styles.PostData>
         <Styles.PostReqData>
-          <Styles.PostReqDataUl>
+          <Styles.PostReqDataBlock>
             {date && (
-              <Styles.PostReqDataUlItem>
-                <Styles.PostReqDataSpan>
-                  {translatedText}
-                </Styles.PostReqDataSpan>
-              </Styles.PostReqDataUlItem>
+              <Styles.PostReqDataText>
+                {translatedTextDate}
+              </Styles.PostReqDataText>
             )}
 
-            <Styles.PostReqDataUlItem>
-              <Styles.PostReqDataSpan>{translatedText}</Styles.PostReqDataSpan>
-            </Styles.PostReqDataUlItem>
+            <Styles.PostReqDataText>
+              {translatedTextCity}
+            </Styles.PostReqDataText>
 
             {phone && (
-              <Styles.PostReqDataUlItem>
-                <Styles.PostReqDataSpan>
-                  {translatedText}
-                </Styles.PostReqDataSpan>
-              </Styles.PostReqDataUlItem>
+              <Styles.PostReqDataText>
+                {translatedTextPhone}
+              </Styles.PostReqDataText>
             )}
-          </Styles.PostReqDataUl>
+          </Styles.PostReqDataBlock>
         </Styles.PostReqData>
 
         <Styles.PostResData>
-          <Styles.PostReqDataUl>
+          <Styles.PostReqDataBlock>
             {date && (
-              <Styles.PostReqDataUlItem>{date}</Styles.PostReqDataUlItem>
+              <Styles.PostReqDataText style={{ color: 'black' }}>
+                {date}
+              </Styles.PostReqDataText>
             )}
 
-            <Styles.PostReqDataUlItem style={{ width: '200px' }}>
-              <EllipsisText>{city}</EllipsisText>
-            </Styles.PostReqDataUlItem>
+            <Styles.PostReqDataText style={{ width: '200px', color: 'black' }}>
+              <EllipsisText id={city} width={300}>
+                {city}
+              </EllipsisText>
+            </Styles.PostReqDataText>
 
             {phone && (
-              <Styles.PostReqDataUlItem>{phone}</Styles.PostReqDataUlItem>
+              <Styles.PostReqDataText style={{ color: 'black' }}>
+                {phone}
+              </Styles.PostReqDataText>
             )}
-          </Styles.PostReqDataUl>
+          </Styles.PostReqDataBlock>
         </Styles.PostResData>
       </Styles.PostData>
     </Styles.Container>

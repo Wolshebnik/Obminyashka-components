@@ -40,7 +40,7 @@ export const PostResData = styled.div`
   padding: 5px 20px 15px 30px;
 `;
 
-export const PostReqDataUl = styled.ul`
+export const PostReqDataBlock = styled.div`
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -48,11 +48,7 @@ export const PostReqDataUl = styled.ul`
   line-height: 26px;
 `;
 
-export const PostReqDataUlItem = styled.li`
-  position: relative;
-`;
-
-export const PostReqDataSpan = styled.span`
+export const PostReqDataText = styled.div`
   color: #8f8f8f;
   white-space: nowrap;
 `;

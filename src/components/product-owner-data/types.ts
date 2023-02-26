@@ -1,8 +1,10 @@
 export interface IProductOwnerDataProps {
   name: string;
-  date: string;
+  date?: string;
   city: string;
-  phone: string;
+  phone?: string;
   avatar: string;
-  translatedText: string;
+  translatedTextDate: string,
+  translatedTextCity: string,
+  translatedTextPhone: string,
 }

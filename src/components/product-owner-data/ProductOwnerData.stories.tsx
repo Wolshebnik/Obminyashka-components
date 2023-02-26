@@ -35,5 +35,7 @@ ProductOwnerDataDefault.args = {
   date: '26.02.2023',
   phone: '097 357 37 77',
   avatar: image,
-  translatedText: 'translatedText',
+  translatedTextDate: 'Дата публікації:',
+  translatedTextCity: 'Місто:',
+  translatedTextPhone: 'Телефон:',
 };

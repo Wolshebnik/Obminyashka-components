@@ -17,7 +17,7 @@ export const argTypes = {
   },
   date: {
     name: 'date',
-    type: { name: 'string', required: true },
+    type: { name: 'string' },
     description: 'date',
     table: {
       type: { summary: 'string' },
