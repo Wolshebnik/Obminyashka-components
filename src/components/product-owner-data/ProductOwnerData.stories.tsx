@@ -30,12 +30,12 @@ const Template: ComponentStory<typeof ProductOwnerData> = (args) => (
 
 export const ProductOwnerDataDefault = Template.bind({});
 ProductOwnerDataDefault.args = {
-  name: 'Natali',
   city: 'Kyev',
+  avatar: image,
+  name: 'Natali',
   date: '26.02.2023',
   phone: '097 357 37 77',
-  avatar: image,
-  translatedTextDate: 'Дата публікації:',
   translatedTextCity: 'Місто:',
   translatedTextPhone: 'Телефон:',
+  translatedTextDate: 'Дата публікації:',
 };
