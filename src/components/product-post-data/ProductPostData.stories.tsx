@@ -15,6 +15,7 @@ const Template: ComponentStory<typeof ProductPostData> = (args) => (
     <ProductPostData {...args} />
   </OwnerAndPost>
 );
+
 export const ProductPostDefault = Template.bind({});
 ProductPostDefault.args = {
   age: '6-8',

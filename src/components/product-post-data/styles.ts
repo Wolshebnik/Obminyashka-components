@@ -14,26 +14,17 @@ export const Container = styled.div`
   `}
 `;
 
-export const TitleContainer = styled.div`
+export const WrapperContainer = styled.div`
   margin: 20px 0 0 30px;
 `;
 
 export const TitleH2 = styled.h2`
-  font-family: Proxima Nova, sans-serif;
   font-weight: 600;
-  font-style: normal;
   font-size: 22px;
   line-height: 40px;
 `;
 
-export const PostDataDescription = styled.div`
-  margin: 20px 0 0 30px;
-`;
-
 export const PostDataDescriptionText = styled.p`
-  font-family: Proxima Nova, sans-serif;
-  font-weight: 400;
-  font-style: normal;
   font-size: 16px;
   line-height: 26px;
 `;
@@ -48,9 +39,6 @@ export const PostDataDescriptionOl = styled.ol`
 `;
 
 export const PostDataDescriptionOlItem = styled.li`
-  font-family: Proxima Nova, sans-serif;
-  font-weight: 400;
-  font-style: normal;
   font-size: 14px;
   line-height: 24px;
 `;
@@ -70,8 +58,6 @@ export const PostDataDescriptionUl = styled.ul`
 `;
 
 export const PostDataDescriptionUlItem = styled.li`
-  font-weight: 400;
-  font-style: normal;
   font-size: 16px;
   line-height: 26px;
 `;
@@ -80,7 +66,7 @@ export const OwnerAndPost = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 0 auto;
   width: 420px;
   height: 500px;
-  margin: 0 auto;
 `;

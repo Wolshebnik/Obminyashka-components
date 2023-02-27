@@ -33,11 +33,11 @@ const ProductPostData = ({
   return (
     <Styles.Container>
       <div>
-        <Styles.TitleContainer>
+        <Styles.WrapperContainer>
           <Styles.TitleH2>{title}</Styles.TitleH2>
-        </Styles.TitleContainer>
+        </Styles.WrapperContainer>
 
-        <Styles.PostDataDescription>
+        <Styles.WrapperContainer>
           <Styles.PostDataDescriptionText>
             <Styles.PostDataDescriptionSpan>
               {`${translatedTextChangesTo}:`}
@@ -52,7 +52,7 @@ const ProductPostData = ({
               </Styles.PostDataDescriptionOlItem>
             ))}
           </Styles.PostDataDescriptionOl>
-        </Styles.PostDataDescription>
+        </Styles.WrapperContainer>
 
         <Styles.ButtonContainer>
           <Button text={buttonText} width={250} />
@@ -60,12 +60,12 @@ const ProductPostData = ({
       </div>
 
       <div>
-        <Styles.TitleContainer>
+        <Styles.WrapperContainer>
           <Styles.TitleH2>{`${translatedTextDescription}:`}</Styles.TitleH2>
-        </Styles.TitleContainer>
+        </Styles.WrapperContainer>
 
         <Styles.PostDataBoxContainer>
-          <Styles.PostDataDescription>
+          <Styles.WrapperContainer>
             <Styles.PostDataDescriptionUl>
               <Styles.PostDataDescriptionUlItem>
                 <Styles.PostDataDescriptionSpan>
@@ -87,9 +87,9 @@ const ProductPostData = ({
                 </Styles.PostDataDescriptionSpan>
               </Styles.PostDataDescriptionUlItem>
             </Styles.PostDataDescriptionUl>
-          </Styles.PostDataDescription>
+          </Styles.WrapperContainer>
 
-          <Styles.PostDataDescription>
+          <Styles.WrapperContainer>
             <Styles.PostDataDescriptionUl>
               <Styles.PostDataDescriptionUlItem>
                 {`${size ? `${size} ${sm} /` : ''} ${age ?? ''}`}
@@ -103,7 +103,7 @@ const ProductPostData = ({
                 {gender}
               </Styles.PostDataDescriptionUlItem>
             </Styles.PostDataDescriptionUl>
-          </Styles.PostDataDescription>
+          </Styles.WrapperContainer>
         </Styles.PostDataBoxContainer>
       </div>
     </Styles.Container>
