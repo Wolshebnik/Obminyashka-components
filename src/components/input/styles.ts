@@ -131,7 +131,8 @@ export const Input = styled.input<IInput>`
     border: 1px solid
       ${error ? theme.colors.input.error : theme.colors.input.border};
 
-    &:focus {
+    &:focus,
+    &:hover {
       border-color: ${error
         ? theme.colors.input.error
         : theme.colors.input.focus};
