@@ -35,7 +35,7 @@ ProductOwnerDataDefault.args = {
   name: 'Natali',
   date: '26.02.2023',
   phone: '097 357 37 77',
-  translatedTextCity: 'Місто:',
-  translatedTextPhone: 'Телефон:',
-  translatedTextDate: 'Дата публікації:',
+  cityTranslatedText: 'Місто:',
+  phoneTranslatedText: 'Телефон:',
+  dateTranslatedText: 'Дата публікації:',
 };

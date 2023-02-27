@@ -15,6 +15,7 @@ const forestGreen = '#32a72a';
 
 //General state
 const buttonDisabled = '#DADADA';
+const magnolia = '#fdfcff';
 const colorGrey = '#8E8E8E';
 const colorError = '#ff4c4c';
 const colorBorder = '#bdbdbd';
@@ -33,6 +34,7 @@ const turbo = '#FEE200';
 const dustyGray = '#969696';
 const silver = '#c4c4c4';
 const silverChalice = '#A0A0A0';
+const grey = '#8f8f8f';
 
 const input = Object.freeze({
   border: colorBorder,
@@ -59,6 +61,11 @@ const itemCard = Object.freeze({
   avatarTrueHover: schoolBusYellow,
   borderCard: silver,
 });
+
+const productOwnerData = Object.freeze({
+  ownerDataBG: magnolia,
+  ownerDataText: grey,
+})
 
 const ellipsisShadow =
   '10px 10px 20px rgba(0, 0, 0, 0.3), 0px 31px 32px -24px rgba(0, 0, 0, 1)';
@@ -107,6 +114,7 @@ const COLORS = Object.freeze({
   inboxMessage,
   buttonGradient,
   ellipsisShadow,
+  productOwnerData,
   ...colorsDefault,
 });
 

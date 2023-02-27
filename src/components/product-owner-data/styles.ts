@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background-color: #fdfcff;
+  background-color: ${({ theme }) => theme.colors.productOwnerData.ownerDataBG};
   padding-bottom: 15px;
 `;
 
@@ -49,6 +49,6 @@ export const PostReqDataBlock = styled.div`
 `;
 
 export const PostReqDataText = styled.div`
-  color: #8f8f8f;
+  color: ${({ theme }) => theme.colors.productOwnerData.ownerDataText};
   white-space: nowrap;
 `;

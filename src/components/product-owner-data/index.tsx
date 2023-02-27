@@ -4,14 +4,14 @@ import { EllipsisText } from '../ellipsis-text';
 import { IProductOwnerDataProps } from './types';
 
 const ProductOwnerData = ({
-  avatar,
   name,
   date,
   city,
   phone,
-  translatedTextDate,
-  translatedTextCity,
-  translatedTextPhone,
+  avatar,
+  dateTranslatedText,
+  cityTranslatedText,
+  phoneTranslatedText,
 }: IProductOwnerDataProps) => {
   return (
     <Styles.Container>
@@ -30,17 +30,17 @@ const ProductOwnerData = ({
           <Styles.PostReqDataBlock>
             {date && (
               <Styles.PostReqDataText>
-                {translatedTextDate}
+                {dateTranslatedText}
               </Styles.PostReqDataText>
             )}
 
             <Styles.PostReqDataText>
-              {translatedTextCity}
+              {cityTranslatedText}
             </Styles.PostReqDataText>
 
             {phone && (
               <Styles.PostReqDataText>
-                {translatedTextPhone}
+                {phoneTranslatedText}
               </Styles.PostReqDataText>
             )}
           </Styles.PostReqDataBlock>

@@ -39,12 +39,4 @@ export const argTypes = {
       type: { summary: 'string' },
     },
   },
-  translatedText: {
-    name: 'translatedText',
-    type: { name: 'string', required: true },
-    description: 'translatedText',
-    table: {
-      type: { summary: 'string' },
-    },
-  },
 };
