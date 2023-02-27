@@ -9,7 +9,8 @@ export { Input } from './input';
 export { InputField } from './input-field';
 export { Loader } from './loader';
 export { PagePagination } from './page-pagination';
-export { ProductOwnerData } from './product-owner-data';
+export { ProductPostData } from './product-post-data';
 export { Title } from './title';
 export { Toast, showMessage } from './toast';
+export {ProductOwnerData} from './product-owner-data' 
 export * as Icon from './icon';
