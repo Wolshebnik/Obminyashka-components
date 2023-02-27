@@ -54,6 +54,7 @@ AddRemove.args = {
   icon: <Icon.Plus />,
   text: 'Додати поле',
 };
+
 export const AddRemoveEmpty = Template.bind({});
 AddRemoveEmpty.args = {
   gap: 34,

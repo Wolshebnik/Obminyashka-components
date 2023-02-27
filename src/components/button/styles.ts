@@ -15,10 +15,10 @@ export const Button = styled.button<IStyledButton>`
   overflow: hidden;
 
   ${({
-    theme,
     gap,
     bold,
     width,
+    theme,
     height,
     lHeight,
     isRotate,
