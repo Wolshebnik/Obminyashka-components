@@ -7,9 +7,11 @@ const buttonBlueHover = '#00bfff';
 const buttonBlueActive = '#0094ff';
 
 //Green
+const apple = '#37B82E';
 const buttonGreen = '#43b15d';
-const buttonGreenHover = '#3c9f53';
 const buttonGreenActive = '#008a20';
+const buttonGreenHover = '#3c9f53';
+const forestGreen = '#32a72a';
 
 //Grey
 const buttonGrey = '#787878';
@@ -27,20 +29,65 @@ const rightColorText = '#333333';
 const colorBorderFocus = '#707070';
 const colorTextDisabled = '#A3A3A3';
 
+//General yellow
+const corn = '#E0C600';
+const schoolBusYellow = '#f5d800';
+const turbo = '#FEE200';
+
+//General grey
+const dustyGray = '#969696';
+const silver = '#c4c4c4';
+const silverChalice = '#A0A0A0';
+
 const input = Object.freeze({
-  error: colorError,
-  searchBtn: buttonBlue,
-  textGrey: colorGrey,
   border: colorBorder,
+  error: colorError,
   focus: colorBorderFocus,
-  textBlack: blackColorText,
-  textRight: rightColorText,
   searchBorder: activeColor,
+  searchBtn: buttonBlue,
+  textBlack: blackColorText,
   textDisabled: colorTextDisabled,
+  textGrey: colorGrey,
+  textRight: rightColorText,
+});
+
+const inboxMessage = Object.freeze({
+  inboxMessageActive: forestGreen,
+  inboxMessageHover: apple,
+});
+
+const itemCard = Object.freeze({
+  avatarFalseDefault: silverChalice,
+  avatarFalseHover: dustyGray,
+  avatarTrueActive: corn,
+  avatarTrueDefault: turbo,
+  avatarTrueHover: schoolBusYellow,
+  borderCard: silver,
 });
 
 const ellipsisShadow =
   '10px 10px 20px rgba(0, 0, 0, 0.3), 0px 31px 32px -24px rgba(0, 0, 0, 1)';
+
+const button = {
+  blue: {
+    bg: buttonBlue,
+    hover: buttonBlueHover,
+    active: buttonBlueActive,
+    disable: buttonDisabled,
+  },
+  green: {
+    bg: buttonGreen,
+    hover: buttonGreenHover,
+    active: buttonGreenActive,
+    disable: buttonDisabled,
+  },
+  grey: {
+    bg: buttonGrey,
+    hover: buttonGreyHover,
+    active: buttonGreyActive,
+    disable: buttonDisabled,
+  },
+};
 
 const colorsDefault = Object.freeze({
   shadow: 'rgba(89, 102, 116, 0.1)',
@@ -64,30 +111,11 @@ const colorsDefault = Object.freeze({
   white: '#FFFFFF',
 });
 
-const button = {
-  blue: {
-    bg: buttonBlue,
-    hover: buttonBlueHover,
-    active: buttonBlueActive,
-    disable: buttonDisabled,
-  },
-  green: {
-    bg: buttonGreen,
-    hover: buttonGreenHover,
-    active: buttonGreenActive,
-    disable: buttonDisabled,
-  },
-  grey: {
-    bg: buttonGrey,
-    hover: buttonGreyHover,
-    active: buttonGreyActive,
-    disable: buttonDisabled,
-  },
-};
-
 const COLORS = Object.freeze({
   input,
   button,
+  itemCard,
+  inboxMessage,
   buttonGradient,
   ellipsisShadow,
   ...colorsDefault,
