@@ -6,9 +6,12 @@ export const Container = styled.div`
   flex-direction: column;
   padding-bottom: 40px;
   height: 100%;
-  background-color: ${({ theme }) => theme.colors.colorPopup};
-  box-shadow: 0 0 40px ${({ theme }) => theme.colors.shadow};
   word-break: break-all;
+
+  ${({ theme }) => css`
+    background-color: ${theme.colors.colorPopup};
+    box-shadow: 0 0 40px ${theme.colors.shadow};
+  `}
 `;
 
 export const TitleContainer = styled.div`
