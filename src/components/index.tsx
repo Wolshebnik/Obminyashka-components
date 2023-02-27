@@ -10,6 +10,7 @@ export { InputField } from './input-field';
 export { Loader } from './loader';
 export { PagePagination } from './page-pagination';
 export { ProductDescription } from './product-description';
+export { ProductPostData } from './product-post-data';
 export { Title } from './title';
 export { Toast, showMessage } from './toast';
 export * as Icon from './icon';

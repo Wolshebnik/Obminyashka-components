@@ -8,6 +8,7 @@ export const ReactTooltip = styled(Tooltip)<ITooltipProps>`
   &.custom-tooltip {
     padding: 16px;
     border-radius: 8px;
+    opacity: 1;
     cursor: context-menu;
 
     ${({ width }) => css`
