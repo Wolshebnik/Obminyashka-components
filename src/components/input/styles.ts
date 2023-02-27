@@ -86,14 +86,17 @@ export const WrapperSearchLink = styled.div`
   margin-left: 1px;
   background-color: ${({ theme }) => theme.colors.input.searchBtn};
   border-radius: 20px;
+  
 
   svg {
     width: 22px;
     height: 22px;
-
+    transition: 0.33s;
+    
     :hover {
       width: 26px;
       height: 26px;
+      transition: 0.23s;
   }
 `;
 
@@ -131,7 +134,8 @@ export const Input = styled.input<IInput>`
     border: 1px solid
       ${error ? theme.colors.input.error : theme.colors.input.border};
 
-    &:focus {
+    &:focus,
+    &:hover {
       border-color: ${error
         ? theme.colors.input.error
         : theme.colors.input.focus};
