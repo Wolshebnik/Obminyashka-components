@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-  background-color: ${({ theme }) => theme.colors.productOwnerData.ownerDataBG};
+  background-color: ${({ theme }) => theme.colors.productOwnerData.bg};
   padding-bottom: 15px;
 `;
 
@@ -20,7 +20,6 @@ export const ProductOwnerName = styled.div`
 `;
 
 export const ProductOwnerTitleH2 = styled.h2`
-  font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-style: normal;
   font-size: 22px;
@@ -41,14 +40,16 @@ export const PostResData = styled.div`
 `;
 
 export const PostReqDataBlock = styled.div`
-  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
   line-height: 26px;
 `;
 
-export const PostReqDataText = styled.div`
-  color: ${({ theme }) => theme.colors.productOwnerData.ownerDataText};
+export const PostReqDataText = styled.div<{ color?: string }>`
   white-space: nowrap;
+
+  ${({ theme, color }) => css`
+    color: ${color ? color : theme.colors.productOwnerData.text};
+  `};
 `;

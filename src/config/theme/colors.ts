@@ -13,6 +13,11 @@ const buttonGreenActive = '#008a20';
 const buttonGreenHover = '#3c9f53';
 const forestGreen = '#32a72a';
 
+//Grey
+const buttonGrey = '#787878';
+const buttonGreyHover = '#6b6b6b';
+const buttonGreyActive = '#5e5e5e';
+
 //General state
 const buttonDisabled = '#DADADA';
 const magnolia = '#fdfcff';
@@ -63,8 +68,8 @@ const itemCard = Object.freeze({
 });
 
 const productOwnerData = Object.freeze({
-  ownerDataBG: magnolia,
-  ownerDataText: grey,
+  bg: magnolia,
+  text: grey,
 })
 
 const ellipsisShadow =
@@ -81,6 +86,12 @@ const button = {
     bg: buttonGreen,
     hover: buttonGreenHover,
     active: buttonGreenActive,
+    disable: buttonDisabled,
+  },
+  grey: {
+    bg: buttonGrey,
+    hover: buttonGreyHover,
+    active: buttonGreyActive,
     disable: buttonDisabled,
   },
 };
