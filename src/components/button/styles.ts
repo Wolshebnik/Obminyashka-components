@@ -2,29 +2,40 @@ import styled, { css } from 'styled-components';
 
 import { IStyledButton } from './types';
 
-export const StyledButton = styled.button<IStyledButton>`
+export const Button = styled.button<IStyledButton>`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  padding: 0 22px;
-  height: 49px;
   font-style: normal;
   font-size: 16px;
-  text-transform: uppercase;
   border: 0;
-  border-radius: 25px;
   transition: background-color 0.3s ease;
   cursor: pointer;
   outline: none;
   overflow: hidden;
 
-  ${({ theme, width, bold, lHeight, colorType, nativeIcon }) => css`
+  ${({
+    theme,
+    gap,
+    bold,
+    width,
+    height,
+    lHeight,
+    isRotate,
+    colorType,
+    nativeIcon,
+    outsideText,
+  }) => css`
+    gap: ${gap || 10}px;
     width: ${width}px;
+    height: ${height || 50}px;
+    padding: ${outsideText ? '0' : '0 22px'};
     color: ${theme.colors.white};
     font-weight: ${bold ? 'bold' : 'normal'};
     line-height: ${lHeight || 20}px;
+    text-transform: ${outsideText ? 'inherit' : 'uppercase'};
     background-color: ${theme.colors.button[colorType].bg};
+    border-radius: ${outsideText ? '50%' : '25px'};
 
     &:hover {
       background-color: ${theme.colors.button[colorType].hover};
@@ -45,6 +56,16 @@ export const StyledButton = styled.button<IStyledButton>`
       background-color: ${theme.colors.button[colorType].disable};
       cursor: default;
     }
+
+    ${outsideText &&
+    css`
+      > span > svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      ${isRotate && `transform: rotate(45deg);`}
+    `}
   `}
 `;
 
@@ -56,4 +77,16 @@ export const WrapIcon = styled.span<{ orderRight?: boolean }>`
     height: 24px;
     width: 24px;
   }
+`;
+
+export const WrapperAddDel = styled.div<{ gap?: number }>`
+  display: flex;
+  align-items: center;
+
+  span {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  ${({ gap }) => gap && `gap: ${gap}px;`}
 `;

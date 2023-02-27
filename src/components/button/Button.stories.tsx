@@ -43,3 +43,23 @@ ButtonAnimation.args = {
   isLoading: true,
   animationType: 'secondary',
 };
+
+export const AddRemove = Template.bind({});
+AddRemove.args = {
+  gap: 34,
+  width: 34,
+  height: 34,
+  outsideText: true,
+  colorType: 'green',
+  icon: <Icon.Plus />,
+  text: 'Додати поле',
+};
+export const AddRemoveEmpty = Template.bind({});
+AddRemoveEmpty.args = {
+  gap: 34,
+  width: 34,
+  height: 34,
+  colorType: 'grey',
+  outsideText: true,
+  icon: <Icon.Plus />,
+};
