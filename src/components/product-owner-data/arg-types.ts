@@ -39,4 +39,37 @@ export const argTypes = {
       type: { summary: 'string' },
     },
   },
+  dateTranslatedText: {
+    name: 'dateTranslatedText',
+    type: { name: 'string' },
+    description: 'translated text on En or Ua',
+    table: {
+      defaultValue: { summary: 'Дата публікації'},
+      type: { summary: 'string' },
+    },
+    control: { type: 'select' },
+    options: ['Дата публікації', 'Publication date:'],
+  },
+  cityTranslatedText: {
+    name: 'cityTranslatedText',
+    type: { name: 'string' },
+    description: 'translated text on En or Ua',
+    table: {
+      defaultValue: { summary: 'Місто:'},
+      type: { summary: 'string' },
+    },
+    control: { type: 'select' },
+    options: ['Місто:', 'City:'],
+  },
+  phoneTranslatedText: {
+    name: 'phoneTranslatedText',
+    type: { name: 'string' },
+    description: 'translated text on En or Ua',
+    table: {
+      defaultValue: { summary: 'Телефон:'},
+      type: { summary: 'string' },
+    },
+    control: { type: 'select' },
+    options: ['Телефон:', 'Phone:'],
+  },
 };
