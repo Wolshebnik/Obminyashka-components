@@ -5,7 +5,6 @@ export const Container = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   height: 220px;
-  font-family: Roboto, sans-serif;
 
   ${({ theme }) => css`
     background: ${theme.colors.backgroundColor};
@@ -31,4 +30,8 @@ export const DescriptionContainer = styled.div`
 export const DescriptionText = styled.p`
   font-size: 16px;
   line-height: 26px;
+`;
+
+export const Wrapper = styled.div`
+  max-width: 1251px;
 `;

@@ -1,5 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
+import { Wrapper } from './styles';
 import { ProductDescription } from '.';
 import { argTypes } from './arg-types';
 
@@ -10,11 +11,13 @@ export default {
 } as ComponentMeta<typeof ProductDescription>;
 
 const Template: ComponentStory<typeof ProductDescription> = (args) => (
-  <ProductDescription {...args} />
+  <Wrapper>
+    <ProductDescription {...args} />
+  </Wrapper>
 );
 
 export const ProductDescriptionDefault = Template.bind({});
 ProductDescriptionDefault.args = {
   title: 'Автівка',
-  description: 'Автівка Mercedes-Benz',
+  description: 'Автівка Merсedes-Benz',
 };
