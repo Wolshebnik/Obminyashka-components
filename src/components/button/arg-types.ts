@@ -19,6 +19,15 @@ export const argTypes = {
     },
     control: { type: 'boolean' },
   },
+  outsideText: {
+    type: { name: 'boolean' },
+    description: 'Style button where text outside.',
+    table: {
+      defaultValue: { summary: false },
+      type: { summary: 'boolean' },
+    },
+    control: { type: 'boolean' },
+  },
   animationType: {
     type: { name: 'string' },
     description: 'Animation type',
@@ -55,6 +64,24 @@ export const argTypes = {
     description: 'CSS width',
     table: {
       defaultValue: { summary: 140 },
+      type: { summary: 'number' },
+    },
+    control: { type: 'number' },
+  },
+  height: {
+    name: 'height',
+    type: { name: 'number' },
+    description: 'CSS height',
+    table: {
+      type: { summary: 'number' },
+    },
+    control: { type: 'number' },
+  },
+  gap: {
+    name: 'gap',
+    type: { name: 'number' },
+    description: 'CSS gap',
+    table: {
       type: { summary: 'number' },
     },
     control: { type: 'number' },
@@ -115,7 +142,7 @@ export const argTypes = {
   }, */
   nativeIcon: {
     type: { name: 'boolean' },
-    description: 'Don\'t change color icon on hover',
+    description: "Don't change color icon on hover",
     table: {
       defaultValue: { summary: true },
       type: { summary: 'boolean' },

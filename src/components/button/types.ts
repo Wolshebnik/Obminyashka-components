@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react';
 
-export type ColorType = 'blue' | 'green';
+export type ColorType = 'blue' | 'green' | 'grey';
 
 interface CustomButton
   extends DetailedHTMLProps<
@@ -9,22 +9,33 @@ interface CustomButton
   > {}
 
 export interface IButton extends Omit<CustomButton, 'ref'> {
+  gap?: number;
   text?: string;
   width?: number;
   bold?: boolean;
+  height?: number;
   icon?: ReactNode;
   lHeight?: string;
   isLoading?: boolean;
   orderRight?: boolean;
   nativeIcon?: boolean;
   colorType?: ColorType;
+  outsideText?: boolean;
   animationType?: 'secondary';
 }
 
 export interface IStyledButton
   extends Pick<
     IButton,
-    'width' | 'lHeight' | 'bold' | 'orderRight' | 'nativeIcon'
+    | 'gap'
+    | 'bold'
+    | 'width'
+    | 'height'
+    | 'lHeight'
+    | 'orderRight'
+    | 'nativeIcon'
+    | 'outsideText'
   > {
+  isRotate?: boolean;
   colorType: ColorType;
 }
