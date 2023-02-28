@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-  background-color: ${({ theme }) => theme.colors.productOwnerData.bg};
   padding-bottom: 15px;
+  background-color: ${({ theme }) => theme.colors.productOwnerData.bg};
 `;
 
 export const ProductOwner = styled.div`

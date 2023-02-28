@@ -12,5 +12,5 @@ export { PagePagination } from './page-pagination';
 export { ProductPostData } from './product-post-data';
 export { Title } from './title';
 export { Toast, showMessage } from './toast';
-export {ProductOwnerData} from './product-owner-data' 
+export { ProductOwnerData } from './product-owner-data';
 export * as Icon from './icon';
