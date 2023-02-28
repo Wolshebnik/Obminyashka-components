@@ -34,12 +34,24 @@ export const argTypes = {
     control: { type: 'text' },
   },
 
+  errorGap: {
+    name: 'errorGap',
+    type: { name: 'string' },
+    description:
+      'CSS property, sets the gap between error message and input.\n\n ' +
+      '\n\nExamples : "20px"(em,rem) or "10px 5px"(em,rem)',
+    table: {
+      type: { summary: 'string' },
+    },
+    control: { type: 'text' },
+  },
+
   type: {
     name: 'Type',
     type: { name: 'string' },
     description:
-      'HTML attribute. This component handles three types of this ' +
-      'attribute ("text", "password", "tel").\n\n"text" - you can enter' +
+      'HTML attribute. This component handles several types of this ' +
+      'attribute ("text", "password", "tel", "search").\n\n"text" - you can enter' +
       ' all characters, letters and numbers, the content of the input is ' +
       'visible and not validated. \n\n"password" - hides the entered data, ' +
       'replacing them with `****`. It also adds an icon to the right that' +
@@ -118,6 +130,15 @@ export const argTypes = {
     name: 'LabelFontSize',
     type: { name: 'string' },
     description: `CSS property.\n\n Sets size text of label.\n\nWritten in a
+      string type to define units of measure. Example : "10px (rem,em)"`,
+    table: {
+      type: { summary: 'string' },
+    },
+  },
+  errorFontSize: {
+    name: 'ErrorFontSize',
+    type: { name: 'string' },
+    description: `CSS property.\n\n Sets size text of error.\n\nWritten in a
       string type to define units of measure. Example : "10px (rem,em)"`,
     table: {
       type: { summary: 'string' },
