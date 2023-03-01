@@ -13,7 +13,7 @@ export const Card = styled.div<{ margin?: number }>`
 
   ${({ theme, margin }) => css`
     background-color: ${theme.colors.white};
-    margin: ${margin} ? ${margin}px || 0;
+    margin: ${margin ? `${margin}px` : 0};
     border: 2px dotted ${theme.colors.itemCard.borderCard};
   `}
 `;

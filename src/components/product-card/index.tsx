@@ -4,7 +4,7 @@ import { Button } from '../button';
 import { Avatar } from '../avatar';
 import { IProductCardProps } from './types';
 import { InboxMessage } from '../inbox-message';
-import { EllipsisText } from '../ellipsis-text'; 
+import { EllipsisText } from '../ellipsis-text';
 
 const ProductCard = ({
   city,
@@ -42,7 +42,9 @@ const ProductCard = ({
           <Icon.Location />
 
           <Styles.CitySpan>
-            <EllipsisText id={city} place='right'>{city}</EllipsisText>
+            <EllipsisText id={city} place="right">
+              {city}
+            </EllipsisText>
           </Styles.CitySpan>
         </Styles.LocationIcon>
 
