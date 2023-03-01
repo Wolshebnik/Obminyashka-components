@@ -91,6 +91,8 @@ const button = {
 
 const colorsDefault = Object.freeze({
   shadow: 'rgba(89, 102, 116, 0.1)',
+  darkShadow: 'rgba(255, 255, 255, 0.2)',
+  greyBackgroundColor: 'rgba(255, 255, 255, 0.4)',
   colorPopup: '#FDFDFF',
   btnBlue: buttonBlue,
   btnBlueHover: buttonBlueHover,

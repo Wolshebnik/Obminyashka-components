@@ -3,8 +3,9 @@ export { BackButton } from './back-button';
 export { Button } from './button';
 export { CheckBox } from './checkbox';
 export { EllipsisText } from './ellipsis-text';
+export { HelpChildren } from './help-children';
 export { Image } from './image';
-export { InboxMessage } from './inbox-message'
+export { InboxMessage } from './inbox-message';
 export { Input } from './input';
 export { InputField } from './input-field';
 export { Loader } from './loader';
