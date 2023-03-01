@@ -5,12 +5,7 @@ import * as Icon from '../icon';
 import * as Styles from './styles';
 import { IHelpChildren } from './types';
 
-export const HelpChildren = ({
-  name,
-  text,
-  title,
-  buttonText,
-}: IHelpChildren) => {
+const HelpChildren = ({ name, text, title, buttonText }: IHelpChildren) => {
   return (
     <Styles.HelpChildren>
       <Styles.TitleWrapper>
@@ -29,4 +24,5 @@ export const HelpChildren = ({
     </Styles.HelpChildren>
   );
 };
-export default HelpChildren;
+
+export { HelpChildren };

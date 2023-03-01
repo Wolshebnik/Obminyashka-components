@@ -4,9 +4,9 @@ import childrenImg from 'assets/img/children.png';
 
 export const HelpChildren = styled.div`
   display: block;
-  border-radius: 20px;
   margin-bottom: 145px;
   padding: 45px 45px 60px;
+  border-radius: 20px;
 
   ${({ theme }) => css`
     background: ${theme.colors.white} url(${childrenImg}) no-repeat bottom right;
@@ -18,12 +18,12 @@ export const TitleWrapper = styled.div`
 `;
 
 export const Text = styled.p`
+  margin-bottom: 40px;
   width: 408px;
   font-size: 18px;
   line-height: 24px;
   font-family: Roboto;
   border-radius: 20px;
-  margin-bottom: 40px;
   backdrop-filter: blur(3px);
 
   ${({ theme }) => css`
@@ -34,8 +34,8 @@ export const Text = styled.p`
 `;
 
 export const Strong = styled.strong`
-  font-weight: 700;
   display: contents;
+  font-weight: 700;
   line-height: 15px;
   text-decoration: none;
 
