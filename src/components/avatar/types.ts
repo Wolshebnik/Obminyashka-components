@@ -1,5 +1,5 @@
 export interface AvatarProps {
   width?: number;
   height?: number;
-  source: string;
+  source?: string | null;
 }

@@ -64,8 +64,10 @@ Error.args = {
   type: 'text',
   inputGap: '',
   error: 'Error',
+  errorGap: '5px',
   name: 'inputName',
   label: 'Label text',
+  errorFontSize: '16px',
   inputFlexDirection: '',
   placeholder: 'Placeholder',
 };
