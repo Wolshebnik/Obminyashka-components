@@ -116,6 +116,7 @@ const colorsDefault = Object.freeze({
   activeColor,
   scrollbarBg: '#f1f1f1',
   white: '#FFFFFF',
+  backgroundColor: '#fdfcff',
 });
 
 const COLORS = Object.freeze({
