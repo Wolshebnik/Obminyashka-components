@@ -41,7 +41,7 @@ export const GlobalStyles = createGlobalStyle`
   list-style-type: none;
 }
 
- ${({ theme }) => css`
+ ${() => css`
    /* Track */
    ::-webkit-scrollbar-track {
      background: '#f1f1f1';
