@@ -70,7 +70,7 @@ const itemCard = Object.freeze({
 const productOwnerData = Object.freeze({
   bg: magnolia,
   text: grey,
-})
+});
 
 const ellipsisShadow =
   '10px 10px 20px rgba(0, 0, 0, 0.3), 0px 31px 32px -24px rgba(0, 0, 0, 1)';
