@@ -3,8 +3,8 @@ export interface IProductOwnerDataProps {
   date?: string;
   city: string;
   phone?: string;
-  avatar?: string | null;
-  dateTranslatedText: string,
-  cityTranslatedText: string,
-  phoneTranslatedText: string,
+  avatar?: string;
+  dateTranslatedText: string;
+  cityTranslatedText: string;
+  phoneTranslatedText: string;
 }
