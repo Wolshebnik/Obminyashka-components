@@ -90,9 +90,9 @@ export const argTypes = {
     control: { type: 'boolean' },
   },
   pauseOnFocusLoss: {
-    name: 'hideProgressBar',
+    name: 'pauseOnFocusLoss',
     type: { name: 'boolean' },
-    description: 'hideProgressBar',
+    description: 'pauseOnFocusLoss',
     table: {
       type: { summary: 'boolean' },
       defaultValue: { summary: true },
