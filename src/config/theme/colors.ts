@@ -39,6 +39,16 @@ const dustyGray = '#969696';
 const silver = '#c4c4c4';
 const silverChalice = '#A0A0A0';
 
+//Select language
+
+const selectLanguage = Object.freeze({
+  backgroundHover: '#ccf2ff',
+  colorHover: '#1a1a1a',
+  color: '#777777',
+  colorChecked: '#0fc3ff',
+  border: '#12b6ed',
+});
+
 const input = Object.freeze({
   border: colorBorder,
   error: colorError,
@@ -118,6 +128,7 @@ const COLORS = Object.freeze({
   inboxMessage,
   buttonGradient,
   ellipsisShadow,
+  selectLanguage,
   ...colorsDefault,
 });
 
