@@ -13,8 +13,14 @@ const buttonGreenActive = '#008a20';
 const buttonGreenHover = '#3c9f53';
 const forestGreen = '#32a72a';
 
+//Grey
+const buttonGrey = '#787878';
+const buttonGreyHover = '#6b6b6b';
+const buttonGreyActive = '#5e5e5e';
+
 //General state
 const buttonDisabled = '#DADADA';
+const magnolia = '#fdfcff';
 const colorGrey = '#8E8E8E';
 const colorError = '#ff4c4c';
 const colorBorder = '#bdbdbd';
@@ -33,6 +39,7 @@ const turbo = '#FEE200';
 const dustyGray = '#969696';
 const silver = '#c4c4c4';
 const silverChalice = '#A0A0A0';
+const grey = '#8f8f8f';
 
 const input = Object.freeze({
   border: colorBorder,
@@ -60,6 +67,11 @@ const itemCard = Object.freeze({
   borderCard: silver,
 });
 
+const productOwnerData = Object.freeze({
+  bg: magnolia,
+  text: grey,
+});
+
 const ellipsisShadow =
   '10px 10px 20px rgba(0, 0, 0, 0.3), 0px 31px 32px -24px rgba(0, 0, 0, 1)';
 
@@ -74,6 +86,12 @@ const button = {
     bg: buttonGreen,
     hover: buttonGreenHover,
     active: buttonGreenActive,
+    disable: buttonDisabled,
+  },
+  grey: {
+    bg: buttonGrey,
+    hover: buttonGreyHover,
+    active: buttonGreyActive,
     disable: buttonDisabled,
   },
 };
@@ -98,6 +116,7 @@ const colorsDefault = Object.freeze({
   activeColor,
   scrollbarBg: '#f1f1f1',
   white: '#FFFFFF',
+  backgroundColor: '#fdfcff',
 });
 
 const COLORS = Object.freeze({
@@ -107,6 +126,7 @@ const COLORS = Object.freeze({
   inboxMessage,
   buttonGradient,
   ellipsisShadow,
+  productOwnerData,
   ...colorsDefault,
 });
 
