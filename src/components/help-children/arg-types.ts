@@ -1,30 +1,30 @@
 export const argTypes = {
-  translatedTextHelpName: {
-    name: 'TranslatedTextHelpName',
+  title: {
+    name: 'title',
     type: { name: 'string' },
     description: 'This props depends on the choice of language on the site',
     table: {
       type: { summary: 'string' },
     },
   },
-  translatedTextHelpButton: {
-    name: 'TranslatedTextHelpName',
+  name: {
+    name: 'name',
     type: { name: 'string' },
     description: 'This props depends on the choice of language on the site',
     table: {
       type: { summary: 'string' },
     },
   },
-  translatedTextHelpTitle: {
-    name: 'TranslatedTextHelpName',
+  text: {
+    name: 'text',
     type: { name: 'string' },
     description: 'This props depends on the choice of language on the site',
     table: {
       type: { summary: 'string' },
     },
   },
-  translatedTextHelpText: {
-    name: 'TranslatedTextHelpName',
+  buttonText: {
+    name: 'buttonText',
     type: { name: 'string' },
     description: 'This props depends on the choice of language on the site',
     table: {

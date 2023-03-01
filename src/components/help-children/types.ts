@@ -1,6 +1,6 @@
 export interface IHelpChildren {
-  translatedTextHelpName: string;
-  translatedTextHelpText: string;
-  translatedTextHelpTitle: string;
-  translatedTextHelpButton: string;
+  name: string;
+  text: string;
+  title: string;
+  buttonText: string;
 }

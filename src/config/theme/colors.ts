@@ -41,6 +41,10 @@ const silver = '#c4c4c4';
 const silverChalice = '#A0A0A0';
 const grey = '#8f8f8f';
 
+//RGBA colors
+const background = 'rgba(255, 255, 255, 0.4)';
+const shadow = 'rgba(255, 255, 255, 0.2)';
+
 const input = Object.freeze({
   border: colorBorder,
   error: colorError,
@@ -70,7 +74,12 @@ const itemCard = Object.freeze({
 const productOwnerData = Object.freeze({
   bg: magnolia,
   text: grey,
-})
+});
+
+const helpChildren = Object.freeze({
+  bg: background,
+  shadow: shadow,
+});
 
 const ellipsisShadow =
   '10px 10px 20px rgba(0, 0, 0, 0.3), 0px 31px 32px -24px rgba(0, 0, 0, 1)';
@@ -98,8 +107,6 @@ const button = {
 
 const colorsDefault = Object.freeze({
   shadow: 'rgba(89, 102, 116, 0.1)',
-  darkShadow: 'rgba(255, 255, 255, 0.2)',
-  greyBackgroundColor: 'rgba(255, 255, 255, 0.4)',
   colorPopup: '#FDFDFF',
   btnBlue: buttonBlue,
   btnBlueHover: buttonBlueHover,
@@ -126,6 +133,7 @@ const COLORS = Object.freeze({
   button,
   itemCard,
   inboxMessage,
+  helpChildren,
   buttonGradient,
   ellipsisShadow,
   productOwnerData,

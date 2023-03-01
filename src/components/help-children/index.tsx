@@ -6,25 +6,25 @@ import * as Styles from './styles';
 import { IHelpChildren } from './types';
 
 export const HelpChildren = ({
-  translatedTextHelpName,
-  translatedTextHelpText,
-  translatedTextHelpTitle,
-  translatedTextHelpButton,
+  name,
+  text,
+  title,
+  buttonText,
 }: IHelpChildren) => {
   return (
     <Styles.HelpChildren>
       <Styles.TitleWrapper>
-        <Title hiddenDots text={`${translatedTextHelpTitle}`} />
+        <Title hiddenDots text={title} />
       </Styles.TitleWrapper>
 
-      <Styles.HelpChildrenText>
-        <Styles.Strong>{`${translatedTextHelpName}`}</Styles.Strong>
+      <Styles.Text>
+        <Styles.Strong>{name}</Styles.Strong>
         &nbsp;
-        {`${translatedTextHelpText}`}
-      </Styles.HelpChildrenText>
+        {text}
+      </Styles.Text>
 
       <Styles.StylizedBtn>
-        <Button icon={<Icon.Heart />} text={`${translatedTextHelpButton}`} />
+        <Button icon={<Icon.Heart />} text={buttonText} />
       </Styles.StylizedBtn>
     </Styles.HelpChildren>
   );

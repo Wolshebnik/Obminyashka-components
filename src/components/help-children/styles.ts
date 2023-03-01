@@ -11,28 +11,13 @@ export const HelpChildren = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.white} url(${childrenImg}) no-repeat bottom right;
   `}
-
-  @media (min-width: 320px) {
-    display: none;
-  }
-
-  @media (min-width: 980px) {
-    display: block;
-  }
 `;
 
-export const HelpChildrenTitleH3 = styled.h3`
-  font-size: 50px;
-  line-height: 24px;
-  font-family: Caveat;
+export const TitleWrapper = styled.div`
   padding-bottom: 36px;
-
-  ${({ theme }) => css`
-    background: ${theme.colors.btnBlue};
-  `}
 `;
 
-export const HelpChildrenText = styled.p`
+export const Text = styled.p`
   width: 408px;
   font-size: 18px;
   line-height: 24px;
@@ -43,17 +28,9 @@ export const HelpChildrenText = styled.p`
 
   ${({ theme }) => css`
     color: ${theme.colors.blackColorText};
-    box-shadow: 0 0 20px ${theme.colors.shadow};
-    background-color: ${theme.colors.darkShadow};
+    background-color: ${theme.colors.helpChildren.bg};
+    box-shadow: 0 0 20px ${theme.colors.helpChildren.shadow};
   `}
-
-  @media (min-width: 980px) {
-    width: 250px;
-  }
-
-  @media (min-width: 1140px) {
-    width: 408px;
-  }
 `;
 
 export const Strong = styled.strong`
@@ -79,6 +56,10 @@ export const StylizedBtn = styled.div`
     ${({ theme }) => css`
       color: ${theme.colors.white};
       background-color: ${theme.colors.activeColor};
+
+      :hover {
+        background-color: ${theme.colors.btnBlueActive};
+      }
     `}
 
     span {
@@ -89,17 +70,7 @@ export const StylizedBtn = styled.div`
       width: 18px;
       height: 18px;
     }
-
-    :hover {
-      ${({ theme }) => css`
-        background-color: ${theme.colors.btnBlueActive};
-      `}
-    }
   }
-`;
-
-export const TitleWrapper = styled.div`
-  padding-bottom: 36px;
 `;
 
 export const Wrapper = styled.div`

@@ -18,9 +18,8 @@ const Template: ComponentStory<typeof HelpChildren> = (args) => (
 
 export const HelpChildrenDefault = Template.bind({});
 HelpChildrenDefault.args = {
-  translatedTextHelpName: 'Obminyashka',
-  translatedTextHelpButton: 'I want to help children!',
-  translatedTextHelpTitle: 'There are no other peoples children!',
-  translatedTextHelpText:
-    'cooperates with volunteer organizations for all over Ukraine! You can help too! Give your unnecessary things, they will end up in orphanages and orphanages!',
+  name: 'Obminyashka',
+  buttonText: 'I want to help children!',
+  title: 'There are no other peoples children!',
+  text: 'cooperates with volunteer organizations for all over Ukraine! You can help too! Give your unnecessary things, they will end up in orphanages and orphanages!',
 };
