@@ -1,68 +1,54 @@
 const svgr = require('@svgr/rollup');
-const dts = require('rollup-plugin-dts');
 const url = require('@rollup/plugin-url');
+const json = require('@rollup/plugin-json');
 const image = require('@rollup/plugin-image');
-const terser = require('@rollup/plugin-terser');
-const postcss = require('rollup-plugin-postcss');
 const commonjs = require('@rollup/plugin-commonjs');
-const typescript = require('@rollup/plugin-typescript');
+const typescript = require('rollup-plugin-typescript2');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
+const peerDepsExternal = require('rollup-plugin-peer-deps-external');
 
-module.exports = [
-  {
-    input: 'src/index.ts',
-    output: [
-      {
-        file: 'dist/cjs/index.js',
-        format: 'cjs',
-        exports: 'named',
-        sourcemap: true,
-      },
-      {
-        file: 'dist/esm/index.js',
-        format: 'esm',
-        exports: 'named',
-        sourcemap: true,
-      },
-    ],
-    plugins: [
-      url(),
-      image(),
-      terser(),
-      commonjs(),
-      nodeResolve(),
-      svgr({
-        svgoConfig: {
-          plugins: [
-            {
-              name: 'preset-default',
-              params: {
-                overrides: {
-                  removeViewBox: false,
-                  mergePaths: false,
-                },
+module.exports = {
+  input: 'src/index.ts',
+  output: [
+    {
+      dir: 'dist',
+      format: 'cjs',
+      sourcemap: true,
+      interop: 'auto',
+      exports: 'named',
+      preserveModules: true,
+    },
+  ],
+  plugins: [
+    svgr({
+      svgoConfig: {
+        plugins: [
+          {
+            name: 'preset-default',
+            params: {
+              overrides: {
+                removeViewBox: false,
+                mergePaths: false,
               },
             },
-            'prefixIds',
-          ],
-        },
-      }),
-      typescript({
-        tsconfig: './tsconfig.json',
-        exclude: ['**/*.stories.tsx'],
-      }),
-      postcss({
-        extract: 'index.css',
-        modules: true,
-        use: ['sass'],
-        minimize: true,
-      }),
-    ],
-    external: ['react', 'react-dom'],
-  },
-  {
-    input: 'dist/esm/types/index.d.ts',
-    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-    plugins: [dts.default()],
-  },
-];
+          },
+          'prefixIds',
+        ],
+      },
+    }),
+
+    url(),
+    json(),
+    image(),
+    commonjs(),
+    nodeResolve(),
+    peerDepsExternal(),
+    typescript({
+      useTsconfigDeclarationDir: true,
+      tsconfigOverride: {
+        exclude: ['src/setupTests.ts', '**/*.stories.tsx'],
+      },
+    }),
+  ],
+  external: ['react', 'react-dom'],
+};

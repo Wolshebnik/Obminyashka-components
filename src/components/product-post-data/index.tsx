@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 
-import { Button, Icon } from 'components';
-
+import { Button, Icon } from '..';
 import * as Styles from './styles';
 import { IProductPostData } from './types';
 
@@ -22,7 +21,6 @@ const ProductPostData = ({
   translatedTextCheckInUl,
   translatedTextChangesTo,
   translatedTextDescription,
-  ...props
 }: IProductPostData) => {
   const transformWishes = readyForOffers
     ? [...(wishes || []), translatedTextCheckInUl]

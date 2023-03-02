@@ -80,7 +80,6 @@ const helpChildren = Object.freeze({
   bg: background,
   shadow: shadow,
 });
-
 const ellipsisShadow =
   '10px 10px 20px rgba(0, 0, 0, 0.3), 0px 31px 32px -24px rgba(0, 0, 0, 1)';
 

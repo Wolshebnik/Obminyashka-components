@@ -44,7 +44,7 @@ export const argTypes = {
     type: { name: 'string' },
     description: 'translated text on En or Ua',
     table: {
-      defaultValue: { summary: 'Дата публікації'},
+      defaultValue: { summary: 'Дата публікації' },
       type: { summary: 'string' },
     },
     control: { type: 'select' },
@@ -55,7 +55,7 @@ export const argTypes = {
     type: { name: 'string' },
     description: 'translated text on En or Ua',
     table: {
-      defaultValue: { summary: 'Місто:'},
+      defaultValue: { summary: 'Місто:' },
       type: { summary: 'string' },
     },
     control: { type: 'select' },
@@ -66,7 +66,7 @@ export const argTypes = {
     type: { name: 'string' },
     description: 'translated text on En or Ua',
     table: {
-      defaultValue: { summary: 'Телефон:'},
+      defaultValue: { summary: 'Телефон:' },
       type: { summary: 'string' },
     },
     control: { type: 'select' },

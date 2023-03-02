@@ -15,9 +15,7 @@
     },
     "import/resolver": {
       "node": {
-        "paths": [
-          "src"
-        ]
+        "paths": ["src"]
       }
     }
   },
@@ -34,14 +32,9 @@
     "$$": true,
     "expect": true
   },
-  "extends": [
-    "airbnb-typescript",
-    "plugin:prettier/recommended"
-  ],
-  "plugins": [
-    "import",
-    "@typescript-eslint"
-  ],
+  "extends": ["airbnb-typescript", "plugin:prettier/recommended"],
+  "plugins": ["import", "@typescript-eslint"],
+
   "rules": {
     "@typescript-eslint/naming-convention": "off",
     "import/prefer-default-export": "off",
@@ -71,20 +64,17 @@
   },
   "overrides": [
     {
-      "files": [
-        "**/*.stories.*"
-      ],
+      "files": ["**/*.stories.*"],
       "rules": {
         "no-param-reassign": "off"
       }
     },
     {
-      "files": [
-        "src/**/test.tsx"
-      ],
+      "files": ["src/**/test.tsx"],
       "rules": {
         "react/jsx-props-no-spreading": "off"
       }
     }
-  ]
+  ],
+  "ignorePatterns": ["rollup.config.js"]
 }
