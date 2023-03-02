@@ -18,7 +18,7 @@ export const ProductCardWithItem = Template.bind({});
 ProductCardWithItem.args = {
   text: 'hoody',
   avatar: image,
-  inboxMessage: 9,
+  inboxMessage: 7,
   city: 'NEW YORK',
   isFavorite: true,
   buttonText: 'button',
