@@ -49,19 +49,19 @@ const ProductOwnerData = ({
         <Styles.PostResData>
           <Styles.PostReqDataBlock>
             {date && (
-              <Styles.PostReqDataText color='black'>
+              <Styles.PostReqDataText color="black">
                 {date}
               </Styles.PostReqDataText>
             )}
 
-            <Styles.PostReqDataText color='black' style={{ width: '200px' }}>
+            <Styles.PostReqDataText color="black" style={{ width: '200px' }}>
               <EllipsisText id={city} width={300}>
                 {city}
               </EllipsisText>
             </Styles.PostReqDataText>
 
             {phone && (
-              <Styles.PostReqDataText color='black'>
+              <Styles.PostReqDataText color="black">
                 {phone}
               </Styles.PostReqDataText>
             )}

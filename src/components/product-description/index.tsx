@@ -6,7 +6,7 @@ const ProductDescription = ({ title, description }: IProductDescription) => (
     <Styles.TitleContainer>
       <Styles.Title>{title}</Styles.Title>
     </Styles.TitleContainer>
-    
+
     <Styles.DescriptionContainer>
       <Styles.DescriptionText>{description}</Styles.DescriptionText>
     </Styles.DescriptionContainer>

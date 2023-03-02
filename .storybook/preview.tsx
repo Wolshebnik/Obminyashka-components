@@ -4,26 +4,26 @@ import { MemoryRouter } from 'react-router-dom';
 import { withConsole } from '@storybook/addon-console';
 
 import { Toast } from '../src/components';
+import { ThemeWrap } from '../src/context';
 import { GlobalStyles } from '../src/styles/globalStyles';
-import { ThemeWrap, ThemeContextProvider } from '../src/context';
 
 addDecorator((storyFn, context) => withConsole()(storyFn)(context));
 
 addDecorator((story) => (
-  <ThemeContextProvider>
-    <ThemeWrap>
-      <GlobalStyles />
-      <MemoryRouter>{story()}</MemoryRouter>
-      <Toast limit={5}/>
-    </ThemeWrap>
-  </ThemeContextProvider>
+  <ThemeWrap>
+    <GlobalStyles />
+    <MemoryRouter>{story()}</MemoryRouter>
+    <Toast limit={5} />
+  </ThemeWrap>
 ));
+
+addDecorator((storyFn, context) => withConsole()(storyFn)(context));
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
-      color: /(background|color)$/i,
+      // color: /(background|color)$/i,
       date: /Date$/,
     },
   },

@@ -12,6 +12,7 @@ export default {
 
 const Template: ComponentStory<typeof InputField> = (args) => {
   const onSubmit = (values: FormikValues) => {
+    // eslint-disable-next-line no-console
     console.log(values);
   };
 
