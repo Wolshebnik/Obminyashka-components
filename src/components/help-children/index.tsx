@@ -1,7 +1,7 @@
-import { Title } from '../title';
 import { Button } from 'components/button';
 
 import * as Icon from '../icon';
+import { Title } from '../title';
 import * as Styles from './styles';
 import { IHelpChildren } from './types';
 
