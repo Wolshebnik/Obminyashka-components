@@ -11,6 +11,7 @@ export { Input } from './input';
 export { InputField } from './input-field';
 export { Loader } from './loader';
 export { PagePagination } from './page-pagination';
+export { ProductCard } from './product-card';
 export { ProductDescription } from './product-description';
 export { ProductOwnerData } from './product-owner-data';
 export { ProductPostData } from './product-post-data';
