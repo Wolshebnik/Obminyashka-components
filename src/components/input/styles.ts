@@ -1,6 +1,12 @@
 import styled, { css } from 'styled-components';
 
-import { IInput, ILabel, ILabelSpan, IWrapperInputError } from './types';
+import {
+  IInput,
+  ILabel,
+  ILabelSpan,
+  ISpanError,
+  IWrapperInputError,
+} from './types';
 
 export const Label = styled.label<ILabel>`
   display: flex;
@@ -108,7 +114,8 @@ export const WrapperInputError = styled.div<IWrapperInputError>`
   display: flex;
   flex-direction: column;
 
-  ${({ wrapperInputErrorWidth, isTypeSearch }) => css`
+  ${({ wrapperInputErrorWidth, isTypeSearch, errorGap }) => css`
+    ${errorGap && `gap:${errorGap};`}
     ${wrapperInputErrorWidth && `width: ${wrapperInputErrorWidth}`};
     ${isTypeSearch &&
     css`
@@ -175,13 +182,13 @@ export const WrapperReset = styled.div`
   }
 `;
 
-export const SpanError = styled.span<{ error: string }>`
-  font-size: 12px;
+export const SpanError = styled.span<ISpanError>`
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
 
-  ${({ theme, error }) => css`
+  ${({ theme, error, errorFontSize }) => css`
+    font-size: ${errorFontSize || '12px'};
     color: ${theme.colors.input.error};
 
     ${Input} {

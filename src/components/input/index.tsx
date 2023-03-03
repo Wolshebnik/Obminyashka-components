@@ -13,8 +13,10 @@ const Input = ({
   error,
   onClick,
   inputGap,
+  errorGap,
   labelColor,
   placeholder,
+  errorFontSize,
   labelFontSize,
   inputMaxWidth,
   labelFontWeight,
@@ -59,6 +61,7 @@ const Input = ({
       )}
 
       <Styles.WrapperInputError
+        errorGap={errorGap}
         isTypeSearch={isTypeSearch}
         wrapperInputErrorWidth={wrapperInputErrorWidth}
       >
@@ -104,7 +107,11 @@ const Input = ({
           {!notPasswordType && component}
         </Styles.InputIcon>
 
-        {error && <Styles.SpanError error={error}>{error}</Styles.SpanError>}
+        {error && (
+          <Styles.SpanError error={error} errorFontSize={errorFontSize}>
+            {error}
+          </Styles.SpanError>
+        )}
       </Styles.WrapperInputError>
     </Styles.Label>
   );

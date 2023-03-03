@@ -34,10 +34,10 @@ export const TextArea = styled.textarea<TextAreaArg>`
 `;
 
 export const TitleH3 = styled.h3`
+  margin-bottom: 10px;
   font-family: 'Open Sans', sans-serif;
   font-size: 26px;
   font-weight: 600;
-  margin-bottom: 10px;
   line-height: 40px;
 `;
 
@@ -45,6 +45,7 @@ export const ErrorCount = styled.span<TextAreaArg>`
   position: absolute;
   right: 4px;
   bottom: 47px;
+
   ${({ theme, error }) => css`
     color: ${error ? theme.colors.colorError : theme.colors.colorTextDisabled};
   `}

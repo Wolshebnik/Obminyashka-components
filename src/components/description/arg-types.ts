@@ -17,7 +17,7 @@ export const argTypes = {
   translatedTitle: {
     name: 'translatedTitle',
     type: { name: 'string' },
-    description: 'translatedTitle',
+    description: 'This props depends on the choice of language on the site',
     table: {
       control: { summary: 'string' },
     },
@@ -26,7 +26,7 @@ export const argTypes = {
   translatedDescription: {
     name: 'translatedDescription',
     type: { name: 'string' },
-    description: 'descriptionOfField',
+    description: 'This props depends on the choice of language on the site',
     table: {
       control: { summary: 'string' },
     },
