@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 
-import { Button, Icon } from '..';
+import * as Icon from '../icon';
+import { Button } from '../button';
 import * as Styles from './styles';
 import { IProductPostData } from './types';
 
