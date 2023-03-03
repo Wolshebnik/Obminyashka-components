@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import childrenImg from 'assets/img/children.png';
+import childrenImg from '../../assets/img/children.png';
 
 export const HelpChildren = styled.div`
   display: block;
