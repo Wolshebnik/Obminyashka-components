@@ -6,7 +6,7 @@ export interface CustomTextArea
     HTMLTextAreaElement
   > {}
 
-export interface IDescription extends Omit<CustomTextArea, 'ref'> {
+export interface IAddGoodsDescription extends Omit<CustomTextArea, 'ref'> {
   value: string;
   error?: string;
   translatedTitle?: string;

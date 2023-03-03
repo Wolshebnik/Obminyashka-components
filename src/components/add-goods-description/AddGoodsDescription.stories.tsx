@@ -2,22 +2,22 @@ import { useState } from 'react';
 import { Formik, Form } from 'formik';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Description } from './index';
+import { AddGoodsDescription } from './index';
 import { argTypes } from './arg-types';
 
 export default {
-  title: 'Description',
-  component: Description,
+  title: 'AddGoodsDescription',
+  component: AddGoodsDescription,
   argTypes,
-} as ComponentMeta<typeof Description>;
+} as ComponentMeta<typeof AddGoodsDescription>;
 
-const Template: ComponentStory<typeof Description> = ({ value }) => {
+const Template: ComponentStory<typeof AddGoodsDescription> = ({ value }) => {
   const [description, setDescription] = useState(value);
 
   return (
     <Formik initialValues={{ description }} onSubmit={() => {}}>
       <Form>
-        <Description
+        <AddGoodsDescription
           value={description}
           translatedTitle={'Опис'}
           setDescription={setDescription}
@@ -31,7 +31,7 @@ const Template: ComponentStory<typeof Description> = ({ value }) => {
   );
 };
 
-export const DescriptionComponent = Template.bind({});
-DescriptionComponent.args = {
+export const AddGoodsDescriptionComponent = Template.bind({});
+AddGoodsDescriptionComponent.args = {
   value: 'Опис речі від користувача',
 };

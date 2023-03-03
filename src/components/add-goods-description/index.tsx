@@ -1,11 +1,11 @@
 import { useField } from 'formik';
 
 import * as Styles from './styles';
-import { IDescription } from './types';
+import { IAddGoodsDescription } from './types';
 
 const maxValue = 255;
 
-export const Description = ({
+export const AddGoodsDescription = ({
   error,
   value,
   onChange,
@@ -13,7 +13,7 @@ export const Description = ({
   translatedTitle,
   translatedDescription,
   ...props
-}: IDescription) => {
+}: IAddGoodsDescription) => {
   const [, meta, helpers] = useField('description');
 
   const handleDescription = (descriptionValue: string) => {
