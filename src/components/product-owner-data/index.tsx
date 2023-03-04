@@ -9,9 +9,9 @@ const ProductOwnerData = ({
   city,
   phone,
   avatar,
-  dateTranslatedText,
-  cityTranslatedText,
-  phoneTranslatedText,
+  dateText,
+  cityText,
+  phoneText,
 }: IProductOwnerDataProps) => {
   return (
     <Styles.Container>
@@ -29,19 +29,13 @@ const ProductOwnerData = ({
         <Styles.PostReqData>
           <Styles.PostReqDataBlock>
             {date && (
-              <Styles.PostReqDataText>
-                {dateTranslatedText}
-              </Styles.PostReqDataText>
+              <Styles.PostReqDataText>{dateText}</Styles.PostReqDataText>
             )}
 
-            <Styles.PostReqDataText>
-              {cityTranslatedText}
-            </Styles.PostReqDataText>
+            <Styles.PostReqDataText>{cityText}</Styles.PostReqDataText>
 
             {phone && (
-              <Styles.PostReqDataText>
-                {phoneTranslatedText}
-              </Styles.PostReqDataText>
+              <Styles.PostReqDataText>{phoneText}</Styles.PostReqDataText>
             )}
           </Styles.PostReqDataBlock>
         </Styles.PostReqData>

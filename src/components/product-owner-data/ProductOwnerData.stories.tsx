@@ -34,8 +34,8 @@ ProductOwnerDataDefault.args = {
   avatar: image,
   name: 'Natali',
   date: '26.02.2023',
+  cityText: 'Місто:',
+  phoneText: 'Телефон:',
   phone: '097 357 37 77',
-  cityTranslatedText: 'Місто:',
-  phoneTranslatedText: 'Телефон:',
-  dateTranslatedText: 'Дата публікації:',
+  dateText: 'Дата публікації:',
 };
