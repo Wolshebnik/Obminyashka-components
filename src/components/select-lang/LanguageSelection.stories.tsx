@@ -6,12 +6,13 @@ import { argTypes } from './arg-types';
 export default {
   title: 'LanguageSelection',
   component: LanguageSelection,
+  description: { story: 'An example story description' },
   argTypes,
 } as ComponentMeta<typeof LanguageSelection>;
 
-const Template: ComponentStory<typeof LanguageSelection> = (args) => (
-  <LanguageSelection {...args} />
-);
+const Template: ComponentStory<typeof LanguageSelection> = (args) => {
+  return <LanguageSelection {...args} />;
+};
 
 export const DefaultLanguageSelection = Template.bind({});
 DefaultLanguageSelection.args = {
