@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 import * as Icon from '../icon';
 
-export const Card = styled.div<{ margin?: number }>`
+export const Card = styled.div<{ margin?: string }>`
   position: relative;
   width: 290px;
   height: 419px;
@@ -13,7 +13,7 @@ export const Card = styled.div<{ margin?: number }>`
 
   ${({ theme, margin }) => css`
     background-color: ${theme.colors.white};
-    margin: ${margin ? `${margin}px` : 0};
+    margin: ${margin ? `${margin}` : '0'};
     border: 2px dotted ${theme.colors.itemCard.borderCard};
   `}
 `;
