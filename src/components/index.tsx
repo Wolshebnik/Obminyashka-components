@@ -1,3 +1,4 @@
+export { AddGoodsDescription } from './add-goods-description';
 export { Avatar } from './avatar';
 export { BackButton } from './back-button';
 export { Button } from './button';
@@ -17,3 +18,4 @@ export { ProductPostData } from './product-post-data';
 export { Title } from './title';
 export { Toast, showMessage } from './toast';
 export * as Icon from './icon';
+export * as Images from './img';
