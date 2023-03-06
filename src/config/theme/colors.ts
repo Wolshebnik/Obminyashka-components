@@ -20,6 +20,7 @@ const buttonGreyActive = '#5e5e5e';
 
 //General state
 const buttonDisabled = '#DADADA';
+const magnolia = '#fdfcff';
 const colorGrey = '#8E8E8E';
 const colorError = '#ff4c4c';
 const colorBorder = '#bdbdbd';
@@ -38,6 +39,11 @@ const turbo = '#FEE200';
 const dustyGray = '#969696';
 const silver = '#c4c4c4';
 const silverChalice = '#A0A0A0';
+const grey = '#8f8f8f';
+
+//RGBA colors
+const background = 'rgba(255, 255, 255, 0.4)';
+const shadow = 'rgba(255, 255, 255, 0.2)';
 
 //Select language
 
@@ -75,6 +81,15 @@ const itemCard = Object.freeze({
   borderCard: silver,
 });
 
+const productOwnerData = Object.freeze({
+  bg: magnolia,
+  text: grey,
+});
+
+const helpChildren = Object.freeze({
+  bg: background,
+  shadow,
+});
 const ellipsisShadow =
   '10px 10px 20px rgba(0, 0, 0, 0.3), 0px 31px 32px -24px rgba(0, 0, 0, 1)';
 
@@ -119,6 +134,7 @@ const colorsDefault = Object.freeze({
   activeColor,
   scrollbarBg: '#f1f1f1',
   white: '#FFFFFF',
+  backgroundColor: '#fdfcff',
 });
 
 const COLORS = Object.freeze({
@@ -126,8 +142,10 @@ const COLORS = Object.freeze({
   button,
   itemCard,
   inboxMessage,
+  helpChildren,
   buttonGradient,
   ellipsisShadow,
+  productOwnerData,
   selectLanguage,
   ...colorsDefault,
 });
