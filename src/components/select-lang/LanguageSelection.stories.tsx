@@ -16,8 +16,9 @@ const Template: ComponentStory<typeof LanguageSelection> = (args) => {
 
 export const DefaultLanguageSelection = Template.bind({});
 DefaultLanguageSelection.args = {
-  languageArray: [
-    { value: 'ua', checked: true },
-    { value: 'en', checked: false },
-  ],
+  lang: 'ua',
+  /* onClick: () => {
+    DefaultLanguageSelection.args?.lang : {'en'};
+  }, */
+  //onClick: { action: 'clicked' },
 };
