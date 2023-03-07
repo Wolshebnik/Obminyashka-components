@@ -1,6 +1,6 @@
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-import * as types from './type';
+import * as type from './types';
 import * as Styles from './styles';
 
 const ResetAllButton = ({
@@ -20,10 +20,10 @@ const ResetAllButton = ({
   setPreViewImage,
   setCurrentIndexImage,
   setShowLocation,
-  // clearAdv,
-  getText,
-}: types.IResetAllButton) => {
-  // const dispatch = useDispatch();
+  clearAdv,
+  getText = 'Cancel Everything',
+}: type.IResetAllButton) => {
+  const dispatch = useDispatch();
 
   const resetAll = () => {
     setAnnouncementTitle('');
@@ -42,7 +42,7 @@ const ResetAllButton = ({
     setPreViewImage([]);
     setCurrentIndexImage(null);
     setShowLocation({ city: '', area: '' });
-    // dispatch(clearAdv());
+    dispatch(clearAdv());
   };
 
   return (
