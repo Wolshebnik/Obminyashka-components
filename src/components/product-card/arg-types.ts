@@ -59,10 +59,10 @@ export const argTypes = {
   },
   margin: {
     name: 'margin',
-    type: { name: 'number' },
+    type: { name: 'string' },
     description: 'CSS margin',
     table: {
-      type: { summary: 'number' },
+      type: { summary: 'string' },
       defaultValue: { summary: 0 },
     },
   },
