@@ -1,7 +1,7 @@
 export interface IProductCardProps {
   text: string;
   city: string;
-  margin?: number;
+  margin?: string;
   avatar?: string;
   picture: string;
   buttonText: string;
