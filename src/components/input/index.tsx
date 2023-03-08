@@ -15,12 +15,14 @@ const Input = ({
   inputGap,
   errorGap,
   labelColor,
+  inputHeight,
   placeholder,
   errorFontSize,
   labelFontSize,
   inputMaxWidth,
   labelFontWeight,
   inputFlexDirection,
+  autoComplete = 'on',
   name = 'inputName',
   inputJustifyContent,
   wrapperInputErrorWidth,
@@ -76,7 +78,8 @@ const Input = ({
             >
               <Styles.Input
                 error={error}
-                autoComplete="off"
+                inputHeight={inputHeight}
+                autoComplete={autoComplete}
                 isTypeSearch={isTypeSearch}
                 notPasswordType={notPasswordType}
               />
@@ -90,8 +93,9 @@ const Input = ({
               type={typing}
               error={error}
               id={id ?? name}
-              autoComplete="off"
+              inputHeight={inputHeight}
               placeholder={placeholder}
+              autoComplete={autoComplete}
               isTypeSearch={isTypeSearch}
               notPasswordType={notPasswordType}
               {...props}
