@@ -22,8 +22,8 @@ const Input = ({
   inputMaxWidth,
   labelFontWeight,
   inputFlexDirection,
-  autoComplete = 'on',
   name = 'inputName',
+  autoComplete = 'on',
   inputJustifyContent,
   wrapperInputErrorWidth,
   ...props
