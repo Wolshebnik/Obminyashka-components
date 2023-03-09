@@ -21,7 +21,11 @@ const ProductOwnerData = ({
         </Styles.ProductOwnerAvatar>
 
         <Styles.ProductOwnerName>
-          <Styles.ProductOwnerTitleH2>{name}</Styles.ProductOwnerTitleH2>
+          <Styles.ProductOwnerTitleH2>
+            <EllipsisText id={name} width={300}>
+              {name}
+            </EllipsisText>
+          </Styles.ProductOwnerTitleH2>
         </Styles.ProductOwnerName>
       </Styles.ProductOwner>
 
