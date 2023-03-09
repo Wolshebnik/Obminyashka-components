@@ -39,8 +39,8 @@ export const argTypes = {
       type: { summary: 'string' },
     },
   },
-  dateTranslatedText: {
-    name: 'dateTranslatedText',
+  dateText: {
+    name: 'dateText',
     type: { name: 'string' },
     description: 'translated text on En or Ua',
     table: {
@@ -50,8 +50,8 @@ export const argTypes = {
     control: { type: 'select' },
     options: ['Дата публікації', 'Publication date:'],
   },
-  cityTranslatedText: {
-    name: 'cityTranslatedText',
+  cityText: {
+    name: 'cityText',
     type: { name: 'string' },
     description: 'translated text on En or Ua',
     table: {
@@ -61,8 +61,8 @@ export const argTypes = {
     control: { type: 'select' },
     options: ['Місто:', 'City:'],
   },
-  phoneTranslatedText: {
-    name: 'phoneTranslatedText',
+  phoneText: {
+    name: 'phoneText',
     type: { name: 'string' },
     description: 'translated text on En or Ua',
     table: {

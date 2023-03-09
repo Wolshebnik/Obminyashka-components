@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import childrenImg from '../../assets/img/children.png';
+import children from 'assets/img/children.png';
 
 export const HelpChildren = styled.div`
   display: block;
@@ -9,7 +9,7 @@ export const HelpChildren = styled.div`
   border-radius: 20px;
 
   ${({ theme }) => css`
-    background: ${theme.colors.white} url(${childrenImg}) no-repeat bottom right;
+    background: ${theme.colors.white} url(${children}) no-repeat bottom right;
   `}
 `;
 
@@ -61,7 +61,6 @@ export const StylizedBtn = styled.div`
         background-color: ${theme.colors.btnBlueActive};
       }
     `}
-
     span {
       margin-right: 10px;
     }
