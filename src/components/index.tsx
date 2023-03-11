@@ -19,3 +19,4 @@ export { ProductPostData } from './product-post-data';
 export { Title } from './title';
 export { Toast, showMessage } from './toast';
 export * as Icon from './icon';
+export * as Images from './img';
