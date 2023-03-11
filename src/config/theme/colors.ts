@@ -46,13 +46,12 @@ const background = 'rgba(255, 255, 255, 0.4)';
 const shadow = 'rgba(255, 255, 255, 0.2)';
 
 //Select language
-
-const selectLanguage = Object.freeze({
+const language = Object.freeze({
   backgroundHover: '#ccf2ff',
   colorHover: '#1a1a1a',
   color: '#777777',
   colorChecked: '#0fc3ff',
-  border: '#12b6ed',
+  border: buttonBlue,
 });
 
 const input = Object.freeze({
@@ -141,12 +140,12 @@ const COLORS = Object.freeze({
   input,
   button,
   itemCard,
+  language,
   inboxMessage,
   helpChildren,
   buttonGradient,
   ellipsisShadow,
   productOwnerData,
-  selectLanguage,
   ...colorsDefault,
 });
 

@@ -12,6 +12,8 @@ export const LanguageItem = styled.div<IStyledLanguageSelection>`
   display: flex;
   justify-content: center;
   align-content: center;
+  padding: 5px;
+  margin: 18px 0 10px 0;
   text-align: center;
   font-family: inherit;
   font-size: 14px;
@@ -19,22 +21,18 @@ export const LanguageItem = styled.div<IStyledLanguageSelection>`
   font-weight: 400;
   line-height: 19px;
   text-transform: uppercase;
-  padding: 5px;
-  margin: 18px 0 10px 0;
-  cursor: pointer;
   border-radius: 50%;
+  cursor: pointer;
 
   ${({ checked, theme }) => css`
     color: ${checked
-      ? theme.colors.selectLanguage.colorChecked
-      : theme.colors.selectLanguage.color};
-    border: ${checked
-      ? `1px solid ${theme.colors.selectLanguage.border};`
-      : 'none'};
+      ? theme.colors.language.colorChecked
+      : theme.colors.language.color};
+    border: ${checked ? `1px solid ${theme.colors.language.border};` : 'none'};
 
     &:hover {
-      background-color: ${theme.colors.selectLanguage.backgroundHover};
-      color: ${theme.colors.selectLanguage.colorHover};
+      background-color: ${theme.colors.language.backgroundHover};
+      color: ${theme.colors.language.colorHover};
     }
   `}
 `;

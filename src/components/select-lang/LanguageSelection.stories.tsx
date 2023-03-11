@@ -1,5 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { useState } from 'react';
+// import { useState } from 'react';
+import { useArgs } from '@storybook/client-api';
 
 import { LanguageSelection } from '.';
 import { argTypes } from './arg-types';
@@ -13,19 +14,18 @@ export default {
 
 const Template: ComponentStory<typeof LanguageSelection> = ({
   onClick,
-  lang,
   ...args
 }) => {
   const languageArray = ['ua', 'en'];
-  const [language, setLanguage] = useState(lang);
+  const [{ lang }, updateArgs] = useArgs();
 
   const handleChangeLang = () => {
-    setLanguage(languageArray.filter((el) => el !== language).toString());
+    updateArgs({
+      lang: languageArray.filter((el) => el !== lang).toString(),
+    });
   };
 
-  return (
-    <LanguageSelection lang={language} onClick={handleChangeLang} {...args} />
-  );
+  return <LanguageSelection onClick={handleChangeLang} {...args} />;
 };
 
 export const DefaultLanguageSelection = Template.bind({});

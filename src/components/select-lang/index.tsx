@@ -1,9 +1,9 @@
 import * as Styles from './styles';
 import { ILanguageSelection } from './types';
 
-const LanguageSelection = ({ lang, onClick }: ILanguageSelection) => {
-  const languageArray: string[] = ['ua', 'en'];
+const languageArray: string[] = ['ua', 'en'];
 
+const LanguageSelection = ({ lang, onClick }: ILanguageSelection) => {
   return (
     <Styles.LanguagePanel>
       {languageArray.map((el) => (
