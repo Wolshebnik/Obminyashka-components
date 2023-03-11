@@ -37,7 +37,9 @@ export const argTypes = {
     name: 'current',
     type: { name: 'number', required: true },
     description: 'Current page	',
+    control: { type: 'number' },
     table: {
+      defaultValue: { summary: 1 },
       type: { summary: 'number' },
     },
   },
