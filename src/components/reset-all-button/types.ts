@@ -20,23 +20,22 @@ export interface IResetAllButton {
       area?: string;
     }>
   >;
-  clearAdv: (state?: {
-    topic: string;
-    category: string;
-    subcategory: string;
-    readyForOffers: any[];
-    wishesToExchange: any[];
-    ageStore: any[];
-    genderStore: any[];
-    seasonStore: any[];
-    sizeStore: any[];
-    descriptionStore: string;
-    idLocation: string;
-    fileImage: any[];
-    currLocation: null | null;
-    locationShow: null | null;
-    viewImage: any[];
-    indexImage: any | null;
-  }) => void;
+  clearAdv: (state?: {}) => void;
+  topic: string;
   getText: string;
+  ageStore: any[];
+  category: string;
+  sizeStore: any[];
+  fileImage: any[];
+  viewImage: any[];
+  genderStore: any[];
+  seasonStore: any[];
+  idLocation: string;
+  subcategory: string;
+  readyForOffers: any[];
+  indexImage: any | null;
+  wishesToExchange: any[];
+  descriptionStore: string;
+  currLocation: null | null;
+  locationShow: null | null;
 }

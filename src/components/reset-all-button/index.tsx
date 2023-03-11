@@ -4,45 +4,45 @@ import * as type from './types';
 import * as Styles from './styles';
 
 const ResetAllButton = ({
-  setAnnouncementTitle,
-  setExchangeList,
-  setDescription,
-  setLocationId,
-  setImageFiles,
-  setCategoryItems,
-  setSubCategoryItems,
-  setReadyOffer,
   setAge,
+  setSize,
+  clearAdv,
   setGender,
   setSeason,
-  setSize,
-  setLocationCurrent,
+  setLocationId,
+  setImageFiles,
+  setReadyOffer,
+  setDescription,
+  setExchangeList,
   setPreViewImage,
-  setCurrentIndexImage,
   setShowLocation,
-  clearAdv,
+  setCategoryItems,
+  setLocationCurrent,
+  setSubCategoryItems,
+  setAnnouncementTitle,
+  setCurrentIndexImage,
   getText = 'Cancel Everything',
 }: type.IResetAllButton) => {
   const dispatch = useDispatch();
 
   const resetAll = () => {
-    setAnnouncementTitle('');
-    setExchangeList([]);
-    setDescription('');
-    setLocationId('');
-    setImageFiles([]);
-    setCategoryItems('');
-    setSubCategoryItems('');
-    setReadyOffer([]);
     setAge([]);
+    setSize('');
     setGender([]);
     setSeason([]);
-    setSize('');
-    setLocationCurrent(null);
+    setLocationId('');
+    setImageFiles([]);
+    setReadyOffer([]);
+    setDescription('');
+    setExchangeList([]);
     setPreViewImage([]);
+    setCategoryItems('');
+    dispatch(clearAdv());
+    setSubCategoryItems('');
+    setAnnouncementTitle('');
+    setLocationCurrent(null);
     setCurrentIndexImage(null);
     setShowLocation({ city: '', area: '' });
-    dispatch(clearAdv());
   };
 
   return (
