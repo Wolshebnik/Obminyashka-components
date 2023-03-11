@@ -24,21 +24,27 @@ const Template: ComponentStory<typeof Input> = (args) => {
 
 export const Text = Template.bind({});
 Text.args = {
+  value: '',
   type: 'text',
+  inputHeight: '',
   error: undefined,
   name: 'inputName',
-  label: 'Label text',
+  autoComplete: 'on',
   inputGap: undefined,
+  label: 'Label text',
   placeholder: 'Placeholder',
   inputFlexDirection: undefined,
 };
 
 export const Password = Template.bind({});
 Password.args = {
+  value: '',
   error: '',
   inputGap: '',
   type: 'password',
   name: 'inputName',
+  autoComplete: 'off',
+  inputHeight: '50px',
   inputFlexDirection: '',
   placeholder: 'Placeholder',
   label: 'Введіть Ваш пароль',
@@ -46,11 +52,14 @@ Password.args = {
 
 export const Phone = Template.bind({});
 Phone.args = {
+  value: '',
   error: '',
   type: 'tel',
   name: 'Name',
   inputGap: '',
+  inputHeight: '',
   label: 'Телефон:',
+  autoComplete: 'on',
   labelColor: 'black',
   inputMaxWidth: '588px',
   inputFlexDirection: 'row',
@@ -61,11 +70,14 @@ Phone.args = {
 
 export const Error = Template.bind({});
 Error.args = {
+  value: '',
   type: 'text',
   inputGap: '',
   error: 'Error',
   errorGap: '5px',
+  inputHeight: '',
   name: 'inputName',
+  autoComplete: 'on',
   label: 'Label text',
   errorFontSize: '16px',
   inputFlexDirection: '',
@@ -74,7 +86,10 @@ Error.args = {
 
 export const Search = Template.bind({});
 Search.args = {
+  value: '',
   type: 'search',
   name: 'inputName',
+  autoComplete: 'on',
+  inputHeight: '50px',
   placeholder: 'Я шукаю...',
 };

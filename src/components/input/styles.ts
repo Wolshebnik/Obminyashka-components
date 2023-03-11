@@ -47,6 +47,7 @@ export const Label = styled.label<ILabel>`
   }) => css`
     flex-direction: ${inputFlexDirection && inputFlexDirection};
     justify-content: ${inputJustifyContent && inputJustifyContent};
+    ${inputFlexDirection && `align-items: baseline;`}
     gap: ${inputGap && inputGap};
     max-width: ${inputMaxWidth && inputMaxWidth};
 
@@ -64,23 +65,15 @@ export const Label = styled.label<ILabel>`
 `;
 
 export const LabelSpan = styled.span<ILabelSpan>`
-  display: inline-block;
   line-height: 16px;
   font-family: inherit;
   cursor: pointer;
 
-  ${({
-    theme,
-    labelColor,
-    labelFontSize,
-    labelFontWeight,
-    inputFlexDirection,
-  }) => css`
-    ${inputFlexDirection === 'row' && `margin-top: 18px;`}
+  ${({ theme, labelColor, labelFontSize, labelFontWeight }) => css`
     color: ${labelColor ? labelColor : theme.colors.input.textGrey};
-    font-size: ${labelFontSize ? labelFontSize : '14px'};
-    font-weight: ${labelFontWeight ? labelFontWeight : 400};
-  `}
+    font-size: ${labelFontSize || '14px'};
+    font-weight: ${labelFontWeight || 400};
+  `};
 `;
 
 export const WrapperSearchLink = styled.div`
@@ -113,6 +106,7 @@ export const InputIcon = styled.div`
 export const WrapperInputError = styled.div<IWrapperInputError>`
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   ${({ wrapperInputErrorWidth, isTypeSearch, errorGap }) => css`
     ${errorGap && `gap:${errorGap};`}
@@ -135,8 +129,9 @@ export const Input = styled.input<IInput>`
   line-height: 24px;
   outline: none;
 
-  ${({ theme, error, notPasswordType, isTypeSearch }) => css`
-    padding: ${!notPasswordType ? `12px 40px 12px 12px` : `12px 16px `};
+  ${({ theme, error, notPasswordType, isTypeSearch, inputHeight }) => css`
+    height: ${inputHeight || '40px'};
+    padding: ${!notPasswordType || isTypeSearch ? `0 40px 0 12px` : `0 16px `};
     color: ${theme.colors.input.textRight};
     border: 1px solid
       ${error ? theme.colors.input.error : theme.colors.input.border};
@@ -151,10 +146,7 @@ export const Input = styled.input<IInput>`
     ${isTypeSearch &&
     css`
       border: none;
-      padding: 12px 40px 12px 12px;
       font-style: italic;
-      font-size: 16px;
-      line-height: 24px;
     `}
   `}
 `;

@@ -24,6 +24,7 @@ export interface InputProps extends Omit<CustomInput, 'ref'> {
   inputGap?: string;
   errorGap?: string;
   labelColor?: string;
+  inputHeight?: string;
   labelFontSize?: string;
   errorFontSize?: string;
   inputMaxWidth?: string;
@@ -55,7 +56,7 @@ export interface IWrapperInputError extends Pick<ILabel, 'isTypeSearch'> {
 
 export interface IInput extends Pick<ILabel, 'isTypeSearch'> {
   error?: string;
-  autoComplete?: string;
+  inputHeight?: string;
   notPasswordType: boolean;
 }
 
