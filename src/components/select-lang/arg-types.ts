@@ -1,17 +1,16 @@
 export const argTypes = {
   lang: {
-    type: { name: 'lang' },
+    type: { name: 'lang', required: true },
     description: 'used language',
     options: ['ua', 'en'],
     control: { type: 'radio' },
     table: {
       type: { summary: 'string' },
-      defaultValue: { summary: 'ua' },
     },
   },
   onClick: {
     name: 'onClick',
-    type: { name: 'function' },
+    type: { name: 'function', required: true },
     description: 'Handler click for change language',
     table: {
       type: { summary: 'function' },
