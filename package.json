@@ -30,7 +30,6 @@
     "prepare": "npm run clean && npm run build"
   },
   "dependencies": {
-    "@storybook/api": "^6.5.16",
     "formik": "^2.2.9",
     "postcss": "^8.4.21",
     "rc-pagination": "^3.2.0",
@@ -62,6 +61,7 @@
     "yup": "^1.0.0"
   },
   "devDependencies": {
+    "@storybook/api": "^6.5.16",
     "@babel/core": "^7.20.12",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-image": "^3.0.2",

@@ -1,4 +1,3 @@
-// import { MouseEventHandler } from 'react';
 import { DefaultTheme } from 'styled-components';
 
 export interface ILanguageSelection {
