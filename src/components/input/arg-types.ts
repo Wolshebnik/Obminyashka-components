@@ -168,6 +168,30 @@ export const argTypes = {
     controls: 'string',
   },
 
+  autoComplete: {
+    name: 'autoComplete',
+    type: { name: 'string' },
+    description: `HTML attribute of input.\n\n`,
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: 'on' },
+    },
+    control: 'radio',
+    options: ['on', 'off'],
+  },
+
+  inputHeight: {
+    name: 'InputHeight',
+    type: { name: 'string' },
+    description: `CSS property. Height\n\n Sets the height  of
+    input.\n\n\ Written in a string type to define units of measure.`,
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: '40px' },
+    },
+    controls: 'string',
+  },
+
   inputJustifyContent: {
     name: 'InputJustifyContent',
     type: { name: 'string' },
