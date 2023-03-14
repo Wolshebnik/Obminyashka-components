@@ -61,6 +61,7 @@
     "yup": "^1.0.0"
   },
   "devDependencies": {
+    "@storybook/api": "^6.5.16",
     "@babel/core": "^7.20.12",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-image": "^3.0.2",
@@ -73,6 +74,7 @@
     "@storybook/addon-interactions": "^6.5.16",
     "@storybook/addon-links": "^6.5.16",
     "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/client-api": "^6.5.16",
     "@storybook/manager-webpack5": "^6.5.16",
     "@storybook/preset-create-react-app": "^4.1.2",
     "@storybook/react": "^6.5.16",
