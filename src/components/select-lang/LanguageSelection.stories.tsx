@@ -1,6 +1,7 @@
 import { useArgs } from '@storybook/client-api';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
+import { IOnClickArg } from './types';
 import { LanguageSelection } from '.';
 import { argTypes } from './arg-types';
 
@@ -17,7 +18,7 @@ const Template: ComponentStory<typeof LanguageSelection> = ({
 }) => {
   const [, updateArgs] = useArgs();
 
-  const handleChangeLang = (lang: string) => {
+  const handleChangeLang = ({ lang }: IOnClickArg) => {
     updateArgs({
       lang,
     });
