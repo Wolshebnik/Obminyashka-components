@@ -1,5 +1,5 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { useArgs } from '@storybook/client-api';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { LanguageSelection } from '.';
 import { argTypes } from './arg-types';
@@ -15,12 +15,11 @@ const Template: ComponentStory<typeof LanguageSelection> = ({
   onClick,
   ...args
 }) => {
-  const languageArray = ['ua', 'en'];
-  const [{ lang }, updateArgs] = useArgs();
+  const [, updateArgs] = useArgs();
 
-  const handleChangeLang = () => {
+  const handleChangeLang = (lang: string) => {
     updateArgs({
-      lang: languageArray.filter((el) => el !== lang).toString(),
+      lang,
     });
   };
 
