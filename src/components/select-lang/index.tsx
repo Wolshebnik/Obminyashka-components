@@ -10,7 +10,7 @@ const LanguageSelection = ({ lang, onClick }: ILanguageSelection) => {
         <Styles.LanguageItem
           key={el}
           checked={el === lang}
-          onClick={el === lang ? undefined : onClick}
+          onClick={el === lang ? undefined : () => onClick(el)}
         >
           {el}
         </Styles.LanguageItem>
