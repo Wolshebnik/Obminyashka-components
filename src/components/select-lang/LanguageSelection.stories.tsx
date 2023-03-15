@@ -17,9 +17,9 @@ const Template: ComponentStory<typeof LanguageSelection> = ({
 }) => {
   const [, updateArgs] = useArgs();
 
-  const handleChangeLang = (lang: string) => {
+  const handleChangeLang = (el: { lang: string }) => {
     updateArgs({
-      lang,
+      lang: el.lang,
     });
   };
 

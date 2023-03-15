@@ -2,7 +2,7 @@ import { DefaultTheme } from 'styled-components';
 
 export interface ILanguageSelection {
   lang: string;
-  onClick: (lang: string) => void;
+  onClick: (el: { lang: string }) => void;
 }
 
 export interface IStyledLanguageSelection {
