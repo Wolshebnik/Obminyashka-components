@@ -11,4 +11,7 @@ const Template: ComponentStory<typeof ResetAllButton> = (args) => (
   <ResetAllButton {...args} />
 );
 
-export const ResetAllButtonDefault = Template.bind({});
+export const ResetButton = Template.bind({});
+ResetButton.args = {
+  text: 'Cancel Everything',
+};
