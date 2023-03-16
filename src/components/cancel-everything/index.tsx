@@ -1,7 +1,7 @@
 import { IResetAllButton } from './types';
 import * as Styles from './styles';
 
-const ResetAllButton = ({ text, onClick }: IResetAllButton) => {
+const CancelEverything = ({ text, onClick }: IResetAllButton) => {
   return (
     <Styles.BackButtons onClick={onClick}>
       <Styles.Cross />
@@ -10,4 +10,4 @@ const ResetAllButton = ({ text, onClick }: IResetAllButton) => {
   );
 };
 
-export { ResetAllButton };
+export { CancelEverything };
