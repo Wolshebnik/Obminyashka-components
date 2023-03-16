@@ -9,6 +9,7 @@ export { Image } from './image';
 export { InboxMessage } from './inbox-message';
 export { Input } from './input';
 export { InputField } from './input-field';
+export { LanguageSelection } from './select-lang';
 export { Loader } from './loader';
 export { PagePagination } from './page-pagination';
 export { ProductCard } from './product-card';

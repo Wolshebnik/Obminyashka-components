@@ -45,6 +45,15 @@ const grey = '#8f8f8f';
 const background = 'rgba(255, 255, 255, 0.4)';
 const shadow = 'rgba(255, 255, 255, 0.2)';
 
+//Select language
+const language = Object.freeze({
+  backgroundHover: '#ccf2ff',
+  colorHover: '#1a1a1a',
+  color: '#777777',
+  colorChecked: '#0fc3ff',
+  border: buttonBlue,
+});
+
 const input = Object.freeze({
   border: colorBorder,
   error: colorError,
@@ -131,6 +140,7 @@ const COLORS = Object.freeze({
   input,
   button,
   itemCard,
+  language,
   inboxMessage,
   helpChildren,
   buttonGradient,
