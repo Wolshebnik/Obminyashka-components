@@ -1,5 +1,5 @@
-import { IResetAllButton } from './types';
 import * as Styles from './styles';
+import { IResetAllButton } from './types';
 
 const CancelEverything = ({ text, onClick }: IResetAllButton) => {
   return (
