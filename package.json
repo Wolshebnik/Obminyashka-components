@@ -107,7 +107,7 @@
     "build-storybook": "build-storybook",
     "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,md,json}\"",
-    "lint": "eslint src/**/*.{ts,tsx} --fix --cache --color --max-warnings=0",
+    "lint": "eslint src/**/*.{ts,tsx} --fix --color --max-warnings=0",
     "clean": "rimraf dist/",
     "prepare": "npm run clean && npm run build && husky install"
   },
