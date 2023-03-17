@@ -7,4 +7,13 @@ export const argTypes = {
       type: { summary: 'string' },
     },
   },
+  onClick: {
+    name: 'onClick',
+    type: { name: 'function' },
+    description: 'Reset all option',
+    table: {
+      type: { summary: 'function' },
+    },
+    action: 'onClick',
+  },
 };

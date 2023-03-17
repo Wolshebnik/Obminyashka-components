@@ -6,7 +6,7 @@ import { argTypes } from './arg-types';
 export default {
   title: 'CancelEverything',
   component: CancelEverything,
-  argTypes: { ...argTypes, onClick: { action: 'onClick' } },
+  argTypes,
 } as ComponentMeta<typeof CancelEverything>;
 
 const Template: ComponentStory<typeof CancelEverything> = (args) => (
