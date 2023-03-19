@@ -109,12 +109,14 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,md,json}\"",
     "lint": "eslint src/**/*.{ts,tsx} --fix --color --max-warnings=0",
     "clean": "rimraf dist/",
+    "compile": "tsc -p ./tsconfig.json",
     "prepare": "npm run clean && npm run build && husky install"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
       "npm run format",
-      "npm run lint"
+      "npm run lint",
+      "npm run compile"
     ]
   }
 }
