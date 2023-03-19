@@ -1,8 +1,7 @@
-import { ReactElement } from 'react';
+import { ReactNode } from 'react';
 
 export interface IPopup {
-  element?: keyof JSX.IntrinsicElements;
-  children: ReactElement;
-  id: string;
-  onClose?: (e: React.MouseEvent) => void;
+  width?: string;
+  onClick?: boolean;
+  children: ReactNode;
 }

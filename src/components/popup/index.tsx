@@ -1,32 +1,20 @@
-import ReactDOM from 'react-dom';
+import React from 'react';
+import { createPortal } from 'react-dom';
 
 import { IPopup } from './types';
-// import usePortal from './hooks/usePortal';
 
-const root = document.getElementById('react-modals');
+const Portal = ({ children }: IPopup) => {
+  const portalElement = document.createElement('div');
 
-// export const Portal = ({
-//   children,
-//   className,
-//   element: Element = 'div',
-// }: IPopup) => {
-//   return root
-//     ? ReactDOM.createPortal(
-//         <Styles.Element className={className}>{children}</Styles.Element>,
-//         root
-//       )
-//     : null;
-// };
+  React.useEffect(() => {
+    document.body.appendChild(portalElement);
 
-export default function Portal({ children }: IPopup) {
-  // const target = usePortal(id);
+    return () => {
+      document.body.removeChild(portalElement);
+    };
+  }, [portalElement]);
 
-  return root ? ReactDOM.createPortal(children, root) : null;
-}
+  return createPortal(children, portalElement);
+};
 
-// import React from 'react';
-// import * as ReactDOM from 'react-dom';
-// import App from './app';
-
-// const rootElement = document.getElementById('root');
-// ReactDOM.render(<App children={} id={''} />, rootElement);
+export default Portal;

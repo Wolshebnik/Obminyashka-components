@@ -1,20 +1,36 @@
-import Portal from './index';
-import * as Styles from './styles';
-import { IPopup } from './types';
+import { useEffect, useState } from 'react';
 
-export default function Modal({ onClose, children }: IPopup) {
+import Portal from './index';
+import { IPopup } from './types';
+import * as Styles from './styles';
+
+const Modal = ({ children }: IPopup) => {
+  const [isOpen, setModalOpen] = useState(true);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    }
+    return () => document.body.removeAttribute('style');
+  }, [isOpen]);
+
   return (
-    <Portal id="portal" onClose={onClose}>
-      <Styles.Overlay onClick={onClose}>
-        <Styles.Content
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
-        >
-          {children}
-          <Styles.ButtonClose onClick={onClose}></Styles.ButtonClose>
-        </Styles.Content>
-      </Styles.Overlay>
-    </Portal>
+    <>
+      <button onClick={() => setModalOpen(true)}>Open</button>
+      {isOpen && (
+        <Portal>
+          <Styles.Overlay onClick={() => setModalOpen(false)}>
+            <Styles.ModalWindow onClick={(event) => event.stopPropagation()}>
+              {children}
+              <Styles.ButtonClose onClick={() => setModalOpen(false)}>
+                <Styles.Span></Styles.Span>
+              </Styles.ButtonClose>
+            </Styles.ModalWindow>
+          </Styles.Overlay>
+        </Portal>
+      )}
+    </>
   );
-}
+};
+
+export { Modal };
