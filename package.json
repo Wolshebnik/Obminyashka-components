@@ -20,15 +20,6 @@
   "bugs": {
     "url": "https://github.com/Wolshebnik/Obminyashka-components/issues"
   },
-  "scripts": {
-    "start": "start-storybook -p 6006",
-    "build": "npm run clean && rollup -c",
-    "build-storybook": "build-storybook",
-    "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,md,json}\"",
-    "clean": "rimraf dist/",
-    "prepare": "npm run clean && npm run build"
-  },
   "dependencies": {
     "formik": "^2.2.9",
     "postcss": "^8.4.21",
@@ -100,12 +91,30 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "gh-pages": "^5.0.0",
+    "lint-staged": "^13.2.0",
     "prettier": "^2.8.3",
     "rimraf": "^4.1.2",
     "rollup": "^3.12.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.34.1",
-    "webpack": "^5.75.0"
+    "webpack": "^5.75.0",
+    "husky": "^8.0.0"
+  },
+  "scripts": {
+    "start": "start-storybook -p 6006",
+    "build": "npm run clean && rollup -c",
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,md,json}\"",
+    "lint": "eslint src/**/*.{ts,tsx} --fix --color --max-warnings=0",
+    "clean": "rimraf dist/",
+    "prepare": "npm run clean && npm run build && husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "npm run format",
+      "npm run lint"
+    ]
   }
 }

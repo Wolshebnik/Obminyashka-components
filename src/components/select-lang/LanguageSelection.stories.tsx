@@ -1,9 +1,9 @@
 import { useArgs } from '@storybook/client-api';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { IOnClickArg } from './types';
 import { LanguageSelection } from '.';
 import { argTypes } from './arg-types';
+import { IOnClickArg } from './types';
 
 export default {
   title: 'LanguageSelection',
