@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
-import Portal from './index';
+import Portal from '.';
 import { IPopup } from './types';
 import * as Styles from './styles';
 
 const Modal = ({ children }: IPopup) => {
-  const [isOpen, setModalOpen] = useState(true);
+  const [isOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -23,7 +23,7 @@ const Modal = ({ children }: IPopup) => {
             <Styles.ModalWindow onClick={(event) => event.stopPropagation()}>
               {children}
               <Styles.ButtonClose onClick={() => setModalOpen(false)}>
-                <Styles.Span></Styles.Span>
+                <Styles.Cross />
               </Styles.ButtonClose>
             </Styles.ModalWindow>
           </Styles.Overlay>

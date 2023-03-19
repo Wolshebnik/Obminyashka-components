@@ -34,7 +34,7 @@ export const ModalWindow = styled.div`
   padding: 20px;
   min-height: 250px;
   max-height: 80%;
-  max-width: 599px;
+  max-width: 600px;
   box-shadow: rgba(18, 182, 237, 0.3) 0px 3px 10px -0.5px;
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 3px;
@@ -46,19 +46,20 @@ export const ButtonClose = styled.button`
   top: 0;
   right: 0;
   margin: 10px;
+  cursor: pointer;
 `;
 
-export const Span = styled.span`
+export const Cross = styled.span`
   position: absolute;
   top: -25px;
   width: 30px;
   height: 30px;
   right: -25px;
-  cursor: pointer;
   border-radius: 50%;
   background-color: ${({ theme }) =>
     theme.colors.modalColors.crossBtnBackground};
-  transition: all 0.3s linear 0s;
+  transition: 0.3s ease-in-out;
+  transition-delay: 0.1s;
 
   ::after,
   ::before {
@@ -74,5 +75,8 @@ export const Span = styled.span`
   }
   ::after {
     transform: rotate(135deg);
+  }
+  &:hover {
+    transform: rotate(180deg);
   }
 `;
