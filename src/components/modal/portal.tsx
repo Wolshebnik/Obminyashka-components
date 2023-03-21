@@ -1,12 +1,12 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-import { IPopup } from './types';
+import { ChildrenProps } from 'types';
 
-const Portal = ({ children }: IPopup) => {
+const Portal = ({ children }: ChildrenProps) => {
   const portalElement = document.createElement('div');
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.body.appendChild(portalElement);
 
     return () => {
@@ -17,4 +17,4 @@ const Portal = ({ children }: IPopup) => {
   return createPortal(children, portalElement);
 };
 
-export default Portal;
+export { Portal };
