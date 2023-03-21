@@ -1,5 +1,6 @@
 export interface IPopup {
   isOpen: boolean;
+  hideButtonClose?: boolean;
   onClose: (open: boolean) => void;
 }
 

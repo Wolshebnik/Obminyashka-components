@@ -6,7 +6,12 @@ import { IPopup } from './types';
 import { Portal } from './portal';
 import * as Styles from './styles';
 
-const Modal = ({ children, isOpen, onClose }: ChildrenProps<IPopup>) => {
+const Modal = ({
+  isOpen,
+  onClose,
+  children,
+  hideButtonClose = false,
+}: ChildrenProps<IPopup>) => {
   const [closing, setClosing] = useState(false);
   const duration = 1000;
 
@@ -41,9 +46,12 @@ const Modal = ({ children, isOpen, onClose }: ChildrenProps<IPopup>) => {
               closing={closing}
             >
               {children}
-              <Styles.ButtonClose onClick={handleClose}>
-                <Styles.Cross />
-              </Styles.ButtonClose>
+
+              {!hideButtonClose && (
+                <Styles.ButtonClose onClick={handleClose}>
+                  <Styles.Cross />
+                </Styles.ButtonClose>
+              )}
             </Styles.ModalWindow>
           </Styles.Overlay>
         </Portal>

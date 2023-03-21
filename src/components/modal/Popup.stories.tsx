@@ -18,7 +18,7 @@ const Template: ComponentStory<typeof Modal> = () => {
     <>
       <Button onClick={() => onClose(true)} text="Open" />
       <Modal isOpen={isOpen} onClose={onClose}>
-        <p>
+        <p style={{ background: 'white', padding: 20, borderRadius: 3 }}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam error
           nulla, deserunt dolorum aliquam vero officia sint nostrum dolores,
           pariatur, minus aperiam quod. Quia autem aut labore minus odio

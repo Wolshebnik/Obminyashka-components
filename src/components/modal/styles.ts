@@ -68,16 +68,13 @@ export const Overlay = styled.div<IStyles>`
 export const ModalWindow = styled.div<IStyles>`
   position: relative;
   box-sizing: border-box;
-  padding: 20px;
-  min-height: 250px;
-  max-height: 80%;
   max-width: 600px;
+  max-height: 80%;
   box-shadow: rgba(18, 182, 237, 0.3) 0px 3px 10px -0.5px;
   border-radius: 3px;
   z-index: 30;
 
-  ${({ theme, closing, duration }) => css`
-    background-color: ${theme.colors.white};
+  ${({ closing, duration }) => css`
     animation: ${closing ? continueMoveDown : moveDown} ${duration}ms;
   `};
 `;
@@ -86,16 +83,15 @@ export const ButtonClose = styled.button`
   position: absolute;
   top: 0;
   right: 0;
-  margin: 10px;
   cursor: pointer;
 `;
 
 export const Cross = styled.span`
   position: absolute;
-  top: -25px;
+  top: -15px;
   width: 30px;
   height: 30px;
-  right: -25px;
+  right: -15px;
   border-radius: 50%;
   background-color: ${({ theme }) =>
     theme.colors.modalColors.crossBtnBackground};
@@ -105,7 +101,7 @@ export const Cross = styled.span`
   ::after,
   ::before {
     position: absolute;
-    top: 7px;
+    top: 8px;
     width: 1px;
     content: '';
     height: 15px;
