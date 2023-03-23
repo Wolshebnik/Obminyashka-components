@@ -47,11 +47,7 @@ const Modal = ({
             >
               {children}
 
-              {!hideButtonClose && (
-                <Styles.ButtonClose onClick={handleClose}>
-                  <Styles.Cross />
-                </Styles.ButtonClose>
-              )}
+              {!hideButtonClose && <Styles.ButtonClose onClick={handleClose} />}
             </Styles.ModalWindow>
           </Styles.Overlay>
         </Portal>

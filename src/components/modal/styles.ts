@@ -81,39 +81,35 @@ export const ModalWindow = styled.div<IStyles>`
 
 export const ButtonClose = styled.button`
   position: absolute;
-  top: 0;
-  right: 0;
-  cursor: pointer;
-`;
-
-export const Cross = styled.span`
-  position: absolute;
-  top: -15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 30px;
   height: 30px;
+  top: -15px;
   right: -15px;
   border-radius: 50%;
   background-color: ${({ theme }) =>
     theme.colors.modalColors.crossBtnBackground};
+  cursor: pointer;
   transition: 0.3s ease-in-out;
   transition-delay: 0.1s;
 
-  ::after,
-  ::before {
+  &:after,
+  &:before {
     position: absolute;
-    top: 8px;
-    width: 1px;
+    top: 7px;
     content: '';
+    width: 2px;
     height: 15px;
-    background-color: ${({ theme }) => theme.colors.modalColors.cross};
-    transition: 0.3s ease-in-out;
-    transition-delay: 0.1s;
+    transform: rotate(45deg);
+    background-color: ${({ theme }) => theme.colors.white};
   }
-  ::before {
+  &:before {
     transform: rotate(45deg);
   }
-  ::after {
-    transform: rotate(135deg);
+  &:after {
+    transform: rotate(-45deg);
   }
   &:hover {
     transform: rotate(180deg);
