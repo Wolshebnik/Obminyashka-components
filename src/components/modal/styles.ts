@@ -16,7 +16,8 @@ const fadeOut = keyframes`
  0% {
     opacity: 1;
   }
-  100%{
+
+  100% {
     opacity: 0;
   }
 `;
@@ -26,21 +27,23 @@ const continueMoveDown = keyframes`
    opacity: 1;
    transform: translateY(0vh);
   }
-  100%{
+
+  100% {
     opacity: 0;
-     transform: translateY(100vh);
+    transform: translateY(100vh);
   }
 `;
 
 const moveDown = keyframes`
  0% {
    opacity: 0;
-     
   }
-  5%{
+
+  5% {
     transform: translateY(-100vh);
   }
-  100%{
+
+  100% {
     opacity: 1;
     transform: translateY(0vh);
   }
@@ -61,7 +64,7 @@ export const Overlay = styled.div<IStyles>`
 
   ${({ theme, duration, closing }) => css`
     background-color: ${theme.colors.modalColors.background};
-    animation: ${closing ? appearance : fadeOut} ${duration};
+    animation: ${closing ? appearance : fadeOut} ${duration}ms;
   `};
 `;
 
@@ -89,28 +92,33 @@ export const ButtonClose = styled.button`
   top: -15px;
   right: -15px;
   border-radius: 50%;
-  background-color: ${({ theme }) =>
-    theme.colors.modalColors.crossBtnBackground};
   cursor: pointer;
   transition: 0.3s ease-in-out;
   transition-delay: 0.1s;
 
-  &:after,
+  ${({ theme }) => css`
+    background-color: ${theme.colors.modalColors.crossBtnBackground};
+
+    &:after,
+    &:before {
+      position: absolute;
+      top: 7px;
+      content: '';
+      width: 2px;
+      height: 15px;
+      transform: rotate(45deg);
+      background-color: ${theme.colors.white};
+    }
+  `}
+
   &:before {
-    position: absolute;
-    top: 7px;
-    content: '';
-    width: 2px;
-    height: 15px;
-    transform: rotate(45deg);
-    background-color: ${({ theme }) => theme.colors.white};
-  }
-  &:before {
     transform: rotate(45deg);
   }
+
   &:after {
     transform: rotate(-45deg);
   }
+
   &:hover {
     transform: rotate(180deg);
   }

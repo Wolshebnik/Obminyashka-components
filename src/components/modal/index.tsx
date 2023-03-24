@@ -13,7 +13,7 @@ const Modal = ({
   hideButtonClose = false,
 }: ChildrenProps<IPopup>) => {
   const [closing, setClosing] = useState(false);
-  const duration = 1000;
+  const duration = 300;
 
   useEffect(() => {
     if (isOpen) {
