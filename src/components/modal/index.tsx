@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { ChildrenProps } from 'types';
 
-import { IPopup } from './types';
+import { IModal } from './types';
 import { Portal } from './portal';
 import * as Styles from './styles';
 
@@ -11,7 +11,7 @@ const Modal = ({
   onClose,
   children,
   hideButtonClose = false,
-}: ChildrenProps<IPopup>) => {
+}: ChildrenProps<IModal>) => {
   const [closing, setClosing] = useState(false);
   const duration = 300;
 
@@ -36,14 +36,14 @@ const Modal = ({
       {isOpen && (
         <Portal>
           <Styles.Overlay
-            onClick={() => onClose(false)}
-            duration={duration}
             closing={closing}
+            duration={duration}
+            onClick={() => onClose(false)}
           >
             <Styles.ModalWindow
-              onClick={(event) => event.stopPropagation()}
-              duration={duration}
               closing={closing}
+              duration={duration}
+              onClick={(event) => event.stopPropagation()}
             >
               {children}
 

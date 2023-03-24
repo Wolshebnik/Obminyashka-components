@@ -1,4 +1,4 @@
-export interface IPopup {
+export interface IModal {
   isOpen: boolean;
   hideButtonClose?: boolean;
   onClose: (open: boolean) => void;
