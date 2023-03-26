@@ -72,7 +72,7 @@ const Input = ({
             <InputMask
               value={value}
               id={name + id}
-              mask="+38(999) 999-99-99"
+              mask="+389(99)999-99-99"
               placeholder={placeholder}
               {...props}
             >
