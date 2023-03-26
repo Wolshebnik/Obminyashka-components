@@ -1,5 +1,6 @@
 export interface IModal {
   isOpen: boolean;
+  duration?: number;
   hideButtonClose?: boolean;
   onClose: (open: boolean) => void;
 }

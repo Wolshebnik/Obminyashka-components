@@ -10,10 +10,10 @@ const Modal = ({
   isOpen,
   onClose,
   children,
+  duration = 500,
   hideButtonClose = false,
 }: ChildrenProps<IModal>) => {
   const [closing, setClosing] = useState(false);
-  const duration = 300;
 
   useEffect(() => {
     if (isOpen) {
