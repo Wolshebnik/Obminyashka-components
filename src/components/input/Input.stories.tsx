@@ -75,7 +75,7 @@ Phone.args = {
   inputMaxWidth: '588px',
   inputFlexDirection: 'row',
   wrapperInputErrorWidth: '415px',
-  placeholder: '+38(999) 999-99-99',
+  placeholder: '+380(99)999-99-99',
   inputJustifyContent: 'space-between',
 };
 
