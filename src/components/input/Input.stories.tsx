@@ -36,6 +36,17 @@ Text.args = {
   inputFlexDirection: undefined,
 };
 
+export const textArea = Template.bind({});
+textArea.args = {
+  value: '',
+  error: '',
+  inputGap: '26px',
+  type: 'textarea',
+  name: 'textarea',
+  placeholder: 'Placeholder',
+  label: 'Опишіть Вашу річ: деффекти, особливості використання, тощо',
+};
+
 export const Password = Template.bind({});
 Password.args = {
   value: '',

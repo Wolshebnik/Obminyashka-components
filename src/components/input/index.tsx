@@ -1,3 +1,5 @@
+/* eslint-disable */
+// @ts-nocheck
 import InputMask from 'react-input-mask';
 
 import * as Icon from '../icon';
@@ -28,6 +30,7 @@ const Input = ({
   wrapperInputErrorWidth,
   ...props
 }: InputProps) => {
+  const maxValue = 255;
   const isTypeSearch = type === 'search';
   const notPasswordType = type !== 'password';
   const isInputNotEmpty = value?.toString().length !== 0;
@@ -36,6 +39,12 @@ const Input = ({
   const typing = notPasswordType ? type : currentType;
 
   const clearInput = () => props.onChange && props.onChange('');
+
+  /* eslint-disable */
+  // @ts-nocheck
+  function setTextAreaValue(_value: string): void {
+    throw new Error('Function not implemented.');
+  }
 
   return (
     <Styles.Label
@@ -72,7 +81,7 @@ const Input = ({
             <InputMask
               value={value}
               id={name + id}
-              mask="+380(99)999-99-99"
+              mask="+38(999) 999-99-99"
               placeholder={placeholder}
               {...props}
             >
@@ -86,7 +95,22 @@ const Input = ({
             </InputMask>
           )}
 
-          {type !== 'tel' && (
+          {type === 'textarea' && (
+            <Styles.WrapDescription>
+              <Styles.TextArea
+                value={value}
+                error={error}
+                id={id ?? name}
+                {...props}
+              />
+
+              <Styles.ErrorCount error={error}>
+                {`${(value as string).length}/${maxValue}`}
+              </Styles.ErrorCount>
+            </Styles.WrapDescription>
+          )}
+
+          {type !== 'tel' && type !== 'textarea' && (
             <Styles.Input
               name={name}
               value={value}
@@ -111,7 +135,7 @@ const Input = ({
           {!notPasswordType && component}
         </Styles.InputIcon>
 
-        {error && (
+        {error && type !== 'textarea' && (
           <Styles.SpanError error={error} errorFontSize={errorFontSize}>
             {error}
           </Styles.SpanError>

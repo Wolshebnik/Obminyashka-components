@@ -2,6 +2,7 @@ import React, {
   ChangeEvent,
   DetailedHTMLProps,
   InputHTMLAttributes,
+  // TextareaHTMLAttributes,
 } from 'react';
 
 export interface ShowPasswordType {
@@ -15,7 +16,16 @@ interface CustomInput
     HTMLInputElement
   > {}
 
-type InputOnChangeEventType = ChangeEvent<HTMLInputElement> | string;
+// interface CustomInput
+//   extends DetailedHTMLProps<
+//     TextareaHTMLAttributes<HTMLTextAreaElement>,
+//     HTMLTextAreaElement
+//   > {}
+
+type InputOnChangeEventType =
+  | string
+  | ChangeEvent<HTMLInputElement>
+  | ChangeEvent<HTMLTextAreaElement>;
 
 export interface InputProps extends Omit<CustomInput, 'ref'> {
   name: string;
@@ -62,3 +72,8 @@ export interface IInput extends Pick<ILabel, 'isTypeSearch'> {
 
 export interface ISpanError
   extends Pick<InputProps, 'error' | 'errorFontSize'> {}
+
+export interface ITextAreaArg {
+  error?: string;
+  value: string | number | readonly string[] | undefined;
+}

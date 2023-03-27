@@ -10,6 +10,7 @@ export const ReactTooltip = styled(Tooltip)<ITooltipProps>`
     padding: 16px;
     border-radius: 8px;
     opacity: 1;
+    word-wrap: break-word;
     cursor: context-menu;
 
     ${({ width }) => css`
