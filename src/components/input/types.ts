@@ -2,7 +2,6 @@ import React, {
   ChangeEvent,
   DetailedHTMLProps,
   InputHTMLAttributes,
-  // TextareaHTMLAttributes,
 } from 'react';
 
 export interface ShowPasswordType {
@@ -12,20 +11,13 @@ export interface ShowPasswordType {
 
 interface CustomInput
   extends DetailedHTMLProps<
-    InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
+    InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>,
+    HTMLInputElement | HTMLTextAreaElement
   > {}
 
-// interface CustomInput
-//   extends DetailedHTMLProps<
-//     TextareaHTMLAttributes<HTMLTextAreaElement>,
-//     HTMLTextAreaElement
-//   > {}
-
 type InputOnChangeEventType =
-  | string
-  | ChangeEvent<HTMLInputElement>
-  | ChangeEvent<HTMLTextAreaElement>;
+  | ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  | string;
 
 export interface InputProps extends Omit<CustomInput, 'ref'> {
   name: string;
@@ -35,6 +27,7 @@ export interface InputProps extends Omit<CustomInput, 'ref'> {
   errorGap?: string;
   labelColor?: string;
   inputHeight?: string;
+  onClick?: () => void;
   labelFontSize?: string;
   errorFontSize?: string;
   inputMaxWidth?: string;

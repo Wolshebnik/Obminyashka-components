@@ -1,5 +1,3 @@
-/* eslint-disable */
-// @ts-nocheck
 import InputMask from 'react-input-mask';
 
 import * as Icon from '../icon';
@@ -40,12 +38,6 @@ const Input = ({
 
   const clearInput = () => props.onChange && props.onChange('');
 
-  /* eslint-disable */
-  // @ts-nocheck
-  function setTextAreaValue(_value: string): void {
-    throw new Error('Function not implemented.');
-  }
-
   return (
     <Styles.Label
       inputGap={inputGap}
@@ -81,7 +73,7 @@ const Input = ({
             <InputMask
               value={value}
               id={name + id}
-              mask="+38(999) 999-99-99"
+              mask="+380(99)999-99-99"
               placeholder={placeholder}
               {...props}
             >
