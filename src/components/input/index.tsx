@@ -56,13 +56,11 @@ const Input = ({
           {label}
         </Styles.LabelSpan>
       )}
-
       {isTypeSearch && (
         <Styles.WrapperSearchLink onClick={onClick}>
           <Icon.Search />
         </Styles.WrapperSearchLink>
       )}
-
       <Styles.WrapperInputError
         errorGap={errorGap}
         isTypeSearch={isTypeSearch}

@@ -15,9 +15,9 @@ const Template: ComponentStory<typeof Input> = (args) => {
 
   return (
     <Input
+      {...args}
       value={value}
       onChange={(e) => setValue(typeof e === 'string' ? e : e.target.value)}
-      {...args}
     />
   );
 };

@@ -51,7 +51,7 @@ const Template: ComponentStory<typeof InputField> = (args) => {
               label="Enter your phone"
               inputFlexDirection="row"
               wrapperInputErrorWidth="415px"
-              placeholder="+38(999) 999-99-99"
+              placeholder="+380(99)999-99-99"
               inputJustifyContent="space-between"
             />
 

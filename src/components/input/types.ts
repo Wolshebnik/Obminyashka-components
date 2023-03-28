@@ -1,11 +1,12 @@
-import React, {
+import {
+  ReactNode,
   ChangeEvent,
   DetailedHTMLProps,
   InputHTMLAttributes,
 } from 'react';
 
 export interface ShowPasswordType {
-  component: React.ReactNode;
+  component: ReactNode;
   currentType: 'password' | 'text';
 }
 
