@@ -7,11 +7,7 @@ import { InputOnChangeEventType } from './types';
 export const InputField = ({ name, label, ...props }: InputProps) => {
   return (
     <Field name={name}>
-      {({
-        meta,
-        form,
-        field: { value, onChange, ...fieldProps },
-      }: FieldProps) => {
+      {({ meta, form, field: { onChange, ...fieldProps } }: FieldProps) => {
         const error = meta.touched && meta.error ? meta.error : undefined;
         const change = async (newValue: InputOnChangeEventType) => {
           await form.setFieldValue(name, newValue);
@@ -21,7 +17,6 @@ export const InputField = ({ name, label, ...props }: InputProps) => {
         return (
           <Input
             {...props}
-            value={value}
             label={label}
             error={error}
             {...fieldProps}
