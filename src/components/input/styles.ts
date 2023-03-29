@@ -106,7 +106,6 @@ export const InputIcon = styled.div`
 
 export const WrapDescription = styled.div`
   position: relative;
-  padding-bottom: 40px;
 `;
 
 export const TextArea = styled.textarea<ITextAreaArg>`
@@ -121,18 +120,21 @@ export const TextArea = styled.textarea<ITextAreaArg>`
 
   ${({ theme, error }) => css`
     caret-color: ${theme.colors.activeColor};
-    border: 1px solid ${error ? theme.colors.colorError : '#bcbcbc'};
+    border: 1px solid
+      ${error ? theme.colors.colorError : theme.colors.input.textAreaBorder};
 
     &:focus {
-      border-color: ${error ? theme.colors.colorError : 'hsl(0, 0%, 44%)'};
+      border-color: ${error
+        ? theme.colors.colorError
+        : theme.colors.input.focus};
     }
   `}
 `;
 
 export const ErrorCount = styled.span<{ error?: string }>`
   position: absolute;
-  right: 4px;
-  bottom: 47px;
+  right: 5px;
+  bottom: 10px;
 
   ${({ theme, error }) => css`
     background-color: ${theme.colors.white};

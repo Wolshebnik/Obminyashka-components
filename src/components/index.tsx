@@ -1,4 +1,3 @@
-export { AddGoodsDescription } from './add-goods-description';
 export { Avatar } from './avatar';
 export { BackButton } from './back-button';
 export { Button } from './button';
