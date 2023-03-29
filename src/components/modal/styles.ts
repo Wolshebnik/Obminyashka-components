@@ -2,26 +2,6 @@ import styled, { css, keyframes } from 'styled-components';
 
 import { IStyles } from './types';
 
-const appearance = keyframes`
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-`;
-
-const fadeOut = keyframes`
- 0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-`;
-
 const continueMoveDown = keyframes`
  0% {
    opacity: 1;
@@ -61,10 +41,10 @@ export const Overlay = styled.div<IStyles>`
   opacity: 1;
   transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 999;
+  transition-delay: 200;
 
-  ${({ theme, duration, closing }) => css`
+  ${({ theme }) => css`
     background-color: ${theme.colors.modalColors.background};
-    animation: ${closing ? appearance : fadeOut} ${duration}ms;
   `};
 `;
 

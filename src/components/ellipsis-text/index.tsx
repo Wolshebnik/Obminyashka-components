@@ -11,6 +11,7 @@ export const EllipsisText = ({
   children,
   width = 200,
   noArrow = true,
+  cursor = 'auto',
   place = 'bottom',
   delayHide = delay,
   delayShow = delay,
@@ -44,7 +45,7 @@ export const EllipsisText = ({
 
   return (
     <>
-      <EllipsisDiv ref={ref} data-tooltip-id={id}>
+      <EllipsisDiv ref={ref} data-tooltip-id={id} cursor={cursor}>
         <>{children}</>
       </EllipsisDiv>
 

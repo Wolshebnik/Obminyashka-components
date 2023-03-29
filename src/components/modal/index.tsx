@@ -10,10 +10,10 @@ const Modal = ({
   isOpen,
   onClose,
   children,
+  duration = 500,
   hideButtonClose = false,
 }: ChildrenProps<IModal>) => {
   const [closing, setClosing] = useState(false);
-  const duration = 300;
 
   useEffect(() => {
     if (isOpen) {
@@ -38,7 +38,7 @@ const Modal = ({
           <Styles.Overlay
             closing={closing}
             duration={duration}
-            onClick={() => onClose(false)}
+            onClick={handleClose}
           >
             <Styles.ModalWindow
               closing={closing}
