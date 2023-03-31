@@ -95,7 +95,7 @@ const Input = ({
               />
 
               <Styles.ErrorCount error={error}>
-                {`${(value as string).length}/${maxValue}`}
+                {`${(value as string)?.length}/${maxValue}`}
               </Styles.ErrorCount>
             </Styles.WrapDescription>
           )}
