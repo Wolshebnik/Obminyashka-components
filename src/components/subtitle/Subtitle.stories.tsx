@@ -15,7 +15,7 @@ const Template: ComponentStory<typeof Subtitle> = (args) => (
 
 export const SubtitleDefault = Template.bind({});
 SubtitleDefault.args = {
-  textTitle: 'Категорії',
+  textTitle: 'Виберiть роздiл',
 };
 
 export const WithoutStar = Template.bind({});
