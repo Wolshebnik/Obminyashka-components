@@ -18,6 +18,7 @@ export { ProductCard } from './product-card';
 export { ProductDescription } from './product-description';
 export { ProductOwnerData } from './product-owner-data';
 export { ProductPostData } from './product-post-data';
+export { Subtitle } from './subtitle';
 export { Title } from './title';
 export { Toast, showMessage } from './toast';
 export * as Icon from './icon';
