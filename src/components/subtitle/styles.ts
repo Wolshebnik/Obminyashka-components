@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const TitleH3 = styled.h3`
   margin-bottom: 10px;
@@ -8,9 +8,6 @@ export const TitleH3 = styled.h3`
   line-height: 40px;
 `;
 
-export const Star = styled.span<{ hiddenStar?: boolean }>`
-  ${({ hiddenStar, theme }) => css`
-    display: ${hiddenStar ? 'none' : 'inline-block'};
-    color: ${theme.colors.colorRed};
-  `}
+export const Star = styled.span`
+  color: ${({ theme }) => theme.colors.colorRed};
 `;
