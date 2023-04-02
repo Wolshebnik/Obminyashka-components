@@ -23,9 +23,3 @@ WithoutStar.args = {
   hiddenStar: true,
   textTitle: 'Опис товара',
 };
-
-export const OtherFont = Template.bind({});
-OtherFont.args = {
-  style: { fontFamily: 'Roboto' },
-  textTitle: 'Завантажте фотографії ваших речей ',
-};
