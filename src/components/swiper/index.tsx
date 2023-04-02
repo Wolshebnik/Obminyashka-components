@@ -1,9 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Autoplay, Navigation } from 'swiper';
+import { Autoplay } from 'swiper';
 
 import 'swiper/css';
-import 'swiper/css/navigation';
 
 import * as Styles from './styles';
 import { slidesData } from './mock';
@@ -13,10 +12,8 @@ const Slider = ({
   loop,
   speed,
   autoplay,
-  direction,
-  navigation,
-  spaceBetween,
   slidesPerView,
+  spaceBetween,
 }: IMainSlider) => {
   return (
     <Styles.SwiperWrapper>
@@ -25,11 +22,9 @@ const Slider = ({
         speed={speed}
         autoplay={autoplay}
         className="mySwiper"
-        direction={direction}
-        navigation={navigation}
+        modules={[Autoplay]}
         spaceBetween={spaceBetween}
         slidesPerView={slidesPerView}
-        modules={[Autoplay, Navigation]}
       >
         <>
           {slidesData.map((item) => (
@@ -39,7 +34,6 @@ const Slider = ({
 
                 <Styles.SlideText>
                   {item.subtitle}
-
                   <Styles.SlideTitle>{item.title}</Styles.SlideTitle>
                 </Styles.SlideText>
               </Styles.SlideLink>

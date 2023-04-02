@@ -13,11 +13,11 @@ export const SwiperWrapper = styled.div`
   .swiper-slide {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
     width: 426px !important;
     height: 310px !important;
-    /* font-size: 18px;
-    background: ${({ theme }) => theme.colors.white}; */
+    font-size: 18px;
+    /* background: ${({ theme }) => theme.colors.white}; */
   }
 `;
 

@@ -5,8 +5,6 @@ export interface IMainSlider {
   speed: number;
   autoplay: object;
   children: ReactNode;
-  navigation: boolean;
   spaceBetween: number;
   slidesPerView: number;
-  direction: 'horizontal' | 'vertical';
 }

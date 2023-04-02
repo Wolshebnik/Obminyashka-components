@@ -20,21 +20,11 @@ const Template: ComponentStory<typeof Slider> = (args) => {
 
 export const DefaultSlider = Template.bind({});
 DefaultSlider.args = {
-  loop: true,
   speed: 2000,
-  slidesPerView: 4,
-  spaceBetween: 42,
-  direction: 'horizontal',
+  loop: true,
+  // slidesPerView: 4,
+  // spaceBetween: 42,
   autoplay: {
     delay: 2000,
   },
 };
-
-// export const VerticalSlider = Template.bind({});
-// VerticalSlider.args = {
-//   loop: true,
-//   navigation: true,
-//   slidesPerView: 4,
-//   spaceBetween: 10,
-//   direction: 'vertical',
-// };
