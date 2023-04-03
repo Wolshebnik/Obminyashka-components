@@ -28,6 +28,7 @@ const Input = ({
   wrapperInputErrorWidth,
   ...props
 }: InputProps) => {
+  const maxValue = 255;
   const isTypeSearch = type === 'search';
   const notPasswordType = type !== 'password';
   const isInputNotEmpty = value?.toString().length !== 0;
@@ -55,13 +56,11 @@ const Input = ({
           {label}
         </Styles.LabelSpan>
       )}
-
       {isTypeSearch && (
         <Styles.WrapperSearchLink onClick={onClick}>
           <Icon.Search />
         </Styles.WrapperSearchLink>
       )}
-
       <Styles.WrapperInputError
         errorGap={errorGap}
         isTypeSearch={isTypeSearch}
@@ -86,7 +85,22 @@ const Input = ({
             </InputMask>
           )}
 
-          {type !== 'tel' && (
+          {type === 'textarea' && (
+            <Styles.WrapDescription>
+              <Styles.TextArea
+                value={value}
+                error={error}
+                id={id ?? name}
+                {...props}
+              />
+
+              <Styles.ErrorCount error={error}>
+                {`${value ? (value as string).length : 0}/${maxValue}`}
+              </Styles.ErrorCount>
+            </Styles.WrapDescription>
+          )}
+
+          {type !== 'tel' && type !== 'textarea' && (
             <Styles.Input
               name={name}
               value={value}
@@ -111,7 +125,7 @@ const Input = ({
           {!notPasswordType && component}
         </Styles.InputIcon>
 
-        {error && (
+        {error && type !== 'textarea' && (
           <Styles.SpanError error={error} errorFontSize={errorFontSize}>
             {error}
           </Styles.SpanError>

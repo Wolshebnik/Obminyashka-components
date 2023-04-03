@@ -1,21 +1,24 @@
-import React, {
+import {
+  ReactNode,
   ChangeEvent,
   DetailedHTMLProps,
   InputHTMLAttributes,
 } from 'react';
 
 export interface ShowPasswordType {
-  component: React.ReactNode;
+  component: ReactNode;
   currentType: 'password' | 'text';
 }
 
 interface CustomInput
   extends DetailedHTMLProps<
-    InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
+    InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>,
+    HTMLInputElement | HTMLTextAreaElement
   > {}
 
-type InputOnChangeEventType = ChangeEvent<HTMLInputElement> | string;
+type InputOnChangeEventType =
+  | ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  | string;
 
 export interface InputProps extends Omit<CustomInput, 'ref'> {
   name: string;
@@ -25,6 +28,7 @@ export interface InputProps extends Omit<CustomInput, 'ref'> {
   errorGap?: string;
   labelColor?: string;
   inputHeight?: string;
+  onClick?: () => void;
   labelFontSize?: string;
   errorFontSize?: string;
   inputMaxWidth?: string;
@@ -62,3 +66,8 @@ export interface IInput extends Pick<ILabel, 'isTypeSearch'> {
 
 export interface ISpanError
   extends Pick<InputProps, 'error' | 'errorFontSize'> {}
+
+export interface ITextAreaArg {
+  error?: string;
+  value: string | number | readonly string[] | undefined;
+}
