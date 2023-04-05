@@ -50,8 +50,6 @@ export const PostReqDataBlock = styled.div`
 `;
 
 export const PostReqDataText = styled.div<{ color?: string }>`
-  white-space: nowrap;
-
   ${({ theme, color }) => css`
     color: ${color ? color : theme.colors.productOwnerData.text};
   `};

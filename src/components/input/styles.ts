@@ -5,6 +5,7 @@ import {
   ILabel,
   ILabelSpan,
   ISpanError,
+  ITextAreaArg,
   IWrapperInputError,
 } from './types';
 
@@ -101,6 +102,44 @@ export const WrapperSearchLink = styled.div`
 
 export const InputIcon = styled.div`
   position: relative;
+`;
+
+export const WrapDescription = styled.div`
+  position: relative;
+`;
+
+export const TextArea = styled.textarea<ITextAreaArg>`
+  padding: 10px;
+  width: 100%;
+  min-height: 150px;
+  font-size: 16px;
+  line-height: 24px;
+  outline: none;
+  resize: none;
+  border-radius: 2px;
+
+  ${({ theme, error }) => css`
+    caret-color: ${theme.colors.activeColor};
+    border: 1px solid
+      ${error ? theme.colors.colorError : theme.colors.input.textAreaBorder};
+
+    &:focus {
+      border-color: ${error
+        ? theme.colors.colorError
+        : theme.colors.input.focus};
+    }
+  `}
+`;
+
+export const ErrorCount = styled.span<{ error?: string }>`
+  position: absolute;
+  right: 5px;
+  bottom: 10px;
+
+  ${({ theme, error }) => css`
+    background-color: ${theme.colors.white};
+    color: ${error ? theme.colors.colorError : theme.colors.colorTextDisabled};
+  `}
 `;
 
 export const WrapperInputError = styled.div<IWrapperInputError>`

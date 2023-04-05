@@ -9,4 +9,5 @@ export interface IInitialValues {
   text: string;
   error?: string;
   password: string;
+  textarea: string;
 }

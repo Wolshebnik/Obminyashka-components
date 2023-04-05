@@ -5,16 +5,12 @@ export const initialValues: IInitialValues = {
   tel: '',
   text: '',
   password: '',
+  textarea: '',
 };
 
 export const validationSchema = Yup.object().shape({
-  text: Yup.string()
-    .required()
-    .default(() => ''),
-  password: Yup.string()
-    .required('')
-    .default(() => ''),
-  tel: Yup.string()
-    .required()
-    .default(() => ''),
+  text: Yup.string().required(),
+  password: Yup.string().required(),
+  tel: Yup.string().required(),
+  textarea: Yup.string().max(255),
 });

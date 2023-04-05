@@ -28,12 +28,14 @@ const Template: ComponentStory<typeof InputField> = (args) => {
             <InputField
               {...args}
               name="text"
+              inputGap="6px"
               placeholder="text"
               label="Enter your login"
             />
 
             <InputField
               {...args}
+              inputGap="6px"
               name="password"
               type="password"
               placeholder="password"
@@ -44,12 +46,21 @@ const Template: ComponentStory<typeof InputField> = (args) => {
               {...args}
               name="tel"
               type="tel"
+              inputGap="6px"
               inputMaxWidth="588px"
               label="Enter your phone"
               inputFlexDirection="row"
               wrapperInputErrorWidth="415px"
-              placeholder="+38(999) 999-99-99"
+              placeholder="+380(99)999-99-99"
               inputJustifyContent="space-between"
+            />
+
+            <InputField
+              {...args}
+              name="textarea"
+              type="textarea"
+              inputGap="26px"
+              label="Опишіть Вашу річ: деффекти, особливості використання, тощо"
             />
 
             <Button type="submit" text="Submit" />
