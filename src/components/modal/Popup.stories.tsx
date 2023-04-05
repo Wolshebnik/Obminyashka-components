@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Modal } from '.';
 import { Button } from '../button';
+import { mockChildren } from './mock';
 import { argTypes } from './arg-types';
 
 export default {
@@ -11,22 +12,33 @@ export default {
   argTypes,
 } as ComponentMeta<typeof Modal>;
 
-const Template: ComponentStory<typeof Modal> = () => {
+const Template: ComponentStory<typeof Modal> = (args) => {
   const [isOpen, onClose] = useState(false);
+  const { children, ...rest } = args;
 
   return (
     <>
       <Button onClick={() => onClose(true)} text="Open" />
-      <Modal isOpen={isOpen} onClose={onClose}>
-        <p style={{ background: 'white', padding: 20, borderRadius: 3 }}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam error
-          nulla, deserunt dolorum aliquam vero officia sint nostrum dolores,
-          pariatur, minus aperiam quod. Quia autem aut labore minus odio
-          explicabo?
-        </p>
+      <Modal {...rest} isOpen={isOpen} onClose={onClose}>
+        {children}
       </Modal>
     </>
   );
 };
 
 export const PortalModal = Template.bind({});
+PortalModal.args = {
+  children: mockChildren,
+};
+
+export const WithoutBg = Template.bind({});
+WithoutBg.args = {
+  children: mockChildren,
+  withoutBg: true,
+};
+
+export const WithoutBtn = Template.bind({});
+WithoutBtn.args = {
+  children: mockChildren,
+  hideButtonClose: true,
+};

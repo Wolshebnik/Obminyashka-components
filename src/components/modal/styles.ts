@@ -54,7 +54,6 @@ export const ModalWindow = styled.div<IStyles>`
   max-width: 600px;
   max-height: 80%;
   box-shadow: rgba(18, 182, 237, 0.3) 0px 3px 10px -0.5px;
-  border-radius: 3px;
   z-index: 30;
 
   ${({ closing, duration }) => css`
@@ -102,4 +101,14 @@ export const ButtonClose = styled.button`
   &:hover {
     transform: rotate(180deg);
   }
+`;
+
+export const ExtraWrapper = styled.div<{ withoutBg: boolean }>`
+  ${({ theme, withoutBg }) =>
+    !withoutBg &&
+    css`
+      background-color: ${theme.colors.white};
+      padding: 30px;
+      border-radius: 3px;
+    `}
 `;

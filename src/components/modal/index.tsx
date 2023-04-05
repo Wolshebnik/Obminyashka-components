@@ -11,6 +11,7 @@ const Modal = ({
   onClose,
   children,
   duration = 500,
+  withoutBg = false,
   hideButtonClose = false,
 }: ChildrenProps<IModal>) => {
   const [closing, setClosing] = useState(false);
@@ -45,7 +46,9 @@ const Modal = ({
               duration={duration}
               onClick={(event) => event.stopPropagation()}
             >
-              {children}
+              <Styles.ExtraWrapper withoutBg={withoutBg}>
+                {children}
+              </Styles.ExtraWrapper>
 
               {!hideButtonClose && <Styles.ButtonClose onClick={handleClose} />}
             </Styles.ModalWindow>
