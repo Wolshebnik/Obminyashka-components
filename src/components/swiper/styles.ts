@@ -17,13 +17,18 @@ export const SwiperWrapper = styled.div`
     width: 426px !important;
     height: 310px !important;
     font-size: 18px;
-    /* background: ${({ theme }) => theme.colors.white}; */
+    border-radius: 20px;
   }
 `;
 
 export const SlideLink = styled(Link)`
   position: relative;
   outline: none;
+`;
+
+export const SlideImage = styled.img`
+  width: 426px;
+  height: 310px;
 `;
 
 export const SlideText = styled.span`

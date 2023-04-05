@@ -1,13 +1,11 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Slider } from '.';
-// import { argTypes } from './arg-types';
 import * as Styles from './styles';
 
 export default {
   title: 'Slider',
   component: Slider,
-  // argTypes,
 } as ComponentMeta<typeof Slider>;
 
 const Template: ComponentStory<typeof Slider> = (args) => {
@@ -20,11 +18,12 @@ const Template: ComponentStory<typeof Slider> = (args) => {
 
 export const DefaultSlider = Template.bind({});
 DefaultSlider.args = {
-  speed: 2000,
   loop: true,
-  // slidesPerView: 4,
-  // spaceBetween: 42,
+  speed: 1000,
+  slidesPerView: 4,
+  spaceBetween: 42,
   autoplay: {
-    delay: 2000,
+    delay: 1000,
+    disableOnInteraction: false,
   },
 };

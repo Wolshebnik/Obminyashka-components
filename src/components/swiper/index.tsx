@@ -12,8 +12,8 @@ const Slider = ({
   loop,
   speed,
   autoplay,
-  slidesPerView,
   spaceBetween,
+  slidesPerView,
 }: IMainSlider) => {
   return (
     <Styles.SwiperWrapper>
@@ -28,9 +28,9 @@ const Slider = ({
       >
         <>
           {slidesData.map((item) => (
-            <SwiperSlide style={item.styles}>
-              <Styles.SlideLink to={item.href} key={item.title}>
-                <img src={item.src} alt={item.title} style={item.styles} />
+            <SwiperSlide key={item.title}>
+              <Styles.SlideLink to={item.href}>
+                <Styles.SlideImage src={item.src} alt={item.title} />
 
                 <Styles.SlideText>
                   {item.subtitle}

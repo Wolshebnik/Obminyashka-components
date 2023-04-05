@@ -8,30 +8,22 @@ import {
   strollersSlider,
 } from 'components/img';
 
-const styles = {
-  width: 426,
-  height: 310,
-};
-
 export const slidesData = [
   {
-    styles,
     href: '#',
-    src: toySlider,
     title: 'Toys',
+    src: toySlider,
     subtitle: 'Huge selection of',
   },
 
   {
-    styles,
     href: '#',
-    src: clothesSlider,
     title: 'Clothes',
+    src: clothesSlider,
     subtitle: 'Variety for children and teenagers of',
   },
 
   {
-    styles,
     href: '#',
     src: childSlider,
     title: 'Infants',
@@ -39,34 +31,30 @@ export const slidesData = [
   },
 
   {
-    styles,
     href: '#',
-    src: furnitureSlider,
     title: 'Furniture',
+    src: furnitureSlider,
     subtitle: "Lots of children's",
   },
 
   {
-    styles,
     href: '#',
-    src: shoesSlider,
     title: 'Shoes',
+    src: shoesSlider,
     subtitle: 'Variety for children and teenagers of',
   },
 
   {
-    styles,
     href: '#',
-    src: strollersSlider,
     title: 'Transport',
+    src: strollersSlider,
     subtitle: "Children's",
   },
 
   {
-    styles,
     href: '#',
-    src: booksSlider,
     title: 'Books',
+    src: booksSlider,
     subtitle: 'Educational and children’s',
   },
 ];
