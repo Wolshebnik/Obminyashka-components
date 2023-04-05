@@ -10,7 +10,9 @@ export default {
 } as ComponentMeta<typeof CancelEverything>;
 
 const Template: ComponentStory<typeof CancelEverything> = (args) => (
-  <CancelEverything {...args} />
+  <div style={{ width: '200px', marginLeft: '20px' }}>
+    <CancelEverything {...args} />
+  </div>
 );
 
 export const CancelEverythingItem = Template.bind({});
