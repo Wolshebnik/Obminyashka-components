@@ -40,8 +40,8 @@ export const Overlay = styled.div<IStyles>`
   height: 100vh;
   opacity: 1;
   transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 999;
   transition-delay: 200;
+  z-index: 999;
 
   ${({ theme }) => css`
     background-color: ${theme.colors.modalColors.background};
@@ -107,8 +107,8 @@ export const ExtraWrapper = styled.div<{ withoutBg: boolean }>`
   ${({ theme, withoutBg }) =>
     !withoutBg &&
     css`
-      background-color: ${theme.colors.white};
       padding: 30px;
+      background-color: ${theme.colors.white};
       border-radius: 3px;
     `}
 `;
