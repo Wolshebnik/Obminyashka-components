@@ -33,12 +33,12 @@ PortalModal.args = {
 
 export const WithoutBg = Template.bind({});
 WithoutBg.args = {
-  children: mockChildren,
   withoutBg: true,
+  children: mockChildren,
 };
 
 export const WithoutBtn = Template.bind({});
 WithoutBtn.args = {
-  children: mockChildren,
   hideButtonClose: true,
+  children: mockChildren,
 };
