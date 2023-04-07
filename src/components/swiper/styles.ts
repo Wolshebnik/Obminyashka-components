@@ -17,7 +17,6 @@ export const SwiperWrapper = styled.div`
     width: 426px !important;
     height: 310px !important;
     font-size: 18px;
-    border-radius: 20px;
   }
 `;
 
@@ -57,6 +56,6 @@ export const SlideTitle = styled.b`
   font-family: Caveat;
 `;
 
-export const Wrapper = styled.div`
+export const StoryWrapper = styled.div`
   max-width: 1830px;
 `;

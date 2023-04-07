@@ -6,43 +6,39 @@ import 'swiper/css';
 
 import * as Styles from './styles';
 import { slidesData } from './mock';
-import { IMainSlider } from './types';
+import { IMainSwiper } from './types';
 
-const Slider = ({
-  loop,
-  speed,
-  autoplay,
-  spaceBetween,
-  slidesPerView,
-}: IMainSlider) => {
+const MainSwiper = ({ translatedTitle, translatedSubtitle }: IMainSwiper) => {
   return (
     <Styles.SwiperWrapper>
       <Swiper
-        loop={loop}
-        speed={speed}
-        autoplay={autoplay}
+        loop={true}
+        speed={2000}
+        spaceBetween={42}
+        slidesPerView={4}
         className="mySwiper"
         modules={[Autoplay]}
-        spaceBetween={spaceBetween}
-        slidesPerView={slidesPerView}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
       >
-        <>
-          {slidesData.map((item) => (
-            <SwiperSlide key={item.title}>
-              <Styles.SlideLink to={item.href}>
-                <Styles.SlideImage src={item.src} alt={item.title} />
+        {slidesData.map((item) => (
+          <SwiperSlide key={translatedTitle}>
+            <Styles.SlideLink to={item.href}>
+              <Styles.SlideImage src={item.src} alt={translatedTitle} />
 
-                <Styles.SlideText>
-                  {item.subtitle}
-                  <Styles.SlideTitle>{item.title}</Styles.SlideTitle>
-                </Styles.SlideText>
-              </Styles.SlideLink>
-            </SwiperSlide>
-          ))}
-        </>
+              <Styles.SlideText>
+                {translatedSubtitle}
+
+                <Styles.SlideTitle>{translatedTitle}</Styles.SlideTitle>
+              </Styles.SlideText>
+            </Styles.SlideLink>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </Styles.SwiperWrapper>
   );
 };
 
-export { Slider };
+export { MainSwiper };

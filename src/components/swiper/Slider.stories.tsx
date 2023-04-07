@@ -1,29 +1,23 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Slider } from '.';
+import { MainSwiper } from '.';
 import * as Styles from './styles';
 
 export default {
-  title: 'Slider',
-  component: Slider,
-} as ComponentMeta<typeof Slider>;
+  title: 'MainSwiper',
+  component: MainSwiper,
+} as ComponentMeta<typeof MainSwiper>;
 
-const Template: ComponentStory<typeof Slider> = (args) => {
+const Template: ComponentStory<typeof MainSwiper> = (args) => {
   return (
-    <Styles.Wrapper>
-      <Slider {...args} />
-    </Styles.Wrapper>
+    <Styles.StoryWrapper>
+      <MainSwiper {...args} />
+    </Styles.StoryWrapper>
   );
 };
 
 export const DefaultSlider = Template.bind({});
 DefaultSlider.args = {
-  loop: true,
-  speed: 1000,
-  slidesPerView: 4,
-  spaceBetween: 42,
-  autoplay: {
-    delay: 1000,
-    disableOnInteraction: false,
-  },
+  translatedTitle: 'Toys',
+  translatedSubtitle: 'Huge selection of',
 };

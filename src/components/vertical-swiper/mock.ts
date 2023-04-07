@@ -10,37 +10,37 @@ import {
 
 export const slidesData = [
   {
-    href: '#',
+    id: 1,
     src: toySlider,
   },
 
   {
-    href: '#',
+    id: 2,
     src: clothesSlider,
   },
 
   {
-    href: '#',
+    id: 3,
     src: childSlider,
   },
 
   {
-    href: '#',
+    id: 4,
     src: furnitureSlider,
   },
 
   {
-    href: '#',
+    id: 5,
     src: shoesSlider,
   },
 
   {
-    href: '#',
+    id: 6,
     src: strollersSlider,
   },
 
   {
-    href: '#',
+    id: 7,
     src: booksSlider,
   },
 ];
