@@ -5,10 +5,9 @@
 import imageCompression from 'browser-image-compression';
 
 // import { ModalContext } from 'components/common';
-import { options } from './config';
 
+import { InputFile } from '../input-file';
 import { ImagePhoto } from './image-photo';
-import { AddFileInput } from './add-file-input';
 
 import * as Styles from './styles';
 import { IPhotoFiles } from './types';
@@ -28,7 +27,7 @@ const PhotoFiles = ({
 }: IPhotoFiles) => {
   // const { openModal } = useContext(ModalContext);
 
-  const filesAddHandler = async (event, dropFiles = null) => {
+  const filesAddHandler = async (event, dropFiles = undefined) => {
     event.preventDefault();
 
     const files = Array.from(dropFiles || event.target.files);
@@ -186,7 +185,7 @@ const PhotoFiles = ({
           />
         ))}
 
-        {imageFiles.length < 10 && <AddFileInput onChange={filesAddHandler} />}
+        {imageFiles.length < 10 && <InputFile onChange={filesAddHandler} />}
       </Styles.WrapperFile>
     </Styles.WrapFiles>
   );

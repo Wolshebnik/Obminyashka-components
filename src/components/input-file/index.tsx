@@ -1,17 +1,13 @@
 import { useState } from 'react';
-import { useField } from 'formik';
 
 import dropsPng from 'assets/img/drag-n-drop.png';
 
 import * as Styles from './styles';
 import { IFileInput } from './types';
-import { ErrorDisplay } from '../../error-display';
+import { ErrorDisplay } from '../error-display';
 
-const AddFileInput = ({ onChange }: IFileInput) => {
+const InputFile = ({ name, onChange, type, error }: IFileInput) => {
   const [drag, setDrag] = useState<boolean>(false);
-
-  const [, meta] = useField({ name: 'images' });
-  const { error } = meta;
 
   function dragStartHandler(e: React.DragEvent<HTMLLabelElement>) {
     e.preventDefault();
@@ -39,13 +35,14 @@ const AddFileInput = ({ onChange }: IFileInput) => {
     >
       <Styles.Input
         multiple
-        type="file"
-        name="file"
+        type={type}
+        name={name}
         onChange={onChange}
         accept=".png, .jpg, .jpeg, .gif"
       />
       {drag ? <Styles.Image src={dropsPng} alt="drop" /> : <Styles.SpanAdd />}
-      {!!error && error && (
+
+      {error && (
         <Styles.WrapError>
           <ErrorDisplay error={error} />
         </Styles.WrapError>
@@ -54,4 +51,4 @@ const AddFileInput = ({ onChange }: IFileInput) => {
   );
 };
 
-export { AddFileInput };
+export { InputFile };
