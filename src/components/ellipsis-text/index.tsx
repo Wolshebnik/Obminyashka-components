@@ -1,8 +1,9 @@
 import { useRef, useEffect, useState } from 'react';
+import { Tooltip } from 'react-tooltip';
 
 import { ITooltipProps } from './types';
 import 'react-tooltip/dist/react-tooltip.css';
-import { EllipsisDiv, ReactTooltip } from './styles';
+import { EllipsisDiv, WrapTooltip } from './styles';
 
 const delay = 300;
 
@@ -50,18 +51,19 @@ export const EllipsisText = ({
       </EllipsisDiv>
 
       {hasToolTip && (
-        <ReactTooltip
-          id={id}
-          width={width}
-          place={place}
-          noArrow={noArrow}
-          delayShow={delayShow}
-          delayHide={delayHide}
-          className={className}
-          {...props}
-        >
-          {children}
-        </ReactTooltip>
+        <WrapTooltip width={width}>
+          <Tooltip
+            id={id}
+            place={place}
+            noArrow={noArrow}
+            delayShow={delayShow}
+            delayHide={delayHide}
+            className={className}
+            {...props}
+          >
+            {children}
+          </Tooltip>
+        </WrapTooltip>
       )}
     </>
   );

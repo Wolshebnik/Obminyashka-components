@@ -1,12 +1,11 @@
-import { Tooltip } from 'react-tooltip';
 import styled, { css } from 'styled-components';
 
 import { Cursor } from './types';
 import { ITooltipProps } from './types';
 import 'react-tooltip/dist/react-tooltip.css';
 
-export const ReactTooltip = styled(Tooltip)<ITooltipProps>`
-  &.custom-tooltip {
+export const WrapTooltip = styled.div<ITooltipProps>`
+  > .custom-tooltip {
     padding: 16px;
     border-radius: 8px;
     opacity: 1;
