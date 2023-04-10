@@ -1,14 +1,15 @@
-import { Tooltip } from 'react-tooltip';
 import styled, { css } from 'styled-components';
 
+import { Cursor } from './types';
 import { ITooltipProps } from './types';
 import 'react-tooltip/dist/react-tooltip.css';
 
-export const ReactTooltip = styled(Tooltip)<ITooltipProps>`
-  &.custom-tooltip {
+export const WrapTooltip = styled.div<ITooltipProps>`
+  > .custom-tooltip {
     padding: 16px;
     border-radius: 8px;
     opacity: 1;
+    word-wrap: break-word;
     cursor: context-menu;
 
     ${({ width }) => css`
@@ -23,11 +24,11 @@ export const ReactTooltip = styled(Tooltip)<ITooltipProps>`
   }
 `;
 
-export const EllipsisDiv = styled.div`
+export const EllipsisDiv = styled.div<{ cursor: Cursor }>`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  cursor: auto;
+  cursor: ${({ cursor }) => cursor};
 `;
 
 export const Container = styled.div`

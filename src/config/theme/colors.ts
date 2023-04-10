@@ -36,10 +36,11 @@ const schoolBusYellow = '#f5d800';
 const turbo = '#FEE200';
 
 //General grey
+const darkSilver = '#bcbcbc';
 const dustyGray = '#969696';
+const grey = '#8f8f8f';
 const silver = '#c4c4c4';
 const silverChalice = '#A0A0A0';
-const grey = '#8f8f8f';
 
 //RGBA colors
 const background = 'rgba(255, 255, 255, 0.4)';
@@ -63,6 +64,7 @@ const input = Object.freeze({
   focus: colorBorderFocus,
   searchBorder: activeColor,
   searchBtn: buttonBlue,
+  textAreaBorder: darkSilver,
   textBlack: blackColorText,
   textDisabled: colorTextDisabled,
   textGrey: colorGrey,

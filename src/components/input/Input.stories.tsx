@@ -15,9 +15,9 @@ const Template: ComponentStory<typeof Input> = (args) => {
 
   return (
     <Input
+      {...args}
       value={value}
       onChange={(e) => setValue(typeof e === 'string' ? e : e.target.value)}
-      {...args}
     />
   );
 };
@@ -34,6 +34,17 @@ Text.args = {
   label: 'Label text',
   placeholder: 'Placeholder',
   inputFlexDirection: undefined,
+};
+
+export const textArea = Template.bind({});
+textArea.args = {
+  value: '',
+  error: '',
+  inputGap: '26px',
+  type: 'textarea',
+  name: 'textarea',
+  placeholder: 'Placeholder',
+  label: 'Опишіть Вашу річ: деффекти, особливості використання, тощо',
 };
 
 export const Password = Template.bind({});
@@ -64,7 +75,7 @@ Phone.args = {
   inputMaxWidth: '588px',
   inputFlexDirection: 'row',
   wrapperInputErrorWidth: '415px',
-  placeholder: '+38(999) 999-99-99',
+  placeholder: '+380(99)999-99-99',
   inputJustifyContent: 'space-between',
 };
 
