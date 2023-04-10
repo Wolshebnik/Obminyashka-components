@@ -3,6 +3,7 @@ export { BackButton } from './back-button';
 export { Button } from './button';
 export { CancelEverything } from './cancel-everything';
 export { CheckBox } from './checkbox';
+export { CroppedImage } from './cropped-image';
 export { EllipsisText } from './ellipsis-text';
 export { HelpChildren } from './help-children';
 export { Image } from './image';
