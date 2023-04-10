@@ -42,7 +42,7 @@ const Crop = ({
       const file = new File([croppedPicture.blob], 'avatar', {
         type: croppedPicture.blob.type,
       });
-      onSave({ file }); /* Прокинули пропс на уровень выше*/
+      onSave({ file });
     }
   }, [image, croppedAreaPixels, rotation]);
 

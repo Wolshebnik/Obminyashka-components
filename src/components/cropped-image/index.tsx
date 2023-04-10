@@ -82,12 +82,15 @@ const CroppedImage = ({
 
   const onCropDelete = async () => {
     setIsDeleteLoading(true);
+
     try {
       await onDelete();
+
       setImage('');
       setCroppedImage('');
       setOpenCrop(false);
-    } catch (e) {
+    } catch (err) {
+      return await Promise.reject(err);
     } finally {
       setIsDeleteLoading(false);
     }
@@ -98,6 +101,7 @@ const CroppedImage = ({
 
     try {
       await onSave(file);
+
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = async ({ target }) => {
@@ -107,8 +111,8 @@ const CroppedImage = ({
           setOpenCrop(false);
         }
       };
-    } catch (e) {
-      /*на катче надо прописать */
+    } catch (err) {
+      return await Promise.reject(err);
     } finally {
       setIsSaveLoading(false);
     }
