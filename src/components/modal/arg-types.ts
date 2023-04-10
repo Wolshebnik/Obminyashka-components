@@ -17,4 +17,13 @@ export const argTypes = {
       type: { summary: 'function' },
     },
   },
+  withoutBg: {
+    name: 'withoutBg',
+    type: { name: 'boolean' },
+    description: 'Without white background',
+    table: {
+      defaultValue: { summary: false },
+      type: { summary: 'boolean' },
+    },
+  },
 };

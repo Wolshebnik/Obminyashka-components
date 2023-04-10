@@ -2,26 +2,6 @@ import styled, { css, keyframes } from 'styled-components';
 
 import { IStyles } from './types';
 
-const appearance = keyframes`
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-`;
-
-const fadeOut = keyframes`
- 0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-`;
-
 const continueMoveDown = keyframes`
  0% {
    opacity: 1;
@@ -60,11 +40,11 @@ export const Overlay = styled.div<IStyles>`
   height: 100vh;
   opacity: 1;
   transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 200;
   z-index: 999;
 
-  ${({ theme, duration, closing }) => css`
+  ${({ theme }) => css`
     background-color: ${theme.colors.modalColors.background};
-    animation: ${closing ? appearance : fadeOut} ${duration}ms;
   `};
 `;
 
@@ -74,7 +54,6 @@ export const ModalWindow = styled.div<IStyles>`
   max-width: 600px;
   max-height: 80%;
   box-shadow: rgba(18, 182, 237, 0.3) 0px 3px 10px -0.5px;
-  border-radius: 3px;
   z-index: 30;
 
   ${({ closing, duration }) => css`
@@ -122,4 +101,14 @@ export const ButtonClose = styled.button`
   &:hover {
     transform: rotate(180deg);
   }
+`;
+
+export const ExtraWrapper = styled.div<{ withoutBg: boolean }>`
+  ${({ theme, withoutBg }) =>
+    !withoutBg &&
+    css`
+      padding: 30px;
+      background-color: ${theme.colors.white};
+      border-radius: 3px;
+    `}
 `;

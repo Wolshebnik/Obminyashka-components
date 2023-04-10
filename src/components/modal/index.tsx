@@ -11,6 +11,7 @@ const Modal = ({
   onClose,
   children,
   duration = 500,
+  withoutBg = false,
   hideButtonClose = false,
 }: ChildrenProps<IModal>) => {
   const [closing, setClosing] = useState(false);
@@ -38,14 +39,16 @@ const Modal = ({
           <Styles.Overlay
             closing={closing}
             duration={duration}
-            onClick={() => onClose(false)}
+            onClick={handleClose}
           >
             <Styles.ModalWindow
               closing={closing}
               duration={duration}
               onClick={(event) => event.stopPropagation()}
             >
-              {children}
+              <Styles.ExtraWrapper withoutBg={withoutBg}>
+                {children}
+              </Styles.ExtraWrapper>
 
               {!hideButtonClose && <Styles.ButtonClose onClick={handleClose} />}
             </Styles.ModalWindow>
