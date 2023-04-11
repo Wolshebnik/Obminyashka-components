@@ -44,7 +44,7 @@ const CroppedImage = ({
       avatarImage !== ''
     ) {
       setImage(`${avatarImage}`);
-    } else setImage(avatarImage);
+    } else setImage(undefined);
   }, [avatarImage]);
   const handleOpenCrop = () => {
     if (image) {
