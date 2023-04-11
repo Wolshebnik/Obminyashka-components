@@ -25,11 +25,15 @@ const CroppedImage = ({
   errorSizeSelect,
 }: ICroppedImage) => {
   const [image, setImage] = useState(avatarImage);
+  const [croppedImage, setCroppedImage] = useState('');
+
   const [error, setError] = useState('');
   const [fileSize, setFileSize] = useState('');
+
   const [showIcon, setShowIcon] = useState(false);
+
   const [openCrop, setOpenCrop] = useState(false);
-  const [croppedImage, setCroppedImage] = useState('');
+
   const [isSaveLoading, setIsSaveLoading] = useState(false);
   const [isDeleteLoading, setIsDeleteLoading] = useState(false);
 
@@ -89,6 +93,7 @@ const CroppedImage = ({
       setImage('');
       setCroppedImage('');
       setOpenCrop(false);
+      return await Promise.resolve();
     } catch (err) {
       return await Promise.reject(err);
     } finally {
@@ -111,6 +116,7 @@ const CroppedImage = ({
           setOpenCrop(false);
         }
       };
+      return await Promise.resolve();
     } catch (err) {
       return await Promise.reject(err);
     } finally {
