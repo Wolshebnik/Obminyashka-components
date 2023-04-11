@@ -35,7 +35,7 @@ const CroppedImage = ({
 
   useEffect(() => {
     if (avatarImage) {
-      setImage(`${avatarImage}`);
+      setImage(`data:image/jpeg;base64,${avatarImage}`);
     }
   }, [avatarImage]);
 
