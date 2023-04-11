@@ -1,7 +1,7 @@
 import { useState, useEffect, ChangeEvent } from 'react';
 import imageCompression from 'browser-image-compression';
 
-import { Crop } from '../crop';
+import { Crop } from './crop';
 import * as Icon from '../icon';
 import { Modal } from '../modal';
 import { Avatar } from '../avatar';

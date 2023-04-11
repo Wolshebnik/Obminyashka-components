@@ -3,9 +3,9 @@ import Cropper from 'react-easy-crop';
 import { Area } from 'react-easy-crop/types';
 
 import { ICrop } from './types';
-import * as Icon from '../icon';
+import * as Icon from '../../icon';
 import * as Styles from './style';
-import { Button } from '../button';
+import { Button } from '../../button';
 import getCroppedImg from './helpers';
 
 const Crop = ({
