@@ -56,6 +56,11 @@ const CroppedImage = ({
     setImage('');
     setCroppedImage('');
   };
+
+  const handleSetImage = (img: string) => {
+    setImage(img);
+    setCroppedImage(img);
+  };
   const changeFile = async (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.files === null) return;
 
@@ -144,9 +149,8 @@ const CroppedImage = ({
             onSave={({ file }: { file: File }) =>
               onSave({
                 file,
-                setImage,
                 setOpenCrop,
-                setCroppedImage,
+                handleSetImage,
                 setIsSaveLoading,
               })
             }

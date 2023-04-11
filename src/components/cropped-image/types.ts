@@ -30,8 +30,7 @@ export interface IOnDelete {
 
 export interface IOnSave {
   file: File;
-  setImage: Function;
   setOpenCrop: Function;
-  setCroppedImage: Function;
+  handleSetImage: (image: string) => void;
   setIsSaveLoading: Function;
 }

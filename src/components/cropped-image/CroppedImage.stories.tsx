@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { CroppedImage } from './index';
 import { IOnDelete, IOnSave } from './types';
+
 export default {
   title: 'CroppedImage',
   component: CroppedImage,
@@ -18,9 +19,8 @@ export const Template: ComponentStory<typeof CroppedImage> = (args) => {
   };
   const onSave = async ({
     file,
-    setImage,
     setOpenCrop,
-    setCroppedImage,
+    handleSetImage,
     setIsSaveLoading,
   }: IOnSave) => {
     setIsSaveLoading(true);
@@ -30,9 +30,8 @@ export const Template: ComponentStory<typeof CroppedImage> = (args) => {
     const reader = new FileReader();
     reader.onload = function () {
       const base64String = (reader.result as string).split(',')[1];
-      setImage(base64String);
       setAvatarImage(base64String);
-      setCroppedImage(base64String);
+      handleSetImage(base64String);
     };
     reader.readAsDataURL(file);
 
@@ -57,16 +56,14 @@ export const Template: ComponentStory<typeof CroppedImage> = (args) => {
         avatarImage={avatarImage}
         onSave={({
           file,
-          setImage,
           setOpenCrop,
-          setCroppedImage,
+          handleSetImage,
           setIsSaveLoading,
         }: IOnSave) =>
           onSave({
             file,
-            setImage,
             setOpenCrop,
-            setCroppedImage,
+            handleSetImage,
             setIsSaveLoading,
           })
         }
