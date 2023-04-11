@@ -34,11 +34,14 @@ const CroppedImage = ({
   const [isDeleteLoading, setIsDeleteLoading] = useState(false);
 
   useEffect(() => {
-    if (!avatarImage?.includes('data:image/jpeg;base64,')) {
+    if (
+      !avatarImage?.includes('data:image/jpeg;base64,') &&
+      avatarImage !== ''
+    ) {
       setImage(`data:image/jpeg;base64,${avatarImage}`);
     } else if (avatarImage?.includes('data:image/jpeg;base64,')) {
       setImage(`${avatarImage}`);
-    } else setImage(undefined);
+    } else setImage('');
   }, [avatarImage]);
   const handleOpenCrop = () => {
     if (image) {
