@@ -3,12 +3,10 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { CroppedImage } from './index';
 import { IOnDelete, IOnSave } from './types';
-
 export default {
   title: 'CroppedImage',
   component: CroppedImage,
 } as ComponentMeta<typeof CroppedImage>;
-
 export const Template: ComponentStory<typeof CroppedImage> = (args) => {
   const [avatarImage, setAvatarImage] = useState('');
 
@@ -18,7 +16,6 @@ export const Template: ComponentStory<typeof CroppedImage> = (args) => {
     errorSizeSelect: 'Виберіть фото обсягом до 10 МБ.',
     errorFormat: 'Будь ласка, виберіть фото відповідно до вказаних форматів',
   };
-
   const onSave = async ({
     file,
     setImage,
@@ -27,7 +24,6 @@ export const Template: ComponentStory<typeof CroppedImage> = (args) => {
     setIsSaveLoading,
   }: IOnSave) => {
     setIsSaveLoading(true);
-
     // eslint-disable-next-line no-console
     console.log(file);
 

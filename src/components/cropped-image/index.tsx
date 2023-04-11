@@ -24,12 +24,12 @@ const CroppedImage = ({
   rotateBtnText,
   errorSizeSelect,
 }: ICroppedImage) => {
-  const [image, setImage] = useState(avatarImage);
-  const [croppedImage, setCroppedImage] = useState('');
   const [error, setError] = useState('');
   const [fileSize, setFileSize] = useState('');
+  const [image, setImage] = useState(avatarImage);
   const [showIcon, setShowIcon] = useState(false);
   const [openCrop, setOpenCrop] = useState(false);
+  const [croppedImage, setCroppedImage] = useState('');
   const [isSaveLoading, setIsSaveLoading] = useState(false);
   const [isDeleteLoading, setIsDeleteLoading] = useState(false);
 
@@ -57,7 +57,6 @@ const CroppedImage = ({
     setImage('');
     setCroppedImage('');
   };
-
   const changeFile = async (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.files === null) return;
 
