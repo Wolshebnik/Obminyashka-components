@@ -26,21 +26,25 @@ const CroppedImage = ({
 }: ICroppedImage) => {
   const [image, setImage] = useState(avatarImage);
   const [croppedImage, setCroppedImage] = useState('');
-
   const [error, setError] = useState('');
   const [fileSize, setFileSize] = useState('');
-
   const [showIcon, setShowIcon] = useState(false);
-
   const [openCrop, setOpenCrop] = useState(false);
-
   const [isSaveLoading, setIsSaveLoading] = useState(false);
   const [isDeleteLoading, setIsDeleteLoading] = useState(false);
 
   useEffect(() => {
-    if (avatarImage) {
+    if (
+      !avatarImage?.includes('data:image/jpeg;base64,') &&
+      avatarImage !== ''
+    ) {
       setImage(`data:image/jpeg;base64,${avatarImage}`);
-    }
+    } else if (
+      avatarImage?.includes('data:image/jpeg;base64,') &&
+      avatarImage !== ''
+    ) {
+      setImage(`${avatarImage}`);
+    } else setImage(avatarImage);
   }, [avatarImage]);
 
   const handleOpenCrop = () => {
@@ -48,6 +52,10 @@ const CroppedImage = ({
       setCroppedImage(image);
       setOpenCrop(true);
     }
+  };
+  const handleClear = () => {
+    setImage('');
+    setCroppedImage('');
   };
 
   const changeFile = async (event: ChangeEvent<HTMLInputElement>) => {
@@ -84,46 +92,6 @@ const CroppedImage = ({
     };
   };
 
-  const onCropDelete = async () => {
-    setIsDeleteLoading(true);
-
-    try {
-      await onDelete();
-
-      setImage('');
-      setCroppedImage('');
-      setOpenCrop(false);
-      return await Promise.resolve();
-    } catch (err) {
-      return await Promise.reject(err);
-    } finally {
-      setIsDeleteLoading(false);
-    }
-  };
-
-  const onCropSave = async ({ file }: { file: File }) => {
-    setIsSaveLoading(true);
-
-    try {
-      await onSave(file);
-
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = async ({ target }) => {
-        if (target?.readyState === 2) {
-          setImage(target.result as string);
-          setCroppedImage(target.result as string);
-          setOpenCrop(false);
-        }
-      };
-      return await Promise.resolve();
-    } catch (err) {
-      return await Promise.reject(err);
-    } finally {
-      setIsSaveLoading(false);
-    }
-  };
-
   return (
     <>
       <Styles.WrapAvatar
@@ -152,8 +120,9 @@ const CroppedImage = ({
       </Styles.WrapAvatar>
       {openCrop && (
         <Modal
-          isOpen={openCrop}
           hideButtonClose
+          withoutBg={true}
+          isOpen={openCrop}
           onClose={() => setOpenCrop(false)}
         >
           <Crop
@@ -165,15 +134,29 @@ const CroppedImage = ({
             isSaveLoading={isSaveLoading}
             deleteBtnText={deleteBtnText}
             rotateBtnText={rotateBtnText}
-            onDelete={() => onCropDelete()}
+            onDelete={() =>
+              onDelete({
+                handleClear,
+                setOpenCrop,
+                setIsDeleteLoading,
+              })
+            }
             isDeleteLoading={isDeleteLoading}
             onClose={() => setOpenCrop(false)}
-            onSave={(e: { file: File }) => onCropSave(e)}
+            onSave={({ file }: { file: File }) =>
+              onSave({
+                file,
+                setImage,
+                setOpenCrop,
+                setCroppedImage,
+                setIsSaveLoading,
+              })
+            }
           />
         </Modal>
       )}
       {error !== '' && (
-        <Modal isOpen={!!error} onClose={() => setError('')}>
+        <Modal isOpen={!!error} onClose={() => setError('')} withoutBg={true}>
           <Styles.ErrorWrapper>
             <h2>{errorTitle}</h2>
             <div>
@@ -191,4 +174,5 @@ const CroppedImage = ({
     </>
   );
 };
+
 export { CroppedImage };

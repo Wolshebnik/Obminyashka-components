@@ -22,3 +22,16 @@ export interface IConvertToMB {
   value?: number;
   valueString: string;
 }
+export interface IOnDelete {
+  handleClear: Function;
+  setOpenCrop: Function;
+  setIsDeleteLoading: Function;
+}
+
+export interface IOnSave {
+  file: File;
+  setImage: Function;
+  setOpenCrop: Function;
+  setCroppedImage: Function;
+  setIsSaveLoading: Function;
+}
