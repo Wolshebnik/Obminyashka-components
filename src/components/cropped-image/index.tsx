@@ -32,7 +32,8 @@ const CroppedImage = ({
   const [croppedImage, setCroppedImage] = useState('');
   const [isSaveLoading, setIsSaveLoading] = useState(false);
   const [isDeleteLoading, setIsDeleteLoading] = useState(false);
-
+  // eslint-disable-next-line no-console
+  console.log(avatarImage);
   useEffect(() => {
     if (
       !avatarImage?.includes('data:image/jpeg;base64,') &&
