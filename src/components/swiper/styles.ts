@@ -4,20 +4,14 @@ import { Link } from 'react-router-dom';
 
 export const SwiperWrapper = styled.div`
   margin: 125px 0;
+`;
 
-  .swiper {
-    width: 100%;
-    height: 100%;
-  }
-
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 426px !important;
-    height: 310px !important;
-    font-size: 18px;
-  }
+export const SlideWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 426px;
+  height: 310px;
 `;
 
 export const SlideLink = styled(Link)`
@@ -38,9 +32,8 @@ export const SlideText = styled.span`
   flex-direction: column;
   align-items: flex-start;
   color: ${({ theme }) => theme.colors.white};
-  font-size: 18px;
-  line-height: 24px;
-  font-family: Roboto;
+  font-size: 22px;
+  line-height: 30px;
 
   :active {
     transform: scale(1.05);
@@ -49,11 +42,11 @@ export const SlideText = styled.span`
 
 export const SlideTitle = styled.b`
   color: ${({ theme }) => theme.colors.white};
-  font-size: 36px;
-  line-height: 44px;
-  letter-spacing: 1px;
+  font-size: 45px;
+  line-height: 55px;
+  font-weight: 400;
   text-transform: uppercase;
-  font-family: Caveat;
+  font-family: Balsamiq Sans, cursive;
 `;
 
 export const StoryWrapper = styled.div`

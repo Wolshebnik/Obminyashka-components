@@ -1,4 +1,8 @@
 export interface IMainSwiper {
-  translatedTitle: string;
-  translatedSubtitle: string;
+  data: Array<{
+    src: string;
+    href: string;
+    title: string;
+    subtitle: string;
+  }>;
 }

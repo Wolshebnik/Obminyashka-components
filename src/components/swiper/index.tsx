@@ -1,39 +1,28 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Autoplay } from 'swiper';
-
 import 'swiper/css';
 
 import * as Styles from './styles';
-import { slidesData } from './mock';
 import { IMainSwiper } from './types';
+import { swiperParams } from './params';
 
-const MainSwiper = ({ translatedTitle, translatedSubtitle }: IMainSwiper) => {
+const MainSwiper = ({ data }: IMainSwiper) => {
   return (
     <Styles.SwiperWrapper>
-      <Swiper
-        loop={true}
-        speed={2000}
-        spaceBetween={42}
-        slidesPerView={4}
-        className="mySwiper"
-        modules={[Autoplay]}
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: false,
-        }}
-      >
-        {slidesData.map((item) => (
-          <SwiperSlide key={translatedTitle}>
-            <Styles.SlideLink to={item.href}>
-              <Styles.SlideImage src={item.src} alt={translatedTitle} />
+      <Swiper {...swiperParams}>
+        {[...data, ...data].map((item, index) => (
+          <SwiperSlide key={index}>
+            <Styles.SlideWrapper>
+              <Styles.SlideLink to={item.href}>
+                <Styles.SlideImage src={item.src} alt={item.title} />
 
-              <Styles.SlideText>
-                {translatedSubtitle}
+                <Styles.SlideText>
+                  {item.subtitle}
 
-                <Styles.SlideTitle>{translatedTitle}</Styles.SlideTitle>
-              </Styles.SlideText>
-            </Styles.SlideLink>
+                  <Styles.SlideTitle>{item.title}</Styles.SlideTitle>
+                </Styles.SlideText>
+              </Styles.SlideLink>
+            </Styles.SlideWrapper>
           </SwiperSlide>
         ))}
       </Swiper>
