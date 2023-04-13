@@ -38,23 +38,23 @@ export const slidesData = [
   },
 
   {
+    href: '#',
     title: 'Shoes',
-    subtitle: 'Variety for children and teenagers of',
-    href: '#',
     src: shoesSlider,
+    subtitle: 'Variety for children and teenagers of',
   },
 
   {
+    href: '#',
     title: 'Transport',
-    subtitle: "Children's",
-    href: '#',
     src: strollersSlider,
+    subtitle: "Children's",
   },
 
   {
-    title: 'Books',
-    subtitle: "Educational and children's",
     href: '#',
+    title: 'Books',
     src: booksSlider,
+    subtitle: "Educational and children's",
   },
 ];
