@@ -5,8 +5,8 @@ export const swiperParams = {
   speed: 2000,
   spaceBetween: 42,
   slidesPerView: 4,
-  className: 'mySwiper',
   modules: [Autoplay],
+  className: 'mySwiper',
   autoplay: {
     delay: 4000,
     disableOnInteraction: false,
