@@ -1,8 +1,10 @@
 export interface IMainSwiper {
-  data: Array<{
-    src: string;
-    href: string;
-    title: string;
-    subtitle: string;
-  }>;
+  data: Data[];
+}
+
+export interface Data {
+  src: string;
+  href: string;
+  title: string;
+  subtitle: string;
 }
