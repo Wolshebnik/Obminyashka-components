@@ -2,6 +2,7 @@ const svgr = require('@svgr/rollup');
 const url = require('@rollup/plugin-url');
 const json = require('@rollup/plugin-json');
 const image = require('@rollup/plugin-image');
+const postcss = require('rollup-plugin-postcss');
 const commonjs = require('@rollup/plugin-commonjs');
 const typescript = require('rollup-plugin-typescript2');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
@@ -35,6 +36,12 @@ module.exports = {
           'prefixIds',
         ],
       },
+    }),
+    postcss({
+      extract: 'index.css',
+      modules: true,
+      use: ['sass'],
+      minimize: true,
     }),
 
     url(),
