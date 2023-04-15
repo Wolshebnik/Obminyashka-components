@@ -4,34 +4,44 @@ import dropsPng from 'assets/img/drag-n-drop.png';
 
 import * as Styles from './styles';
 import { IFileInput } from './types';
+import { isMouseInBounds } from './helper';
 import { ErrorDisplay } from '../error-display';
 
 const InputFile = ({ name, onChange, type, error }: IFileInput) => {
-  const [drag, setDrag] = useState<boolean>(false);
+  const [dragging, setDragging] = useState(false);
 
-  function dragStartHandler(e: React.DragEvent<HTMLLabelElement>) {
+  const handleDragEnter = (e: React.DragEvent<HTMLLabelElement>) => {
     e.preventDefault();
-    setDrag(true);
-  }
+    e.stopPropagation();
+    const inBounds = isMouseInBounds(e);
+    if (inBounds) {
+      setDragging(true);
+    }
+  };
 
-  function dragLeaveHandler(e: React.DragEvent<HTMLLabelElement>) {
+  const handleDragLeave = (e: React.DragEvent<HTMLLabelElement>) => {
     e.preventDefault();
-    setDrag(false);
-  }
+    e.stopPropagation();
+    const inBounds = isMouseInBounds(e);
+    if (!inBounds) {
+      setDragging(false);
+    }
+  };
 
-  const dropHandler = (e: React.DragEvent<HTMLLabelElement>) => {
+  const handleDrop = (e: React.DragEvent<HTMLLabelElement>) => {
+    e.preventDefault();
     const files = [...e.dataTransfer.files];
-    setDrag(false);
+    setDragging(false);
     onChange(e, files);
   };
 
   return (
     <Styles.FilesLabel
       error={error}
-      onDrop={(e) => dropHandler(e)}
-      onDragOver={(e) => dragStartHandler(e)}
-      onDragStart={(e) => dragStartHandler(e)}
-      onDragLeave={(e) => dragLeaveHandler(e)}
+      onDrop={(e) => handleDrop(e)}
+      onDragStart={(e) => handleDragEnter(e)}
+      onDragOver={(e) => handleDragEnter(e)}
+      onDragLeave={(e) => handleDragLeave(e)}
     >
       <Styles.Input
         multiple
@@ -40,7 +50,12 @@ const InputFile = ({ name, onChange, type, error }: IFileInput) => {
         onChange={onChange}
         accept=".png, .jpg, .jpeg, .gif"
       />
-      {drag ? <Styles.Image src={dropsPng} alt="drop" /> : <Styles.SpanAdd />}
+
+      {dragging ? (
+        <Styles.Image src={dropsPng} alt="drop" />
+      ) : (
+        <Styles.SpanAdd />
+      )}
 
       {error && (
         <Styles.WrapError>
