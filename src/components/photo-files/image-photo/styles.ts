@@ -11,9 +11,12 @@ const WrapImage = styled.div<IStyles>`
   margin-bottom: 30px;
   width: 198px;
   height: 208px;
+  //TODO: fix
   border: 2px dotted #c4c4c4;
   border-radius: 19px;
   cursor: move;
+
+  //TODO: fix
   background-color: ${({ theme }) => theme.colors.white};
   ${({ isRemove }) =>
     isRemove &&
@@ -23,32 +26,13 @@ const WrapImage = styled.div<IStyles>`
     `}
 `;
 
-const SpanAdd = styled.span`
-  position: absolute;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 70px;
-  height: 70px;
-  border: 1px solid #c4c4c4;
-  border-radius: 50%;
-  transition: 0.3s ease-in-out;
-  transition-delay: 0.1s;
-
-  &:before,
-  &:after {
-    position: absolute;
-    content: '';
-    width: 35px;
-    height: 3px;
-    background-color: #c4c4c4;
-  }
-  &:after {
-    transform: rotate(90deg);
-  }
-  &:hover {
-    transform: scale(1.2);
-  }
+const ImgPhoto = styled.img`
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 17px;
+  font-size: 0;
 `;
 
 const SpanClose = styled.span`
@@ -60,8 +44,10 @@ const SpanClose = styled.span`
   right: -7px;
   width: 30px;
   height: 30px;
+  //TODO: fix
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 50%;
+  //TODO: fix
   border: 1px solid #bababa;
   transition: 0.3s ease-in-out;
   transition-delay: 0.1s;
@@ -73,6 +59,7 @@ const SpanClose = styled.span`
     content: '';
     width: 1px;
     height: 15px;
+    //TODO: fix
     background: #bababa;
   }
   &:before {
@@ -86,13 +73,4 @@ const SpanClose = styled.span`
   }
 `;
 
-const ImgPhoto = styled.img`
-  width: 100%;
-  height: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border-radius: 17px;
-  font-size: 0;
-`;
-
-export { WrapImage, SpanAdd, SpanClose, ImgPhoto };
+export { WrapImage, SpanClose, ImgPhoto };

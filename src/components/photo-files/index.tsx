@@ -1,193 +1,191 @@
-/* eslint-disable */
-// @ts-nocheck
+import { useState, MouseEvent } from 'react';
+import { Field, FieldProps } from 'formik';
 
-// import { useContext } from 'react';
-import imageCompression from 'browser-image-compression';
+import {
+  DivDragEventType,
+  LabelDragEventType,
+  InputChangeEventType,
+} from 'types';
+import { isRightExtension } from 'utils';
 
-// import { ModalContext } from 'components/common';
-
-import { InputFile } from '../input-file';
-import { ImagePhoto } from './image-photo';
-
+import { Modal } from '../modal';
 import * as Styles from './styles';
 import { IPhotoFiles } from './types';
+import { InputFile } from '../input-file';
+import { ImagePhoto } from './image-photo';
+import {
+  checkFileSize,
+  fileComparison,
+  changeStateForImagesWhenDrop,
+} from './helpers';
 
 const PhotoFiles = ({
-  name = 'images',
-  imageFiles,
+  name,
   preposition,
   description,
-  preViewImage,
-  setImageFiles,
+  maxSizeMB = 10,
   photosUploaded,
-  setPreViewImage,
   firstUploadText,
-  currentIndexImage,
-  setCurrentIndexImage,
+  ...props
 }: IPhotoFiles) => {
-  // const { openModal } = useContext(ModalContext);
+  const [isOpen, onClose] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+  const [blobFiles, setBlobFiles] = useState<File[]>([]);
+  const [images, setImages] = useState<string[]>([]);
+  const [sizeFile, setSizeFile] = useState<string>('');
+  const [isExistingFiles, setIsExistingFiles] = useState<boolean>(false);
+  const [isModeThen, setIsModeThen] = useState<boolean>(false);
+  const [isWrongExtension, setIsWrongExtension] = useState<boolean>(false);
 
-  const filesAddHandler = async (event, dropFiles = undefined) => {
+  const removeImage = (event: MouseEvent<HTMLSpanElement>, index: number) => {
     event.preventDefault();
+    const newImageFiles = [...blobFiles];
+    const newPreViewImage = [...images];
+    newPreViewImage.splice(index, 1);
+    newImageFiles.splice(index, 1);
+    setBlobFiles(newImageFiles);
+    setImages(newPreViewImage);
+  };
 
-    const files = Array.from(dropFiles || event.target.files);
+  const dragStartHandler = (_: DivDragEventType, index: number) => {
+    setCurrentIndex(index);
+  };
 
-    files.forEach((file, index, iterableArray) => {
-      // const notAbilityToDownload =
-      //   10 - imageFiles.length - iterableArray.length < 0;
+  const dragEndHandler = (e: DivDragEventType) => {
+    (e.target as HTMLDivElement).style.background = 'white';
+  };
 
-      // const foundSameFile = imageFiles.some(
-      //   (image) => image.name === file.name
-      // );
+  const dragOverHandler = (e: DivDragEventType) => {
+    e.preventDefault();
+    (e.target as HTMLDivElement).style.background = 'lightgrey';
+  };
 
-      // if (foundSameFile) {
-      //   openModal({
-      //     title: getTranslatedText('popup.errorTitle'),
-      //     children: (
-      //       <p style={{ textAlign: 'center' }}>
-      //         {getTranslatedText('popup.addedFile')}
-      //       </p>
-      //     ),
-      //   });
-      //   return;
-      // }
+  const dropHandler = (e: DivDragEventType, index: number) => {
+    e.preventDefault();
+    (e.target as HTMLDivElement).style.background = 'white';
 
-      // if (isRightExtension(file.type)) {
-      //   openModal({
-      //     title: getTranslatedText('popup.errorTitle'),
-      //     children: (
-      //       <p style={{ textAlign: 'center' }}>
-      //         {getTranslatedText('popup.pictureSelection')} <br />( jpg, jpeg,
-      //         png, gif ).
-      //       </p>
-      //     ),
-      //   });
-      //   return;
-      // }
+    changeStateForImagesWhenDrop({
+      currentIndex,
+      index,
+      processedArray: images,
+      setProcessedArray: setImages,
+    });
 
-      // const { value, valueString } = convertToMB(file.size);
-      // if (value >= options.maxSizeMB && valueString.includes('MB')) {
-      //   openModal({
-      //     title: getTranslatedText('popup.errorTitle'),
-      //     children: (
-      //       <p style={{ textAlign: 'center' }}>
-      //         {getTranslatedText('popup.sizeFile')}
-      //         &nbsp;
-      //         {valueString}
-      //         <br />
-      //         &nbsp;
-      //         {getTranslatedText('popup.selectFile')}
-      //       </p>
-      //     ),
-      //   });
-      //   return;
-      // }
-
-      // if (notAbilityToDownload) {
-      //   openModal({
-      //     title: getTranslatedText('popup.errorTitle'),
-      //     children: (
-      //       <p style={{ textAlign: 'center' }}>
-      //         {getTranslatedText('popup.noSaveMore')}
-      //       </p>
-      //     ),
-      //   });
-      //   return;
-      // }
-
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = async ({ target }) => {
-        if (target.readyState === 2) {
-          const compressedFile = await imageCompression(file, options);
-          setPreViewImage((prev) => [...prev, target.result]);
-          setImageFiles((prev) => [...prev, compressedFile]);
-          event.target.value = null;
-        }
-      };
+    changeStateForImagesWhenDrop({
+      index,
+      processedArray: blobFiles,
+      currentIndex,
+      setProcessedArray: setBlobFiles,
     });
   };
 
-  const removeImage = (event: React.MouseEvent, index: number) => {
-    event.preventDefault();
-
-    const newImageFiles = [...imageFiles];
-    const newPreViewImage = [...preViewImage];
-    newPreViewImage.splice(index, 1);
-    newImageFiles.splice(index, 1);
-    setImageFiles(newImageFiles);
-    setPreViewImage(newPreViewImage);
-  };
-
-  const dragStartHandler = (_, index) => {
-    setCurrentIndexImage(index);
-  };
-
-  const dragEndHandler = (e) => {
-    e.target.style.background = 'white';
-  };
-
-  const dragOverHandler = (e) => {
-    e.preventDefault();
-    e.target.style.background = 'lightgrey';
-  };
-
-  const changeStateForImagesWhenDrop = (
-    index,
-    processedArray,
-    setProcessedArray
-  ) => {
-    const newPrevArr = [...processedArray];
-    const underPrevImage = newPrevArr[index];
-    const currentPrevImage = newPrevArr[currentIndexImage];
-    newPrevArr[currentIndexImage] = underPrevImage;
-    newPrevArr[index] = currentPrevImage;
-    setProcessedArray(newPrevArr);
-  };
-
-  const dropHandler = (e, index) => {
-    e.preventDefault();
-    e.target.style.background = 'white';
-    changeStateForImagesWhenDrop(index, preViewImage, setPreViewImage);
-    changeStateForImagesWhenDrop(index, imageFiles, setImageFiles);
-  };
-
   return (
-    <Styles.WrapFiles name={name}>
-      <Styles.FileTittle>
-        {description}&nbsp;
-        <Styles.Star>*</Styles.Star>
-      </Styles.FileTittle>
+    <Field name={name}>
+      {({ meta, form, field: { value, ...fieldProps } }: FieldProps) => {
+        const error = meta.touched && meta.error ? meta.error : undefined;
 
-      <p>{firstUploadText}</p>
+        const change = async (
+          e: InputChangeEventType | LabelDragEventType,
+          dropFiles?: File[]
+        ) => {
+          let files: File[] = [];
+          const allFiles = form.values[name];
+          setSizeFile('');
+          setIsExistingFiles(false);
+          setIsModeThen(false);
+          setIsWrongExtension(false);
 
-      <Styles.FileDescription>
-        {photosUploaded}
-        &nbsp;
-        {imageFiles.length}
-        &nbsp;
-        {preposition}
-        &nbsp;10
-      </Styles.FileDescription>
+          if (e.target instanceof HTMLInputElement && e.target.files) {
+            files = Array.from(e.target.files);
+          }
 
-      <Styles.WrapperFile>
-        {preViewImage.map((url, index) => (
-          <ImagePhoto
-            url={url}
-            index={index}
-            key={String(`${index}`)}
-            removeImage={removeImage}
-            onDragEnd={(e) => dragEndHandler(e)}
-            onDrop={(e) => dropHandler(e, index)}
-            onDragLeave={(e) => dragEndHandler(e)}
-            onDragOver={(e) => dragOverHandler(e)}
-            onDragStart={(e) => dragStartHandler(e, index)}
-          />
-        ))}
+          if (dropFiles) {
+            files = Array.from(dropFiles);
+          }
 
-        {imageFiles.length < 10 && <InputFile onChange={filesAddHandler} />}
-      </Styles.WrapperFile>
-    </Styles.WrapFiles>
+          if (e.target instanceof HTMLInputElement && e.target.value) {
+            e.target.value = '';
+          }
+
+          const { sizeString, isWrongSize } = checkFileSize(files, maxSizeMB);
+          if (isWrongSize) {
+            setSizeFile(sizeString);
+            onClose(true);
+            return;
+          }
+
+          if (files.some((file) => !isRightExtension(file.type))) {
+            setIsWrongExtension(true);
+            onClose(true);
+            return;
+          }
+
+          if (!fileComparison(allFiles, files)) {
+            setIsExistingFiles(true);
+            onClose(true);
+            return;
+          }
+
+          if (10 - allFiles.length - files.length < 0) {
+            setIsModeThen(true);
+            onClose(true);
+            return;
+          }
+
+          form.setFieldTouched(name);
+          form.setFieldValue(name, [...allFiles, ...files]);
+        };
+
+        return (
+          <Styles.WrapFiles>
+            <Styles.FileTittle>
+              {description}&nbsp;
+              <Styles.Star>*</Styles.Star>
+            </Styles.FileTittle>
+
+            <p>{firstUploadText}</p>
+
+            <Styles.FileDescription>
+              {`${photosUploaded} ${form.values[name].length} ${preposition} 10`}
+            </Styles.FileDescription>
+
+            <Styles.WrapperFile>
+              {form.values[name].map((file: any, index: number) => (
+                <ImagePhoto
+                  index={index}
+                  alt={file.name}
+                  key={String(`${index}`)}
+                  removeImage={removeImage}
+                  url={URL.createObjectURL(file)}
+                  onDragEnd={(e) => dragEndHandler(e)}
+                  onDrop={(e) => dropHandler(e, index)}
+                  onDragLeave={(e) => dragEndHandler(e)}
+                  onDragOver={(e) => dragOverHandler(e)}
+                  onDragStart={(e) => dragStartHandler(e, index)}
+                />
+              ))}
+
+              {form.values[name].length < 10 && (
+                <InputFile
+                  {...props}
+                  {...fieldProps}
+                  name={name}
+                  error={error}
+                  onChange={change}
+                />
+              )}
+
+              <Modal isOpen={isOpen} onClose={onClose}>
+                {isWrongExtension && <div>плохой файл</div>}
+                {isExistingFiles && <div>есть файлы</div>}
+                {isModeThen && <div>дофига файлов</div>}
+                {sizeFile && <div>{sizeFile}</div>}
+              </Modal>
+            </Styles.WrapperFile>
+          </Styles.WrapFiles>
+        );
+      }}
+    </Field>
   );
 };
 export { PhotoFiles };

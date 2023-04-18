@@ -2,7 +2,7 @@ const regExtension = /(jpeg|jpg|png|gif)$/;
 
 export const convertToMB = (bytes: number) => {
   const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
-  if (!bytes) return { valueString: '0 bytes' };
+  if (!bytes) return { value: 0, valueString: '0 bytes' };
   const i = parseInt(`${Math.floor(Math.log(bytes) / Math.log(1024))}`, 10);
 
   return {

@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { MouseEvent, useState } from 'react';
 
 import { IImagePhoto } from './types';
 import { ImgPhoto, WrapImage, SpanClose } from './styles';
 
 const ImagePhoto = ({
   url,
+  alt,
   index,
   onDrop,
   onDragEnd,
@@ -15,7 +16,7 @@ const ImagePhoto = ({
 }: IImagePhoto) => {
   const [isRemove, setIsRemove] = useState<boolean>(false);
 
-  const delayRemove = (event: React.MouseEvent, idx: number) => {
+  const delayRemove = (event: MouseEvent<HTMLSpanElement>, idx: number) => {
     setIsRemove(true);
     const timeoutForDelete = setTimeout(() => {
       setIsRemove(false);
@@ -34,7 +35,7 @@ const ImagePhoto = ({
       onDragStart={onDragStart}
       onDragLeave={onDragLeave}
     >
-      <ImgPhoto src={url} alt="photo" />
+      <ImgPhoto src={url} alt={alt} />
       <SpanClose onClick={(event) => delayRemove(event, index)} />
     </WrapImage>
   );

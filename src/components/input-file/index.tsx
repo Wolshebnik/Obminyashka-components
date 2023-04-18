@@ -7,7 +7,7 @@ import { IFileInput } from './types';
 import { isMouseInBounds } from './helper';
 import { ErrorDisplay } from '../error-display';
 
-const InputFile = ({ name, onChange, type, error }: IFileInput) => {
+const InputFile = ({ name, onChange, error, ...props }: IFileInput) => {
   const [dragging, setDragging] = useState(false);
 
   const handleDragEnter = (e: React.DragEvent<HTMLLabelElement>) => {
@@ -45,10 +45,11 @@ const InputFile = ({ name, onChange, type, error }: IFileInput) => {
     >
       <Styles.Input
         multiple
-        type={type}
+        type="file"
         name={name}
         onChange={onChange}
         accept=".png, .jpg, .jpeg, .gif"
+        {...props}
       />
 
       {dragging ? (

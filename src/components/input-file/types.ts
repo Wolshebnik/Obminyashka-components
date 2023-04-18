@@ -1,12 +1,21 @@
-export type InputOnChangeEventType =
-  | React.ChangeEvent<HTMLInputElement>
-  | React.DragEvent<HTMLLabelElement>;
+import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 
-export interface IFileInput {
-  type: string;
+import { InputChangeEventType, LabelDragEventType } from 'types';
+
+interface CustomInput
+  extends DetailedHTMLProps<
+    InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  > {}
+
+export interface IFileInput
+  extends Omit<CustomInput, 'onChange' | 'value' | 'ref'> {
   name: string;
   error?: string;
-  onChange: (e: InputOnChangeEventType, files?: File[]) => void;
+  onChange: (
+    e: InputChangeEventType | LabelDragEventType,
+    files?: File[]
+  ) => void;
 }
 
 export interface IStyles {

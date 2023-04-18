@@ -1,12 +1,10 @@
 import { useState } from 'react';
-import imageCompression from 'browser-image-compression';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { options } from 'utils';
+import { LabelDragEventType, InputChangeEventType } from 'types';
 
 import { InputFile } from '.';
 import * as Styles from './styles';
-import { InputOnChangeEventType } from './types';
 
 export default {
   title: 'InputFile',
@@ -14,10 +12,12 @@ export default {
 } as ComponentMeta<typeof InputFile>;
 
 const Template: ComponentStory<typeof InputFile> = (args) => {
-  const [blobFiles, setBlobFiles] = useState<File[]>([]);
   const [images, setImages] = useState<string[]>([]);
 
-  const onChange = (e: InputOnChangeEventType, dropFiles?: File[]) => {
+  const onChange = (
+    e: InputChangeEventType | LabelDragEventType,
+    dropFiles?: File[]
+  ) => {
     let files: File[] = [];
 
     if (e.target instanceof HTMLInputElement && e.target.files) {
@@ -35,10 +35,7 @@ const Template: ComponentStory<typeof InputFile> = (args) => {
       reader.onload = async ({ target }) => {
         if (target?.readyState === 2) {
           const imageBase64 = target.result as string;
-          const compressedFile: File = await imageCompression(element, options);
-
           setImages((prev) => [...prev, imageBase64]);
-          setBlobFiles((prev) => [...prev, compressedFile]);
           if (e.target instanceof HTMLInputElement && e.target.value) {
             e.target.value = '';
           }
@@ -47,9 +44,6 @@ const Template: ComponentStory<typeof InputFile> = (args) => {
     });
   };
 
-  // eslint-disable-next-line no-console
-  console.log({ blobFiles, images });
-
   return (
     <Styles.WrapFiles>
       <InputFile {...args} onChange={onChange} />
@@ -57,8 +51,8 @@ const Template: ComponentStory<typeof InputFile> = (args) => {
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
         {images.map((file, index) => (
           <img
-            key={index}
             src={file}
+            key={index}
             alt="preview"
             style={{
               width: '150px',
@@ -74,7 +68,6 @@ const Template: ComponentStory<typeof InputFile> = (args) => {
 };
 export const InputFileDefault = Template.bind({});
 InputFileDefault.args = {
-  type: 'file',
   name: 'images',
   error: 'Error',
 };

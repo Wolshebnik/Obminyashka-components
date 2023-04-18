@@ -1,13 +1,15 @@
 export interface IPhotoFiles {
   name: string;
-  imageFiles: [];
-  preViewImage: [];
+  maxSizeMB: number;
   preposition: string;
   description: string;
   photosUploaded: string;
   firstUploadText: string;
-  currentIndexImage: number;
-  setImageFiles: () => void;
-  setPreViewImage: () => void;
-  setCurrentIndexImage: () => void;
+}
+
+export interface ChangeStateForImagesWhenDrop<T> {
+  index: number;
+  processedArray: T[];
+  currentIndex: number | null;
+  setProcessedArray: (arr: T[]) => void;
 }
