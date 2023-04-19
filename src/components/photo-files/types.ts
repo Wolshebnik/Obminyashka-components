@@ -1,8 +1,15 @@
 export interface IPhotoFiles {
   name: string;
-  maxSizeMB: number;
+  maxCount?: number;
+  maxSizeMB?: number;
+  errorSize: string;
+  errorTitle: string;
   preposition: string;
   description: string;
+  errorAddFile: string;
   photosUploaded: string;
+  errorExtension: string;
+  errorRightSize: string;
   firstUploadText: string;
+  errorNoSaveMore: string;
 }

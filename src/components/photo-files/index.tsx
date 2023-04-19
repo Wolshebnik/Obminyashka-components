@@ -17,11 +17,18 @@ import { checkFileSize, fileComparison } from './helpers';
 
 const PhotoFiles = ({
   name,
+  errorSize,
+  errorTitle,
   preposition,
   description,
+  errorAddFile,
+  maxCount = 10,
   maxSizeMB = 10,
   photosUploaded,
+  errorExtension,
+  errorRightSize,
   firstUploadText,
+  errorNoSaveMore,
   ...props
 }: IPhotoFiles) => {
   const { values, setFieldValue } = useFormikContext();
@@ -117,7 +124,7 @@ const PhotoFiles = ({
             return;
           }
 
-          if (10 - allFiles.length - files.length < 0) {
+          if (maxCount - allFiles.length - files.length < 0) {
             setIsModeThen(true);
             onClose(true);
             return;
@@ -156,7 +163,7 @@ const PhotoFiles = ({
                 />
               ))}
 
-              {form.values[name].length < 10 && (
+              {form.values[name].length < maxCount && (
                 <InputFile
                   {...props}
                   {...fieldProps}
@@ -167,10 +174,21 @@ const PhotoFiles = ({
               )}
 
               <Modal isOpen={isOpen} onClose={onClose}>
-                {isWrongExtension && <div>плохой файл</div>}
-                {isExistingFiles && <div>есть файлы</div>}
-                {isModeThen && <div>дофига файлов</div>}
-                {sizeFile && <div>{sizeFile}</div>}
+                <Styles.Title>{errorTitle}</Styles.Title>
+                {isWrongExtension && <div>{errorExtension}</div>}
+                {isExistingFiles && <p>{errorAddFile}</p>}
+                {isModeThen && (
+                  <div>{errorNoSaveMore.replace('10', String(maxCount))}</div>
+                )}
+                {sizeFile && (
+                  <div>
+                    {errorSize}
+                    &nbsp;
+                    {sizeFile}
+                    <br />
+                    {errorRightSize.replace('10', String(maxSizeMB))}
+                  </div>
+                )}
               </Modal>
             </Styles.WrapperFile>
           </Styles.WrapFiles>

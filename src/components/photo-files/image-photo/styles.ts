@@ -11,19 +11,19 @@ const WrapImage = styled.div<IStyles>`
   margin-bottom: 30px;
   width: 198px;
   height: 208px;
-  //TODO: fix
-  border: 2px dotted #c4c4c4;
   border-radius: 19px;
   cursor: move;
 
-  //TODO: fix
-  background-color: ${({ theme }) => theme.colors.white};
-  ${({ isRemove }) =>
-    isRemove &&
+  ${({ theme, isRemove }) => css`
+    background-color: ${theme.colors.white};
+    border: 2px dotted ${theme.colors.itemCard.borderCard};
+
+    ${isRemove &&
     css`
       transform: scale(0);
       transition: ease-in-out 0.3s;
-    `}
+    `};
+  `}
 `;
 
 const ImgPhoto = styled.img`
@@ -44,30 +44,33 @@ const SpanClose = styled.span`
   right: -7px;
   width: 30px;
   height: 30px;
-  //TODO: fix
-  background-color: ${({ theme }) => theme.colors.white};
   border-radius: 50%;
-  //TODO: fix
-  border: 1px solid #bababa;
   transition: 0.3s ease-in-out;
   transition-delay: 0.1s;
   cursor: pointer;
 
-  &:after,
-  &:before {
-    position: absolute;
-    content: '';
-    width: 1px;
-    height: 15px;
-    //TODO: fix
-    background: #bababa;
-  }
+  ${({ theme }) => css`
+    background-color: ${theme.colors.white};
+    border: 1px solid ${theme.colors.faux};
+
+    &:after,
+    &:before {
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: 15px;
+      background: ${theme.colors.faux};
+    }
+  `}
+
   &:before {
     transform: rotate(-45deg);
   }
+
   &:after {
     transform: rotate(45deg);
   }
+
   &:hover {
     transform: rotate(90deg);
   }

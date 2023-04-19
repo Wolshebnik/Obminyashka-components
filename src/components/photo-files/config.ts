@@ -5,6 +5,5 @@ export const initialValues = {
 };
 
 export const validationSchema = Yup.object().shape({
-  //TODO: add text translated
-  images: Yup.array().min(1, 'You can upload up to 1 files'),
+  images: Yup.array().min(1, 'Minimum 1 photo'),
 });
