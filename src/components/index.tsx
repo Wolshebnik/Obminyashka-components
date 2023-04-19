@@ -13,6 +13,7 @@ export { LanguageSelection } from './select-lang';
 export { Loader } from './loader';
 export { MainSwiper } from './swiper';
 export { Modal } from './modal';
+export { NoFoundResult } from './search-result';
 export { PagePagination } from './page-pagination';
 export { ProductCard } from './product-card';
 export { ProductDescription } from './product-description';
