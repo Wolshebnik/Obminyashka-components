@@ -31,6 +31,7 @@ export const SlideText = styled.span`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 265px;
   color: ${({ theme }) => theme.colors.white};
   font-size: 22px;
   line-height: 30px;
