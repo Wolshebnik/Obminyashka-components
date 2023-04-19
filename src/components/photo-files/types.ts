@@ -6,10 +6,3 @@ export interface IPhotoFiles {
   photosUploaded: string;
   firstUploadText: string;
 }
-
-export interface ChangeStateForImagesWhenDrop<T> {
-  index: number;
-  processedArray: T[];
-  currentIndex: number | null;
-  setProcessedArray: (arr: T[]) => void;
-}

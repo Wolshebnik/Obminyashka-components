@@ -1,5 +1,5 @@
 import { useState, MouseEvent } from 'react';
-import { Field, FieldProps } from 'formik';
+import { Field, FieldProps, FormikValues, useFormikContext } from 'formik';
 
 import {
   DivDragEventType,
@@ -13,11 +13,7 @@ import * as Styles from './styles';
 import { IPhotoFiles } from './types';
 import { InputFile } from '../input-file';
 import { ImagePhoto } from './image-photo';
-import {
-  checkFileSize,
-  fileComparison,
-  changeStateForImagesWhenDrop,
-} from './helpers';
+import { checkFileSize, fileComparison } from './helpers';
 
 const PhotoFiles = ({
   name,
@@ -28,10 +24,12 @@ const PhotoFiles = ({
   firstUploadText,
   ...props
 }: IPhotoFiles) => {
+  const { values, setFieldValue } = useFormikContext();
+  const valuesFormik = values as FormikValues;
+  const allFiles = valuesFormik[name] as File[];
+
   const [isOpen, onClose] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
-  const [blobFiles, setBlobFiles] = useState<File[]>([]);
-  const [images, setImages] = useState<string[]>([]);
   const [sizeFile, setSizeFile] = useState<string>('');
   const [isExistingFiles, setIsExistingFiles] = useState<boolean>(false);
   const [isModeThen, setIsModeThen] = useState<boolean>(false);
@@ -39,12 +37,9 @@ const PhotoFiles = ({
 
   const removeImage = (event: MouseEvent<HTMLSpanElement>, index: number) => {
     event.preventDefault();
-    const newImageFiles = [...blobFiles];
-    const newPreViewImage = [...images];
-    newPreViewImage.splice(index, 1);
+    const newImageFiles = [...allFiles];
     newImageFiles.splice(index, 1);
-    setBlobFiles(newImageFiles);
-    setImages(newPreViewImage);
+    setFieldValue(name, newImageFiles);
   };
 
   const dragStartHandler = (_: DivDragEventType, index: number) => {
@@ -64,19 +59,15 @@ const PhotoFiles = ({
     e.preventDefault();
     (e.target as HTMLDivElement).style.background = 'white';
 
-    changeStateForImagesWhenDrop({
-      currentIndex,
-      index,
-      processedArray: images,
-      setProcessedArray: setImages,
-    });
-
-    changeStateForImagesWhenDrop({
-      index,
-      processedArray: blobFiles,
-      currentIndex,
-      setProcessedArray: setBlobFiles,
-    });
+    if (currentIndex !== null) {
+      const newPrevArr = [...allFiles];
+      const underPrevImage = newPrevArr[index];
+      const currentPrevImage = newPrevArr[currentIndex];
+      newPrevArr[currentIndex] = underPrevImage;
+      newPrevArr[index] = currentPrevImage;
+      setFieldValue(name, newPrevArr);
+      setCurrentIndex(null);
+    }
   };
 
   return (
@@ -89,11 +80,11 @@ const PhotoFiles = ({
           dropFiles?: File[]
         ) => {
           let files: File[] = [];
-          const allFiles = form.values[name];
           setSizeFile('');
           setIsExistingFiles(false);
           setIsModeThen(false);
           setIsWrongExtension(false);
+          setCurrentIndex(null);
 
           if (e.target instanceof HTMLInputElement && e.target.files) {
             files = Array.from(e.target.files);

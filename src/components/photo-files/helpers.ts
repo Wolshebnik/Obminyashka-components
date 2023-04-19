@@ -1,7 +1,5 @@
 import { convertToMB } from 'utils';
 
-import { ChangeStateForImagesWhenDrop } from './types';
-
 export const checkFileSize = (files: File[], maxSizeMB: number) => {
   const size = files.find((file) => file.size >= maxSizeMB * 1024 * 1024)?.size;
   const { value, valueString } = convertToMB(size ? size : 0);
@@ -27,20 +25,4 @@ export const fileComparison = <T extends File>(values: T[], files: T[]) => {
     }
   }
   return true;
-};
-
-export const changeStateForImagesWhenDrop = <T = File | string>({
-  index,
-  currentIndex,
-  processedArray,
-  setProcessedArray,
-}: ChangeStateForImagesWhenDrop<T>) => {
-  if (currentIndex) {
-    const newPrevArr = [...processedArray];
-    const underPrevImage = newPrevArr[index];
-    const currentPrevImage = newPrevArr[currentIndex];
-    newPrevArr[currentIndex] = underPrevImage;
-    newPrevArr[index] = currentPrevImage;
-    setProcessedArray(newPrevArr);
-  }
 };

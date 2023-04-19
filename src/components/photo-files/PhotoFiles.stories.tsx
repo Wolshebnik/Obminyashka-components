@@ -22,16 +22,10 @@ const Template: ComponentStory<typeof PhotoFiles> = (args) => {
       initialValues={initialValues}
       validationSchema={validationSchema}
     >
-      {({ values }) => {
-        // eslint-disable-next-line no-console
-        console.log('image ', values);
-        return (
-          <Form>
-            <PhotoFiles {...args} />
-            <Button type="submit" text="Submit" />
-          </Form>
-        );
-      }}
+      <Form>
+        <PhotoFiles {...args} />
+        <Button type="submit" text="Submit" />
+      </Form>
     </Formik>
   );
 };
