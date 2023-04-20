@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import sun from 'assets/img/sun/sun.png';
-import bgCloud from 'assets/img/clouds/bg-cloud.png';
-import sunEmotion from 'assets/img/sun/sun-emotion.png';
+import sun from '../../assets/img/sun/sun.png';
+import bgCloud from '../../assets/img/clouds/bg-cloud.png';
+import sunEmotion from '../../assets/img/sun/sun-emotion.png';
 
 export const Wrapper = styled.div`
   width: 875px;
