@@ -9,6 +9,7 @@ export { default as childSlider } from '../../assets/img/slider/child.png';
 export { default as children } from '../../assets/img/children.png';
 export { default as clothes } from '../../assets/img/navItems/clothes.png';
 export { default as clothesSlider } from '../../assets/img/slider/clothes.png';
+export { default as cloud } from '../../assets/img/clouds/cloud.png';
 export { default as cloud1 } from '../../assets/img/clouds/cloud1.png';
 export { default as cloud2 } from '../../assets/img/clouds/cloud2.png';
 export { default as cloud3 } from '../../assets/img/clouds/cloud3.png';
