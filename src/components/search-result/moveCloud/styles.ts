@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-import Cloud from '../../../assets/img/clouds/cloud.png';
+import сloud from 'assets/img/clouds/cloud.png';
 
 const moveClouds1 = keyframes`
   0% {
@@ -75,7 +75,7 @@ export const FirstCloud = styled.span`
   left: 15%;
   width: 71px;
   height: 38px;
-  background-image: url(${Cloud});
+  background-image: url(${сloud});
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 1;
@@ -88,7 +88,7 @@ export const SecondCloud = styled.span`
   right: 10%;
   width: 71px;
   height: 38px;
-  background-image: url(${Cloud});
+  background-image: url(${сloud});
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 1;
@@ -101,7 +101,7 @@ export const ThirdCloud = styled.span`
   left: 28%;
   width: 113px;
   height: 61px;
-  background-image: url(${Cloud});
+  background-image: url(${сloud});
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 1;

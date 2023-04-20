@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import Sun from '../../assets/img/sun/sun.png';
-import BgCloud from '../../assets/img/clouds/bg-cloud.png';
-import Emotion from '../../assets/img/sun/sun-emotion.png';
+import sun from 'assets/img/sun/sun.png';
+import bgCloud from 'assets/img/clouds/bg-cloud.png';
+import sunEmotion from 'assets/img/sun/sun-emotion.png';
 
 export const Wrapper = styled.div`
   width: 875px;
@@ -18,7 +18,7 @@ export const MainCloud = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-image: url(${BgCloud});
+  background-image: url(${bgCloud});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -46,7 +46,7 @@ export const DefaultSun = styled.div`
   justify-content: center;
   width: 148px;
   height: 148px;
-  background-image: url(${Sun});
+  background-image: url(${sun});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -56,7 +56,7 @@ export const DefaultSun = styled.div`
 export const SunEmotion = styled.div`
   width: 103px;
   height: 103px;
-  background-image: url(${Emotion});
+  background-image: url(${sunEmotion});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
