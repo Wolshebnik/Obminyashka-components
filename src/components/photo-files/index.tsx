@@ -144,18 +144,18 @@ const PhotoFiles = ({
             <p>{firstUploadText}</p>
 
             <Styles.FileDescription>
-              {`${photosUploaded} ${form.values[name].length} ${preposition} 10`}
+              {`${photosUploaded} ${form.values[name].length} ${preposition} ${maxCount}`}
             </Styles.FileDescription>
 
             <Styles.WrapperFile>
-              {form.values[name].map((file: any, index: number) => (
+              {form.values[name].map((file: File, index: number) => (
                 <ImagePhoto
                   index={index}
                   alt={file.name}
-                  key={String(`${index}`)}
                   removeImage={removeImage}
                   url={URL.createObjectURL(file)}
                   onDragEnd={(e) => dragEndHandler(e)}
+                  key={String(`${index}_${file.name}`)}
                   onDrop={(e) => dropHandler(e, index)}
                   onDragLeave={(e) => dragEndHandler(e)}
                   onDragOver={(e) => dragOverHandler(e)}
@@ -175,7 +175,12 @@ const PhotoFiles = ({
 
               <Modal isOpen={isOpen} onClose={onClose}>
                 <Styles.Title>{errorTitle}</Styles.Title>
-                {isWrongExtension && <div>{errorExtension}</div>}
+                {isWrongExtension && (
+                  <div>
+                    {errorExtension}
+                    <br />( jpg, jpeg, png, gif ).
+                  </div>
+                )}
                 {isExistingFiles && <p>{errorAddFile}</p>}
                 {isModeThen && (
                   <div>{errorNoSaveMore.replace('10', String(maxCount))}</div>
