@@ -12,6 +12,7 @@ export { Input } from './input';
 export { InputField } from './input-field';
 export { LanguageSelection } from './select-lang';
 export { Loader } from './loader';
+export { MainSwiper } from './swiper';
 export { Modal } from './modal';
 export { PagePagination } from './page-pagination';
 export { ProductCard } from './product-card';
