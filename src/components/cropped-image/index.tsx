@@ -22,6 +22,8 @@ const CroppedImage = ({
   closeBtnText,
   deleteBtnText,
   rotateBtnText,
+  isSaveLoading,
+  isDeleteLoading,
   errorSizeSelect,
 }: ICroppedImage) => {
   const [error, setError] = useState('');
@@ -30,9 +32,10 @@ const CroppedImage = ({
   const [showIcon, setShowIcon] = useState(false);
   const [openCrop, setOpenCrop] = useState(false);
   const [croppedImage, setCroppedImage] = useState('');
-  const [isSaveLoading, setIsSaveLoading] = useState(false);
-  const [isDeleteLoading, setIsDeleteLoading] = useState(false);
-
+  // const [isSaveLoading, setIsSaveLoading] = useState(false);
+  // const [isDeleteLoading, setIsDeleteLoading] = useState(false);
+  // eslint-disable-next-line no-console
+  console.log(openCrop, '36 line');
   useEffect(() => {
     if (avatarImage && !avatarImage?.includes('data:image/jpeg;base64,'))
       setImage(`data:image/jpeg;base64,${avatarImage}`);
@@ -49,7 +52,6 @@ const CroppedImage = ({
     setImage('');
     setCroppedImage('');
   };
-
   const handleSetImage = (img: string) => {
     setImage(img);
     setCroppedImage(img);
@@ -99,7 +101,7 @@ const CroppedImage = ({
       >
         <Avatar width={135} height={135} source={image} />
 
-        {showIcon && (
+        {image !== '' && (
           <Styles.WrapCropSvg>
             <Icon.Camera />
           </Styles.WrapCropSvg>
@@ -134,7 +136,7 @@ const CroppedImage = ({
               onDelete({
                 handleClear,
                 setOpenCrop,
-                setIsDeleteLoading,
+                // setIsDeleteLoading,
               })
             }
             isDeleteLoading={isDeleteLoading}
@@ -144,13 +146,13 @@ const CroppedImage = ({
                 file,
                 setOpenCrop,
                 handleSetImage,
-                setIsSaveLoading,
+                // setIsSaveLoading,
               })
             }
           />
         </Modal>
       )}
-      {error !== '' && (
+      {showIcon && (
         <Modal isOpen={!!error} onClose={() => setError('')} withoutBg={true}>
           <Styles.ErrorWrapper>
             <h2>{errorTitle}</h2>
