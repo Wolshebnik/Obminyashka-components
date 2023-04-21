@@ -22,8 +22,6 @@ const CroppedImage = ({
   closeBtnText,
   deleteBtnText,
   rotateBtnText,
-  isSaveLoading,
-  isDeleteLoading,
   errorSizeSelect,
 }: ICroppedImage) => {
   const [error, setError] = useState('');
@@ -32,8 +30,8 @@ const CroppedImage = ({
   const [showIcon, setShowIcon] = useState(false);
   const [openCrop, setOpenCrop] = useState(false);
   const [croppedImage, setCroppedImage] = useState('');
-  // const [isSaveLoading, setIsSaveLoading] = useState(false);
-  // const [isDeleteLoading, setIsDeleteLoading] = useState(false);
+  const [isSaveLoading, setIsSaveLoading] = useState(false);
+  const [isDeleteLoading, setIsDeleteLoading] = useState(false);
   // eslint-disable-next-line no-console
   console.log(openCrop, '36 line');
   useEffect(() => {
@@ -116,42 +114,42 @@ const CroppedImage = ({
           />
         )}
       </Styles.WrapAvatar>
-      {openCrop && (
-        <Modal
-          hideButtonClose
-          withoutBg={true}
-          isOpen={openCrop}
+
+      <Modal
+        hideButtonClose
+        withoutBg={true}
+        isOpen={openCrop}
+        onClose={() => setOpenCrop(false)}
+      >
+        <Crop
+          disabled={!image}
+          image={croppedImage}
+          cropTitle={cropTitle}
+          saveBtnText={saveBtnText}
+          closeBtnText={closeBtnText}
+          isSaveLoading={isSaveLoading}
+          deleteBtnText={deleteBtnText}
+          rotateBtnText={rotateBtnText}
+          onDelete={() =>
+            onDelete({
+              handleClear,
+              setOpenCrop,
+              setIsDeleteLoading,
+            })
+          }
+          isDeleteLoading={isDeleteLoading}
           onClose={() => setOpenCrop(false)}
-        >
-          <Crop
-            disabled={!image}
-            image={croppedImage}
-            cropTitle={cropTitle}
-            saveBtnText={saveBtnText}
-            closeBtnText={closeBtnText}
-            isSaveLoading={isSaveLoading}
-            deleteBtnText={deleteBtnText}
-            rotateBtnText={rotateBtnText}
-            onDelete={() =>
-              onDelete({
-                handleClear,
-                setOpenCrop,
-                // setIsDeleteLoading,
-              })
-            }
-            isDeleteLoading={isDeleteLoading}
-            onClose={() => setOpenCrop(false)}
-            onSave={({ file }: { file: File }) =>
-              onSave({
-                file,
-                setOpenCrop,
-                handleSetImage,
-                // setIsSaveLoading,
-              })
-            }
-          />
-        </Modal>
-      )}
+          onSave={({ file }: { file: File }) =>
+            onSave({
+              file,
+              setOpenCrop,
+              handleSetImage,
+              setIsSaveLoading,
+            })
+          }
+        />
+      </Modal>
+
       {showIcon && (
         <Modal isOpen={!!error} onClose={() => setError('')} withoutBg={true}>
           <Styles.ErrorWrapper>
