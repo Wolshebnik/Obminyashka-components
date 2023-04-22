@@ -68,5 +68,5 @@ module.exports = {
       },
     }),
   ],
-  external: ['react', 'react-dom'],
+  external: ['react', 'react-dom', 'styled-components'],
 };
