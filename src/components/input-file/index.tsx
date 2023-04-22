@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { dragNDrop } from 'components/image';
+import { dragNDrop } from 'components/img';
 
 import * as Styles from './styles';
 import { IFileInput } from './types';
