@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import dropsPng from 'assets/img/drag-n-drop.png';
+import { dragNDrop } from 'components/image';
 
 import * as Styles from './styles';
 import { IFileInput } from './types';
@@ -53,7 +53,7 @@ const InputFile = ({ name, onChange, error, ...props }: IFileInput) => {
       />
 
       {dragging ? (
-        <Styles.Image src={dropsPng} alt="drop" />
+        <Styles.Image src={dragNDrop} alt="drop" />
       ) : (
         <Styles.SpanAdd />
       )}
