@@ -12,4 +12,5 @@ export interface IPhotoFiles {
   errorRightSize: string;
   firstUploadText: string;
   errorNoSaveMore: string;
+  setImages: (images: File[]) => void;
 }

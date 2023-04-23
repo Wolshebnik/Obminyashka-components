@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Form, Formik, FormikValues } from 'formik';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
@@ -11,9 +12,10 @@ export default {
 } as ComponentMeta<typeof PhotoFiles>;
 
 const Template: ComponentStory<typeof PhotoFiles> = (args) => {
+  const [images, setImages] = useState<File[]>([]);
   const onSubmit = (values: FormikValues) => {
     // eslint-disable-next-line no-console
-    console.log(values);
+    console.log({ values, images });
   };
 
   return (
@@ -23,7 +25,7 @@ const Template: ComponentStory<typeof PhotoFiles> = (args) => {
       validationSchema={validationSchema}
     >
       <Form>
-        <PhotoFiles {...args} />
+        <PhotoFiles {...args} setImages={setImages} />
         <Button type="submit" text="Submit" />
       </Form>
     </Formik>

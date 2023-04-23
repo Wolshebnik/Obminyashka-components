@@ -17,6 +17,7 @@ import { checkFileSize, fileComparison } from './helpers';
 
 const PhotoFiles = ({
   name,
+  setImages,
   errorSize,
   errorTitle,
   preposition,
@@ -47,6 +48,7 @@ const PhotoFiles = ({
     const newImageFiles = [...allFiles];
     newImageFiles.splice(index, 1);
     setFieldValue(name, newImageFiles);
+    setImages(newImageFiles);
   };
 
   const dragStartHandler = (_: DivDragEventType, index: number) => {
@@ -74,6 +76,7 @@ const PhotoFiles = ({
       newPrevArr[index] = currentPrevImage;
       setFieldValue(name, newPrevArr);
       setCurrentIndex(null);
+      setImages(newPrevArr);
     }
   };
 
@@ -132,6 +135,7 @@ const PhotoFiles = ({
 
           form.setFieldTouched(name);
           form.setFieldValue(name, [...allFiles, ...files]);
+          setImages([...allFiles, ...files]);
         };
 
         return (
