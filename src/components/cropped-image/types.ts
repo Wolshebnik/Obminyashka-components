@@ -11,6 +11,8 @@ export interface ICroppedImage {
   deleteBtnText?: string;
   rotateBtnText?: string;
   errorSizeSelect: string;
+  isDeleteLoading?: boolean;
+  isSaveLoading: boolean;
 }
 export interface IOptions {
   maxSizeMB: number;
@@ -25,12 +27,10 @@ export interface IConvertToMB {
 export interface IOnDelete {
   handleClear: Function;
   setOpenCrop: Function;
-  setIsDeleteLoading: Function;
 }
 
 export interface IOnSave {
   file: File;
   setOpenCrop: (state: boolean) => void;
   handleSetImage: (image: string) => void;
-  setIsSaveLoading: Function;
 }

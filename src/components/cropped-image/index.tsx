@@ -23,6 +23,8 @@ const CroppedImage = ({
   deleteBtnText,
   rotateBtnText,
   errorSizeSelect,
+  isSaveLoading,
+  isDeleteLoading,
 }: ICroppedImage) => {
   const [error, setError] = useState('');
   const [fileSize, setFileSize] = useState('');
@@ -30,8 +32,8 @@ const CroppedImage = ({
   const [showIcon, setShowIcon] = useState(false);
   const [openCrop, setOpenCrop] = useState(false);
   const [croppedImage, setCroppedImage] = useState('');
-  const [isSaveLoading, setIsSaveLoading] = useState(false);
-  const [isDeleteLoading, setIsDeleteLoading] = useState(false);
+  // const [isSaveLoading, setIsSaveLoading] = useState(false);
+  // const [isDeleteLoading, setIsDeleteLoading] = useState(false);
   // eslint-disable-next-line no-console
   console.log(openCrop, '36 line');
   useEffect(() => {
@@ -119,7 +121,7 @@ const CroppedImage = ({
         hideButtonClose
         withoutBg={true}
         isOpen={openCrop}
-        onClose={() => setOpenCrop(false)}
+        onClose={setOpenCrop}
       >
         <Crop
           disabled={!image}
@@ -134,7 +136,36 @@ const CroppedImage = ({
             onDelete({
               handleClear,
               setOpenCrop,
-              setIsDeleteLoading,
+              // setIsDeleteLoading,
+            })
+          }
+          isDeleteLoading={isDeleteLoading}
+          onClose={setOpenCrop}
+          onSave={({ file }: { file: File }) =>
+            onSave({
+              file,
+              setOpenCrop,
+              handleSetImage,
+              // setIsSaveLoading,
+            })
+          }
+        />
+      </Modal>
+      {openCrop && (
+        <Crop
+          disabled={!image}
+          image={croppedImage}
+          cropTitle={cropTitle}
+          saveBtnText={saveBtnText}
+          closeBtnText={closeBtnText}
+          isSaveLoading={isSaveLoading}
+          deleteBtnText={deleteBtnText}
+          rotateBtnText={rotateBtnText}
+          onDelete={() =>
+            onDelete({
+              handleClear,
+              setOpenCrop,
+              // setIsDeleteLoading,
             })
           }
           isDeleteLoading={isDeleteLoading}
@@ -144,28 +175,26 @@ const CroppedImage = ({
               file,
               setOpenCrop,
               handleSetImage,
-              setIsSaveLoading,
+              // setIsSaveLoading,
             })
           }
         />
-      </Modal>
-
-      {showIcon && (
-        <Modal isOpen={!!error} onClose={() => setError('')} withoutBg={true}>
-          <Styles.ErrorWrapper>
-            <h2>{errorTitle}</h2>
-            <div>
-              {error === 'size' && (
-                <p>
-                  {errorSize} {fileSize}{' '}
-                </p>
-              )}
-              <p>{error === 'size' ? errorSizeSelect : errorFormat}</p>
-              {error === 'file_type' && <p>{`(jpg, jpeg, png, gif).`}</p>}
-            </div>
-          </Styles.ErrorWrapper>
-        </Modal>
       )}
+
+      <Modal isOpen={!!error} onClose={() => setError('')} withoutBg={true}>
+        <Styles.ErrorWrapper>
+          <h2>{errorTitle}</h2>
+          <div>
+            {error === 'size' && (
+              <p>
+                {errorSize} {fileSize}
+              </p>
+            )}
+            <p>{error === 'size' ? errorSizeSelect : errorFormat}</p>
+            {error === 'file_type' && <p>{`(jpg, jpeg, png, gif).`}</p>}
+          </div>
+        </Styles.ErrorWrapper>
+      </Modal>
     </>
   );
 };
