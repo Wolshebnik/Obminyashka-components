@@ -10,9 +10,9 @@ export interface ICroppedImage {
   closeBtnText?: string;
   deleteBtnText?: string;
   rotateBtnText?: string;
+  isSaveLoading?: boolean;
   errorSizeSelect: string;
   isDeleteLoading?: boolean;
-  isSaveLoading: boolean;
 }
 export interface IOptions {
   maxSizeMB: number;

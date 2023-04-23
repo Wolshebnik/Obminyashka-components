@@ -22,8 +22,8 @@ const CroppedImage = ({
   closeBtnText,
   deleteBtnText,
   rotateBtnText,
-  errorSizeSelect,
   isSaveLoading,
+  errorSizeSelect,
   isDeleteLoading,
 }: ICroppedImage) => {
   const [error, setError] = useState('');
@@ -129,21 +129,19 @@ const CroppedImage = ({
           isSaveLoading={isSaveLoading}
           deleteBtnText={deleteBtnText}
           rotateBtnText={rotateBtnText}
+          isDeleteLoading={isDeleteLoading}
           onDelete={() =>
             onDelete({
               handleClear,
               setOpenCrop,
-              // setIsDeleteLoading,
             })
           }
-          isDeleteLoading={isDeleteLoading}
           onClose={() => setOpenCrop(false)}
           onSave={({ file }: { file: File }) =>
             onSave({
               file,
               setOpenCrop,
               handleSetImage,
-              // setIsSaveLoading,
             })
           }
         />
