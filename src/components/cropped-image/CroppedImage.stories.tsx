@@ -27,8 +27,6 @@ export const Template: ComponentStory<typeof CroppedImage> = (args) => {
   const onSave = async ({ file, setOpenCrop, handleSetImage }: IOnSave) => {
     try {
       setIsSaveLoading(true);
-      // eslint-disable-next-line no-console
-      // console.log(file);
       await prom();
       const reader = new FileReader();
       reader.onload = function () {
