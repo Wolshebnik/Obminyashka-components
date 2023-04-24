@@ -3,7 +3,8 @@ export { BackButton } from './back-button';
 export { Button } from './button';
 export { CancelEverything } from './cancel-everything';
 export { CheckBox } from './checkbox';
-export { EllipsisText } from './ellipsis-text';
+// TODO: remake ellipsis-text
+// export { EllipsisText } from './ellipsis-text';
 export { HelpChildren } from './help-children';
 export { Image } from './image';
 export { InboxMessage } from './inbox-message';
