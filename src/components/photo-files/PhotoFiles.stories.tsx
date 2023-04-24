@@ -31,6 +31,7 @@ const Template: ComponentStory<typeof PhotoFiles> = (args) => {
     </Formik>
   );
 };
+
 export const PhotoFilesDefault = Template.bind({});
 PhotoFilesDefault.args = {
   name: 'images',
