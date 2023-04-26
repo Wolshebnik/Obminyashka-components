@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+
 import { ILanguagePanel } from './types';
 
 export const LanguagePanel = styled.div<ILanguagePanel>`
@@ -8,11 +9,10 @@ export const LanguagePanel = styled.div<ILanguagePanel>`
   gap: 4px;
   text-transform: uppercase;
   cursor: pointer;
-
+  font: normal 700 20px/27px 'Open Sans', sans-serif;
   ${({ theme, fontSize, lineHeight }) => css`
-    font: normal 700 ${fontSize ? fontSize : '20px'} /
-        ${lineHeight ? lineHeight : '27px'} 'Open Sans',
-      sans-serif;
+    font-size: ${fontSize ? fontSize : '20px'};
+    line-height: ${lineHeight ? lineHeight : '27px'};
     color: ${theme.colors.languageNew.main};
   `}
 `;
