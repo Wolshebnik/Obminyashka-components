@@ -1,38 +1,24 @@
 import styled, { css } from 'styled-components';
+import { ILanguagePanel } from './types';
 
-import { IStyledLanguageSelection } from './types';
-
-export const LanguagePanel = styled.div`
+export const LanguagePanel = styled.div<ILanguagePanel>`
   display: flex;
   flex-flow: row nowrap;
-  margin: 0 10px 0 0;
-`;
-
-export const LanguageItem = styled.div<IStyledLanguageSelection>`
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  padding: 5px;
-  margin: 18px 0 10px 0;
-  text-align: center;
-  font-family: inherit;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 19px;
+  align-items: center;
+  gap: 4px;
   text-transform: uppercase;
-  border-radius: 50%;
   cursor: pointer;
 
-  ${({ checked, theme }) => css`
-    color: ${checked
-      ? theme.colors.language.colorChecked
-      : theme.colors.language.color};
-    border: ${checked ? `1px solid ${theme.colors.language.border};` : 'none'};
+  ${({ theme, fontSize, lineHeight }) => css`
+    font: normal 700 ${fontSize ? fontSize : '20px'} /
+        ${lineHeight ? lineHeight : '27px'} 'Open Sans',
+      sans-serif;
+    color: ${theme.colors.languageNew.main};
+  `}
+`;
 
-    &:hover {
-      background-color: ${theme.colors.language.backgroundHover};
-      color: ${theme.colors.language.colorHover};
-    }
+export const Language = styled.p<{ checked: boolean }>`
+  ${({ theme, checked }) => css`
+    color: ${checked && theme.colors.languageNew.checked};
   `}
 `;
