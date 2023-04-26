@@ -10,6 +10,7 @@ export const LanguagePanel = styled.div<ILanguagePanel>`
   text-transform: uppercase;
   cursor: pointer;
   font: normal 700 20px/27px 'Open Sans', sans-serif;
+
   ${({ theme, fontSize, lineHeight }) => css`
     font-size: ${fontSize ? fontSize : '20px'};
     line-height: ${lineHeight ? lineHeight : '27px'};
