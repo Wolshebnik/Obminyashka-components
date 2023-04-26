@@ -1,6 +1,7 @@
 import * as Styles from './styles';
 import { Avatar } from '../avatar';
-import { EllipsisText } from '../ellipsis-text';
+// TODO: remake ellipsis-text
+// import { EllipsisText } from '../ellipsis-text';
 import { IProductOwnerDataProps } from './types';
 
 const ProductOwnerData = ({
@@ -22,9 +23,9 @@ const ProductOwnerData = ({
 
         <Styles.ProductOwnerName>
           <Styles.ProductOwnerTitleH2>
-            <EllipsisText id={name} width={300}>
-              {name}
-            </EllipsisText>
+            {/* <EllipsisText id={name} width={300}> */}
+            {name}
+            {/* </EllipsisText> */}
           </Styles.ProductOwnerTitleH2>
         </Styles.ProductOwnerName>
       </Styles.ProductOwner>
@@ -53,9 +54,9 @@ const ProductOwnerData = ({
             )}
 
             <Styles.PostReqDataText color="black" style={{ width: '200px' }}>
-              <EllipsisText id={city} width={300}>
-                {city}
-              </EllipsisText>
+              {/* <EllipsisText id={city} width={300}> */}
+              {city}
+              {/* </EllipsisText> */}
             </Styles.PostReqDataText>
 
             {phone && (

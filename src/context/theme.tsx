@@ -3,6 +3,13 @@ import { ThemeProvider, DefaultTheme } from 'styled-components';
 
 import { ChildrenProps } from 'types';
 import { LIGHT_THEME } from 'config/theme/theme';
+import {
+  isMobile,
+  isTablet,
+  isDesktop,
+  isPortrait,
+  isTabletUp,
+} from 'hooks/styles';
 
 interface ThemeContextProps {
   theme: DefaultTheme;
@@ -23,6 +30,13 @@ export const ThemeContextProvider = ({ children }: PropsWithChildren) => {
   const value = {
     theme: {
       ...LIGHT_THEME,
+      responsive: {
+        isDesktop: isDesktop(),
+        isTabletUp: isTabletUp(),
+        isTablet: isTablet(),
+        isPortrait: isPortrait(),
+        isMobile: isMobile(),
+      },
     },
   };
 

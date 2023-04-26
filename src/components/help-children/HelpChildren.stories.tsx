@@ -5,7 +5,7 @@ import { Wrapper } from './styles';
 import { argTypes } from './arg-types';
 
 export default {
-  title: 'Main/Help children',
+  title: 'Help children',
   component: HelpChildren,
   argTypes,
 } as ComponentMeta<typeof HelpChildren>;
