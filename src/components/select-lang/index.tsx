@@ -1,7 +1,7 @@
 import * as Styles from './styles';
 import { ILanguageSelection } from './types';
 
-const languageArray: string[] = ['ua', 'eng'];
+const languageArray: string[] = ['ua', 'en'];
 
 const LanguageSelection = ({ lang, onClick }: ILanguageSelection) => (
   <Styles.LanguagePanel>
@@ -13,7 +13,7 @@ const LanguageSelection = ({ lang, onClick }: ILanguageSelection) => (
           checked={el === lang}
           onClick={el === lang ? undefined : () => onClick({ lang: el })}
         >
-          {el}
+          {el === 'en' ? 'eng' : el}
         </Styles.Language>
       </>
     ))}
