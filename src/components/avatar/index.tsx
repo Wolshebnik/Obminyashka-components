@@ -6,7 +6,7 @@ import { AvatarProps } from './types';
 
 const string: string = 'data:image/jpeg;base64,';
 
-const Avatar = ({ width = 30, height = 28, source }: AvatarProps) => {
+const Avatar = ({ width = 50, height = 50, source }: AvatarProps) => {
   const [image, setImage] = useState<string | undefined>(undefined);
 
   useEffect(() => {
