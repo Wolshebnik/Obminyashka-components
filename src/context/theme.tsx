@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { ThemeProvider, DefaultTheme } from 'styled-components';
+import { useMemo } from 'react';
+import { ThemeProvider } from 'styled-components';
 
 import { ChildrenProps } from 'types';
 import { LIGHT_THEME } from 'config/theme/theme';
@@ -11,29 +11,22 @@ import {
   isTabletUp,
 } from 'hooks/styles';
 
-interface ThemeContextProps {
-  theme: DefaultTheme;
-}
-
-export const ThemeContext = React.createContext<ThemeContextProps>({
-  theme: {
-    ...LIGHT_THEME,
-  },
-});
-
 export const ThemeWrap = ({ children }: ChildrenProps): JSX.Element => {
-  const { theme } = useContext(ThemeContext);
-
-  const value = {
-    ...theme,
-    responsive: {
-      isDesktop: isDesktop(),
-      isTabletUp: isTabletUp(),
-      isTablet: isTablet(),
-      isPortrait: isPortrait(),
-      isMobile: isMobile(),
-    },
+  const responsive = {
+    isDesktop: isDesktop(),
+    isTabletUp: isTabletUp(),
+    isTablet: isTablet(),
+    isPortrait: isPortrait(),
+    isMobile: isMobile(),
   };
+
+  const value = useMemo(
+    () => ({
+      ...LIGHT_THEME,
+      responsive,
+    }),
+    [responsive]
+  );
 
   return <ThemeProvider theme={value}>{children}</ThemeProvider>;
 };
