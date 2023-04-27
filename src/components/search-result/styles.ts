@@ -1,70 +1,57 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-import sun from 'assets/img/sun.png';
-import bgCloud from 'assets/img/bg-cloud.png';
-import sunEmotion from 'assets/img/sun-emotion.png';
+import * as Icon from '../icon';
+
+export const displayStyles = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const Wrapper = styled.div`
-  width: 875px;
-  height: 490px;
+  width: 1455px;
+  height: 880px;
   color: ${({ theme }) => theme.colors.white};
 `;
 
 export const MainCloud = styled.div`
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   width: 100%;
   height: 100%;
-  background-image: url(${bgCloud});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background: linear-gradient(100.18deg, #8fd3e1 7.33%, #51b2d4 97.87%);
+  clip-path: url(#my-clip-path);
+
+  ${displayStyles};
+`;
+
+export const ContentWrapper = styled.div`
+  position: absolute;
+  flex-direction: column;
+  top: 23%;
+  z-index: 5;
+
+  ${displayStyles}
 `;
 
 export const Title = styled.p`
-  margin: 25px 0;
-  font-size: 35px;
+  margin-bottom: 45px;
+  font-size: 60px;
   font-weight: 500;
-  line-height: 40px;
-  z-index: 5;
+  line-height: 70px;
 `;
 
 export const Text = styled.p`
   margin-bottom: 40px;
-  font-size: 23px;
+  font-size: 40px;
   font-weight: 400;
-  line-height: 27px;
-  z-index: 5;
-`;
-
-export const DefaultSun = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 148px;
-  height: 148px;
-  background-image: url(${sun});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  z-index: 5;
-`;
-
-export const SunEmotion = styled.div`
-  width: 103px;
-  height: 103px;
-  background-image: url(${sunEmotion});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  z-index: 5;
+  line-height: 47px;
 `;
 
 export const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${displayStyles}
+`;
+
+export const StyledSVG = styled(Icon.BgCloudDesktop)`
+  width: 100%;
+  height: 100%;
 `;

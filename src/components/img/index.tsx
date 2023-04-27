@@ -1,7 +1,6 @@
 export { default as answer } from '../../assets/img/answer.png';
 export { default as arrowDown } from '../../assets/icons/arrow-down.svg';
 export { default as arrowUp } from '../../assets/icons/arrow-up.svg';
-export { default as bgCloud } from '../../assets/img/bg-cloud.png';
 export { default as bike } from '../../assets/img/MySettings/velosiped.jpg';
 export { default as books } from '../../assets/img/navItems/books.png';
 export { default as booksSlider } from '../../assets/img/slider/books.png';
@@ -64,8 +63,8 @@ export { default as stepOne } from '../../assets/img/clouds/step-one.png';
 export { default as stepThree } from '../../assets/img/clouds/step-three.png';
 export { default as stepTwo } from '../../assets/img/clouds/step-two.png';
 export { default as strollersSlider } from '../../assets/img/slider/strollers.png';
-export { default as sun } from '../../assets/img/sun.png';
-export { default as sunEmotion } from '../../assets/img/sun-emotion.png';
+export { default as sun } from '../../assets/img/sun/sun.png';
+export { default as sunDesktop } from '../../assets/img/sun/sun-desktop.png';
 export { default as three } from '../../assets/img/MySettings/3.png';
 export { default as toySlider } from '../../assets/img/slider/toy.png';
 export { default as toys } from '../../assets/img/navItems/toys.png';
