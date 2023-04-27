@@ -9,6 +9,7 @@ import {
   isDesktop,
   isPortrait,
   isTabletUp,
+  isLandscape,
 } from 'hooks/styles';
 
 interface ThemeContextProps {
@@ -32,6 +33,7 @@ export const ThemeWrap = ({ children }: ChildrenProps): JSX.Element => {
       isTablet: isTablet(),
       isPortrait: isPortrait(),
       isMobile: isMobile(),
+      isLandscape: isLandscape(),
     },
   };
 
