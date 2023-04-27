@@ -17,5 +17,6 @@ export const isDesktop = () => useMediaQuery({ minWidth: tabletMaxWidth + 1 });
 
 export const isPortrait = () =>
   useMediaQuery({ query: '(orientation: portrait)' });
+
 export const isLandscape = () =>
   useMediaQuery({ query: '(orientation: landscape)' });
