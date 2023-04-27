@@ -8,7 +8,11 @@ export const LanguagePanel = styled.div`
   width: fit-content;
   text-transform: uppercase;
   cursor: pointer;
-  font: normal 700 16px/22px 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
 
   ${({ theme }) => css`
     color: ${theme.colors.languageNew.main};
