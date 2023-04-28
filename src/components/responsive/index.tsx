@@ -5,6 +5,7 @@ import {
   isDesktop,
   isTabletUp,
   isPortrait,
+  isLandscape,
 } from 'hooks/styles';
 
 export const Desktop = ({ children }: ChildrenProps): JSX.Element | null => {
@@ -21,6 +22,10 @@ export const TabletUp = ({ children }: ChildrenProps): JSX.Element | null => {
 
 export const Portrait = ({ children }: ChildrenProps): JSX.Element | null => {
   return isPortrait() ? <>{children}</> : null;
+};
+
+export const Landscape = ({ children }: ChildrenProps): JSX.Element | null => {
+  return isLandscape() ? <>{children}</> : null;
 };
 
 export const Tablet = ({ children }: ChildrenProps): JSX.Element | null => {
