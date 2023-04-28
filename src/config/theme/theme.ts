@@ -8,6 +8,13 @@ const LIGHT_THEME: DefaultTheme = Object.freeze({
   transition: {
     default: 'all ease-in-out 0.3s',
   },
+  responsive: {
+    isDesktop: true,
+    isTabletUp: false,
+    isTablet: false,
+    isPortrait: false,
+    isMobile: false,
+  },
 });
 
 export { LIGHT_THEME };

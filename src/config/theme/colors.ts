@@ -41,6 +41,7 @@ const dustyGray = '#969696';
 const grey = '#8f8f8f';
 const silver = '#c4c4c4';
 const silverChalice = '#A0A0A0';
+const faux = '#bababa';
 
 //RGBA colors
 const background = 'rgba(255, 255, 255, 0.4)';
@@ -139,6 +140,7 @@ const colorsDefault = Object.freeze({
   scrollbarBg: '#f1f1f1',
   white: '#FFFFFF',
   backgroundColor: '#fdfcff',
+  faux,
 });
 
 const modalColors = Object.freeze({

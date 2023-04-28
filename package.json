@@ -21,6 +21,7 @@
     "url": "https://github.com/Wolshebnik/Obminyashka-components/issues"
   },
   "dependencies": {
+    "browser-image-compression": "^2.0.2",
     "formik": "^2.2.9",
     "postcss": "^8.4.21",
     "rc-pagination": "^3.2.0",

@@ -44,7 +44,18 @@ module.exports = {
       minimize: true,
     }),
 
-    url(),
+    url({
+      include: [
+        'assets/icons/**/*.png',
+        'assets/icons/**/*.jpg',
+        'assets/icons/**/*.gif',
+        'assets/icons/**/*.svg',
+      ],
+      limit: 0,
+      emitFiles: true,
+      fileName: '[name][extname]',
+      publicPath: '/',
+    }),
     json(),
     image(),
     commonjs(),
@@ -57,5 +68,5 @@ module.exports = {
       },
     }),
   ],
-  external: ['react', 'react-dom'],
+  external: ['react', 'react-dom', 'styled-components'],
 };

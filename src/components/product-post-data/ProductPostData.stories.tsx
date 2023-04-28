@@ -5,7 +5,7 @@ import { argTypes } from './arg-types';
 import { OwnerAndPost } from './styles';
 
 export default {
-  title: 'pages/Product Post Data',
+  title: 'Product Post Data',
   component: ProductPostData,
   argTypes,
 } as ComponentMeta<typeof ProductPostData>;
