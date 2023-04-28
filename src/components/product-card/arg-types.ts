@@ -1,4 +1,8 @@
-export const argTypes = {
+import { IArgTypes } from 'types';
+
+import { IProductCardProps } from './types';
+
+export const argTypes: IArgTypes<IProductCardProps> = {
   city: {
     name: 'city',
     type: { name: 'string', required: true },

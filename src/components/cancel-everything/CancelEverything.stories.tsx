@@ -1,21 +1,26 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { CancelEverything } from '.';
 import { argTypes } from './arg-types';
 
-export default {
+const meta = {
   title: 'CancelEverything',
   component: CancelEverything,
+  decorators: [
+    (Story) => (
+      <div style={{ width: '200px', marginLeft: '20px' }}>
+        <Story />
+      </div>
+    ),
+  ],
   argTypes,
-} as ComponentMeta<typeof CancelEverything>;
+} satisfies Meta<typeof CancelEverything>;
 
-const Template: ComponentStory<typeof CancelEverything> = (args) => (
-  <div style={{ width: '200px', marginLeft: '20px' }}>
-    <CancelEverything {...args} />
-  </div>
-);
+export default meta;
+type Story = StoryObj<typeof CancelEverything>;
 
-export const CancelEverythingItem = Template.bind({});
-CancelEverythingItem.args = {
-  text: 'Cancel Everything',
+export const CancelEverythingItem: Story = {
+  args: {
+    text: 'Cancel Everything',
+  },
 };

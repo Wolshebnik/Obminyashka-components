@@ -1,18 +1,14 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import * as IconComponent from '.';
 import { AllIcons } from './all-icons';
 
-export default {
+const meta = {
   title: 'Icons/Icons',
   component: AllIcons,
-} as ComponentMeta<typeof AllIcons>;
+} satisfies Meta<typeof AllIcons>;
 
-const Template: ComponentStory<typeof AllIcons> = (props) => (
-  <AllIcons {...props} />
-);
+export default meta;
+type Story = StoryObj<typeof AllIcons>;
 
-export const Icon = Template.bind({});
-Icon.args = {
-  Icon: IconComponent,
-};
+export const Icon: Story = { args: { Icon: IconComponent } };

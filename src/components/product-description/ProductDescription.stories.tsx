@@ -1,23 +1,28 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Wrapper } from './styles';
 import { ProductDescription } from '.';
 import { argTypes } from './arg-types';
 
-export default {
+const meta = {
   title: 'ProductDescription',
   component: ProductDescription,
   argTypes,
-} as ComponentMeta<typeof ProductDescription>;
+  decorators: [
+    (Story) => (
+      <Wrapper>
+        <Story />
+      </Wrapper>
+    ),
+  ],
+} satisfies Meta<typeof ProductDescription>;
 
-const Template: ComponentStory<typeof ProductDescription> = (args) => (
-  <Wrapper>
-    <ProductDescription {...args} />
-  </Wrapper>
-);
+export default meta;
+type Story = StoryObj<typeof ProductDescription>;
 
-export const ProductDescriptionDefault = Template.bind({});
-ProductDescriptionDefault.args = {
-  title: 'Автівка',
-  description: 'Автівка Merсedes-Benz',
+export const ProductDescriptionDefault: Story = {
+  args: {
+    title: 'Автівка',
+    description: 'Автівка Merсedes-Benz',
+  },
 };

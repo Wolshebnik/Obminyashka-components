@@ -1,4 +1,5 @@
-import React from 'react';
+import * as React from 'react';
+import { Preview } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
 
 import { Toast } from '../src/components';
@@ -17,12 +18,16 @@ export const decorators = [
   ),
 ];
 
-export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
-  controls: {
-    matchers: {
-      // color: /(background|color)$/i,
-      date: /Date$/,
+const preview: Preview = {
+  parameters: {
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/,
+      },
     },
   },
 };
+
+export default preview;

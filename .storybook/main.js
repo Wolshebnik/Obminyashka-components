@@ -20,4 +20,9 @@ module.exports = {
   docs: {
     autodocs: true,
   },
+  typescript: {
+    reactDocgen: 'react-docgen',
+    skipBabel: true,
+    check: false,
+  },
 };

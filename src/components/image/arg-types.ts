@@ -1,4 +1,8 @@
-export const argTypes = {
+import { IArgTypes } from 'types';
+
+import { ImageProps } from './types';
+
+export const argTypes: IArgTypes<ImageProps> = {
   width: {
     name: 'width',
     type: { name: 'number' },
