@@ -17,7 +17,7 @@ const CategoryButton = ({
     >
       <Styles.WrapCategoriesErrow>{text}</Styles.WrapCategoriesErrow>
 
-      {/* {open && <NavCategory />} */}
+      {open && <NavCategory />}
     </Styles.WrapCategories>
   );
 };
