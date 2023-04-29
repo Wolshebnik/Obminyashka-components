@@ -21,6 +21,6 @@ const Template = (args: IBtnCatygoryProps) => {
 };
 
 export const ButtonCategoryDefault: Story = {
-  args: { top: 20, left: 20, text: 'КАТЕГОРІЇ' },
+  args: { top: 20, left: 20, text: 'categories' },
   render: (args) => <Template {...args} />,
 };
