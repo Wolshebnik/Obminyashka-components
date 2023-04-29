@@ -1,7 +1,11 @@
-export const argTypes = {
+import { IArgTypes } from 'types';
+
+import { ITooltipProps } from './types';
+
+export const argTypes: IArgTypes<ITooltipProps> = {
   children: {
     name: 'children',
-    type: { name: 'custom' },
+    type: { name: 'string' },
     description: 'Tooltip reference element',
   },
   id: {

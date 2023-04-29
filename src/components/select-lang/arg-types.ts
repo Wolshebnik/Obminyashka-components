@@ -1,6 +1,10 @@
-export const argTypes = {
+import { IArgTypes } from 'types';
+
+import { ILanguageSelection } from './types';
+
+export const argTypes: IArgTypes<ILanguageSelection> = {
   lang: {
-    type: { name: 'lang', required: true },
+    type: { name: 'string', required: true },
     description: 'used language',
     options: ['ua', 'en'],
     control: { type: 'radio' },

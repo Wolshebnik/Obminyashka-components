@@ -1,4 +1,8 @@
-export const argTypes = {
+import { IArgTypes } from 'types';
+
+import { IModal } from './types';
+
+export const argTypes: IArgTypes<IModal> = {
   isOpen: {
     name: 'isOpen',
     type: { name: 'boolean', required: true },

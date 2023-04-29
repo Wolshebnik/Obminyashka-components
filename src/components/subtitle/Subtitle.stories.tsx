@@ -1,25 +1,26 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Subtitle } from '.';
 import { argTypes } from './arg-types';
 
-export default {
+const meta = {
   title: 'Subtitle',
   component: Subtitle,
   argTypes,
-} as ComponentMeta<typeof Subtitle>;
+} satisfies Meta<typeof Subtitle>;
 
-const Template: ComponentStory<typeof Subtitle> = (args) => (
-  <Subtitle {...args} />
-);
+export default meta;
+type Story = StoryObj<typeof Subtitle>;
 
-export const SubtitleDefault = Template.bind({});
-SubtitleDefault.args = {
-  textTitle: 'Виберiть роздiл',
+export const SubtitleDefault: Story = {
+  args: {
+    textTitle: 'Виберiть роздiл',
+  },
 };
 
-export const WithoutStar = Template.bind({});
-WithoutStar.args = {
-  hiddenStar: true,
-  textTitle: 'Опис товара',
+export const WithoutStar: Story = {
+  args: {
+    hiddenStar: true,
+    textTitle: 'Опис товара',
+  },
 };
