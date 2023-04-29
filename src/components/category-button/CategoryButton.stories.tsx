@@ -20,5 +20,5 @@ export const ButtonCategoryDefault = Template.bind({});
 ButtonCategoryDefault.args = {
   top: 20,
   left: 20,
-  text: 'category',
+  text: 'КАТЕГОРІЇ',
 };

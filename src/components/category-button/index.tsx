@@ -1,3 +1,4 @@
+import * as Icon from '../icon';
 import * as Styles from './styles';
 import { IBtnCatygoryProps } from './types';
 
@@ -15,7 +16,10 @@ const CategoryButton = ({
       open={open}
       onClick={() => setOpen(!open)}
     >
-      <Styles.WrapCategoriesErrow>{text}</Styles.WrapCategoriesErrow>
+      <Styles.WrapCategoriesText>{text}</Styles.WrapCategoriesText>
+      <Styles.WrapCategoriesErrow>
+        <Icon.categoriesErrow />
+      </Styles.WrapCategoriesErrow>
 
       {/* {open && <NavCategory />} */}
     </Styles.WrapCategories>
