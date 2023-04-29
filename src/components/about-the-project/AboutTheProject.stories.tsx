@@ -1,19 +1,19 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { AboutTheProject } from '.';
 import { argTypes } from './arg-types';
 
-export default {
+const meta = {
   title: 'AboutTheProject',
   component: AboutTheProject,
   argTypes,
-} as ComponentMeta<typeof AboutTheProject>;
+} satisfies Meta<typeof AboutTheProject>;
 
-const Template: ComponentStory<typeof AboutTheProject> = (args) => {
-  return <AboutTheProject {...args} />;
-};
+export default meta;
+type Story = StoryObj<typeof AboutTheProject>;
 
-export const DefaultLink = Template.bind({});
-DefaultLink.args = {
-  text: 'About the project',
+export const DefaultLink: Story = {
+  args: {
+    text: 'About the project',
+  },
 };
