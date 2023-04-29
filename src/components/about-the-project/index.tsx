@@ -4,9 +4,9 @@ import * as Icon from '../icon';
 import * as Styles from './styles';
 import { IAboutTheProject } from './types';
 
-const AboutTheProject = ({ text }: IAboutTheProject) => {
+const AboutTheProject = ({ text, to }: IAboutTheProject) => {
   return (
-    <Styles.AboutTheProjectLink to="#">
+    <Styles.AboutTheProjectLink to={to}>
       <Responsive.Desktop>
         <Icon.Puzzle />
       </Responsive.Desktop>
