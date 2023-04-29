@@ -5,6 +5,8 @@ const buttonGradient =
 const buttonBlue = '#12b6ed';
 const buttonBlueHover = '#00bfff';
 const buttonBlueActive = '#0094ff';
+const indigo = '#3f76c1';
+const mariner = '#286cc9';
 
 //Green
 const apple = '#37B82E';
@@ -149,6 +151,11 @@ const colorsDefault = Object.freeze({
   faux,
 });
 
+const categotyBtn = Object.freeze({
+  border: indigo,
+  colorText: mariner,
+});
+
 const modalColors = Object.freeze({
   background: modalBackground,
   cross: crossBtn,
@@ -162,6 +169,7 @@ const COLORS = Object.freeze({
   language,
   languageNew,
   modalColors,
+  categotyBtn,
   inboxMessage,
   helpChildren,
   buttonGradient,

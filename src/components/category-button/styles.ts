@@ -6,22 +6,25 @@ export const WrapCategoriesErrow = styled.div`
   transition: all 0.3s ease;
 
   ${({ theme }) => css`
-    /* color: ${theme.colors.btnBlue}; */
-    color: #286cc9;
+    color: ${theme.colors.categotyBtn.colorText};
 
     &::after {
       position: absolute;
-      right: -38px;
+      right: -34px;
       bottom: 0;
       content: '';
       border: 8px solid transparent;
-      border-top: 8px solid #286cc9;
+      border-top: 8px solid ${theme.colors.categotyBtn.colorText};
       transition: all 0.3s ease;
     }
   `}
 `;
 
-export const WrapCategories = styled.div<{ open: boolean }>`
+export const WrapCategories = styled.div<{
+  top?: number;
+  left?: number;
+  open: boolean;
+}>`
   box-sizing: border-box;
   position: absolute;
   display: flex;
@@ -29,17 +32,18 @@ export const WrapCategories = styled.div<{ open: boolean }>`
   align-items: center;
   width: 222px;
   height: 50px;
-  border: 2px dashed #3f76c1;
   border-radius: 26.6667px;
   padding: 0 33px;
   font-size: 24px;
   font-weight: bold;
   line-height: 24px;
-  top: 25px;
-  left: 25px;
   cursor: pointer;
 
-  ${({ open }) => css`
+  ${({ theme, open, left, top }) => css`
+    top: ${top ? `${top}px` : 0};
+    left: ${left ? `${left}px` : 0};
+    border: 2px dashed ${theme.colors.categotyBtn.border};
+
     ${open &&
     css`
       ${WrapCategoriesErrow} {
@@ -48,7 +52,7 @@ export const WrapCategories = styled.div<{ open: boolean }>`
           bottom: 8px;
         }
       }
-      border: 2px solid #3f76c1;
+      border: 2px solid ${theme.colors.categotyBtn.border};
     `}
   `}
 `;
