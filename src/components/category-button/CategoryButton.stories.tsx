@@ -1,24 +1,26 @@
 import { useState } from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { argTypes } from './arg-types';
 import { CategoryButton } from './index';
+import { IBtnCatygoryProps } from './types';
 
-export default {
+const meta = {
   title: 'CategoryButton',
   component: CategoryButton,
   argTypes,
-} as ComponentMeta<typeof CategoryButton>;
+} satisfies Meta<typeof CategoryButton>;
 
-const Template: ComponentStory<typeof CategoryButton> = (args) => {
+export default meta;
+type Story = StoryObj<typeof CategoryButton>;
+
+const Template = (args: IBtnCatygoryProps) => {
   const [open, setOpen] = useState(false);
 
   return <CategoryButton {...args} open={open} setOpen={setOpen} />;
 };
 
-export const ButtonCategoryDefault = Template.bind({});
-ButtonCategoryDefault.args = {
-  top: 20,
-  left: 20,
-  text: 'КАТЕГОРІЇ',
+export const ButtonCategoryDefault: Story = {
+  args: { top: 20, left: 20, text: 'КАТЕГОРІЇ' },
+  render: (args) => <Template {...args} />,
 };

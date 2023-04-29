@@ -9,7 +9,7 @@ export const WrapCategoriesText = styled.div`
   `}
 `;
 
-export const WrapCategoriesErrow = styled.div`
+export const WrapCategoriesArrow = styled.div`
   position: relative;
   bottom: 3px;
   transition: all 0.3s ease;
@@ -41,11 +41,16 @@ export const WrapCategories = styled.div<{
 
     ${open &&
     css`
-      ${WrapCategoriesErrow} {
+      ${WrapCategoriesArrow} {
         bottom: -4px;
         rotate: 180deg;
       }
       border: 2px solid ${theme.colors.categotyBtn.border};
+    `}
+
+    ${!theme.responsive.isDesktop &&
+    css`
+      display: none;
     `}
   `}
 `;

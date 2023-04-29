@@ -1,4 +1,7 @@
-export const argTypes = {
+import { IArgTypes } from 'types';
+import { IBtnCatygoryProps } from './types';
+
+export const argTypes: IArgTypes<IBtnCatygoryProps> = {
   top: {
     name: 'top',
     type: { name: 'number' },

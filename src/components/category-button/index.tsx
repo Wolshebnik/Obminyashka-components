@@ -17,9 +17,10 @@ const CategoryButton = ({
       onClick={() => setOpen(!open)}
     >
       <Styles.WrapCategoriesText>{text}</Styles.WrapCategoriesText>
-      <Styles.WrapCategoriesErrow>
+
+      <Styles.WrapCategoriesArrow>
         <Icon.categoriesErrow />
-      </Styles.WrapCategoriesErrow>
+      </Styles.WrapCategoriesArrow>
 
       {/* {open && <NavCategory />} */}
     </Styles.WrapCategories>
