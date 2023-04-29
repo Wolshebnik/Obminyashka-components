@@ -1,3 +1,4 @@
+export { AboutTheProject } from './about-the-project';
 export { Avatar } from './avatar';
 export { BackButton } from './back-button';
 export { Button } from './button';
