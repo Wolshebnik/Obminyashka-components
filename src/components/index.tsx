@@ -1,10 +1,11 @@
 export { Avatar } from './avatar';
 export { BackButton } from './back-button';
 export { Button } from './button';
-export { CancelEverything } from './cancel-everything';
-export { CheckBox } from './checkbox';
-// TODO: remake ellipsis-text
 // export { EllipsisText } from './ellipsis-text';
+// TODO: remake ellipsis-text
+export { CancelEverything } from './cancel-everything';
+export { CategoryButton } from './category-button';
+export { CheckBox } from './checkbox';
 export { HelpChildren } from './help-children';
 export { Image } from './image';
 export { InboxMessage } from './inbox-message';
