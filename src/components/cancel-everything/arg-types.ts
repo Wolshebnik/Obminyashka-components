@@ -1,7 +1,11 @@
-export const argTypes = {
+import { IArgTypes } from 'types';
+
+import { IResetAllButton } from './types';
+
+export const argTypes: IArgTypes<IResetAllButton> = {
   text: {
     name: 'text',
-    type: { name: 'text', required: true },
+    type: { name: 'string', required: true },
     description: 'Button name',
     table: {
       type: { summary: 'string' },

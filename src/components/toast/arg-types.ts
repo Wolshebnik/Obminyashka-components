@@ -1,4 +1,8 @@
-export const argTypes = {
+import { ToastContainerProps } from 'react-toastify';
+
+import { IArgTypes } from 'types';
+
+export const argTypes: IArgTypes<ToastContainerProps> = {
   rtl: {
     name: 'rtl',
     type: { name: 'boolean' },

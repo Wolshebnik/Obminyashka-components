@@ -1,23 +1,27 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Loader } from '.';
 import { Background } from './styles';
 
-export default {
+const meta = {
   title: 'Loader',
   component: Loader,
-} as ComponentMeta<typeof Loader>;
+  decorators: [
+    (Story) => (
+      <Background>
+        <Story />
+      </Background>
+    ),
+  ],
+} satisfies Meta<typeof Loader>;
 
-const Template: ComponentStory<typeof Loader> = (args) => (
-  <Background>
-    <Loader {...args} />
-  </Background>
-);
+export default meta;
+type Story = StoryObj<typeof Loader>;
 
-export const DefaultLoader = Template.bind({});
-DefaultLoader.args = {};
+export const DefaultLoader: Story = {};
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  animationType: 'secondary',
+export const Secondary: Story = {
+  args: {
+    animationType: 'secondary',
+  },
 };

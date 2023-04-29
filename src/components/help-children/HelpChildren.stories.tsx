@@ -1,25 +1,30 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { HelpChildren } from '.';
 import { Wrapper } from './styles';
 import { argTypes } from './arg-types';
 
-export default {
+const meta = {
   title: 'Help children',
   component: HelpChildren,
+  decorators: [
+    (Story) => (
+      <Wrapper>
+        <Story />
+      </Wrapper>
+    ),
+  ],
   argTypes,
-} as ComponentMeta<typeof HelpChildren>;
+} satisfies Meta<typeof HelpChildren>;
 
-const Template: ComponentStory<typeof HelpChildren> = (args) => (
-  <Wrapper>
-    <HelpChildren {...args} />
-  </Wrapper>
-);
+export default meta;
+type Story = StoryObj<typeof HelpChildren>;
 
-export const HelpChildrenDefault = Template.bind({});
-HelpChildrenDefault.args = {
-  name: 'Obminyashka',
-  buttonText: 'I want to help children!',
-  title: 'There are no other peoples children!',
-  text: 'cooperates with volunteer organizations for all over Ukraine! You can help too! Give your unnecessary things, they will end up in orphanages and orphanages!',
+export const HelpChildrenDefault: Story = {
+  args: {
+    name: 'Obminyashka',
+    buttonText: 'I want to help children!',
+    title: 'There are no other peoples children!',
+    text: 'cooperates with volunteer organizations for all over Ukraine! You can help too! Give your unnecessary things, they will end up in orphanages and orphanages!',
+  },
 };
