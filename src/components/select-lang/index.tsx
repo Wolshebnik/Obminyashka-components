@@ -10,7 +10,6 @@ const LanguageSelection = ({ lang, onClick }: ILanguageSelection) => (
       <React.Fragment key={el + index}>
         {!!index && <span>/</span>}
         <Styles.Language
-          key={index}
           checked={el === lang}
           onClick={el === lang ? undefined : () => onClick({ lang: el })}
         >

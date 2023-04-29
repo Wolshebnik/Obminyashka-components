@@ -1,38 +1,47 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Container } from './styles';
 import { EllipsisText } from './index';
 import { argTypes } from './arg-types';
 
-export default {
+const text =
+  'Lorem Ipsum is simply dummy text of the printing and typesetting industry.';
+
+const meta = {
   title: 'Ellipsis Text',
   component: EllipsisText,
   argTypes,
-} as ComponentMeta<typeof EllipsisText>;
+} satisfies Meta<typeof EllipsisText>;
 
-const text =
-  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ';
+export default meta;
+type Story = StoryObj<typeof EllipsisText>;
 
-const Template: ComponentStory<typeof EllipsisText> = (args) => (
-  <Container>
-    <EllipsisText {...args} />
-  </Container>
-);
+export const EllipsisTextWithTooltip: Story = {
+  args: {
+    id: 'tooltip1',
+    children: <span>{text}</span>,
+  },
+  render: (args) => {
+    const { children, ...rest } = args;
 
-export const EllipsisTextWithTooltip = Template.bind({});
-EllipsisTextWithTooltip.args = {
-  id: 'tooltip1',
-  children: <span>{text}</span>,
+    return (
+      <Container>
+        <EllipsisText {...rest}>{children}</EllipsisText>
+      </Container>
+    );
+  },
 };
 
-export const TooltipWithArrow = Template.bind({});
-TooltipWithArrow.args = {
-  offset: 20,
-  width: 500,
-  id: 'tooltip2',
-  place: 'right',
-  noArrow: false,
-  children: text,
-  delayShow: 1000,
-  delayHide: 1000,
+export const TooltipWithArrow: Story = {
+  ...EllipsisTextWithTooltip,
+  args: {
+    offset: 20,
+    width: 500,
+    id: 'tooltip2',
+    place: 'right',
+    noArrow: false,
+    children: text,
+    delayShow: 1000,
+    delayHide: 1000,
+  },
 };

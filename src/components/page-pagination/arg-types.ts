@@ -1,7 +1,11 @@
-export const argTypes = {
+import { IArgTypes } from 'types';
+
+import { IPagination } from './types';
+
+export const argTypes: IArgTypes<IPagination> = {
   children: {
     name: 'children',
-    type: { name: 'ReactNode', required: true },
+    type: { name: 'string', required: true },
     description: 'Sends child elements directly to output',
     table: {
       type: { summary: 'ReactNode' },

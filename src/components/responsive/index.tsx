@@ -23,6 +23,7 @@ export const TabletUp = ({ children }: ChildrenProps): JSX.Element | null => {
 export const Portrait = ({ children }: ChildrenProps): JSX.Element | null => {
   return isPortrait() ? <>{children}</> : null;
 };
+
 export const Landscape = ({ children }: ChildrenProps): JSX.Element | null => {
   return isLandscape() ? <>{children}</> : null;
 };

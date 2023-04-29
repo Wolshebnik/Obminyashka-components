@@ -1,36 +1,41 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { ProductPostData } from '.';
 import { argTypes } from './arg-types';
 import { OwnerAndPost } from './styles';
 
-export default {
+const meta = {
   title: 'Product Post Data',
   component: ProductPostData,
   argTypes,
-} as ComponentMeta<typeof ProductPostData>;
+  decorators: [
+    (Story) => (
+      <OwnerAndPost>
+        <Story />
+      </OwnerAndPost>
+    ),
+  ],
+} satisfies Meta<typeof ProductPostData>;
 
-const Template: ComponentStory<typeof ProductPostData> = (args) => (
-  <OwnerAndPost>
-    <ProductPostData {...args} />
-  </OwnerAndPost>
-);
+export default meta;
+type Story = StoryObj<typeof ProductPostData>;
 
-export const ProductPostDefault = Template.bind({});
-ProductPostDefault.args = {
-  age: '6-8',
-  lang: 'en',
-  season: 'Лiто',
-  title: 'Футболка',
-  gender: 'хлопчик',
-  readyForOffers: true,
-  translatedTextAge: 'Вік',
-  wishes: ['куртка', 'худі'],
-  translatedTextSize: 'Розмір',
-  translatedTextSeason: 'Сезон',
-  translatedTextGender: 'Стать',
-  buttonText: 'Запропонувати обмін',
-  translatedTextDescription: 'Oпис',
-  translatedTextChangesTo: 'Обмінюю на',
-  translatedTextCheckInUl: 'Ваші пропозіціі',
+export const ProductPostDefault: Story = {
+  args: {
+    age: '6-8',
+    lang: 'en',
+    season: 'Лiто',
+    title: 'Футболка',
+    gender: 'хлопчик',
+    readyForOffers: true,
+    translatedTextAge: 'Вік',
+    wishes: ['куртка', 'худі'],
+    translatedTextSize: 'Розмір',
+    translatedTextSeason: 'Сезон',
+    translatedTextGender: 'Стать',
+    buttonText: 'Запропонувати обмін',
+    translatedTextDescription: 'Oпис',
+    translatedTextChangesTo: 'Обмінюю на',
+    translatedTextCheckInUl: 'Ваші пропозіціі',
+  },
 };

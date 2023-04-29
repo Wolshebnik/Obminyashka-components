@@ -1,27 +1,28 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { BackButton } from '.';
 import * as Icon from '../icon';
-import { argTypes } from './argTypes';
+import { argTypes } from './arg-types';
 
-export default {
+const meta = {
   title: 'BackButton',
   component: BackButton,
   argTypes,
-} as ComponentMeta<typeof BackButton>;
+} satisfies Meta<typeof BackButton>;
 
-const Template: ComponentStory<typeof BackButton> = (args) => (
-  <BackButton {...args} />
-);
+export default meta;
+type Story = StoryObj<typeof BackButton>;
 
-export const Default = Template.bind({});
-Default.args = {
-  text: 'Button',
-  icon: <Icon.ChevronLeft />,
+export const Default: Story = {
+  args: {
+    text: 'Button',
+    icon: <Icon.ChevronLeft />,
+  },
 };
 
-export const WithAnotherIcon = Template.bind({});
-WithAnotherIcon.args = {
-  text: 'Button',
-  icon: <Icon.Loader />,
+export const WithAnotherIcon: Story = {
+  args: {
+    text: 'Button',
+    icon: <Icon.Loader />,
+  },
 };
