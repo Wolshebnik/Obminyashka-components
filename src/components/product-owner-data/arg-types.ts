@@ -1,4 +1,8 @@
-export const argTypes = {
+import { IArgTypes } from 'types';
+
+import { IProductOwnerDataProps } from './types';
+
+export const argTypes: IArgTypes<IProductOwnerDataProps> = {
   avatar: {
     name: 'avatar',
     type: { name: 'string' },

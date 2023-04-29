@@ -1,18 +1,24 @@
 import { useState } from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { ChildrenProps } from 'types';
 
 import { Modal } from '.';
+import { IModal } from './types';
 import { Button } from '../button';
 import { mockChildren } from './mock';
 import { argTypes } from './arg-types';
 
-export default {
+const meta = {
   title: 'Modal',
   component: Modal,
   argTypes,
-} as ComponentMeta<typeof Modal>;
+} satisfies Meta<typeof Modal>;
 
-const Template: ComponentStory<typeof Modal> = (args) => {
+export default meta;
+type Story = StoryObj<typeof Modal>;
+
+const Template = (args: ChildrenProps<IModal>) => {
   const [isOpen, onClose] = useState(false);
   const { children, ...rest } = args;
 
@@ -26,19 +32,19 @@ const Template: ComponentStory<typeof Modal> = (args) => {
   );
 };
 
-export const PortalModal = Template.bind({});
-PortalModal.args = {
-  children: mockChildren,
+export const PortalModal: Story = {
+  args: {
+    children: mockChildren,
+  },
+  render: (args) => <Template {...args} />,
 };
 
-export const WithoutBg = Template.bind({});
-WithoutBg.args = {
-  withoutBg: true,
-  children: mockChildren,
+export const WithoutBg: Story = {
+  args: { withoutBg: true, children: mockChildren },
+  render: (args) => <Template {...args} />,
 };
 
-export const WithoutBtn = Template.bind({});
-WithoutBtn.args = {
-  hideButtonClose: true,
-  children: mockChildren,
+export const WithoutBtn: Story = {
+  args: { hideButtonClose: true, children: mockChildren },
+  render: (args) => <Template {...args} />,
 };

@@ -1,73 +1,77 @@
 import { useState } from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { LabelDragEventType, InputChangeEventType } from 'types';
 
 import { InputFile } from '.';
 import * as Styles from './styles';
 
-export default {
+const meta = {
   title: 'InputFile',
   component: InputFile,
-} as ComponentMeta<typeof InputFile>;
+} satisfies Meta<typeof InputFile>;
 
-const Template: ComponentStory<typeof InputFile> = (args) => {
-  const [images, setImages] = useState<string[]>([]);
+export default meta;
+type Story = StoryObj<typeof InputFile>;
 
-  const onChange = (
-    e: InputChangeEventType | LabelDragEventType,
-    dropFiles?: File[]
-  ) => {
-    let files: File[] = [];
+export const InputFileDefault: Story = {
+  args: {
+    name: 'images',
+    error: 'Error',
+  },
+  render: (args) => {
+    const [images, setImages] = useState<string[]>([]);
 
-    if (e.target instanceof HTMLInputElement && e.target.files) {
-      files = [...e.target.files];
-    }
+    const onChange = (
+      e: InputChangeEventType | LabelDragEventType,
+      dropFiles?: File[]
+    ) => {
+      let files: File[] = [];
 
-    if (dropFiles) {
-      files = [...dropFiles];
-    }
+      if (e.target instanceof HTMLInputElement && e.target.files) {
+        files = [...e.target.files];
+      }
 
-    files.forEach((element: File) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(element);
+      if (dropFiles) {
+        files = [...dropFiles];
+      }
 
-      reader.onload = async ({ target }) => {
-        if (target?.readyState === 2) {
-          const imageBase64 = target.result as string;
-          setImages((prev) => [...prev, imageBase64]);
-          if (e.target instanceof HTMLInputElement && e.target.value) {
-            e.target.value = '';
+      files.forEach((element: File) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(element);
+
+        reader.onload = async ({ target }) => {
+          if (target?.readyState === 2) {
+            const imageBase64 = target.result as string;
+            setImages((prev) => [...prev, imageBase64]);
+            if (e.target instanceof HTMLInputElement && e.target.value) {
+              e.target.value = '';
+            }
           }
-        }
-      };
-    });
-  };
+        };
+      });
+    };
 
-  return (
-    <Styles.WrapFiles>
-      <InputFile {...args} onChange={onChange} />
+    return (
+      <Styles.WrapFiles>
+        <InputFile {...args} onChange={onChange} />
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-        {images.map((file, index) => (
-          <img
-            src={file}
-            key={index}
-            alt="preview"
-            style={{
-              width: '150px',
-              height: '150px',
-              borderRadius: 10,
-              objectFit: 'cover',
-            }}
-          />
-        ))}
-      </div>
-    </Styles.WrapFiles>
-  );
-};
-export const InputFileDefault = Template.bind({});
-InputFileDefault.args = {
-  name: 'images',
-  error: 'Error',
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+          {images.map((file, index) => (
+            <img
+              src={file}
+              key={index}
+              alt="preview"
+              style={{
+                width: '150px',
+                height: '150px',
+                borderRadius: 10,
+                objectFit: 'cover',
+              }}
+            />
+          ))}
+        </div>
+      </Styles.WrapFiles>
+    );
+  },
 };

@@ -1,4 +1,8 @@
-export const argTypes = {
+import { IArgTypes } from 'types';
+
+import { IButton } from './types';
+
+export const argTypes: IArgTypes<IButton> = {
   type: {
     name: 'type',
     type: { name: 'string', required: true },
@@ -127,19 +131,7 @@ export const argTypes = {
     },
     control: { type: 'boolean' },
   },
-  //TODO
-  /*   icon: {
-    name: 'icon',
-    description: 'React FC icon',
-    table: {
-        type: { summary: 'icon' },
-      },
-    options: Object.keys(icons),
-    mapping: icons,
-    control: {
-        type: 'select', 
-      },
-  }, */
+
   nativeIcon: {
     type: { name: 'boolean' },
     description: "Don't change color icon on hover",

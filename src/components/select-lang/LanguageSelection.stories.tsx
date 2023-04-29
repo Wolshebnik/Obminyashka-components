@@ -1,33 +1,38 @@
 import { useArgs } from '@storybook/client-api';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { LanguageSelection } from '.';
-import { argTypes } from './arg-types';
 import { IOnClickArg } from './types';
+import { argTypes } from './arg-types';
 
-export default {
+const meta = {
   title: 'LanguageSelection',
   component: LanguageSelection,
-  description: { story: 'An example story description' },
   argTypes,
-} as ComponentMeta<typeof LanguageSelection>;
+  parameters: {
+    docs: {
+      description: {
+        component: 'An example story description',
+      },
+    },
+  },
+} satisfies Meta<typeof LanguageSelection>;
 
-const Template: ComponentStory<typeof LanguageSelection> = ({
-  onClick,
-  ...args
-}) => {
-  const [, updateArgs] = useArgs();
+export default meta;
+type Story = StoryObj<typeof LanguageSelection>;
 
-  const handleChangeLang = ({ lang }: IOnClickArg) => {
-    updateArgs({
-      lang,
-    });
-  };
+export const DefaultLanguageSelection: Story = {
+  args: { lang: 'ua' },
 
-  return <LanguageSelection onClick={handleChangeLang} {...args} />;
-};
+  render: ({ onClick, ...args }) => {
+    const [, updateArgs] = useArgs();
 
-export const DefaultLanguageSelection = Template.bind({});
-DefaultLanguageSelection.args = {
-  lang: 'ua',
+    const handleChangeLang = ({ lang }: IOnClickArg) => {
+      updateArgs({
+        lang,
+      });
+    };
+
+    return <LanguageSelection onClick={handleChangeLang} {...args} />;
+  },
 };

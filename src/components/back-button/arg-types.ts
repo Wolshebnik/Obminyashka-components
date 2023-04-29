@@ -1,4 +1,8 @@
-export const argTypes = {
+import { IArgTypes } from 'types';
+
+import { IBackButton } from './types';
+
+export const argTypes: IArgTypes<IBackButton> = {
   onClick: {
     name: 'onClick',
     type: { name: 'function' },

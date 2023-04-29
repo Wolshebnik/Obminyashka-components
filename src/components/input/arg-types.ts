@@ -1,4 +1,8 @@
-export const argTypes = {
+import { IArgTypes } from 'types';
+
+import { InputProps } from './types';
+
+export const argTypes: IArgTypes<InputProps> = {
   id: {
     name: 'id',
     type: { name: 'string' },
@@ -159,7 +163,7 @@ export const argTypes = {
     name: 'InputMaxWidth',
     type: { name: 'string' },
     description: `CSS property. max-width\n\n Sets the maximum wrap width of
-    this component.\n\n\ Written in a string type to define units of measure. 
+    this component.\n\n\ Written in a string type to define units of measure.
     If the property is not set, the behavior is as if width is 100%, since
     this is a block-level element.\n\n Example : "600px(rem,em)" or "50%".`,
     table: {
@@ -195,8 +199,8 @@ export const argTypes = {
   inputJustifyContent: {
     name: 'InputJustifyContent',
     type: { name: 'string' },
-    description: `CSS property. justify-content\n\n Aligns the Label and Input 
-    elements with Error along the main axis. \n\n\ !!! With inputFlexDirection 
+    description: `CSS property. justify-content\n\n Aligns the Label and Input
+    elements with Error along the main axis. \n\n\ !!! With inputFlexDirection
     property without value or with values 'column', 'column-reverse' will
     not work.\B `,
     table: {
@@ -210,7 +214,7 @@ export const argTypes = {
     name: 'WrapperInputErrorWidth',
     type: { name: 'string' },
     description: `CSS property. Width\n\n Sets wrap width of
-    Input with Error message.\n\n\ Written in a string type to define units 
+    Input with Error message.\n\n\ Written in a string type to define units
     of measure.\n\n Example : "600px(rem,em)" or "50%"`,
     table: {
       type: { summary: 'string' },
@@ -231,7 +235,7 @@ export const argTypes = {
   onClick: {
     name: 'onClick',
     type: { name: 'function' },
-    description: `The function to be passed to the search icon.\n\n!!! 
+    description: `The function to be passed to the search icon.\n\n!!!
     Available only for Search type`,
     table: {
       type: { summary: 'function' },
