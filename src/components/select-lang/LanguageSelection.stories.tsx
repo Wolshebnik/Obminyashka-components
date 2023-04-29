@@ -2,8 +2,8 @@ import { useArgs } from '@storybook/client-api';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { LanguageSelection } from '.';
-import { argTypes } from './arg-types';
 import { IOnClickArg } from './types';
+import { argTypes } from './arg-types';
 
 const meta = {
   title: 'LanguageSelection',
