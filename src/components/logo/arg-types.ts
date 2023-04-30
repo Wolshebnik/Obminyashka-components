@@ -11,6 +11,7 @@ export const argTypes: IArgTypes<ILogo> = {
       type: { summary: 'function' },
     },
   },
+
   inFooter: {
     name: `inFooter`,
     type: { name: 'boolean' },

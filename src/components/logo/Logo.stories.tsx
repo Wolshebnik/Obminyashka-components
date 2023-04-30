@@ -31,6 +31,7 @@ export const Header: Story = {
     </div>
   ),
 };
+
 export const Footer: Story = {
   args: {
     onClick: () => alert('Footer'),

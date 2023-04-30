@@ -148,6 +148,7 @@ const colorsDefault = Object.freeze({
   backgroundColor: '#fdfcff',
   faux,
 });
+
 const logo = Object.freeze({
   white: '#FFFFFF',
   blue: `#12b6ed`,

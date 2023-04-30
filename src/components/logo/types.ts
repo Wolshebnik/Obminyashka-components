@@ -1,4 +1,4 @@
 export interface ILogo {
-  onClick: () => void;
   inFooter?: boolean;
+  onClick: () => void;
 }
