@@ -4,17 +4,6 @@ export const WrapFiles = styled.div`
   margin-bottom: 100px;
 `;
 
-export const FileTittle = styled.h3`
-  font-weight: 600;
-  color: ${({ theme }) => theme.colors.blackColorText};
-  font-size: 26px;
-  line-height: 40px;
-`;
-
-export const Star = styled.span`
-  color: ${({ theme }) => theme.colors.colorRed};
-`;
-
 export const FileDescription = styled.p`
   font-size: 16px;
   line-height: 26px;

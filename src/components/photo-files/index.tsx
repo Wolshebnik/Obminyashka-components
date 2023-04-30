@@ -11,6 +11,7 @@ import { isRightExtension } from 'utils';
 import { Modal } from '../modal';
 import * as Styles from './styles';
 import { IPhotoFiles } from './types';
+import { Subtitle } from '../subtitle';
 import { InputFile } from '../input-file';
 import { ImagePhoto } from './image-photo';
 import { checkFileSize, fileComparison } from './helpers';
@@ -140,10 +141,7 @@ const PhotoFiles = ({
 
         return (
           <Styles.WrapFiles>
-            <Styles.FileTittle>
-              {description}&nbsp;
-              <Styles.Star>*</Styles.Star>
-            </Styles.FileTittle>
+            <Subtitle textTitle={description} />
 
             <p>{firstUploadText}</p>
 

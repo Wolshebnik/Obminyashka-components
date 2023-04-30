@@ -1,14 +1,18 @@
-export const argTypes = {
+import { IArgTypes } from 'types';
+
+import { IProductPostData } from './types';
+
+export const argTypes: IArgTypes<IProductPostData> = {
   lang: {
     name: 'language',
-    type: { name: 'language', required: true },
+    type: { name: 'string', required: true },
     description: 'Сhoose the language of the site',
     control: { type: 'select' },
     options: ['ua', 'en'],
   },
   title: {
     name: 'title',
-    type: { name: 'title', required: true },
+    type: { name: 'string', required: true },
     description: 'title',
     table: {
       type: { summary: 'string' },
@@ -121,7 +125,7 @@ export const argTypes = {
   },
   wishes: {
     name: 'wishes',
-    type: { name: 'array' },
+    type: { name: 'string' },
     description: 'Data from the users',
     table: {
       type: { summary: 'array' },

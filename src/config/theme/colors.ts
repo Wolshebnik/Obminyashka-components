@@ -50,6 +50,12 @@ const modalBackground = 'rgba(18, 182, 237, 0.3)';
 const crossBtn = 'rgb(255, 255, 255)';
 const crossBtnBackground = 'rgb(18, 182, 237)';
 
+//New Select language
+const languageNew = Object.freeze({
+  main: '#ACACAC',
+  checked: '#606060',
+});
+
 //Select language
 const language = Object.freeze({
   backgroundHover: '#ccf2ff',
@@ -154,6 +160,7 @@ const COLORS = Object.freeze({
   button,
   itemCard,
   language,
+  languageNew,
   modalColors,
   inboxMessage,
   helpChildren,

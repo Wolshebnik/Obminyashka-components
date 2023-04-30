@@ -1,4 +1,8 @@
-export const argTypes = {
+import { IArgTypes } from 'types';
+
+import { IHelpChildren } from './types';
+
+export const argTypes: IArgTypes<IHelpChildren> = {
   title: {
     name: 'title',
     type: { name: 'string' },
