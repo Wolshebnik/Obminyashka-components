@@ -23,6 +23,10 @@ export const ImgWrapper = styled.div<{ inFooter?: boolean }>`
   display: flex;
   max-width: 40px;
 
+  svg {
+    width: 100%;
+  }
+
   ${({ theme, inFooter }) => css`
     ${!inFooter && !theme.responsive.isMobile && `max-width: 60px;`};
 
@@ -30,12 +34,7 @@ export const ImgWrapper = styled.div<{ inFooter?: boolean }>`
 
     ${inFooter && theme.responsive.isDesktop && `max-width: 90px;`};
   `}
-}
-
-svg {
-  width: 100%;
-}
-`;
+}`;
 
 export const ProjectName = styled.p<{ inFooter?: boolean }>`
   font-size: 26px;
@@ -55,7 +54,4 @@ export const ProjectName = styled.p<{ inFooter?: boolean }>`
     `font-size: 25px;
      line-height: 33px;`};
   `}
-  
-}
-
-`;
+}`;
