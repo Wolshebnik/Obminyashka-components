@@ -148,6 +148,10 @@ const colorsDefault = Object.freeze({
   backgroundColor: '#fdfcff',
   faux,
 });
+const logo = Object.freeze({
+  white: '#FFFFFF',
+  blue: `#12b6ed`,
+});
 
 const modalColors = Object.freeze({
   background: modalBackground,
@@ -156,6 +160,7 @@ const modalColors = Object.freeze({
 });
 
 const COLORS = Object.freeze({
+  logo,
   input,
   button,
   itemCard,

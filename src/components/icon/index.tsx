@@ -18,6 +18,7 @@ export { ReactComponent as Home } from '../../assets/icons/home.svg';
 export { ReactComponent as InboxMessage } from '../../assets/icons/inbox-message.svg';
 export { ReactComponent as Loader } from '../../assets/icons/loader.svg';
 export { ReactComponent as Location } from '../../assets/icons/location.svg';
+export { ReactComponent as Logo } from '../../assets/icons/logo.svg';
 export { ReactComponent as Logout } from '../../assets/icons/logout.svg';
 export { ReactComponent as Next } from '../../assets/icons/next.svg';
 export { ReactComponent as NoPhoto } from '../../assets/icons/no-photo.svg';
