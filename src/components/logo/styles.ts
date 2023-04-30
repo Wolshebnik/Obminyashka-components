@@ -34,7 +34,7 @@ export const ImgWrapper = styled.div<{ inFooter?: boolean }>`
 
     ${inFooter && theme.responsive.isDesktop && `max-width: 90px;`};
   `}
-}`;
+`;
 
 export const ProjectName = styled.p<{ inFooter?: boolean }>`
   font-size: 26px;
