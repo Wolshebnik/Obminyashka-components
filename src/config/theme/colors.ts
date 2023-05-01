@@ -156,6 +156,11 @@ const categoryBtn = Object.freeze({
   colorText: mariner,
 });
 
+const logo = Object.freeze({
+  white: '#FFFFFF',
+  blue: `#12b6ed`,
+});
+
 const modalColors = Object.freeze({
   background: modalBackground,
   cross: crossBtn,
@@ -163,6 +168,7 @@ const modalColors = Object.freeze({
 });
 
 const COLORS = Object.freeze({
+  logo,
   input,
   button,
   itemCard,
