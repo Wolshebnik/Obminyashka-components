@@ -151,7 +151,7 @@ const colorsDefault = Object.freeze({
   faux,
 });
 
-const categotyBtn = Object.freeze({
+const categoryBtn = Object.freeze({
   border: indigo,
   colorText: mariner,
 });
@@ -169,7 +169,7 @@ const COLORS = Object.freeze({
   language,
   languageNew,
   modalColors,
-  categotyBtn,
+  categoryBtn,
   inboxMessage,
   helpChildren,
   buttonGradient,

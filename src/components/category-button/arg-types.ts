@@ -1,7 +1,7 @@
 import { IArgTypes } from 'types';
-import { IBtnCatygoryProps } from './types';
+import { IBtnCategoryProps } from './types';
 
-export const argTypes: IArgTypes<IBtnCatygoryProps> = {
+export const argTypes: IArgTypes<IBtnCategoryProps> = {
   top: {
     name: 'top',
     type: { name: 'number' },

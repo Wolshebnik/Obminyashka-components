@@ -1,4 +1,4 @@
-export interface IBtnCatygoryProps {
+export interface IBtnCategoryProps {
   text: string;
   top?: number;
   left?: number;

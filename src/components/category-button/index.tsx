@@ -1,6 +1,6 @@
 import * as Icon from '../icon';
 import * as Styles from './styles';
-import { IBtnCatygoryProps } from './types';
+import { IBtnCategoryProps } from './types';
 
 const CategoryButton = ({
   top,
@@ -8,22 +8,34 @@ const CategoryButton = ({
   text,
   open,
   setOpen,
-}: IBtnCatygoryProps) => {
+}: IBtnCategoryProps) => {
   return (
-    <Styles.WrapCategories
-      top={top}
-      left={left}
-      open={open}
-      onClick={() => setOpen(!open)}
-    >
-      <Styles.WrapCategoriesText>{text}</Styles.WrapCategoriesText>
+    <>
+      <Styles.WrapCategoriesDesktop
+        top={top}
+        left={left}
+        open={open}
+        onClick={() => setOpen(!open)}
+      >
+        <Styles.WrapCategoriesText>{text}</Styles.WrapCategoriesText>
 
-      <Styles.WrapCategoriesArrow>
-        <Icon.categoriesErrow />
-      </Styles.WrapCategoriesArrow>
+        <Styles.WrapCategoriesArrow>
+          <Icon.CategoriesArrow />
+        </Styles.WrapCategoriesArrow>
 
-      {/* {open && <NavCategory />} */}
-    </Styles.WrapCategories>
+        {/* {open && <NavCategory />} */}
+      </Styles.WrapCategoriesDesktop>
+
+      <Styles.WrapCategories
+        top={top}
+        left={left}
+        onClick={() => setOpen(!open)}
+      >
+        <Icon.CategoriesButton />
+
+        {/* {open && <NavCategory />} */}
+      </Styles.WrapCategories>
+    </>
   );
 };
 

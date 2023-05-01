@@ -5,7 +5,7 @@ export const WrapCategoriesText = styled.div`
   text-transform: uppercase;
 
   ${({ theme }) => css`
-    color: ${theme.colors.categotyBtn.colorText};
+    color: ${theme.colors.categoryBtn.colorText};
   `}
 `;
 
@@ -15,7 +15,7 @@ export const WrapCategoriesArrow = styled.div`
   transition: all 0.3s ease;
 `;
 
-export const WrapCategories = styled.div<{
+export const WrapCategoriesDesktop = styled.div<{
   top?: number;
   left?: number;
   open: boolean;
@@ -37,7 +37,7 @@ export const WrapCategories = styled.div<{
   ${({ theme, open, left, top }) => css`
     top: ${top ? `${top}px` : 0};
     left: ${left ? `${left}px` : 0};
-    border: 2px dashed ${theme.colors.categotyBtn.border};
+    border: 2px dashed ${theme.colors.categoryBtn.border};
 
     ${open &&
     css`
@@ -45,10 +45,32 @@ export const WrapCategories = styled.div<{
         bottom: -4px;
         rotate: 180deg;
       }
-      border: 2px solid ${theme.colors.categotyBtn.border};
+      border: 2px solid ${theme.colors.categoryBtn.border};
     `}
 
     ${!theme.responsive.isDesktop &&
+    css`
+      display: none;
+    `}
+  `}
+`;
+
+export const WrapCategories = styled.div<{
+  top?: number;
+  left?: number;
+}>`
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+  ${({ theme, left, top }) => css`
+    top: ${top ? `${top}px` : 0};
+    left: ${left ? `${left}px` : 0};
+
+    ${theme.responsive.isDesktop &&
     css`
       display: none;
     `}
