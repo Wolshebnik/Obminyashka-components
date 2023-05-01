@@ -74,5 +74,11 @@ export const WrapCategories = styled.div<{
     css`
       display: none;
     `}
+
+    ${theme.responsive.isMobile &&
+    css`
+      height: 30px;
+      width: 30px;
+    `}
   `}
 `;
