@@ -67,6 +67,10 @@ const language = Object.freeze({
   border: buttonBlue,
 });
 
+const newTextColors = Object.freeze({
+  blueColorText: '#558FA5',
+});
+
 const input = Object.freeze({
   border: colorBorder,
   error: colorError,
@@ -178,6 +182,7 @@ const COLORS = Object.freeze({
   categoryBtn,
   inboxMessage,
   helpChildren,
+  newTextColors,
   buttonGradient,
   ellipsisShadow,
   productOwnerData,
