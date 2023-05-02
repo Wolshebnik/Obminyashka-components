@@ -2,7 +2,7 @@ import { IArgTypes } from 'types';
 import { IBtnCategoryProps } from './types';
 
 export const argTypes: IArgTypes<IBtnCategoryProps> = {
-  text: {
+  textBtn: {
     name: 'text',
     type: { name: 'string' },
     description: 'button text',

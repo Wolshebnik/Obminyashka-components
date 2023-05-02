@@ -1,14 +1,29 @@
+import NavCategory from 'components/categoty-nav';
+
 import * as Icon from '../icon';
 import * as Styles from './styles';
 import { Responsive } from 'components';
 import { IBtnCategoryProps } from './types';
 
-const CategoryButton = ({ text, open, setOpen }: IBtnCategoryProps) => {
+const CategoryButton = ({
+  link,
+  open,
+  setOpen,
+  textBtn,
+  textToys,
+  textBooks,
+  textOther,
+  textShoes,
+  textClothes,
+  textFurniture,
+  textKidsUpToYear,
+  textTransportForChildren,
+}: IBtnCategoryProps) => {
   return (
     <Styles.CategoriesBody>
       <Responsive.Desktop>
         <Styles.CategoriesDesktop open={open} onClick={() => setOpen(!open)}>
-          <Styles.CategoriesText>{text}</Styles.CategoriesText>
+          <Styles.CategoriesText>{textBtn}</Styles.CategoriesText>
 
           <Styles.CategoriesArrow>
             <Icon.CategoriesArrow />
@@ -22,7 +37,19 @@ const CategoryButton = ({ text, open, setOpen }: IBtnCategoryProps) => {
         </Styles.Categories>
       </Responsive.NotDesktop>
 
-      {/* {open && <NavCategory />} */}
+      {open && (
+        <NavCategory
+          link={link}
+          textToys={textToys}
+          textBooks={textBooks}
+          textOther={textOther}
+          textShoes={textShoes}
+          textClothes={textClothes}
+          textFurniture={textFurniture}
+          textKidsUpToYear={textKidsUpToYear}
+          textTransportForChildren={textTransportForChildren}
+        />
+      )}
     </Styles.CategoriesBody>
   );
 };
