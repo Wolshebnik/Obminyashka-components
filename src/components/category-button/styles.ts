@@ -28,7 +28,7 @@ export const WrapCategoriesDesktop = styled.div<{
   padding: 0 26px;
   width: 222px;
   height: 50px;
-  border-radius: 26.6667px;
+  border-radius: 26px;
   font-size: 24px;
   font-weight: bold;
   line-height: 24px;
@@ -47,11 +47,6 @@ export const WrapCategoriesDesktop = styled.div<{
       }
       border: 2px solid ${theme.colors.categoryBtn.border};
     `}
-
-    ${!theme.responsive.isDesktop &&
-    css`
-      display: none;
-    `}
   `}
 `;
 
@@ -69,11 +64,6 @@ export const WrapCategories = styled.div<{
   ${({ theme, left, top }) => css`
     top: ${top ? `${top}px` : 0};
     left: ${left ? `${left}px` : 0};
-
-    ${theme.responsive.isDesktop &&
-    css`
-      display: none;
-    `}
 
     ${theme.responsive.isMobile &&
     css`
