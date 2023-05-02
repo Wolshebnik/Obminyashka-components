@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components';
 
-export const WrapCategoriesText = styled.div`
+export const CategoriesBody = styled.div`
+  position: relative;
+`;
+
+export const CategoriesText = styled.div`
   text-transform: uppercase;
 
   ${({ theme }) => css`
@@ -8,12 +12,12 @@ export const WrapCategoriesText = styled.div`
   `}
 `;
 
-export const WrapCategoriesArrow = styled.div`
+export const CategoriesArrow = styled.div`
   margin-bottom: 5px;
   transition: all 0.3s ease;
 `;
 
-export const WrapCategoriesDesktop = styled.div<{
+export const CategoriesDesktop = styled.div<{
   open: boolean;
 }>`
   box-sizing: border-box;
@@ -34,7 +38,7 @@ export const WrapCategoriesDesktop = styled.div<{
 
     ${open &&
     css`
-      ${WrapCategoriesArrow} {
+      ${CategoriesArrow} {
         margin-bottom: -8px;
         rotate: 180deg;
       }
@@ -43,7 +47,7 @@ export const WrapCategoriesDesktop = styled.div<{
   `}
 `;
 
-export const WrapCategories = styled.div`
+export const Categories = styled.div`
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;

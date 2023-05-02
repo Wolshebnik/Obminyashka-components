@@ -5,28 +5,25 @@ import { IBtnCategoryProps } from './types';
 
 const CategoryButton = ({ text, open, setOpen }: IBtnCategoryProps) => {
   return (
-    <div style={{ margin: '0', padding: '0' }}>
+    <Styles.CategoriesBody>
       <Responsive.Desktop>
-        <Styles.WrapCategoriesDesktop
-          open={open}
-          onClick={() => setOpen(!open)}
-        >
-          <Styles.WrapCategoriesText>{text}</Styles.WrapCategoriesText>
+        <Styles.CategoriesDesktop open={open} onClick={() => setOpen(!open)}>
+          <Styles.CategoriesText>{text}</Styles.CategoriesText>
 
-          <Styles.WrapCategoriesArrow>
+          <Styles.CategoriesArrow>
             <Icon.CategoriesArrow />
-          </Styles.WrapCategoriesArrow>
-        </Styles.WrapCategoriesDesktop>
+          </Styles.CategoriesArrow>
+        </Styles.CategoriesDesktop>
       </Responsive.Desktop>
 
       <Responsive.NotDesktop>
-        <Styles.WrapCategories onClick={() => setOpen(!open)}>
+        <Styles.Categories onClick={() => setOpen(!open)}>
           <Icon.CategoriesButton />
-        </Styles.WrapCategories>
+        </Styles.Categories>
       </Responsive.NotDesktop>
 
       {/* {open && <NavCategory />} */}
-    </div>
+    </Styles.CategoriesBody>
   );
 };
 
