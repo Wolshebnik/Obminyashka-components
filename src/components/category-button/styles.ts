@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 
 export const WrapCategoriesText = styled.div`
-  position: relative;
   text-transform: uppercase;
 
   ${({ theme }) => css`
@@ -10,18 +9,14 @@ export const WrapCategoriesText = styled.div`
 `;
 
 export const WrapCategoriesArrow = styled.div`
-  position: relative;
-  bottom: 3px;
+  margin-bottom: 5px;
   transition: all 0.3s ease;
 `;
 
 export const WrapCategoriesDesktop = styled.div<{
-  top?: number;
-  left?: number;
   open: boolean;
 }>`
   box-sizing: border-box;
-  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,15 +29,13 @@ export const WrapCategoriesDesktop = styled.div<{
   line-height: 24px;
   cursor: pointer;
 
-  ${({ theme, open, left, top }) => css`
-    top: ${top ? `${top}px` : 0};
-    left: ${left ? `${left}px` : 0};
+  ${({ theme, open }) => css`
     border: 2px dashed ${theme.colors.categoryBtn.border};
 
     ${open &&
     css`
       ${WrapCategoriesArrow} {
-        bottom: -4px;
+        margin-bottom: -8px;
         rotate: 180deg;
       }
       border: 2px solid ${theme.colors.categoryBtn.border};
@@ -50,21 +43,14 @@ export const WrapCategoriesDesktop = styled.div<{
   `}
 `;
 
-export const WrapCategories = styled.div<{
-  top?: number;
-  left?: number;
-}>`
+export const WrapCategories = styled.div`
   box-sizing: border-box;
-  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
 
-  ${({ theme, left, top }) => css`
-    top: ${top ? `${top}px` : 0};
-    left: ${left ? `${left}px` : 0};
-
+  ${({ theme }) => css`
     ${theme.responsive.isMobile &&
     css`
       height: 30px;

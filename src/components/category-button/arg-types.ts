@@ -2,22 +2,6 @@ import { IArgTypes } from 'types';
 import { IBtnCategoryProps } from './types';
 
 export const argTypes: IArgTypes<IBtnCategoryProps> = {
-  top: {
-    name: 'top',
-    type: { name: 'number' },
-    description: 'top',
-    table: {
-      type: { summary: 'number' },
-    },
-  },
-  left: {
-    name: 'left',
-    type: { name: 'number' },
-    description: 'left',
-    table: {
-      type: { summary: 'number' },
-    },
-  },
   text: {
     name: 'text',
     type: { name: 'string' },
