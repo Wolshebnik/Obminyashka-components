@@ -65,6 +65,10 @@ const language = Object.freeze({
   border: buttonBlue,
 });
 
+const newTextColors = Object.freeze({
+  blueColorText: '#558FA5',
+});
+
 const input = Object.freeze({
   border: colorBorder,
   error: colorError,
@@ -149,6 +153,11 @@ const colorsDefault = Object.freeze({
   faux,
 });
 
+const logo = Object.freeze({
+  white: '#FFFFFF',
+  blue: `#12b6ed`,
+});
+
 const modalColors = Object.freeze({
   background: modalBackground,
   cross: crossBtn,
@@ -156,6 +165,7 @@ const modalColors = Object.freeze({
 });
 
 const COLORS = Object.freeze({
+  logo,
   input,
   button,
   itemCard,
@@ -164,6 +174,7 @@ const COLORS = Object.freeze({
   modalColors,
   inboxMessage,
   helpChildren,
+  newTextColors,
   buttonGradient,
   ellipsisShadow,
   productOwnerData,

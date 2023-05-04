@@ -52,6 +52,7 @@ export { default as orangeDots } from '../../assets/img/errorPage/orange-dots.pn
 export { default as orangutan } from '../../assets/img/MySettings/orangutan.jpg';
 export { default as other } from '../../assets/img/navItems/other.png';
 export { default as ph } from '../../assets/img/ph.png';
+export { default as productPostCheck } from '../../assets/icons/product-post-check.svg';
 export { default as question } from '../../assets/img/question.png';
 export { default as shadow } from '../../assets/img/errorPage/shadow.png';
 export { default as shadowDark } from '../../assets/img/errorPage/shadow-dark.png';
