@@ -22,6 +22,7 @@ const Template = (args: any) => {
   return (
     <PresentationHeader>
       <Logo onClick={() => alert('You press logo')} />
+
       <Search
         {...args}
         value={searchValue}

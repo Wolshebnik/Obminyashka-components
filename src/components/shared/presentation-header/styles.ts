@@ -20,6 +20,7 @@ export const Container = styled.div`
     css`
       padding: 13px 40px 12px;
     `}
+
     ${theme.responsive.isDesktop &&
     css`
       padding: 36px 60px 29px 45px;
