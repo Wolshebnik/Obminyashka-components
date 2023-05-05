@@ -11,6 +11,7 @@ export const useDelayAnimation = (delay: number) => {
       setIsOpen(true);
       setTimeout(() => setIsAnimation(true), 1);
     }
+
     if (!open) {
       setIsAnimation(false);
       setTimeout(() => setIsOpen(false), delay);
