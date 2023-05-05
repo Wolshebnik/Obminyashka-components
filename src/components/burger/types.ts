@@ -1,3 +1,3 @@
 export interface IBurger {
-  open: boolean;
+  isOpen: boolean;
 }

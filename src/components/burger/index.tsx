@@ -1,33 +1,23 @@
 import { useState } from 'react';
 
+import { Responsive } from 'components';
+
 import * as Styles from './styles';
 import { IBurger } from './types';
 
 const Burger = ({}: IBurger) => {
-  const [open, setOpen] = useState(false);
-  // const [hideOrShow, setHideOrShow] = useState({});
+  const [isOpen, setIsOpen] = useState(false);
 
-  // const handleMenu = () => {
-  //   setIsOpen((prev) => !prev);
-  //   if (open) {
-  //     setHideOrShow(() => {
-  //       return {};
-  //     });
-  //   } else {
-  //     setHideOrShow(() => {
-  //       return { display: 'flex' };
-  //     });
-  //   }
-  // };
+  const handleToggleClick = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <>
-      <Styles.BurgerMenu onClick={() => setOpen(!open)}>
-        <Styles.BurgerMenuLines open={open} />
-        <Styles.BurgerMenuLines open={open} />
-        <Styles.BurgerMenuLines open={open} />
+    <Responsive.Mobile>
+      <Styles.BurgerMenu onClick={handleToggleClick}>
+        <Styles.BurgerMenuLines isOpen={isOpen} />
       </Styles.BurgerMenu>
-    </>
+    </Responsive.Mobile>
   );
 };
 
