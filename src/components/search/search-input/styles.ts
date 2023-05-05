@@ -4,8 +4,8 @@ export const SearchInputWrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  width: 310px;
   padding: 8px 31px 8px 11px;
+  width: 310px;
   box-sizing: border-box;
   border-radius: 26.67px;
 
@@ -94,8 +94,8 @@ export const IconWrapper = styled.div<{ isNotEmpty?: boolean }>`
 `;
 
 export const SearchInput = styled.input`
+  padding: 0 5px;
   width: 100%;
   border: none;
-  padding: 0 5px;
   outline: none;
 `;
