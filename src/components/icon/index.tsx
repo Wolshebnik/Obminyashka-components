@@ -3,7 +3,6 @@ export { ReactComponent as ArrowDown } from '../../assets/icons/arrow-down.svg';
 export { ReactComponent as ArrowUp } from '../../assets/icons/arrow-up.svg';
 export { ReactComponent as Avatar } from '../../assets/icons/avatar.svg';
 export { ReactComponent as Bell } from '../../assets/icons/bell.svg';
-export { ReactComponent as BgCloudDesktop } from '../../assets/icons/bg-cloud-desktop.svg';
 export { ReactComponent as Camera } from '../../assets/icons/camera.svg';
 export { ReactComponent as Check } from '../../assets/icons/check.svg';
 export { ReactComponent as ChevronLeft } from '../../assets/icons/chevron-left.svg';
