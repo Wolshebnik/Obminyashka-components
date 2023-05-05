@@ -1,6 +1,25 @@
 import styled, { keyframes, css } from 'styled-components';
 
-import сloud from 'assets/img/cloud.png';
+import { cloud } from 'components/img';
+
+const sizeCloud = css`
+  width: 29px;
+  height: 16px;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      width: 71px;
+      height: 38px;
+    `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      width: 121px;
+      height: 66px;
+    `}
+  `}
+`;
 
 const moveClouds1 = keyframes`
   0% {
@@ -8,19 +27,19 @@ const moveClouds1 = keyframes`
   }
   15.1% {
    opacity: 1;
-   left: -5%;
+   left: 0%;
   }
   15.2% {
    opacity: 0;
-   left: -5%;
+   left: 0%;
   }
   15.3% {
    opacity: 0;
-   left: 95%;
+   left: 93%;
   }
   15.4% {
    opacity: 1;
-   left: 95%;
+   left: 93%;
   }
   100% {
    left: 15%;
@@ -29,23 +48,29 @@ const moveClouds1 = keyframes`
 
 const moveClouds2 = keyframes`
   0% {
-   right: 10%;
+   right: 10%; 
   }
-  88% {
+  90% {
    opacity: 1;
-   right: 100%;
+   right: 93%;
+   transform:scale(1);
   }
-  88.1% {
+    90.1% {
+    transform:scale(0.5);
+  }
+ 90.2% {
    opacity: 0;
-   right: 100%;
+   right: 93%;
+   transform:scale(0.4);
   }
-  88.2% {
+  90.3% {
    opacity: 0;
-   right: -2%;
+   right: 0%;
+   transform:scale(1);
   }
-  88.3%{  
+ 90.4%{  
    opacity: 1;
-   right: -2%;
+   right: 0%;
   }
   100% {
    right: 10%;
@@ -79,7 +104,7 @@ const moveClouds3 = keyframes`
 
 const mainStyles = css`
   position: absolute;
-  background-image: url(${сloud});
+  background-image: url(${cloud});
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 1;
@@ -88,29 +113,41 @@ const mainStyles = css`
 export const FirstCloud = styled.span`
   top: 30%;
   left: 15%;
-  width: 121px;
-  height: 66px;
   animation: ${moveClouds1} 30s linear infinite;
 
+  ${sizeCloud};
   ${mainStyles};
 `;
 
 export const SecondCloud = styled.span`
-  bottom: 37%;
+  bottom: 30%;
   right: 10%;
-  width: 121px;
-  height: 66px;
   animation: ${moveClouds2} 20s linear infinite;
 
+  ${sizeCloud};
   ${mainStyles};
 `;
 
 export const ThirdCloud = styled.span`
-  bottom: 16%;
+  bottom: 9%;
   left: 28%;
-  width: 178px;
-  height: 96px;
+  width: 43px;
+  height: 23px;
   animation: ${moveClouds3} 30s linear infinite;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      width: 113px;
+      height: 61px;
+    `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      width: 178px;
+      height: 96px;
+    `}
+  `}
 
   ${mainStyles};
 `;

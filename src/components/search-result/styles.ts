@@ -1,25 +1,46 @@
 import styled, { css } from 'styled-components';
 
-import * as Icon from '../icon';
-
 export const displayStyles = css`
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
+export const Container = styled.div`
+  ${displayStyles}
+`;
+
 export const Wrapper = styled.div`
-  width: 1455px;
-  height: 880px;
+  max-width: 351px;
+  max-height: 212px;
   color: ${({ theme }) => theme.colors.white};
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      max-width: 875px;
+      max-height: 490px;
+    `}
+  `}
+
+  ${({ theme }) => css`
+    ${theme.responsive.isDesktop &&
+    css`
+      max-width: 1455px;
+      max-height: 880px;
+    `}
+  `}
+
+  ${displayStyles};
 `;
 
 export const MainCloud = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  background: linear-gradient(100.18deg, #8fd3e1 7.33%, #51b2d4 97.87%);
-  clip-path: url(#my-clip-path);
+  background: linear-gradient(
+    ${({ theme }) => theme.colors.searchResult.gradient}
+  );
 
   ${displayStyles};
 `;
@@ -34,24 +55,56 @@ export const ContentWrapper = styled.div`
 `;
 
 export const Title = styled.p`
-  margin-bottom: 45px;
-  font-size: 60px;
+  margin-bottom: 11px;
   font-weight: 500;
-  line-height: 70px;
+  font-size: 15px;
+  line-height: 18px;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      margin-bottom: 24px;
+      font-size: 35px;
+      line-height: 40px;
+    `}
+  `}
+
+  ${({ theme }) => css`
+    ${theme.responsive.isDesktop &&
+    css`
+      margin-bottom: 45px;
+      font-size: 60px;
+      line-height: 70px;
+    `}
+  `}
 `;
 
 export const Text = styled.p`
-  margin-bottom: 40px;
-  font-size: 40px;
   font-weight: 400;
-  line-height: 47px;
+  font-size: 10px;
+  line-height: 12px;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      font-size: 23px;
+      line-height: 27px;
+    `}
+  `}
+
+  ${({ theme }) => css`
+    ${theme.responsive.isDesktop &&
+    css`
+      font-size: 40px;
+      line-height: 47px;
+    `}
+  `}
 `;
 
-export const Container = styled.div`
-  ${displayStyles}
-`;
-
-export const StyledSVG = styled(Icon.BgCloudDesktop)`
+export const StyledImg = styled.img`
+  position: relative;
   width: 100%;
   height: 100%;
+  z-index: 15;
+  transform: scale(1.01);
 `;

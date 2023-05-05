@@ -1,4 +1,8 @@
-export const argTypes = {
+import { IArgTypes } from 'types';
+
+import { ISearchResult } from './types';
+
+export const argTypes: IArgTypes<ISearchResult> = {
   title: {
     name: 'title',
     type: { name: 'string' },
