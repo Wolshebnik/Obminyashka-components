@@ -152,6 +152,11 @@ const colorsDefault = Object.freeze({
   backgroundColor: '#fdfcff',
   faux,
 });
+const search = Object.freeze({
+  white: '#FFFFFF',
+  blue: '#29a5d4',
+  background: 'rgba(255, 255, 255, 0.6)',
+});
 
 const logo = Object.freeze({
   white: '#FFFFFF',
@@ -167,6 +172,7 @@ const modalColors = Object.freeze({
 const COLORS = Object.freeze({
   logo,
   input,
+  search,
   button,
   itemCard,
   language,

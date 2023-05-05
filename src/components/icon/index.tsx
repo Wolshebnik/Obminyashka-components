@@ -32,5 +32,6 @@ export { ReactComponent as QuestionMark } from '../../assets/icons/question-mark
 export { ReactComponent as Rectangle } from '../../assets/icons/rectangle.svg';
 export { ReactComponent as Rotate } from '../../assets/icons/rotate.svg';
 export { ReactComponent as Search } from '../../assets/icons/search.svg';
+export { ReactComponent as SearchNew } from '../../assets/icons/searchNew.svg';
 export { ReactComponent as Settings } from '../../assets/icons/settings.svg';
 export { ReactComponent as Star } from '../../assets/icons/star.svg';
