@@ -10,6 +10,7 @@ declare module 'styled-components' {
     borderRadius: string;
     transition: {
       default: string;
+      dropDown: string;
     };
     responsive: {
       isDesktop: boolean;
@@ -17,6 +18,7 @@ declare module 'styled-components' {
       isPortrait: boolean;
       isTabletUp: boolean;
       isMobile: boolean;
+      isLandscape: boolean;
     };
   }
 }
