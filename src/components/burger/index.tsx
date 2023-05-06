@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-import { Responsive } from 'components';
+import { Deals, LanguageSelection, Responsive } from 'components';
 
 import * as Styles from './styles';
 import { IBurger } from './types';
 
-const Burger = ({}: IBurger) => {
+const Burger = ({ burgerMenuText }: IBurger) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleClick = () => {
@@ -13,11 +13,24 @@ const Burger = ({}: IBurger) => {
   };
 
   return (
-    <Responsive.Mobile>
-      <Styles.BurgerMenu onClick={handleToggleClick}>
-        <Styles.BurgerMenuLines isOpen={isOpen} />
-      </Styles.BurgerMenu>
-    </Responsive.Mobile>
+    <>
+      <Responsive.NotDesktop>
+        <Styles.BurgerIcon onClick={handleToggleClick}>
+          <Styles.BurgerIconLines isOpen={isOpen} />
+        </Styles.BurgerIcon>
+      </Responsive.NotDesktop>
+
+      {isOpen && (
+        <Styles.BurgerMenu>
+          {burgerMenuText.map((item: any, index: number) => (
+            <React.Fragment key={index}>
+              <Deals text={item.text} to={item.to} heartIcon={item.icon} />
+            </React.Fragment>
+          ))}
+          <LanguageSelection lang="ua" onClick={() => {}} />
+        </Styles.BurgerMenu>
+      )}
+    </>
   );
 };
 

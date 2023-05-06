@@ -2,11 +2,8 @@ import styled, { css } from 'styled-components';
 
 import { IBurger } from './types';
 
-export const BurgerMenu = styled.div`
+export const BurgerIcon = styled.div`
   position: fixed;
-  /* display: flex;
-  justify-content: space-around;
-  flex-flow: column nowrap; */
   cursor: pointer;
 
   ${({ theme }) => css`
@@ -25,6 +22,7 @@ export const BurgerMenu = styled.div`
       width: 40px;
       height: 40px;
     `} 
+
     ${theme.responsive.isDesktop &&
     css`
       display: none;
@@ -41,41 +39,70 @@ const Line = css`
   transition: all 0.3s linear;
 `;
 
-//How can I write theme in this?//
-export const BurgerMenuLines = styled.div<IBurger>`
+export const BurgerIconLines = styled.div<IBurger>`
   ${Line};
   position: relative;
   top: 10px;
-  background-color: ${({ isOpen, theme }) =>
-    isOpen ? 'transparent' : theme.colors.btnBlue};
 
-  ::after,
-  ::before {
-    content: '';
-    ${Line};
-    position: absolute;
-    opacity: ${({ isOpen }) => (isOpen ? 1 : 1)};
-  }
+  ${({ theme, isOpen }) => css`
+    background-color: ${isOpen ? 'transparent' : theme.colors.btnBlue};
 
-  ::before {
-    top: -10px;
-    transform: ${({ isOpen }) => (isOpen ? 'rotate(45deg)' : 'rotate(0)')};
-  }
+    ::after,
+    ::before {
+      content: '';
+      position: absolute;
+      ${Line};
+    }
 
-  ::after {
-    bottom: -10px;
-    transform: ${({ isOpen }) => (isOpen ? 'rotate(-45deg)' : 'rotate(0)')};
-  }
+    ${theme.responsive.isMobile &&
+    css`
+      ::before {
+        top: -10px;
+        transform: ${isOpen ? 'rotate(45deg)' : 'rotate(0)'};
+      }
 
-  /* :nth-child(1) {
-    transform: ${({ isOpen }) => (isOpen ? 'rotate(45deg)' : 'rotate(0)')};
-  }
+      ::after {
+        bottom: -10px;
+        transform: ${isOpen ? 'rotate(-45deg)' : 'rotate(0)'};
+      }
+    `}
 
-  :nth-child(2) {
-    opacity: ${({ isOpen }) => (isOpen ? 0 : 1)};
-  }
+    ${theme.responsive.isTablet &&
+    css`
+      ::before {
+        top: -13px;
+        transform: ${isOpen ? 'rotate(45deg)' : 'rotate(0)'};
+      }
 
-  :nth-child(3) {
-    transform: ${({ isOpen }) => (isOpen ? 'rotate(-45deg)' : 'rotate(0)')};
-  } */
+      ::after {
+        bottom: -13px;
+        transform: ${isOpen ? 'rotate(-45deg)' : 'rotate(0)'};
+      }
+    `}
+  `}
+`;
+
+export const BurgerMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  ${({ theme }) => css`
+    background-color: ${theme.colors.white};
+
+    ${theme.responsive.isMobile &&
+    css`
+      gap: 56px;
+      width: 100%;
+      padding-top: 124px;
+      padding-bottom: 188px;
+    `}
+
+    ${theme.responsive.isTablet &&
+    css`
+      gap: 40px;
+      padding-top: 120px;
+      padding-bottom: 204px;
+    `}
+  `}
 `;
