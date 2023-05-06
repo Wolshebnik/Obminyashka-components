@@ -28,15 +28,14 @@ export const WrapDeviceSearch = styled.div<{ isSearchActive?: boolean }>`
   width: 100%;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(2px);
-  transition: transform 0.6s ease;
   z-index: -1;
 
   ${({ theme, isSearchActive }) => css`
     background: ${theme.colors.search.background};
+    transition: ${theme.transition.dropDown};
 
     ${isSearchActive &&
     css`
-      transition: transform 0.6s ease;
       transform: translateY(100%);
     `}
   `}

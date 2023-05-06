@@ -56,12 +56,12 @@ export const IconWrapper = styled.div<{ isNotEmpty?: boolean }>`
     ${isNotEmpty &&
     css`
       position: absolute;
-      right: 11px;
+      right: 10px;
       top: 50%;
       transform: translateY(-50%);
 
       svg {
-        transition: all 0.33s;
+        transition: ${theme.transition.default};
 
         path {
           fill: ${theme.colors.search.blue};
@@ -69,7 +69,7 @@ export const IconWrapper = styled.div<{ isNotEmpty?: boolean }>`
 
         :hover {
           transform: rotate(90deg);
-          transition: all 0.33s;
+          transition: ${theme.transition.default};
         }
       }
     `}

@@ -1,5 +1,7 @@
 const buttonGradient =
   '90deg,rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5)';
+//White
+const white = `#FFF`;
 
 // Blue
 const buttonBlue = '#12b6ed';
@@ -148,18 +150,18 @@ const colorsDefault = Object.freeze({
   bgContent: '#E5E5E5',
   activeColor,
   scrollbarBg: '#f1f1f1',
-  white: '#FFFFFF',
+  white,
   backgroundColor: '#fdfcff',
   faux,
 });
 const search = Object.freeze({
-  white: '#FFFFFF',
+  white,
   blue: '#29a5d4',
   background: 'rgba(255, 255, 255, 0.6)',
 });
 
 const logo = Object.freeze({
-  white: '#FFFFFF',
+  white,
   blue: `#12b6ed`,
 });
 
