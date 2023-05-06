@@ -4,6 +4,7 @@ const buttonGradient =
 const white = `#FFF`;
 
 // Blue
+const searchBlue = '#29a5d4';
 const buttonBlue = '#12b6ed';
 const buttonBlueHover = '#00bfff';
 const buttonBlueActive = '#0094ff';
@@ -156,13 +157,13 @@ const colorsDefault = Object.freeze({
 });
 const search = Object.freeze({
   white,
-  blue: '#29a5d4',
+  blue: searchBlue,
   background: 'rgba(255, 255, 255, 0.6)',
 });
 
 const logo = Object.freeze({
   white,
-  blue: `#12b6ed`,
+  blue: buttonBlue,
 });
 
 const modalColors = Object.freeze({
