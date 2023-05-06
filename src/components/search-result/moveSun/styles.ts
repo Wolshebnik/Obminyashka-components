@@ -5,47 +5,47 @@ import { sunDesktop, sunMobile, sunTablet } from 'components/img';
 
 const sunAnimation = keyframes`
   0% {
-     bottom: 17%;
+     bottom: 11%;
      left: 43%;
      transform: rotateZ(0);
   }
   12.5% {
-     bottom: 14%;
+     bottom: 8%;
      left: 38%;
      transform: rotateZ(-7deg);
   }
   25%{
-     bottom:16%;
+     bottom:11%;
      left: 36%;
      transform: rotateZ(7deg);
   }
   37.5%{
-     bottom: 18%;
+     bottom: 14%;
      left: 40%;
      transform: rotateZ(-7deg);
   }
   50%{
-    bottom: 20%;
+    bottom: 16%;
     left: 43%;
     transform: rotateZ(7deg);
   }
   62.5%{
-    bottom: 18%;
+    bottom: 14%;
     left: 46%;
     transform: rotateZ(-7deg);
   }
   75%{
-     bottom: 16%;
+     bottom: 11%;
      left: 50%;
      transform: rotateZ(7deg);
   }
   87.5%{
-     bottom: 14%;
+     bottom: 8%;
      left: 48%;
      transform: rotateZ(-7deg);
   }
   100% {
-     bottom:17%;
+     bottom:11%;
      left: 43%;
      transform: rotateZ(0)
   }
@@ -53,7 +53,7 @@ const sunAnimation = keyframes`
 
 export const DefaultSun = styled.div`
   position: absolute;
-  bottom: 17%;
+  bottom: 14%;
   left: 43%;
   width: 75px;
   height: 75px;

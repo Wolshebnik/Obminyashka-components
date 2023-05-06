@@ -47,8 +47,8 @@ export const MainCloud = styled.div`
 
 export const ContentWrapper = styled.div`
   position: absolute;
-  flex-direction: column;
   top: 23%;
+  flex-direction: column;
   z-index: 5;
 
   ${displayStyles}

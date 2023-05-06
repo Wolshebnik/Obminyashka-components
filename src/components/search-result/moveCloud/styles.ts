@@ -25,21 +25,28 @@ const moveClouds1 = keyframes`
   0% {
    left: 15%;
   }
-  15.1% {
+  14%{
+   left: 1%;
    opacity: 1;
+   transform:scale(1);
+  }
+  15.1% {
    left: 0%;
+   opacity: 1;
+   transform:scale(0);
   }
   15.2% {
-   opacity: 0;
    left: 0%;
+   opacity: 0;
   }
   15.3% {
-   opacity: 0;
    left: 93%;
+   opacity: 0;
+   transform:scale(1);
   }
   15.4% {
-   opacity: 1;
    left: 93%;
+   opacity: 1;
   }
   100% {
    left: 15%;
@@ -50,27 +57,29 @@ const moveClouds2 = keyframes`
   0% {
    right: 10%; 
   }
-  90% {
+  85% {
+   right: 92.7%;
    opacity: 1;
-   right: 93%;
    transform:scale(1);
   }
-    90.1% {
-    transform:scale(0.5);
-  }
- 90.2% {
+  86% {
+   right: 92.7%;
    opacity: 0;
-   right: 93%;
-   transform:scale(0.4);
+   transform:scale(0.1);
   }
-  90.3% {
+  87% {
+   right: 94%;
    opacity: 0;
-   right: 0%;
+   transform:scale(0);
+  }
+  88% {
+   right: -2%;
+   opacity: 0;
    transform:scale(1);
   }
- 90.4%{  
+  90%{  
+   right: 0;
    opacity: 1;
-   right: 0%;
   }
   100% {
    right: 10%;
@@ -82,20 +91,20 @@ const moveClouds3 = keyframes`
    left: 28%;
   }
   20% {
-  opacity: 1;
    left: 8%;
+   opacity: 1;
   }
   20.1% {
-   opacity: 0;
    left: 8%;
+   opacity: 0;
   }
   20.9% {
-   opacity: 0;
    left: 80%;
+   opacity: 0;
   }
   21%{
-   opacity: 1;
    left: 80%;
+   opacity: 1;
   }
   100% {
    left: 28%;
@@ -122,14 +131,14 @@ export const FirstCloud = styled.span`
 export const SecondCloud = styled.span`
   bottom: 30%;
   right: 10%;
-  animation: ${moveClouds2} 20s linear infinite;
+  animation: ${moveClouds2} 23s linear infinite;
 
   ${sizeCloud};
   ${mainStyles};
 `;
 
 export const ThirdCloud = styled.span`
-  bottom: 9%;
+  bottom: 8%;
   left: 28%;
   width: 43px;
   height: 23px;
