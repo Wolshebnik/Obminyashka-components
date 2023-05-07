@@ -14,6 +14,7 @@ const LIGHT_THEME: DefaultTheme = Object.freeze({
     isTablet: false,
     isPortrait: false,
     isMobile: false,
+    isLandscape: false,
   },
 });
 
