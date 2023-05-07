@@ -1,4 +1,4 @@
-import * as Icon from 'components/icon/index';
+import * as Icon from '../icon';
 
 import { ILogo } from './types';
 import * as Styles from './styles';
