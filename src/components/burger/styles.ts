@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { IBurger } from './types';
+import { Images } from 'components';
 
 export const BurgerIcon = styled.div`
   position: fixed;
@@ -21,25 +21,20 @@ export const BurgerIcon = styled.div`
       right: 40px;
       width: 40px;
       height: 40px;
-    `} 
-
-    ${theme.responsive.isDesktop &&
-    css`
-      display: none;
     `}
   `}
 `;
 
 const Line = css`
   width: 100%;
-  height: 4px;
+  height: 3px;
   background-color: ${({ theme }) => theme.colors.btnBlue};
   border-radius: 15px;
   transform-origin: 1px;
   transition: all 0.3s linear;
 `;
 
-export const BurgerIconLines = styled.div<IBurger>`
+export const BurgerIconLines = styled.div<{ isOpen?: boolean }>`
   ${Line};
   position: relative;
   top: 10px;
@@ -52,6 +47,7 @@ export const BurgerIconLines = styled.div<IBurger>`
       content: '';
       position: absolute;
       ${Line};
+      height: 3px;
     }
 
     ${theme.responsive.isMobile &&
@@ -96,6 +92,30 @@ export const BurgerMenu = styled.div`
       width: 100%;
       padding-top: 124px;
       padding-bottom: 188px;
+
+      ::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 240px;
+        background-image: url(${Images.newBgBurgerOne});
+        background-repeat: no-repeat;
+        opacity: 0.6;
+      }
+
+      ::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 300px;
+        height: 324px;
+        background-image: url(${Images.newBgBurgerTwo});
+        background-repeat: no-repeat;
+        opacity: 0.7;
+      }
     `}
 
     ${theme.responsive.isTablet &&

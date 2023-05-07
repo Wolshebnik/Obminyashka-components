@@ -3,13 +3,32 @@ import { IArgTypes } from 'types';
 import { IBurger } from './types';
 
 export const argTypes: IArgTypes<IBurger> = {
-  isOpen: {
-    name: 'open',
-    type: { name: 'boolean' },
-    description: 'Open burger',
-    table: {
-      type: { summary: 'boolean' },
-      defaultValue: { summary: false },
+  burgerMenuText: {
+    to: {
+      name: 'to',
+      type: { name: 'string' },
+      description: 'Link',
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+
+    text: {
+      name: 'text',
+      type: { name: 'string' },
+      description: 'Text',
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+
+    icon: {
+      name: 'heartIcon',
+      type: { name: 'boolean' },
+      description: 'Icon',
+      table: {
+        type: { summary: 'boolean' },
+      },
     },
   },
 };

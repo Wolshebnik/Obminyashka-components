@@ -10,7 +10,7 @@ const meta = {
   argTypes,
   decorators: [
     (Story) => (
-      <div style={{ background: 'green', height: 100 }}>
+      <div>
         <Story />
       </div>
     ),

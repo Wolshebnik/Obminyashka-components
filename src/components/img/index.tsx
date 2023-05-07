@@ -47,6 +47,8 @@ export { default as lotPng2 } from '../../assets/img/cards/lot2.png';
 export { default as lotPng3 } from '../../assets/img/cards/lot3.png';
 export { default as lotPng4 } from '../../assets/img/cards/lot4.png';
 export { default as mustangPrincess } from '../../assets/img/MySettings/mustang.png';
+export { default as newBgBurgerOne } from '../../assets/img/newBackgroundBurgerMenu.png';
+export { default as newBgBurgerTwo } from '../../assets/img/newBackgroundBurgerMenuBottom.png';
 export { default as orangeDots } from '../../assets/img/errorPage/orange-dots.png';
 export { default as orangutan } from '../../assets/img/MySettings/orangutan.jpg';
 export { default as other } from '../../assets/img/navItems/other.png';
