@@ -1,4 +1,4 @@
-import { Responsive } from 'components';
+import * as Responsive from '../responsive';
 
 import * as Icon from '../icon';
 import { IDeals } from './types';
