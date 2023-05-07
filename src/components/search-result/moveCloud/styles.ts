@@ -1,12 +1,13 @@
 import styled, { keyframes, css } from 'styled-components';
 
 import { cloud } from 'components/img';
+import { IWindowWidth } from '../types';
 
-const sizeCloud = css`
+const sizeCloud = css<IWindowWidth>`
   width: 29px;
   height: 16px;
 
-  ${({ theme }) => css`
+  ${({ theme, windowWidth }) => css`
     ${theme.responsive.isTablet &&
     css`
       width: 71px;
@@ -17,6 +18,13 @@ const sizeCloud = css`
     css`
       width: 121px;
       height: 66px;
+    `}
+
+    ${windowWidth < 1700 &&
+    theme.responsive.isDesktop &&
+    css`
+      width: 92px;
+      height: 50px;
     `}
   `}
 `;
@@ -137,14 +145,14 @@ export const SecondCloud = styled.span`
   ${mainStyles};
 `;
 
-export const ThirdCloud = styled.span`
+export const ThirdCloud = styled.span<IWindowWidth>`
   bottom: 8%;
   left: 28%;
   width: 43px;
   height: 23px;
   animation: ${moveClouds3} 30s linear infinite;
 
-  ${({ theme }) => css`
+  ${({ theme, windowWidth }) => css`
     ${theme.responsive.isTablet &&
     css`
       width: 113px;
@@ -155,6 +163,14 @@ export const ThirdCloud = styled.span`
     css`
       width: 178px;
       height: 96px;
+    `}
+
+    ${windowWidth < 1700 &&
+    theme.responsive.isDesktop &&
+    css`
+      bottom: 8%;
+      width: 134px;
+      height: 72px;
     `}
   `}
 

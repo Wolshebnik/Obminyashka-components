@@ -1,5 +1,6 @@
 import styled, { keyframes, css } from 'styled-components';
 
+import { IWindowWidth } from '../types';
 import { displayStyles } from '../styles';
 import { sunDesktop, sunMobile, sunTablet } from 'components/img';
 
@@ -51,7 +52,7 @@ const sunAnimation = keyframes`
   }
 `;
 
-export const DefaultSun = styled.div`
+export const DefaultSun = styled.div<IWindowWidth>`
   position: absolute;
   bottom: 14%;
   left: 43%;
@@ -64,7 +65,7 @@ export const DefaultSun = styled.div`
   z-index: 5;
   animation: ${sunAnimation} 7s linear infinite;
 
-  ${({ theme }) => css`
+  ${({ theme, windowWidth }) => css`
     ${theme.responsive.isTablet &&
     css`
       width: 149px;
@@ -77,6 +78,20 @@ export const DefaultSun = styled.div`
       width: 269px;
       height: 269px;
       background-image: url(${sunDesktop});
+    `}
+
+    ${windowWidth < 370 &&
+    theme.responsive.isMobile &&
+    css`
+      width: 60px;
+      height: 60px;
+    `}
+
+    ${windowWidth < 1700 &&
+    theme.responsive.isDesktop &&
+    css`
+      width: 219px;
+      height: 219px;
     `}
   `}
 

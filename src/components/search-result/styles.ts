@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import { IWindowWidth } from './types';
+
 export const displayStyles = css`
   display: flex;
   align-items: center;
@@ -21,9 +23,7 @@ export const Wrapper = styled.div`
       max-width: 875px;
       max-height: 490px;
     `}
-  `}
 
-  ${({ theme }) => css`
     ${theme.responsive.isDesktop &&
     css`
       max-width: 1455px;
@@ -54,49 +54,60 @@ export const ContentWrapper = styled.div`
   ${displayStyles}
 `;
 
-export const Title = styled.p`
+export const Title = styled.p<IWindowWidth>`
   margin-bottom: 11px;
   font-weight: 500;
   font-size: 15px;
   line-height: 18px;
 
-  ${({ theme }) => css`
+  ${({ theme, windowWidth }) => css`
     ${theme.responsive.isTablet &&
     css`
       margin-bottom: 24px;
       font-size: 35px;
       line-height: 40px;
     `}
-  `}
 
-  ${({ theme }) => css`
     ${theme.responsive.isDesktop &&
     css`
       margin-bottom: 45px;
       font-size: 60px;
       line-height: 70px;
     `}
+
+     ${windowWidth < 1700 &&
+    theme.responsive.isDesktop &&
+    css`
+      margin-bottom: 35px;
+      font-size: 50px;
+      line-height: 58px;
+    `}
   `}
 `;
 
-export const Text = styled.p`
+export const Text = styled.p<IWindowWidth>`
   font-weight: 400;
   font-size: 10px;
   line-height: 12px;
 
-  ${({ theme }) => css`
+  ${({ theme, windowWidth }) => css`
     ${theme.responsive.isTablet &&
     css`
       font-size: 23px;
       line-height: 27px;
     `}
-  `}
 
-  ${({ theme }) => css`
     ${theme.responsive.isDesktop &&
     css`
       font-size: 40px;
       line-height: 47px;
+    `}
+
+    ${windowWidth < 1700 &&
+    theme.responsive.isDesktop &&
+    css`
+      font-size: 30px;
+      line-height: 34px;
     `}
   `}
 `;

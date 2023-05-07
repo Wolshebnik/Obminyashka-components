@@ -3,8 +3,11 @@ import { MoveSun } from './moveSun';
 import { MoveCloud } from './moveCloud';
 import { ISearchResult } from './types';
 import { maskCloud } from 'components/img';
+import { useWindowWidth } from 'hooks/useWindowWidth';
 
 export const NoFoundResult = ({ title, text }: ISearchResult) => {
+  const size = useWindowWidth();
+
   return (
     <Styles.Container>
       <Styles.Wrapper>
@@ -12,13 +15,13 @@ export const NoFoundResult = ({ title, text }: ISearchResult) => {
           <Styles.StyledImg src={maskCloud} alt="cloud" />
 
           <Styles.ContentWrapper>
-            <Styles.Title>{title}</Styles.Title>
-            <Styles.Text>{text}</Styles.Text>
+            <Styles.Title windowWidth={size}>{title}</Styles.Title>
+            <Styles.Text windowWidth={size}>{text}</Styles.Text>
           </Styles.ContentWrapper>
 
-          <MoveSun />
+          <MoveSun windowWidth={size} />
 
-          <MoveCloud />
+          <MoveCloud windowWidth={size} />
         </Styles.MainCloud>
       </Styles.Wrapper>
     </Styles.Container>
