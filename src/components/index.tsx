@@ -1,6 +1,7 @@
 export { Avatar } from './avatar';
 export { BackButton } from './back-button';
 export { Button } from './button';
+export { ButtonNew } from './button-new';
 export { CancelEverything } from './cancel-everything';
 export { CheckBox } from './checkbox';
 export { Deals } from './deals';
