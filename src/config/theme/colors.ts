@@ -174,6 +174,7 @@ const modalColors = Object.freeze({
 });
 
 const searchResult = Object.freeze({
+  white,
   bgColor: mainBgColor,
   gradient: '100.18deg, #8fd3e1 7.33%, #51b2d4 97.87%',
 });

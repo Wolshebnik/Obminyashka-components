@@ -13,7 +13,7 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   max-width: 351px;
   max-height: 212px;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.searchResult.white};
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
