@@ -1,7 +1,10 @@
 const buttonGradient =
   '90deg,rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5)';
+//White
+const white = `#FFF`;
 
 // Blue
+const searchBlue = '#29a5d4';
 const buttonBlue = '#12b6ed';
 const buttonBlueHover = '#00bfff';
 const buttonBlueActive = '#0094ff';
@@ -63,6 +66,10 @@ const language = Object.freeze({
   color: '#777777',
   colorChecked: '#0fc3ff',
   border: buttonBlue,
+});
+
+const newTextColors = Object.freeze({
+  blueColorText: '#558FA5',
 });
 
 const input = Object.freeze({
@@ -144,9 +151,19 @@ const colorsDefault = Object.freeze({
   bgContent: '#E5E5E5',
   activeColor,
   scrollbarBg: '#f1f1f1',
-  white: '#FFFFFF',
+  white,
   backgroundColor: '#fdfcff',
   faux,
+});
+const search = Object.freeze({
+  white,
+  blue: searchBlue,
+  background: 'rgba(255, 255, 255, 0.6)',
+});
+
+const logo = Object.freeze({
+  white,
+  blue: buttonBlue,
 });
 
 const modalColors = Object.freeze({
@@ -156,7 +173,9 @@ const modalColors = Object.freeze({
 });
 
 const COLORS = Object.freeze({
+  logo,
   input,
+  search,
   button,
   itemCard,
   language,
@@ -164,6 +183,7 @@ const COLORS = Object.freeze({
   modalColors,
   inboxMessage,
   helpChildren,
+  newTextColors,
   buttonGradient,
   ellipsisShadow,
   productOwnerData,
