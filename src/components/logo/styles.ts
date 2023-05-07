@@ -39,7 +39,7 @@ export const ImgWrapper = styled.div<{ inFooter?: boolean }>`
 export const ProjectName = styled.p<{ inFooter?: boolean }>`
   font-size: 26px;
   line-height: 35px;
-  
+
   ${({ theme, inFooter }) => css`
     color: ${inFooter
       ? `${theme.colors.logo.white};`
@@ -54,4 +54,4 @@ export const ProjectName = styled.p<{ inFooter?: boolean }>`
     `font-size: 25px;
      line-height: 33px;`};
   `}
-}`;
+`;
