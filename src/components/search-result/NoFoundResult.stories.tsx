@@ -25,7 +25,7 @@ type Story = StoryObj<typeof NoFoundResult>;
 
 export const NoFoundDefault: Story = {
   args: {
-    title: 'Ой! Нічого не співпало.',
-    text: 'Спробуйте змінити параметри пошуку',
+    title: 'Oh! Nothing found.',
+    text: 'Try changing your search parameters.',
   },
 };

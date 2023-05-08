@@ -1,9 +1,9 @@
-import * as Styles from './styles';
-import { MoveSun } from './moveSun';
-import { MoveCloud } from './moveCloud';
-import { ISearchResult } from './types';
 import { maskCloud } from 'components/img';
 import { useWindowWidth } from 'hooks/useWindowWidth';
+
+import * as Styles from './styles';
+import { MoveCloud } from './moveCloud';
+import { ISearchResult } from './types';
 
 export const NoFoundResult = ({ title, text }: ISearchResult) => {
   const size = useWindowWidth();
@@ -19,7 +19,7 @@ export const NoFoundResult = ({ title, text }: ISearchResult) => {
             <Styles.Text windowWidth={size}>{text}</Styles.Text>
           </Styles.ContentWrapper>
 
-          <MoveSun windowWidth={size} />
+          <Styles.DefaultSun windowWidth={size} />
 
           <MoveCloud windowWidth={size} />
         </Styles.MainCloud>
