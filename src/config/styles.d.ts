@@ -14,6 +14,7 @@ declare module 'styled-components' {
     responsive: {
       isDesktop: boolean;
       isTablet: boolean;
+      isLandscape: boolean;
       isPortrait: boolean;
       isTabletUp: boolean;
       isMobile: boolean;
