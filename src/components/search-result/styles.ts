@@ -116,6 +116,6 @@ export const StyledImg = styled.img`
   position: relative;
   width: 100%;
   height: 100%;
-  z-index: 15;
   transform: scale(1.01);
+  z-index: 15;
 `;

@@ -1,8 +1,9 @@
 import styled, { keyframes, css } from 'styled-components';
 
+import { sunDesktop, sunMobile, sunTablet } from 'components/img';
+
 import { IWindowWidth } from '../types';
 import { displayStyles } from '../styles';
-import { sunDesktop, sunMobile, sunTablet } from 'components/img';
 
 const sunAnimation = keyframes`
   0% {
@@ -15,32 +16,32 @@ const sunAnimation = keyframes`
      left: 38%;
      transform: rotateZ(-7deg);
   }
-  25%{
+  25% {
      bottom:11%;
      left: 36%;
      transform: rotateZ(7deg);
   }
-  37.5%{
+  37.5% {
      bottom: 14%;
      left: 40%;
      transform: rotateZ(-7deg);
   }
-  50%{
+  50% {
     bottom: 16%;
     left: 43%;
     transform: rotateZ(7deg);
   }
-  62.5%{
+  62.5% {
     bottom: 14%;
     left: 46%;
     transform: rotateZ(-7deg);
   }
-  75%{
+  75% {
      bottom: 11%;
      left: 50%;
      transform: rotateZ(7deg);
   }
-  87.5%{
+  87.5% {
      bottom: 8%;
      left: 48%;
      transform: rotateZ(-7deg);
@@ -62,8 +63,8 @@ export const DefaultSun = styled.div<IWindowWidth>`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  z-index: 5;
   animation: ${sunAnimation} 7s linear infinite;
+  z-index: 5;
 
   ${({ theme, windowWidth }) => css`
     ${theme.responsive.isTablet &&

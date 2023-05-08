@@ -1,6 +1,7 @@
 import styled, { keyframes, css } from 'styled-components';
 
 import { cloud } from 'components/img';
+
 import { IWindowWidth } from '../types';
 
 const sizeCloud = css<IWindowWidth>`
@@ -33,7 +34,7 @@ const moveClouds1 = keyframes`
   0% {
    left: 15%;
   }
-  14%{
+  14% {
    left: 1%;
    opacity: 1;
    transform:scale(1);
@@ -110,7 +111,7 @@ const moveClouds3 = keyframes`
    left: 80%;
    opacity: 0;
   }
-  21%{
+  21% {
    left: 80%;
    opacity: 1;
   }
