@@ -1,9 +1,8 @@
-import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { data } from './mock';
 import { argTypes } from './arg-types';
 import { CategoryButton } from './index';
-import { IBtnCategoryProps } from './types';
 
 const meta = {
   title: 'CategoryButton',
@@ -14,13 +13,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof CategoryButton>;
 
-const Template = (args: IBtnCategoryProps) => {
-  const [open, setOpen] = useState(false);
-
-  return <CategoryButton {...args} open={open} setOpen={setOpen} />;
-};
-
 export const ButtonCategoryDefault: Story = {
-  args: { textBtn: 'categories' },
-  render: (args) => <Template {...args} />,
+  args: {
+    categoryInfo: data,
+    textBtn: 'categories',
+  },
 };

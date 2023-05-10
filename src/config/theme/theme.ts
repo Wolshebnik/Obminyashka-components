@@ -9,11 +9,12 @@ const LIGHT_THEME: DefaultTheme = Object.freeze({
     default: 'all ease-in-out 0.3s',
   },
   responsive: {
-    isDesktop: true,
+    isDesktop: false,
     isTabletUp: false,
     isTablet: false,
     isPortrait: false,
-    isMobile: false,
+    isMobile: true,
+    isLandscape: false,
   },
 });
 

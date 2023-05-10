@@ -40,7 +40,7 @@ export const CategoriesDesktop = styled.div<{
     css`
       ${CategoriesArrow} {
         margin-bottom: -8px;
-        rotate: 180deg;
+        transform: rotate(180deg);
       }
       border: 2px solid ${theme.colors.categoryBtn.border};
     `}

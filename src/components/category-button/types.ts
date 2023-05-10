@@ -1,14 +1,10 @@
-export interface IBtnCategoryProps {
+export interface ICategoryInfo {
   link: string;
-  open: boolean;
+  img: string;
+  text: string;
+}
+
+export interface IBtnCategoryProps {
   textBtn: string;
-  textToys: string;
-  textBooks: string;
-  textOther: string;
-  textShoes: string;
-  textClothes: string;
-  textFurniture: string;
-  textKidsUpToYear: string;
-  textTransportForChildren: string;
-  setOpen: (open: boolean) => void;
+  categoryInfo: ICategoryInfo[];
 }

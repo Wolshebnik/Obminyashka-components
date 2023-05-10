@@ -1,24 +1,14 @@
-import NavCategory from 'components/categoty-nav';
+import { useState } from 'react';
+import { Responsive } from 'components';
+import { NavCategory } from 'components/categoty-nav';
 
 import * as Icon from '../icon';
 import * as Styles from './styles';
-import { Responsive } from 'components';
 import { IBtnCategoryProps } from './types';
 
-const CategoryButton = ({
-  link,
-  open,
-  setOpen,
-  textBtn,
-  textToys,
-  textBooks,
-  textOther,
-  textShoes,
-  textClothes,
-  textFurniture,
-  textKidsUpToYear,
-  textTransportForChildren,
-}: IBtnCategoryProps) => {
+const CategoryButton = ({ textBtn, categoryInfo }: IBtnCategoryProps) => {
+  const [open, setOpen] = useState(false);
+
   return (
     <Styles.CategoriesBody>
       <Responsive.Desktop>
@@ -37,19 +27,7 @@ const CategoryButton = ({
         </Styles.Categories>
       </Responsive.NotDesktop>
 
-      {open && (
-        <NavCategory
-          link={link}
-          textToys={textToys}
-          textBooks={textBooks}
-          textOther={textOther}
-          textShoes={textShoes}
-          textClothes={textClothes}
-          textFurniture={textFurniture}
-          textKidsUpToYear={textKidsUpToYear}
-          textTransportForChildren={textTransportForChildren}
-        />
-      )}
+      {open && <NavCategory categoryInfo={categoryInfo} />}
     </Styles.CategoriesBody>
   );
 };

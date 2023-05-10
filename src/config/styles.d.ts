@@ -17,6 +17,7 @@ declare module 'styled-components' {
       isPortrait: boolean;
       isTabletUp: boolean;
       isMobile: boolean;
+      isLandscape: boolean;
     };
   }
 }

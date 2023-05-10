@@ -10,20 +10,4 @@ export const argTypes: IArgTypes<IBtnCategoryProps> = {
       type: { summary: 'string' },
     },
   },
-  open: {
-    name: 'open',
-    type: { name: 'boolean' },
-    description: 'boolean value',
-    table: {
-      type: { summary: 'boolean' },
-    },
-  },
-  setOpen: {
-    name: 'setOpen',
-    type: { name: 'function' },
-    description: 'set boolean value',
-    table: {
-      type: { summary: 'function' },
-    },
-  },
 };
