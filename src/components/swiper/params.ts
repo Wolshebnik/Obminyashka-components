@@ -7,25 +7,28 @@ export const swiperParams = {
   slidesPerView: 1,
   modules: [Autoplay],
   className: 'mySwiper',
-  // autoplay: {
-  //   delay: 4000,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
   breakpoints: {
-    966: {
-      spaceBetween: 34,
-      slidesPerView: 2,
-    },
     1024: {
-      spaceBetween: 24,
+      spaceBetween: 28,
       slidesPerView: 2,
     },
-    1367: {
-      spaceBetween: 40,
+
+    1366: {
+      spaceBetween: 25,
       slidesPerView: 3,
     },
+
+    1600: {
+      spaceBetween: 30,
+      slidesPerView: 3,
+    },
+
     1920: {
-      spaceBetween: 40,
+      spaceBetween: 42,
       slidesPerView: 4,
     },
   },
