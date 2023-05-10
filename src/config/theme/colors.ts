@@ -53,6 +53,34 @@ const modalBackground = 'rgba(18, 182, 237, 0.3)';
 const crossBtn = 'rgb(255, 255, 255)';
 const crossBtnBackground = 'rgb(18, 182, 237)';
 
+// New button
+const newButton = Object.freeze({
+  text: '#FFFFFF',
+  disabledText: '#717171',
+  blue: {
+    bg: '#7ECDE4',
+    bgHover: '#44A5C6',
+    bgDisabled: '#CEEEFA',
+    animated: {
+      bg: 'linear-gradient(45deg, #7ECDE4 35%, #BCD9E3 50%, #7ECDE4 65%)',
+      bgHover: 'linear-gradient(45deg, #44A5C6 35%, #C9DDE4 50%, #44A5C6 65%)',
+      bgDisabled:
+        'linear-gradient(45deg, #CEEEFA 35%, #F5FCFF 50%, #CEEEFA 65%)',
+    },
+  },
+  green: {
+    bg: '#97C069',
+    bgHover: '#6AB218',
+    bgDisabled: '#B0BAA5',
+    animated: {
+      bg: 'linear-gradient(45deg, #97c069 35%, #eefddc 50%, #97c069 65%)',
+      bgHover: 'linear-gradient(45deg, #6AB218 35%, #EFFEDE 50%, #6AB218 65%)',
+      bgDisabled:
+        'linear-gradient(45deg, #B0BAA5 35%, #FFFFFF 50%, #B0BAA5 65%)',
+    },
+  },
+});
+
 //New Select language
 const languageNew = Object.freeze({
   main: '#ACACAC',
@@ -175,14 +203,15 @@ const modalColors = Object.freeze({
 const COLORS = Object.freeze({
   logo,
   input,
-  search,
   button,
+  search,
   itemCard,
   language,
+  newButton,
   languageNew,
   modalColors,
-  inboxMessage,
   helpChildren,
+  inboxMessage,
   newTextColors,
   buttonGradient,
   ellipsisShadow,

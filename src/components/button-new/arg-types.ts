@@ -33,4 +33,55 @@ export const argTypes: IArgTypes<IButtonNew> = {
     },
     control: { type: 'number' },
   },
+  height: {
+    name: 'height',
+    type: { name: 'number' },
+    description: 'CSS property "height" in px',
+    table: {
+      defaultValue: { summary: 50 },
+      type: { summary: 'number' },
+    },
+    control: { type: 'number' },
+  },
+  animated: {
+    name: 'animated',
+    type: { name: 'boolean' },
+    description: 'Animated button',
+    table: {
+      defaultValue: { summary: false },
+      type: { summary: 'boolean' },
+    },
+    control: { type: 'boolean' },
+  },
+  colorType: {
+    name: 'colorType',
+    type: { name: 'string' },
+    description: 'Color type',
+    table: {
+      defaultValue: { summary: 'blue' },
+      type: { summary: 'string' },
+    },
+    control: { type: 'select' },
+    options: ['blue', 'green'],
+  },
+  disabled: {
+    name: 'disabled',
+    type: { name: 'boolean' },
+    description: 'Disabled',
+    table: {
+      defaultValue: { summary: false },
+      type: { summary: 'boolean' },
+    },
+    control: { type: 'boolean' },
+  },
+  hover: {
+    name: 'hover',
+    type: { name: 'boolean' },
+    description: 'Using CSS hover',
+    table: {
+      defaultValue: { summary: false },
+      type: { summary: 'boolean' },
+    },
+    control: { type: 'boolean' },
+  },
 };

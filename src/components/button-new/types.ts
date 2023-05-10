@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 
-export type ColorType = 'blue' | 'green' | 'grey';
+export type ColorType = 'blue' | 'green';
 
 interface ICustomButton
   extends DetailedHTMLProps<
@@ -10,10 +10,17 @@ interface ICustomButton
 
 export interface IButtonNew extends Omit<ICustomButton, 'ref'> {
   text: string;
-  plus?: boolean;
   width: number;
+  plus?: boolean;
+  hover?: boolean;
+  height?: number;
+  animated?: boolean;
+  disabled?: boolean;
+  colorType: ColorType;
 }
 
-export interface IStyledButtonNew extends Pick<IButtonNew, 'width'> {
-  width: number;
-}
+export interface IStyledButtonNew
+  extends Pick<
+    IButtonNew,
+    'width' | 'colorType' | 'animated' | 'disabled' | 'hover' | 'height'
+  > {}

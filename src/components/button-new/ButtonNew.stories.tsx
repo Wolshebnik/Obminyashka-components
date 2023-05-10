@@ -17,5 +17,10 @@ export const Button: Story = {
     text: 'ДОДАТИ ОГОЛОШЕННЯ',
     plus: true,
     width: 290,
+    height: 50,
+    animated: true,
+    colorType: 'green',
+    disabled: false,
+    hover: true,
   },
 };
