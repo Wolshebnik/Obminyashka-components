@@ -13,28 +13,15 @@ const sun = keyframes`
   }
 `;
 
-const circle = keyframes`
-  0% {
-    width: 120px;
-    height: 120px;
-  }
-  100% {
-    width: 165px;
-    height: 165px;
-  }
-`;
-
-// const mainSun = keyframes`
-// 0% {
-//   visibility: hidden;
-// }
-// 100% {
-//   width: 145px;
-//   height: 145px;
-//   top: -90px;
-//   left: -120px;
-//   visibility: visible;
-// }
+// const circle = keyframes`
+//   0% {
+//     width: 120px;
+//     height: 120px;
+//   }
+//   100% {
+//     width: 165px;
+//     height: 165px;
+//   }
 // `;
 
 export const List = styled.div`
@@ -63,7 +50,7 @@ export const Wrapper = styled.div`
     css`
       max-width: 400px;
       margin-inline: auto;
-      padding 16px 40px 95px;
+      padding: 16px 40px 95px;
     `}
 
     ${theme.responsive.isTablet &&
@@ -120,26 +107,34 @@ export const SunMain = styled.img`
   }
 `;
 
-export const SunCateory = styled.img<{ clothes?: string; visible: boolean }>`
+export const SunCateory = styled.img<{ clothes: boolean; visible: boolean }>`
   position: absolute;
   box-sizing: border-box;
-  /* width: 30px;
+  width: 30px;
   height: 30px;
   top: -20px;
-  left: -20px; */
+  left: -20px;
   visibility: hidden;
   z-index: -1;
 
+  ${NavbarLinkContainer}:hover & {
+    animation: ${sun} 0.3s 1s forwards;
+  }
+
   ${({ clothes, visible }) => css`
     ${clothes &&
+    visible &&
     css`
       width: 145px;
       height: 145px;
       top: -70px;
       left: -80px;
+      opacity: 0;
 
       ${NavbarLinkContainer}:hover & {
-        animation: ${sun} 0.3s 0.5s forwards;
+        opacity: 1;
+        /* transition: all; */
+        transition-delay: 0.5s;
       }
     `}
 
@@ -151,6 +146,9 @@ export const SunCateory = styled.img<{ clothes?: string; visible: boolean }>`
       left: -20px;
 
       ${NavbarLinkContainer}:hover & {
+        ${SunMain} {
+          display: none;
+        }
         animation: ${sun} 0.3s forwards;
       }
     `}
@@ -171,6 +169,7 @@ export const NavbarLink = styled(Link)`
   border: 3px dashed #53b3d4;
   border-radius: 50%;
   margin-inline: auto;
+  transition: all 0.33s;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
@@ -191,7 +190,7 @@ export const NavbarLink = styled(Link)`
       width: 165px;
       height: 165px;
       border: 3px transparent;
-      background: none;
+      background: transparent;
 
       ${NavbarLinkContainer}:hover & {
         border: 3px dashed #53b3d4;
@@ -200,7 +199,8 @@ export const NavbarLink = styled(Link)`
           #6fe5ff 22.42%,
           #d9f6fd 87.89%
         );
-        animation: ${circle} 0.1s;
+        transform: scale(1.031.3);
+        transition: transform 0.3s;
       }
     `}
   `}
@@ -209,8 +209,9 @@ export const NavbarLink = styled(Link)`
 export const Img = styled.img`
   box-sizing: border-box;
   display: block;
+  width: 64px;
+  height: 64px;
   margin-inline: auto;
-
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
