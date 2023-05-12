@@ -17,7 +17,7 @@ export const SwiperWrapper = styled.div<IWindowWidth>`
     css`
       margin: 130px 0;
     `}
-
+    
     ${windowWidth > 1365 &&
     windowWidth < 1600 &&
     theme.responsive.isDesktop &&
@@ -27,7 +27,7 @@ export const SwiperWrapper = styled.div<IWindowWidth>`
   `}
 `;
 
-export const SlideWrapper = styled.div<IWindowWidth>`
+export const SlideWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,13 +86,14 @@ export const SlideText = styled.span`
   font-size: 22px;
   line-height: 30px;
   font-weight: 400;
-  color: ${({ theme }) => theme.colors.white};
 
   :active {
     transform: scale(1.05);
   }
 
   ${({ theme }) => css`
+    color: ${theme.colors.white};
+
     ${theme.responsive.isMobile &&
     css`
       font-size: 16px;
@@ -102,14 +103,14 @@ export const SlideText = styled.span`
 `;
 
 export const SlideTitle = styled.b`
-  color: ${({ theme }) => theme.colors.white};
   font-size: 45px;
   line-height: 55px;
-
   text-transform: uppercase;
   font-family: Balsamiq Sans, cursive;
 
   ${({ theme }) => css`
+    color: ${theme.colors.white};
+
     ${theme.responsive.isMobile &&
     css`
       font-size: 27px;

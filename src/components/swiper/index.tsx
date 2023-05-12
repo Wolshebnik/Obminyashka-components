@@ -16,7 +16,7 @@ const MainSwiper = ({ data }: IMainSwiper) => {
       <Swiper {...swiperParams}>
         {[...data, ...data].map((item, index) => (
           <SwiperSlide key={index}>
-            <Styles.SlideWrapper windowWidth={size}>
+            <Styles.SlideWrapper>
               <Styles.SlideLink to={item.href}>
                 <Styles.SlideImage
                   src={item.src}
