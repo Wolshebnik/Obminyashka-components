@@ -16,11 +16,11 @@ const NavCategory = ({ categoryInfo }: ICatygoryNav) => {
     <Styles.List>
       <Styles.Wrapper onMouseLeave={leave} onMouseEnter={enter}>
         {categoryInfo.map((el: any) => {
-          const isClothes = el.text === 'clothes';
-
           return (
             <Styles.NavbarLinkContainer
-              onMouseEnter={() => !isClothes && setVisibleBoolean(false)}
+              onMouseEnter={() =>
+                el.text !== 'clothes' && setVisibleBoolean(false)
+              }
               key={el.text}
             >
               <Styles.NavbarLink to={el.link}>
@@ -33,11 +33,10 @@ const NavCategory = ({ categoryInfo }: ICatygoryNav) => {
                   )}
 
                   <Styles.SunCateory
-                    clothes={isClothes}
-                    visible={visibleSun}
                     src={el.sun}
+                    variant={el.text}
+                    visible={visibleSun}
                     alt={'sun' + el.text}
-                    categoty={el.text === 'shoes'}
                   ></Styles.SunCateory>
                 </Responsive.Desktop>
 

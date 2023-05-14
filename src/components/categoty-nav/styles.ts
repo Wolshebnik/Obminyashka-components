@@ -1,70 +1,59 @@
 import { Link } from 'react-router-dom';
 import styled, { css, keyframes } from 'styled-components';
 
-const sunMouve = keyframes`
-  0% {
-    visibility: visible;
-    top: -65px;
-    left: -75px;
-  }
-  36% {
-    visibility: visible;
-    top: -70px;
-    left: -75px;
-  }
-  66% {
-    visibility: visible;
-    top: -70px;
-    left: -70px;
-  }
-  100% {
-    visibility: visible;
-    top: -65px;
-    left: -75px;
-  }
-`;
-
-const mainSunMouve = keyframes`
-  0% {
-    top: -30px;
-    left: -200px;
-  }
-  36% {
-    top: -35px;
-    left: -200px;
-  }
-  66% {
-    top: -35px;
-    left: -195px;
-  }
-  100% {
-    top: -30px;
-    left: -200px;
-  }
-`;
-
 const sun = keyframes`
   0% {
   }
   100% {
-    width: 145px;
-    height: 145px;
-    top: -65px;
-    left: -75px;
+    transform: scale(5);
     visibility: visible; 
   }
-`;
+  `;
 
-// const circle = keyframes`
-//   0% {
-//     width: 120px;
-//     height: 120px;
-//   }
-//   100% {
-//     width: 165px;
-//     height: 165px;
-//   }
-// `;
+const mainSunDisplaced = keyframes`
+  0% {
+  }
+  100% {
+    top: -65px;
+    left: -75px;
+    transform: scale(1);
+    visibility: visible;
+  }
+  `;
+
+const mainSunMouve = keyframes`
+    0% {
+      transform: scale(1) translate(0,0);
+    }
+    36% {
+      transform: scale(1) translate(0,-3px);
+    }
+    66% {
+      transform: scale(1) translate(3px,-3px);;
+    }
+    100% {
+      transform: scale(1) translate(0,0);
+    }
+    `;
+
+const sunMouve = keyframes`
+  0% {
+    visibility: visible;
+    transform: scale(5) translate(0,0);
+  }
+  33% {
+    visibility: visible;
+    transform: scale(5) translate(0,-1px);
+  }
+  66% {
+    visibility: visible;
+    transform: scale(5) translate(1px,-1px);
+  }
+  100% {
+    visibility: visible;
+    transform:  scale(5)  translate(0,0);
+  }
+`;
 
 export const List = styled.div`
   position: fixed;
@@ -195,73 +184,94 @@ export const NavbarLink = styled(Link)`
 
 export const SunMain = styled.img`
   position: absolute;
-  width: 145px;
-  height: 145px;
   top: -30px;
   left: -200px;
   pointer-events: none;
   z-index: -1;
-  animation: ${mainSunMouve} 1s 0.5s ease-in-out infinite;
+  animation: ${mainSunMouve} 1s ease-in-out infinite;
 
   ${NavbarLinkContainer}:hover & {
-    animation: ${sun} 0.5s forwards;
+    animation: ${mainSunDisplaced} 0.5s forwards;
   }
 `;
 
 export const SunCateory = styled.img<{
-  clothes: boolean;
+  variant: string;
   visible: boolean;
-  categoty: boolean;
 }>`
   position: absolute;
   box-sizing: border-box;
   width: 30px;
   height: 30px;
-  top: -20px;
-  left: -20px;
   visibility: hidden;
   z-index: -1;
 
-  ${NavbarLinkContainer}:hover & {
-    animation: ${sun} 0.3s forwards, ${sunMouve} 1s 0.5s ease-in-out infinite;
-  }
-
-  ${({ clothes, visible, categoty }) => css`
-    ${clothes &&
-    visible &&
+  ${({ variant, visible, theme }) => css`
+    ${theme.responsive.isDesktop &&
     css`
-      width: 145px;
-      height: 145px;
-      top: -70px;
-      left: -80px;
-      opacity: 0;
-
       ${NavbarLinkContainer}:hover & {
-        opacity: 1;
-        transition-delay: 0.5s;
-      }
-    `}
-
-    ${!visible &&
-    css`
-      width: 30px;
-      height: 30px;
-      top: -20px;
-      left: -20px;
-
-      ${NavbarLinkContainer}:hover & {
-        ${SunMain} {
-          display: none;
-        }
         animation: ${sun} 0.3s forwards,
           ${sunMouve} 1s 0.5s ease-in-out infinite;
       }
-    `}
 
-    ${categoty &&
-    css`
-      ${NavbarLinkContainer}:hover & {
-      }
+      ${variant === 'clothes' &&
+      visible &&
+      css`
+        ${NavbarLinkContainer}:hover & {
+          transition-delay: 0.5s;
+        }
+      `}
+
+      ${!visible &&
+      css`
+        ${variant === 'clothes' &&
+        css`
+          top: -10px;
+          left: -10px;
+        `}
+
+        ${variant === 'shoes' &&
+        css`
+          top: -10px;
+          left: 170px;
+        `}
+
+        ${variant === 'toys' &&
+        css`
+          top: -5px;
+          left: 175px;
+        `}
+
+        ${variant === 'transport for children' &&
+        css`
+          top: 55px;
+          left: 200px;
+        `} 
+        
+        ${variant === 'furniture' &&
+        css`
+          top: 115px;
+          left: -35px;
+        `} 
+        
+        ${variant === 'kids up to year' &&
+        css`
+          top: -5px;
+          left: 180px;
+        `}
+
+        ${variant === 'books' &&
+        css`
+          top: 165px;
+          left: 178px;
+        `}
+
+        ${variant === 'other' &&
+        css`
+          top: 65px;
+          left: -40px;
+        `}
+      `}
     `}
   `}
 `;
