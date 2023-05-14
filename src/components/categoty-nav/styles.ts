@@ -1,14 +1,56 @@
 import { Link } from 'react-router-dom';
 import styled, { css, keyframes } from 'styled-components';
 
+const sunMouve = keyframes`
+  0% {
+    visibility: visible;
+    top: -65px;
+    left: -75px;
+  }
+  36% {
+    visibility: visible;
+    top: -70px;
+    left: -75px;
+  }
+  66% {
+    visibility: visible;
+    top: -70px;
+    left: -70px;
+  }
+  100% {
+    visibility: visible;
+    top: -65px;
+    left: -75px;
+  }
+`;
+
+const mainSunMouve = keyframes`
+  0% {
+    top: -30px;
+    left: -200px;
+  }
+  36% {
+    top: -35px;
+    left: -200px;
+  }
+  66% {
+    top: -35px;
+    left: -195px;
+  }
+  100% {
+    top: -30px;
+    left: -200px;
+  }
+`;
+
 const sun = keyframes`
   0% {
   }
   100% {
     width: 145px;
     height: 145px;
-    top: -70px;
-    left: -80px;
+    top: -65px;
+    left: -75px;
     visibility: visible; 
   }
 `;
@@ -35,7 +77,7 @@ export const List = styled.div`
   ${({ theme }) => css`
     ${theme.responsive.isDesktop &&
     css`
-      padding: 0 280px;
+      padding: 0 200px;
     `}
   `}
 `;
@@ -75,7 +117,7 @@ export const Wrapper = styled.div`
 
     ${theme.responsive.isDesktop &&
     css`
-      grid-template-columns: repeat(4, 165px);
+      grid-template-columns: repeat(4, 1fr);
       grid-row-gap: 109px;
       justify-content: space-between;
       padding: 136px 0 270px;
@@ -91,66 +133,11 @@ export const NavbarLinkContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-inline: auto;
-`;
 
-export const SunMain = styled.img`
-  position: absolute;
-  width: 145px;
-  height: 145px;
-  top: -30px;
-  left: -200px;
-  pointer-events: none;
-  z-index: -1;
-
-  ${NavbarLinkContainer}:hover & {
-    animation: ${sun} 0.5s forwards;
-  }
-`;
-
-export const SunCateory = styled.img<{ clothes: boolean; visible: boolean }>`
-  position: absolute;
-  box-sizing: border-box;
-  width: 30px;
-  height: 30px;
-  top: -20px;
-  left: -20px;
-  visibility: hidden;
-  z-index: -1;
-
-  ${NavbarLinkContainer}:hover & {
-    animation: ${sun} 0.3s 1s forwards;
-  }
-
-  ${({ clothes, visible }) => css`
-    ${clothes &&
-    visible &&
+  ${({ theme }) => css`
+    ${theme.responsive.isDesktop &&
     css`
-      width: 145px;
-      height: 145px;
-      top: -70px;
-      left: -80px;
-      opacity: 0;
-
-      ${NavbarLinkContainer}:hover & {
-        opacity: 1;
-        /* transition: all; */
-        transition-delay: 0.5s;
-      }
-    `}
-
-    ${!visible &&
-    css`
-      width: 30px;
-      height: 30px;
-      top: -20px;
-      left: -20px;
-
-      ${NavbarLinkContainer}:hover & {
-        ${SunMain} {
-          display: none;
-        }
-        animation: ${sun} 0.3s forwards;
-      }
+      width: 200px;
     `}
   `}
 `;
@@ -206,12 +193,86 @@ export const NavbarLink = styled(Link)`
   `}
 `;
 
+export const SunMain = styled.img`
+  position: absolute;
+  width: 145px;
+  height: 145px;
+  top: -30px;
+  left: -200px;
+  pointer-events: none;
+  z-index: -1;
+  animation: ${mainSunMouve} 1s 0.5s ease-in-out infinite;
+
+  ${NavbarLinkContainer}:hover & {
+    animation: ${sun} 0.5s forwards;
+  }
+`;
+
+export const SunCateory = styled.img<{
+  clothes: boolean;
+  visible: boolean;
+  categoty: boolean;
+}>`
+  position: absolute;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  top: -20px;
+  left: -20px;
+  visibility: hidden;
+  z-index: -1;
+
+  ${NavbarLinkContainer}:hover & {
+    animation: ${sun} 0.3s forwards, ${sunMouve} 1s 0.5s ease-in-out infinite;
+  }
+
+  ${({ clothes, visible, categoty }) => css`
+    ${clothes &&
+    visible &&
+    css`
+      width: 145px;
+      height: 145px;
+      top: -70px;
+      left: -80px;
+      opacity: 0;
+
+      ${NavbarLinkContainer}:hover & {
+        opacity: 1;
+        transition-delay: 0.5s;
+      }
+    `}
+
+    ${!visible &&
+    css`
+      width: 30px;
+      height: 30px;
+      top: -20px;
+      left: -20px;
+
+      ${NavbarLinkContainer}:hover & {
+        ${SunMain} {
+          display: none;
+        }
+        animation: ${sun} 0.3s forwards,
+          ${sunMouve} 1s 0.5s ease-in-out infinite;
+      }
+    `}
+
+    ${categoty &&
+    css`
+      ${NavbarLinkContainer}:hover & {
+      }
+    `}
+  `}
+`;
+
 export const Img = styled.img`
   box-sizing: border-box;
   display: block;
   width: 64px;
   height: 64px;
   margin-inline: auto;
+
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
@@ -261,8 +322,10 @@ export const Span = styled.span`
 
     ${theme.responsive.isDesktop &&
     css`
+      /* width: 264px; */
       margin-top: 24px;
       font-size: 22px;
+      text-align: center;
       line-height: 26px;
 
       ${NavbarLinkContainer}:hover & {
