@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { PresentationHeader } from 'components/shared';
+
 import { Burger } from '.';
 import { argTypes } from './arg-types';
 import { burgerMenuText } from './mock';
@@ -10,9 +12,9 @@ const meta = {
   argTypes,
   decorators: [
     (Story) => (
-      <div>
+      <PresentationHeader>
         <Story />
-      </div>
+      </PresentationHeader>
     ),
   ],
 } satisfies Meta<typeof Burger>;

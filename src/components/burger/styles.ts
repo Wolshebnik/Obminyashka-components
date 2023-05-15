@@ -13,6 +13,7 @@ export const BurgerIcon = styled.div`
       right: 15px;
       width: 30px;
       height: 30px;
+      z-index: 1;
     `}
 
     ${theme.responsive.isTablet &&
@@ -78,13 +79,37 @@ export const BurgerIconLines = styled.div<{ isOpen?: boolean }>`
   `}
 `;
 
-export const BurgerMenu = styled.div`
+export const BurgerOverlay = styled.div<{ isOpen?: boolean }>`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+
+  background-color: ${({ theme }) => theme.colors.modalColors.background};
+`;
+
+export const BurgerMenu = styled.div<{
+  isOpen?: boolean;
+  isAnimation?: boolean;
+}>`
+  position: absolute;
+  left: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 
-  ${({ theme }) => css`
+  ${({ theme, isAnimation }) => css`
     background-color: ${theme.colors.white};
+    transition: ${theme.transition.dropDown};
+
+    ${isAnimation &&
+    css`
+      transform: translateY(90%);
+    `}
 
     ${theme.responsive.isMobile &&
     css`
@@ -120,9 +145,15 @@ export const BurgerMenu = styled.div`
 
     ${theme.responsive.isTablet &&
     css`
+      ${isAnimation &&
+      css`
+        transform: translateY(100%);
+      `}
+
       gap: 40px;
       padding-top: 120px;
       padding-bottom: 204px;
+      z-index: -1;
     `}
-  `}
+  `};
 `;
