@@ -17,7 +17,7 @@ const Burger = ({ burgerMenuText }: IBurger) => {
       </Styles.BurgerIcon>
 
       {isOpen && (
-        <Styles.BurgerOverlay onClick={() => setOpen()}>
+        <>
           <Styles.BurgerMenu isAnimation={isAnimation}>
             {burgerMenuText.map((item, index) => (
               <React.Fragment key={index}>
@@ -26,7 +26,8 @@ const Burger = ({ burgerMenuText }: IBurger) => {
             ))}
             <LanguageSelection lang="ua" onClick={() => {}} />
           </Styles.BurgerMenu>
-        </Styles.BurgerOverlay>
+          <Styles.BurgerOverlay onClick={() => setOpen()} />
+        </>
       )}
     </Responsive.NotDesktop>
   );

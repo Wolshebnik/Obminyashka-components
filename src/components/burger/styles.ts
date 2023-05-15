@@ -83,8 +83,8 @@ export const BurgerOverlay = styled.div<{ isOpen?: boolean }>`
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 20%;
   opacity: 1;
 
   background-color: ${({ theme }) => theme.colors.modalColors.background};
