@@ -26,10 +26,7 @@ const NavCategory = ({ categoryInfo }: ICatygoryNav) => {
               <Styles.NavbarLink to={el.link}>
                 <Responsive.Desktop>
                   {visibleSun && el.text === 'clothes' && (
-                    <Styles.SunMain
-                      alt="sun-main"
-                      src={Images.sunMain}
-                    ></Styles.SunMain>
+                    <Styles.SunMain alt="sun-main" src={Images.sunMain} />
                   )}
 
                   <Styles.SunCateory
@@ -37,7 +34,7 @@ const NavCategory = ({ categoryInfo }: ICatygoryNav) => {
                     variant={el.text}
                     visible={visibleSun}
                     alt={'sun' + el.text}
-                  ></Styles.SunCateory>
+                  />
                 </Responsive.Desktop>
 
                 <Styles.Img src={el.img} alt={el.text} />
