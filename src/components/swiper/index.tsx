@@ -13,7 +13,7 @@ const MainSwiper = ({ data }: IMainSwiper) => {
 
   return (
     <Styles.SwiperWrapper windowWidth={size}>
-      <Swiper {...swiperParams} direction="horizontal">
+      <Swiper {...swiperParams}>
         {[...data, ...data].map((item, index) => (
           <SwiperSlide key={index}>
             <Styles.SlideWrapper>
