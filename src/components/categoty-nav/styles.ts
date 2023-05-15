@@ -23,35 +23,35 @@ const mainSunDisplaced = keyframes`
 
 const mainSunMouve = keyframes`
     0% {
-      transform: scale(1) translate(0,0);
+      transform: scale(1) rotate(0) translate(0,0);
     }
     36% {
-      transform: scale(1) translate(0,-3px);
+      transform: scale(1) rotate(-5deg) translate(0,-3px);
     }
     66% {
-      transform: scale(1) translate(3px,-3px);;
+      transform: scale(1) rotate(5deg) translate(3px,-3px);;
     }
     100% {
-      transform: scale(1) translate(0,0);
+      transform: scale(1) rotate(0) translate(0,0);
     }
     `;
 
 const sunMouve = keyframes`
   0% {
     visibility: visible;
-    transform: scale(5) translate(0,0);
+    transform: scale(5) rotate(0) translate(0,0);
   }
   33% {
     visibility: visible;
-    transform: scale(5) translate(0,-1px);
+    transform: scale(5) rotate(-5deg) translate(0,-1px);
   }
   66% {
     visibility: visible;
-    transform: scale(5) translate(1px,-1px);
+    transform: scale(5) rotate(5deg) translate(1px,-1px);
   }
   100% {
     visibility: visible;
-    transform:  scale(5)  translate(0,0);
+    transform:  scale(5) rotate(0)  translate(0,0);
   }
 `;
 
@@ -188,7 +188,7 @@ export const SunMain = styled.img`
   left: -200px;
   pointer-events: none;
   z-index: -1;
-  animation: ${mainSunMouve} 1s ease-in-out infinite;
+  animation: ${mainSunMouve} 2s ease-in-out infinite;
 
   ${NavbarLinkContainer}:hover & {
     animation: ${mainSunDisplaced} 0.5s forwards;
@@ -211,7 +211,7 @@ export const SunCateory = styled.img<{
     css`
       ${NavbarLinkContainer}:hover & {
         animation: ${sun} 0.3s forwards,
-          ${sunMouve} 1s 0.5s ease-in-out infinite;
+          ${sunMouve} 2s 0.5s ease-in-out infinite;
       }
 
       ${variant === 'clothes' &&
