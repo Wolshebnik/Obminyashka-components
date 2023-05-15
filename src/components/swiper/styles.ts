@@ -1,17 +1,36 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Link } from 'react-router-dom';
 
-export const SwiperWrapper = styled.div`
-  margin: 125px 0;
+import { IWindowWidth } from './types';
+
+export const SwiperWrapper = styled.div<IWindowWidth>`
+  margin: 50px 0;
+
+  ${({ theme, windowWidth }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      margin: 72px 0;
+    `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      margin: 130px 0;
+    `}
+    
+    ${windowWidth > 1365 &&
+    windowWidth < 1600 &&
+    theme.responsive.isDesktop &&
+    css`
+      margin: 72px 0;
+    `}
+  `}
 `;
 
 export const SlideWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 426px;
-  height: 310px;
 `;
 
 export const SlideLink = styled(Link)`
@@ -19,35 +38,85 @@ export const SlideLink = styled(Link)`
   outline: none;
 `;
 
-export const SlideImage = styled.img`
-  width: 426px;
-  height: 310px;
+export const SlideImage = styled.img<IWindowWidth>`
+  ${({ theme, windowWidth }) => css`
+    ${theme.responsive.isMobile &&
+    css`
+      width: 345px;
+      height: 176px;
+    `}
+
+    ${theme.responsive.isTablet &&
+    css`
+      width: 450px;
+      height: 230px;
+    `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      width: 426px;
+      height: 310px;
+    `}
+
+    ${windowWidth < 1600 &&
+    theme.responsive.isDesktop &&
+    css`
+      width: 402px;
+      height: 230px;
+    `}
+
+    ${windowWidth > 1599 &&
+    windowWidth < 1920 &&
+    theme.responsive.isDesktop &&
+    css`
+      width: 420px;
+      height: 270px;
+    `}
+  `}
 `;
 
 export const SlideText = styled.span`
   position: absolute;
-  top: 22px;
-  right: 22px;
+  top: 12px;
+  left: 32px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 265px;
-  color: ${({ theme }) => theme.colors.white};
+  width: 355px;
   font-size: 22px;
   line-height: 30px;
+  font-weight: 400;
 
   :active {
     transform: scale(1.05);
   }
+
+  ${({ theme }) => css`
+    color: ${theme.colors.white};
+
+    ${theme.responsive.isMobile &&
+    css`
+      font-size: 16px;
+      line-height: 23px;
+    `}
+  `}
 `;
 
 export const SlideTitle = styled.b`
-  color: ${({ theme }) => theme.colors.white};
   font-size: 45px;
   line-height: 55px;
-  font-weight: 400;
   text-transform: uppercase;
   font-family: Balsamiq Sans, cursive;
+
+  ${({ theme }) => css`
+    color: ${theme.colors.white};
+
+    ${theme.responsive.isMobile &&
+    css`
+      font-size: 27px;
+      line-height: 42px;
+    `}
+  `}
 `;
 
 export const StoryWrapper = styled.div`
