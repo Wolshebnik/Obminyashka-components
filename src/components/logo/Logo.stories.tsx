@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Logo } from './index';
+import { Logo } from '.';
 import { ILogo } from './types';
 import { argTypes } from './arg-types';
 
