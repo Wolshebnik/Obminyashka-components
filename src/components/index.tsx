@@ -25,6 +25,7 @@ export { ProductPostData } from './product-post-data';
 export { Subtitle } from './subtitle';
 export { Title } from './title';
 export { Toast, showMessage } from './toast';
+export { Tooltip } from './tooltip';
 export * as Icon from './icon';
 export * as Images from './img';
 export * as Responsive from './responsive';
