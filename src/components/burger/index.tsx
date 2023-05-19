@@ -4,10 +4,10 @@ import { Deals, LanguageSelection, Responsive } from 'components';
 
 import { useDelayAnimation } from 'hooks/useDelayAnimation';
 
-import * as Styles from './styles';
 import { IBurger } from './types';
+import * as Styles from './styles';
 
-const Burger = ({ burgerMenuText }: IBurger) => {
+const Burger = ({ burgerMenuItems }: IBurger) => {
   const { isOpen, isAnimation, setOpen } = useDelayAnimation(600);
 
   return (
@@ -19,11 +19,12 @@ const Burger = ({ burgerMenuText }: IBurger) => {
       {isOpen && (
         <>
           <Styles.BurgerMenu isAnimation={isAnimation}>
-            {burgerMenuText.map((item, index) => (
+            {burgerMenuItems.map((item, index) => (
               <React.Fragment key={index}>
                 <Deals text={item.text} to={item.to} heartIcon={item.icon} />
               </React.Fragment>
             ))}
+
             <LanguageSelection lang="ua" onClick={() => {}} />
           </Styles.BurgerMenu>
           <Styles.BurgerOverlay onClick={() => setOpen()} />

@@ -1,5 +1,5 @@
 export interface IBurger {
-  burgerMenuText: {
+  burgerMenuItems: {
     to: string;
     text: string;
     icon?: boolean;

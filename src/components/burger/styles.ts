@@ -36,11 +36,11 @@ const Line = css`
 `;
 
 export const BurgerIconLines = styled.div<{ isOpen?: boolean }>`
-  ${Line};
   position: relative;
   top: 10px;
 
   ${({ theme, isOpen }) => css`
+    ${Line};
     background-color: ${isOpen ? 'transparent' : theme.colors.btnBlue};
 
     ::after,
@@ -86,7 +86,6 @@ export const BurgerOverlay = styled.div<{ isOpen?: boolean }>`
   width: 100%;
   height: 20%;
   opacity: 1;
-
   background-color: ${({ theme }) => theme.colors.modalColors.background};
 `;
 

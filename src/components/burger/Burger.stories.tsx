@@ -4,7 +4,7 @@ import { PresentationHeader } from 'components/shared';
 
 import { Burger } from '.';
 import { argTypes } from './arg-types';
-import { burgerMenuText } from './mock';
+import { burgerMenuItems } from './mock';
 
 const meta = {
   title: 'Burger',
@@ -24,6 +24,6 @@ type Story = StoryObj<typeof Burger>;
 
 export const BurgerIcon: Story = {
   args: {
-    burgerMenuText,
+    burgerMenuItems,
   },
 };
