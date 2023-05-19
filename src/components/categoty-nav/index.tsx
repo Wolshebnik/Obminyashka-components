@@ -4,35 +4,36 @@ import { Images, Responsive } from 'components';
 import * as Styles from './styles';
 import { ICatygoryNav } from './types';
 
-const NavCategory = ({ categoryInfo }: ICatygoryNav) => {
-  const [visibleSun, setVisibleBoolean] = useState<boolean>(true);
+const NavCategory = ({ categoryInfo, isOpen }: ICatygoryNav) => {
+  const [isVisibleSun, setVisibleSun] = useState<boolean>(true);
 
-  const leave = () => setVisibleBoolean(true);
-  const enter = () => {
-    setTimeout(() => setVisibleBoolean(false), 500);
-  };
+  const leave = () => setVisibleSun(true);
 
   return (
-    <Styles.List>
-      <Styles.Wrapper onMouseLeave={leave} onMouseEnter={enter}>
+    <Styles.List isOpen={isOpen}>
+      <Styles.Wrapper onMouseLeave={leave}>
         {categoryInfo.map((el: any) => {
           return (
             <Styles.NavbarLinkContainer
-              onMouseEnter={() =>
-                el.text !== 'clothes' && setVisibleBoolean(false)
-              }
+              onMouseEnter={() => {
+                return (
+                  el.text !== 'clothes' && setVisibleSun(false),
+                  el.text === 'clothes' &&
+                    setTimeout(() => setVisibleSun(false), 500)
+                );
+              }}
               key={el.text}
             >
               <Styles.NavbarLink to={el.link}>
                 <Responsive.Desktop>
-                  {visibleSun && el.text === 'clothes' && (
+                  {isVisibleSun && el.text === 'clothes' && (
                     <Styles.SunMain alt="sun-main" src={Images.sunMain} />
                   )}
 
                   <Styles.SunCateory
                     src={el.sun}
                     variant={el.text}
-                    visible={visibleSun}
+                    visible={isVisibleSun}
                     alt={'sun' + el.text}
                   />
                 </Responsive.Desktop>

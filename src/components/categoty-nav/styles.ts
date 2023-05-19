@@ -26,7 +26,7 @@ const mainSunMouve = keyframes`
       transform: scale(1) rotate(0) translate(0,0);
     }
     36% {
-      transform: scale(1) rotate(-5deg) translate(0,-3px);
+      transform: scale(1) rotate(-2deg) translate(0,-3px);
     }
     66% {
       transform: scale(1) rotate(5deg) translate(3px,-3px);;
@@ -43,7 +43,7 @@ const sunMouve = keyframes`
   }
   33% {
     visibility: visible;
-    transform: scale(5) rotate(-5deg) translate(0,-1px);
+    transform: scale(5) rotate(-2deg) translate(0,-1px);
   }
   66% {
     visibility: visible;
@@ -55,7 +55,16 @@ const sunMouve = keyframes`
   }
 `;
 
-export const List = styled.div`
+const close = keyframes`
+0% {
+  top: 82px;
+}
+100% {
+  top: -1000px;
+}
+`;
+
+export const List = styled.div<{ isOpen: boolean }>`
   position: fixed;
   background: linear-gradient(162.46deg, #97d7e3 0%, #53b2d4 100%);
   width: 100vw;
@@ -63,10 +72,15 @@ export const List = styled.div`
   top: 82px;
   z-index: -1;
 
-  ${({ theme }) => css`
+  ${({ theme, isOpen }) => css`
     ${theme.responsive.isDesktop &&
     css`
       padding: 0 200px;
+    `}
+
+    ${!isOpen &&
+    css`
+      animation: ${close} 0.5s ease-in-out forwards;
     `}
   `}
 `;
@@ -188,7 +202,7 @@ export const SunMain = styled.img`
   left: -200px;
   pointer-events: none;
   z-index: -1;
-  animation: ${mainSunMouve} 2s ease-in-out infinite;
+  animation: ${mainSunMouve} 2.5s ease-in-out infinite;
 
   ${NavbarLinkContainer}:hover & {
     animation: ${mainSunDisplaced} 0.5s forwards;
@@ -211,7 +225,7 @@ export const SunCateory = styled.img<{
     css`
       ${NavbarLinkContainer}:hover & {
         animation: ${sun} 0.3s forwards,
-          ${sunMouve} 2s 0.5s ease-in-out infinite;
+          ${sunMouve} 2.5s 0.5s ease-in-out infinite;
       }
 
       ${variant === 'clothes' &&

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { data } from './mock';
+import { CategoryButton } from '.';
 import { argTypes } from './arg-types';
-import { CategoryButton } from './index';
 
 const meta = {
   title: 'CategoryButton',
