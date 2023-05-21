@@ -1,5 +1,6 @@
 export { Avatar } from './avatar';
 export { BackButton } from './back-button';
+export { Burger } from './burger';
 export { Button } from './button';
 export { CancelEverything } from './cancel-everything';
 export { CheckBox } from './checkbox';
