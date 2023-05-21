@@ -7,6 +7,7 @@ import { Overlay } from '.';
 import { Button } from '../button';
 import { argTypes } from './arg-types';
 import { Child } from './child/styles';
+import { PresentationHeader } from 'components/shared';
 
 const meta = {
   title: 'Overlay',
@@ -31,39 +32,44 @@ const Template = () => {
   }, [isOpen]);
 
   return (
-    <div>
-      <Button
-        onClick={() => {
-          setOpen(true);
-          onClose(true);
-        }}
-        text="Open"
-      />
-      <Overlay
-        delay={1000}
-        myRef={myRef}
-        childRef={childRef}
-        isOpen={isOpen}
-        onClose={() => {
-          setOpen(false);
-          onClose(false);
-        }}
-        setClosingAnimation={() => setIsAnimation(true)}
-      >
-        <Child
-          ref={childRef}
-          isAnimation={isAnimation}
-          isClosingAnimation={isClosingAnimation}
+    <>
+      <PresentationHeader>
+        <Button
+          onClick={() => {
+            setOpen(true);
+            onClose(true);
+          }}
+          text="Open"
+        />
+      </PresentationHeader>
+      <div>
+        <Overlay
+          top={75}
+          delay={300}
+          myRef={myRef}
+          childRef={childRef}
+          isOpen={isOpen}
+          onClose={() => {
+            setOpen(false);
+            onClose(false);
+          }}
+          setClosingAnimation={() => setIsAnimation(true)}
         >
-          <button onClick={() => myRef.current?.click()}>Close</button>
-          <h1>Children to presentation</h1>
-          <p>Inputs below focus test </p>
-          <p>To close press escape or click outside the modal window </p>
-          <input type="text" />
-          <input type="text" />
-        </Child>
-      </Overlay>
-    </div>
+          <Child
+            ref={childRef}
+            isAnimation={isAnimation}
+            isClosingAnimation={isClosingAnimation}
+          >
+            <button onClick={() => myRef.current?.click()}>Close</button>
+            <h1>Children to presentation</h1>
+            <p>Inputs below focus test </p>
+            <p>To close press escape or click outside the modal window </p>
+            <input type="text" />
+            <input type="text" />
+          </Child>
+        </Overlay>
+      </div>
+    </>
   );
 };
 

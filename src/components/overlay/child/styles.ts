@@ -12,6 +12,7 @@ export const Child = styled.div<{
   min-height: 50px;
   text-align: center;
   border: 1px solid black;
+  background-color: grey;
   transform: translate(-50%, -50%);
   transition: all 0.8s ease-in-out;
 
