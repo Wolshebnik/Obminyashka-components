@@ -1,13 +1,13 @@
 import { useRef } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { PresentationHeader } from 'components/shared';
 import { useDelayAnimation } from 'hooks/useDelayAnimation';
 
 import { Overlay } from '.';
 import { Button } from '../button';
 import { argTypes } from './arg-types';
 import { Child } from './child/styles';
-import { PresentationHeader } from 'components/shared';
 
 const meta = {
   title: 'Overlay',
