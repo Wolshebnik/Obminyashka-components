@@ -27,7 +27,7 @@ const Template = () => {
   return (
     <>
       <PresentationHeader>
-        <Button onClick={() => setOpen(true)} text="Open" />
+        <Button onClick={() => !isOpen && setOpen(true)} text="Open" />
       </PresentationHeader>
 
       <div>
