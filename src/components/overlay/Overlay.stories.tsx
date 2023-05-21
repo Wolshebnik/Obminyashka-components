@@ -29,6 +29,7 @@ const Template = () => {
       <PresentationHeader>
         <Button onClick={() => setOpen(true)} text="Open" />
       </PresentationHeader>
+
       <div>
         <Overlay
           top={75}

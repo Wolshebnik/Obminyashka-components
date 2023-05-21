@@ -8,9 +8,7 @@ export interface IOverlay {
   isAnimation?: boolean;
   children?: React.ReactNode;
   closer?: (arg1: () => void) => void;
-  //   setClosingAnimation?: () => void;
   childRef: RefObject<HTMLDivElement> | null;
-  //   myRef: RefObject<HTMLDivElement> | null;
 }
 
 export interface IOverlayStyles {

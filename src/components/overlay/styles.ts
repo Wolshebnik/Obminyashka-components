@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+
 import { IOverlayStyles } from './types';
 
 export const Overlay = styled.div<IOverlayStyles>`
