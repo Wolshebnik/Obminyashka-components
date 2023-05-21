@@ -1,7 +1,9 @@
 export interface IBurger {
-  burgerMenuItems: {
-    to: string;
-    text: string;
-    icon?: boolean;
-  }[];
+  data: BurgerProps[];
+}
+
+export interface BurgerProps {
+  to: string;
+  text: string;
+  icon?: boolean;
 }

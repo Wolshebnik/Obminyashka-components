@@ -24,6 +24,6 @@ type Story = StoryObj<typeof Burger>;
 
 export const BurgerIcon: Story = {
   args: {
-    burgerMenuItems,
+    data: burgerMenuItems,
   },
 };

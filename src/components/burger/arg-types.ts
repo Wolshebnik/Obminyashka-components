@@ -3,7 +3,7 @@ import { IArgTypes } from 'types';
 import { IBurger } from './types';
 
 export const argTypes: IArgTypes<IBurger> = {
-  burgerMenuItems: {
+  data: {
     to: {
       name: 'to',
       type: { name: 'string' },
