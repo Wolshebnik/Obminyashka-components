@@ -18,27 +18,32 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Overlay>;
 
-const delay = 600;
+const duration = 500;
 
 const Template = () => {
   const childRef = useRef<HTMLDivElement>(null);
-  const { isOpen, isAnimation, setOpen } = useDelayAnimation(delay);
+  const { isOpen, isAnimation, setOpen } = useDelayAnimation(duration);
 
   return (
     <>
       <PresentationHeader>
         <Button onClick={() => setOpen(true)} text="Open" />
       </PresentationHeader>
+
       <div>
         <Overlay
           top={75}
-          delay={delay}
           isOpen={isOpen}
+          delay={duration}
           childRef={childRef}
-          isAnimation={isOpen}
+          isAnimation={isAnimation}
           setClose={() => setOpen(false)}
         >
-          <Child ref={childRef} isOpen={isOpen} isCloseAnimation={isAnimation}>
+          <Child
+            ref={childRef}
+            duration={duration}
+            isCloseAnimation={isAnimation}
+          >
             <button onClick={() => setOpen(false)}>Close</button>
             <h1>Children to presentation</h1>
             <p>Inputs below focus test </p>
