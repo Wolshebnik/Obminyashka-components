@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 
 export const Child = styled.div<{
-  isAnimation?: boolean;
-  isClosingAnimation?: boolean;
+  isOpen?: boolean;
+  isCloseAnimation?: boolean;
 }>`
   position: relative;
   top: -10%;
@@ -56,13 +56,12 @@ export const Child = styled.div<{
     margin: 10px 0;
   }
 
-  ${({ isAnimation, isClosingAnimation }) => css`
-    ${isAnimation &&
-    !isClosingAnimation &&
+  ${({ isOpen, isCloseAnimation }) => css`
+    ${isOpen &&
     css`
       top: 50%;
     `}
-    ${isClosingAnimation &&
+    ${isCloseAnimation &&
     css`
       top: 120%;
     `}

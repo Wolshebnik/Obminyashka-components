@@ -6,6 +6,8 @@ const useOutsideClick = (
 ) => {
   //TODO types e
   const handleClick = (e: any) => {
+    // eslint-disable-next-line no-console
+    console.log(1);
     if (
       ref &&
       ref.current &&

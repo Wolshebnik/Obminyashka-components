@@ -12,7 +12,7 @@ const Burger = ({ burgerMenuItems }: IBurger) => {
 
   return (
     <Responsive.NotDesktop>
-      <Styles.BurgerIcon onClick={() => setOpen()}>
+      <Styles.BurgerIcon onClick={() => setOpen(!isOpen)}>
         <Styles.BurgerIconLines isOpen={isOpen} />
       </Styles.BurgerIcon>
 
@@ -27,7 +27,7 @@ const Burger = ({ burgerMenuItems }: IBurger) => {
 
             <LanguageSelection lang="ua" onClick={() => {}} />
           </Styles.BurgerMenu>
-          <Styles.BurgerOverlay onClick={() => setOpen()} />
+          <Styles.BurgerOverlay onClick={() => setOpen(!isOpen)} />
         </>
       )}
     </Responsive.NotDesktop>

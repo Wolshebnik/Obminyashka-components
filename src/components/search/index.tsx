@@ -7,16 +7,16 @@ import { ISearchProps } from './types';
 import { SearchInput } from './search-input';
 
 const Search = (props: ISearchProps) => {
-  const { isOpen, isAnimation, setOpen } = useDelayAnimation(600);
+  const { isOpen, setOpen } = useDelayAnimation(600);
   return (
     <>
       <Responsive.NotDesktop>
-        <Styles.WrapIcon onClick={() => setOpen()}>
+        <Styles.WrapIcon onClick={() => setOpen(!isOpen)}>
           <Icon.SearchNew />
         </Styles.WrapIcon>
 
         {isOpen && (
-          <Styles.WrapDeviceSearch isSearchActive={isAnimation}>
+          <Styles.WrapDeviceSearch isSearchActive={isOpen}>
             <SearchInput {...props} />
           </Styles.WrapDeviceSearch>
         )}

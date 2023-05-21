@@ -12,36 +12,23 @@ const listFocusable =
 
 export const Overlay = ({
   top,
-  myRef,
   isOpen,
-  onClose,
+  setClose,
   childRef,
   children,
   delay = 300,
-  setClosingAnimation,
+  isAnimation,
 }: ChildrenProps<IOverlay>) => {
-  const [isAnimation, setIsAnimation] = useState(false);
   const [isTouched, setIsTouched] = useState(false);
-
-  const handleClose = () => {
-    if (setClosingAnimation) {
-      setClosingAnimation();
-    }
-
-    setIsAnimation(false);
-    setTimeout(() => {
-      onClose();
-    }, delay);
-  };
 
   useOutsideClick(childRef, () => {
     if (isTouched) {
-      handleClose();
+      setClose();
     }
   });
 
   const handleKeyDown = (event: KeyboardEvent) => {
-    if (event.key === 'Escape') handleClose();
+    if (event.key === 'Escape') setClose();
 
     if (childRef && event.key === 'Tab' && childRef.current) {
       const focusable =
@@ -72,7 +59,6 @@ export const Overlay = ({
   useEffect(() => {
     if (isOpen) {
       setIsTouched(true);
-      setIsAnimation(true);
       document.body.style.overflow = 'hidden';
       document.body.addEventListener('keydown', handleKeyDown);
     }
@@ -91,7 +77,7 @@ export const Overlay = ({
   return ReactDOM.createPortal(
     <Styles.Overlay
       top={top}
-      ref={myRef}
+      tabIndex={0}
       delay={delay}
       isAnimation={isAnimation}
     >

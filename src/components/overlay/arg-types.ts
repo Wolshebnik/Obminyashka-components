@@ -12,8 +12,8 @@ export const argTypes: IArgTypes<IOverlay> = {
       type: { summary: 'boolean' },
     },
   },
-  onClose: {
-    name: 'onClose',
+  setClose: {
+    name: 'setClose',
     type: { name: 'function', required: true },
     description: 'Close modal',
     table: {

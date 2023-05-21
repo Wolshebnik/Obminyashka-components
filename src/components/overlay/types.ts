@@ -4,16 +4,17 @@ export interface IOverlay {
   top?: number;
   delay?: number;
   isOpen: boolean;
-  onClose: () => void;
+  setClose: () => void;
+  isAnimation?: boolean;
   children?: React.ReactNode;
-  setClosingAnimation?: () => void;
   closer?: (arg1: () => void) => void;
-  myRef: RefObject<HTMLDivElement> | null;
+  //   setClosingAnimation?: () => void;
   childRef: RefObject<HTMLDivElement> | null;
+  //   myRef: RefObject<HTMLDivElement> | null;
 }
 
 export interface IOverlayStyles {
   top?: number;
   delay: number;
-  isAnimation: boolean;
+  isAnimation?: boolean;
 }

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { useDelayAnimation } from 'hooks/useDelayAnimation';
@@ -18,49 +18,28 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Overlay>;
 
-const Template = () => {
-  const [isOpen, onClose] = useState(false);
-  const myRef = useRef<HTMLDivElement>(null);
-  const childRef = useRef<HTMLDivElement>(null);
-  const { isAnimation, setOpen } = useDelayAnimation(300);
-  const [isClosingAnimation, setIsAnimation] = useState(false);
+const delay = 600;
 
-  useEffect(() => {
-    if (!isOpen) {
-      setIsAnimation(false);
-    }
-  }, [isOpen]);
+const Template = () => {
+  const childRef = useRef<HTMLDivElement>(null);
+  const { isOpen, isAnimation, setOpen } = useDelayAnimation(delay);
 
   return (
     <>
       <PresentationHeader>
-        <Button
-          onClick={() => {
-            setOpen(true);
-            onClose(true);
-          }}
-          text="Open"
-        />
+        <Button onClick={() => setOpen(true)} text="Open" />
       </PresentationHeader>
       <div>
         <Overlay
           top={75}
-          delay={300}
-          myRef={myRef}
-          childRef={childRef}
+          delay={delay}
           isOpen={isOpen}
-          onClose={() => {
-            setOpen(false);
-            onClose(false);
-          }}
-          setClosingAnimation={() => setIsAnimation(true)}
+          childRef={childRef}
+          isAnimation={isOpen}
+          setClose={() => setOpen(false)}
         >
-          <Child
-            ref={childRef}
-            isAnimation={isAnimation}
-            isClosingAnimation={isClosingAnimation}
-          >
-            <button onClick={() => myRef.current?.click()}>Close</button>
+          <Child ref={childRef} isOpen={isOpen} isCloseAnimation={isAnimation}>
+            <button onClick={() => setOpen(false)}>Close</button>
             <h1>Children to presentation</h1>
             <p>Inputs below focus test </p>
             <p>To close press escape or click outside the modal window </p>
