@@ -6,14 +6,18 @@ import * as Icon from '../icon';
 import * as Styles from './styles';
 import { IBtnCategoryProps } from './types';
 
-const CategoryButton = ({ textBtn, categoryInfo }: IBtnCategoryProps) => {
-  const { isOpen, isAnimation, setOpen } = useDelayAnimation(500);
+const CategoryButton = ({
+  textBtn,
+  categoryInfo,
+  delay = 500,
+}: IBtnCategoryProps) => {
+  const { isOpen, isAnimation, setOpen } = useDelayAnimation(delay, true);
 
   return (
     <Styles.CategoriesBody>
       <Responsive.Desktop>
         <Styles.CategoriesDesktop
-          open={isAnimation}
+          open={isOpen}
           onClick={() => setOpen(!isOpen)}
         >
           <Styles.CategoriesText>{textBtn}</Styles.CategoriesText>
@@ -31,7 +35,11 @@ const CategoryButton = ({ textBtn, categoryInfo }: IBtnCategoryProps) => {
       </Responsive.NotDesktop>
 
       {isOpen && (
-        <NavCategory isOpen={isAnimation} categoryInfo={categoryInfo} />
+        <NavCategory
+          delay={delay}
+          isOpen={isAnimation}
+          categoryInfo={categoryInfo}
+        />
       )}
     </Styles.CategoriesBody>
   );

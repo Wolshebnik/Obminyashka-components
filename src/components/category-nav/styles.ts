@@ -2,85 +2,103 @@ import { Link } from 'react-router-dom';
 import styled, { css, keyframes } from 'styled-components';
 
 const sun = keyframes`
-  0% {
-  }
   100% {
     transform: scale(5);
     visibility: visible; 
   }
-  `;
+`;
 
 const mainSunDisplaced = keyframes`
-  0% {
-  }
   100% {
     top: -65px;
     left: -75px;
     transform: scale(1);
     visibility: visible;
   }
-  `;
+`;
 
 const mainSunMouve = keyframes`
-    0% {
-      transform: scale(1) rotate(0) translate(0,0);
-    }
-    36% {
-      transform: scale(1) rotate(-2deg) translate(0,-3px);
-    }
-    66% {
-      transform: scale(1) rotate(5deg) translate(3px,-3px);;
-    }
-    100% {
-      transform: scale(1) rotate(0) translate(0,0);
-    }
-    `;
+  0% {
+    transform: scale(1) rotate(0) translate(0,0);
+  }
+
+  36% {
+    transform: scale(1) rotate(-2deg) translate(0,-3px);
+  }
+
+  66% {
+    transform: scale(1) rotate(5deg) translate(3px,-3px);;
+  }
+  
+  100% {
+    transform: scale(1) rotate(0) translate(0,0);
+  }
+`;
 
 const sunMouve = keyframes`
   0% {
     visibility: visible;
     transform: scale(5) rotate(0) translate(0,0);
   }
+
   33% {
     visibility: visible;
     transform: scale(5) rotate(-2deg) translate(0,-1px);
   }
+
   66% {
     visibility: visible;
     transform: scale(5) rotate(5deg) translate(1px,-1px);
   }
+
   100% {
     visibility: visible;
     transform:  scale(5) rotate(0)  translate(0,0);
   }
 `;
 
-const close = keyframes`
-0% {
-  top: 82px;
-}
-100% {
-  top: -1000px;
-}
+const open = keyframes`
+  0% {
+    top: -150%;
+  }
+
+  100% {
+    top: 130px;
+  }
 `;
 
-export const List = styled.div<{ isOpen: boolean }>`
+const close = keyframes`
+  0% {
+    top: 130px;
+  }
+
+  100% {
+    top: -150%;
+  }
+`;
+
+export const List = styled.div<{ isOpen: boolean; delay: number }>`
   position: fixed;
   background: linear-gradient(162.46deg, #97d7e3 0%, #53b2d4 100%);
   width: 100vw;
   left: 0;
-  top: 82px;
+  top: -150%;
   z-index: -1;
 
-  ${({ theme, isOpen }) => css`
+  ${({ theme, isOpen, delay }) => css`
     ${theme.responsive.isDesktop &&
     css`
       padding: 0 200px;
     `}
 
+    ${isOpen &&
+    css`
+      animation: ${open} ${delay}ms ease-in-out forwards;
+    `}
+
     ${!isOpen &&
     css`
-      animation: ${close} 0.5s ease-in-out forwards;
+      animation: ${close} ${delay}ms ease-in-out forwards;
     `}
   `}
 `;

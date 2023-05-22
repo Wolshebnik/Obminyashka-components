@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const useDelayAnimation = (delay: number) => {
+export const useDelayAnimation = (delay: number, immediateStart?: boolean) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isAnimation, setIsAnimation] = useState(false);
 
@@ -9,7 +9,11 @@ export const useDelayAnimation = (delay: number) => {
 
     if (open) {
       setIsOpen(true);
-      setTimeout(() => setIsAnimation(true), 1);
+      if (!immediateStart) {
+        setTimeout(() => setIsAnimation(true), 1);
+      } else {
+        setIsAnimation(true);
+      }
     }
 
     if (!open) {

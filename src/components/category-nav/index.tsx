@@ -4,14 +4,12 @@ import { Images, Responsive } from 'components';
 import * as Styles from './styles';
 import { ICatygoryNav } from './types';
 
-const NavCategory = ({ categoryInfo, isOpen }: ICatygoryNav) => {
+const NavCategory = ({ categoryInfo = [], isOpen, delay }: ICatygoryNav) => {
   const [isVisibleSun, setVisibleSun] = useState<boolean>(true);
 
-  const leave = () => setVisibleSun(true);
-
   return (
-    <Styles.List isOpen={isOpen}>
-      <Styles.Wrapper onMouseLeave={leave}>
+    <Styles.List isOpen={isOpen} delay={delay}>
+      <Styles.Wrapper onMouseLeave={() => setVisibleSun(true)}>
         {categoryInfo.map((el: any) => {
           return (
             <Styles.NavbarLinkContainer
