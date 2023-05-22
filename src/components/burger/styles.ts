@@ -104,36 +104,32 @@ export const BurgerMenu = styled.div<{
       padding-top: 124px;
       padding-bottom: 188px;
 
+      ::before,
       ::after {
         content: '';
         position: absolute;
         display: block;
-        top: 0;
-        left: 0;
-        max-width: 200px;
         width: 100%;
-        max-height: 240px;
         height: 100%;
-        background-image: url(${Images.newBgBurgerOne});
-        background-repeat: no-repeat;
-        background-size: cover;
-        opacity: 0.6;
-      }
-
-      ::before {
-        content: '';
-        position: absolute;
-        display: block;
-        bottom: 0;
-        right: 0;
-        max-width: 300px;
-        width: 100%;
-        max-height: 285px;
-        height: 100%;
-        background-image: url(${Images.newBgBurgerTwo});
         background-repeat: no-repeat;
         background-size: cover;
         opacity: 0.7;
+      }
+
+      ::after {
+        top: 0;
+        left: 0;
+        max-width: 200px;
+        max-height: 240px;
+        background-image: url(${Images.newBgBurgerOne});
+      }
+
+      ::before {
+        bottom: 0;
+        right: 0;
+        max-width: 300px;
+        max-height: 285px;
+        background-image: url(${Images.newBgBurgerTwo});
       }
     `}
 
@@ -141,6 +137,7 @@ export const BurgerMenu = styled.div<{
     css`
       padding-top: 120px;
       padding-bottom: 204px;
+
       ${isAnimation &&
       css`
         top: 85px;
