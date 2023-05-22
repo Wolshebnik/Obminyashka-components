@@ -86,9 +86,6 @@ export const BurgerMenu = styled.div<{
   position: absolute;
   left: 0;
   top: -100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
   transition: all 0.6s ease-in-out;
 
@@ -142,15 +139,12 @@ export const BurgerMenu = styled.div<{
 
     ${theme.responsive.isTablet &&
     css`
+      padding-top: 120px;
+      padding-bottom: 204px;
       ${isAnimation &&
       css`
         top: 85px;
       `}
-
-      gap: 40px;
-      padding-top: 120px;
-      padding-bottom: 204px;
-      z-index: -1;
     `}
   `};
 `;
@@ -177,5 +171,17 @@ export const BurgerMenuClose = styled.div`
 
 export const BurgerContainer = styled.div`
   position: relative;
-  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  width: 100%;
+  z-index: 1;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      gap: 40px;
+    `}
+  `}
 `;
