@@ -2,22 +2,22 @@ import { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import { ChildrenProps } from 'types';
+import { useOutsideClick } from 'hooks/useOutSideClick';
 
 import * as Styles from './styles';
 import { IOverlay } from './types';
-import { useOutsideClick } from 'hooks/useOutSideClick';
 
 const listFocusable =
   'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select, *[tabindex]:not([tabindex="-1"])';
 
 export const Overlay = ({
-  top,
   isOpen,
+  top = 0,
   setClose,
   childRef,
   children,
-  delay = 300,
   isAnimation,
+  duration = 300,
 }: ChildrenProps<IOverlay>) => {
   const [isTouched, setIsTouched] = useState(false);
 
@@ -78,7 +78,7 @@ export const Overlay = ({
     <Styles.Overlay
       top={top}
       tabIndex={0}
-      delay={delay}
+      duration={duration}
       isAnimation={isAnimation}
     >
       {children}

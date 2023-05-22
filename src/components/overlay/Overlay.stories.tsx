@@ -5,6 +5,7 @@ import { PresentationHeader } from 'components/shared';
 import { useDelayAnimation } from 'hooks/useDelayAnimation';
 
 import { Overlay } from '.';
+import { IOverlay } from './types';
 import { Button } from '../button';
 import { argTypes } from './arg-types';
 import { Child } from './child/styles';
@@ -18,28 +19,33 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Overlay>;
 
-const delay = 600;
+const Template = (args: IOverlay) => {
+  const { top, duration } = args;
+  const checkedDuration = duration ? duration : 300;
 
-const Template = () => {
   const childRef = useRef<HTMLDivElement>(null);
-  const { isOpen, isAnimation, setOpen } = useDelayAnimation(delay);
+  const { isOpen, isAnimation, setOpen } = useDelayAnimation(checkedDuration);
 
   return (
     <>
       <PresentationHeader>
-        <Button onClick={() => setOpen(true)} text="Open" />
+        <Button onClick={() => !isOpen && setOpen(true)} text="Open" />
       </PresentationHeader>
 
       <div>
         <Overlay
-          top={75}
-          delay={delay}
+          top={top}
           isOpen={isOpen}
+          duration={duration}
           childRef={childRef}
-          isAnimation={isOpen}
+          isAnimation={isAnimation}
           setClose={() => setOpen(false)}
         >
-          <Child ref={childRef} isOpen={isOpen} isCloseAnimation={isAnimation}>
+          <Child
+            ref={childRef}
+            duration={checkedDuration}
+            isCloseAnimation={isAnimation}
+          >
             <button onClick={() => setOpen(false)}>Close</button>
             <h1>Children to presentation</h1>
             <p>Inputs below focus test </p>
@@ -54,5 +60,11 @@ const Template = () => {
 };
 
 export const Standard: Story = {
-  render: () => <Template />,
+  args: { duration: 800 },
+  render: (args) => <Template {...args} />,
+};
+
+export const OverlayWithHeader: Story = {
+  args: { top: 75, duration: 600 },
+  render: (args) => <Template {...args} />,
 };

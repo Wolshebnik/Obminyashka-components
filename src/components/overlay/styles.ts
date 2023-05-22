@@ -4,26 +4,31 @@ import { IOverlayStyles } from './types';
 
 export const Overlay = styled.div<IOverlayStyles>`
   position: absolute;
-  top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
   opacity: 0;
-  z-index: 990;
+  transition: all 200ms ease-in-out;
+  z-index: 1001;
 
-  ${({ theme, isAnimation, delay, top }) => css`
+  ${({ theme, isAnimation, duration, top }) => css`
     background-color: ${theme.colors.modalColors.background};
-    transition: all ${delay}ms ease-in-out;
 
-    ${top &&
-    css`
-      top: ${top}px;
-    `}
+    top: ${top ? top : 0}px;
+    height: calc(100vh - ${top ? top : 0}px);
 
     ${isAnimation &&
     css`
       opacity: 1;
-      transition: all ${delay}ms ease-in-out;
+    `}
+
+    ${!isAnimation &&
+    css`
+      transition-delay: ${duration - 200}ms;
+    `}
+    
+    ${!theme.responsive.isMobile &&
+    css`
+      z-index: 999;
     `}
   `};
 `;

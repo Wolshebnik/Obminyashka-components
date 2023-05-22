@@ -1,11 +1,31 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+const moveDown = keyframes`
+  from {
+  top: -100%;
+  }
+
+  to {
+  top: 50%;
+  }
+`;
+
+const moveBelow = keyframes`
+  from {
+  top: 50%;
+  }
+
+  to {
+  top: 200%;
+  }
+`;
 
 export const Child = styled.div<{
-  isOpen?: boolean;
+  duration: number;
   isCloseAnimation?: boolean;
 }>`
   position: relative;
-  top: -10%;
+  top: 50%;
   left: 50%;
   padding: 20px;
   max-width: 500px;
@@ -14,8 +34,6 @@ export const Child = styled.div<{
   border: 1px solid black;
   background-color: grey;
   transform: translate(-50%, -50%);
-  transition: all 0.8s ease-in-out;
-
   button {
     position: absolute;
     top: 0px;
@@ -56,14 +74,7 @@ export const Child = styled.div<{
     margin: 10px 0;
   }
 
-  ${({ isOpen, isCloseAnimation }) => css`
-    ${isOpen &&
-    css`
-      top: 50%;
-    `}
-    ${isCloseAnimation &&
-    css`
-      top: 120%;
-    `}
+  ${({ isCloseAnimation, duration }) => css`
+    animation: ${isCloseAnimation ? moveDown : moveBelow} ${duration}ms linear;
   `};
 `;
