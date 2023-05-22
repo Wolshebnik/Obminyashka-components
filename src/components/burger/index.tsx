@@ -1,20 +1,18 @@
-import React from 'react';
-import { useArgs } from '@storybook/client-api';
+import React, { useRef } from 'react';
+
+import { Overlay } from 'components/overlay';
 import { useDelayAnimation } from 'hooks/useDelayAnimation';
 import { Deals, LanguageSelection, Responsive } from 'components';
 
 import { IBurger } from './types';
 import * as Styles from './styles';
-import { IOnClickArg } from '../select-lang/types';
+import * as Icon from 'components/icon/index';
 
-const Burger = ({ data }: IBurger) => {
-  const { isOpen, isAnimation, setOpen } = useDelayAnimation(600);
-  const [, updateArgs] = useArgs();
-  const handleChangeLang = ({ lang }: IOnClickArg) => {
-    updateArgs({
-      lang,
-    });
-  };
+const duration = 600;
+
+const Burger = ({ data, lang, onSelectLanguage }: IBurger) => {
+  const burgerRef = useRef<HTMLDivElement>(null);
+  const { isOpen, isAnimation, setOpen } = useDelayAnimation(duration);
 
   return (
     <Responsive.NotDesktop>
@@ -22,20 +20,31 @@ const Burger = ({ data }: IBurger) => {
         <Styles.BurgerIconLines isOpen={isOpen} />
       </Styles.BurgerIcon>
 
-      {isOpen && (
-        <>
-          <Styles.BurgerMenu isAnimation={isAnimation}>
+      <Overlay
+        isHeader
+        isOpen={isOpen}
+        duration={duration}
+        childRef={burgerRef}
+        isAnimation={isAnimation}
+        setClose={() => setOpen(false)}
+      >
+        <Styles.BurgerMenu isAnimation={isAnimation} ref={burgerRef}>
+          <Responsive.Mobile>
+            <Styles.BurgerMenuClose onClick={() => setOpen(false)}>
+              <Icon.Close />
+            </Styles.BurgerMenuClose>
+          </Responsive.Mobile>
+          <Styles.BurgerContainer>
             {data.map((item, index) => (
               <React.Fragment key={index}>
                 <Deals text={item.text} to={item.to} heartIcon={item.icon} />
               </React.Fragment>
             ))}
+          </Styles.BurgerContainer>
 
-            <LanguageSelection lang="ua" onClick={handleChangeLang} />
-          </Styles.BurgerMenu>
-          <Styles.BurgerOverlay onClick={() => setOpen(!isOpen)} />
-        </>
-      )}
+          <LanguageSelection lang={lang} onClick={onSelectLanguage} />
+        </Styles.BurgerMenu>
+      </Overlay>
     </Responsive.NotDesktop>
   );
 };

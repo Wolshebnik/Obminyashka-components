@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { Images } from 'components';
 
 export const BurgerIcon = styled.div`
-  position: fixed;
+  position: relative;
   cursor: pointer;
 
   ${({ theme }) => css`
@@ -79,35 +79,25 @@ export const BurgerIconLines = styled.div<{ isOpen?: boolean }>`
   `}
 `;
 
-export const BurgerOverlay = styled.div<{ isOpen?: boolean }>`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 20%;
-  opacity: 1;
-  background-color: ${({ theme }) => theme.colors.modalColors.background};
-`;
-
 export const BurgerMenu = styled.div<{
   isOpen?: boolean;
   isAnimation?: boolean;
 }>`
   position: absolute;
   left: 0;
-  bottom: 0;
+  top: -100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  transition: all 0.6s ease-in-out;
 
   ${({ theme, isAnimation }) => css`
     background-color: ${theme.colors.white};
-    transition: ${theme.transition.dropDown};
 
     ${isAnimation &&
     css`
-      transform: translateY(90%);
+      top: 0;
     `}
 
     ${theme.responsive.isMobile &&
@@ -120,24 +110,32 @@ export const BurgerMenu = styled.div<{
       ::after {
         content: '';
         position: absolute;
+        display: block;
         top: 0;
         left: 0;
-        width: 200px;
-        height: 240px;
+        max-width: 200px;
+        width: 100%;
+        max-height: 240px;
+        height: 100%;
         background-image: url(${Images.newBgBurgerOne});
         background-repeat: no-repeat;
+        background-size: cover;
         opacity: 0.6;
       }
 
       ::before {
         content: '';
         position: absolute;
+        display: block;
         bottom: 0;
         right: 0;
-        width: 300px;
-        height: 324px;
+        max-width: 300px;
+        width: 100%;
+        max-height: 285px;
+        height: 100%;
         background-image: url(${Images.newBgBurgerTwo});
         background-repeat: no-repeat;
+        background-size: cover;
         opacity: 0.7;
       }
     `}
@@ -146,7 +144,7 @@ export const BurgerMenu = styled.div<{
     css`
       ${isAnimation &&
       css`
-        transform: translateY(100%);
+        top: 85px;
       `}
 
       gap: 40px;
@@ -155,4 +153,29 @@ export const BurgerMenu = styled.div<{
       z-index: -1;
     `}
   `};
+`;
+
+export const BurgerMenuClose = styled.div`
+  position: absolute;
+  display: flex;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+
+  svg {
+    width: 100%;
+    height: 100%;
+
+    path {
+      ${({ theme }) => css`
+        fill: ${theme.colors.btnBlue};
+      `}
+    }
+  }
+`;
+
+export const BurgerContainer = styled.div`
+  position: relative;
+  z-index: 10;
 `;
