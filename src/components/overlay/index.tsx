@@ -14,6 +14,7 @@ export const Overlay = ({
   isOpen,
   top = 0,
   setClose,
+  isHeader,
   childRef,
   children,
   isAnimation,
@@ -78,6 +79,7 @@ export const Overlay = ({
     <Styles.Overlay
       top={top}
       tabIndex={0}
+      isHeader={isHeader}
       duration={duration}
       isAnimation={isAnimation}
     >

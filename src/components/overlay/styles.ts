@@ -10,7 +10,7 @@ export const Overlay = styled.div<IOverlayStyles>`
   transition: all 200ms ease-in-out;
   z-index: 1001;
 
-  ${({ theme, isAnimation, duration, top }) => css`
+  ${({ theme, isAnimation, duration, top, isHeader }) => css`
     background-color: ${theme.colors.modalColors.background};
 
     top: ${top ? top : 0}px;
@@ -26,7 +26,8 @@ export const Overlay = styled.div<IOverlayStyles>`
       transition-delay: ${duration - 200}ms;
     `}
     
-    ${!theme.responsive.isMobile &&
+    ${isHeader &&
+    !theme.responsive.isMobile &&
     css`
       z-index: 999;
     `}

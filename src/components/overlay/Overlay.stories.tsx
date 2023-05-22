@@ -20,7 +20,7 @@ export default meta;
 type Story = StoryObj<typeof Overlay>;
 
 const Template = (args: IOverlay) => {
-  const { top, duration } = args;
+  const { top, duration, isHeader } = args;
   const checkedDuration = duration ? duration : 300;
 
   const childRef = useRef<HTMLDivElement>(null);
@@ -36,6 +36,7 @@ const Template = (args: IOverlay) => {
         <Overlay
           top={top}
           isOpen={isOpen}
+          isHeader={isHeader}
           duration={duration}
           childRef={childRef}
           isAnimation={isAnimation}
@@ -65,6 +66,6 @@ export const Standard: Story = {
 };
 
 export const OverlayWithHeader: Story = {
-  args: { top: 75, duration: 600 },
+  args: { top: 75, duration: 600, isHeader: true },
   render: (args) => <Template {...args} />,
 };
