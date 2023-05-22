@@ -31,6 +31,10 @@ export const Overlay = ({
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.key === 'Escape') setClose();
 
+    if ((childRef?.current === null && event.key) === 'Tab') {
+      event.preventDefault();
+    }
+
     if (childRef && event.key === 'Tab' && childRef.current) {
       const focusable =
         childRef.current.querySelectorAll<HTMLElement>(listFocusable);
