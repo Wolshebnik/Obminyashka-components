@@ -7,7 +7,7 @@ export interface IOverlay {
   isHeader?: boolean;
   setClose: () => void;
   isAnimation: boolean;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   childRef: RefObject<HTMLDivElement> | null;
 }
 

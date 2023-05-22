@@ -22,11 +22,11 @@ export const Overlay = ({
 }: ChildrenProps<IOverlay>) => {
   const [isTouched, setIsTouched] = useState(false);
 
-  useOutsideClick(childRef, () => {
+  useOutsideClick(() => {
     if (isTouched) {
       setClose();
     }
-  });
+  }, childRef);
 
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.key === 'Escape') setClose();
