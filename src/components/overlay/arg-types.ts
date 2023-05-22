@@ -67,7 +67,7 @@ export const argTypes: IArgTypes<IOverlay> = {
     name: 'childRef',
     tags: ['autodocs'],
     description:
-      "Referens to object which will be clickable and won't close the overlay",
+      "Referens to object which will be clickable and won't close the overlay, it must be child of overlay",
     table: {
       type: { summary: 'RefObject<HTMLDivElement> ' },
     },
