@@ -21,8 +21,6 @@ const Template = (args: IBurger) => {
   const [lang, setStateLang] = useState('ua');
 
   const handleChangeLang = ({ lang: newLang }: IOnClickArg) => {
-    // eslint-disable-next-line no-console
-    console.log(newLang);
     setStateLang(newLang);
   };
 

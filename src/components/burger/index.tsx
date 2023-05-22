@@ -1,12 +1,13 @@
 import React, { useRef } from 'react';
 
-import { Overlay } from 'components/overlay';
-import { useDelayAnimation } from 'hooks/useDelayAnimation';
 import { Deals, LanguageSelection, Responsive } from 'components';
+
+import { Overlay } from 'components/overlay';
+import * as Icon from 'components/icon/index';
+import { useDelayAnimation } from 'hooks/useDelayAnimation';
 
 import { IBurger } from './types';
 import * as Styles from './styles';
-import * as Icon from 'components/icon/index';
 
 const duration = 600;
 
@@ -40,9 +41,9 @@ const Burger = ({ data, lang, onSelectLanguage }: IBurger) => {
                 <Deals text={item.text} to={item.to} heartIcon={item.icon} />
               </React.Fragment>
             ))}
-          </Styles.BurgerContainer>
 
-          <LanguageSelection lang={lang} onClick={onSelectLanguage} />
+            <LanguageSelection lang={lang} onClick={onSelectLanguage} />
+          </Styles.BurgerContainer>
         </Styles.BurgerMenu>
       </Overlay>
     </Responsive.NotDesktop>
