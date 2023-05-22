@@ -8,8 +8,8 @@ import { IBtnCategoryProps } from './types';
 
 const CategoryButton = ({
   textBtn,
-  categoryInfo,
   delay = 500,
+  categoryInfo,
 }: IBtnCategoryProps) => {
   const { isOpen, isAnimation, setOpen } = useDelayAnimation(delay, true);
 
@@ -17,7 +17,7 @@ const CategoryButton = ({
     <Styles.CategoriesBody>
       <Responsive.Desktop>
         <Styles.CategoriesDesktop
-          open={isOpen}
+          isOpen={isAnimation}
           onClick={() => setOpen(!isOpen)}
         >
           <Styles.CategoriesText>{textBtn}</Styles.CategoriesText>

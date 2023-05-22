@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { PresentationHeader } from 'components/shared';
 
-import { data } from './mock';
 import { CategoryButton } from '.';
+import { categoryInfo } from './mock';
 import { argTypes } from './arg-types';
 
 const meta = {
@@ -17,16 +17,23 @@ type Story = StoryObj<typeof CategoryButton>;
 
 const Template = (args: any) => {
   return (
-    <PresentationHeader>
-      <CategoryButton {...args}></CategoryButton>
-    </PresentationHeader>
+    <div
+      style={{
+        height: '1500px',
+        backgroundColor: '#53b2d4',
+      }}
+    >
+      <PresentationHeader>
+        <CategoryButton {...args}></CategoryButton>
+      </PresentationHeader>
+    </div>
   );
 };
 
 export const ButtonCategoryDefault: Story = {
   args: {
-    categoryInfo: data,
     textBtn: 'categories',
+    categoryInfo: categoryInfo,
   },
   render: (args) => <Template {...args} />,
 };

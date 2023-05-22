@@ -31,8 +31,8 @@ const NavCategory = ({ categoryInfo = [], isOpen, delay }: ICatygoryNav) => {
                   <Styles.SunCateory
                     src={el.sun}
                     variant={el.text}
-                    visible={isVisibleSun}
                     alt={'sun' + el.text}
+                    visible={isVisibleSun}
                   />
                 </Responsive.Desktop>
 

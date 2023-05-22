@@ -79,10 +79,8 @@ const close = keyframes`
 
 export const List = styled.div<{ isOpen: boolean; delay: number }>`
   position: fixed;
-  background: linear-gradient(162.46deg, #97d7e3 0%, #53b2d4 100%);
   width: 100vw;
   left: 0;
-  top: -150%;
   z-index: -1;
 
   ${({ theme, isOpen, delay }) => css`
@@ -169,17 +167,18 @@ export const NavbarLink = styled(Link)`
   align-items: center;
   width: 80px;
   height: 80px;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    #6fe5ff 22.42%,
-    #d9f6fd 87.89%
-  );
-  border: 3px dashed #53b3d4;
   border-radius: 50%;
   margin-inline: auto;
   transition: all 0.33s;
 
   ${({ theme }) => css`
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      ${theme.colors.navCategory.bgColorLinkOne} 22.42%,
+      ${theme.colors.navCategory.bgColorLinkTwo} 87.89%
+    );
+    border: 3px dashed ${theme.colors.navCategory.linkBorder};
+
     ${theme.responsive.isTablet &&
     css`
       width: 95px;
@@ -201,12 +200,12 @@ export const NavbarLink = styled(Link)`
       background: transparent;
 
       ${NavbarLinkContainer}:hover & {
-        border: 3px dashed #53b3d4;
         background: radial-gradient(
           50% 50% at 50% 50%,
-          #6fe5ff 22.42%,
-          #d9f6fd 87.89%
+          ${theme.colors.navCategory.bgColorLinkOne} 22.42%,
+          ${theme.colors.navCategory.bgColorLinkTwo} 87.89%
         );
+        border: 3px dashed ${theme.colors.navCategory.linkBorder};
         transform: scale(1.031.3);
         transition: transform 0.3s;
       }
@@ -364,7 +363,6 @@ export const Span = styled.span`
 
     ${theme.responsive.isDesktop &&
     css`
-      /* width: 264px; */
       margin-top: 24px;
       font-size: 22px;
       text-align: center;
@@ -372,7 +370,7 @@ export const Span = styled.span`
 
       ${NavbarLinkContainer}:hover & {
         font-size: 28px;
-        color: #0666ab;
+        color: ${theme.colors.navCategory.colorHoveredText};
       }
     `}
   `}

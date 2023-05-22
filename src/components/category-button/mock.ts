@@ -1,6 +1,6 @@
 import { Images } from 'components';
 
-export const data = [
+export const categoryInfo = [
   {
     link: '',
     img: Images.clothes,

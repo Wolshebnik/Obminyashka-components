@@ -18,7 +18,7 @@ export const CategoriesArrow = styled.div`
 `;
 
 export const CategoriesDesktop = styled.div<{
-  open: boolean;
+  isOpen: boolean;
 }>`
   box-sizing: border-box;
   display: flex;
@@ -33,10 +33,10 @@ export const CategoriesDesktop = styled.div<{
   line-height: 24px;
   cursor: pointer;
 
-  ${({ theme, open }) => css`
+  ${({ theme, isOpen }) => css`
     border: 2px dashed ${theme.colors.categoryBtn.border};
 
-    ${open &&
+    ${isOpen &&
     css`
       ${CategoriesArrow} {
         margin-bottom: -8px;
