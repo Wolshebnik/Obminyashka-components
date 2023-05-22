@@ -153,10 +153,18 @@ export const BurgerMenuClose = styled.div`
   right: 20px;
   width: 30px;
   height: 30px;
+  cursor: pointer;
+
+  &:hover {
+    svg {
+      transform: rotate(90deg);
+    }
+  }
 
   svg {
     width: 100%;
     height: 100%;
+    transition: all 0.3s ease-in-out;
 
     path {
       ${({ theme }) => css`
