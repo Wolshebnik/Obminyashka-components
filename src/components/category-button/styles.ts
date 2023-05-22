@@ -1,9 +1,5 @@
 import styled, { css } from 'styled-components';
 
-export const CategoriesBody = styled.div`
-  position: relative;
-`;
-
 export const CategoriesText = styled.div`
   text-transform: uppercase;
 

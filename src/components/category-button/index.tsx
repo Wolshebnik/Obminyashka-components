@@ -14,7 +14,7 @@ const CategoryButton = ({
   const { isOpen, isAnimation, setOpen } = useDelayAnimation(delay, true);
 
   return (
-    <Styles.CategoriesBody>
+    <>
       <Responsive.Desktop>
         <Styles.CategoriesDesktop
           isOpen={isAnimation}
@@ -41,7 +41,7 @@ const CategoryButton = ({
           categoryInfo={categoryInfo}
         />
       )}
-    </Styles.CategoriesBody>
+    </>
   );
 };
 

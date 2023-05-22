@@ -59,7 +59,7 @@ const sunMouve = keyframes`
 
 const open = keyframes`
   0% {
-    top: -150%;
+    top: -550%;
   }
 
   100% {
@@ -73,12 +73,12 @@ const close = keyframes`
   }
 
   100% {
-    top: -150%;
+    top: -550%;
   }
 `;
 
 export const List = styled.div<{ isOpen: boolean; delay: number }>`
-  position: fixed;
+  position: absolute;
   width: 100vw;
   left: 0;
   z-index: -1;
