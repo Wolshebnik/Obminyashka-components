@@ -2,46 +2,38 @@ import { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import { ChildrenProps } from 'types';
+import { useOutsideClick } from 'hooks/useOutSideClick';
 
 import * as Styles from './styles';
 import { IOverlay } from './types';
-import { useOutsideClick } from 'hooks/useOutSideClick';
 
 const listFocusable =
   'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select, *[tabindex]:not([tabindex="-1"])';
 
 export const Overlay = ({
-  top,
-  myRef,
   isOpen,
-  onClose,
+  top = 0,
+  setClose,
+  isHeader,
   childRef,
   children,
-  delay = 300,
-  setClosingAnimation,
+  isAnimation,
+  duration = 300,
 }: ChildrenProps<IOverlay>) => {
-  const [isAnimation, setIsAnimation] = useState(false);
   const [isTouched, setIsTouched] = useState(false);
 
-  const handleClose = () => {
-    if (setClosingAnimation) {
-      setClosingAnimation();
-    }
-
-    setIsAnimation(false);
-    setTimeout(() => {
-      onClose();
-    }, delay);
-  };
-
-  useOutsideClick(childRef, () => {
+  useOutsideClick(() => {
     if (isTouched) {
-      handleClose();
+      setClose();
     }
-  });
+  }, childRef);
 
   const handleKeyDown = (event: KeyboardEvent) => {
-    if (event.key === 'Escape') handleClose();
+    if (event.key === 'Escape') setClose();
+
+    if ((childRef?.current === null && event.key) === 'Tab') {
+      event.preventDefault();
+    }
 
     if (childRef && event.key === 'Tab' && childRef.current) {
       const focusable =
@@ -72,7 +64,6 @@ export const Overlay = ({
   useEffect(() => {
     if (isOpen) {
       setIsTouched(true);
-      setIsAnimation(true);
       document.body.style.overflow = 'hidden';
       document.body.addEventListener('keydown', handleKeyDown);
     }
@@ -91,8 +82,9 @@ export const Overlay = ({
   return ReactDOM.createPortal(
     <Styles.Overlay
       top={top}
-      ref={myRef}
-      delay={delay}
+      tabIndex={0}
+      isHeader={isHeader}
+      duration={duration}
       isAnimation={isAnimation}
     >
       {children}

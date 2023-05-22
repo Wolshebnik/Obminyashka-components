@@ -12,8 +12,9 @@ export const argTypes: IArgTypes<IOverlay> = {
       type: { summary: 'boolean' },
     },
   },
-  onClose: {
-    name: 'onClose',
+
+  setClose: {
+    name: 'setClose',
     type: { name: 'function', required: true },
     description: 'Close modal',
     table: {
@@ -21,13 +22,55 @@ export const argTypes: IArgTypes<IOverlay> = {
       type: { summary: 'function' },
     },
   },
-  delay: {
-    name: 'delay',
+
+  duration: {
+    name: 'duration',
     type: { name: 'number' },
     description: 'Time of close and open',
     table: {
       type: { summary: 'number' },
     },
     control: { type: 'number' },
+  },
+
+  top: {
+    name: 'top',
+    type: { name: 'number' },
+    description: 'Position top of element',
+    table: {
+      type: { summary: 'number' },
+    },
+    control: { type: 'number' },
+  },
+
+  isHeader: {
+    name: 'isHeader',
+    type: { name: 'boolean' },
+    description: 'Below header, change z-Index',
+    table: {
+      type: { summary: 'boolean' },
+    },
+    control: { type: 'boolean' },
+  },
+
+  isAnimation: {
+    name: 'isAnimation',
+    type: { name: 'boolean', required: true },
+    description: 'Start of animation close',
+    table: {
+      type: { summary: 'boolean' },
+    },
+    control: { type: 'boolean' },
+  },
+
+  childRef: {
+    name: 'childRef',
+    tags: ['autodocs'],
+    description:
+      "Referens to object which will be clickable and won't close the overlay, it must be child of overlay",
+    table: {
+      type: { summary: 'RefObject<HTMLDivElement> ' },
+    },
+    control: { type: 'RefObject<HTMLDivElement> ' },
   },
 };

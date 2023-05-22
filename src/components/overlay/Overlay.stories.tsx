@@ -1,9 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { PresentationHeader } from 'components/shared';
 import { useDelayAnimation } from 'hooks/useDelayAnimation';
 
 import { Overlay } from '.';
+import { IOverlay } from './types';
 import { Button } from '../button';
 import { argTypes } from './arg-types';
 import { Child } from './child/styles';
@@ -17,56 +19,53 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Overlay>;
 
-const Template = () => {
-  const [isOpen, onClose] = useState(false);
-  const myRef = useRef<HTMLDivElement>(null);
-  const childRef = useRef<HTMLDivElement>(null);
-  const { isAnimation, setOpen } = useDelayAnimation(300);
-  const [isClosingAnimation, setIsAnimation] = useState(false);
+const Template = (args: IOverlay) => {
+  const { top, duration, isHeader } = args;
+  const checkedDuration = duration ? duration : 300;
 
-  useEffect(() => {
-    if (!isOpen) {
-      setIsAnimation(false);
-    }
-  }, [isOpen]);
+  const childRef = useRef<HTMLDivElement>(null);
+  const { isOpen, isAnimation, setOpen } = useDelayAnimation(checkedDuration);
 
   return (
-    <div>
-      <Button
-        onClick={() => {
-          setOpen(true);
-          onClose(true);
-        }}
-        text="Open"
-      />
-      <Overlay
-        delay={1000}
-        myRef={myRef}
-        childRef={childRef}
-        isOpen={isOpen}
-        onClose={() => {
-          setOpen(false);
-          onClose(false);
-        }}
-        setClosingAnimation={() => setIsAnimation(true)}
-      >
-        <Child
-          ref={childRef}
+    <>
+      <PresentationHeader>
+        <Button onClick={() => !isOpen && setOpen(true)} text="Open" />
+      </PresentationHeader>
+
+      <div>
+        <Overlay
+          top={top}
+          isOpen={isOpen}
+          isHeader={isHeader}
+          duration={duration}
+          childRef={childRef}
           isAnimation={isAnimation}
-          isClosingAnimation={isClosingAnimation}
+          setClose={() => setOpen(false)}
         >
-          <button onClick={() => myRef.current?.click()}>Close</button>
-          <h1>Children to presentation</h1>
-          <p>Inputs below focus test </p>
-          <p>To close press escape or click outside the modal window </p>
-          <input type="text" />
-          <input type="text" />
-        </Child>
-      </Overlay>
-    </div>
+          <Child
+            ref={childRef}
+            duration={checkedDuration}
+            isCloseAnimation={isAnimation}
+          >
+            <button onClick={() => setOpen(false)}>Close</button>
+            <h1>Children to presentation</h1>
+            <p>Inputs below focus test </p>
+            <p>To close press escape or click outside the modal window </p>
+            <input type="text" />
+            <input type="text" />
+          </Child>
+        </Overlay>
+      </div>
+    </>
   );
 };
 
 export const Standard: Story = {
-  render: () => <Template />,
+  args: { duration: 800 },
+  render: (args) => <Template {...args} />,
+};
+
+export const OverlayWithHeader: Story = {
+  args: { top: 75, duration: 600, isHeader: true },
+  render: (args) => <Template {...args} />,
 };
