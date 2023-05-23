@@ -1,62 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled, { css, keyframes } from 'styled-components';
 
-const sun = keyframes`
-  100% {
-    transform: scale(5);
-    visibility: visible; 
-  }
-`;
-
-const mainSunDisplaced = keyframes`
-  100% {
-    top: -65px;
-    left: -75px;
-    transform: scale(1);
-    visibility: visible;
-  }
-`;
-
-const mainSunMouve = keyframes`
-  0% {
-    transform: scale(1) rotate(0) translate(0,0);
-  }
-
-  36% {
-    transform: scale(1) rotate(-2deg) translate(0,-3px);
-  }
-
-  66% {
-    transform: scale(1) rotate(5deg) translate(3px,-3px);;
-  }
-  
-  100% {
-    transform: scale(1) rotate(0) translate(0,0);
-  }
-`;
-
-const sunMouve = keyframes`
-  0% {
-    visibility: visible;
-    transform: scale(5) rotate(0) translate(0,0);
-  }
-
-  33% {
-    visibility: visible;
-    transform: scale(5) rotate(-2deg) translate(0,-1px);
-  }
-
-  66% {
-    visibility: visible;
-    transform: scale(5) rotate(5deg) translate(1px,-1px);
-  }
-
-  100% {
-    visibility: visible;
-    transform:  scale(5) rotate(0)  translate(0,0);
-  }
-`;
-
 const open = keyframes`
   0% {
     top: -550%;
@@ -74,6 +18,96 @@ const close = keyframes`
 
   100% {
     top: -550%;
+  }
+`;
+
+const sunClose = keyframes`
+  0% {
+    transform: scale(5);
+    visibility: visible;
+  }
+
+  100% {
+    transform: scale(1);
+    visibility: hidden;
+  }
+`;
+
+const mainSunDisplaced = keyframes`
+  100% {
+    top: -65px;
+    left: -75px;
+    transform: scale(1);
+    visibility: visible;
+  }
+`;
+
+const mainSunMove = keyframes`
+  0% {
+    transform: scale(1) rotate(0) translate(0,0);
+  }
+
+  36% {
+    transform: scale(1) rotate(-2deg) translate(0,-3px);
+  }
+
+  66% {
+    transform: scale(1) rotate(5deg) translate(3px,-3px);;
+  }
+  
+  100% {
+    transform: scale(1) rotate(0) translate(0,0);
+  }
+`;
+
+const sunMove = keyframes`
+  0% {
+    visibility: visible;
+    transform: scale(5) rotate(0) translate(0,0);
+  }
+
+  33% {
+    visibility: visible;
+    transform: scale(5) rotate(-2deg) translate(0,-1px);
+  }
+
+  66% {
+    visibility: visible;
+    transform: scale(5) rotate(5deg) translate(1px,-1px);
+  }
+
+  100% {
+    visibility: visible;
+    transform:  scale(5) rotate(0) translate(0,0);
+  }
+`;
+
+const sun = keyframes`
+  0% {
+  transition: all 0.3s;
+  }
+
+  100% {
+    transform: scale(5);
+    visibility: visible; 
+  }
+`;
+
+const circle = keyframes`
+  0% {
+    width: 120px;
+    height: 120px;
+  }
+
+  100% {
+    width: 165px;
+    height: 165px;
+  }
+`;
+
+const text = keyframes`
+  100% {
+    font-size: 28px;
   }
 `;
 
@@ -161,6 +195,19 @@ export const NavbarLinkContainer = styled.div`
   `}
 `;
 
+export const NavbarLinkBody = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isDesktop &&
+    css`
+      height: 165px;
+    `}
+  `}
+`;
+
 export const NavbarLink = styled(Link)`
   display: flex;
   justify-content: center;
@@ -169,7 +216,7 @@ export const NavbarLink = styled(Link)`
   height: 80px;
   border-radius: 50%;
   margin-inline: auto;
-  transition: all 0.33s;
+  transition: all 0.3s;
 
   ${({ theme }) => css`
     background: radial-gradient(
@@ -194,8 +241,6 @@ export const NavbarLink = styled(Link)`
 
     ${theme.responsive.isDesktop &&
     css`
-      width: 165px;
-      height: 165px;
       border: 3px transparent;
       background: transparent;
 
@@ -206,8 +251,8 @@ export const NavbarLink = styled(Link)`
           ${theme.colors.navCategory.bgColorLinkTwo} 87.89%
         );
         border: 3px dashed ${theme.colors.navCategory.linkBorder};
-        transform: scale(1.031.3);
-        transition: transform 0.3s;
+        transition: transform ease-out 0.2s;
+        animation: ${circle} 0.2s ease-in-out forwards;
       }
     `}
   `}
@@ -218,16 +263,17 @@ export const SunMain = styled.img`
   top: -30px;
   left: -200px;
   pointer-events: none;
+  animation: ${mainSunMove} 2.5s linear infinite;
   z-index: -1;
-  animation: ${mainSunMouve} 2.5s ease-in-out infinite;
 
   ${NavbarLinkContainer}:hover & {
     animation: ${mainSunDisplaced} 0.5s forwards;
   }
 `;
 
-export const SunCateory = styled.img<{
+export const SunCategory = styled.img<{
   variant: string;
+  isLeave: boolean;
   visible: boolean;
 }>`
   position: absolute;
@@ -237,12 +283,11 @@ export const SunCateory = styled.img<{
   visibility: hidden;
   z-index: -1;
 
-  ${({ variant, visible, theme }) => css`
+  ${({ variant, visible, isLeave, theme }) => css`
     ${theme.responsive.isDesktop &&
     css`
       ${NavbarLinkContainer}:hover & {
-        animation: ${sun} 0.3s forwards,
-          ${sunMouve} 2.5s 0.5s ease-in-out infinite;
+        animation: ${sun} 0.5s forwards, ${sunMove} 2.5s 0.5s linear infinite;
       }
 
       ${variant === 'clothes' &&
@@ -251,6 +296,11 @@ export const SunCateory = styled.img<{
         ${NavbarLinkContainer}:hover & {
           transition-delay: 0.5s;
         }
+      `}
+
+      ${isLeave &&
+      css`
+        animation: ${sunClose} 0.1s;
       `}
 
       ${!visible &&
@@ -266,38 +316,38 @@ export const SunCateory = styled.img<{
           top: -10px;
           left: 170px;
         `}
-
-        ${variant === 'toys' &&
+          
+          ${variant === 'toys' &&
         css`
           top: -5px;
           left: 175px;
         `}
-
-        ${variant === 'transport for children' &&
+          
+          ${variant === 'transport for children' &&
         css`
           top: 55px;
           left: 200px;
         `} 
-        
-        ${variant === 'furniture' &&
+          
+          ${variant === 'furniture' &&
         css`
           top: 115px;
           left: -35px;
         `} 
-        
-        ${variant === 'kids up to year' &&
+          
+          ${variant === 'kids up to year' &&
         css`
           top: -5px;
           left: 180px;
         `}
-
-        ${variant === 'books' &&
+          
+          ${variant === 'books' &&
         css`
           top: 165px;
           left: 178px;
         `}
-
-        ${variant === 'other' &&
+          
+          ${variant === 'other' &&
         css`
           top: 65px;
           left: -40px;
@@ -333,6 +383,7 @@ export const Img = styled.img`
       width: 120px;
       height: 120px;
       padding: 14px;
+      transition: all 0.3s;
 
       ${NavbarLinkContainer}:hover & {
         width: 160px;
@@ -367,10 +418,11 @@ export const Span = styled.span`
       font-size: 22px;
       text-align: center;
       line-height: 26px;
+      transition: all 0.2s;
 
       ${NavbarLinkContainer}:hover & {
-        font-size: 28px;
         color: ${theme.colors.navCategory.colorHoveredText};
+        animation: ${text} 0.2s linear forwards;
       }
     `}
   `}

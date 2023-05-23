@@ -5,6 +5,7 @@ import { PresentationHeader } from 'components/shared';
 import { CategoryButton } from '.';
 import { categoryInfo } from './mock';
 import { argTypes } from './arg-types';
+import { IBtnCategoryProps } from './types';
 
 const meta = {
   title: 'CategoryButton',
@@ -15,7 +16,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof CategoryButton>;
 
-const Template = (args: any) => {
+const Template = (args: IBtnCategoryProps) => {
   return (
     <div
       style={{
