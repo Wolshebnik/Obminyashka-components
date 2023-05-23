@@ -8,14 +8,10 @@ export const CategoriesText = styled.div`
   `}
 `;
 
-export const CategoriesArrow = styled.div`
-  margin-bottom: 5px;
-  transition: all 0.3s ease;
-`;
-
 export const CategoriesDesktop = styled.div<{
   isOpen: boolean;
 }>`
+  position: relative;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -32,13 +28,23 @@ export const CategoriesDesktop = styled.div<{
   ${({ theme, isOpen }) => css`
     border: 2px dashed ${theme.colors.categoryBtn.border};
 
+    &:after {
+      content: '';
+      position: absolute;
+      right: 25px;
+      bottom: 20px;
+      border: 0 solid transparent;
+      border-right-width: 9px;
+      border-left-width: 9px;
+      border-bottom: 8px solid ${theme.colors.categoryBtn.colorText};
+      transition: all 0.3s ease;
+    }
+
     ${isOpen &&
     css`
-      ${CategoriesArrow} {
-        margin-bottom: -8px;
-        transform: rotate(180deg);
+      &:after {
+        transform: rotate(-180deg);
       }
-      border: 2px solid ${theme.colors.categoryBtn.border};
     `}
   `}
 `;

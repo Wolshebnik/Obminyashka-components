@@ -21,10 +21,6 @@ const CategoryButton = ({
           onClick={() => setOpen(!isOpen)}
         >
           <Styles.CategoriesText>{textBtn}</Styles.CategoriesText>
-
-          <Styles.CategoriesArrow>
-            <Icon.CategoriesArrow />
-          </Styles.CategoriesArrow>
         </Styles.CategoriesDesktop>
       </Responsive.Desktop>
 
