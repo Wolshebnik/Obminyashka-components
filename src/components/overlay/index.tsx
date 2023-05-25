@@ -69,6 +69,7 @@ export const Overlay = ({
 
       if (childRef && childRef.current) {
         childRef.current.tabIndex = -1;
+        childRef.current.style.outline = 'none';
         childRef.current.focus();
       }
     }

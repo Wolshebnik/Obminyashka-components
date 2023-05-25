@@ -1,5 +1,6 @@
 export interface IBurger {
   lang: string;
+  duration?: number;
   data: BurgerProps[];
   onSelectLanguage: (lang: IOnClickArg) => void;
 }

@@ -9,9 +9,7 @@ import { useDelayAnimation } from 'hooks/useDelayAnimation';
 import { IBurger } from './types';
 import * as Styles from './styles';
 
-const duration = 600;
-
-const Burger = ({ data, lang, onSelectLanguage }: IBurger) => {
+const Burger = ({ data, lang, onSelectLanguage, duration = 600 }: IBurger) => {
   const burgerRef = useRef<HTMLDivElement>(null);
   const { isOpen, isAnimation, setOpen } = useDelayAnimation(duration);
 
@@ -35,6 +33,7 @@ const Burger = ({ data, lang, onSelectLanguage }: IBurger) => {
               <Icon.Close />
             </Styles.BurgerMenuClose>
           </Responsive.Mobile>
+
           <Styles.BurgerContainer>
             {data.map((item, index) => (
               <React.Fragment key={index}>
