@@ -66,6 +66,12 @@ export const Overlay = ({
       setIsTouched(true);
       document.body.style.overflow = 'hidden';
       document.body.addEventListener('keydown', handleKeyDown);
+
+      if (childRef && childRef.current) {
+        childRef.current.tabIndex = -1;
+        childRef.current.style.outline = 'none';
+        childRef.current.focus();
+      }
     }
 
     return () => {
@@ -83,8 +89,8 @@ export const Overlay = ({
     <Styles.Overlay
       top={top}
       tabIndex={0}
-      isHeader={isHeader}
       duration={duration}
+      isHeader={isHeader}
       isAnimation={isAnimation}
     >
       {children}
