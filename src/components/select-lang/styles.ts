@@ -13,8 +13,6 @@ export const LanguagePanel = styled.div`
   line-height: 22px;
 
   ${({ theme }) => css`
-    color: ${theme.colors.languageNew.main};
-
     ${theme.responsive.isTablet &&
     css`
       font-size: 22px;
@@ -30,17 +28,18 @@ export const LanguagePanel = styled.div`
 `;
 
 export const Language = styled.button<{ checked: boolean }>`
-  text-transform: uppercase;
-  cursor: pointer;
   font-family: 'Open Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 22px;
+  text-transform: uppercase;
+  cursor: pointer;
 
   ${({ theme, checked }) => css`
-    color: ${theme.colors.languageNew.main};
-    color: ${checked && theme.colors.languageNew.checked};
+    color: ${checked
+      ? theme.colors.languageNew.checked
+      : theme.colors.languageNew.main};
 
     ${theme.responsive.isTablet &&
     css`
