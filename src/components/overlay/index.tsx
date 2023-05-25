@@ -87,10 +87,10 @@ export const Overlay = ({
 
   return ReactDOM.createPortal(
     <Styles.Overlay
-      tabIndex={0}
       top={top}
-      isHeader={isHeader}
+      tabIndex={0}
       duration={duration}
+      isHeader={isHeader}
       isAnimation={isAnimation}
     >
       {children}
