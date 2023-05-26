@@ -1,4 +1,4 @@
-import { Images } from 'components';
+import * as Images from '../img';
 
 export const images = [
   { img: Images.clothes, sun: Images.sunClothes },

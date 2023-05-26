@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Link } from 'react-router-dom';
 import styled, { css, keyframes } from 'styled-components';
 
@@ -35,8 +36,8 @@ const sunClose = keyframes`
 
 const mainSunDisplaced = keyframes`
   100% {
-    top: -65px;
-    left: -75px;
+    top: -70px;
+    left: -135px;
     transform: scale(1);
     visibility: visible;
   }
@@ -83,25 +84,9 @@ const sunMove = keyframes`
 `;
 
 const sun = keyframes`
-  0% {
-  transition: all 0.3s;
-  }
-
   100% {
     transform: scale(5);
     visibility: visible; 
-  }
-`;
-
-const circle = keyframes`
-  0% {
-    width: 120px;
-    height: 120px;
-  }
-
-  100% {
-    width: 165px;
-    height: 165px;
   }
 `;
 
@@ -180,12 +165,13 @@ export const Wrapper = styled.div`
   `}
 `;
 
-export const NavbarLinkContainer = styled.div`
+export const NavbarLinkContainer = styled(Link)`
   position: relative;
   display: grid;
   justify-content: center;
   align-items: center;
   margin-inline: auto;
+  cursor: pointer;
 
   ${({ theme }) => css`
     ${theme.responsive.isDesktop &&
@@ -196,11 +182,28 @@ export const NavbarLinkContainer = styled.div`
 `;
 
 export const NavbarLinkBody = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 80px;
+  height: 80px;
+  margin-inline: auto;
 
   ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      width: 95px;
+      height: 95px;
+    `}
+
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
+    css`
+      width: 130px;
+      height: 130px;
+    `}
+
     ${theme.responsive.isDesktop &&
     css`
       height: 165px;
@@ -208,15 +211,12 @@ export const NavbarLinkBody = styled.div`
   `}
 `;
 
-export const NavbarLink = styled(Link)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+export const NavHover = styled.div`
+  position: absolute;
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  margin-inline: auto;
-  transition: all 0.3s;
+  z-index: -1;
 
   ${({ theme }) => css`
     background: radial-gradient(
@@ -241,34 +241,36 @@ export const NavbarLink = styled(Link)`
 
     ${theme.responsive.isDesktop &&
     css`
-      border: 3px transparent;
-      background: transparent;
+      width: 0;
+      height: 0;
+      visibility: hidden;
+      transition: all 0.2s ease-in-out;
 
       ${NavbarLinkContainer}:hover & {
-        background: radial-gradient(
-          50% 50% at 50% 50%,
-          ${theme.colors.navCategory.bgColorLinkOne} 22.42%,
-          ${theme.colors.navCategory.bgColorLinkTwo} 87.89%
-        );
-        border: 3px dashed ${theme.colors.navCategory.linkBorder};
-        transition: transform ease-out 0.2s;
-        animation: ${circle} 0.2s ease-in-out forwards;
+        width: 165px;
+        height: 165px;
+        visibility: visible;
       }
     `}
   `}
 `;
 
-export const SunMain = styled.img`
+export const SunMain = styled.img<{ variant: string }>`
   position: absolute;
-  top: -30px;
-  left: -200px;
+  top: -20px;
+  left: -260px;
   pointer-events: none;
   animation: ${mainSunMove} 2.5s linear infinite;
   z-index: -1;
 
-  ${NavbarLinkContainer}:hover & {
-    animation: ${mainSunDisplaced} 0.5s forwards;
-  }
+  ${({ variant }) => css`
+    ${NavbarLinkContainer}:hover & {
+      ${variant === 'clothes' &&
+      css`
+        animation: ${mainSunDisplaced} 0.5s forwards;
+      `}
+    }
+  `}
 `;
 
 export const SunCategory = styled.img<{
@@ -308,49 +310,49 @@ export const SunCategory = styled.img<{
         ${variant === 'clothes' &&
         css`
           top: -10px;
-          left: -10px;
+          left: -75px;
         `}
 
         ${variant === 'shoes' &&
         css`
           top: -10px;
-          left: 170px;
+          left: 110px;
         `}
           
           ${variant === 'toys' &&
         css`
           top: -5px;
-          left: 175px;
+          left: 120px;
         `}
           
           ${variant === 'transport for children' &&
         css`
           top: 55px;
-          left: 200px;
+          left: 135px;
         `} 
           
           ${variant === 'furniture' &&
         css`
-          top: 115px;
-          left: -35px;
+          top: 125px;
+          left: -90px;
         `} 
           
           ${variant === 'kids up to year' &&
         css`
           top: -5px;
-          left: 180px;
+          left: 115px;
         `}
           
           ${variant === 'books' &&
         css`
           top: 165px;
-          left: 178px;
+          left: 115px;
         `}
           
           ${variant === 'other' &&
         css`
           top: 65px;
-          left: -40px;
+          left: -100px;
         `}
       `}
     `}
@@ -410,6 +412,12 @@ export const Span = styled.span`
     ${theme.responsive.isTablet &&
     css`
       margin-top: 17px;
+    `}
+
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
+    css`
+      font-size: 16px;
     `}
 
     ${theme.responsive.isDesktop &&

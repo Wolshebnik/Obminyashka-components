@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-console */
 import { useState } from 'react';
 
 import { Images, Responsive } from 'components';
@@ -11,7 +9,8 @@ import { ICategoryInfo } from '../category-button/types';
 
 const NavCategory = ({ categoryInfo = [], isOpen, delay }: ICategoryNav) => {
   const [isVisibleSun, setVisibleSun] = useState<boolean>(true);
-  const [isLeave, setLeave] = useState<boolean>(true);
+
+  const isLeave = true;
 
   const handleMouseEnter = (text: string) => {
     if (text === 'clothes') {
@@ -25,31 +24,37 @@ const NavCategory = ({ categoryInfo = [], isOpen, delay }: ICategoryNav) => {
   return (
     <Styles.List isOpen={isOpen} delay={delay}>
       <Styles.Wrapper onMouseLeave={() => setVisibleSun(true)}>
-        {categoryInfo.map((el: ICategoryInfo) => {
+        {categoryInfo.map((el: ICategoryInfo, index) => {
+          const { img, sun } = images[index];
+
           return (
             <Styles.NavbarLinkContainer
+              to={el.link}
               key={el.text}
-              onMouseLeave={() => setLeave(true)}
               onMouseEnter={() => handleMouseEnter(el.text)}
             >
               <Styles.NavbarLinkBody>
-                <Styles.NavbarLink to={el.link}>
-                  <Responsive.Desktop>
-                    {isVisibleSun && el.text === 'clothes' && (
-                      <Styles.SunMain alt="sun-main" src={Images.sunMain} />
-                    )}
-
-                    <Styles.SunCategory
-                      src={el.sun}
-                      isLeave={isLeave}
+                <Responsive.Desktop>
+                  {isVisibleSun && el.text === 'clothes' && (
+                    <Styles.SunMain
+                      alt="sun-main"
                       variant={el.text}
-                      alt={'sun' + el.text}
-                      visible={isVisibleSun}
+                      src={Images.sunMain}
                     />
-                  </Responsive.Desktop>
+                  )}
 
-                  <Styles.Img src={el.img} alt={el.text} />
-                </Styles.NavbarLink>
+                  <Styles.SunCategory
+                    src={sun}
+                    isLeave={isLeave}
+                    variant={el.text}
+                    alt={'sun' + el.text}
+                    visible={isVisibleSun}
+                  />
+                </Responsive.Desktop>
+
+                <Styles.NavHover />
+
+                <Styles.Img src={img} alt={el.text} />
               </Styles.NavbarLinkBody>
 
               <Styles.Span>{el.text}</Styles.Span>
