@@ -18,7 +18,7 @@ export { LanguageSelection } from './select-lang';
 export { Loader } from './loader';
 export { MainSwiper } from './swiper';
 export { Modal } from './modal';
-export { NavCategory } from './category-nav';
+export { NavCategory } from './category-button/category-nav';
 export { NoFoundResult } from './search-result';
 export { PagePagination } from './page-pagination';
 export { PhotoFiles } from './photo-files';

@@ -5,7 +5,7 @@ import { Images, Responsive } from 'components';
 import { images } from './config';
 import * as Styles from './styles';
 import { ICategoryNav } from './types';
-import { ICategoryInfo } from '../category-button/types';
+import { ICategoryInfo } from '../types';
 
 const NavCategory = ({ categoryInfo = [], isOpen, delay }: ICategoryNav) => {
   const [isVisibleSun, setVisibleSun] = useState<boolean>(true);
