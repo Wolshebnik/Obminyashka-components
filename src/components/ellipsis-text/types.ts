@@ -1,4 +1,4 @@
-import { ITooltip } from 'react-tooltip';
+import { ReactNode } from 'react';
 
 export type Cursor =
   | 'pointer'
@@ -41,7 +41,15 @@ export type Cursor =
   | 'zoom-in-out'
   | 'help-rtl';
 
-export interface ITooltipProps extends ITooltip {
-  width?: number;
+export type Position = 'right' | 'left' | 'top' | 'bottom';
+export interface ITooltipProps {
   cursor?: Cursor;
+  position?: Position;
+  children: ReactNode;
+  widthTooltip?: number;
+  justifyContent?: string;
+}
+export interface IStyledProps extends ITooltipProps {
+  widthEl: number;
+  heightEl: number;
 }

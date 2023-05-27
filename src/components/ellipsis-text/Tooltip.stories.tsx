@@ -1,22 +1,22 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Tooltip } from './index';
 import { Container } from './styles';
+import { EllipsisText } from './index';
 import { argTypes } from './arg-types';
 
 const text =
   'Lorem Ipsum is simply dummy text of the printing and typesetting industry.';
 
 const meta = {
-  title: 'Tooltip',
-  component: Tooltip,
+  title: 'EllipsisText',
+  component: EllipsisText,
   argTypes,
-} satisfies Meta<typeof Tooltip>;
+} satisfies Meta<typeof EllipsisText>;
 
 export default meta;
-type Story = StoryObj<typeof Tooltip>;
+type Story = StoryObj<typeof EllipsisText>;
 
-export const TooltipWithDefault: Story = {
+export const TooltipDefault: Story = {
   args: {
     children: <span>{text}</span>,
   },
@@ -25,7 +25,7 @@ export const TooltipWithDefault: Story = {
 
     return (
       <Container>
-        <Tooltip {...rest}>{children}</Tooltip>
+        <EllipsisText {...rest}>{children}</EllipsisText>
       </Container>
     );
   },

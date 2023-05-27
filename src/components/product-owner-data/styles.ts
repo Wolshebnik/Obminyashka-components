@@ -18,8 +18,6 @@ export const ProductOwnerAvatar = styled.div`
 export const ProductOwnerName = styled.div`
   padding: 30px 20px 0 0;
   max-width: 70%;
-  overflow: hidden;
-  text-overflow: ellipsis;
 `;
 
 export const ProductOwnerTitleH2 = styled.h2`
