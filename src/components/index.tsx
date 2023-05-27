@@ -1,5 +1,6 @@
 export { Avatar } from './avatar';
 export { BackButton } from './back-button';
+export { Burger } from './burger';
 export { Button } from './button';
 export { CancelEverything } from './cancel-everything';
 export { CheckBox } from './checkbox';
@@ -15,6 +16,7 @@ export { Loader } from './loader';
 export { MainSwiper } from './swiper';
 export { Modal } from './modal';
 export { NoFoundResult } from './search-result';
+export { Overlay } from './overlay';
 export { PagePagination } from './page-pagination';
 export { PhotoFiles } from './photo-files';
 export { ProductCard } from './product-card';
