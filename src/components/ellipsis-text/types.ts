@@ -43,6 +43,7 @@ export type Cursor =
 
 export type Position = 'right' | 'left' | 'top' | 'bottom';
 export interface ITooltipProps {
+  delay?: number;
   cursor?: Cursor;
   position?: Position;
   children: ReactNode;

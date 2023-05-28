@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
-import { useDelay } from '../../hooks/useDelayTooltip';
+import { useDelayTooltip } from 'hooks/useDelayTooltip';
 
 import { ChildrenProps } from 'types';
 
@@ -8,13 +8,14 @@ import { ITooltipProps } from './types';
 
 export const EllipsisText = ({
   children,
+  delay = 500,
   cursor = 'auto',
   widthTooltip = 200,
   position = 'bottom',
   justifyContent = 'center',
 }: ChildrenProps<ITooltipProps>) => {
   const ref = useRef<HTMLDivElement | null>(null);
-  const [open, setOpen] = useDelay(500);
+  const [open, setOpen] = useDelayTooltip(delay);
   const [widthEl, setWidthEl] = useState<number | null>(null);
   const [heightEl, setHeightEl] = useState<number | null>(null);
   const [isTooltipVisible, setIsTooltipVisible] = useState<boolean>(false);

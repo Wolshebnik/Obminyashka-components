@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const useDelay = (
+export const useDelayTooltip = (
   delay: number
 ): [boolean, (isOpen: boolean) => void] => {
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);

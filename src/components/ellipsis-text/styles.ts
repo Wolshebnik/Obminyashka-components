@@ -14,41 +14,39 @@ export const Tooltip = styled.div<IStyledProps>`
   position: absolute;
   padding: 16px;
   border-radius: 8px;
+  text-align: center;
   font-weight: 400;
   font-size: 16px;
   overflow-x: auto;
   cursor: context-menu;
   z-index: 100;
 
-  ${({ theme, widthTooltip }) => css`
+  ${({ theme, widthTooltip, position, widthEl, heightEl }) => css`
     width: ${widthTooltip}px;
     background-color: ${theme.colors.white};
     color: ${theme.colors.blackColorText};
     box-shadow: ${theme.colors.ellipsisShadow};
-  `}
 
-  ${({ position, widthEl, heightEl }) => {
-    switch (position) {
-      case 'right':
-        return css`
-          left: ${widthEl + 8}px;
-        `;
-      case 'left':
-        return css`
-          right: ${widthEl + 8}px;
-        `;
-      case 'top':
-        return css`
-          bottom: ${heightEl + 8}px;
-        `;
-      case 'bottom':
-        return css`
-          top: ${heightEl + 8}px;
-        `;
-      default:
-        return '';
-    }
-  }}
+    ${position === 'right' &&
+    css`
+      left: ${widthEl + 8}px;
+    `}
+
+    ${position === 'left' &&
+    css`
+      right: ${widthEl + 8}px;
+    `}
+
+    ${position === 'top' &&
+    css`
+      bottom: ${heightEl + 8}px;
+    `}
+
+    ${position === 'bottom' &&
+    css`
+      top: ${heightEl + 4}px;
+    `}
+  `}
 `;
 
 export const Wrapper = styled.div<ITooltipProps>`
