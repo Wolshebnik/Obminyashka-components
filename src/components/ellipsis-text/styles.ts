@@ -10,6 +10,14 @@ export const EllipsisText = styled.div<{ cursor: Cursor }>`
   z-index: 0;
 `;
 
+export const Wrapper = styled.div<ITooltipProps>`
+  position: relative;
+  display: flex;
+  justify-content: ${({ justifyContent }) => justifyContent};
+  align-items: center;
+  width: 100%;
+`;
+
 export const Tooltip = styled.div<IStyledProps>`
   position: absolute;
   padding: 16px;
@@ -21,7 +29,7 @@ export const Tooltip = styled.div<IStyledProps>`
   cursor: context-menu;
   z-index: 100;
 
-  ${({ theme, widthTooltip, position, widthEl, heightEl }) => css`
+  ${({ theme, widthTooltip, position, widthEl, heightEl, gap = 8 }) => css`
     width: ${widthTooltip}px;
     background-color: ${theme.colors.white};
     color: ${theme.colors.blackColorText};
@@ -29,32 +37,24 @@ export const Tooltip = styled.div<IStyledProps>`
 
     ${position === 'right' &&
     css`
-      left: ${widthEl + 8}px;
+      left: ${widthEl + gap}px;
     `}
 
     ${position === 'left' &&
     css`
-      right: ${widthEl + 8}px;
+      right: ${widthEl + gap}px;
     `}
 
     ${position === 'top' &&
     css`
-      bottom: ${heightEl + 8}px;
+      bottom: ${heightEl + gap}px;
     `}
 
     ${position === 'bottom' &&
     css`
-      top: ${heightEl + 4}px;
+      top: ${heightEl + gap}px;
     `}
   `}
-`;
-
-export const Wrapper = styled.div<ITooltipProps>`
-  position: relative;
-  display: flex;
-  justify-content: ${({ justifyContent }) => justifyContent};
-  align-items: center;
-  width: 100%;
 `;
 
 export const Container = styled.div`

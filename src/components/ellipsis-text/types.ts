@@ -42,7 +42,9 @@ export type Cursor =
   | 'help-rtl';
 
 export type Position = 'right' | 'left' | 'top' | 'bottom';
+
 export interface ITooltipProps {
+  gap?: number;
   delay?: number;
   cursor?: Cursor;
   position?: Position;
@@ -50,6 +52,7 @@ export interface ITooltipProps {
   widthTooltip?: number;
   justifyContent?: string;
 }
+
 export interface IStyledProps extends ITooltipProps {
   widthEl: number;
   heightEl: number;

@@ -8,6 +8,16 @@ export const argTypes: IArgTypes<ITooltipProps> = {
     type: { name: 'string' },
     description: 'Tooltip reference element',
   },
+  gap: {
+    name: 'gap',
+    type: { name: 'number' },
+    description: 'gap',
+    table: {
+      type: { summary: 'number' },
+      defaultValue: { summary: 8 },
+    },
+    control: { type: 'number' },
+  },
   position: {
     name: 'place',
     type: { name: 'string' },

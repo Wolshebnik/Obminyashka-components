@@ -51,7 +51,7 @@ const ProductOwnerData = ({
             )}
 
             <Styles.PostReqDataText color="black" style={{ width: '200px' }}>
-              <EllipsisText justifyContent={'start'} widthTooltip={300}>
+              <EllipsisText gap={4} justifyContent={'start'} widthTooltip={300}>
                 {city}
               </EllipsisText>
             </Styles.PostReqDataText>

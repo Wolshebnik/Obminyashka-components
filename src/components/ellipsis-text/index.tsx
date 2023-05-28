@@ -7,6 +7,7 @@ import * as Styles from './styles';
 import { ITooltipProps } from './types';
 
 export const EllipsisText = ({
+  gap,
   children,
   delay = 500,
   cursor = 'auto',
@@ -72,6 +73,7 @@ export const EllipsisText = ({
 
       {open && (
         <Styles.Tooltip
+          gap={gap}
           position={position}
           widthEl={widthEl || 0}
           heightEl={heightEl || 0}
