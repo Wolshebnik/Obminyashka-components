@@ -64,4 +64,13 @@ export const argTypes: IArgTypes<IButtonNew> = {
     },
     control: { type: 'boolean' },
   },
+  onClick: {
+    name: 'onClick',
+    type: { name: 'function' },
+    description: 'Handler click',
+    table: {
+      type: { summary: 'function' },
+    },
+    action: 'Click',
+  },
 };
