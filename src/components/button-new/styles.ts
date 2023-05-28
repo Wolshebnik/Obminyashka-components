@@ -9,8 +9,10 @@ export const Button = styled.button<IStyledButtonNew>`
   font-family: Roboto;
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 24px;
+  width: 286px;
+  height: 40px;
 
   @keyframes background-green-animation {
     0% {
@@ -29,15 +31,11 @@ export const Button = styled.button<IStyledButtonNew>`
 
       ${colorType == 'green' &&
       css`
-        ${(theme.responsive.isMobile || theme.responsive.isTablet) &&
-        css`
-          width: 286px;
-          height: 40px;
-        `}
         ${theme.responsive.isDesktop &&
         css`
           width: 290px;
           height: 50px;
+          font-size: 20px;
         `}
       `}
 
@@ -71,7 +69,15 @@ export const Button = styled.button<IStyledButtonNew>`
                 background-position: 0px 0;
               }
               100% {
-                background-position: 290px 0;
+                background-position: 286px 0;
+
+                ${colorType == 'green' &&
+                css`
+                  ${theme.responsive.isDesktop &&
+                  css`
+                    background-position: 290px 0;
+                  `}
+                `}
               }
             }
 
