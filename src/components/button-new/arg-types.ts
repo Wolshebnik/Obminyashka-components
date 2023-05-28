@@ -23,26 +23,6 @@ export const argTypes: IArgTypes<IButtonNew> = {
     },
     control: { type: 'boolean' },
   },
-  width: {
-    name: 'width',
-    type: { name: 'number' },
-    description: 'CSS property "width" in px',
-    table: {
-      defaultValue: { summary: 254 },
-      type: { summary: 'number' },
-    },
-    control: { type: 'number' },
-  },
-  height: {
-    name: 'height',
-    type: { name: 'number' },
-    description: 'CSS property "height" in px',
-    table: {
-      defaultValue: { summary: 50 },
-      type: { summary: 'number' },
-    },
-    control: { type: 'number' },
-  },
   animated: {
     name: 'animated',
     type: { name: 'boolean' },

@@ -21,13 +21,32 @@ export const Button = styled.button<IStyledButtonNew>`
     }
   }
 
-  ${({ width, theme, colorType, animated, disabled, hover, height }) =>
+  ${({ theme, colorType, animated, disabled, hover }) =>
     css`
-      width: ${width}px;
-      height: ${height}px;
       color: ${theme.colors.newButton.text};
       background: ${theme.colors.newButton[colorType].bg};
       cursor: ${disabled ? 'auto' : 'pointer'};
+
+      ${colorType == 'green' &&
+      css`
+        ${theme.responsive.isDesktop &&
+        `
+          width: 290px;
+          height: 50px;
+        `}
+
+        ${theme.responsive.isTablet &&
+        `
+          width: 286px;
+          height: 40px;
+        `}
+      `}
+
+      ${colorType == 'blue' &&
+      css`
+        width: 290px;
+        height: 50px;
+      `}
 
       &:hover {
         ${!disabled &&
@@ -51,7 +70,7 @@ export const Button = styled.button<IStyledButtonNew>`
                 background-position: 0px 0;
               }
               100% {
-                background-position: ${width}px 0;
+                background-position: 290px 0;
               }
             }
 

@@ -219,7 +219,6 @@ const COLORS = Object.freeze({
   modalColors,
   helpChildren,
   inboxMessage,
-  helpChildren,
   searchResult,
   newTextColors,
   buttonGradient,
