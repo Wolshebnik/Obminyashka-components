@@ -16,8 +16,8 @@ const ButtonNew = ({
       disabled={disabled}
       colorType={colorType}
     >
-      {plus && <Styles.WrapIcon>+&nbsp;&nbsp;</Styles.WrapIcon>}
-      <span>{text.toUpperCase()}</span>
+      {plus && <span>+&nbsp;&nbsp;</span>}
+      <Styles.Text>{text}</Styles.Text>
     </Styles.Button>
   );
 };

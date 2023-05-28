@@ -6,7 +6,7 @@ export const Button = styled.button<IStyledButtonNew>`
   justify-content: center;
   align-items: center;
   border-radius: 63px;
-  font-family: 'Roboto';
+  font-family: Roboto;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -29,16 +29,15 @@ export const Button = styled.button<IStyledButtonNew>`
 
       ${colorType == 'green' &&
       css`
-        ${theme.responsive.isDesktop &&
-        `
-          width: 290px;
-          height: 50px;
-        `}
-
-        ${theme.responsive.isTablet &&
-        `
+        ${(theme.responsive.isMobile || theme.responsive.isTablet) &&
+        css`
           width: 286px;
           height: 40px;
+        `}
+        ${theme.responsive.isDesktop &&
+        css`
+          width: 290px;
+          height: 50px;
         `}
       `}
 
@@ -52,7 +51,9 @@ export const Button = styled.button<IStyledButtonNew>`
         ${!disabled &&
         !animated &&
         hover &&
-        `background: ${theme.colors.newButton[colorType].bgHover} `}
+        css`
+          background: ${theme.colors.newButton[colorType].bgHover};
+        `}
       }
 
       ${animated
@@ -77,7 +78,10 @@ export const Button = styled.button<IStyledButtonNew>`
             &:hover {
               ${!disabled &&
               hover &&
-              `background: ${theme.colors.newButton[colorType].animated.bgHover} `}
+              css`
+                background: ${theme.colors.newButton[colorType].animated
+                  .bgHover};
+              `}
             }
           `
         : css`
@@ -87,10 +91,14 @@ export const Button = styled.button<IStyledButtonNew>`
 
             &:hover {
               ${!disabled &&
-              `background: ${theme.colors.newButton[colorType].bgHover} `}
+              css`
+                background: ${theme.colors.newButton[colorType].bgHover};
+              `}
             }
           `};
     `}
 `;
 
-export const WrapIcon = styled.span``;
+export const Text = styled.span`
+  text-transform: uppercase;
+`;
