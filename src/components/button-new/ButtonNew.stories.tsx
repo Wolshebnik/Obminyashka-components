@@ -14,7 +14,7 @@ type Story = StoryObj<typeof ButtonNew>;
 
 export const Button: Story = {
   args: {
-    text: 'ДОДАТИ ОГОЛОШЕННЯ',
+    text: 'Add advertisement',
     plus: true,
     animated: true,
     colorType: 'green',

@@ -38,7 +38,7 @@ export const Button = styled.button<IStyledButtonNew>`
           font-size: 20px;
         `
       }
-      }
+    }
 
       ${
         colorType == 'blue' &&
