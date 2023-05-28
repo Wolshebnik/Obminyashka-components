@@ -15,13 +15,13 @@ const ButtonNew = ({
     <Styles.Button
       width={width}
       hover={hover}
+      height={height}
       animated={animated}
       disabled={disabled}
       colorType={colorType}
-      height={height}
     >
       {plus && <Styles.WrapIcon>+&nbsp;&nbsp;</Styles.WrapIcon>}
-      <span>{text}</span>
+      <span>{text.toUpperCase()}</span>
     </Styles.Button>
   );
 };
