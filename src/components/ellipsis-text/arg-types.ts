@@ -3,11 +3,6 @@ import { IArgTypes } from 'types';
 import { ITooltipProps } from './types';
 
 export const argTypes: IArgTypes<ITooltipProps> = {
-  children: {
-    name: 'children',
-    type: { name: 'string' },
-    description: 'Tooltip reference element',
-  },
   gap: {
     name: 'gap',
     type: { name: 'number' },
@@ -29,8 +24,8 @@ export const argTypes: IArgTypes<ITooltipProps> = {
     control: { type: 'select' },
     options: ['top', 'bottom', 'left', 'right'],
   },
-  widthTooltip: {
-    name: 'widthTooltip',
+  width: {
+    name: 'width',
     type: { name: 'number' },
     description: 'Tooltip CSS width ',
     table: {

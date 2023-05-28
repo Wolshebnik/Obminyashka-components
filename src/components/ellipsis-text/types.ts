@@ -1,5 +1,3 @@
-import { ReactNode } from 'react';
-
 export type Cursor =
   | 'pointer'
   | 'auto'
@@ -46,10 +44,9 @@ export type Position = 'right' | 'left' | 'top' | 'bottom';
 export interface ITooltipProps {
   gap?: number;
   delay?: number;
+  width?: number;
   cursor?: Cursor;
   position?: Position;
-  children: ReactNode;
-  widthTooltip?: number;
   justifyContent?: string;
 }
 

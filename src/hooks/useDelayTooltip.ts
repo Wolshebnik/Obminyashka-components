@@ -19,9 +19,7 @@ export const useDelayTooltip = (
     if (open) {
       setTimer(null);
       setPreviewOpen(true);
-      if (timer) {
-        clearTimeout(timer);
-      }
+      if (timer) clearTimeout(timer);
     }
   }, [open]);
 

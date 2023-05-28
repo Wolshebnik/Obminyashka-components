@@ -22,7 +22,7 @@ const ProductOwnerData = ({
 
         <Styles.ProductOwnerName>
           <Styles.ProductOwnerTitleH2>
-            <EllipsisText widthTooltip={300}>{name}</EllipsisText>
+            <EllipsisText width={300}>{name}</EllipsisText>
           </Styles.ProductOwnerTitleH2>
         </Styles.ProductOwnerName>
       </Styles.ProductOwner>
@@ -51,7 +51,7 @@ const ProductOwnerData = ({
             )}
 
             <Styles.PostReqDataText color="black" style={{ width: '200px' }}>
-              <EllipsisText gap={4} justifyContent={'start'} widthTooltip={300}>
+              <EllipsisText gap={4} justifyContent="start" width={300}>
                 {city}
               </EllipsisText>
             </Styles.PostReqDataText>

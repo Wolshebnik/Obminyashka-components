@@ -29,8 +29,8 @@ export const Tooltip = styled.div<IStyledProps>`
   cursor: context-menu;
   z-index: 100;
 
-  ${({ theme, widthTooltip, position, widthEl, heightEl, gap = 8 }) => css`
-    width: ${widthTooltip}px;
+  ${({ theme, width, position, widthEl, heightEl, gap = 8 }) => css`
+    width: ${width}px;
     background-color: ${theme.colors.white};
     color: ${theme.colors.blackColorText};
     box-shadow: ${theme.colors.ellipsisShadow};

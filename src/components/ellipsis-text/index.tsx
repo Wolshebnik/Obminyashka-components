@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
-import { useDelayTooltip } from 'hooks/useDelayTooltip';
 
 import { ChildrenProps } from 'types';
+import { useDelayTooltip } from 'hooks/useDelayTooltip';
 
 import * as Styles from './styles';
 import { ITooltipProps } from './types';
@@ -10,8 +10,8 @@ export const EllipsisText = ({
   gap,
   children,
   delay = 500,
+  width = 200,
   cursor = 'auto',
-  widthTooltip = 200,
   position = 'bottom',
   justifyContent = 'center',
 }: ChildrenProps<ITooltipProps>) => {
@@ -36,17 +36,14 @@ export const EllipsisText = ({
     const widthRatio: number = scrollWidth / offsetWidth;
     const heightRatio: number = scrollHeight / offsetHeight;
 
-    if (widthRatio > 1.0 || heightRatio > 1.5) {
-      setIsTooltipVisible(true);
-    } else {
-      setIsTooltipVisible(false);
-    }
+    setIsTooltipVisible(widthRatio > 1.0 || heightRatio > 1.5 ? true : false);
 
     if (ref?.current) {
-      const { height, width } = ref.current.getBoundingClientRect();
+      const { height, width: widthCurrent } =
+        ref.current.getBoundingClientRect();
 
       setHeightEl(height || 0);
-      setWidthEl(width || 0);
+      setWidthEl(widthCurrent || 0);
     }
   }, [deps]);
 
@@ -74,10 +71,10 @@ export const EllipsisText = ({
       {open && (
         <Styles.Tooltip
           gap={gap}
+          width={width}
           position={position}
           widthEl={widthEl || 0}
           heightEl={heightEl || 0}
-          widthTooltip={widthTooltip}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
