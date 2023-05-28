@@ -4,19 +4,19 @@ import * as Styles from './styles';
 const ButtonNew = ({
   text,
   plus,
+  onClick,
   hover = true,
   animated = false,
   disabled = false,
   colorType = 'green',
-  onClick,
 }: IButtonNew) => {
   return (
     <Styles.Button
       hover={hover}
+      onClick={onClick}
       animated={animated}
       disabled={disabled}
       colorType={colorType}
-      onClick={onClick}
     >
       {plus && <span>+&nbsp;&nbsp;</span>}
       <Styles.Text>{text}</Styles.Text>
