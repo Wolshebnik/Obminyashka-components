@@ -48,9 +48,7 @@ export const EllipsisText = ({
   }, [deps]);
 
   const handleMouseEnter = () => {
-    if (isTooltipVisible) {
-      setOpen(true);
-    }
+    if (isTooltipVisible) setOpen(true);
   };
 
   const handleMouseLeave = () => {
