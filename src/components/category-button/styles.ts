@@ -53,11 +53,10 @@ export const Categories = styled.div`
   align-items: center;
   cursor: pointer;
 
-  ${({ theme }) => css`
-    ${theme.responsive.isMobile &&
+  ${({ theme }) =>
+    theme.responsive.isMobile &&
     css`
       height: 30px;
       width: 30px;
     `}
-  `}
 `;
