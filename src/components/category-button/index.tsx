@@ -1,10 +1,10 @@
 import { Responsive } from 'components';
-import { NavCategory } from './category-nav';
 import { useDelayAnimation } from 'hooks/useDelayAnimation';
 
 import * as Icon from '../icon';
 import * as Styles from './styles';
 import { IBtnCategoryProps } from './types';
+import { NavCategory } from './category-nav';
 
 const CategoryButton = ({
   textBtn,

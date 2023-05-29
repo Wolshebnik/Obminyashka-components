@@ -9,7 +9,6 @@ export const CategoriesDesktop = styled.div<{
   isOpen: boolean;
 }>`
   position: relative;
-  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,7 +28,7 @@ export const CategoriesDesktop = styled.div<{
       content: '';
       position: absolute;
       right: 25px;
-      bottom: 20px;
+      bottom: 19px;
       border: 0 solid transparent;
       border-right-width: 9px;
       border-left-width: 9px;
@@ -39,7 +38,10 @@ export const CategoriesDesktop = styled.div<{
 
     ${isOpen &&
     css`
+      border: 2px solid ${theme.colors.categoryBtn.border};
+
       &:after {
+        bottom: 18px;
         transform: rotate(-180deg);
       }
     `}
