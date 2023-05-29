@@ -279,7 +279,6 @@ export const SunCategory = styled.img<{
   visible: boolean;
 }>`
   position: absolute;
-  box-sizing: border-box;
   width: 30px;
   height: 30px;
   visibility: hidden;
@@ -360,7 +359,6 @@ export const SunCategory = styled.img<{
 `;
 
 export const Img = styled.img`
-  box-sizing: border-box;
   display: block;
   width: 64px;
   height: 64px;

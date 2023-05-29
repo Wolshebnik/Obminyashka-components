@@ -1,11 +1,8 @@
 import styled, { css } from 'styled-components';
 
 export const CategoriesText = styled.div`
+  color: ${({ theme }) => theme.colors.categoryBtn.colorText};
   text-transform: uppercase;
-
-  ${({ theme }) => css`
-    color: ${theme.colors.categoryBtn.colorText};
-  `}
 `;
 
 export const CategoriesDesktop = styled.div<{

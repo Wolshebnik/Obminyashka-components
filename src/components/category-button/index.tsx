@@ -1,6 +1,6 @@
 import { Responsive } from 'components';
+import { NavCategory } from './category-nav';
 import { useDelayAnimation } from 'hooks/useDelayAnimation';
-import { NavCategory } from 'components/category-button/category-nav';
 
 import * as Icon from '../icon';
 import * as Styles from './styles';

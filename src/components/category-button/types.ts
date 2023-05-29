@@ -1,7 +1,5 @@
 export interface ICategoryInfo {
   link: string;
-  img?: string;
-  sun?: string;
   text: string;
 }
 

@@ -25,7 +25,7 @@ const Template = (args: IBtnCategoryProps) => {
       }}
     >
       <PresentationHeader>
-        <CategoryButton {...args}></CategoryButton>
+        <CategoryButton {...args} />
       </PresentationHeader>
     </div>
   );

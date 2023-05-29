@@ -10,8 +10,6 @@ import { ICategoryInfo } from '../types';
 const NavCategory = ({ categoryInfo = [], isOpen, delay }: ICategoryNav) => {
   const [isVisibleSun, setVisibleSun] = useState<boolean>(true);
 
-  const isLeave = true;
-
   const handleMouseEnter = (text: string) => {
     if (text === 'clothes') {
       setTimeout(() => setVisibleSun(false), 500);
@@ -44,8 +42,8 @@ const NavCategory = ({ categoryInfo = [], isOpen, delay }: ICategoryNav) => {
                   )}
 
                   <Styles.SunCategory
+                    isLeave
                     src={sun}
-                    isLeave={isLeave}
                     variant={el.text}
                     alt={'sun' + el.text}
                     visible={isVisibleSun}
