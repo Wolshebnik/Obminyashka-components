@@ -48,7 +48,6 @@ export const CategoriesDesktop = styled.div<{
 `;
 
 export const Categories = styled.div`
-  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
