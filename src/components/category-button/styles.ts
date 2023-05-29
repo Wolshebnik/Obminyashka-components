@@ -28,7 +28,7 @@ export const CategoriesDesktop = styled.div<{
       content: '';
       position: absolute;
       right: 25px;
-      bottom: 19px;
+      bottom: 18.5px;
       border: 0 solid transparent;
       border-right-width: 9px;
       border-left-width: 9px;
@@ -41,7 +41,6 @@ export const CategoriesDesktop = styled.div<{
       border: 2px solid ${theme.colors.categoryBtn.border};
 
       &:after {
-        bottom: 18px;
         transform: rotate(-180deg);
       }
     `}
