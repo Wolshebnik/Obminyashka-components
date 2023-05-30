@@ -23,11 +23,11 @@ export const Button = styled.button<IStyledButtonNew>`
     }
   }
 
-  ${({ theme, colorType, animated, disabled }) =>
+  ${({ theme, colorType, animated }) =>
     css`
       color: ${theme.colors.newButton.text};
       background: ${theme.colors.newButton[colorType].bg};
-      cursor: ${disabled ? 'auto' : 'pointer'};
+
 
       ${
         colorType == 'green' &&
@@ -48,9 +48,8 @@ export const Button = styled.button<IStyledButtonNew>`
         `
       }
 
-      &:hover {
+      &:hover:not(:disabled) {
         ${
-          !disabled &&
           !animated &&
           css`
             background: ${theme.colors.newButton[colorType].bgHover};
@@ -61,15 +60,19 @@ export const Button = styled.button<IStyledButtonNew>`
       ${
         animated
           ? css`
-              background: ${
-                disabled
-                  ? theme.colors.newButton[colorType].animated.bgDisabled
-                  : theme.colors.newButton[colorType].animated.bg
-              };
+
+              background: ${theme.colors.newButton[colorType].animated.bg};
               animation-name: background-green-animation;
               animation-duration: 1500ms;
               animation-timing-function: linear;
               animation-iteration-count: infinite;
+
+              &:disabled {
+                background: ${
+                  theme.colors.newButton[colorType].animated.bgDisabled
+                };
+                cursor: auto;
+              }
 
               @keyframes background-green-animation {
                 0% {
@@ -89,26 +92,23 @@ export const Button = styled.button<IStyledButtonNew>`
                 }
               }
 
-              &:hover {
-                ${
-                  !disabled &&
-                  css`
-                    background: ${theme.colors.newButton[colorType].animated
-                      .bgHover};
-                  `
+              &:hover:not(:disabled) {
+
+                background: ${
+                  theme.colors.newButton[colorType].animated.bgHover
                 }
               }
             `
           : css`
-              background: ${disabled
-                ? theme.colors.newButton[colorType].bgDisabled
-                : theme.colors.newButton[colorType].bg};
+              background: ${theme.colors.newButton[colorType].bg};
 
-              &:hover {
-                ${!disabled &&
-                css`
-                  background: ${theme.colors.newButton[colorType].bgHover};
-                `}
+              &:disabled {
+                background: ${theme.colors.newButton[colorType].bgDisabled};
+                cursor: auto;
+              }
+
+              &:hover:not(:disabled) {
+                background: ${theme.colors.newButton[colorType].bgHover};
               }
             `
       };

@@ -3,11 +3,11 @@ import * as Styles from './styles';
 
 const ButtonNew = ({
   text,
-  plus,
   onClick,
+  plus = false,
   animated = false,
   disabled = false,
-  colorType = 'green',
+  colorType = 'blue',
 }: IButtonNew) => {
   return (
     <Styles.Button

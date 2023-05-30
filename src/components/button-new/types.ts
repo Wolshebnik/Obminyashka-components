@@ -12,7 +12,7 @@ export interface IButtonNew extends Omit<ICustomButton, 'ref'> {
   text: string;
   plus?: boolean;
   animated?: boolean;
-  disabled?: boolean;
+  // disabled?: boolean;
   colorType: ColorType;
 }
 

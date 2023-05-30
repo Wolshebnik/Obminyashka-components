@@ -12,12 +12,22 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof ButtonNew>;
 
-export const Button: Story = {
+export const GreenButton: Story = {
   args: {
     text: 'Add advertisement',
     plus: true,
     animated: true,
     colorType: 'green',
+    disabled: false,
+  },
+};
+
+export const BlueButton: Story = {
+  args: {
+    text: 'View',
+    plus: false,
+    animated: true,
+    colorType: 'blue',
     disabled: false,
   },
 };

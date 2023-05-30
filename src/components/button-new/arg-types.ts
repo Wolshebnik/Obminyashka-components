@@ -47,7 +47,7 @@ export const argTypes: IArgTypes<IButtonNew> = {
   disabled: {
     name: 'disabled',
     type: { name: 'boolean' },
-    description: 'Disabled',
+    description: 'Property "disabled" of button',
     table: {
       defaultValue: { summary: false },
       type: { summary: 'boolean' },
