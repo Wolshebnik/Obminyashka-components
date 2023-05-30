@@ -10,9 +10,6 @@ export const Button = styled.button<IStyledButtonNew>`
   border-radius: 63px;
   font-family: Roboto;
   font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 24px;
 
   @keyframes background-green-animation {
     0% {
@@ -23,11 +20,33 @@ export const Button = styled.button<IStyledButtonNew>`
     }
   }
 
-  ${({ theme, colorType, animated }) =>
-    css`
-      color: ${theme.colors.newButton.text};
-      background: ${theme.colors.newButton[colorType].bg};
+  ${({ theme, colorType, animated, styleType }) => {
+    const styleTheme = theme.colors.newButton[styleType][colorType];
 
+    return css`
+      ${
+        styleType === 'default' &&
+        css`
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 24px;
+          border: none;
+        `
+      }
+
+      ${
+        styleType === 'outline' &&
+        css`
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 19px;
+          border: 2px solid ${styleTheme.outline};
+          border-radius: 63px;
+        `
+      }
+
+      color: ${styleTheme.text};
+      background: ${styleTheme.bg};
 
       ${
         colorType == 'green' &&
@@ -38,7 +57,7 @@ export const Button = styled.button<IStyledButtonNew>`
           font-size: 20px;
         `
       }
-    }
+      }
 
       ${
         colorType == 'blue' &&
@@ -52,7 +71,7 @@ export const Button = styled.button<IStyledButtonNew>`
         ${
           !animated &&
           css`
-            background: ${theme.colors.newButton[colorType].bgHover};
+            background: ${styleTheme.bgHover};
           `
         }
       }
@@ -61,16 +80,14 @@ export const Button = styled.button<IStyledButtonNew>`
         animated
           ? css`
 
-              background: ${theme.colors.newButton[colorType].animated.bg};
+              background: ${styleTheme.animated.bg};
               animation-name: background-green-animation;
               animation-duration: 1500ms;
               animation-timing-function: linear;
               animation-iteration-count: infinite;
 
               &:disabled {
-                background: ${
-                  theme.colors.newButton[colorType].animated.bgDisabled
-                };
+                background: ${styleTheme.animated.bgDisabled};
                 cursor: auto;
               }
 
@@ -94,25 +111,24 @@ export const Button = styled.button<IStyledButtonNew>`
 
               &:hover:not(:disabled) {
 
-                background: ${
-                  theme.colors.newButton[colorType].animated.bgHover
-                }
+                background: ${styleTheme.animated.bgHover}
               }
             `
           : css`
-              background: ${theme.colors.newButton[colorType].bg};
+              background: ${styleTheme.bg};
 
               &:disabled {
-                background: ${theme.colors.newButton[colorType].bgDisabled};
+                background: ${styleTheme.bgDisabled};
                 cursor: auto;
               }
 
               &:hover:not(:disabled) {
-                background: ${theme.colors.newButton[colorType].bgHover};
+                background: ${styleTheme.bgHover};
               }
             `
       };
-    `}
+    `;
+  }}
 `;
 
 export const Text = styled.span`

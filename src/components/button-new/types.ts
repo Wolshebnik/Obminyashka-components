@@ -1,6 +1,7 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 
 export type ColorType = 'blue' | 'green';
+export type StyleType = 'default' | 'outline';
 
 interface ICustomButton
   extends DetailedHTMLProps<
@@ -12,9 +13,9 @@ export interface IButtonNew extends Omit<ICustomButton, 'ref'> {
   text: string;
   plus?: boolean;
   animated?: boolean;
-  // disabled?: boolean;
   colorType: ColorType;
+  styleType: StyleType;
 }
 
 export interface IStyledButtonNew
-  extends Pick<IButtonNew, 'colorType' | 'animated' | 'disabled'> {}
+  extends Pick<IButtonNew, 'colorType' | 'animated' | 'styleType'> {}

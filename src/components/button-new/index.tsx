@@ -8,6 +8,7 @@ const ButtonNew = ({
   animated = false,
   disabled = false,
   colorType = 'blue',
+  styleType = 'default',
 }: IButtonNew) => {
   return (
     <Styles.Button
@@ -15,6 +16,7 @@ const ButtonNew = ({
       animated={animated}
       disabled={disabled}
       colorType={colorType}
+      styleType={styleType}
     >
       {plus && <span>+&nbsp;&nbsp;</span>}
       <Styles.Text>{text}</Styles.Text>

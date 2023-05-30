@@ -19,6 +19,7 @@ export const GreenButton: Story = {
     animated: true,
     colorType: 'green',
     disabled: false,
+    styleType: 'default',
   },
 };
 
@@ -29,5 +30,17 @@ export const BlueButton: Story = {
     animated: true,
     colorType: 'blue',
     disabled: false,
+    styleType: 'default',
+  },
+};
+
+export const OutLineButton: Story = {
+  args: {
+    text: 'Show more',
+    plus: false,
+    animated: true,
+    colorType: 'blue',
+    disabled: false,
+    styleType: 'outline',
   },
 };

@@ -54,6 +54,17 @@ export const argTypes: IArgTypes<IButtonNew> = {
     },
     control: { type: 'boolean' },
   },
+  styleType: {
+    name: 'styleType',
+    type: { name: 'string' },
+    description: 'Enable outline',
+    table: {
+      defaultValue: { summary: 'default' },
+      type: { summary: 'string' },
+    },
+    control: { type: 'select' },
+    options: ['default', 'outline'],
+  },
   onClick: {
     name: 'onClick',
     type: { name: 'function' },
