@@ -5,14 +5,12 @@ const ButtonNew = ({
   text,
   plus,
   onClick,
-  hover = true,
   animated = false,
   disabled = false,
   colorType = 'green',
 }: IButtonNew) => {
   return (
     <Styles.Button
-      hover={hover}
       onClick={onClick}
       animated={animated}
       disabled={disabled}

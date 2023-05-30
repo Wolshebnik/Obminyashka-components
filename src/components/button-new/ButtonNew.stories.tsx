@@ -19,6 +19,5 @@ export const Button: Story = {
     animated: true,
     colorType: 'green',
     disabled: false,
-    hover: true,
   },
 };

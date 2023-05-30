@@ -23,7 +23,7 @@ export const Button = styled.button<IStyledButtonNew>`
     }
   }
 
-  ${({ theme, colorType, animated, disabled, hover }) =>
+  ${({ theme, colorType, animated, disabled }) =>
     css`
       color: ${theme.colors.newButton.text};
       background: ${theme.colors.newButton[colorType].bg};
@@ -52,7 +52,6 @@ export const Button = styled.button<IStyledButtonNew>`
         ${
           !disabled &&
           !animated &&
-          hover &&
           css`
             background: ${theme.colors.newButton[colorType].bgHover};
           `
@@ -93,7 +92,6 @@ export const Button = styled.button<IStyledButtonNew>`
               &:hover {
                 ${
                   !disabled &&
-                  hover &&
                   css`
                     background: ${theme.colors.newButton[colorType].animated
                       .bgHover};

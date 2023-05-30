@@ -11,11 +11,10 @@ interface ICustomButton
 export interface IButtonNew extends Omit<ICustomButton, 'ref'> {
   text: string;
   plus?: boolean;
-  hover?: boolean;
   animated?: boolean;
   disabled?: boolean;
   colorType: ColorType;
 }
 
 export interface IStyledButtonNew
-  extends Pick<IButtonNew, 'colorType' | 'animated' | 'disabled' | 'hover'> {}
+  extends Pick<IButtonNew, 'colorType' | 'animated' | 'disabled'> {}

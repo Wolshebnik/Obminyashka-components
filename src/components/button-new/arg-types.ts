@@ -54,16 +54,6 @@ export const argTypes: IArgTypes<IButtonNew> = {
     },
     control: { type: 'boolean' },
   },
-  hover: {
-    name: 'hover',
-    type: { name: 'boolean' },
-    description: 'Using CSS hover',
-    table: {
-      defaultValue: { summary: false },
-      type: { summary: 'boolean' },
-    },
-    control: { type: 'boolean' },
-  },
   onClick: {
     name: 'onClick',
     type: { name: 'function' },
