@@ -4,10 +4,16 @@ const buttonGradient =
 const white = `#FFF`;
 
 // Blue
-const searchBlue = '#29a5d4';
 const buttonBlue = '#12b6ed';
-const buttonBlueHover = '#00bfff';
 const buttonBlueActive = '#0094ff';
+const buttonBlueHover = '#00bfff';
+const endeavour = '#0666ab';
+const foam = `#d9f6fd`;
+const indigo = '#3f76c1';
+const malibu = '#6fe5ff';
+const mariner = '#286cc9';
+const searchBlue = '#29a5d4';
+const shakespeare = '#53b3d4';
 
 //Green
 const apple = '#37B82E';
@@ -109,6 +115,7 @@ const helpChildren = Object.freeze({
   bg: background,
   shadow,
 });
+
 const ellipsisShadow =
   '10px 10px 20px rgba(0, 0, 0, 0.3), 0px 31px 32px -24px rgba(0, 0, 0, 1)';
 
@@ -156,10 +163,23 @@ const colorsDefault = Object.freeze({
   backgroundColor: '#fdfcff',
   faux,
 });
+
 const search = Object.freeze({
   white,
   blue: searchBlue,
   background: 'rgba(255, 255, 255, 0.6)',
+});
+
+const categoryBtn = Object.freeze({
+  border: indigo,
+  colorText: mariner,
+});
+
+const navCategory = Object.freeze({
+  bgColorLinkOne: malibu,
+  bgColorLinkTwo: foam,
+  colorHoveredText: endeavour,
+  linkBorder: shakespeare,
 });
 
 const logo = Object.freeze({
@@ -182,14 +202,16 @@ const searchResult = Object.freeze({
 const COLORS = Object.freeze({
   logo,
   input,
-  search,
   button,
+  search,
   itemCard,
   language,
+  categoryBtn,
   languageNew,
   modalColors,
-  inboxMessage,
+  navCategory,
   helpChildren,
+  inboxMessage,
   searchResult,
   newTextColors,
   buttonGradient,

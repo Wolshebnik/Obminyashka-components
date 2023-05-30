@@ -70,6 +70,15 @@ export { default as strollersSlider } from '../../assets/img/slider/strollers.pn
 export { default as sunDesktop } from '../../assets/img/sun/sun-desktop.png';
 export { default as sunMobile } from '../../assets/img/sun/sun-mobile.png';
 export { default as sunTablet } from '../../assets/img/sun/sun-tablet.png';
+export { default as sunBooks } from '../../assets/img/navItems/sun-books.png';
+export { default as sunClothes } from '../../assets/img/navItems/sun-clothes.png';
+export { default as sunFurniture } from '../../assets/img/navItems/sun-furniture.png';
+export { default as sunKidsUpToYear } from '../../assets/img/navItems/sun-kids-up-to-year.png';
+export { default as sunMain } from '../../assets/img/sun-main.png';
+export { default as sunOther } from '../../assets/img/navItems/sun-other.png';
+export { default as sunShoes } from '../../assets/img/navItems/sun-shoes.png';
+export { default as sunToys } from '../../assets/img/navItems/sun-toys.png';
+export { default as sunTransportForChildren } from '../../assets/img/navItems/sun-transport-for-children.png';
 export { default as three } from '../../assets/img/MySettings/3.png';
 export { default as toySlider } from '../../assets/img/slider/toy.png';
 export { default as toys } from '../../assets/img/navItems/toys.png';

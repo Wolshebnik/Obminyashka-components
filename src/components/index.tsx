@@ -2,7 +2,10 @@ export { Avatar } from './avatar';
 export { BackButton } from './back-button';
 export { Burger } from './burger';
 export { Button } from './button';
+// export { EllipsisText } from './ellipsis-text';
+// TODO: remake ellipsis-text
 export { CancelEverything } from './cancel-everything';
+export { CategoryButton } from './category-button';
 export { CheckBox } from './checkbox';
 export { Deals } from './deals';
 export { EllipsisText } from './ellipsis-text';
@@ -15,6 +18,7 @@ export { LanguageSelection } from './select-lang';
 export { Loader } from './loader';
 export { MainSwiper } from './swiper';
 export { Modal } from './modal';
+export { NavCategory } from './category-button/category-nav';
 export { NoFoundResult } from './search-result';
 export { Overlay } from './overlay';
 export { PagePagination } from './page-pagination';
