@@ -5,8 +5,6 @@ export const useDelayAnimation = (delay: number, immediateStart?: boolean) => {
   const [isAnimation, setIsAnimation] = useState(false);
 
   const setOpen = (open?: boolean) => {
-    open = open === undefined ? !isOpen : open;
-
     if (open) {
       setIsOpen(true);
       if (!immediateStart) {
