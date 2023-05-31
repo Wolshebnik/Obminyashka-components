@@ -14,20 +14,20 @@ type Story = StoryObj<typeof Title>;
 
 export const TitleDefault: Story = {
   args: {
-    text: 'Поточні пропозиції',
+    text: 'Чужих дітей не буває!',
   },
 };
 
 export const TitleWithStyles: Story = {
   args: {
     style: { fontSize: 20 },
-    text: 'Поточні пропозиції',
+    text: 'Чужих дітей не буває!',
   },
 };
 
 export const TitleWithoutDots: Story = {
   args: {
     hiddenDots: true,
-    text: 'Поточні пропозиції',
+    text: 'Чужих дітей не буває!',
   },
 };

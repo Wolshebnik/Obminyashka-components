@@ -1,46 +1,74 @@
 import styled, { css } from 'styled-components';
 
-import children from '../../assets/img/children.png';
-
 export const HelpChildren = styled.div`
   display: block;
-  margin-bottom: 145px;
-  padding: 45px 45px 60px;
-  border-radius: 20px;
+  border-radius: 130px;
 
   ${({ theme }) => css`
-    background: ${theme.colors.white} url(${children}) no-repeat bottom right;
+    background: ${theme.colors.helpChildren.bg};
+
+    ${theme.responsive.isMobile &&
+    css`
+      padding: 59px 60px 82px;
+      margin-bottom: 50px;
+    `}
+
+    ${theme.responsive.isTablet &&
+    css`
+      padding: 42px 55px 72px 52px;
+      margin-bottom: 70px;
+    `}
+
+    ${theme.responsive.isTabletUp &&
+    css`
+      padding: 42px 109px 86px 52px;
+    `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      padding: 52px 126px 36px 128px;
+      margin-bottom: 130px;
+    `}
   `}
 `;
 
 export const TitleWrapper = styled.div`
-  padding-bottom: 36px;
-`;
-
-export const Text = styled.p`
-  margin-bottom: 40px;
-  width: 408px;
-  font-size: 18px;
-  line-height: 24px;
-  font-family: Roboto;
-  border-radius: 20px;
-  backdrop-filter: blur(3px);
-
   ${({ theme }) => css`
-    color: ${theme.colors.blackColorText};
-    background-color: ${theme.colors.helpChildren.bg};
-    box-shadow: 0 0 20px ${theme.colors.helpChildren.shadow};
+    ${theme.responsive.isMobile &&
+    css`
+      padding-bottom: 30px;
+    `}
+
+    ${theme.responsive.isTablet &&
+    css`
+      padding-bottom: 38px;
+    `}
+
+    ${theme.responsive.isTabletUp &&
+    css`
+      padding-bottom: 70px;
+    `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      padding-bottom: 48px;
+    `}
   `}
 `;
 
-export const Strong = styled.strong`
-  display: contents;
-  font-weight: 700;
-  line-height: 15px;
-  text-decoration: none;
+export const Text = styled.p`
+  line-height: 23px;
+  font-family: 'Proxima Nova', sans-serif;
 
   ${({ theme }) => css`
-    color: ${theme.colors.activeColor};
+    color: ${theme.colors.blackColorText};
+
+    ${theme.responsive.isMobile &&
+    css`
+      font-size: 14px;
+      /* width: 228px; */
+      margin: 0 auto 8px;
+    `}
   `}
 `;
 
@@ -49,18 +77,38 @@ export const StylizedBtn = styled.div`
     gap: 0;
     width: inherit;
     height: inherit;
-    padding: 16px 50px;
-    font-size: 18px;
+    line-height: 23px;
     border-radius: 30px;
 
     ${({ theme }) => css`
       color: ${theme.colors.white};
-      background-color: ${theme.colors.activeColor};
+      background-color: ${theme.colors.btnBlue};
 
       :hover {
         background-color: ${theme.colors.btnBlueActive};
       }
+
+      ${theme.responsive.isMobile &&
+      css`
+        font-size: 14px;
+        padding: 9px 10px;
+        margin: 0 auto;
+      `}
+
+      ${theme.responsive.isTablet &&
+      css`
+        font-size: 16px;
+        padding: 13px 21px;
+        margin: 0;
+      `}
+
+      ${theme.responsive.isDesktop &&
+      css`
+        font-size: 18px;
+        padding: 14px 22px;
+      `}
     `}
+
     span {
       margin-right: 10px;
     }

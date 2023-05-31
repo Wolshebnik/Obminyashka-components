@@ -48,11 +48,12 @@ const silverChalice = '#A0A0A0';
 const faux = '#bababa';
 
 //RGBA colors
-const background = 'rgba(255, 255, 255, 0.4)';
+// const background = 'rgba(255, 255, 255, 0.4)';
 const shadow = 'rgba(255, 255, 255, 0.2)';
 const modalBackground = 'rgba(18, 182, 237, 0.3)';
 const crossBtn = 'rgb(255, 255, 255)';
 const crossBtnBackground = 'rgb(18, 182, 237)';
+const bgHelpChildrenNew = 'rgba(246, 253, 255, 1)';
 
 //New Select language
 const languageNew = Object.freeze({
@@ -106,7 +107,7 @@ const productOwnerData = Object.freeze({
 });
 
 const helpChildren = Object.freeze({
-  bg: background,
+  bg: bgHelpChildrenNew,
   shadow,
 });
 const ellipsisShadow =
