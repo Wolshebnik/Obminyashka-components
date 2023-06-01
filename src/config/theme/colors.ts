@@ -54,6 +54,7 @@ const doveGray = '#717171';
 const dustyGray = '#969696';
 const darkSilver = '#bcbcbc';
 const silverChalice = '#A0A0A0';
+const silverRgba = 'rgba(189, 189, 189, 0.5)';
 
 //RGBA colors
 const background = 'rgba(255, 255, 255, 0.4)';
@@ -70,6 +71,7 @@ const newButton = Object.freeze({
       disabledText: doveGray,
       bg: aquamarineBlue,
       outline: aquamarineBlue,
+      outlineDisabled: tropicalBlue,
       bgHover: pelorous,
       bgDisabled: tropicalBlue,
       animated: {
@@ -83,6 +85,7 @@ const newButton = Object.freeze({
       disabledText: doveGray,
       bg: olivine,
       outline: olivine,
+      outlineDisabled: eagle,
       bgHover: lima,
       bgDisabled: eagle,
       animated: {
@@ -95,9 +98,10 @@ const newButton = Object.freeze({
   outline: {
     blue: {
       text: viking,
-      disabledText: viking,
+      disabledText: silverRgba,
       bg: white,
       outline: viking,
+      outlineDisabled: silverRgba,
       bgHover: white,
       bgDisabled: white,
       animated: {
@@ -108,9 +112,10 @@ const newButton = Object.freeze({
     },
     green: {
       text: viking,
-      disabledText: viking,
+      disabledText: silverRgba,
       bg: white,
       outline: viking,
+      outlineDisabled: silverRgba,
       bgHover: white,
       bgDisabled: white,
       animated: {

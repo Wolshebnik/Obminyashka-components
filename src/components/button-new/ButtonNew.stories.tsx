@@ -38,7 +38,7 @@ export const OutLineButton: Story = {
   args: {
     text: 'Show more',
     plus: false,
-    animated: true,
+    animated: false,
     colorType: 'blue',
     disabled: false,
     styleType: 'outline',

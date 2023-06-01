@@ -31,6 +31,8 @@ export const Button = styled.button<IStyledButtonNew>`
           font-size: 18px;
           line-height: 24px;
           border: none;
+          color: ${styleTheme.text};
+          background: ${styleTheme.bg};
         `
       }
 
@@ -40,13 +42,18 @@ export const Button = styled.button<IStyledButtonNew>`
           font-weight: 400;
           font-size: 16px;
           line-height: 19px;
-          border: 2px solid ${styleTheme.outline};
           border-radius: 63px;
+
+          &:not(:disabled) {
+            border: 2px solid ${styleTheme.outline};
+            color: ${styleTheme.text};
+          }
+          &:disabled {
+            border: 2px solid ${styleTheme.outlineDisabled};
+            color: ${styleTheme.disabledText};
+          }
         `
       }
-
-      color: ${styleTheme.text};
-      background: ${styleTheme.bg};
 
       ${
         colorType == 'green' &&
