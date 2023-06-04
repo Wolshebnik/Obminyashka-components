@@ -4,22 +4,20 @@ const buttonGradient =
 const white = `#FFFFFF`;
 
 // Blue
+const foam = `#d9f6fd`;
+const viking = '#71C2DA';
+const indigo = '#3f76c1';
+const malibu = '#6fe5ff';
+const mariner = '#286cc9';
 const pelorous = '#44A5C6';
+const endeavour = '#0666ab';
 const searchBlue = '#29a5d4';
 const buttonBlue = '#12b6ed';
+const shakespeare = '#53b3d4';
 const tropicalBlue = '#CEEEFA';
 const aquamarineBlue = '#7ECDE4';
 const buttonBlueHover = '#00bfff';
 const buttonBlueActive = '#0094ff';
-const viking = '#71C2DA';
-const buttonBlueHover = '#00bfff';
-const endeavour = '#0666ab';
-const foam = `#d9f6fd`;
-const indigo = '#3f76c1';
-const malibu = '#6fe5ff';
-const mariner = '#286cc9';
-const searchBlue = '#29a5d4';
-const shakespeare = '#53b3d4';
 
 //Green
 const lima = '#6AB218';
