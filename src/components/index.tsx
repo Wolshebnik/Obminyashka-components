@@ -2,6 +2,7 @@ export { Avatar } from './avatar';
 export { BackButton } from './back-button';
 export { Burger } from './burger';
 export { Button } from './button';
+export { ButtonNew } from './button-new';
 export { CancelEverything } from './cancel-everything';
 export { CategoryButton } from './category-button';
 export { CheckBox } from './checkbox';
