@@ -17,23 +17,19 @@ export const Button = styled.button<IStyledButtonNew>`
   align-items: center;
   width: 286px;
   height: 40px;
-  border-radius: 40px;
-  /* font-family: Roboto; */
   font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  border-radius: 40px;
+  border: none;
 
   ${({ theme, colorType, animated, styleType }) => {
     const styleTheme = theme.colors.newButton[styleType][colorType];
 
     return css`
-      ${styleType === 'default' &&
-      css`
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 24px;
-        border: none;
-        color: ${styleTheme.text};
-        background: ${styleTheme.bg};
-      `}
+      color: ${styleTheme.text};
+      background: ${styleTheme.bg};
 
       ${styleType === 'outline' &&
       css`
@@ -60,13 +56,6 @@ export const Button = styled.button<IStyledButtonNew>`
         font-size: 20px;
       `}
 
-
-      ${colorType === 'blue' &&
-      css`
-        width: 290px;
-        height: 50px;
-      `}
-
       &:hover:not(:disabled) {
         ${!animated &&
         css`
@@ -85,21 +74,6 @@ export const Button = styled.button<IStyledButtonNew>`
             &:disabled {
               background: ${styleTheme.animated.bgDisabled};
               cursor: auto;
-            }
-
-            @keyframes background-green-animation {
-              0% {
-                background-position: 0px 0;
-              }
-              100% {
-                background-position: 286px 0;
-
-                ${colorType == 'green' &&
-                theme.responsive.isDesktop &&
-                css`
-                  background-position: 290px 0;
-                `}
-              }
             }
 
             &:hover:not(:disabled) {
