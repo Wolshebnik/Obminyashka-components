@@ -14,33 +14,33 @@ type Story = StoryObj<typeof ButtonNew>;
 
 export const GreenButton: Story = {
   args: {
-    text: 'Add advertisement',
     plus: true,
     animated: true,
-    colorType: 'green',
     disabled: false,
+    colorType: 'green',
     styleType: 'default',
+    text: 'Add advertisement',
   },
 };
 
 export const BlueButton: Story = {
   args: {
-    text: 'View',
     plus: false,
+    text: 'View',
     animated: true,
-    colorType: 'blue',
     disabled: false,
+    colorType: 'blue',
     styleType: 'default',
   },
 };
 
 export const OutLineButton: Story = {
   args: {
-    text: 'Show more',
     plus: false,
     animated: false,
-    colorType: 'blue',
     disabled: false,
+    text: 'Show more',
+    colorType: 'blue',
     styleType: 'outline',
   },
 };

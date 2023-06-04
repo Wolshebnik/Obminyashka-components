@@ -17,5 +17,8 @@ export interface IButtonNew extends Omit<ICustomButton, 'ref'> {
   styleType: StyleType;
 }
 
-export interface IStyledButtonNew
-  extends Pick<IButtonNew, 'colorType' | 'animated' | 'styleType'> {}
+export interface IStyledButtonNew {
+  animated?: boolean;
+  colorType: ColorType;
+  styleType: StyleType;
+}

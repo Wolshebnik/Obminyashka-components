@@ -1,12 +1,12 @@
-import { IButtonNew } from './types';
 import * as Styles from './styles';
+import { IButtonNew } from './types';
 
 const ButtonNew = ({
   text,
+  plus,
   onClick,
-  plus = false,
-  animated = false,
-  disabled = false,
+  animated,
+  disabled,
   colorType = 'blue',
   styleType = 'default',
 }: IButtonNew) => {
