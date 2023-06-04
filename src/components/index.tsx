@@ -2,6 +2,7 @@ export { Avatar } from './avatar';
 export { BackButton } from './back-button';
 export { Burger } from './burger';
 export { Button } from './button';
+export { ButtonNew } from './button-new';
 // export { EllipsisText } from './ellipsis-text';
 // TODO: remake ellipsis-text
 export { CancelEverything } from './cancel-everything';
