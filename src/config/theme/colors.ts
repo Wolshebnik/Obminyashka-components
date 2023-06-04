@@ -12,6 +12,14 @@ const aquamarineBlue = '#7ECDE4';
 const buttonBlueHover = '#00bfff';
 const buttonBlueActive = '#0094ff';
 const viking = '#71C2DA';
+const buttonBlueHover = '#00bfff';
+const endeavour = '#0666ab';
+const foam = `#d9f6fd`;
+const indigo = '#3f76c1';
+const malibu = '#6fe5ff';
+const mariner = '#286cc9';
+const searchBlue = '#29a5d4';
+const shakespeare = '#53b3d4';
 
 //Green
 const lima = '#6AB218';
@@ -182,6 +190,7 @@ const helpChildren = Object.freeze({
   bg: background,
   shadow,
 });
+
 const ellipsisShadow =
   '10px 10px 20px rgba(0, 0, 0, 0.3), 0px 31px 32px -24px rgba(0, 0, 0, 1)';
 
@@ -229,10 +238,23 @@ const colorsDefault = Object.freeze({
   backgroundColor: '#fdfcff',
   faux,
 });
+
 const search = Object.freeze({
   white,
   blue: searchBlue,
   background: 'rgba(255, 255, 255, 0.6)',
+});
+
+const categoryBtn = Object.freeze({
+  border: indigo,
+  colorText: mariner,
+});
+
+const navCategory = Object.freeze({
+  bgColorLinkOne: malibu,
+  bgColorLinkTwo: foam,
+  colorHoveredText: endeavour,
+  linkBorder: shakespeare,
 });
 
 const logo = Object.freeze({
@@ -260,8 +282,10 @@ const COLORS = Object.freeze({
   itemCard,
   language,
   newButton,
+  categoryBtn,
   languageNew,
   modalColors,
+  navCategory,
   helpChildren,
   inboxMessage,
   searchResult,

@@ -3,11 +3,13 @@ export { BackButton } from './back-button';
 export { Burger } from './burger';
 export { Button } from './button';
 export { ButtonNew } from './button-new';
+// export { EllipsisText } from './ellipsis-text';
+// TODO: remake ellipsis-text
 export { CancelEverything } from './cancel-everything';
+export { CategoryButton } from './category-button';
 export { CheckBox } from './checkbox';
 export { Deals } from './deals';
-// TODO: remake ellipsis-text
-// export { EllipsisText } from './ellipsis-text';
+export { EllipsisText } from './ellipsis-text';
 export { HelpChildren } from './help-children';
 export { Image } from './image';
 export { InboxMessage } from './inbox-message';
@@ -17,6 +19,7 @@ export { LanguageSelection } from './select-lang';
 export { Loader } from './loader';
 export { MainSwiper } from './swiper';
 export { Modal } from './modal';
+export { NavCategory } from './category-button/category-nav';
 export { NoFoundResult } from './search-result';
 export { Overlay } from './overlay';
 export { PagePagination } from './page-pagination';
