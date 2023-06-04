@@ -8,8 +8,6 @@ export const Logo = styled.div<{ inFooter?: boolean }>`
   width: fit-content;
   -webkit-user-select: none;
   user-select: none;
-  font-family: 'Expletus Sans', cursive;
-  font-weight: 400;
   cursor: pointer;
 
   ${({ theme, inFooter }) => css`
@@ -37,6 +35,8 @@ export const ImgWrapper = styled.div<{ inFooter?: boolean }>`
 `;
 
 export const ProjectName = styled.p<{ inFooter?: boolean }>`
+  font-family: 'Expletus Sans', cursive;
+  font-weight: 400;
   font-size: 26px;
   line-height: 35px;
 

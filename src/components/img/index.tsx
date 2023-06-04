@@ -14,6 +14,8 @@ export { default as cloud2 } from '../../assets/img/clouds/cloud2.png';
 export { default as cloud3 } from '../../assets/img/clouds/cloud3.png';
 export { default as dragNDrop } from '../../assets/img/drag-n-drop.png';
 export { default as footerBg } from '../../assets/img/footer-bg.png';
+export { default as footer } from '../../assets/img/footer.png';
+export { default as footerMobile } from '../../assets/img/footer-mobile.png';
 export { default as fourOhFour } from '../../assets/img/errorPage/404.png';
 export { default as furniture } from '../../assets/img/navItems/furniture.png';
 export { default as furnitureSlider } from '../../assets/img/slider/furniture.png';

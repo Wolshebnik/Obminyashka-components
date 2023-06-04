@@ -199,6 +199,11 @@ const searchResult = Object.freeze({
   gradient: '100.18deg, #8fd3e1 7.33%, #51b2d4 97.87%',
 });
 
+const footerColors = Object.freeze({
+  white,
+  colorText: ' rgba(255, 255, 255, 0.5)',
+});
+
 const COLORS = Object.freeze({
   logo,
   input,
@@ -211,6 +216,7 @@ const COLORS = Object.freeze({
   modalColors,
   navCategory,
   helpChildren,
+  footerColors,
   inboxMessage,
   searchResult,
   newTextColors,
