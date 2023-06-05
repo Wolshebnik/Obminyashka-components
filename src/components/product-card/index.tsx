@@ -5,10 +5,8 @@ import { Responsive } from 'components';
 import * as Icon from '../icon';
 import * as Styles from './styles';
 import { Button } from '../button';
-// import { Avatar } from '../avatar';
 import { IProductCardProps } from './types';
 import { EllipsisText } from '../ellipsis-text';
-// import { InboxMessage } from '../inbox-message';
 
 const ProductCard = ({
   city,
@@ -18,9 +16,7 @@ const ProductCard = ({
   picture,
   buttonText,
   isFavorite,
-}: // avatar = '',
-// inboxMessage,
-IProductCardProps) => {
+}: IProductCardProps) => {
   const [isButtonHovered, setIsButtonHovered] = useState(false);
 
   const handleEnter = () => {
@@ -31,26 +27,15 @@ IProductCardProps) => {
     setIsButtonHovered(false);
   };
 
-  // eslint-disable-next-line no-console
-  console.log(isButtonHovered);
-
   return (
     <Styles.Card margin={margin} isButtonHovered={isButtonHovered}>
       <Styles.FavoriteMarker isFavorite={isFavorite}>
-        {/* {avatar ? ( */}
-        {/* <Styles.StylizedAvatar>
-          <Avatar width={30} height={30} source={avatar} />
-        </Styles.StylizedAvatar> */}
-        {/* // ) : ( */}
         <Styles.FavoriteStarWrapper isFavorite={isFavorite}>
           <Styles.FavoriteStar />
         </Styles.FavoriteStarWrapper>
-        {/* // )} */}
       </Styles.FavoriteMarker>
 
-      {/* <Styles.DivPicture> */}
       <Styles.Picture src={picture} alt="lot" />
-      {/* </Styles.DivPicture> */}
 
       <Responsive.Desktop>
         <Styles.CardContent>
@@ -71,8 +56,6 @@ IProductCardProps) => {
             onMouseLeave={handleLeave}
           >
             <Button onClick={onClick} text={buttonText} width={254} />
-
-            {/* {inboxMessage && <InboxMessage inboxMessage={inboxMessage} />} */}
           </Styles.ButtonBlock>
         </Styles.CardContent>
       </Responsive.Desktop>

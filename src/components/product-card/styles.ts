@@ -7,7 +7,7 @@ const shimmerAnimation = keyframes`
     background-position: 100% 0;
   }
   100% {
-    background-position: -100% 0;
+    background-position: -60% 0;
   }
 `;
 
@@ -121,14 +121,6 @@ export const FavoriteMarker = styled.span<{ isFavorite?: boolean }>`
       height: 50px;
     `}
   `}
-`;
-
-export const StylizedAvatar = styled.div`
-  position: absolute;
-  left: 50%;
-  top: 4px;
-  border-radius: 25px;
-  transform: translate(-50%);
 `;
 
 export const FavoriteStarWrapper = styled.div<{ isFavorite?: boolean }>`
