@@ -20,13 +20,13 @@ export const Card = styled.div<{ margin?: string; isButtonHovered: boolean }>`
   ${({ theme, margin, isButtonHovered }) => css`
     background-color: ${theme.colors.white};
     ${margin && `margin: ${margin}`};
-    border: 1px dashed ${theme.colors.itemCard.borderCard};
+    border: 1px dashed ${theme.colors.productCard.borderCard};
 
     ${theme.responsive.isTablet &&
     css`
       width: 300px;
       height: 330px;
-      border: 2px dashed ${theme.colors.itemCard.borderCard};
+      border: 2px dashed ${theme.colors.productCard.borderCard};
       border-radius: 20px;
     `}
 
@@ -34,7 +34,7 @@ export const Card = styled.div<{ margin?: string; isButtonHovered: boolean }>`
     css`
       width: 335px;
       height: 420px;
-      border: 2px dashed ${theme.colors.itemCard.borderCard};
+      border: 2px dashed ${theme.colors.productCard.borderCard};
       border-radius: 20px;
 
       &:hover:before {
@@ -62,7 +62,7 @@ export const Card = styled.div<{ margin?: string; isButtonHovered: boolean }>`
       }
 
       &:hover {
-        border-color: #7ecde4;
+        border-color: ${theme.colors.productCard.borderCardHovered};
       }
 
       ${isButtonHovered &&
@@ -72,7 +72,7 @@ export const Card = styled.div<{ margin?: string; isButtonHovered: boolean }>`
         }
 
         &:hover {
-          border-color: ${theme.colors.itemCard.borderCard};
+          border-color: ${theme.colors.productCard.borderCard};
         }
       `}
     `}
@@ -92,21 +92,21 @@ export const FavoriteMarker = styled.span<{ isFavorite?: boolean }>`
 
   ${({ theme, isFavorite = false }) => css`
     background-color: ${isFavorite
-      ? theme.colors.itemCard.avatarTrueDefault
-      : theme.colors.itemCard.avatarFalseDefault};
+      ? theme.colors.productCard.avatarTrueDefault
+      : theme.colors.productCard.avatarFalseDefault};
 
     &:hover {
       cursor: pointer;
       background-color: ${isFavorite
-        ? theme.colors.itemCard.avatarTrueHover
-        : theme.colors.itemCard.avatarFalseHover};
+        ? theme.colors.productCard.avatarTrueHover
+        : theme.colors.productCard.avatarFalseHover};
     }
 
     &:active {
       cursor: pointer;
       background-color: ${isFavorite
-        ? theme.colors.itemCard.avatarTrueActive
-        : theme.colors.itemCard.avatarFalseHover};
+        ? theme.colors.productCard.avatarTrueActive
+        : theme.colors.productCard.avatarFalseHover};
     }
 
     ${theme.responsive.isTablet &&

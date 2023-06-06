@@ -170,13 +170,14 @@ const inboxMessage = Object.freeze({
   inboxMessageHover: apple,
 });
 
-const itemCard = Object.freeze({
+const productCard = Object.freeze({
   avatarFalseDefault: silverChalice,
   avatarFalseHover: dustyGray,
   avatarTrueActive: corn,
   avatarTrueDefault: turbo,
   avatarTrueHover: schoolBusYellow,
   borderCard: silver,
+  borderCardHovered: aquamarineBlue,
 });
 
 const productOwnerData = Object.freeze({
@@ -277,9 +278,9 @@ const COLORS = Object.freeze({
   input,
   button,
   search,
-  itemCard,
   language,
   newButton,
+  productCard,
   categoryBtn,
   languageNew,
   modalColors,
