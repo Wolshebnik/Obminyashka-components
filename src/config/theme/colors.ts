@@ -171,11 +171,11 @@ const inboxMessage = Object.freeze({
 });
 
 const productCard = Object.freeze({
-  avatarFalseDefault: silverChalice,
-  avatarFalseHover: dustyGray,
-  avatarTrueActive: corn,
-  avatarTrueDefault: turbo,
-  avatarTrueHover: schoolBusYellow,
+  markerFalseDefault: silverChalice,
+  markerFalseHover: dustyGray,
+  markerTrueActive: corn,
+  markerTrueDefault: turbo,
+  markerTrueHover: schoolBusYellow,
   borderCard: silver,
   borderCardHovered: aquamarineBlue,
 });

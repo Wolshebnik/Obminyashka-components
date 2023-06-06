@@ -92,21 +92,21 @@ export const FavoriteMarker = styled.span<{ isFavorite?: boolean }>`
 
   ${({ theme, isFavorite = false }) => css`
     background-color: ${isFavorite
-      ? theme.colors.productCard.avatarTrueDefault
-      : theme.colors.productCard.avatarFalseDefault};
+      ? theme.colors.productCard.markerTrueDefault
+      : theme.colors.productCard.markerFalseDefault};
 
     &:hover {
       cursor: pointer;
       background-color: ${isFavorite
-        ? theme.colors.productCard.avatarTrueHover
-        : theme.colors.productCard.avatarFalseHover};
+        ? theme.colors.productCard.markerTrueHover
+        : theme.colors.productCard.markerFalseHover};
     }
 
     &:active {
       cursor: pointer;
       background-color: ${isFavorite
-        ? theme.colors.productCard.avatarTrueActive
-        : theme.colors.productCard.avatarFalseHover};
+        ? theme.colors.productCard.markerTrueActive
+        : theme.colors.productCard.markerFalseHover};
     }
 
     ${theme.responsive.isTablet &&
