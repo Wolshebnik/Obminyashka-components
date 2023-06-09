@@ -37,7 +37,7 @@ export const Card = styled.div<{ margin?: string; isButtonHovered: boolean }>`
       border: 2px dashed ${theme.colors.productCard.borderCard};
       border-radius: 20px;
 
-      &:hover:before {
+      &:hover::after {
         content: '';
         position: absolute;
         top: -2px;
@@ -45,19 +45,17 @@ export const Card = styled.div<{ margin?: string; isButtonHovered: boolean }>`
         right: -2px;
         bottom: -2px;
         border-radius: 20px;
-        background-image: linear-gradient(
+        background: linear-gradient(
           45deg,
-          transparent,
-          transparent 40%,
-          white 40%,
-          white 50%,
-          transparent 50%,
-          transparent
+          transparent 30%,
+          green,
+          green,
+          transparent 50%
         );
         background-repeat: no-repeat;
-        background-size: 250% 100%;
+        background-size: 300% 100%;
         transition: opacity 0s ease;
-        animation: ${shimmerAnimation} 2.5s linear infinite;
+        animation: ${shimmerAnimation} 3s linear infinite;
         z-index: 2;
       }
 
