@@ -15,7 +15,7 @@ type Story = StoryObj<typeof ProductCard>;
 
 export const ProductCardWithItem: Story = {
   args: {
-    text: 'hoody',
+    text: 'hoodi',
     avatar: image,
     inboxMessage: 7,
     city: 'NEW YORK',

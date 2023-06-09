@@ -40,18 +40,18 @@ export const Card = styled.div<{ margin?: string; isButtonHovered: boolean }>`
       &:hover:before {
         content: '';
         position: absolute;
-        top: -4px;
+        top: -2px;
         left: -2px;
         right: -2px;
-        bottom: -4px;
-        border: 2px dashed transparent;
+        bottom: -2px;
+        border-radius: 20px;
         background-image: linear-gradient(
           45deg,
           transparent,
           transparent 40%,
           white 40%,
-          white 42%,
-          transparent 42%,
+          white 50%,
+          transparent 50%,
           transparent
         );
         background-repeat: no-repeat;
@@ -132,23 +132,23 @@ export const FavoriteStarWrapper = styled.div<{ isFavorite?: boolean }>`
 
 export const FavoriteStar = styled(Icon.FavoriteStar)`
   display: block;
+  margin: 5px auto;
   width: 14px;
   height: 14px;
-  margin: 5px auto;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
+      margin: 10px auto;
       width: 24px;
       height: 22px;
-      margin: 10px auto;
     `}
 
     ${theme.responsive.isDesktop &&
     css`
+      margin: 12px auto;
       width: 32px;
       height: 26px;
-      margin: 12px auto;
     `}
   `}
 `;
@@ -156,10 +156,10 @@ export const FavoriteStar = styled(Icon.FavoriteStar)`
 export const Picture = styled.img`
   position: relative;
   display: block;
+  margin: 0 auto;
   height: 158px;
   border-radius: 19px 19px 0 0;
   object-fit: cover;
-  margin: 0 auto;
   z-index: 3;
 
   ${({ theme }) => css`
@@ -178,24 +178,24 @@ export const Picture = styled.img`
 
 export const CardContent = styled.div`
   position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  left: 0;
-  right: 0;
-  bottom: 0;
   z-index: 3;
 `;
 
 export const TextContent = styled.h6`
+  display: -webkit-box;
+  margin: 7px 0 23px;
   width: 115px;
   font-size: 10px;
   line-height: 12px;
   text-align: center;
-  margin: 7px 0 23px;
   -webkit-line-clamp: 2;
-  display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
   word-break: break-word;
@@ -205,16 +205,16 @@ export const TextContent = styled.h6`
 
     ${theme.responsive.isTablet &&
     css`
+      margin: 16px 0 34px;
       width: 210px;
       font-size: 14px;
       line-height: 16px;
-      margin: 16px 0 34px;
     `}
 
     ${theme.responsive.isDesktop &&
     css`
-      width: 235px;
       margin: 16px 0 12px;
+      width: 235px;
       font-size: 16px;
       line-height: 19px;
     `}
@@ -234,12 +234,12 @@ export const Location = styled.div`
   `}
 `;
 
-export const CitySpan = styled.span`
+export const CitySpan = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 120px;
   margin-left: 5px;
+  max-width: 120px;
   font-size: 8px;
   line-height: 11px;
   z-index: 1;
