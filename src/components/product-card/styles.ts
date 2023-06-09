@@ -48,8 +48,8 @@ export const Card = styled.div<{ margin?: string; isButtonHovered: boolean }>`
         background: linear-gradient(
           45deg,
           transparent 30%,
-          green,
-          green,
+          white,
+          white,
           transparent 50%
         );
         background-repeat: no-repeat;
@@ -65,7 +65,7 @@ export const Card = styled.div<{ margin?: string; isButtonHovered: boolean }>`
 
       ${isButtonHovered &&
       css`
-        &:before {
+        &:after {
           display: none;
         }
 
@@ -151,14 +151,27 @@ export const FavoriteStar = styled(Icon.FavoriteStar)`
   `}
 `;
 
+export const CardContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  z-index: 3;
+`;
+
 export const Picture = styled.img`
-  position: relative;
   display: block;
-  margin: 0 auto;
   height: 158px;
+  width: 100%;
   border-radius: 19px 19px 0 0;
   object-fit: cover;
-  z-index: 3;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
@@ -168,30 +181,19 @@ export const Picture = styled.img`
 
     ${theme.responsive.isDesktop &&
     css`
-      height: 245px;
-      margin-bottom: 16px;
+      height: 244px;
     `}
   `}
 `;
 
-export const CardContent = styled.div`
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 3;
-`;
+export const CardContent = styled.div``;
 
 export const TextContent = styled.h6`
   display: -webkit-box;
   margin: 7px 0 23px;
   width: 115px;
   font-size: 10px;
-  line-height: 12px;
+  line-height: 18px;
   text-align: center;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -211,7 +213,7 @@ export const TextContent = styled.h6`
 
     ${theme.responsive.isDesktop &&
     css`
-      margin: 16px 0 12px;
+      margin: 16px 0 10px;
       width: 235px;
       font-size: 16px;
       line-height: 19px;
@@ -227,12 +229,13 @@ export const Location = styled.div`
   ${({ theme }) => css`
     ${theme.responsive.isDesktop &&
     css`
-      margin-bottom: 25px;
+      height: 16px;
+      margin-bottom: 20px;
     `}
   `}
 `;
 
-export const CitySpan = styled.div`
+export const City = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -240,7 +243,6 @@ export const CitySpan = styled.div`
   max-width: 120px;
   font-size: 8px;
   line-height: 11px;
-  z-index: 1;
 
   ${({ theme }) => css`
     color: ${theme.colors.btnBlueHover};
@@ -261,5 +263,5 @@ export const CitySpan = styled.div`
 
 export const ButtonBlock = styled.div`
   display: flex;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
 `;

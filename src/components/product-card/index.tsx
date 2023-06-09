@@ -29,58 +29,60 @@ const ProductCard = ({
 
   return (
     <Styles.Card margin={margin} isButtonHovered={isButtonHovered}>
-      <Styles.FavoriteMarker isFavorite={isFavorite}>
-        <Styles.FavoriteStarWrapper isFavorite={isFavorite}>
-          <Styles.FavoriteStar />
-        </Styles.FavoriteStarWrapper>
-      </Styles.FavoriteMarker>
+      <Styles.CardContainer>
+        <Styles.FavoriteMarker isFavorite={isFavorite}>
+          <Styles.FavoriteStarWrapper isFavorite={isFavorite}>
+            <Styles.FavoriteStar />
+          </Styles.FavoriteStarWrapper>
+        </Styles.FavoriteMarker>
 
-      <Styles.Picture src={picture} alt="lot" />
+        <Styles.Picture src={picture} alt="lot" />
 
-      <Responsive.Desktop>
-        <Styles.CardContent>
-          <Styles.TextContent>{text}</Styles.TextContent>
+        <Responsive.Desktop>
+          <Styles.CardContent>
+            <Styles.TextContent>{text}</Styles.TextContent>
 
-          <Styles.Location>
-            <Icon.Location />
-
-            <Styles.CitySpan>
-              <EllipsisText width={250} position="top">
-                {city}
-              </EllipsisText>
-            </Styles.CitySpan>
-          </Styles.Location>
-
-          <Styles.ButtonBlock
-            onMouseEnter={handleEnter}
-            onMouseLeave={handleLeave}
-          >
-            <Button onClick={onClick} text={buttonText} width={254} />
-          </Styles.ButtonBlock>
-        </Styles.CardContent>
-      </Responsive.Desktop>
-
-      <Responsive.NotDesktop>
-        <Styles.CardContent>
-          <Styles.Location>
-            <Responsive.Mobile>
-              <Icon.Location width={7} height={10} />
-            </Responsive.Mobile>
-
-            <Responsive.Tablet>
+            <Styles.Location>
               <Icon.Location />
-            </Responsive.Tablet>
 
-            <Styles.CitySpan>
-              <EllipsisText width={200} position="top">
-                {city}
-              </EllipsisText>
-            </Styles.CitySpan>
-          </Styles.Location>
+              <Styles.City>
+                <EllipsisText width={250} position="top">
+                  {city}
+                </EllipsisText>
+              </Styles.City>
+            </Styles.Location>
 
-          <Styles.TextContent>{text}</Styles.TextContent>
-        </Styles.CardContent>
-      </Responsive.NotDesktop>
+            <Styles.ButtonBlock
+              onMouseEnter={handleEnter}
+              onMouseLeave={handleLeave}
+            >
+              <Button onClick={onClick} text={buttonText} width={254} />
+            </Styles.ButtonBlock>
+          </Styles.CardContent>
+        </Responsive.Desktop>
+
+        <Responsive.NotDesktop>
+          <Styles.CardContent>
+            <Styles.Location>
+              <Responsive.Mobile>
+                <Icon.Location width={7} height={10} />
+              </Responsive.Mobile>
+
+              <Responsive.Tablet>
+                <Icon.Location />
+              </Responsive.Tablet>
+
+              <Styles.City>
+                <EllipsisText width={200} position="top">
+                  {city}
+                </EllipsisText>
+              </Styles.City>
+            </Styles.Location>
+
+            <Styles.TextContent>{text}</Styles.TextContent>
+          </Styles.CardContent>
+        </Responsive.NotDesktop>
+      </Styles.CardContainer>
     </Styles.Card>
   );
 };
