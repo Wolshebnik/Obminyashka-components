@@ -7,6 +7,7 @@ import * as Styles from './styles';
 import { Button } from '../button';
 import { IProductCardProps } from './types';
 import { EllipsisText } from '../ellipsis-text';
+import { InboxMessage } from '../inbox-message';
 
 const ProductCard = ({
   city,
@@ -16,6 +17,7 @@ const ProductCard = ({
   picture,
   buttonText,
   isFavorite,
+  inboxMessage,
 }: IProductCardProps) => {
   const [isButtonHovered, setIsButtonHovered] = useState(false);
 
@@ -46,7 +48,7 @@ const ProductCard = ({
               <Icon.Location />
 
               <Styles.City>
-                <EllipsisText width={250} position="top">
+                <EllipsisText width={250} position="right">
                   {city}
                 </EllipsisText>
               </Styles.City>
@@ -56,7 +58,13 @@ const ProductCard = ({
               onMouseEnter={handleEnter}
               onMouseLeave={handleLeave}
             >
-              <Button onClick={onClick} text={buttonText} width={254} />
+              <Button
+                onClick={onClick}
+                text={buttonText}
+                width={inboxMessage ? 190 : 254}
+              />
+
+              {inboxMessage && <InboxMessage inboxMessage={inboxMessage} />}
             </Styles.ButtonBlock>
           </Styles.CardContent>
         </Responsive.Desktop>

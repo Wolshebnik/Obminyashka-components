@@ -13,9 +13,21 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof ProductCard>;
 
-export const ProductCardWithItem: Story = {
+export const ProductCardDefault: Story = {
   args: {
-    text: 'hoodi',
+    text: 'hoodie',
+    avatar: image,
+    city: 'NEW YORK',
+    isFavorite: true,
+    buttonText: 'button',
+    picture:
+      'https://gfx.garnamama.com/pub/products/235/196235/1600x1600/2EI~124024-7.jpg',
+  },
+};
+
+export const ProductCardWithMessages: Story = {
+  args: {
+    text: 'hoodie',
     avatar: image,
     inboxMessage: 7,
     city: 'NEW YORK',

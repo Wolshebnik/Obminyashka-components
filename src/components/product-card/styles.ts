@@ -37,7 +37,7 @@ export const Card = styled.div<{ margin?: string; isButtonHovered: boolean }>`
       border: 2px dashed ${theme.colors.productCard.borderCard};
       border-radius: 20px;
 
-      &:hover::after {
+      &:hover:after {
         content: '';
         position: absolute;
         top: -2px;
@@ -186,11 +186,13 @@ export const Picture = styled.img`
   `}
 `;
 
-export const CardContent = styled.div``;
+export const CardContent = styled.div`
+  height: auto;
+`;
 
 export const TextContent = styled.h6`
   display: -webkit-box;
-  margin: 7px 0 23px;
+  margin: 7px auto 23px;
   width: 115px;
   font-size: 10px;
   line-height: 18px;
@@ -205,7 +207,7 @@ export const TextContent = styled.h6`
 
     ${theme.responsive.isTablet &&
     css`
-      margin: 16px 0 34px;
+      margin: 16px auto 34px;
       width: 210px;
       font-size: 14px;
       line-height: 16px;
@@ -213,7 +215,7 @@ export const TextContent = styled.h6`
 
     ${theme.responsive.isDesktop &&
     css`
-      margin: 16px 0 10px;
+      margin: 16px auto 10px;
       width: 235px;
       font-size: 16px;
       line-height: 19px;
@@ -229,8 +231,8 @@ export const Location = styled.div`
   ${({ theme }) => css`
     ${theme.responsive.isDesktop &&
     css`
-      height: 16px;
       margin-bottom: 20px;
+      height: 16px;
     `}
   `}
 `;
