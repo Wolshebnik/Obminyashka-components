@@ -1,6 +1,9 @@
+import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
-export const Logo = styled.div<{ inFooter?: boolean }>`
+import { IFooterStyles } from './types';
+
+export const Logo = styled(Link)<{ inFooter?: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,24 +37,36 @@ export const ImgWrapper = styled.div<{ inFooter?: boolean }>`
   `}
 `;
 
-export const ProjectName = styled.p<{ inFooter?: boolean }>`
+export const ProjectName = styled.p<IFooterStyles>`
   font-family: 'Expletus Sans', cursive;
   font-weight: 400;
   font-size: 26px;
   line-height: 35px;
 
-  ${({ theme, inFooter }) => css`
-    color: ${inFooter
-      ? `${theme.colors.logo.white};`
-      : `${theme.colors.logo.blue};`};
+  ${({ theme, inFooter, inFooterOAuth }) => css`
+    color: ${
+      inFooter ? `${theme.colors.logo.white};` : `${theme.colors.logo.blue};`
+    };
 
-    ${inFooter &&
-    `font-size: 30px;
-     line-height: 40px;`};
+    ${
+      inFooter &&
+      inFooterOAuth &&
+      css`
+        color: ${theme.colors.logo.blue};
+      `
+    }
+    }
+    ${
+      inFooter &&
+      `font-size: 30px;
+       line-height: 40px;`
+    };
 
-    ${inFooter &&
-    theme.responsive.isTablet &&
-    `font-size: 25px;
-     line-height: 33px;`};
+    ${
+      inFooter &&
+      theme.responsive.isTablet &&
+      `font-size: 25px;
+       line-height: 33px;`
+    };
   `}
 `;
