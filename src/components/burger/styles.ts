@@ -124,6 +124,11 @@ export const BurgerMenu = styled.div<{
       padding-top: 120px;
       padding-bottom: 204px;
 
+      ::before,
+      ::after {
+        background-image: none;
+      }
+
       ${isAnimation &&
       css`
         top: 85px;
