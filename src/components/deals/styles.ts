@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
-export const WrapperWithLink = styled(Link)`
+export const WrapperWithLink = styled(Link)<{ inFooterOAuth?: boolean }>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -69,19 +69,25 @@ export const Text = styled.p`
   `}
 `;
 
-export const WrapperWithBackground = styled(Link)`
-  ${({ theme }) => css`
+export const WrapperWithBackground = styled(Link)<{ inFooterOAuth?: boolean }>`
+  ${({ theme, inFooterOAuth }) => css`
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     padding: 8px 20px;
     width: 188px;
-    background-color: ${theme.colors.white};
+    background-color: ${theme.colors.dealsColors.white};
     color: ${theme.colors.newTextColors.blueColorText};
     border-radius: 10px;
     cursor: pointer;
     overflow: hidden;
+
+    ${inFooterOAuth &&
+    css`
+      background-color: ${theme.colors.dealsColors.aquamarineBlue};
+      color: ${theme.colors.dealsColors.white};
+    `}
 
     ${theme.responsive.isDesktop &&
     css`
