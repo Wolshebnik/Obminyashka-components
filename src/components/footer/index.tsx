@@ -1,10 +1,8 @@
 import { useMemo } from 'react';
 
-import { Logo } from 'components/logo';
-import { Deals } from 'components/deals';
-
+import { Logo } from '../logo';
 import * as Icon from '../icon';
-
+import { Deals } from '../deals';
 import { decoded } from './helper';
 import * as Styles from './styles';
 import { IFooterProps } from './types';
