@@ -34,6 +34,8 @@ const CategoryButton = ({
           onClick={() => setOpen(!isOpen)}
         >
           <Styles.CategoriesText>{textBtn}</Styles.CategoriesText>
+
+          <Styles.triangle isOpen={isOpen} />
         </Styles.CategoriesDesktop>
       </Responsive.Desktop>
 
