@@ -1,8 +1,9 @@
-import * as Responsive from '../responsive';
+import { EllipsisText } from 'components/ellipsis-text';
 
 import * as Icon from '../icon';
 import { IDeals } from './types';
 import * as Styles from './styles';
+import * as Responsive from '../responsive';
 
 const Deals = ({
   to,
@@ -32,7 +33,9 @@ const Deals = ({
         </Styles.HeartIconWrapper>
       )}
 
-      <Styles.Text>{text}</Styles.Text>
+      <Styles.Text>
+        <EllipsisText>{text}</EllipsisText>
+      </Styles.Text>
     </WrapperWithCondition>
   );
 };
