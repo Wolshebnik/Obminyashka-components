@@ -38,7 +38,7 @@ export const ImgWrapper = styled.div<{ inFooter?: boolean }>`
 `;
 
 export const ProjectName = styled.p<IFooterStyles>`
-  font-family: 'Expletus Sans', cursive;
+  font-family: Expletus Sans, cursive;
   font-weight: 400;
   font-size: 26px;
   line-height: 35px;

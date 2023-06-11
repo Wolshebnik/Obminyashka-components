@@ -50,7 +50,13 @@ export const Footer = ({
                 <Logo inFooter to={toMain} />
               )}
             </Styles.LogoWrap>
-            <Deals background heartIcon to={toDeals} text={text} />
+            <Deals
+              background
+              heartIcon
+              to={toDeals}
+              text={text}
+              inFooterOAuth={inFooterOAuth}
+            />
           </Styles.Lists>
 
           <Styles.Lists>

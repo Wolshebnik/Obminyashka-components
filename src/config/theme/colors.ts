@@ -279,6 +279,11 @@ const footerColors = Object.freeze({
   colorText: 'rgba(255, 255, 255, 0.5)',
 });
 
+const dealsColors = Object.freeze({
+  white,
+  aquamarineBlue,
+});
+
 const COLORS = Object.freeze({
   logo,
   input,
@@ -287,6 +292,7 @@ const COLORS = Object.freeze({
   itemCard,
   language,
   newButton,
+  dealsColors,
   categoryBtn,
   languageNew,
   modalColors,
