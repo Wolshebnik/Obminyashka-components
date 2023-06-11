@@ -1,13 +1,11 @@
 import React, { useRef } from 'react';
 
-import { Deals, LanguageSelection, Responsive } from 'components';
-
-import { Overlay } from 'components/overlay';
-import * as Icon from 'components/icon/index';
-import { useDelayAnimation } from 'hooks/useDelayAnimation';
+import { useDelayAnimation } from 'hooks';
+import { Deals, LanguageSelection, Overlay, Responsive } from 'components';
 
 import { IBurger } from './types';
 import * as Styles from './styles';
+import * as Icon from '../../components/icon';
 
 const Burger = ({ data, lang, onSelectLanguage, duration = 600 }: IBurger) => {
   const burgerRef = useRef<HTMLDivElement>(null);

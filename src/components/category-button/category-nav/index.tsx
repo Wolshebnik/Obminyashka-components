@@ -7,7 +7,12 @@ import * as Styles from './styles';
 import { ICategoryNav } from './types';
 import { ICategoryInfo } from '../types';
 
-const NavCategory = ({ categoryInfo = [], isOpen, delay }: ICategoryNav) => {
+const NavCategory = ({
+  delay,
+  isOpen,
+  childRef,
+  categoryInfo = [],
+}: ICategoryNav) => {
   const [isVisibleSun, setVisibleSun] = useState<boolean>(true);
 
   const handleMouseEnter = (text: string) => {
@@ -20,7 +25,7 @@ const NavCategory = ({ categoryInfo = [], isOpen, delay }: ICategoryNav) => {
   };
 
   return (
-    <Styles.List isOpen={isOpen} delay={delay}>
+    <Styles.List ref={childRef} isOpen={isOpen} delay={delay}>
       <Styles.Wrapper onMouseLeave={() => setVisibleSun(true)}>
         {categoryInfo.map((el: ICategoryInfo, index) => {
           const { img, sun } = images[index];

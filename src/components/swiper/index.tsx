@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { useWindowWidth } from 'hooks/useWindowWidth';
+import { useWindowWidth } from 'hooks';
 
 import * as Styles from './styles';
 import { IMainSwiper } from './types';
