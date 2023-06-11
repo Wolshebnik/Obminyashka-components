@@ -4,7 +4,7 @@ import { Logo } from 'components/logo';
 import { Deals } from 'components/deals';
 
 import * as Icon from '../icon';
-import { contacts } from './mock';
+
 import { decoded } from './helper';
 import * as Styles from './styles';
 import { IFooterProps } from './types';
@@ -12,6 +12,9 @@ import { IFooterProps } from './types';
 export const Footer = ({
   text,
   name,
+  tel1,
+  tel2,
+  email,
   rules,
   toMain,
   protect,
@@ -27,9 +30,9 @@ export const Footer = ({
   const yearNow = timeDate.getFullYear();
 
   const decodedContacts = useMemo(() => {
-    const decodedEmail = decoded(contacts.email);
-    const decodedTel1 = decoded(contacts.tel1);
-    const decodedTel2 = decoded(contacts.tel2);
+    const decodedEmail = decoded(email);
+    const decodedTel1 = decoded(tel1);
+    const decodedTel2 = decoded(tel2);
 
     return {
       email: decodedEmail,
@@ -44,12 +47,9 @@ export const Footer = ({
         <Styles.Blocks>
           <Styles.Lists>
             <Styles.LogoWrap>
-              {inFooterOAuth ? (
-                <Logo inFooter inFooterOAuth to={toMain} />
-              ) : (
-                <Logo inFooter to={toMain} />
-              )}
+              <Logo inFooter inFooterOAuth={inFooterOAuth} to={toMain} />
             </Styles.LogoWrap>
+
             <Deals
               background
               heartIcon

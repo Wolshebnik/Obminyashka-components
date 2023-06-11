@@ -1,6 +1,9 @@
 export interface IFooterProps {
   text: string;
+  tel1: string;
+  tel2: string;
   name: string;
+  email: string;
   rules: string;
   toMain: string;
   protect: string;

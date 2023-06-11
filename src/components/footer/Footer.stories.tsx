@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Footer } from '.';
+import { contacts } from './mock';
 import { argTypes } from './arg-types';
 import { IFooterProps } from './types';
 
@@ -19,6 +20,9 @@ export const FooterDefault: Story = {
   args: {
     text: 'Good Deals',
     name: 'Obminyashka',
+    tel1: contacts.tel1,
+    tel2: contacts.tel2,
+    email: contacts.email,
     rules: 'Safe deal rules',
     protect: 'All rights reserved',
     charity: 'Charity organizations',
@@ -32,6 +36,9 @@ export const FooterOAuth: Story = {
     text: 'Good Deals',
     inFooterOAuth: true,
     name: 'Obminyashka',
+    tel1: contacts.tel1,
+    tel2: contacts.tel2,
+    email: contacts.email,
     rules: 'Safe deal rules',
     protect: 'All rights reserved',
     charity: 'Charity organizations',
