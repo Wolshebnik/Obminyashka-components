@@ -4,13 +4,20 @@ import * as Icon from '../icon';
 import { IDeals } from './types';
 import * as Styles from './styles';
 
-const Deals = ({ to, text, heartIcon, background, puzzleIcon }: IDeals) => {
+const Deals = ({
+  to,
+  text,
+  heartIcon,
+  background,
+  puzzleIcon,
+  inFooterOAuth,
+}: IDeals) => {
   const WrapperWithCondition = background
     ? Styles.WrapperWithBackground
     : Styles.WrapperWithLink;
 
   return (
-    <WrapperWithCondition to={to}>
+    <WrapperWithCondition to={to} inFooterOAuth={inFooterOAuth}>
       {puzzleIcon && (
         <Responsive.Desktop>
           <Styles.PuzzleIconWrapper>
