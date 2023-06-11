@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
-import { footerMobile, footer } from 'components/img';
+import {
+  footer,
+  footerMobile,
+  footerSearch,
+  footerSearchMob,
+} from 'components/img';
 
 export const linkStyles = css`
   display: block;
@@ -31,20 +36,38 @@ export const linkStyles = css`
   `}
 `;
 
-export const Container = styled.div`
-  position: relative;
-  margin-top: auto;
-  background-image: url(${footerMobile});
+export const backgroundStyles = css`
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
+`;
 
-  ${({ theme }) => css`
+export const Container = styled.div<{ inFooterOAuth?: boolean }>`
+  position: relative;
+  margin-top: auto;
+  background-image: url(${footerMobile});
+
+  ${backgroundStyles};
+
+  ${({ theme, inFooterOAuth }) => css`
     color: ${theme.colors.footerColors.white};
 
     ${!theme.responsive.isMobile &&
     css`
       background-image: url(${footer});
+    `}
+
+    ${inFooterOAuth &&
+    css`
+      background-image: url(${footerSearchMob});
+      color: ${theme.colors.footerColors.footerBlue};
+
+      ${backgroundStyles}
+
+      ${!theme.responsive.isMobile &&
+      css`
+        background-image: url(${footerSearch});
+      `}
     `}
   `}
 `;
@@ -76,7 +99,7 @@ export const Lists = styled.li`
   padding: 12px;
 `;
 
-export const Span = styled.span`
+export const Span = styled.span<{ inFooterOAuth?: boolean }>`
   display: inline-block;
   margin: 20px 0;
 
@@ -85,15 +108,24 @@ export const Span = styled.span`
     height: 20px;
   }
 
-  ${({ theme }) =>
-    !theme.responsive.isMobile &&
+  ${({ theme, inFooterOAuth }) => css`
+    ${inFooterOAuth &&
+    css`
+      > svg > path {
+        fill: ${theme.colors.footerColors.footerBlue};
+      }
+    `}
+
+    ${!theme.responsive.isMobile &&
     css`
       margin-bottom: 44px;
+
       > svg {
         width: 25px;
         height: 25px;
       }
     `}
+  `}
 `;
 
 export const Contact = styled.a`
@@ -104,15 +136,21 @@ export const FootLink = styled(Link)`
   ${linkStyles}
 `;
 
-export const CopyContainer = styled.div`
+export const CopyContainer = styled.div<{ inFooterOAuth?: boolean }>`
   padding: 8px 0 55px;
   text-align: center;
   font-size: 10px;
   font-weight: 400;
   line-height: 16px;
 
-  ${({ theme }) => css`
+  ${({ theme, inFooterOAuth }) => css`
     color: ${theme.colors.footerColors.colorText};
+
+    ${inFooterOAuth &&
+    css`
+      color: ${theme.colors.footerColors.footerBlue};
+      opacity: 0.5;
+    `}
 
     ${!theme.responsive.isMobile &&
     css`

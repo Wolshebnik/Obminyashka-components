@@ -10,4 +10,5 @@ export interface IFooterProps {
   questions: string;
   toCharity: string;
   toQuestions: string;
+  inFooterOAuth?: boolean;
 }

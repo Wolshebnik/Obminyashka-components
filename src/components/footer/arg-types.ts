@@ -83,4 +83,14 @@ export const argTypes: IArgTypes<IFooterProps> = {
       type: { summary: 'string' },
     },
   },
+  inFooterOAuth: {
+    name: `inFooterOAuth`,
+    type: { name: 'boolean' },
+    description:
+      'Property from which the type of the Logo element changes. Boolean.',
+    table: {
+      type: { summary: 'boolean' },
+    },
+    controls: 'boolean',
+  },
 };

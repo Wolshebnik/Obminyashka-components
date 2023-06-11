@@ -12,6 +12,7 @@ const mariner = '#286cc9';
 const pelorous = '#44A5C6';
 const endeavour = '#0666ab';
 const searchBlue = '#29a5d4';
+const footerBlue = '#3DB4D7';
 const buttonBlue = '#12b6ed';
 const shakespeare = '#53b3d4';
 const tropicalBlue = '#CEEEFA';
@@ -274,7 +275,8 @@ const searchResult = Object.freeze({
 
 const footerColors = Object.freeze({
   white,
-  colorText: ' rgba(255, 255, 255, 0.5)',
+  footerBlue,
+  colorText: 'rgba(255, 255, 255, 0.5)',
 });
 
 const COLORS = Object.freeze({

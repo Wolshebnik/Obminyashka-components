@@ -44,29 +44,23 @@ export const ProjectName = styled.p<IFooterStyles>`
   line-height: 35px;
 
   ${({ theme, inFooter, inFooterOAuth }) => css`
-    color: ${
-      inFooter ? `${theme.colors.logo.white};` : `${theme.colors.logo.blue};`
-    };
+    color: ${inFooter
+      ? `${theme.colors.logo.white};`
+      : `${theme.colors.logo.blue};`};
 
-    ${
-      inFooter &&
-      inFooterOAuth &&
-      css`
-        color: ${theme.colors.logo.blue};
-      `
-    }
-    }
-    ${
-      inFooter &&
-      `font-size: 30px;
-       line-height: 40px;`
-    };
+    ${inFooter &&
+    inFooterOAuth &&
+    css`
+      color: ${theme.colors.logo.blue};
+    `}
 
-    ${
-      inFooter &&
-      theme.responsive.isTablet &&
-      `font-size: 25px;
-       line-height: 33px;`
-    };
+    ${inFooter &&
+    `font-size: 30px;
+       line-height: 40px;`};
+
+    ${inFooter &&
+    theme.responsive.isTablet &&
+    `font-size: 25px;
+       line-height: 33px;`};
   `}
 `;
