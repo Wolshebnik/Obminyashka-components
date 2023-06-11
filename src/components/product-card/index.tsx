@@ -5,6 +5,7 @@ import { Responsive } from 'components';
 import * as Icon from '../icon';
 import * as Styles from './styles';
 import { Button } from '../button';
+import { Avatar } from '../avatar';
 import { IProductCardProps } from './types';
 import { EllipsisText } from '../ellipsis-text';
 import { InboxMessage } from '../inbox-message';
@@ -17,6 +18,7 @@ const ProductCard = ({
   picture,
   buttonText,
   isFavorite,
+  avatar = '',
   inboxMessage,
 }: IProductCardProps) => {
   const [isButtonHovered, setIsButtonHovered] = useState(false);
@@ -33,9 +35,25 @@ const ProductCard = ({
     <Styles.Card margin={margin} isButtonHovered={isButtonHovered}>
       <Styles.CardContainer>
         <Styles.FavoriteMarker isFavorite={isFavorite}>
-          <Styles.FavoriteStarWrapper isFavorite={isFavorite}>
-            <Styles.FavoriteStar />
-          </Styles.FavoriteStarWrapper>
+          {avatar ? (
+            <Styles.StylizedAvatar>
+              <Responsive.Mobile>
+                <Avatar width={18} height={18} source={avatar} />
+              </Responsive.Mobile>
+
+              <Responsive.Tablet>
+                <Avatar width={35} height={35} source={avatar} />
+              </Responsive.Tablet>
+
+              <Responsive.Desktop>
+                <Avatar width={42} height={42} source={avatar} />
+              </Responsive.Desktop>
+            </Styles.StylizedAvatar>
+          ) : (
+            <Styles.FavoriteStarWrapper isFavorite={isFavorite}>
+              <Styles.FavoriteStar />
+            </Styles.FavoriteStarWrapper>
+          )}
         </Styles.FavoriteMarker>
 
         <Styles.Picture src={picture} alt="lot" />

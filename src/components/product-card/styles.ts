@@ -151,6 +151,14 @@ export const FavoriteStar = styled(Icon.FavoriteStar)`
   `}
 `;
 
+export const StylizedAvatar = styled.div`
+  position: absolute;
+  left: 51%;
+  top: 3px;
+  border-radius: 25px;
+  transform: translate(-50%);
+`;
+
 export const CardContainer = styled.div`
   position: absolute;
   top: 0;
