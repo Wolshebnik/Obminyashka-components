@@ -1,6 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Link } from 'react-router-dom';
 import styled, { css, keyframes } from 'styled-components';
+
+import { IList, ISunCategory } from './types';
 
 const open = keyframes`
   0% {
@@ -96,7 +97,7 @@ const text = keyframes`
   }
 `;
 
-export const List = styled.div<{ isOpen: boolean; delay: number }>`
+export const List = styled.div<IList>`
   position: absolute;
   width: 100vw;
   left: 0;
@@ -255,7 +256,7 @@ export const NavHover = styled.div`
   `}
 `;
 
-export const SunMain = styled.img<{ variant: string }>`
+export const SunMain = styled.img<{ variant: number }>`
   position: absolute;
   top: -20px;
   left: -260px;
@@ -265,7 +266,7 @@ export const SunMain = styled.img<{ variant: string }>`
 
   ${({ variant }) => css`
     ${NavbarLinkContainer}:hover & {
-      ${variant === 'clothes' &&
+      ${variant === 0 &&
       css`
         animation: ${mainSunDisplaced} 0.5s forwards;
       `}
@@ -273,11 +274,7 @@ export const SunMain = styled.img<{ variant: string }>`
   `}
 `;
 
-export const SunCategory = styled.img<{
-  variant: string;
-  isLeave: boolean;
-  visible: boolean;
-}>`
+export const SunCategory = styled.img<ISunCategory>`
   position: absolute;
   width: 30px;
   height: 30px;
@@ -291,7 +288,7 @@ export const SunCategory = styled.img<{
         animation: ${sun} 0.5s forwards, ${sunMove} 2.5s 0.5s linear infinite;
       }
 
-      ${variant === 'clothes' &&
+      ${variant === 0 &&
       visible &&
       css`
         ${NavbarLinkContainer}:hover & {
@@ -306,49 +303,49 @@ export const SunCategory = styled.img<{
 
       ${!visible &&
       css`
-        ${variant === 'clothes' &&
+        ${variant === 0 &&
         css`
           top: -10px;
           left: -75px;
         `}
 
-        ${variant === 'shoes' &&
+        ${variant === 1 &&
         css`
           top: -10px;
           left: 110px;
         `}
           
-          ${variant === 'toys' &&
+          ${variant === 2 &&
         css`
           top: -5px;
           left: 120px;
         `}
           
-          ${variant === 'transport for children' &&
+          ${variant === 3 &&
         css`
           top: 55px;
           left: 135px;
         `} 
           
-          ${variant === 'furniture' &&
+          ${variant === 4 &&
         css`
           top: 125px;
           left: -90px;
         `} 
           
-          ${variant === 'kids up to year' &&
+          ${variant === 5 &&
         css`
           top: -5px;
           left: 115px;
         `}
           
-          ${variant === 'books' &&
+          ${variant === 6 &&
         css`
           top: 165px;
           left: 115px;
         `}
           
-          ${variant === 'other' &&
+          ${variant === 7 &&
         css`
           top: 65px;
           left: -100px;

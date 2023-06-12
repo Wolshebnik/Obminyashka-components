@@ -5,7 +5,6 @@ import { Images, Responsive } from 'components';
 import { images } from './config';
 import * as Styles from './styles';
 import { ICategoryNav } from './types';
-import { ICategoryInfo } from '../types';
 
 const NavCategory = ({
   delay,
@@ -15,8 +14,8 @@ const NavCategory = ({
 }: ICategoryNav) => {
   const [isVisibleSun, setVisibleSun] = useState<boolean>(true);
 
-  const handleMouseEnter = (text: string) => {
-    if (text === 'clothes') {
+  const handleMouseEnter = (index: number) => {
+    if (index === 0) {
       setTimeout(() => setVisibleSun(false), 500);
       return;
     }
@@ -27,21 +26,21 @@ const NavCategory = ({
   return (
     <Styles.List ref={childRef} isOpen={isOpen} delay={delay}>
       <Styles.Wrapper onMouseLeave={() => setVisibleSun(true)}>
-        {categoryInfo.map((el: ICategoryInfo, index) => {
+        {categoryInfo.map(({ text, link }, index) => {
           const { img, sun } = images[index];
 
           return (
             <Styles.NavbarLinkContainer
-              to={el.link}
-              key={el.text}
-              onMouseEnter={() => handleMouseEnter(el.text)}
+              to={link}
+              key={text}
+              onMouseEnter={() => handleMouseEnter(index)}
             >
               <Styles.NavbarLinkBody>
                 <Responsive.Desktop>
-                  {isVisibleSun && el.text === 'clothes' && (
+                  {isVisibleSun && index === 0 && (
                     <Styles.SunMain
                       alt="sun-main"
-                      variant={el.text}
+                      variant={index}
                       src={Images.sunMain}
                     />
                   )}
@@ -49,18 +48,18 @@ const NavCategory = ({
                   <Styles.SunCategory
                     isLeave
                     src={sun}
-                    variant={el.text}
-                    alt={'sun' + el.text}
+                    variant={index}
+                    alt={'sun' + text}
                     visible={isVisibleSun}
                   />
                 </Responsive.Desktop>
 
                 <Styles.NavHover />
 
-                <Styles.Img src={img} alt={el.text} />
+                <Styles.Img src={img} alt={text} />
               </Styles.NavbarLinkBody>
 
-              <Styles.Span>{el.text}</Styles.Span>
+              <Styles.Span>{text}</Styles.Span>
             </Styles.NavbarLinkContainer>
           );
         })}

@@ -8,3 +8,14 @@ export interface ICategoryNav {
   categoryInfo: ICategoryInfo[];
   childRef: RefObject<HTMLDivElement> | null;
 }
+
+export interface ISunCategory {
+  variant: number;
+  isLeave: boolean;
+  visible: boolean;
+}
+
+export interface IList {
+  delay: number;
+  isOpen: boolean;
+}
