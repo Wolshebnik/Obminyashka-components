@@ -195,13 +195,27 @@ export const Picture = styled.img`
 `;
 
 export const CardContent = styled.div`
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 25px 23px;
+  width: 100%;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      padding: 0 45px 34px;
+    `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      padding: 0 40px 24px;
+    `}
+  `}
 `;
 
 export const TextContent = styled.h6`
   display: -webkit-box;
-  margin: 7px auto 23px;
-  width: 115px;
+  margin: 0 auto;
   font-size: 10px;
   line-height: 18px;
   text-align: center;
@@ -209,24 +223,26 @@ export const TextContent = styled.h6`
   -webkit-box-orient: vertical;
   overflow: hidden;
   word-break: break-word;
+  order: 2;
 
   ${({ theme }) => css`
     color: ${theme.colors.blackColorText};
 
     ${theme.responsive.isTablet &&
     css`
-      margin: 16px auto 34px;
-      width: 210px;
+      margin: 0 auto;
       font-size: 14px;
       line-height: 16px;
+      order: 2;
     `}
 
     ${theme.responsive.isDesktop &&
     css`
-      margin: 16px auto 10px;
+      margin: 0 auto 10px;
       width: 235px;
       font-size: 16px;
       line-height: 19px;
+      order: 1;
     `}
   `}
 `;
@@ -235,12 +251,21 @@ export const Location = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 7px;
+  order: 1;
 
   ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      margin-bottom: 12px;
+      order: 1;
+    `}
+
     ${theme.responsive.isDesktop &&
     css`
       margin-bottom: 20px;
       height: 16px;
+      order: 1;
     `}
   `}
 `;
@@ -273,5 +298,6 @@ export const City = styled.div`
 
 export const ButtonBlock = styled.div`
   display: flex;
-  margin-bottom: 24px;
+  margin: 0 auto;
+  order: 3;
 `;

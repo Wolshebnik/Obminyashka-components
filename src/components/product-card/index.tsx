@@ -58,20 +58,30 @@ const ProductCard = ({
 
         <Styles.Picture src={picture} alt="lot" />
 
-        <Responsive.Desktop>
-          <Styles.CardContent>
-            <Styles.TextContent>{text}</Styles.TextContent>
+        <Styles.CardContent>
+          <Styles.TextContent>{text}</Styles.TextContent>
 
-            <Styles.Location>
+          <Styles.Location>
+            <Responsive.Mobile>
+              <Icon.Location width={7} height={10} />
+            </Responsive.Mobile>
+
+            <Responsive.Tablet>
               <Icon.Location />
+            </Responsive.Tablet>
 
-              <Styles.City>
-                <EllipsisText width={250} position="right">
-                  {city}
-                </EllipsisText>
-              </Styles.City>
-            </Styles.Location>
+            <Responsive.Desktop>
+              <Icon.Location />
+            </Responsive.Desktop>
 
+            <Styles.City>
+              <EllipsisText width={250} position="right">
+                {city}
+              </EllipsisText>
+            </Styles.City>
+          </Styles.Location>
+
+          <Responsive.Desktop>
             <Styles.ButtonBlock
               onMouseEnter={handleEnter}
               onMouseLeave={handleLeave}
@@ -84,30 +94,8 @@ const ProductCard = ({
 
               {inboxMessage && <InboxMessage inboxMessage={inboxMessage} />}
             </Styles.ButtonBlock>
-          </Styles.CardContent>
-        </Responsive.Desktop>
-
-        <Responsive.NotDesktop>
-          <Styles.CardContent>
-            <Styles.Location>
-              <Responsive.Mobile>
-                <Icon.Location width={7} height={10} />
-              </Responsive.Mobile>
-
-              <Responsive.Tablet>
-                <Icon.Location />
-              </Responsive.Tablet>
-
-              <Styles.City>
-                <EllipsisText width={200} position="top">
-                  {city}
-                </EllipsisText>
-              </Styles.City>
-            </Styles.Location>
-
-            <Styles.TextContent>{text}</Styles.TextContent>
-          </Styles.CardContent>
-        </Responsive.NotDesktop>
+          </Responsive.Desktop>
+        </Styles.CardContent>
       </Styles.CardContainer>
     </Styles.Card>
   );
