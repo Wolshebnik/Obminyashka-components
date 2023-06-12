@@ -1,5 +1,3 @@
-import { EllipsisText } from 'components/ellipsis-text';
-
 import * as Icon from '../icon';
 import { IDeals } from './types';
 import * as Styles from './styles';
@@ -33,9 +31,7 @@ const Deals = ({
         </Styles.HeartIconWrapper>
       )}
 
-      <Styles.Text>
-        <EllipsisText>{text}</EllipsisText>
-      </Styles.Text>
+      <Styles.Text>{text}</Styles.Text>
     </WrapperWithCondition>
   );
 };
