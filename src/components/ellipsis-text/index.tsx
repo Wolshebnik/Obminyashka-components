@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 
 import { ChildrenProps } from 'types';
-import { useDelayTooltip } from 'hooks/useDelayTooltip';
+import { useDelayTooltip } from 'hooks';
 
 import * as Styles from './styles';
 import { ITooltipProps } from './types';

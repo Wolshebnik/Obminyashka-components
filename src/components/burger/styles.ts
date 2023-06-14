@@ -1,25 +1,19 @@
 import styled, { css } from 'styled-components';
 
-import { Images } from 'components';
+import { newBgBurgerOne, newBgBurgerTwo } from '../img';
 
 export const BurgerIcon = styled.div`
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
 
   ${({ theme }) => css`
-    ${theme.responsive.isMobile &&
-    css`
-      top: 26px;
-      right: 15px;
-      width: 30px;
-      height: 30px;
-      z-index: 1;
-    `}
-
     ${theme.responsive.isTablet &&
     css`
-      top: 23px;
-      right: 40px;
       width: 40px;
       height: 40px;
     `}
@@ -37,7 +31,6 @@ const Line = css`
 
 export const BurgerIconLines = styled.div<{ isOpen?: boolean }>`
   position: relative;
-  top: 10px;
 
   ${({ theme, isOpen }) => css`
     ${Line};
@@ -48,32 +41,30 @@ export const BurgerIconLines = styled.div<{ isOpen?: boolean }>`
       content: '';
       position: absolute;
       ${Line};
-      height: 3px;
     }
 
-    ${theme.responsive.isMobile &&
-    css`
-      ::before {
-        top: -10px;
-        transform: ${isOpen ? 'rotate(45deg)' : 'rotate(0)'};
-      }
+    ::before {
+      top: -10px;
+      left: ${isOpen ? '4px' : 0};
+      transform: ${isOpen ? 'rotate(45deg)' : 'rotate(0)'};
+    }
 
-      ::after {
-        bottom: -10px;
-        transform: ${isOpen ? 'rotate(-45deg)' : 'rotate(0)'};
-      }
-    `}
+    ::after {
+      bottom: -10px;
+      left: ${isOpen ? '4px' : 0};
+      transform: ${isOpen ? 'rotate(-45deg)' : 'rotate(0)'};
+    }
 
     ${theme.responsive.isTablet &&
     css`
       ::before {
         top: -13px;
-        transform: ${isOpen ? 'rotate(45deg)' : 'rotate(0)'};
+        left: ${isOpen ? '6px' : 0};
       }
 
       ::after {
         bottom: -13px;
-        transform: ${isOpen ? 'rotate(-45deg)' : 'rotate(0)'};
+        left: ${isOpen ? '6px' : 0};
       }
     `}
   `}
@@ -84,10 +75,41 @@ export const BurgerMenu = styled.div<{
   isAnimation?: boolean;
 }>`
   position: absolute;
-  left: 0;
   top: -100%;
+  left: 0;
+  width: 100%;
+  padding-top: 124px;
+  padding-bottom: 188px;
   width: 100%;
   transition: all 0.6s ease-in-out;
+
+  ::before,
+  ::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+  }
+
+  ::after {
+    top: 0;
+    left: 0;
+    max-width: 200px;
+    max-height: 240px;
+    background-image: url(${newBgBurgerOne});
+  }
+
+  ::before {
+    bottom: 0;
+    right: 0;
+    max-width: 300px;
+    max-height: 285px;
+    background-image: url(${newBgBurgerTwo});
+  }
 
   ${({ theme, isAnimation }) => css`
     background-color: ${theme.colors.white};
@@ -97,46 +119,15 @@ export const BurgerMenu = styled.div<{
       top: 0;
     `}
 
-    ${theme.responsive.isMobile &&
-    css`
-      gap: 56px;
-      width: 100%;
-      padding-top: 124px;
-      padding-bottom: 188px;
-
-      ::before,
-      ::after {
-        content: '';
-        position: absolute;
-        display: block;
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        opacity: 0.7;
-      }
-
-      ::after {
-        top: 0;
-        left: 0;
-        max-width: 200px;
-        max-height: 240px;
-        background-image: url(${Images.newBgBurgerOne});
-      }
-
-      ::before {
-        bottom: 0;
-        right: 0;
-        max-width: 300px;
-        max-height: 285px;
-        background-image: url(${Images.newBgBurgerTwo});
-      }
-    `}
-
     ${theme.responsive.isTablet &&
     css`
       padding-top: 120px;
       padding-bottom: 204px;
+
+      ::before,
+      ::after {
+        background-image: none;
+      }
 
       ${isAnimation &&
       css`
@@ -175,7 +166,6 @@ export const BurgerMenuClose = styled.div`
 `;
 
 export const BurgerContainer = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;

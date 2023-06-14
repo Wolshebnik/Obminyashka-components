@@ -5,9 +5,10 @@ export const SearchInputWrapper = styled.div`
   display: flex;
   align-items: center;
   padding: 8px 31px 8px 11px;
-  width: 310px;
-  box-sizing: border-box;
-  border-radius: 26.67px;
+  width: 100%;
+  max-width: 310px;
+  min-width: 180px;
+  border-radius: 26px;
 
   input[type='text']::-ms-clear {
     display: none;

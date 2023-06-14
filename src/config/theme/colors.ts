@@ -12,6 +12,7 @@ const mariner = '#286cc9';
 const pelorous = '#44A5C6';
 const endeavour = '#0666ab';
 const searchBlue = '#29a5d4';
+const footerBlue = '#3DB4D7';
 const buttonBlue = '#12b6ed';
 const shakespeare = '#53b3d4';
 const tropicalBlue = '#CEEEFA';
@@ -273,6 +274,17 @@ const searchResult = Object.freeze({
   gradient: '100.18deg, #8fd3e1 7.33%, #51b2d4 97.87%',
 });
 
+const footerColors = Object.freeze({
+  white,
+  footerBlue,
+  colorText: 'rgba(255, 255, 255, 0.5)',
+});
+
+const dealsColors = Object.freeze({
+  white,
+  aquamarineBlue,
+});
+
 const COLORS = Object.freeze({
   logo,
   input,
@@ -281,11 +293,13 @@ const COLORS = Object.freeze({
   language,
   newButton,
   productCard,
+  dealsColors,
   categoryBtn,
   languageNew,
   modalColors,
   navCategory,
   helpChildren,
+  footerColors,
   inboxMessage,
   searchResult,
   newTextColors,

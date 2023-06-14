@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import { ChildrenProps } from 'types';
-import { useOutsideClick } from 'hooks/useOutSideClick';
+import { useOutsideClick } from 'hooks';
 
 import * as Styles from './styles';
 import { IOverlay } from './types';

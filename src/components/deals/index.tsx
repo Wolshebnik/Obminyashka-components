@@ -1,16 +1,22 @@
-import * as Responsive from '../responsive';
-
 import * as Icon from '../icon';
 import { IDeals } from './types';
 import * as Styles from './styles';
+import * as Responsive from '../responsive';
 
-const Deals = ({ to, text, heartIcon, background, puzzleIcon }: IDeals) => {
+const Deals = ({
+  to,
+  text,
+  heartIcon,
+  background,
+  puzzleIcon,
+  inFooterOAuth,
+}: IDeals) => {
   const WrapperWithCondition = background
     ? Styles.WrapperWithBackground
     : Styles.WrapperWithLink;
 
   return (
-    <WrapperWithCondition to={to}>
+    <WrapperWithCondition to={to} inFooterOAuth={inFooterOAuth}>
       {puzzleIcon && (
         <Responsive.Desktop>
           <Styles.PuzzleIconWrapper>

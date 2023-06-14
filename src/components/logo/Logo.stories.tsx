@@ -17,7 +17,6 @@ const Template = (args: ILogo) => <Logo {...args} />;
 
 export const Header: Story = {
   args: {
-    onClick: () => alert('Header'),
     inFooter: false,
   },
   render: (args) => (
@@ -34,7 +33,6 @@ export const Header: Story = {
 
 export const Footer: Story = {
   args: {
-    onClick: () => alert('Footer'),
     inFooter: true,
   },
   render: (args) => (
