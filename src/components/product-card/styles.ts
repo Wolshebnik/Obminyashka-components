@@ -24,8 +24,8 @@ export const Card = styled.div<{ margin?: string }>`
   border-radius: 10px;
 
   ${({ theme, margin }) => css`
-    background-color: ${theme.colors.white};
     ${margin && `margin: ${margin}`};
+    background-color: ${theme.colors.white};
     border: 1px dashed ${theme.colors.productCard.borderCard};
 
     ${theme.responsive.isTablet &&
@@ -54,8 +54,8 @@ export const Card = styled.div<{ margin?: string }>`
         background: linear-gradient(
           45deg,
           transparent 30%,
-          white,
-          white,
+          ${theme.colors.white},
+          ${theme.colors.white},
           transparent 50%
         );
         background-repeat: no-repeat;
@@ -172,7 +172,7 @@ export const CardContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.white};
   border-radius: 20px;
   z-index: 3;
 `;
@@ -298,9 +298,3 @@ export const City = styled.div`
     `}
   `}
 `;
-
-// export const ButtonBlock = styled.div`
-//   display: flex;
-//   margin: 0 auto;
-//   order: 3;
-// `;
