@@ -11,13 +11,19 @@ const shimmerAnimation = keyframes`
   }
 `;
 
-export const Card = styled.div<{ margin?: string; isButtonHovered: boolean }>`
+export const ButtonBlock = styled.div`
+  display: flex;
+  margin: 0 auto;
+  order: 3;
+`;
+
+export const Card = styled.div<{ margin?: string }>`
   position: relative;
   width: 164px;
   height: 260px;
   border-radius: 10px;
 
-  ${({ theme, margin, isButtonHovered }) => css`
+  ${({ theme, margin }) => css`
     background-color: ${theme.colors.white};
     ${margin && `margin: ${margin}`};
     border: 1px dashed ${theme.colors.productCard.borderCard};
@@ -63,16 +69,13 @@ export const Card = styled.div<{ margin?: string; isButtonHovered: boolean }>`
         border-color: ${theme.colors.productCard.borderCardHovered};
       }
 
-      ${isButtonHovered &&
-      css`
-        &:after {
-          display: none;
-        }
+      &:has(${ButtonBlock}:hover):after {
+        display: none;
+      }
 
-        &:hover {
-          border-color: ${theme.colors.productCard.borderCard};
-        }
-      `}
+      &:has(${ButtonBlock}:hover) {
+        border-color: ${theme.colors.productCard.borderCard};
+      }
     `}
   `}
 `;
@@ -296,8 +299,8 @@ export const City = styled.div`
   `}
 `;
 
-export const ButtonBlock = styled.div`
-  display: flex;
-  margin: 0 auto;
-  order: 3;
-`;
+// export const ButtonBlock = styled.div`
+//   display: flex;
+//   margin: 0 auto;
+//   order: 3;
+// `;

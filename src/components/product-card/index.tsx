@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { Responsive } from 'components';
 
 import * as Icon from '../icon';
@@ -13,26 +11,16 @@ import { InboxMessage } from '../inbox-message';
 const ProductCard = ({
   city,
   text,
+  avatar,
   margin,
   onClick,
   picture,
   buttonText,
   isFavorite,
-  avatar = '',
   inboxMessage,
 }: IProductCardProps) => {
-  const [isButtonHovered, setIsButtonHovered] = useState(false);
-
-  const handleEnter = () => {
-    setIsButtonHovered(true);
-  };
-
-  const handleLeave = () => {
-    setIsButtonHovered(false);
-  };
-
   return (
-    <Styles.Card margin={margin} isButtonHovered={isButtonHovered}>
+    <Styles.Card margin={margin}>
       <Styles.CardContainer>
         <Styles.FavoriteMarker isFavorite={isFavorite}>
           {avatar ? (
@@ -82,10 +70,7 @@ const ProductCard = ({
           </Styles.Location>
 
           <Responsive.Desktop>
-            <Styles.ButtonBlock
-              onMouseEnter={handleEnter}
-              onMouseLeave={handleLeave}
-            >
+            <Styles.ButtonBlock>
               <Button
                 onClick={onClick}
                 text={buttonText}
