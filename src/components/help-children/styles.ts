@@ -11,7 +11,8 @@ export const HelpChildren = styled.div`
 
     ${theme.responsive.isMobile &&
     css`
-      grid-template-columns: 1fr;
+      grid-template-columns: 100%;
+      grid-template-rows: min-content min-content 280px min-content;
       justify-items: center;
       padding: 59px 60px 82px;
       margin-bottom: 50px;
@@ -19,7 +20,7 @@ export const HelpChildren = styled.div`
 
     ${theme.responsive.isTablet &&
     css`
-      grid-template-columns: 395px auto;
+      grid-template-columns: 395px 365px;
       grid-template-rows: min-content min-content min-content;
       column-gap: 70px;
       padding: 42px 55px 72px 52px;
@@ -28,9 +29,9 @@ export const HelpChildren = styled.div`
 
     ${theme.responsive.isTabletUp &&
     css`
-      grid-template-columns: 600px auto;
+      grid-template-columns: 600px 420px;
       grid-template-rows: min-content min-content min-content;
-      column-gap: 106px;
+      column-gap: 100px;
       padding: 42px 109px 72px 52px;
     `}
 
@@ -105,6 +106,7 @@ export const StylizedBtn = styled.div`
     height: inherit;
     line-height: 23px;
     border-radius: 30px;
+    column-gap: 0;
 
     ${({ theme }) => css`
       color: ${theme.colors.white};
@@ -118,7 +120,7 @@ export const StylizedBtn = styled.div`
       css`
         font-size: 14px;
         padding: 9px 10px;
-        margin: 0 auto;
+        margin-top: 36px;
       `}
 
       ${theme.responsive.isTablet &&
@@ -149,49 +151,217 @@ export const StylizedBtn = styled.div`
 `;
 
 export const PhotoWrapper = styled.div`
-  display: flex;
-  align-items: center;
+  position: relative;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isMobile &&
+    css`
+      min-width: 290px;
+    `}
+  `}
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
       grid-column: 2/3;
       grid-row: 1/4;
+      height: 368px;
+    `}
+  `}
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTabletUp &&
+    css`
+      grid-column: 2/3;
+      grid-row: 1/4;
+      height: 391px;
+    `}
+  `}
+
+  ${({ theme }) => css`
+    ${theme.responsive.isDesktop &&
+    css`
+      grid-column: 2/3;
+      grid-row: 1/4;
+      display: flex;
+      align-items: center;
+      height: 398px;
     `}
   `}
 `;
 
-export const PhotoOne = styled.img`
+const photoStyles = css`
+  position: absolute;
+  width: 140px;
+  height: 100px;
   object-fit: cover;
 
   ${({ theme }) => css`
-    ${theme.responsive.isMobile &&
-    css`
-      animation: ${Animation.rotateAnimation} 2s linear ease-in-out;
-      width: 100px;
-      height: 140px;
-    `}
+    ${theme.responsive.isMobile && css``}
 
     ${theme.responsive.isTablet &&
     css`
-      width: 120px;
-      height: 180px;
+      width: 180px;
+      height: 120px;
     `}
 
-    ${theme.responsive.isDesktop &&
+  ${theme.responsive.isDesktop &&
     css`
-      width: 232px;
-      height: 342px;
+      /* animation: ${Animation.rotateAnimation} 2s linear forwards; */
+      width: 342px;
+      height: 232px;
     `}
   `};
 `;
 
-export const PhotoTwo = styled(PhotoOne)``;
+export const PhotoOne = styled.img`
+  ${photoStyles};
 
-export const PhotoThree = styled(PhotoOne)``;
+  ${({ theme }) => css`
+    ${theme.responsive.isMobile &&
+    css`
+      top: 30px;
+      left: 20px;
+      transform: rotate(-50deg);
+      z-index: 2;
+    `}
 
-export const PhotoFour = styled(PhotoOne)``;
+    ${theme.responsive.isTablet &&
+    css`
+      top: 48px;
+      left: 12px;
+      transform: rotate(-50deg);
+      z-index: 2;
+    `}
+
+    ${theme.responsive.isTabletUp &&
+    css`
+      top: 48px;
+      left: 12px;
+      transform: rotate(-60deg);
+      z-index: 2;
+    `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      top: 85px;
+      left: 0;
+      transform: rotate(-110deg);
+      z-index: 4;
+    `}
+  `}
+`;
+
+export const PhotoTwo = styled.img`
+  ${photoStyles};
+
+  ${({ theme }) => css`
+    ${theme.responsive.isMobile &&
+    css`
+      bottom: 30px;
+      right: 4px;
+      transform: rotate(28deg);
+    `}
+
+    ${theme.responsive.isTablet &&
+    css`
+      bottom: 54px;
+      right: 10px;
+      transform: rotate(30deg);
+    `}
+
+    ${theme.responsive.isTabletUp &&
+    css`
+      bottom: 46px;
+      right: 84px;
+      transform: rotate(30deg);
+    `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      top: 76px;
+      left: 238px;
+      transform: rotate(30deg);
+      z-index: 3;
+    `}
+  `}
+`;
+
+export const PhotoThree = styled.img`
+  ${photoStyles};
+
+  ${({ theme }) => css`
+    ${theme.responsive.isMobile &&
+    css`
+      bottom: 34px;
+      left: 0;
+      transform: rotate(-30deg);
+    `}
+
+    ${theme.responsive.isTablet &&
+    css`
+      bottom: 50px;
+      left: 11px;
+      transform: rotate(-30deg);
+    `}
+
+    ${theme.responsive.isTabletUp &&
+    css`
+      bottom: 82px;
+      left: 0;
+      transform: rotate(-30deg);
+    `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      bottom: 56px;
+      right: 220px;
+      transform: rotate(-34deg);
+      z-index: 2;
+    `}
+  `}
+`;
+
+export const PhotoFour = styled.img`
+  ${photoStyles};
+
+  ${({ theme }) => css`
+    ${theme.responsive.isMobile &&
+    css`
+      top: 14px;
+      right: 8px;
+      width: 100px;
+      height: 140px;
+      transform: rotate(17deg);
+    `}
+
+    ${theme.responsive.isTablet &&
+    css`
+      top: 18px;
+      right: 14px;
+      width: 120px;
+      height: 180px;
+      transform: rotate(17deg);
+    `}
+
+    ${theme.responsive.isTabletUp &&
+    css`
+      top: 62px;
+      right: 32px;
+      transform: rotate(17deg);
+    `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      top: 30px;
+      right: 50px;
+      width: 232px;
+      height: 342px;
+      transform: rotate(17deg);
+    `}
+  `}
+`;
 
 export const Wrapper = styled.div`
-  max-width: 1251px;
+  max-width: 1830px;
 `;
