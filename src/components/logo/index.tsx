@@ -4,9 +4,9 @@ import { ILogo } from './types';
 import * as Styles from './styles';
 import * as Responsive from '../responsive';
 
-const Logo = ({ onClick, inFooter }: ILogo) => {
+const Logo = ({ to, inFooter, inFooterOAuth }: ILogo) => {
   return (
-    <Styles.Logo inFooter={inFooter} onClick={() => onClick()}>
+    <Styles.Logo to={to} inFooter={inFooter}>
       <Styles.ImgWrapper inFooter={inFooter}>
         <Icon.Logo />
       </Styles.ImgWrapper>
@@ -20,7 +20,9 @@ const Logo = ({ onClick, inFooter }: ILogo) => {
       )}
 
       {inFooter && (
-        <Styles.ProjectName inFooter={inFooter}>Obminyashka</Styles.ProjectName>
+        <Styles.ProjectName inFooter={inFooter} inFooterOAuth={inFooterOAuth}>
+          Obminyashka
+        </Styles.ProjectName>
       )}
     </Styles.Logo>
   );

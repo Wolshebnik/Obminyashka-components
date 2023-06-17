@@ -1,8 +1,8 @@
 import { useRef } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { useDelayAnimation } from 'hooks';
 import { PresentationHeader } from 'components/shared';
-import { useDelayAnimation } from 'hooks/useDelayAnimation';
 
 import { Overlay } from '.';
 import { IOverlay } from './types';

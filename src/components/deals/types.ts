@@ -4,4 +4,5 @@ export interface IDeals {
   heartIcon?: boolean;
   background?: boolean;
   puzzleIcon?: boolean;
+  inFooterOAuth?: boolean;
 }

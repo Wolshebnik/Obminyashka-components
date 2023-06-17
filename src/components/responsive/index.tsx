@@ -35,3 +35,7 @@ export const Tablet = ({ children }: ChildrenProps): JSX.Element | null => {
 export const Mobile = ({ children }: ChildrenProps): JSX.Element | null => {
   return isMobile() ? <>{children}</> : null;
 };
+
+export const NotMobile = ({ children }: ChildrenProps): JSX.Element | null => {
+  return !isMobile() ? <>{children}</> : null;
+};

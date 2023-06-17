@@ -1,4 +1,7 @@
 export interface ILogo {
+  to: string;
   inFooter?: boolean;
-  onClick: () => void;
+  inFooterOAuth?: boolean;
 }
+
+export interface IFooterStyles extends Omit<ILogo, 'to'> {}
