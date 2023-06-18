@@ -3,14 +3,13 @@ import { useEffect, useState } from 'react';
 import { ChildrenProps } from 'types';
 
 import { IModal } from './types';
-import { Portal } from './portal';
 import * as Styles from './styles';
 
 const Modal = ({
   isOpen,
   onClose,
   children,
-  duration = 500,
+  duration = 300,
   withoutBg = false,
   hideButtonClose = false,
 }: ChildrenProps<IModal>) => {
@@ -33,29 +32,17 @@ const Modal = ({
   };
 
   return (
-    <>
-      {isOpen && (
-        <Portal>
-          <Styles.Overlay
-            closing={closing}
-            duration={duration}
-            onClick={handleClose}
-          >
-            <Styles.ModalWindow
-              closing={closing}
-              duration={duration}
-              onClick={(event) => event.stopPropagation()}
-            >
-              <Styles.ExtraWrapper withoutBg={withoutBg}>
-                {children}
-              </Styles.ExtraWrapper>
+    <Styles.ModalWindow
+      closing={closing}
+      duration={duration}
+      onClick={(event) => event.stopPropagation()}
+    >
+      <Styles.ExtraWrapper withoutBg={withoutBg}>
+        {children}
+      </Styles.ExtraWrapper>
 
-              {!hideButtonClose && <Styles.ButtonClose onClick={handleClose} />}
-            </Styles.ModalWindow>
-          </Styles.Overlay>
-        </Portal>
-      )}
-    </>
+      {!hideButtonClose && <Styles.ButtonClose onClick={handleClose} />}
+    </Styles.ModalWindow>
   );
 };
 
