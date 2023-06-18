@@ -16,7 +16,7 @@ const WrapImage = styled.div<IStyles>`
 
   ${({ theme, isRemove }) => css`
     background-color: ${theme.colors.white};
-    border: 2px dotted ${theme.colors.itemCard.borderCard};
+    border: 2px dotted ${theme.colors.productCard.borderCard};
 
     ${isRemove &&
     css`
