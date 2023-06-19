@@ -247,7 +247,14 @@ export const PhotoOne = styled.img`
       top: 85px;
       left: 0;
       transform: rotate(-110deg);
+      /* opacity: 0;
+      visibility: hidden; */
+      animation: ${Animation.rotateAnimation} 2s linear forwards;
       z-index: 4;
+
+      /* &.animate {
+        animation: ${Animation.rotateAnimation} 2s linear forwards;
+      } */
     `}
   `}
 `;
@@ -282,6 +289,10 @@ export const PhotoTwo = styled.img`
       top: 76px;
       left: 238px;
       transform: rotate(30deg);
+      /* opacity: 0;
+      visibility: hidden; */
+      animation: ${Animation.rotateAnimationTwo} 2s linear forwards;
+      animation-delay: 1.5s;
       z-index: 3;
     `}
   `}
@@ -315,8 +326,10 @@ export const PhotoThree = styled.img`
     ${theme.responsive.isDesktop &&
     css`
       bottom: 56px;
-      right: 220px;
+      left: 500px;
       transform: rotate(-34deg);
+      animation: ${Animation.rotateAnimationThree} 2s linear forwards;
+      animation-delay: 3s;
       z-index: 2;
     `}
   `}
@@ -358,6 +371,8 @@ export const PhotoFour = styled.img`
       width: 232px;
       height: 342px;
       transform: rotate(17deg);
+      animation: ${Animation.rotateAnimationFour} 2s linear forwards;
+      animation-delay: 4.5s;
     `}
   `}
 `;
