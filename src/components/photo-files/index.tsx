@@ -7,6 +7,7 @@ import {
   InputChangeEventType,
 } from 'types';
 import { isRightExtension } from 'utils';
+import { useDelayAnimation } from 'hooks';
 
 import { Modal } from '../modal';
 import * as Styles from './styles';
@@ -15,6 +16,8 @@ import { Subtitle } from '../subtitle';
 import { InputFile } from '../input-file';
 import { ImagePhoto } from './image-photo';
 import { checkFileSize, fileComparison } from './helpers';
+
+const duration = 500;
 
 const PhotoFiles = ({
   name,
@@ -37,7 +40,8 @@ const PhotoFiles = ({
   const valuesFormik = values as FormikValues;
   const allFiles = valuesFormik[name] as File[];
 
-  const [isOpen, onClose] = useState(false);
+  // const [isOpen, onClose] = useState(false);
+  const { isOpen, isAnimation, setOpen } = useDelayAnimation(duration);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const [sizeFile, setSizeFile] = useState<string>('');
   const [isExistingFiles, setIsExistingFiles] = useState<boolean>(false);
@@ -112,25 +116,25 @@ const PhotoFiles = ({
           const { sizeString, isWrongSize } = checkFileSize(files, maxSizeMB);
           if (isWrongSize) {
             setSizeFile(sizeString);
-            onClose(true);
+            setOpen(true);
             return;
           }
 
           if (files.some((file) => !isRightExtension(file.type))) {
             setIsWrongExtension(true);
-            onClose(true);
+            setOpen(true);
             return;
           }
 
           if (!fileComparison(allFiles, files)) {
             setIsExistingFiles(true);
-            onClose(true);
+            setOpen(true);
             return;
           }
 
           if (maxCount - allFiles.length - files.length < 0) {
             setIsModeThen(true);
-            onClose(true);
+            setOpen(true);
             return;
           }
 
@@ -175,7 +179,12 @@ const PhotoFiles = ({
                 />
               )}
 
-              <Modal isOpen={isOpen} onClose={onClose}>
+              <Modal
+                isOpen={isOpen}
+                duration={duration}
+                isAnimation={isAnimation}
+                onClose={() => setOpen(false)}
+              >
                 <Styles.Title>{errorTitle}</Styles.Title>
                 {isWrongExtension && (
                   <div>

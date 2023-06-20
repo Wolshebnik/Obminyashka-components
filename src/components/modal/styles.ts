@@ -1,11 +1,9 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { IStyles } from './types';
-
-const moveAbove = keyframes`
+const moveDown = keyframes`
   from {
   top: -100%;
-   }
+  }
 
   to {
   top: 50%;
@@ -22,18 +20,19 @@ const moveBelow = keyframes`
   }
 `;
 
-export const ModalWindow = styled.div<IStyles>`
+export const ModalWindow = styled.div<{
+  duration: number;
+  isCloseAnimation?: boolean;
+}>`
   position: relative;
   top: 50%;
   left: 50%;
-  // box-sizing: border-box;
   max-width: 600px;
   max-height: 80%;
-  box-shadow: rgba(18, 182, 237, 0.3) 0px 3px 10px -0.5px;
   transform: translate(-50%, -50%);
 
-  ${({ closing, duration }) => css`
-    animation: ${closing ? moveBelow : moveAbove} ${duration}ms linear;
+  ${({ isCloseAnimation, duration }) => css`
+    animation: ${isCloseAnimation ? moveDown : moveBelow} ${duration}ms linear;
   `};
 `;
 
@@ -79,7 +78,7 @@ export const ButtonClose = styled.button`
   }
 `;
 
-export const ExtraWrapper = styled.div<{ withoutBg: boolean }>`
+export const ExtraWrapper = styled.div<{ withoutBg?: boolean }>`
   padding: 30px;
 
   ${({ theme, withoutBg }) =>
@@ -87,5 +86,6 @@ export const ExtraWrapper = styled.div<{ withoutBg: boolean }>`
     css`
       background-color: ${theme.colors.white};
       border-radius: 3px;
+      box-shadow: rgba(18, 182, 237, 0.3) 0px 3px 10px -0.5px;
     `}
 `;

@@ -1,12 +1,10 @@
-import { RefObject } from 'react';
-
 export interface IModal {
   isOpen: boolean;
-  duration?: number;
+  duration: number;
   withoutBg?: boolean;
+  onClose: () => void;
+  isAnimation: boolean;
   hideButtonClose?: boolean;
-  onClose: (open: boolean) => void;
-  ref?: RefObject<HTMLDivElement> | null;
 }
 
 export interface IStyles {
