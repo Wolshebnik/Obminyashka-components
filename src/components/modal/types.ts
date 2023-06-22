@@ -7,7 +7,7 @@ export interface IModal {
   hideButtonClose?: boolean;
 }
 
-export interface IStyles {
-  closing: boolean;
+export interface IModalWindow {
   duration: number;
+  isCloseAnimation?: boolean;
 }

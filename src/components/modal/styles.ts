@@ -1,5 +1,7 @@
 import styled, { css, keyframes } from 'styled-components';
 
+import { IModalWindow } from './types';
+
 const moveDown = keyframes`
   from {
   top: -100%;
@@ -20,10 +22,7 @@ const moveBelow = keyframes`
   }
 `;
 
-export const ModalWindow = styled.div<{
-  duration: number;
-  isCloseAnimation?: boolean;
-}>`
+export const ModalWindow = styled.div<IModalWindow>`
   position: relative;
   top: 50%;
   left: 50%;
