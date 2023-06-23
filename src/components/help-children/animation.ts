@@ -19,7 +19,7 @@ export const rotateAnimation = keyframes`
     transform: translateX(30%) rotate(-70deg);
     opacity: 1;
   }
-  80% {
+  100% {
     transform: translateX(0) rotate(-110deg);
     opacity: 1;
   }
@@ -44,7 +44,7 @@ export const rotateAnimationTwo = keyframes`
     transform: translateX(30%) rotate(15deg);
     opacity: 1;
   }
-  80% {
+  100% {
     transform: translateX(0) rotate(30deg);
     opacity: 1;
   }
@@ -69,7 +69,7 @@ export const rotateAnimationThree = keyframes`
     transform: translateX(30%) rotate(-50deg);
     opacity: 1;
   }
-  80% {
+  100% {
     transform: translateX(0) rotate(-34deg);
     opacity: 1;
   }
@@ -94,7 +94,7 @@ export const rotateAnimationFour = keyframes`
     transform: translateX(30%) rotate(-10deg);
     opacity: 1;
   }
-  80% {
+  100% {
     transform: translateX(0) rotate(17deg);
     opacity: 1;
   }

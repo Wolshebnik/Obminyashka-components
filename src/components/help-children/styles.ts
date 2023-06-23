@@ -2,7 +2,12 @@ import styled, { css } from 'styled-components';
 
 import * as Animation from './animation';
 
+export const Wrapper = styled.div`
+  max-width: 1830px;
+`;
+
 export const HelpChildren = styled.div`
+  width: 100%;
   border-radius: 130px;
 
   ${({ theme }) => css`
@@ -14,34 +19,29 @@ export const HelpChildren = styled.div`
       grid-template-columns: 100%;
       grid-template-rows: min-content min-content 280px min-content;
       justify-items: center;
-      padding: 59px 60px 82px;
-      margin-bottom: 50px;
+      padding: 59px 0 82px;
     `}
 
     ${theme.responsive.isTablet &&
     css`
-      grid-template-columns: 395px 365px;
+      grid-template-columns: repeat(2, 1fr);
       grid-template-rows: min-content min-content min-content;
-      column-gap: 70px;
-      padding: 42px 55px 72px 52px;
-      margin-bottom: 70px;
+      padding: 42px 55px 52px;
     `}
 
-    ${theme.responsive.isTabletUp &&
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
     css`
-      grid-template-columns: 600px 420px;
+      grid-template-columns: 600px 1fr;
       grid-template-rows: min-content min-content min-content;
-      column-gap: 100px;
-      padding: 42px 109px 72px 52px;
+      padding: 42px 110px 86px 52px;
     `}
 
     ${theme.responsive.isDesktop &&
     css`
-      grid-template-columns: 398px auto;
+      grid-template-columns: 400px 1fr;
       grid-template-rows: min-content min-content min-content;
-      column-gap: 108px;
-      padding: 52px 126px 36px 128px;
-      margin-bottom: 130px;
+      padding: 52px 128px 64px;
     `}
   `}
 `;
@@ -59,7 +59,8 @@ export const TitleWrapper = styled.div`
       padding-bottom: 38px;
     `}
 
-    ${theme.responsive.isTabletUp &&
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
     css`
       padding-bottom: 70px;
     `}
@@ -80,27 +81,29 @@ export const Text = styled.p`
 
     ${theme.responsive.isMobile &&
     css`
+      margin: 0 60px 14px;
       font-size: 14px;
-      margin: 0 auto 8px;
     `}
 
     ${theme.responsive.isTablet &&
     css`
       grid-column: 1 / 2;
       grid-row: 2 / 3;
-      font-size: 16px;
       margin: 0 auto 39px;
+      font-size: 16px;
     `}
 
     ${theme.responsive.isDesktop &&
     css`
-      font-size: 18px;
       margin: 0 auto 30px;
+      font-size: 18px;
     `}
   `}
 `;
 
 export const StylizedBtn = styled.div`
+  align-self: flex-end;
+
   button {
     width: inherit;
     height: inherit;
@@ -119,7 +122,7 @@ export const StylizedBtn = styled.div`
       ${theme.responsive.isMobile &&
       css`
         font-size: 14px;
-        padding: 9px 10px;
+        padding: 9px 15px;
         margin-top: 36px;
       `}
 
@@ -134,8 +137,8 @@ export const StylizedBtn = styled.div`
 
       ${theme.responsive.isDesktop &&
       css`
-        font-size: 18px;
         padding: 14px 22px;
+        font-size: 18px;
       `}
     `}
 
@@ -158,64 +161,59 @@ export const PhotoWrapper = styled.div`
     css`
       min-width: 290px;
     `}
-  `}
 
-  ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
       grid-column: 2/3;
       grid-row: 1/4;
+      justify-self: flex-end;
       height: 368px;
+      width: 350px;
     `}
-  `}
 
-  ${({ theme }) => css`
-    ${theme.responsive.isTabletUp &&
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
     css`
       grid-column: 2/3;
       grid-row: 1/4;
       height: 391px;
     `}
-  `}
 
-  ${({ theme }) => css`
     ${theme.responsive.isDesktop &&
     css`
       grid-column: 2/3;
       grid-row: 1/4;
-      display: flex;
-      align-items: center;
-      height: 398px;
+      justify-self: flex-end;
+      height: 438px;
+      width: 1030px;
     `}
   `}
 `;
 
 const photoStyles = css`
   position: absolute;
-  width: 140px;
-  height: 100px;
+  width: 100px;
+  height: 140px;
   object-fit: cover;
 
   ${({ theme }) => css`
-    ${theme.responsive.isMobile && css``}
-
     ${theme.responsive.isTablet &&
     css`
-      width: 180px;
-      height: 120px;
+      width: 120px;
+      height: 180px;
     `}
 
-  ${theme.responsive.isDesktop &&
+    ${theme.responsive.isDesktop &&
     css`
-      /* animation: ${Animation.rotateAnimation} 2s linear forwards; */
-      width: 342px;
-      height: 232px;
+      height: 342px;
+      width: 232px;
     `}
   `};
 `;
 
 export const PhotoOne = styled.img`
   ${photoStyles};
+  z-index: 2;
 
   ${({ theme }) => css`
     ${theme.responsive.isMobile &&
@@ -223,23 +221,21 @@ export const PhotoOne = styled.img`
       top: 30px;
       left: 20px;
       transform: rotate(-50deg);
-      z-index: 2;
     `}
 
     ${theme.responsive.isTablet &&
     css`
       top: 48px;
-      left: 12px;
+      left: 24px;
       transform: rotate(-50deg);
-      z-index: 2;
     `}
 
-    ${theme.responsive.isTabletUp &&
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
     css`
       top: 48px;
       left: 12px;
       transform: rotate(-60deg);
-      z-index: 2;
     `}
 
     ${theme.responsive.isDesktop &&
@@ -247,14 +243,8 @@ export const PhotoOne = styled.img`
       top: 85px;
       left: 0;
       transform: rotate(-110deg);
-      /* opacity: 0;
-      visibility: hidden; */
       animation: ${Animation.rotateAnimation} 2s linear forwards;
       z-index: 4;
-
-      /* &.animate {
-        animation: ${Animation.rotateAnimation} 2s linear forwards;
-      } */
     `}
   `}
 `;
@@ -277,10 +267,11 @@ export const PhotoTwo = styled.img`
       transform: rotate(30deg);
     `}
 
-    ${theme.responsive.isTabletUp &&
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
     css`
       bottom: 46px;
-      right: 84px;
+      right: 20px;
       transform: rotate(30deg);
     `}
 
@@ -288,11 +279,12 @@ export const PhotoTwo = styled.img`
     css`
       top: 76px;
       left: 238px;
+      width: 232px;
+      height: 342px;
       transform: rotate(30deg);
-      /* opacity: 0;
-      visibility: hidden; */
       animation: ${Animation.rotateAnimationTwo} 2s linear forwards;
       animation-delay: 1.5s;
+      opacity: 0;
       z-index: 3;
     `}
   `}
@@ -311,15 +303,16 @@ export const PhotoThree = styled.img`
 
     ${theme.responsive.isTablet &&
     css`
-      bottom: 50px;
-      left: 11px;
+      bottom: 48px;
+      left: 14px;
       transform: rotate(-30deg);
     `}
 
-    ${theme.responsive.isTabletUp &&
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
     css`
-      bottom: 82px;
-      left: 0;
+      bottom: 48px;
+      left: 14px;
       transform: rotate(-30deg);
     `}
 
@@ -327,9 +320,12 @@ export const PhotoThree = styled.img`
     css`
       bottom: 56px;
       left: 500px;
+      height: 232px;
+      width: 342px;
       transform: rotate(-34deg);
       animation: ${Animation.rotateAnimationThree} 2s linear forwards;
       animation-delay: 3s;
+      opacity: 0;
       z-index: 2;
     `}
   `}
@@ -350,17 +346,18 @@ export const PhotoFour = styled.img`
 
     ${theme.responsive.isTablet &&
     css`
-      top: 18px;
-      right: 14px;
+      top: 50px;
+      right: 25px;
       width: 120px;
       height: 180px;
       transform: rotate(17deg);
     `}
 
-    ${theme.responsive.isTabletUp &&
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
     css`
-      top: 62px;
-      right: 32px;
+      top: 50px;
+      right: 25px;
       transform: rotate(17deg);
     `}
 
@@ -373,10 +370,7 @@ export const PhotoFour = styled.img`
       transform: rotate(17deg);
       animation: ${Animation.rotateAnimationFour} 2s linear forwards;
       animation-delay: 4.5s;
+      opacity: 0;
     `}
   `}
-`;
-
-export const Wrapper = styled.div`
-  max-width: 1830px;
 `;
