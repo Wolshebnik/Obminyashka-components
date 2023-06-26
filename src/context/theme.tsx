@@ -9,17 +9,25 @@ import {
   isDesktop,
   isPortrait,
   isTabletUp,
+  isDesktopBS,
+  isDesktopLG,
+  isDesktopMD,
+  isDesktopXS,
   isLandscape,
 } from 'hooks/styles';
 
 export const ThemeWrap = ({ children }: ChildrenProps): JSX.Element => {
   const responsive = {
     isDesktop: isDesktop(),
-    isTabletUp: isTabletUp(),
-    isTablet: isTablet(),
-    isPortrait: isPortrait(),
-    isMobile: isMobile(),
+    isDesktopBS: isDesktopBS(),
+    isDesktopLG: isDesktopLG(),
+    isDesktopMD: isDesktopMD(),
+    isDesktopXS: isDesktopXS(),
     isLandscape: isLandscape(),
+    isMobile: isMobile(),
+    isPortrait: isPortrait(),
+    isTablet: isTablet(),
+    isTabletUp: isTabletUp(),
   };
 
   const value = useMemo(
