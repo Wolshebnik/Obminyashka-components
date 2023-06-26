@@ -14,12 +14,15 @@ declare module 'styled-components' {
     };
     responsive: {
       isDesktop: boolean;
-      isTablet: boolean;
+      isDesktopBS: boolean;
+      isDesktopLG: boolean;
+      isDesktopMD: boolean;
+      isDesktopXS: boolean;
       isLandscape: boolean;
-      isPortrait: boolean;
-      isTabletUp: boolean;
       isMobile: boolean;
-      isLandscape: boolean;
+      isPortrait: boolean;
+      isTablet: boolean;
+      isTabletUp: boolean;
     };
   }
 }
