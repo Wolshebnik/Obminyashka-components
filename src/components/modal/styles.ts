@@ -85,6 +85,6 @@ export const ExtraWrapper = styled.div<{ withoutBg?: boolean }>`
     css`
       background-color: ${theme.colors.white};
       border-radius: 3px;
-      box-shadow: rgba(18, 182, 237, 0.3) 0px 3px 10px -0.5px;
+      box-shadow: ${theme.colors.modalColors.boxShadow} 0px 3px 10px -0.5px;
     `}
 `;

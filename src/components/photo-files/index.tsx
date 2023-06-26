@@ -40,7 +40,6 @@ const PhotoFiles = ({
   const valuesFormik = values as FormikValues;
   const allFiles = valuesFormik[name] as File[];
 
-  // const [isOpen, onClose] = useState(false);
   const { isOpen, isAnimation, setOpen } = useDelayAnimation(duration);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const [sizeFile, setSizeFile] = useState<string>('');

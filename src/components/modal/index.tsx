@@ -19,11 +19,11 @@ const Modal = ({
 
   return (
     <Overlay
-      isOpen={isOpen}
       childRef={ref}
+      isOpen={isOpen}
+      setClose={onClose}
       duration={duration}
       isAnimation={isAnimation}
-      setClose={onClose}
     >
       <Styles.ModalWindow
         ref={ref}
