@@ -1,10 +1,14 @@
 import { ChildrenProps } from 'types';
 import {
-  isTablet,
   isMobile,
+  isTablet,
   isDesktop,
-  isTabletUp,
   isPortrait,
+  isTabletUp,
+  isDesktopBS,
+  isDesktopLG,
+  isDesktopMD,
+  isDesktopXS,
   isLandscape,
 } from 'hooks/styles';
 
@@ -14,6 +18,22 @@ export const Desktop = ({ children }: ChildrenProps): JSX.Element | null => {
 
 export const NotDesktop = ({ children }: ChildrenProps): JSX.Element | null => {
   return !isDesktop() ? <>{children}</> : null;
+};
+
+export const DesktopXS = ({ children }: ChildrenProps): JSX.Element | null => {
+  return isDesktopXS() ? <>{children}</> : null;
+};
+
+export const DesktopMD = ({ children }: ChildrenProps): JSX.Element | null => {
+  return isDesktopMD() ? <>{children}</> : null;
+};
+
+export const DesktopLG = ({ children }: ChildrenProps): JSX.Element | null => {
+  return isDesktopLG() ? <>{children}</> : null;
+};
+
+export const DesktopBS = ({ children }: ChildrenProps): JSX.Element | null => {
+  return isDesktopBS() ? <>{children}</> : null;
 };
 
 export const TabletUp = ({ children }: ChildrenProps): JSX.Element | null => {
