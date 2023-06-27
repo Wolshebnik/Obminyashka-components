@@ -1,63 +1,37 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { IStyles } from './types';
-
-const continueMoveDown = keyframes`
- 0% {
-   opacity: 1;
-   transform: translateY(0vh);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateY(100vh);
-  }
-`;
+import { IModalWindow } from './types';
 
 const moveDown = keyframes`
- 0% {
-   opacity: 0;
+  from {
+  top: -100%;
   }
 
-  5% {
-    transform: translateY(-100vh);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0vh);
+  to {
+  top: 50%;
   }
 `;
 
-export const Overlay = styled.div<IStyles>`
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  opacity: 1;
-  transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 200;
-  z-index: 999;
+const moveBelow = keyframes`
+  from {
+  top: 50%;
+  }
 
-  ${({ theme }) => css`
-    background-color: ${theme.colors.modalColors.background};
-  `};
+  to {
+  top: 200%;
+  }
 `;
 
-export const ModalWindow = styled.div<IStyles>`
+export const ModalWindow = styled.div<IModalWindow>`
   position: relative;
-  box-sizing: border-box;
+  top: 50%;
+  left: 50%;
   max-width: 600px;
   max-height: 80%;
-  box-shadow: rgba(18, 182, 237, 0.3) 0px 3px 10px -0.5px;
-  z-index: 30;
+  transform: translate(-50%, -50%);
 
-  ${({ closing, duration }) => css`
-    animation: ${closing ? continueMoveDown : moveDown} ${duration}ms;
+  ${({ isCloseAnimation, duration }) => css`
+    animation: ${isCloseAnimation ? moveDown : moveBelow} ${duration}ms linear;
   `};
 `;
 
@@ -103,12 +77,14 @@ export const ButtonClose = styled.button`
   }
 `;
 
-export const ExtraWrapper = styled.div<{ withoutBg: boolean }>`
+export const ExtraWrapper = styled.div<{ withoutBg?: boolean }>`
+  padding: 30px;
+
   ${({ theme, withoutBg }) =>
     !withoutBg &&
     css`
-      padding: 30px;
       background-color: ${theme.colors.white};
       border-radius: 3px;
+      box-shadow: ${theme.colors.modalColors.boxShadow} 0px 3px 10px -0.5px;
     `}
 `;

@@ -266,6 +266,7 @@ const modalColors = Object.freeze({
   background: modalBackground,
   cross: crossBtn,
   crossBtnBackground: crossBtnBackground,
+  boxShadow: 'rgba(18, 182, 237, 0.3)',
 });
 
 const searchResult = Object.freeze({

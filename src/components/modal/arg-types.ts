@@ -30,4 +30,13 @@ export const argTypes: IArgTypes<IModal> = {
       type: { summary: 'boolean' },
     },
   },
+  hideButtonClose: {
+    name: 'hideButtonClose',
+    type: { name: 'boolean' },
+    description: 'Without icon close',
+    table: {
+      defaultValue: { summary: false },
+      type: { summary: 'boolean' },
+    },
+  },
 };

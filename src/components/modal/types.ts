@@ -1,12 +1,13 @@
 export interface IModal {
   isOpen: boolean;
-  duration?: number;
+  duration: number;
   withoutBg?: boolean;
+  onClose: () => void;
+  isAnimation: boolean;
   hideButtonClose?: boolean;
-  onClose: (open: boolean) => void;
 }
 
-export interface IStyles {
-  closing: boolean;
+export interface IModalWindow {
   duration: number;
+  isCloseAnimation?: boolean;
 }
