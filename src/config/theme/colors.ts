@@ -2,6 +2,7 @@ const buttonGradient =
   '90deg,rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5)';
 //White
 const white = `#FFFFFF`;
+const twilightBlue = `#F6FDFF`;
 
 // Blue
 const foam = `#d9f6fd`;
@@ -69,7 +70,6 @@ const shadow = 'rgba(255, 255, 255, 0.2)';
 const modalBackground = 'rgba(18, 182, 237, 0.3)';
 const crossBtn = 'rgb(255, 255, 255)';
 const crossBtnBackground = 'rgb(18, 182, 237)';
-const bgHelpChildrenNew = 'rgba(246, 253, 255, 1)';
 
 // New button
 const newButton = Object.freeze({
@@ -188,7 +188,7 @@ const productOwnerData = Object.freeze({
 });
 
 const helpChildren = Object.freeze({
-  bg: bgHelpChildrenNew,
+  bg: twilightBlue,
   shadow,
 });
 
