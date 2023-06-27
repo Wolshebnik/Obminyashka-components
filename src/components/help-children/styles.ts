@@ -17,73 +17,68 @@ export const HelpChildren = styled.div`
     ${theme.responsive.isMobile &&
     css`
       grid-template-columns: 100%;
-      grid-template-rows: min-content min-content 280px min-content;
+      grid-template-rows: 55px min-content 280px min-content;
       justify-items: center;
       padding: 59px 0 82px;
     `}
 
     ${theme.responsive.isTablet &&
     css`
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: min-content min-content min-content;
-      padding: 42px 55px 52px;
+      grid-template-columns: 400px 1fr;
+      grid-template-rows: 70px min-content 51px;
+      padding: 42px 52px 86px;
     `}
 
     ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
       grid-template-columns: 600px 1fr;
-      grid-template-rows: min-content min-content min-content;
+      grid-template-rows: 80px min-content 51px;
       padding: 42px 110px 86px 52px;
     `}
 
     ${theme.responsive.isDesktop &&
     css`
       grid-template-columns: 400px 1fr;
-      grid-template-rows: min-content min-content min-content;
-      padding: 52px 128px 64px;
+      grid-template-rows: 80px min-content 51px;
+      height: 516px;
+    `}
+
+    ${theme.responsive.isDesktopXS &&
+    css`
+      padding: 58px 89px 58px 108px;
+    `}
+
+    ${theme.responsive.isDesktopMD &&
+    css`
+      padding: 58px 122px 58px;
+    `}
+
+    ${theme.responsive.isDesktopLG &&
+    css`
+      padding: 58px 133px 58px 138px;
+    `}
+
+    ${theme.responsive.isDesktopBS &&
+    css`
+      padding: 58px 128px 58px;
     `}
   `}
 `;
 
 export const TitleWrapper = styled.div`
-  ${({ theme }) => css`
-    ${theme.responsive.isMobile &&
-    css`
-      padding-bottom: 30px;
-    `}
-
-    ${theme.responsive.isTablet &&
-    css`
-      grid-column: 1 / 2;
-      padding-bottom: 38px;
-    `}
-
-    ${theme.responsive.isTablet &&
-    theme.responsive.isLandscape &&
-    css`
-      padding-bottom: 70px;
-    `}
-
-    ${theme.responsive.isDesktop &&
-    css`
-      padding-bottom: 48px;
-    `}
-  `}
+  grid-column: 1 / 2;
+  grid-row: 1 / 1;
 `;
 
 export const Text = styled.p`
+  margin: 0 60px 22px;
+  font-size: 14px;
   line-height: 23px;
   font-family: 'Proxima Nova', sans-serif;
 
   ${({ theme }) => css`
     color: ${theme.colors.blackColorText};
-
-    ${theme.responsive.isMobile &&
-    css`
-      margin: 0 60px 14px;
-      font-size: 14px;
-    `}
 
     ${theme.responsive.isTablet &&
     css`
@@ -95,7 +90,7 @@ export const Text = styled.p`
 
     ${theme.responsive.isDesktop &&
     css`
-      margin: 0 auto 30px;
+      margin: 0 0 30px;
       font-size: 18px;
     `}
   `}
@@ -167,8 +162,8 @@ export const PhotoWrapper = styled.div`
       grid-column: 2/3;
       grid-row: 1/4;
       justify-self: flex-end;
-      height: 368px;
-      width: 350px;
+      height: 372px;
+      width: 370px;
     `}
 
     ${theme.responsive.isTablet &&
@@ -176,6 +171,7 @@ export const PhotoWrapper = styled.div`
     css`
       grid-column: 2/3;
       grid-row: 1/4;
+      justify-self: flex-end;
       height: 391px;
     `}
 
@@ -184,193 +180,298 @@ export const PhotoWrapper = styled.div`
       grid-column: 2/3;
       grid-row: 1/4;
       justify-self: flex-end;
-      height: 438px;
-      width: 1030px;
+      height: 400px;
+    `}
+
+    ${theme.responsive.isDesktopXS &&
+    css`
+      width: 739px;
+    `}
+
+
+    ${theme.responsive.isDesktopMD &&
+    css`
+      width: 823px;
+    `}
+
+    ${theme.responsive.isDesktopLG &&
+    css`
+      width: 979px;
+    `}
+
+    ${theme.responsive.isDesktopBS &&
+    css`
+      width: 1075px;
     `}
   `}
 `;
 
 const photoStyles = css`
   position: absolute;
-  width: 100px;
-  height: 140px;
+  width: 140px;
+  height: 100px;
   object-fit: cover;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      width: 120px;
-      height: 180px;
+      width: 180px;
+      height: 120px;
     `}
 
-    ${theme.responsive.isDesktop &&
+    ${theme.responsive.isDesktopXS &&
     css`
-      height: 342px;
-      width: 232px;
+      width: 220px;
+      height: 150px;
+    `}
+
+    ${theme.responsive.isDesktopMD &&
+    css`
+      width: 284px;
+      height: 193px;
+    `}
+
+    ${theme.responsive.isDesktopLG &&
+    css`
+      width: 310px;
+      height: 220px;
+    `}
+
+    ${theme.responsive.isDesktopBS &&
+    css`
+      width: 342px;
+      height: 232px;
     `}
   `};
 `;
 
 export const PhotoOne = styled.img`
   ${photoStyles};
+  top: 30px;
+  left: 20px;
+  transform: rotate(-50deg);
   z-index: 2;
 
   ${({ theme }) => css`
-    ${theme.responsive.isMobile &&
-    css`
-      top: 30px;
-      left: 20px;
-      transform: rotate(-50deg);
-    `}
-
     ${theme.responsive.isTablet &&
     css`
-      top: 48px;
-      left: 24px;
-      transform: rotate(-50deg);
+      top: 69px;
+      left: 17px;
     `}
 
     ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
-      top: 48px;
-      left: 12px;
+      top: 53px;
+      left: -5px;
       transform: rotate(-60deg);
     `}
 
     ${theme.responsive.isDesktop &&
     css`
-      top: 85px;
-      left: 0;
       transform: rotate(-110deg);
-      animation: ${Animation.rotateAnimation} 2s linear forwards;
-      z-index: 4;
+      animation: ${Animation.rotateAnimation} 1.5s linear forwards;
+      z-index: 3;
+    `}
+
+    ${theme.responsive.isDesktopXS &&
+    css`
+      top: 132px;
+      left: 88px;
+    `}
+
+    ${theme.responsive.isDesktopMD &&
+    css`
+      top: 82px;
+      left: 0;
+    `}
+
+    ${theme.responsive.isDesktopLG &&
+    css`
+      top: 100px;
+      left: 15px;
+    `}
+
+    ${theme.responsive.isDesktopBS &&
+    css`
+      top: 86px;
+      left: -5px;
     `}
   `}
 `;
 
 export const PhotoTwo = styled.img`
   ${photoStyles};
+  bottom: 30px;
+  right: 4px;
+  transform: rotate(30deg);
 
   ${({ theme }) => css`
-    ${theme.responsive.isMobile &&
-    css`
-      bottom: 30px;
-      right: 4px;
-      transform: rotate(28deg);
-    `}
-
     ${theme.responsive.isTablet &&
     css`
-      bottom: 54px;
-      right: 10px;
-      transform: rotate(30deg);
+      right: 20px;
+      bottom: 37px;
     `}
 
     ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
-      bottom: 46px;
-      right: 20px;
-      transform: rotate(30deg);
+      bottom: 35px;
+      right: 60px;
     `}
 
     ${theme.responsive.isDesktop &&
     css`
-      top: 76px;
-      left: 238px;
-      width: 232px;
-      height: 342px;
-      transform: rotate(30deg);
-      animation: ${Animation.rotateAnimationTwo} 2s linear forwards;
+      animation: ${Animation.rotateAnimationTwo} 1.5s linear forwards;
       animation-delay: 1.5s;
       opacity: 0;
-      z-index: 3;
+      z-index: 2;
+    `}
+
+    ${theme.responsive.isDesktopXS &&
+    css`
+      top: 123px;
+      left: 224px;
+    `}
+
+    ${theme.responsive.isDesktopMD &&
+    css`
+      top: 77px;
+      left: 159px;
+    `}
+
+    ${theme.responsive.isDesktopLG &&
+    css`
+      top: 100px;
+      left: 250px;
+    `}
+
+    ${theme.responsive.isDesktopBS &&
+    css`
+      top: 84px;
+      left: 248px;
     `}
   `}
 `;
 
 export const PhotoThree = styled.img`
   ${photoStyles};
+  right: 145px;
+  bottom: 43px;
+  transform: rotate(-30deg);
 
   ${({ theme }) => css`
-    ${theme.responsive.isMobile &&
-    css`
-      bottom: 34px;
-      left: 0;
-      transform: rotate(-30deg);
-    `}
-
     ${theme.responsive.isTablet &&
     css`
-      bottom: 48px;
-      left: 14px;
-      transform: rotate(-30deg);
+      left: 17px;
+      bottom: 28px;
     `}
 
     ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
-      bottom: 48px;
-      left: 14px;
-      transform: rotate(-30deg);
+      left: -22px;
+      bottom: 73px;
     `}
 
     ${theme.responsive.isDesktop &&
     css`
-      bottom: 56px;
-      left: 500px;
-      height: 232px;
-      width: 342px;
       transform: rotate(-34deg);
-      animation: ${Animation.rotateAnimationThree} 2s linear forwards;
+      animation: ${Animation.rotateAnimationThree} 1.5s linear forwards;
       animation-delay: 3s;
       opacity: 0;
-      z-index: 2;
+      z-index: 1;
+    `}
+
+    ${theme.responsive.isDesktopXS &&
+    css`
+      bottom: 117px;
+      left: 392px;
+    `}
+
+    ${theme.responsive.isDesktopMD &&
+    css`
+      bottom: 123px;
+      right: 190px;
+    `}
+
+    ${theme.responsive.isDesktopLG &&
+    css`
+      bottom: 95px;
+      right: 220px;
+    `}
+
+    ${theme.responsive.isDesktopBS &&
+    css`
+      bottom: 47px;
+      right: 220px;
     `}
   `}
 `;
 
 export const PhotoFour = styled.img`
   ${photoStyles};
+  top: 14px;
+  right: 8px;
+  width: 100px;
+  height: 140px;
+  transform: rotate(17deg);
 
   ${({ theme }) => css`
-    ${theme.responsive.isMobile &&
-    css`
-      top: 14px;
-      right: 8px;
-      width: 100px;
-      height: 140px;
-      transform: rotate(17deg);
-    `}
-
     ${theme.responsive.isTablet &&
     css`
       top: 50px;
       right: 25px;
       width: 120px;
       height: 180px;
-      transform: rotate(17deg);
     `}
 
     ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
-      top: 50px;
-      right: 25px;
-      transform: rotate(17deg);
+      top: 67px;
+      right: 20px;
     `}
 
     ${theme.responsive.isDesktop &&
     css`
-      top: 30px;
-      right: 50px;
-      width: 232px;
-      height: 342px;
       transform: rotate(17deg);
-      animation: ${Animation.rotateAnimationFour} 2s linear forwards;
+      animation: ${Animation.rotateAnimationFour} 1.5s linear forwards;
       animation-delay: 4.5s;
       opacity: 0;
+      z-index: 3;
+    `}
+
+    ${theme.responsive.isDesktopXS &&
+    css`
+      top: 87px;
+      right: 30px;
+      width: 150px;
+      height: 220px;
+    `}
+
+    ${theme.responsive.isDesktopMD &&
+    css`
+      top: 54px;
+      right: 38px;
+      width: 193px;
+      height: 284px;
+    `}
+
+    ${theme.responsive.isDesktopLG &&
+    css`
+      top: 54px;
+      right: 42px;
+      width: 220px;
+      height: 310px;
+    `}
+
+    ${theme.responsive.isDesktopBS &&
+    css`
+      top: 37px;
+      right: 42px;
+      width: 232px;
+      height: 342px;
     `}
   `}
 `;
