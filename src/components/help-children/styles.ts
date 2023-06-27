@@ -7,19 +7,19 @@ export const Wrapper = styled.div`
 `;
 
 export const HelpChildren = styled.div`
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 55px min-content 280px 80px;
+  padding: 59px 0 82px;
   width: 100%;
   border-radius: 130px;
 
   ${({ theme }) => css`
-    display: grid;
     background: ${theme.colors.helpChildren.bg};
 
     ${theme.responsive.isMobile &&
     css`
-      grid-template-columns: 100%;
-      grid-template-rows: 55px min-content 280px min-content;
       justify-items: center;
-      padding: 59px 0 82px;
     `}
 
     ${theme.responsive.isTablet &&
@@ -116,9 +116,8 @@ export const StylizedBtn = styled.div`
 
       ${theme.responsive.isMobile &&
       css`
-        font-size: 14px;
         padding: 9px 15px;
-        margin-top: 36px;
+        font-size: 14px;
       `}
 
       ${theme.responsive.isTablet &&
