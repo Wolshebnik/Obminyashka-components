@@ -1,61 +1,42 @@
-import { useEffect, useState } from 'react';
+import { useRef } from 'react';
 
 import { ChildrenProps } from 'types';
 
 import { IModal } from './types';
-import { Portal } from './portal';
 import * as Styles from './styles';
+import { Overlay } from '../overlay';
 
 const Modal = ({
   isOpen,
   onClose,
   children,
-  duration = 500,
-  withoutBg = false,
-  hideButtonClose = false,
+  duration,
+  withoutBg,
+  isAnimation,
+  hideButtonClose,
 }: ChildrenProps<IModal>) => {
-  const [closing, setClosing] = useState(false);
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    }
-    return () => document.body.removeAttribute('style');
-  }, [isOpen]);
-
-  const handleClose = () => {
-    setClosing(true);
-    const closeTimeout = setTimeout(() => {
-      setClosing(false);
-      onClose(false);
-      clearTimeout(closeTimeout);
-    }, duration);
-  };
+  const ref = useRef<HTMLDivElement>(null);
 
   return (
-    <>
-      {isOpen && (
-        <Portal>
-          <Styles.Overlay
-            closing={closing}
-            duration={duration}
-            onClick={handleClose}
-          >
-            <Styles.ModalWindow
-              closing={closing}
-              duration={duration}
-              onClick={(event) => event.stopPropagation()}
-            >
-              <Styles.ExtraWrapper withoutBg={withoutBg}>
-                {children}
-              </Styles.ExtraWrapper>
+    <Overlay
+      childRef={ref}
+      isOpen={isOpen}
+      setClose={onClose}
+      duration={duration}
+      isAnimation={isAnimation}
+    >
+      <Styles.ModalWindow
+        ref={ref}
+        duration={duration}
+        isCloseAnimation={isAnimation}
+      >
+        <Styles.ExtraWrapper withoutBg={withoutBg}>
+          {children}
+        </Styles.ExtraWrapper>
 
-              {!hideButtonClose && <Styles.ButtonClose onClick={handleClose} />}
-            </Styles.ModalWindow>
-          </Styles.Overlay>
-        </Portal>
-      )}
-    </>
+        {!hideButtonClose && <Styles.ButtonClose onClick={onClose} />}
+      </Styles.ModalWindow>
+    </Overlay>
   );
 };
 
