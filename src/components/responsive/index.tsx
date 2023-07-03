@@ -16,8 +16,20 @@ export const NotDesktop = ({ children }: ChildrenProps): JSX.Element | null => {
   return !isDesktop() ? <>{children}</> : null;
 };
 
+export const Tablet = ({ children }: ChildrenProps): JSX.Element | null => {
+  return isTablet() ? <>{children}</> : null;
+};
+
 export const TabletUp = ({ children }: ChildrenProps): JSX.Element | null => {
   return isTabletUp() ? <>{children}</> : null;
+};
+
+export const Mobile = ({ children }: ChildrenProps): JSX.Element | null => {
+  return isMobile() ? <>{children}</> : null;
+};
+
+export const NotMobile = ({ children }: ChildrenProps): JSX.Element | null => {
+  return !isMobile() ? <>{children}</> : null;
 };
 
 export const Portrait = ({ children }: ChildrenProps): JSX.Element | null => {
@@ -26,12 +38,4 @@ export const Portrait = ({ children }: ChildrenProps): JSX.Element | null => {
 
 export const Landscape = ({ children }: ChildrenProps): JSX.Element | null => {
   return isLandscape() ? <>{children}</> : null;
-};
-
-export const Tablet = ({ children }: ChildrenProps): JSX.Element | null => {
-  return isTablet() ? <>{children}</> : null;
-};
-
-export const Mobile = ({ children }: ChildrenProps): JSX.Element | null => {
-  return isMobile() ? <>{children}</> : null;
 };
