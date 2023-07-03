@@ -1,64 +1,87 @@
+import { Responsive } from 'components';
+
 import * as Icon from '../icon';
 import * as Styles from './styles';
 import { Button } from '../button';
 import { Avatar } from '../avatar';
 import { IProductCardProps } from './types';
+import { EllipsisText } from '../ellipsis-text';
 import { InboxMessage } from '../inbox-message';
-// TODO: remake ellipsis-text
-// import { EllipsisText } from '../ellipsis-text';
 
 const ProductCard = ({
   city,
   text,
+  avatar,
   margin,
   onClick,
   picture,
   buttonText,
   isFavorite,
-  avatar = '',
   inboxMessage,
 }: IProductCardProps) => {
   return (
     <Styles.Card margin={margin}>
-      <Styles.FavoriteMarker isFavorite={isFavorite}>
-        {avatar ? (
-          <Styles.StylizedAvatar>
-            <Avatar width={40} height={40} source={avatar} />
-          </Styles.StylizedAvatar>
-        ) : (
-          <Styles.FavoriteStarWrapper isFavorite={isFavorite}>
-            <Styles.FavoriteStar />
-          </Styles.FavoriteStarWrapper>
-        )}
-      </Styles.FavoriteMarker>
+      <Styles.CardContainer>
+        <Styles.FavoriteMarker isFavorite={isFavorite}>
+          {avatar ? (
+            <Styles.StylizedAvatar>
+              <Responsive.Mobile>
+                <Avatar width={18} height={18} source={avatar} />
+              </Responsive.Mobile>
 
-      <Styles.DivPicture>
+              <Responsive.Tablet>
+                <Avatar width={35} height={35} source={avatar} />
+              </Responsive.Tablet>
+
+              <Responsive.Desktop>
+                <Avatar width={42} height={42} source={avatar} />
+              </Responsive.Desktop>
+            </Styles.StylizedAvatar>
+          ) : (
+            <Styles.FavoriteStarWrapper isFavorite={isFavorite}>
+              <Styles.FavoriteStar />
+            </Styles.FavoriteStarWrapper>
+          )}
+        </Styles.FavoriteMarker>
+
         <Styles.Picture src={picture} alt="lot" />
-      </Styles.DivPicture>
 
-      <Styles.CardContent>
-        <Styles.TextContent>{text}</Styles.TextContent>
+        <Styles.CardContent>
+          <Styles.TextContent>{text}</Styles.TextContent>
 
-        <Styles.LocationIcon>
-          <Icon.Location />
+          <Styles.Location>
+            <Responsive.Mobile>
+              <Icon.Location width={7} height={10} />
+            </Responsive.Mobile>
 
-          <Styles.CitySpan>
-            {/* <EllipsisText id={city} place="top"> */}
-            {city}
-            {/* </EllipsisText> */}
-          </Styles.CitySpan>
-        </Styles.LocationIcon>
+            <Responsive.Tablet>
+              <Icon.Location />
+            </Responsive.Tablet>
 
-        <Styles.ButtonBlock>
-          <Button
-            onClick={onClick}
-            text={buttonText}
-            width={inboxMessage ? 190 : 222}
-          />
+            <Responsive.Desktop>
+              <Icon.Location />
+            </Responsive.Desktop>
 
-          {inboxMessage && <InboxMessage inboxMessage={inboxMessage} />}
-        </Styles.ButtonBlock>
-      </Styles.CardContent>
+            <Styles.City>
+              <EllipsisText width={250} position="right">
+                {city}
+              </EllipsisText>
+            </Styles.City>
+          </Styles.Location>
+
+          <Responsive.Desktop>
+            <Styles.ButtonBlock>
+              <Button
+                onClick={onClick}
+                text={buttonText}
+                width={inboxMessage ? 190 : 254}
+              />
+
+              {inboxMessage && <InboxMessage inboxMessage={inboxMessage} />}
+            </Styles.ButtonBlock>
+          </Responsive.Desktop>
+        </Styles.CardContent>
+      </Styles.CardContainer>
     </Styles.Card>
   );
 };

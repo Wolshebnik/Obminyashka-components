@@ -1,5 +1,5 @@
+import { useWindowWidth } from 'hooks';
 import { maskCloud } from 'components/img';
-import { useWindowWidth } from 'hooks/useWindowWidth';
 
 import * as Styles from './styles';
 import { MoveCloud } from './moveCloud';

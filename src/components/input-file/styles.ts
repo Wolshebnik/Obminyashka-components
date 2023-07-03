@@ -18,7 +18,7 @@ export const SpanAdd = styled.span`
   }
 
   ${({ theme }) => css`
-    border: 1px solid ${theme.colors.itemCard.borderCard};
+    border: 1px solid ${theme.colors.productCard.borderCard};
 
     &:before,
     &:after {
@@ -26,7 +26,7 @@ export const SpanAdd = styled.span`
       content: '';
       width: 35px;
       height: 3px;
-      background-color: ${theme.colors.itemCard.borderCard};
+      background-color: ${theme.colors.productCard.borderCard};
       pointer-events: none;
     }
   `}
@@ -46,7 +46,7 @@ export const FilesLabel = styled.label<IStyles>`
 
   border: 2px dotted
     ${({ theme, error }) =>
-      error ? theme.colors.colorError : theme.colors.itemCard.borderCard};
+      error ? theme.colors.colorError : theme.colors.productCard.borderCard};
 
   &:hover {
     ${SpanAdd} {

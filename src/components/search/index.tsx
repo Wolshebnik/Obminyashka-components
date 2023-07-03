@@ -1,9 +1,9 @@
-import * as Icon from '../icon';
-import * as Responsive from '../responsive';
-import { useDelayAnimation } from '../../hooks/useDelayAnimation';
+import { useDelayAnimation } from 'hooks';
 
+import * as Icon from '../icon';
 import * as Styles from './styles';
 import { ISearchProps } from './types';
+import * as Responsive from '../responsive';
 import { SearchInput } from './search-input';
 
 const Search = (props: ISearchProps) => {

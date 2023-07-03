@@ -1,20 +1,34 @@
 const buttonGradient =
   '90deg,rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5)';
 //White
-const white = `#FFF`;
+const white = `#FFFFFF`;
 
 // Blue
+const foam = `#d9f6fd`;
+const viking = '#71C2DA';
+const indigo = '#3f76c1';
+const malibu = '#6fe5ff';
+const mariner = '#286cc9';
+const pelorous = '#44A5C6';
+const endeavour = '#0666ab';
 const searchBlue = '#29a5d4';
+const footerBlue = '#3DB4D7';
 const buttonBlue = '#12b6ed';
+const shakespeare = '#53b3d4';
+const tropicalBlue = '#CEEEFA';
+const aquamarineBlue = '#7ECDE4';
 const buttonBlueHover = '#00bfff';
 const buttonBlueActive = '#0094ff';
 
 //Green
+const lima = '#6AB218';
 const apple = '#37B82E';
+const eagle = '#B0BAA5';
+const olivine = '#97C069';
 const buttonGreen = '#43b15d';
-const buttonGreenActive = '#008a20';
-const buttonGreenHover = '#3c9f53';
 const forestGreen = '#32a72a';
+const buttonGreenHover = '#3c9f53';
+const buttonGreenActive = '#008a20';
 
 //Grey
 const buttonGrey = '#787878';
@@ -40,12 +54,14 @@ const schoolBusYellow = '#f5d800';
 const turbo = '#FEE200';
 
 //General grey
-const darkSilver = '#bcbcbc';
-const dustyGray = '#969696';
 const grey = '#8f8f8f';
-const silver = '#c4c4c4';
-const silverChalice = '#A0A0A0';
 const faux = '#bababa';
+const silver = '#c4c4c4';
+const doveGray = '#717171';
+const dustyGray = '#969696';
+const darkSilver = '#bcbcbc';
+const silverChalice = '#A0A0A0';
+const silverRgba = 'rgba(189, 189, 189, 0.5)';
 
 //RGBA colors
 const background = 'rgba(255, 255, 255, 0.4)';
@@ -53,6 +69,70 @@ const shadow = 'rgba(255, 255, 255, 0.2)';
 const modalBackground = 'rgba(18, 182, 237, 0.3)';
 const crossBtn = 'rgb(255, 255, 255)';
 const crossBtnBackground = 'rgb(18, 182, 237)';
+
+// New button
+const newButton = Object.freeze({
+  default: {
+    blue: {
+      text: white,
+      disabledText: doveGray,
+      bg: aquamarineBlue,
+      outline: aquamarineBlue,
+      outlineDisabled: tropicalBlue,
+      bgHover: pelorous,
+      bgDisabled: tropicalBlue,
+      animated: {
+        bg: `linear-gradient(45deg, ${aquamarineBlue} 35%, #BCD9E3 50%, ${aquamarineBlue} 65%)`,
+        bgHover: `linear-gradient(45deg, ${pelorous} 35%, #C9DDE4 50%, ${pelorous} 65%)`,
+        bgDisabled: `linear-gradient(45deg, ${tropicalBlue} 35%, #F5FCFF 50%, ${tropicalBlue} 65%)`,
+      },
+    },
+    green: {
+      text: white,
+      disabledText: doveGray,
+      bg: olivine,
+      outline: olivine,
+      outlineDisabled: eagle,
+      bgHover: lima,
+      bgDisabled: eagle,
+      animated: {
+        bg: `linear-gradient(45deg, ${olivine} 35%, #eefddc 50%, ${olivine} 65%)`,
+        bgHover: `linear-gradient(45deg, ${lima} 35%, #EFFEDE 50%, ${lima} 65%)`,
+        bgDisabled: `linear-gradient(45deg, ${eagle} 35%, ${white} 50%, ${eagle} 65%)`,
+      },
+    },
+  },
+  outline: {
+    blue: {
+      text: viking,
+      disabledText: silverRgba,
+      bg: white,
+      outline: viking,
+      outlineDisabled: silverRgba,
+      bgHover: white,
+      bgDisabled: white,
+      animated: {
+        bg: `linear-gradient(45deg, ${aquamarineBlue} 35%, #BCD9E3 50%, ${aquamarineBlue} 65%)`,
+        bgHover: `linear-gradient(45deg, ${pelorous} 35%, #C9DDE4 50%, ${pelorous} 65%)`,
+        bgDisabled: `linear-gradient(45deg, ${tropicalBlue} 35%, #F5FCFF 50%, ${tropicalBlue} 65%)`,
+      },
+    },
+    green: {
+      text: viking,
+      disabledText: silverRgba,
+      bg: white,
+      outline: viking,
+      outlineDisabled: silverRgba,
+      bgHover: white,
+      bgDisabled: white,
+      animated: {
+        bg: `linear-gradient(45deg, ${olivine} 35%, #eefddc 50%, ${olivine} 65%)`,
+        bgHover: `linear-gradient(45deg, ${lima} 35%, #EFFEDE 50%, ${lima} 65%)`,
+        bgDisabled: `linear-gradient(45deg, ${eagle} 35%, ${white} 50%, ${eagle} 65%)`,
+      },
+    },
+  },
+});
 
 //New Select language
 const languageNew = Object.freeze({
@@ -91,13 +171,14 @@ const inboxMessage = Object.freeze({
   inboxMessageHover: apple,
 });
 
-const itemCard = Object.freeze({
-  avatarFalseDefault: silverChalice,
-  avatarFalseHover: dustyGray,
-  avatarTrueActive: corn,
-  avatarTrueDefault: turbo,
-  avatarTrueHover: schoolBusYellow,
+const productCard = Object.freeze({
+  markerFalseDefault: silverChalice,
+  markerFalseHover: dustyGray,
+  markerTrueActive: corn,
+  markerTrueDefault: turbo,
+  markerTrueHover: schoolBusYellow,
   borderCard: silver,
+  borderCardHovered: aquamarineBlue,
 });
 
 const productOwnerData = Object.freeze({
@@ -109,6 +190,7 @@ const helpChildren = Object.freeze({
   bg: background,
   shadow,
 });
+
 const ellipsisShadow =
   '10px 10px 20px rgba(0, 0, 0, 0.3), 0px 31px 32px -24px rgba(0, 0, 0, 1)';
 
@@ -156,10 +238,23 @@ const colorsDefault = Object.freeze({
   backgroundColor: '#fdfcff',
   faux,
 });
+
 const search = Object.freeze({
   white,
   blue: searchBlue,
   background: 'rgba(255, 255, 255, 0.6)',
+});
+
+const categoryBtn = Object.freeze({
+  border: indigo,
+  colorText: mariner,
+});
+
+const navCategory = Object.freeze({
+  bgColorLinkOne: malibu,
+  bgColorLinkTwo: foam,
+  colorHoveredText: endeavour,
+  linkBorder: shakespeare,
 });
 
 const logo = Object.freeze({
@@ -171,6 +266,7 @@ const modalColors = Object.freeze({
   background: modalBackground,
   cross: crossBtn,
   crossBtnBackground: crossBtnBackground,
+  boxShadow: 'rgba(18, 182, 237, 0.3)',
 });
 
 const searchResult = Object.freeze({
@@ -179,17 +275,33 @@ const searchResult = Object.freeze({
   gradient: '100.18deg, #8fd3e1 7.33%, #51b2d4 97.87%',
 });
 
+const footerColors = Object.freeze({
+  white,
+  footerBlue,
+  colorText: 'rgba(255, 255, 255, 0.5)',
+});
+
+const dealsColors = Object.freeze({
+  white,
+  aquamarineBlue,
+});
+
 const COLORS = Object.freeze({
   logo,
   input,
-  search,
   button,
-  itemCard,
+  search,
   language,
+  newButton,
+  productCard,
+  dealsColors,
+  categoryBtn,
   languageNew,
   modalColors,
-  inboxMessage,
+  navCategory,
   helpChildren,
+  footerColors,
+  inboxMessage,
   searchResult,
   newTextColors,
   buttonGradient,

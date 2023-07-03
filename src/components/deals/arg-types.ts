@@ -47,4 +47,14 @@ export const argTypes: IArgTypes<IDeals> = {
       type: { summary: 'boolean' },
     },
   },
+  inFooterOAuth: {
+    name: `inFooterOAuth`,
+    type: { name: 'boolean' },
+    description:
+      'Property from which the type of the Logo element changes. Boolean.',
+    table: {
+      type: { summary: 'boolean' },
+    },
+    controls: 'boolean',
+  },
 };
