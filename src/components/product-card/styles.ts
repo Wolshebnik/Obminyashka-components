@@ -38,7 +38,6 @@ export const Card = styled.div<{ margin?: string }>`
 
     ${theme.responsive.isDesktop &&
     css`
-      width: 335px;
       height: 420px;
       border: 2px dashed ${theme.colors.productCard.borderCard};
       border-radius: 20px;
@@ -64,6 +63,26 @@ export const Card = styled.div<{ margin?: string }>`
         animation: ${shimmerAnimation} 3s linear infinite;
         z-index: 2;
       }
+
+      ${theme.responsive.isDesktopXS &&
+      css`
+        width: 300px;
+      `}
+
+      ${theme.responsive.isDesktopMD &&
+      css`
+        width: 334px;
+      `}
+
+      ${theme.responsive.isDesktopLG &&
+      css`
+        width: 370px;
+      `}
+
+      ${theme.responsive.isDesktopBS &&
+      css`
+        width: 334px;
+      `}
 
       &:hover {
         border-color: ${theme.colors.productCard.borderCardHovered};
