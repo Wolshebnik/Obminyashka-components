@@ -38,7 +38,7 @@ export const Card = styled.div<{ margin?: string }>`
 
     ${theme.responsive.isDesktop &&
     css`
-      height: 420px;
+      height: 416px;
       border: 2px dashed ${theme.colors.productCard.borderCard};
       border-radius: 20px;
 
@@ -66,22 +66,22 @@ export const Card = styled.div<{ margin?: string }>`
 
       ${theme.responsive.isDesktopXS &&
       css`
-        width: 300px;
+        width: 296px;
       `}
 
       ${theme.responsive.isDesktopMD &&
       css`
-        width: 334px;
+        width: 330px;
       `}
 
       ${theme.responsive.isDesktopLG &&
       css`
-        width: 370px;
+        width: 366px;
       `}
 
       ${theme.responsive.isDesktopBS &&
       css`
-        width: 334px;
+        width: 330px;
       `}
 
       &:hover {
