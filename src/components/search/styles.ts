@@ -58,10 +58,6 @@ export const WrapDeviceSearch = styled.div<{ isSearchActive?: boolean }>`
         max-width: 514px;
       }
     `}
-
-    div {
-      border-color: ${theme.colors.search.blue};
-    }
   `}
 `;
 
