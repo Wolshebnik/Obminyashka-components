@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ButtonNew } from '.';
 import { argTypes } from './arg-types';
+import { IStyledButtonNew } from './types';
 
 const meta = {
   title: 'ButtonNew',
@@ -12,6 +13,18 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof ButtonNew>;
 
+const Template = (args: IStyledButtonNew) => {
+  return (
+    <div
+      style={{
+        width: '290px',
+      }}
+    >
+      <ButtonNew text={''} {...args} />
+    </div>
+  );
+};
+
 export const GreenButton: Story = {
   args: {
     plus: true,
@@ -21,6 +34,7 @@ export const GreenButton: Story = {
     styleType: 'default',
     text: 'Add advertisement',
   },
+  render: (args) => <Template {...args} />,
 };
 
 export const BlueButton: Story = {
@@ -32,6 +46,7 @@ export const BlueButton: Story = {
     colorType: 'blue',
     styleType: 'default',
   },
+  render: (args) => <Template {...args} />,
 };
 
 export const OutLineButton: Story = {
@@ -43,4 +58,5 @@ export const OutLineButton: Story = {
     colorType: 'blue',
     styleType: 'outline',
   },
+  render: (args) => <Template {...args} />,
 };

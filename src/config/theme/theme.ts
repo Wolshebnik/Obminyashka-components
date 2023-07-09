@@ -19,7 +19,6 @@ const LIGHT_THEME: DefaultTheme = Object.freeze({
     isDesktopBS: false,
     isDesktopLG: false,
     isDesktopMD: false,
-    isDesktopXS: false,
   },
 });
 

@@ -12,7 +12,6 @@ import {
   isDesktopBS,
   isDesktopLG,
   isDesktopMD,
-  isDesktopXS,
   isLandscape,
 } from 'hooks/styles';
 
@@ -22,7 +21,6 @@ export const ThemeWrap = ({ children }: ChildrenProps): JSX.Element => {
     isDesktopBS: isDesktopBS(),
     isDesktopLG: isDesktopLG(),
     isDesktopMD: isDesktopMD(),
-    isDesktopXS: isDesktopXS(),
     isLandscape: isLandscape(),
     isMobile: isMobile(),
     isPortrait: isPortrait(),
