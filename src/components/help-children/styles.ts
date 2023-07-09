@@ -26,6 +26,7 @@ export const HelpChildren = styled.div`
     css`
       grid-template-columns: 400px 1fr;
       grid-template-rows: 70px min-content 51px;
+      justify-items: start;
       padding: 42px 52px 86px;
     `}
 
@@ -34,6 +35,7 @@ export const HelpChildren = styled.div`
     css`
       grid-template-columns: 600px 1fr;
       grid-template-rows: 80px min-content 51px;
+      justify-items: start;
       padding: 42px 110px 86px 52px;
     `}
 
@@ -41,6 +43,7 @@ export const HelpChildren = styled.div`
     css`
       grid-template-columns: 400px 1fr;
       grid-template-rows: 80px min-content 51px;
+      justify-items: start;
       height: 516px;
     `}
 
@@ -67,8 +70,14 @@ export const HelpChildren = styled.div`
 `;
 
 export const TitleWrapper = styled.div`
-  grid-column: 1 / 2;
-  grid-row: 1 / 1;
+  h2 {
+    ${({ theme }) => css`
+      ${theme.responsive.isDesktop &&
+      css`
+        padding-left: 0;
+      `}
+    `}
+  }
 `;
 
 export const Text = styled.p`
@@ -362,14 +371,16 @@ export const PhotoThree = styled.img`
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      left: 17px;
+      /* left: 17px; */
+      right: 170px;
       bottom: 28px;
     `}
 
     ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
-      left: -22px;
+      /* left: -22px; */
+      right: 210px;
       bottom: 73px;
     `}
 
@@ -384,26 +395,29 @@ export const PhotoThree = styled.img`
 
     ${theme.responsive.isDesktopXS &&
     css`
+      right: 128px;
       bottom: 117px;
-      left: 392px;
     `}
 
     ${theme.responsive.isDesktopMD &&
     css`
       bottom: 123px;
       right: 190px;
+      /* left: 350px; */
     `}
 
     ${theme.responsive.isDesktopLG &&
     css`
       bottom: 95px;
       right: 220px;
+      /* left: 450px; */
     `}
 
     ${theme.responsive.isDesktopBS &&
     css`
       bottom: 47px;
       right: 220px;
+      /* left: 518px; */
     `}
   `}
 `;
