@@ -242,7 +242,6 @@ const colorsDefault = Object.freeze({
 
 const search = Object.freeze({
   white,
-  // blue: searchBlue,
   blue: seagull,
   background: 'rgba(255, 255, 255, 0.6)',
 });
