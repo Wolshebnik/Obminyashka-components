@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ButtonNew } from '.';
-import { argTypes } from './arg-types';
 import { IButtonNew } from './types';
+import { argTypes } from './arg-types';
 
 const meta = {
   title: 'ButtonNew',
