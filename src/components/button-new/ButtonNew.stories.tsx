@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ButtonNew } from '.';
 import { argTypes } from './arg-types';
-import { IStyledButtonNew } from './types';
+import { IButtonNew } from './types';
 
 const meta = {
   title: 'ButtonNew',
@@ -13,14 +13,14 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof ButtonNew>;
 
-const Template = (args: IStyledButtonNew) => {
+const Template = (args: IButtonNew) => {
   return (
     <div
       style={{
         width: '290px',
       }}
     >
-      <ButtonNew text={''} {...args} />
+      <ButtonNew {...args} />
     </div>
   );
 };
