@@ -1,44 +1,36 @@
 import { useMediaQuery } from 'react-responsive';
 
-const mobileMaxWidth = 767;
-const tabletMaxWidth = 1366;
-const desktopXsMaxWidth = 1562;
-const desktopMdMaxWidth = 1720;
-const desktopLgMaxWidth = 1920;
+const mobileMinWidth = 375;
+const tabletMinWidth = 768;
+const desktopMinWidth = 1367;
+const desktopMdMinWidth = 1563;
+const desktopLgMinWidth = 1721;
+const desktopBsMinWidth = 1921;
 
-export const isMobile = () => useMediaQuery({ maxWidth: mobileMaxWidth });
+export const isMobile = () => useMediaQuery({ minWidth: mobileMinWidth });
 
 export const isTablet = () =>
   useMediaQuery({
-    minWidth: mobileMaxWidth + 1,
-    maxWidth: tabletMaxWidth,
+    minWidth: tabletMinWidth,
   });
 
-export const isTabletUp = () => useMediaQuery({ minWidth: mobileMaxWidth + 1 });
+export const isTabletUp = () => useMediaQuery({ minWidth: tabletMinWidth });
 
-export const isDesktop = () => useMediaQuery({ minWidth: tabletMaxWidth + 1 });
-
-export const isDesktopXS = () =>
-  useMediaQuery({
-    minWidth: tabletMaxWidth + 1,
-    maxWidth: desktopXsMaxWidth,
-  });
+export const isDesktop = () => useMediaQuery({ minWidth: desktopMinWidth });
 
 export const isDesktopMD = () =>
   useMediaQuery({
-    minWidth: desktopXsMaxWidth + 1,
-    maxWidth: desktopMdMaxWidth,
+    minWidth: desktopMdMinWidth,
   });
 
 export const isDesktopLG = () =>
   useMediaQuery({
-    minWidth: desktopMdMaxWidth + 1,
-    maxWidth: desktopLgMaxWidth,
+    minWidth: desktopLgMinWidth,
   });
 
 export const isDesktopBS = () =>
   useMediaQuery({
-    minWidth: desktopLgMaxWidth + 1,
+    minWidth: desktopBsMinWidth,
   });
 
 export const isPortrait = () =>

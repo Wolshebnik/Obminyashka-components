@@ -8,7 +8,6 @@ import {
   isDesktopBS,
   isDesktopLG,
   isDesktopMD,
-  isDesktopXS,
   isLandscape,
 } from 'hooks/styles';
 
@@ -20,8 +19,10 @@ export const NotDesktop = ({ children }: ChildrenProps): JSX.Element | null => {
   return !isDesktop() ? <>{children}</> : null;
 };
 
-export const DesktopXS = ({ children }: ChildrenProps): JSX.Element | null => {
-  return isDesktopXS() ? <>{children}</> : null;
+export const NotDesktopMD = ({
+  children,
+}: ChildrenProps): JSX.Element | null => {
+  return !isDesktopMD() ? <>{children}</> : null;
 };
 
 export const DesktopMD = ({ children }: ChildrenProps): JSX.Element | null => {

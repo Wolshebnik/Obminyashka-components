@@ -35,7 +35,7 @@ const CategoryButton = ({
         >
           <Styles.CategoriesText>{textBtn}</Styles.CategoriesText>
 
-          <Styles.triangle isOpen={isOpen} />
+          <Styles.triangle isOpen={isAnimation} />
         </Styles.CategoriesDesktop>
       </Responsive.Desktop>
 
