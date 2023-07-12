@@ -36,3 +36,6 @@ export { ReactComponent as Search } from '../../assets/icons/search.svg';
 export { ReactComponent as SearchNew } from '../../assets/icons/searchNew.svg';
 export { ReactComponent as Settings } from '../../assets/icons/settings.svg';
 export { ReactComponent as Star } from '../../assets/icons/star.svg';
+export { ReactComponent as FbRegistration } from '../../assets/icons/facebook-registration.svg';
+export { ReactComponent as GoogleRegistration } from '../../assets/icons/google-registration.svg';
+export { ReactComponent as AppleRegistration } from '../../assets/icons/apple-registration.svg';

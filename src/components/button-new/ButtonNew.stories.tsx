@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ButtonNew } from '.';
+import * as Icon from '../icon';
 import { argTypes } from './arg-types';
 
 const meta = {
@@ -42,5 +43,39 @@ export const OutLineButton: Story = {
     text: 'Show more',
     colorType: 'blue',
     styleType: 'outline',
+    icon: <Icon.FbRegistration />,
+  },
+};
+
+export const FbButton: Story = {
+  args: {
+    plus: false,
+    square: true,
+    animated: false,
+    disabled: false,
+    styleType: 'outline',
+    icon: <Icon.FbRegistration />,
+  },
+};
+
+export const GoogleButton: Story = {
+  args: {
+    plus: false,
+    square: true,
+    animated: false,
+    disabled: false,
+    styleType: 'outline',
+    icon: <Icon.GoogleRegistration />,
+  },
+};
+
+export const AppleButton: Story = {
+  args: {
+    plus: false,
+    square: true,
+    animated: false,
+    disabled: false,
+    styleType: 'outline',
+    icon: <Icon.AppleRegistration />,
   },
 };

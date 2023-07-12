@@ -15,6 +15,7 @@ export const Button = styled.button<IStyledButtonNew>`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   width: 286px;
   height: 40px;
   font-style: normal;
@@ -24,7 +25,7 @@ export const Button = styled.button<IStyledButtonNew>`
   border-radius: 40px;
   border: none;
 
-  ${({ theme, colorType, animated, styleType }) => {
+  ${({ theme, colorType, animated, styleType, square }) => {
     const styleTheme = theme.colors.newButton[styleType][colorType];
 
     return css`
@@ -46,6 +47,23 @@ export const Button = styled.button<IStyledButtonNew>`
           border: 2px solid ${styleTheme.outlineDisabled};
           color: ${styleTheme.disabledText};
         }
+
+        ${square &&
+        css`
+          padding: 0;
+          width: 40px;
+          height: 40px;
+          border-radius: 10px;
+
+          svg {
+            height: 26px;
+            width: 26px;
+
+            path {
+              fill: ${styleTheme.outlineDisabled};
+            }
+          }
+        `}
       `}
 
       ${colorType === 'green' &&
