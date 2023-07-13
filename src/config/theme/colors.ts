@@ -5,21 +5,22 @@ const white = `#FFFFFF`;
 const twilightBlue = `#F6FDFF`;
 
 // Blue
+// const searchBlue = '#29a5d4';
+const aquamarineBlue = '#7ECDE4';
+const buttonBlue = '#12b6ed';
+const buttonBlueActive = '#0094ff';
+const buttonBlueHover = '#00bfff';
+const endeavour = '#0666ab';
 const foam = `#d9f6fd`;
-const viking = '#71C2DA';
+const footerBlue = '#3DB4D7';
 const indigo = '#3f76c1';
 const malibu = '#6fe5ff';
 const mariner = '#286cc9';
 const pelorous = '#44A5C6';
-const endeavour = '#0666ab';
-const searchBlue = '#29a5d4';
-const footerBlue = '#3DB4D7';
-const buttonBlue = '#12b6ed';
+const seagull = `#7EBDE4`;
 const shakespeare = '#53b3d4';
 const tropicalBlue = '#CEEEFA';
-const aquamarineBlue = '#7ECDE4';
-const buttonBlueHover = '#00bfff';
-const buttonBlueActive = '#0094ff';
+const viking = '#71C2DA';
 
 //Green
 const lima = '#6AB218';
@@ -242,7 +243,7 @@ const colorsDefault = Object.freeze({
 
 const search = Object.freeze({
   white,
-  blue: searchBlue,
+  blue: seagull,
   background: 'rgba(255, 255, 255, 0.6)',
 });
 

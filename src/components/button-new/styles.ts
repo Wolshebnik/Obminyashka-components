@@ -15,7 +15,8 @@ export const Button = styled.button<IStyledButtonNew>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 286px;
+  padding: 0 15px;
+  width: 100%;
   height: 40px;
   font-style: normal;
   font-weight: 700;
@@ -51,7 +52,6 @@ export const Button = styled.button<IStyledButtonNew>`
       ${colorType === 'green' &&
       theme.responsive.isDesktop &&
       css`
-        width: 290px;
         height: 50px;
         font-size: 20px;
       `}
