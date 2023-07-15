@@ -10,19 +10,28 @@ export const HelpChildren = styled.div`
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 55px min-content 280px 80px;
-  padding: 59px 0 82px;
+  justify-items: center;
+  padding: 59px 60px 82px;
   width: 100%;
   border-radius: 130px;
 
   ${({ theme }) => css`
     background: ${theme.colors.helpChildren.bg};
 
-    ${theme.responsive.isMobile &&
+    ${theme.responsive.isMobileBG &&
     css`
-      justify-items: center;
+      grid-template-rows: 75px min-content 355px 80px;
+      padding: 70px 35px 72px 44px;
     `}
 
     ${theme.responsive.isTablet &&
+    css`
+      grid-template-rows: min-content;
+      justify-items: center;
+      padding: 42px 42px 47px 52px;
+    `}
+
+    ${theme.responsive.isTabletBG &&
     css`
       grid-template-columns: 400px 1fr;
       grid-template-rows: 70px min-content 51px;
@@ -69,6 +78,12 @@ export const HelpChildren = styled.div`
 export const TitleWrapper = styled.div`
   h2 {
     ${({ theme }) => css`
+      ${theme.responsive.isTablet &&
+      css`
+        padding-left: 0;
+        margin-bottom: 60px;
+      `}
+
       ${theme.responsive.isDesktop &&
       css`
         padding-left: 0;
@@ -78,7 +93,7 @@ export const TitleWrapper = styled.div`
 `;
 
 export const Text = styled.p`
-  margin: 0 60px 22px;
+  margin: 0 0 30px;
   font-size: 14px;
   line-height: 23px;
   font-family: 'Proxima Nova', sans-serif;
@@ -87,6 +102,12 @@ export const Text = styled.p`
     color: ${theme.colors.blackColorText};
 
     ${theme.responsive.isTablet &&
+    css`
+      margin: 0 0 60px;
+      width: 100%;
+    `}
+
+    ${theme.responsive.isTabletBG &&
     css`
       grid-column: 1 / 2;
       grid-row: 2 / 3;
@@ -104,6 +125,19 @@ export const Text = styled.p`
 
 export const StylizedBtn = styled.div`
   align-self: flex-end;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      grid-row: 3/4;
+      margin-bottom: 38px;
+    `}
+
+    ${theme.responsive.isTabletBG &&
+    css`
+      margin-bottom: 0;
+    `}
+  `}
 
   button {
     width: inherit;
@@ -128,8 +162,6 @@ export const StylizedBtn = styled.div`
 
       ${theme.responsive.isTablet &&
       css`
-        grid-column: 1/2;
-        grid-row: 3/4;
         font-size: 16px;
         padding: 13px 21px;
         margin: 0;
@@ -164,11 +196,15 @@ export const PhotoWrapper = styled.div`
 
     ${theme.responsive.isTablet &&
     css`
+      height: 372px;
+      width: 370px;
+    `}
+
+    ${theme.responsive.isTabletBG &&
+    css`
       grid-column: 2/3;
       grid-row: 1/4;
       justify-self: flex-end;
-      height: 372px;
-      width: 370px;
     `}
 
     ${theme.responsive.isTablet &&
@@ -213,7 +249,19 @@ const photoStyles = css`
   object-fit: cover;
 
   ${({ theme }) => css`
+    ${theme.responsive.isMobileBG &&
+    css`
+      width: 156px;
+      height: 112px;
+    `}
+
     ${theme.responsive.isTablet &&
+    css`
+      width: 180px;
+      height: 120px;
+    `}
+
+    ${theme.responsive.isTabletBG &&
     css`
       width: 180px;
       height: 120px;
@@ -253,6 +301,12 @@ export const PhotoOne = styled.img`
   z-index: 2;
 
   ${({ theme }) => css`
+    ${theme.responsive.isMobileBG &&
+    css`
+      top: 39px;
+      left: -23px;
+    `}
+
     ${theme.responsive.isTablet &&
     css`
       top: 69px;
@@ -303,9 +357,15 @@ export const PhotoTwo = styled.img`
   transform: rotate(30deg);
 
   ${({ theme }) => css`
+    ${theme.responsive.isMobileBG &&
+    css`
+      right: 0;
+      bottom: 32px;
+    `}
+
     ${theme.responsive.isTablet &&
     css`
-      right: 20px;
+      right: 20;
       bottom: 37px;
     `}
 
@@ -353,6 +413,12 @@ export const PhotoThree = styled.img`
   transform: rotate(-30deg);
 
   ${({ theme }) => css`
+    ${theme.responsive.isMobileBG &&
+    css`
+      right: 153px;
+      bottom: 55px;
+    `}
+
     ${theme.responsive.isTablet &&
     css`
       right: 170px;
@@ -406,6 +472,13 @@ export const PhotoFour = styled.img`
   transform: rotate(17deg);
 
   ${({ theme }) => css`
+    ${theme.responsive.isMobileBG &&
+    css`
+      top: 43px;
+      width: 112px;
+      height: 156px;
+    `}
+
     ${theme.responsive.isTablet &&
     css`
       top: 50px;

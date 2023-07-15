@@ -13,6 +13,7 @@ const LIGHT_THEME: DefaultTheme = Object.freeze({
     isMobile: true,
     isTablet: false,
     isDesktop: false,
+    isTabletBG: false,
     isPortrait: false,
     isTabletUp: false,
     isLandscape: false,

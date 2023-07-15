@@ -5,8 +5,10 @@ import { ChildrenProps } from 'types';
 import { LIGHT_THEME } from 'config/theme/theme';
 import {
   isMobile,
+  isMobileBG,
   isTablet,
   isDesktop,
+  isTabletBG,
   isPortrait,
   isTabletUp,
   isDesktopBS,
@@ -23,8 +25,10 @@ export const ThemeWrap = ({ children }: ChildrenProps): JSX.Element => {
     isDesktopMD: isDesktopMD(),
     isLandscape: isLandscape(),
     isMobile: isMobile(),
+    isMobileBG: isMobileBG(),
     isPortrait: isPortrait(),
     isTablet: isTablet(),
+    isTabletBG: isTabletBG(),
     isTabletUp: isTabletUp(),
   };
 
