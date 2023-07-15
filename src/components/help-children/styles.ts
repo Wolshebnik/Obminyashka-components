@@ -20,13 +20,13 @@ export const HelpChildren = styled.div`
 
     ${theme.responsive.isMobileBG &&
     css`
-      grid-template-rows: 75px min-content 355px 80px;
+      grid-template-rows: 55px min-content 355px 80px;
       padding: 70px 35px 72px 44px;
     `}
 
     ${theme.responsive.isTablet &&
     css`
-      grid-template-rows: min-content;
+      grid-template-rows: 70px min-content;
       justify-items: center;
       padding: 42px 42px 47px 52px;
     `}
@@ -39,7 +39,7 @@ export const HelpChildren = styled.div`
       padding: 42px 52px 86px;
     `}
 
-    ${theme.responsive.isTablet &&
+    ${theme.responsive.isTabletBG &&
     theme.responsive.isLandscape &&
     css`
       grid-template-columns: 600px 1fr;
@@ -79,12 +79,6 @@ export const TitleWrapper = styled.div`
   h2 {
     ${({ theme }) => css`
       ${theme.responsive.isTablet &&
-      css`
-        padding-left: 0;
-        margin-bottom: 60px;
-      `}
-
-      ${theme.responsive.isDesktop &&
       css`
         padding-left: 0;
       `}
@@ -207,7 +201,7 @@ export const PhotoWrapper = styled.div`
       justify-self: flex-end;
     `}
 
-    ${theme.responsive.isTablet &&
+    ${theme.responsive.isTabletBG &&
     theme.responsive.isLandscape &&
     css`
       grid-column: 2/3;
@@ -313,7 +307,7 @@ export const PhotoOne = styled.img`
       left: 17px;
     `}
 
-    ${theme.responsive.isTablet &&
+    ${theme.responsive.isTabletBG &&
     theme.responsive.isLandscape &&
     css`
       top: 53px;
@@ -369,7 +363,7 @@ export const PhotoTwo = styled.img`
       bottom: 37px;
     `}
 
-    ${theme.responsive.isTablet &&
+    ${theme.responsive.isTabletBG &&
     theme.responsive.isLandscape &&
     css`
       bottom: 35px;
@@ -487,7 +481,7 @@ export const PhotoFour = styled.img`
       height: 180px;
     `}
 
-    ${theme.responsive.isTablet &&
+    ${theme.responsive.isTabletBG &&
     theme.responsive.isLandscape &&
     css`
       top: 67px;
