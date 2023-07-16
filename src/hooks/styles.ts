@@ -16,6 +16,7 @@ export const isMobileBG = () => useMediaQuery({ minWidth: mobileBgMinWidth });
 export const isTablet = () =>
   useMediaQuery({
     minWidth: tabletMinWidth,
+    minWidth: tabletMinWidth,
   });
 
 export const isTabletBG = () =>
@@ -30,15 +31,18 @@ export const isDesktop = () => useMediaQuery({ minWidth: desktopMinWidth });
 export const isDesktopMD = () =>
   useMediaQuery({
     minWidth: desktopMdMinWidth,
+    minWidth: desktopMdMinWidth,
   });
 
 export const isDesktopLG = () =>
   useMediaQuery({
     minWidth: desktopLgMinWidth,
+    minWidth: desktopLgMinWidth,
   });
 
 export const isDesktopBS = () =>
   useMediaQuery({
+    minWidth: desktopBsMinWidth,
     minWidth: desktopBsMinWidth,
   });
 
