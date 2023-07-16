@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 
+import { Button } from '../button';
 import * as Animation from './animation';
 
 export const Wrapper = styled.div`
@@ -132,50 +133,50 @@ export const StylizedBtn = styled.div`
       margin-bottom: 0;
     `}
   `}
+`;
 
-  button {
-    width: inherit;
-    height: inherit;
-    line-height: 23px;
-    border-radius: 30px;
-    column-gap: 0;
+export const Btn = styled(Button)`
+  width: inherit;
+  height: inherit;
+  line-height: 23px;
+  border-radius: 30px;
+  column-gap: 0;
 
-    ${({ theme }) => css`
-      color: ${theme.colors.white};
-      background-color: ${theme.colors.btnBlue};
+  ${({ theme }) => css`
+    color: ${theme.colors.white};
+    background-color: ${theme.colors.btnBlue};
 
-      :hover {
-        background-color: ${theme.colors.btnBlueActive};
-      }
+    :hover {
+      background-color: ${theme.colors.btnBlueActive};
+    }
 
-      ${theme.responsive.isMobile &&
-      css`
-        padding: 9px 15px;
-        font-size: 14px;
-      `}
-
-      ${theme.responsive.isTablet &&
-      css`
-        font-size: 16px;
-        padding: 13px 21px;
-        margin: 0;
-      `}
-
-      ${theme.responsive.isDesktop &&
-      css`
-        padding: 14px 22px;
-        font-size: 18px;
-      `}
+    ${theme.responsive.isMobile &&
+    css`
+      padding: 9px 15px;
+      font-size: 14px;
     `}
 
-    span {
-      margin-right: 10px;
-    }
+    ${theme.responsive.isTablet &&
+    css`
+      font-size: 16px;
+      padding: 13px 21px;
+      margin: 0;
+    `}
 
-    svg {
-      width: 18px;
-      height: 18px;
-    }
+      ${theme.responsive.isDesktop &&
+    css`
+      padding: 14px 22px;
+      font-size: 18px;
+    `}
+  `}
+
+  span {
+    margin-right: 10px;
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
   }
 `;
 
