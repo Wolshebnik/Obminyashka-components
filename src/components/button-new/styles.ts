@@ -61,12 +61,6 @@ export const Button = styled.button<IStyledButtonNew>`
       css`
         height: 50px;
         font-size: 20px;
-
-        svg {
-          path {
-            fill: ${styleTheme.outline};
-          }
-        }
       `}
 
       ${colorType === 'green' &&
