@@ -17,7 +17,6 @@ declare module 'styled-components' {
       isDesktopBS: boolean;
       isDesktopLG: boolean;
       isDesktopMD: boolean;
-      isDesktopXS: boolean;
       isLandscape: boolean;
       isMobile: boolean;
       isPortrait: boolean;

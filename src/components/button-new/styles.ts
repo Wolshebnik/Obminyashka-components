@@ -15,8 +15,8 @@ export const Button = styled.button<IStyledButtonNew>`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  width: 286px;
+  padding: 0 15px;
+  width: 100%;
   height: 40px;
   font-style: normal;
   font-weight: 700;
@@ -32,44 +32,43 @@ export const Button = styled.button<IStyledButtonNew>`
       color: ${styleTheme.text};
       background: ${styleTheme.bg};
 
+      &:not(:disabled) {
+        border: 2px solid ${styleTheme.outline};
+        color: ${styleTheme.text};
+      }
+      &:disabled {
+        border: 2px solid ${styleTheme.outlineDisabled};
+        color: ${styleTheme.disabledText};
+      }
+
       ${styleType === 'outline' &&
       css`
         font-weight: 400;
         font-size: 16px;
         line-height: 19px;
         border-radius: 63px;
+      `}
 
-        &:not(:disabled) {
-          border: 2px solid ${styleTheme.outline};
-          color: ${styleTheme.text};
-        }
-        &:disabled {
-          border: 2px solid ${styleTheme.outlineDisabled};
-          color: ${styleTheme.disabledText};
-        }
+      ${square &&
+      css`
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
 
-        ${square &&
-        css`
-          padding: 0;
-          width: 40px;
-          height: 40px;
-          border-radius: 10px;
+        svg {
+          height: 26px;
+          width: 26px;
 
-          svg {
-            height: 26px;
-            width: 26px;
-
-            path {
-              fill: ${styleTheme.outlineDisabled};
-            }
+          path {
+            fill: ${styleTheme.outlineDisabled};
           }
-        `}
+        }
       `}
 
       ${colorType === 'green' &&
       theme.responsive.isDesktop &&
       css`
-        width: 290px;
         height: 50px;
         font-size: 20px;
       `}

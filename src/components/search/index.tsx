@@ -10,7 +10,7 @@ const Search = (props: ISearchProps) => {
   const { isOpen, setOpen, isAnimation } = useDelayAnimation(600);
   return (
     <>
-      <Responsive.NotDesktop>
+      <Responsive.NotDesktopMD>
         <Styles.WrapIcon onClick={() => setOpen(!isOpen)}>
           <Icon.SearchNew />
         </Styles.WrapIcon>
@@ -18,13 +18,18 @@ const Search = (props: ISearchProps) => {
         {isOpen && (
           <Styles.WrapDeviceSearch isSearchActive={isAnimation}>
             <SearchInput {...props} />
+            <Styles.CloseBtn>
+              <Responsive.Desktop>
+                <Icon.Close onClick={() => setOpen(!isOpen)} />
+              </Responsive.Desktop>
+            </Styles.CloseBtn>
           </Styles.WrapDeviceSearch>
         )}
-      </Responsive.NotDesktop>
+      </Responsive.NotDesktopMD>
 
-      <Responsive.Desktop>
+      <Responsive.DesktopMD>
         <SearchInput {...props} />
-      </Responsive.Desktop>
+      </Responsive.DesktopMD>
     </>
   );
 };
