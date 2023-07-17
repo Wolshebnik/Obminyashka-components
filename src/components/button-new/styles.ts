@@ -39,6 +39,12 @@ export const Button = styled.button<IStyledButtonNew>`
       &:disabled {
         border: 2px solid ${styleTheme.outlineDisabled};
         color: ${styleTheme.disabledText};
+
+        svg {
+          path {
+            fill: ${styleTheme.outlineDisabled};
+          }
+        }
       }
 
       ${styleType === 'outline' &&
@@ -55,15 +61,6 @@ export const Button = styled.button<IStyledButtonNew>`
         width: 40px;
         height: 40px;
         border-radius: 10px;
-
-        svg {
-          height: 26px;
-          width: 26px;
-
-          path {
-            fill: ${styleTheme.outlineDisabled};
-          }
-        }
       `}
 
       ${colorType === 'green' &&
