@@ -64,7 +64,7 @@ export const Card = styled.div<{ margin?: string }>`
         z-index: 2;
       }
 
-      ${theme.responsive.isDesktopXS &&
+      ${theme.responsive.isDesktop &&
       css`
         width: 296px;
       `}
