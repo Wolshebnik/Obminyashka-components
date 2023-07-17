@@ -5,9 +5,9 @@ import { ChildrenProps } from 'types';
 import { LIGHT_THEME } from 'config/theme/theme';
 import {
   isMobile,
-  isMobileBG,
   isTablet,
   isDesktop,
+  isMobileBG,
   isTabletBG,
   isPortrait,
   isTabletUp,

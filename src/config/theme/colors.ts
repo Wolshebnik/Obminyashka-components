@@ -5,7 +5,6 @@ const white = `#FFFFFF`;
 const twilightBlue = `#F6FDFF`;
 
 // Blue
-// const searchBlue = '#29a5d4';
 const aquamarineBlue = '#7ECDE4';
 const buttonBlue = '#12b6ed';
 const buttonBlueActive = '#0094ff';

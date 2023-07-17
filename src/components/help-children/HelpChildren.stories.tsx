@@ -23,8 +23,8 @@ type Story = StoryObj<typeof HelpChildren>;
 export const HelpChildrenDefault: Story = {
   args: {
     name: 'Obminyashka',
-    buttonText: 'я хочу допомогти дітям!',
-    title: 'Чужих дітей не буває!',
+    buttonText: 'I want to help children!',
+    title: "There are no other people's children!",
     text: 'cooperates with volunteer organizations for all over Ukraine! You can help too! Give your unnecessary things, they will end up in orphanages and orphanages!cooperates with volunteer organizations for all over Ukraine!',
   },
 };
