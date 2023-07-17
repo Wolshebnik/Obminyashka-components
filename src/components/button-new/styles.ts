@@ -36,6 +36,7 @@ export const Button = styled.button<IStyledButtonNew>`
         border: 2px solid ${styleTheme.outline};
         color: ${styleTheme.text};
       }
+
       &:disabled {
         border: 2px solid ${styleTheme.outlineDisabled};
         color: ${styleTheme.disabledText};
@@ -55,19 +56,34 @@ export const Button = styled.button<IStyledButtonNew>`
         border-radius: 63px;
       `}
 
+      ${colorType === 'green' &&
+      theme.responsive.isDesktop &&
+      css`
+        height: 50px;
+        font-size: 20px;
+
+        svg {
+          path {
+            fill: ${styleTheme.outline};
+          }
+        }
+      `}
+
+      ${colorType === 'green' &&
+      css`
+        svg {
+          path {
+            fill: ${styleTheme.outline};
+          }
+        }
+      `}
+
       ${square &&
       css`
         padding: 0;
         width: 40px;
         height: 40px;
         border-radius: 10px;
-      `}
-
-      ${colorType === 'green' &&
-      theme.responsive.isDesktop &&
-      css`
-        height: 50px;
-        font-size: 20px;
       `}
 
       &:hover:not(:disabled) {
