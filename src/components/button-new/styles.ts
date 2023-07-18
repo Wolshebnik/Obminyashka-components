@@ -67,7 +67,7 @@ export const Button = styled.button<IStyledButtonNew>`
       ${colorType === 'green' &&
       theme.responsive.isDesktopLG &&
       css`
-        font-size: 18px;
+        font-size: 17px;
         line-height: 24px;
       `}
 
