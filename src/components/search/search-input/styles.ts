@@ -8,6 +8,7 @@ export const SearchInputWrapper = styled.div`
   width: 100%;
   max-width: 310px;
   min-width: 180px;
+  height: 50px;
   border-radius: 26px;
 
   input[type='text']::-ms-clear {
