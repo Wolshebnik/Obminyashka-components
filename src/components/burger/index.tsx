@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-import { useDelayAnimation } from 'hooks';
+import { useDelayAnimation, useWindowWidth } from 'hooks';
 import { Deals, LanguageSelection, Overlay, Responsive } from 'components';
 
 import { IBurger } from './types';
@@ -10,6 +10,7 @@ import * as Icon from '../../components/icon';
 const Burger = ({ data, lang, onSelectLanguage, duration = 600 }: IBurger) => {
   const burgerRef = useRef<HTMLDivElement>(null);
   const { isOpen, isAnimation, setOpen } = useDelayAnimation(duration);
+  const width = useWindowWidth();
 
   return (
     <Responsive.NotDesktop>
@@ -18,6 +19,7 @@ const Burger = ({ data, lang, onSelectLanguage, duration = 600 }: IBurger) => {
       </Styles.BurgerIcon>
 
       <Overlay
+        top={top(width)}
         isHeader
         isOpen={isOpen}
         duration={duration}

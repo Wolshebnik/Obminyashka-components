@@ -1,13 +1,12 @@
 import { useMediaQuery } from 'react-responsive';
 
-const mobileMinWidth = 375;
-const tabletMinWidth = 768;
+const tabletMinWidth = 767;
 const desktopMinWidth = 1367;
 const desktopMdMinWidth = 1563;
 const desktopLgMinWidth = 1721;
 const desktopBsMinWidth = 1921;
 
-export const isMobile = () => useMediaQuery({ minWidth: mobileMinWidth });
+export const isMobile = () => useMediaQuery({ maxWidth: tabletMinWidth });
 
 export const isTablet = () =>
   useMediaQuery({
