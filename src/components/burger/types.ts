@@ -9,6 +9,7 @@ export interface BurgerProps {
   to: string;
   text: string;
   icon?: boolean;
+  mobile?: boolean;
 }
 
 export interface IOnClickArg {

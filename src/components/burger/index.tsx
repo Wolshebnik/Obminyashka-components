@@ -38,7 +38,17 @@ const Burger = ({ data, lang, onSelectLanguage, duration = 600 }: IBurger) => {
           <Styles.BurgerContainer>
             {data.map((item, index) => (
               <React.Fragment key={index}>
-                <Deals text={item.text} to={item.to} heartIcon={item.icon} />
+                {item.mobile ? (
+                  <Responsive.Mobile>
+                    <Deals
+                      text={item.text}
+                      to={item.to}
+                      heartIcon={item.icon}
+                    />
+                  </Responsive.Mobile>
+                ) : (
+                  <Deals text={item.text} to={item.to} heartIcon={item.icon} />
+                )}
               </React.Fragment>
             ))}
 
