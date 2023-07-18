@@ -5,6 +5,7 @@ import { Deals, LanguageSelection, Overlay, Responsive } from 'components';
 
 import { IBurger } from './types';
 import * as Styles from './styles';
+import { positionTop } from './helpers';
 import * as Icon from '../../components/icon';
 
 const Burger = ({ data, lang, onSelectLanguage, duration = 600 }: IBurger) => {
@@ -19,7 +20,7 @@ const Burger = ({ data, lang, onSelectLanguage, duration = 600 }: IBurger) => {
       </Styles.BurgerIcon>
 
       <Overlay
-        top={top(width)}
+        top={positionTop(width)}
         isHeader
         isOpen={isOpen}
         duration={duration}
