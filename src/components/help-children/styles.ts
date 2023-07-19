@@ -4,8 +4,9 @@ import { Button } from '../button';
 import * as Animation from './animation';
 
 export const Wrapper = styled.div`
-  margin: 0 auto;
-  max-width: 1830px;
+  padding: 30px 10px;
+  height: 1700px;
+  background-color: beige;
 `;
 
 export const HelpChildren = styled.div`
