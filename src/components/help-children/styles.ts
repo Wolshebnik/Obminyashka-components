@@ -14,7 +14,7 @@ export const HelpChildren = styled.div`
   grid-template-columns: 100%;
   grid-template-rows: 55px min-content 280px 80px;
   justify-items: center;
-  padding: 59px 60px 82px;
+  padding: 59px 0 82px;
   margin: 0 auto;
   max-width: 1830px;
   border-radius: 130px;
@@ -80,9 +80,30 @@ export const HelpChildren = styled.div`
 `;
 
 export const TitleWrapper = styled.div`
+  margin: 0 20px;
+  text-align: center;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isMobileBG &&
+    css`
+      margin: 0;
+      text-align: start;
+    `}
+  `}
+
   h2 {
     ${({ theme }) => css`
       ${theme.responsive.isTablet &&
+      css`
+        padding-left: 0;
+      `}
+
+      ${theme.responsive.isTabletBG &&
+      css`
+        padding-left: 40px;
+      `}
+
+      ${theme.responsive.isDesktop &&
       css`
         padding-left: 0;
       `}
@@ -91,7 +112,7 @@ export const TitleWrapper = styled.div`
 `;
 
 export const Text = styled.p`
-  margin: 0 0 30px;
+  margin: 0 60px 30px;
   font-size: 14px;
   line-height: 23px;
   font-family: 'Proxima Nova', sans-serif;
