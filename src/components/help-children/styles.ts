@@ -4,6 +4,7 @@ import { Button } from '../button';
 import * as Animation from './animation';
 
 export const Wrapper = styled.div`
+  margin: 0 auto;
   max-width: 1830px;
 `;
 
@@ -13,6 +14,7 @@ export const HelpChildren = styled.div`
   grid-template-rows: 55px min-content 280px 80px;
   justify-items: center;
   padding: 59px 60px 82px;
+  margin: 0 auto;
   max-width: 1830px;
   border-radius: 130px;
 
