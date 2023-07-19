@@ -65,7 +65,6 @@ const silverChalice = '#A0A0A0';
 const silverRgba = 'rgba(189, 189, 189, 0.5)';
 
 //RGBA colors
-// const background = 'rgba(255, 255, 255, 0.4)';
 const shadow = 'rgba(255, 255, 255, 0.2)';
 const modalBackground = 'rgba(18, 182, 237, 0.3)';
 const crossBtn = 'rgb(255, 255, 255)';
