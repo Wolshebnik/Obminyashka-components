@@ -13,14 +13,14 @@ export interface IButtonNew extends Omit<ICustomButton, 'ref'> {
   text?: string;
   plus?: boolean;
   icon?: ReactNode;
-  square?: boolean;
+  square: boolean;
   animated?: boolean;
   colorType: ColorType;
   styleType: StyleType;
 }
 
 export interface IStyledButtonNew {
-  square?: boolean;
+  square: boolean;
   animated?: boolean;
   colorType: ColorType;
   styleType: StyleType;
