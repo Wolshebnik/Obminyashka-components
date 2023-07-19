@@ -13,7 +13,7 @@ export const HelpChildren = styled.div`
   grid-template-rows: 55px min-content 280px 80px;
   justify-items: center;
   padding: 59px 60px 82px;
-  width: 100%;
+  max-width: 1830px;
   border-radius: 130px;
 
   ${({ theme }) => css`
