@@ -19,8 +19,10 @@ declare module 'styled-components' {
       isDesktopMD: boolean;
       isLandscape: boolean;
       isMobile: boolean;
+      isMobileBG: boolean;
       isPortrait: boolean;
       isTablet: boolean;
+      isTabletBG: boolean;
       isTabletUp: boolean;
     };
   }
