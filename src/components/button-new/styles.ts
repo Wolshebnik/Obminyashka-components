@@ -25,12 +25,28 @@ export const Button = styled.button<IStyledButtonNew>`
   border-radius: 40px;
   border: none;
 
-  ${({ theme, colorType, animated, styleType }) => {
+  ${({ theme, colorType, animated, styleType, square }) => {
     const styleTheme = theme.colors.newButton[styleType][colorType];
 
     return css`
       color: ${styleTheme.text};
       background: ${styleTheme.bg};
+
+      &:not(:disabled) {
+        border: 2px solid ${styleTheme.outline};
+        color: ${styleTheme.text};
+      }
+
+      &:disabled {
+        border: 2px solid ${styleTheme.outlineDisabled};
+        color: ${styleTheme.disabledText};
+
+        svg {
+          path {
+            fill: ${styleTheme.outlineDisabled};
+          }
+        }
+      }
 
       ${styleType === 'outline' &&
       css`
@@ -38,15 +54,6 @@ export const Button = styled.button<IStyledButtonNew>`
         font-size: 16px;
         line-height: 19px;
         border-radius: 63px;
-
-        &:not(:disabled) {
-          border: 2px solid ${styleTheme.outline};
-          color: ${styleTheme.text};
-        }
-        &:disabled {
-          border: 2px solid ${styleTheme.outlineDisabled};
-          color: ${styleTheme.disabledText};
-        }
       `}
 
       ${colorType === 'green' &&
@@ -54,6 +61,23 @@ export const Button = styled.button<IStyledButtonNew>`
       css`
         height: 50px;
         font-size: 20px;
+      `}
+
+      ${colorType === 'green' &&
+      css`
+        svg {
+          path {
+            fill: ${styleTheme.outline};
+          }
+        }
+      `}
+
+      ${square &&
+      css`
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
       `}
 
       &:hover:not(:disabled) {
