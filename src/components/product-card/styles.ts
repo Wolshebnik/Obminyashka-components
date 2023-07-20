@@ -39,6 +39,7 @@ export const Card = styled.div<{ margin?: string }>`
     ${theme.responsive.isDesktop &&
     css`
       height: 416px;
+      height: 416px;
       border: 2px dashed ${theme.colors.productCard.borderCard};
       border-radius: 20px;
 

@@ -24,7 +24,7 @@ export const HelpChildrenDefault: Story = {
   args: {
     name: 'Obminyashka',
     buttonText: 'I want to help children!',
-    title: 'There are no other peoples children!',
-    text: 'cooperates with volunteer organizations for all over Ukraine! You can help too! Give your unnecessary things, they will end up in orphanages and orphanages!',
+    title: "There are no other people's children!",
+    text: 'cooperates with volunteer organizations for all over Ukraine! You can help too! Give your unnecessary things, they will end up in orphanages and orphanages!cooperates with volunteer organizations for all over Ukraine!',
   },
 };

@@ -7,6 +7,8 @@ import {
   isMobile,
   isTablet,
   isDesktop,
+  isMobileBG,
+  isTabletBG,
   isPortrait,
   isTabletUp,
   isDesktopBS,
@@ -23,8 +25,10 @@ export const ThemeWrap = ({ children }: ChildrenProps): JSX.Element => {
     isDesktopMD: isDesktopMD(),
     isLandscape: isLandscape(),
     isMobile: isMobile(),
+    isMobileBG: isMobileBG(),
     isPortrait: isPortrait(),
     isTablet: isTablet(),
+    isTabletBG: isTabletBG(),
     isTabletUp: isTabletUp(),
   };
 

@@ -2,9 +2,9 @@ const buttonGradient =
   '90deg,rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5)';
 //White
 const white = `#FFFFFF`;
+const twilightBlue = `#F6FDFF`;
 
 // Blue
-// const searchBlue = '#29a5d4';
 const aquamarineBlue = '#7ECDE4';
 const buttonBlue = '#12b6ed';
 const buttonBlueActive = '#0094ff';
@@ -65,7 +65,6 @@ const silverChalice = '#A0A0A0';
 const silverRgba = 'rgba(189, 189, 189, 0.5)';
 
 //RGBA colors
-const background = 'rgba(255, 255, 255, 0.4)';
 const shadow = 'rgba(255, 255, 255, 0.2)';
 const modalBackground = 'rgba(18, 182, 237, 0.3)';
 const crossBtn = 'rgb(255, 255, 255)';
@@ -188,7 +187,7 @@ const productOwnerData = Object.freeze({
 });
 
 const helpChildren = Object.freeze({
-  bg: background,
+  bg: twilightBlue,
   shadow,
 });
 
