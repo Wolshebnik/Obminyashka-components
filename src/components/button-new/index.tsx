@@ -5,10 +5,10 @@ const ButtonNew = ({
   text,
   plus,
   icon,
+  square,
   onClick,
   animated,
   disabled,
-  square = false,
   colorType = 'blue',
   styleType = 'default',
 }: IButtonNew) => {
