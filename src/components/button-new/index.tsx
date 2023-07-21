@@ -4,6 +4,8 @@ import { IButtonNew } from './types';
 const ButtonNew = ({
   text,
   plus,
+  icon,
+  square,
   onClick,
   animated,
   disabled,
@@ -12,14 +14,16 @@ const ButtonNew = ({
 }: IButtonNew) => {
   return (
     <Styles.Button
+      square={square}
       onClick={onClick}
       animated={animated}
       disabled={disabled}
       colorType={colorType}
       styleType={styleType}
     >
+      {icon && icon}
       {plus && <span>+&nbsp;&nbsp;</span>}
-      <Styles.Text>{text}</Styles.Text>
+      {text && <Styles.Text>{text}</Styles.Text>}
     </Styles.Button>
   );
 };

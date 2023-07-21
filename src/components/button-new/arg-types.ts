@@ -54,6 +54,16 @@ export const argTypes: IArgTypes<IButtonNew> = {
     },
     control: { type: 'boolean' },
   },
+  square: {
+    name: 'square',
+    type: { name: 'boolean' },
+    description: 'make button square',
+    table: {
+      defaultValue: { summary: false },
+      type: { summary: 'boolean' },
+    },
+    control: { type: 'boolean' },
+  },
   styleType: {
     name: 'styleType',
     type: { name: 'string' },

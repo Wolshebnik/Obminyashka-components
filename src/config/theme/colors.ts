@@ -2,9 +2,9 @@ const buttonGradient =
   '90deg,rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5)';
 //White
 const white = `#FFFFFF`;
+const twilightBlue = `#F6FDFF`;
 
 // Blue
-// const searchBlue = '#29a5d4';
 const aquamarineBlue = '#7ECDE4';
 const buttonBlue = '#12b6ed';
 const buttonBlueActive = '#0094ff';
@@ -15,7 +15,7 @@ const footerBlue = '#3DB4D7';
 const indigo = '#3f76c1';
 const malibu = '#6fe5ff';
 const mariner = '#286cc9';
-const pelorous = '#44A5C6';
+const pelorus = '#44A5C6';
 const seagull = `#7EBDE4`;
 const shakespeare = '#53b3d4';
 const tropicalBlue = '#CEEEFA';
@@ -65,7 +65,6 @@ const silverChalice = '#A0A0A0';
 const silverRgba = 'rgba(189, 189, 189, 0.5)';
 
 //RGBA colors
-const background = 'rgba(255, 255, 255, 0.4)';
 const shadow = 'rgba(255, 255, 255, 0.2)';
 const modalBackground = 'rgba(18, 182, 237, 0.3)';
 const crossBtn = 'rgb(255, 255, 255)';
@@ -80,11 +79,11 @@ const newButton = Object.freeze({
       bg: aquamarineBlue,
       outline: aquamarineBlue,
       outlineDisabled: tropicalBlue,
-      bgHover: pelorous,
+      bgHover: pelorus,
       bgDisabled: tropicalBlue,
       animated: {
         bg: `linear-gradient(45deg, ${aquamarineBlue} 35%, #BCD9E3 50%, ${aquamarineBlue} 65%)`,
-        bgHover: `linear-gradient(45deg, ${pelorous} 35%, #C9DDE4 50%, ${pelorous} 65%)`,
+        bgHover: `linear-gradient(45deg, ${pelorus} 35%, #C9DDE4 50%, ${pelorus} 65%)`,
         bgDisabled: `linear-gradient(45deg, ${tropicalBlue} 35%, #F5FCFF 50%, ${tropicalBlue} 65%)`,
       },
     },
@@ -107,25 +106,25 @@ const newButton = Object.freeze({
     blue: {
       text: viking,
       disabledText: silverRgba,
-      bg: white,
+      bg: 'transparent',
       outline: viking,
       outlineDisabled: silverRgba,
       bgHover: white,
-      bgDisabled: white,
+      bgDisabled: 'transparent',
       animated: {
         bg: `linear-gradient(45deg, ${aquamarineBlue} 35%, #BCD9E3 50%, ${aquamarineBlue} 65%)`,
-        bgHover: `linear-gradient(45deg, ${pelorous} 35%, #C9DDE4 50%, ${pelorous} 65%)`,
+        bgHover: `linear-gradient(45deg, ${pelorus} 35%, #C9DDE4 50%, ${pelorus} 65%)`,
         bgDisabled: `linear-gradient(45deg, ${tropicalBlue} 35%, #F5FCFF 50%, ${tropicalBlue} 65%)`,
       },
     },
     green: {
-      text: viking,
+      text: olivine,
       disabledText: silverRgba,
-      bg: white,
-      outline: viking,
+      bg: 'transparent',
+      outline: olivine,
       outlineDisabled: silverRgba,
       bgHover: white,
-      bgDisabled: white,
+      bgDisabled: 'transparent',
       animated: {
         bg: `linear-gradient(45deg, ${olivine} 35%, #eefddc 50%, ${olivine} 65%)`,
         bgHover: `linear-gradient(45deg, ${lima} 35%, #EFFEDE 50%, ${lima} 65%)`,
@@ -188,7 +187,7 @@ const productOwnerData = Object.freeze({
 });
 
 const helpChildren = Object.freeze({
-  bg: background,
+  bg: twilightBlue,
   shadow,
 });
 
