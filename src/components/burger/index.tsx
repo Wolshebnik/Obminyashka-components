@@ -20,11 +20,11 @@ const Burger = ({ data, lang, onSelectLanguage, duration = 600 }: IBurger) => {
       </Styles.BurgerIcon>
 
       <Overlay
-        top={positionTop(width)}
         isHeader
         isOpen={isOpen}
         duration={duration}
         childRef={burgerRef}
+        top={positionTop(width)}
         isAnimation={isAnimation}
         setClose={() => setOpen(false)}
       >
