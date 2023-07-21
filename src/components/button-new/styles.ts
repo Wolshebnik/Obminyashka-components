@@ -60,7 +60,8 @@ export const Button = styled.button<IStyledButtonNew>`
       theme.responsive.isDesktop &&
       css`
         height: 50px;
-        font-size: 20px;
+        font-size: 18px;
+        line-height: 24px;
       `}
 
       ${colorType === 'green' &&
@@ -86,6 +87,13 @@ export const Button = styled.button<IStyledButtonNew>`
           background: ${styleTheme.bgHover};
         `}
       }
+
+      ${colorType === 'green' &&
+      theme.responsive.isDesktopLG &&
+      css`
+        font-size: 17px;
+        line-height: 24px;
+      `}
 
       ${animated
         ? css`

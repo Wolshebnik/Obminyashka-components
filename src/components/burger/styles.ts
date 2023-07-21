@@ -128,11 +128,6 @@ export const BurgerMenu = styled.div<{
       ::after {
         background-image: none;
       }
-
-      ${isAnimation &&
-      css`
-        top: 85px;
-      `}
     `}
   `};
 `;
@@ -171,7 +166,7 @@ export const BurgerContainer = styled.div`
   align-items: center;
   gap: 56px;
   width: 100%;
-  z-index: 1;
+  z-index: -1;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&

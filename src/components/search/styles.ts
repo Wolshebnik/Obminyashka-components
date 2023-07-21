@@ -12,7 +12,8 @@ export const WrapIcon = styled.div`
 
     ${theme.responsive.isDesktop &&
     css`
-      width: 48px;
+      width: 50px;
+      height: 50px;
       padding: 5px;
       border: 2px solid ${theme.colors.search.blue};
       border-radius: 50px;

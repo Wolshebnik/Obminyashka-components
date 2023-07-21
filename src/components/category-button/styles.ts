@@ -23,6 +23,7 @@ export const CategoriesDesktop = styled.div<{
       padding: 0 12px;
       width: 155px;
       font-size: 18px;
+      line-height: 18px;
     `}
 
     ${theme.responsive.isDesktopLG &&
@@ -30,6 +31,7 @@ export const CategoriesDesktop = styled.div<{
       padding: 0 14px;
       width: 175px;
       font-size: 20px;
+      line-height: 24px;
     `}
 
     ${theme.responsive.isDesktopBS &&

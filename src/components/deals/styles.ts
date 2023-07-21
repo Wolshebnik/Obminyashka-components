@@ -48,7 +48,7 @@ export const HeartIconWrapper = styled.div`
 `;
 
 export const Text = styled.div`
-  max-width: 177px;
+  width: fit-content;
   font-size: 16px;
   line-height: 18px;
   font-weight: 500;
