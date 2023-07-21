@@ -9,9 +9,9 @@ import { positionTop } from './helpers';
 import * as Icon from '../../components/icon';
 
 const Burger = ({ data, lang, onSelectLanguage, duration = 600 }: IBurger) => {
+  const width = useWindowWidth();
   const burgerRef = useRef<HTMLDivElement>(null);
   const { isOpen, isAnimation, setOpen } = useDelayAnimation(duration);
-  const width = useWindowWidth();
 
   return (
     <Responsive.NotDesktop>
@@ -41,8 +41,8 @@ const Burger = ({ data, lang, onSelectLanguage, duration = 600 }: IBurger) => {
                 {item.mobile ? (
                   <Responsive.Mobile>
                     <Deals
-                      text={item.text}
                       to={item.to}
+                      text={item.text}
                       heartIcon={item.icon}
                     />
                   </Responsive.Mobile>
