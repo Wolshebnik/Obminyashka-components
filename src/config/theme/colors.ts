@@ -6,18 +6,22 @@ const twilightBlue = `#F6FDFF`;
 
 // Blue
 const aquamarineBlue = '#7ECDE4';
+const brightTurquoise = `#12B6ED`;
 const buttonBlue = '#12b6ed';
 const buttonBlueActive = '#0094ff';
 const buttonBlueHover = '#00bfff';
+const curiousBlue = `#29A5D4`;
 const endeavour = '#0666ab';
 const foam = `#d9f6fd`;
 const footerBlue = '#3DB4D7';
 const indigo = '#3f76c1';
 const malibu = '#6fe5ff';
 const mariner = '#286cc9';
+const morningGlory = `#97D7E3`;
 const pelorus = '#44A5C6';
 const seagull = `#7EBDE4`;
 const shakespeare = '#53b3d4';
+const shakesPeare = `#39a5cf`;
 const tropicalBlue = '#CEEEFA';
 const viking = '#71C2DA';
 
@@ -55,12 +59,13 @@ const schoolBusYellow = '#f5d800';
 const turbo = '#FEE200';
 
 //General grey
-const grey = '#8f8f8f';
-const faux = '#bababa';
-const silver = '#c4c4c4';
+const darkSilver = '#bcbcbc';
 const doveGray = '#717171';
 const dustyGray = '#969696';
-const darkSilver = '#bcbcbc';
+const faux = '#bababa';
+const gray = '#8e8e8e';
+const grey = '#8f8f8f';
+const silver = '#c4c4c4';
 const silverChalice = '#A0A0A0';
 const silverRgba = 'rgba(189, 189, 189, 0.5)';
 
@@ -151,6 +156,13 @@ const language = Object.freeze({
 
 const newTextColors = Object.freeze({
   blueColorText: '#558FA5',
+});
+
+const auth = Object.freeze({
+  bg: `linear-gradient(135deg, ${morningGlory} 18.83%, ${shakesPeare} 100%)`,
+  firstText: brightTurquoise,
+  secondText: gray,
+  titleBottomLine: curiousBlue,
 });
 
 const input = Object.freeze({
@@ -288,6 +300,7 @@ const dealsColors = Object.freeze({
 
 const COLORS = Object.freeze({
   logo,
+  auth,
   input,
   button,
   search,
