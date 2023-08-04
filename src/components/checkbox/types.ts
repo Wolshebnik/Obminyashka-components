@@ -25,3 +25,8 @@ export interface LabelArg extends InputArg {
   gap?: number;
   fontSize?: number;
 }
+
+export interface ICheckbox {
+  type: string;
+  checked: boolean;
+}
