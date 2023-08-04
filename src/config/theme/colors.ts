@@ -36,6 +36,7 @@ const buttonGreenHover = '#3c9f53';
 const buttonGreenActive = '#008a20';
 
 //Grey
+const alto = '#DFDFDF';
 const buttonGrey = '#787878';
 const buttonGreyHover = '#6b6b6b';
 const buttonGreyActive = '#5e5e5e';
@@ -162,7 +163,8 @@ const auth = Object.freeze({
   bg: `linear-gradient(135deg, ${morningGlory} 18.83%, ${shakesPeare} 100%)`,
   firstText: brightTurquoise,
   secondText: gray,
-  titleBottomLine: curiousBlue,
+  tabBottomLineActive: curiousBlue,
+  tabBottomLine: alto,
 });
 
 const input = Object.freeze({
