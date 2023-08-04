@@ -51,6 +51,7 @@ export const Checkbox = styled.div<ICheckbox>`
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 17px;
   width: 17px;
   height: 17px;
   cursor: pointer;
