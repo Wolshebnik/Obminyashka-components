@@ -3,12 +3,12 @@ import styled, { css } from 'styled-components';
 import { LabelArg, InputArg, ICheckbox } from './types';
 
 export const Input = styled.input<InputArg>`
+  display: none;
   appearance: none;
   -webkit-appearance: none;
   flex-shrink: 0;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  display: none;
 `;
 
 export const Label = styled.label<LabelArg>`
