@@ -17,7 +17,7 @@ export const PresentSection = styled.section`
     z-index: -1;
   }
 
-  &:after {
+  &::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -30,6 +30,8 @@ export const PresentSection = styled.section`
 `;
 
 export const Content = styled.div`
+  display: flex;
+  justify-content: center;
   max-width: 1830px;
 `;
 

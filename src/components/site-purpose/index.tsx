@@ -10,12 +10,12 @@ const SitePurpose = ({ regText, tradeText, thingsText }: ISitePurpose) => {
   return (
     <>
       <Styles.PresentSection>
-        <Styles.Content>
-          <Responsive.NotMobile>
+        <Responsive.NotMobile>
+          <Styles.Content>
             <Rainbow />
             <MoveCloud />
-          </Responsive.NotMobile>
-        </Styles.Content>
+          </Styles.Content>
+        </Responsive.NotMobile>
       </Styles.PresentSection>
 
       <div style={{ paddingTop: 2000 }}>

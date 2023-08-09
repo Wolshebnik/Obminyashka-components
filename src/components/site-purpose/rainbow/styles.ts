@@ -23,7 +23,7 @@ const rainbowCloudStyles = css`
 
 export const RainbowSection = styled.div`
   position: absolute;
-  transform: translate(50%, 55%);
+  transform: translate(0, 55%);
 `;
 
 export const Rainbow = styled.img`
