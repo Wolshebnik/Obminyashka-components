@@ -8,14 +8,39 @@ export const CategoriesDesktop = styled.div<{
   justify-content: space-between;
   align-items: center;
   padding: 0 26px;
-  width: 222px;
+  width: 212px;
   height: 50px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   line-height: 24px;
   border-radius: 26px;
   border: 2px dashed ${({ theme }) => theme.colors.categoryBtn.border};
   cursor: pointer;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isDesktopMD &&
+    css`
+      padding: 0 12px;
+      width: 155px;
+      font-size: 18px;
+      line-height: 18px;
+    `}
+
+    ${theme.responsive.isDesktopLG &&
+    css`
+      padding: 0 14px;
+      width: 175px;
+      font-size: 20px;
+      line-height: 24px;
+    `}
+
+    ${theme.responsive.isDesktopBS &&
+    css`
+      padding: 0 24px;
+      width: 222px;
+      font-size: 24px;
+    `}
+  `}
 `;
 
 export const CategoriesText = styled.span`

@@ -3,12 +3,13 @@ import {
   isMobile,
   isTablet,
   isDesktop,
+  isMobileBG,
+  isTabletBG,
   isPortrait,
   isTabletUp,
   isDesktopBS,
   isDesktopLG,
   isDesktopMD,
-  isDesktopXS,
   isLandscape,
 } from 'hooks/styles';
 
@@ -20,8 +21,10 @@ export const NotDesktop = ({ children }: ChildrenProps): JSX.Element | null => {
   return !isDesktop() ? <>{children}</> : null;
 };
 
-export const DesktopXS = ({ children }: ChildrenProps): JSX.Element | null => {
-  return isDesktopXS() ? <>{children}</> : null;
+export const NotDesktopMD = ({
+  children,
+}: ChildrenProps): JSX.Element | null => {
+  return !isDesktopMD() ? <>{children}</> : null;
 };
 
 export const DesktopMD = ({ children }: ChildrenProps): JSX.Element | null => {
@@ -52,8 +55,16 @@ export const Tablet = ({ children }: ChildrenProps): JSX.Element | null => {
   return isTablet() ? <>{children}</> : null;
 };
 
+export const TabletBG = ({ children }: ChildrenProps): JSX.Element | null => {
+  return isTabletBG() ? <>{children}</> : null;
+};
+
 export const Mobile = ({ children }: ChildrenProps): JSX.Element | null => {
   return isMobile() ? <>{children}</> : null;
+};
+
+export const MobileBG = ({ children }: ChildrenProps): JSX.Element | null => {
+  return isMobileBG() ? <>{children}</> : null;
 };
 
 export const NotMobile = ({ children }: ChildrenProps): JSX.Element | null => {

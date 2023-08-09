@@ -1,13 +1,15 @@
 import React, { useRef } from 'react';
 
-import { useDelayAnimation } from 'hooks';
+import { useDelayAnimation, useWindowWidth } from 'hooks';
 import { Deals, LanguageSelection, Overlay, Responsive } from 'components';
 
 import { IBurger } from './types';
 import * as Styles from './styles';
+import { positionTop } from './helpers';
 import * as Icon from '../../components/icon';
 
 const Burger = ({ data, lang, onSelectLanguage, duration = 600 }: IBurger) => {
+  const width = useWindowWidth();
   const burgerRef = useRef<HTMLDivElement>(null);
   const { isOpen, isAnimation, setOpen } = useDelayAnimation(duration);
 
@@ -22,6 +24,7 @@ const Burger = ({ data, lang, onSelectLanguage, duration = 600 }: IBurger) => {
         isOpen={isOpen}
         duration={duration}
         childRef={burgerRef}
+        top={positionTop(width)}
         isAnimation={isAnimation}
         setClose={() => setOpen(false)}
       >
@@ -35,7 +38,17 @@ const Burger = ({ data, lang, onSelectLanguage, duration = 600 }: IBurger) => {
           <Styles.BurgerContainer>
             {data.map((item, index) => (
               <React.Fragment key={index}>
-                <Deals text={item.text} to={item.to} heartIcon={item.icon} />
+                {item.mobile ? (
+                  <Responsive.Mobile>
+                    <Deals
+                      to={item.to}
+                      text={item.text}
+                      heartIcon={item.icon}
+                    />
+                  </Responsive.Mobile>
+                ) : (
+                  <Deals text={item.text} to={item.to} heartIcon={item.icon} />
+                )}
               </React.Fragment>
             ))}
 

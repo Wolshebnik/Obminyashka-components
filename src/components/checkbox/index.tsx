@@ -20,14 +20,18 @@ export const CheckBox = ({
     checked={checked}
     fontSize={fontSize}
   >
-    <Styles.Input
-      name={name}
-      type={type}
-      checked={checked}
-      onChange={onChange}
-      {...props}
-    />
+    <Styles.Checkbox checked={checked} type={type}>
+      <Styles.Input
+        name={name}
+        type={type}
+        checked={checked}
+        onChange={onChange}
+        {...props}
+      />
+
+      <Icon.Check />
+    </Styles.Checkbox>
+
     {text && <span>{text}</span>}
-    <Icon.Check />
   </Styles.Label>
 );

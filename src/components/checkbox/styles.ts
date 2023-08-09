@@ -1,30 +1,19 @@
 import styled, { css } from 'styled-components';
 
-import { LabelArg, InputArg } from './types';
+import { LabelArg, InputArg, ICheckbox } from './types';
 
 export const Input = styled.input<InputArg>`
+  display: none;
   appearance: none;
   -webkit-appearance: none;
-  position: relative;
   flex-shrink: 0;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  width: 17px;
-  height: 17px;
-  vertical-align: bottom;
-  cursor: pointer;
-  transition: all ease-in-out 0.3s;
-
-  ${({ theme, checked, type }) => css`
-    ${checked && `background-color: ${theme.colors.btnBlue}`};
-    border: 3px solid ${checked ? theme.colors.btnBlue : theme.colors.colorGrey};
-    border-radius: ${type === 'radio' ? '50%' : '0'};
-  `}
 `;
 
 export const Label = styled.label<LabelArg>`
-  position: relative;
   display: flex;
+  align-items: center;
   width: fit-content;
   line-height: 17px;
   cursor: pointer;
@@ -37,13 +26,9 @@ export const Label = styled.label<LabelArg>`
       : theme.colors.colorTextDisabled};
 
     & > svg {
-      position: absolute;
       display: block;
-      top: 8.5px;
-      left: 8.5px;
       width: 10px;
       height: 8px;
-      transform: translate(-50%, -50%);
 
       & > path {
         opacity: ${checked ? 1 : 0};
@@ -59,5 +44,22 @@ export const Label = styled.label<LabelArg>`
         }
       }
     }
+  `}
+`;
+
+export const Checkbox = styled.div<ICheckbox>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 17px;
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+
+  ${({ theme, checked, type }) => css`
+    ${checked && `background-color: ${theme.colors.btnBlue}`};
+    border: 3px solid ${checked ? theme.colors.btnBlue : theme.colors.colorGrey};
+    border-radius: ${type === 'radio' ? '50%' : '0'};
   `}
 `;

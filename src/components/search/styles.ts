@@ -9,12 +9,27 @@ export const WrapIcon = styled.div`
 
   ${({ theme }) => css`
     width: ${theme.responsive.isTablet && `40px;`};
-  `}
 
-  svg {
-    width: 100%;
-    height: 100%;
-  }
+    ${theme.responsive.isDesktop &&
+    css`
+      width: 50px;
+      height: 50px;
+      padding: 5px;
+      border: 2px solid ${theme.colors.search.blue};
+      border-radius: 50px;
+    `}
+
+    ${theme.responsive.isDesktopMD &&
+    css`
+      border: none;
+    `}
+
+    svg {
+      path {
+        fill: ${theme.colors.search.blue};
+      }
+    }
+  `}
 `;
 
 export const WrapDeviceSearch = styled.div<{ isSearchActive?: boolean }>`
@@ -26,7 +41,6 @@ export const WrapDeviceSearch = styled.div<{ isSearchActive?: boolean }>`
   align-items: center;
   padding: 5px 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(2px);
   z-index: -1;
 
@@ -38,5 +52,37 @@ export const WrapDeviceSearch = styled.div<{ isSearchActive?: boolean }>`
     css`
       transform: translateY(100%);
     `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      div {
+        max-width: 514px;
+      }
+    `}
+
+    div {
+      border-color: ${theme.colors.search.blue};
+    }
+  `}
+`;
+
+export const CloseBtn = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  ${({ theme }) => css`
+    svg {
+      position: absolute;
+      left: 50px;
+      height: 40px;
+      width: 40px;
+
+      path {
+        fill: ${theme.colors.search.blue};
+      }
+    }
   `}
 `;

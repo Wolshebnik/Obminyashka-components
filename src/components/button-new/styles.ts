@@ -15,7 +15,8 @@ export const Button = styled.button<IStyledButtonNew>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 286px;
+  padding: 0 15px;
+  width: 100%;
   height: 40px;
   font-style: normal;
   font-weight: 700;
@@ -24,12 +25,28 @@ export const Button = styled.button<IStyledButtonNew>`
   border-radius: 40px;
   border: none;
 
-  ${({ theme, colorType, animated, styleType }) => {
+  ${({ theme, colorType, animated, styleType, square }) => {
     const styleTheme = theme.colors.newButton[styleType][colorType];
 
     return css`
       color: ${styleTheme.text};
       background: ${styleTheme.bg};
+
+      &:not(:disabled) {
+        border: 2px solid ${styleTheme.outline};
+        color: ${styleTheme.text};
+      }
+
+      &:disabled {
+        border: 2px solid ${styleTheme.outlineDisabled};
+        color: ${styleTheme.disabledText};
+
+        svg {
+          path {
+            fill: ${styleTheme.outlineDisabled};
+          }
+        }
+      }
 
       ${styleType === 'outline' &&
       css`
@@ -37,23 +54,31 @@ export const Button = styled.button<IStyledButtonNew>`
         font-size: 16px;
         line-height: 19px;
         border-radius: 63px;
-
-        &:not(:disabled) {
-          border: 2px solid ${styleTheme.outline};
-          color: ${styleTheme.text};
-        }
-        &:disabled {
-          border: 2px solid ${styleTheme.outlineDisabled};
-          color: ${styleTheme.disabledText};
-        }
       `}
 
       ${colorType === 'green' &&
       theme.responsive.isDesktop &&
       css`
-        width: 290px;
         height: 50px;
-        font-size: 20px;
+        font-size: 18px;
+        line-height: 24px;
+      `}
+
+      ${colorType === 'green' &&
+      css`
+        svg {
+          path {
+            fill: ${styleTheme.outline};
+          }
+        }
+      `}
+
+      ${square &&
+      css`
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
       `}
 
       &:hover:not(:disabled) {
@@ -62,6 +87,13 @@ export const Button = styled.button<IStyledButtonNew>`
           background: ${styleTheme.bgHover};
         `}
       }
+
+      ${colorType === 'green' &&
+      theme.responsive.isDesktopLG &&
+      css`
+        font-size: 17px;
+        line-height: 24px;
+      `}
 
       ${animated
         ? css`
