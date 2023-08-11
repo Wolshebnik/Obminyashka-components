@@ -27,8 +27,8 @@ export const Label = styled.label<LabelArg>`
 
     & > svg {
       display: block;
-      width: 10px;
-      height: 8px;
+      width: 15px;
+      height: 15px;
 
       & > path {
         opacity: ${checked ? 1 : 0};
@@ -59,7 +59,9 @@ export const Checkbox = styled.div<ICheckbox>`
 
   ${({ theme, checked, type }) => css`
     ${checked && `background-color: ${theme.colors.btnBlue}`};
-    border: 3px solid ${checked ? theme.colors.btnBlue : theme.colors.colorGrey};
+    ${checked
+      ? `border: solid: ${theme.colors.btnBlue}`
+      : `border: 3px solid ${theme.colors.colorGrey}`};
     border-radius: ${type === 'radio' ? '50%' : '0'};
   `}
 `;
