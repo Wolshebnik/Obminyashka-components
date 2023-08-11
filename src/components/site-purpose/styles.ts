@@ -29,7 +29,7 @@ export const PresentSection = styled.section`
   }
 `;
 
-export const Content = styled.div`
+export const ContainerRainbowAnimation = styled.div`
   display: flex;
   justify-content: center;
   max-width: 1830px;

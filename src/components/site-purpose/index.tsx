@@ -11,10 +11,10 @@ const SitePurpose = ({ regText, tradeText, thingsText }: ISitePurpose) => {
     <>
       <Styles.PresentSection>
         <Responsive.NotMobile>
-          <Styles.Content>
+          <Styles.ContainerRainbowAnimation>
             <Rainbow />
             <MoveCloud />
-          </Styles.Content>
+          </Styles.ContainerRainbowAnimation>
         </Responsive.NotMobile>
       </Styles.PresentSection>
 
