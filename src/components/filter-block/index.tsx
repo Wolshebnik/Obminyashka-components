@@ -7,10 +7,16 @@ import { CheckBox } from 'components/checkbox';
 import * as Styles from './styles';
 
 export const FilterBlock = ({ data }) => {
-  const [open, setOpen] = useState<number>(-1);
+  const [open, setOpen] = useState<number[]>([]);
   const { title, categories } = data;
 
-  console.log(open);
+  const toggleOpen = (index: number) => {
+    if (open.includes(index)) {
+      setOpen(open.filter((item) => item !== index));
+    } else {
+      setOpen([...open, index]);
+    }
+  };
 
   return (
     <Styles.Card>
@@ -19,12 +25,12 @@ export const FilterBlock = ({ data }) => {
       <Styles.Categories>
         {categories.map(({ subTitle, subCategories, type }, index) => (
           <Styles.Category key={subTitle}>
-            <Styles.SubTitle onClick={() => setOpen(index)}>
+            <Styles.SubTitle onClick={() => toggleOpen(index)}>
               {subTitle}
-              <Styles.Triangle isOpen={open === index} />
+              <Styles.Triangle isOpen={open.includes(index)} />
             </Styles.SubTitle>
 
-            <Styles.SubCategories isOpen={open === index} type={type}>
+            <Styles.SubCategories isOpen={open.includes(index)} type={type}>
               {subCategories.map(({ name }) => (
                 <Styles.SubCategory key={name} type={type}>
                   {!type && <span>{name}</span>}
