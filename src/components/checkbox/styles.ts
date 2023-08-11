@@ -59,9 +59,7 @@ export const Checkbox = styled.div<ICheckbox>`
 
   ${({ theme, checked, type }) => css`
     ${checked && `background-color: ${theme.colors.btnBlue}`};
-    ${checked
-      ? `border: solid: ${theme.colors.btnBlue}`
-      : `border: 3px solid ${theme.colors.colorGrey}`};
+    ${checked ? '' : `border: 3px solid ${theme.colors.colorGrey}`};
     border-radius: ${type === 'radio' ? '50%' : '0'};
   `}
 `;
