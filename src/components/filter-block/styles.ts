@@ -23,12 +23,6 @@ export const Title = styled.span`
   text-transform: uppercase;
 `;
 
-export const Categories = styled.div`
-  padding: 20px 0 7px 13px;
-  margin-top: 10px;
-  border-top: 1px solid #d1d1d1;
-`;
-
 export const CategoryTitle = styled.span<{ isOpen: boolean }>`
   display: flex;
   justify-content: space-between;
@@ -36,6 +30,12 @@ export const CategoryTitle = styled.span<{ isOpen: boolean }>`
   font-size: 19px;
   line-height: normal;
   cursor: pointer;
+`;
+
+export const Categories = styled.div`
+  padding: 20px 0 7px 13px;
+  margin-top: 10px;
+  border-top: 1px solid #d1d1d1;
 `;
 
 export const Triangle = styled.span<{ isOpen: boolean }>`
@@ -66,6 +66,7 @@ export const SubCategories = styled.div<{
 
     ${type !== 'checkbox' &&
     type !== 'input' &&
+    type !== 'radio' &&
     css`
       margin: 10px 0;
     `}
@@ -91,10 +92,11 @@ export const SubCategories = styled.div<{
   `}
 `;
 
-export const Cross = styled.span<{ type?: string }>`
+export const Cross = styled.div<{ type?: string }>`
   ${({ theme, type }) => css`
     ${type !== 'checkbox' &&
     type !== 'input' &&
+    type !== 'radio' &&
     css`
       &:before,
       &:after {
@@ -150,9 +152,16 @@ export const SubCategory = styled.div<{ type?: string; isActive: boolean }>`
       margin: 16px 17px 16px 10px;
     `}
 
+    ${type === 'radio' &&
+    css`
+      padding: 0;
+      margin: 16px 17px 16px 10px;
+    `}
+
     ${isActive &&
     type !== 'checkbox' &&
     type !== 'input' &&
+    type !== 'radio' &&
     css`
       background: #7ecde4;
       color: ${theme.colors.white};
@@ -161,6 +170,7 @@ export const SubCategory = styled.div<{ type?: string; isActive: boolean }>`
     ${!isActive &&
     type !== 'checkbox' &&
     type !== 'input' &&
+    type !== 'radio' &&
     css`
       &:hover {
         background: #b8e9fa;
@@ -179,4 +189,34 @@ export const SubCategory = styled.div<{ type?: string; isActive: boolean }>`
 export const CustomInput = styled(Input)`
   border-radius: 5px;
   background: #dedede;
+`;
+
+export const RadioDiv = styled.div`
+  display: flex;
+  align-items: center;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isDesktop &&
+    css`
+      label {
+        font-size: 16px;
+      }
+    `}
+
+    label {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    input {
+      cursor: pointer;
+    }
+
+    &:has(input:checked) {
+      label {
+        color: black;
+        font-weight: 700;
+      }
+    }
+  `}
 `;

@@ -18,7 +18,13 @@ export const SubCategory = ({ name, type }: ISubCategory) => {
       }}
     >
       {!type && <span>{name}</span>}
-      {type === 'checkbox' && <CheckBox text={name} name={'name'} />}
+      {type === 'checkbox' && <CheckBox text={name} name="name" />}
+      {type === 'radio' && (
+        <Styles.RadioDiv>
+          <input type="radio" name="name" id={name} value={name} />
+          <label htmlFor={name}>{name}</label>
+        </Styles.RadioDiv>
+      )}
       {type === 'input' && (
         <Styles.CustomInput name="name" placeholder={name} />
       )}

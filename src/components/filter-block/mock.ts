@@ -171,7 +171,7 @@ export const FilterData = {
     },
     {
       categoryTitle: 'sex',
-      type: 'checkbox',
+      type: 'radio',
       subCategories: [
         {
           name: 'Boy',
@@ -228,7 +228,7 @@ export const FilterData = {
           name: '122 - 146 см',
         },
         {
-          name: '146 - 164',
+          name: '146 - 164 см',
         },
       ],
     },
