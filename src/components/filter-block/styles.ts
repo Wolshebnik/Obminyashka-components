@@ -29,9 +29,7 @@ export const Categories = styled.div`
   border-top: 1px solid #d1d1d1;
 `;
 
-export const Category = styled.div``;
-
-export const SubTitle = styled.span<{ isOpen: boolean }>`
+export const CategoryTitle = styled.span<{ isOpen: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,23 +52,46 @@ export const Triangle = styled.span<{ isOpen: boolean }>`
   `}
 `;
 
-export const SubCategories = styled.div<{ isOpen: boolean; type: string }>`
+export const SubCategories = styled.div<{
+  type?: string;
+  isOpen: boolean;
+  isScroll: boolean;
+}>`
   margin: 6px 0;
   overflow: hidden;
   transition: max-height 0.5s ease-in;
 
-  ${({ isOpen, type }) => css`
-    max-height: ${isOpen ? '1000px' : '0'};
+  ${({ isOpen, type, isScroll }) => css`
+    max-height: ${isOpen ? '300px' : '0'};
 
     ${type !== 'checkbox' &&
     type !== 'input' &&
     css`
       margin: 10px 0;
     `}
+
+    ${isScroll &&
+    isOpen &&
+    css`
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        width: 5px;
+        border-radius: 10px;
+        border: 1px solid white;
+        background: #d9d9d9;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        height: 100px;
+        border-radius: 10px;
+        background: #71c2da;
+      }
+    `}
   `}
 `;
 
-export const Cross = styled.span<{ type: string }>`
+export const Cross = styled.span<{ type?: string }>`
   ${({ theme, type }) => css`
     ${type !== 'checkbox' &&
     type !== 'input' &&
@@ -99,7 +120,7 @@ export const Cross = styled.span<{ type: string }>`
   `}
 `;
 
-export const SubCategory = styled.div<{ type: string }>`
+export const SubCategory = styled.div<{ type?: string; isActive: boolean }>`
   position: relative;
   padding: 6px 10px;
   margin: 6px 17px 6px 10px;
@@ -111,7 +132,7 @@ export const SubCategory = styled.div<{ type: string }>`
   line-height: normal;
   cursor: pointer;
 
-  ${({ theme, type }) => css`
+  ${({ theme, type, isActive }) => css`
     ${theme.responsive.isDesktop &&
     css`
       font-size: 16px;
@@ -125,10 +146,20 @@ export const SubCategory = styled.div<{ type: string }>`
 
     ${type === 'checkbox' &&
     css`
-      margin: 15px 17px 15px 10px;
+      padding: 0;
+      margin: 16px 17px 16px 10px;
     `}
 
-    ${type !== 'checkbox' &&
+    ${isActive &&
+    type !== 'checkbox' &&
+    type !== 'input' &&
+    css`
+      background: #7ecde4;
+      color: ${theme.colors.white};
+    `}
+
+    ${!isActive &&
+    type !== 'checkbox' &&
     type !== 'input' &&
     css`
       &:hover {
@@ -136,20 +167,9 @@ export const SubCategory = styled.div<{ type: string }>`
         color: black;
       }
 
-      &:active {
-        background: #7ecde4;
-        color: ${theme.colors.white};
-      }
-
       &:has(${Cross}):hover {
         ${Cross}::before, ${Cross}::after {
           background: black;
-        }
-      }
-
-      &:has(${Cross}):active {
-        ${Cross}::before, ${Cross}::after {
-          background: ${theme.colors.white};
         }
       }
     `}

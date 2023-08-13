@@ -2,7 +2,7 @@ export const CategoryData = {
   title: 'Category',
   categories: [
     {
-      subTitle: 'Clothes',
+      categoryTitle: 'Clothes',
       subCategories: [
         {
           name: 'Blouses, shirts',
@@ -34,7 +34,7 @@ export const CategoryData = {
       ],
     },
     {
-      subTitle: 'Shoes',
+      categoryTitle: 'Shoes',
       subCategories: [
         {
           name: 'Crosses, keds',
@@ -54,7 +54,7 @@ export const CategoryData = {
       ],
     },
     {
-      subTitle: 'Foys',
+      categoryTitle: 'Foys',
       subCategories: [
         {
           name: 'Toys for babies',
@@ -74,7 +74,7 @@ export const CategoryData = {
       ],
     },
     {
-      subTitle: 'Furniture',
+      categoryTitle: 'Furniture',
       subCategories: [
         {
           name: 'Baby cots',
@@ -97,7 +97,7 @@ export const CategoryData = {
       ],
     },
     {
-      subTitle: 'Transport for children',
+      categoryTitle: 'Transport for children',
       subCategories: [
         {
           name: 'Strollers',
@@ -111,7 +111,7 @@ export const CategoryData = {
       ],
     },
     {
-      subTitle: 'Books',
+      categoryTitle: 'Books',
       subCategories: [
         {
           name: 'Toy books',
@@ -131,7 +131,7 @@ export const CategoryData = {
       ],
     },
     {
-      subTitle: 'Carnival costumes',
+      categoryTitle: 'Carnival costumes',
       subCategories: [
         {
           name: 'Animals (bunny, bear, fox)',
@@ -148,7 +148,7 @@ export const CategoryData = {
       ],
     },
     {
-      subTitle: 'Other',
+      categoryTitle: 'Other',
       subCategories: [],
     },
   ],
@@ -158,7 +158,7 @@ export const FilterData = {
   title: 'Filter',
   categories: [
     {
-      subTitle: 'location',
+      categoryTitle: 'location',
       type: 'input',
       subCategories: [
         {
@@ -170,7 +170,7 @@ export const FilterData = {
       ],
     },
     {
-      subTitle: 'sex',
+      categoryTitle: 'sex',
       type: 'checkbox',
       subCategories: [
         {
@@ -185,7 +185,7 @@ export const FilterData = {
       ],
     },
     {
-      subTitle: 'age',
+      categoryTitle: 'age',
       type: 'checkbox',
       subCategories: [
         {
@@ -209,7 +209,7 @@ export const FilterData = {
       ],
     },
     {
-      subTitle: 'size(clothes)',
+      categoryTitle: 'size(clothes)',
       type: 'checkbox',
       subCategories: [
         {
@@ -233,7 +233,7 @@ export const FilterData = {
       ],
     },
     {
-      subTitle: 'size(shoes)',
+      categoryTitle: 'size(shoes)',
       type: 'checkbox',
       subCategories: [
         {
@@ -269,7 +269,7 @@ export const FilterData = {
       ],
     },
     {
-      subTitle: 'season',
+      categoryTitle: 'season',
       type: 'checkbox',
       subCategories: [
         {
