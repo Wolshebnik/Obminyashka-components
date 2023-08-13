@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { useState } from 'react';
 
 import { CheckBox } from 'components/checkbox';
@@ -8,8 +7,6 @@ import * as Styles from '../../styles';
 
 export const SubCategory = ({ name, type }: ISubCategory) => {
   const [isActive, setIsActive] = useState<boolean>(false);
-
-  console.log('isActive', isActive);
 
   return (
     <Styles.SubCategory

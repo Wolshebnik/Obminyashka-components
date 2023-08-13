@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { useState } from 'react';
 
 import * as Styles from '../styles';
@@ -8,8 +7,6 @@ import { SubCategory } from './sub-category';
 export const Category = ({ categoryTitle, subCategories, type }: ICategory) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isScroll, setIsScroll] = useState<boolean>(false);
-
-  console.log('isScroll', isScroll);
 
   return (
     <>
