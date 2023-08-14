@@ -291,7 +291,7 @@ export const FilterData = {
           name: 'Demi-season',
         },
         {
-          name: 'Літо',
+          name: 'Summer',
         },
         {
           name: 'Winter',

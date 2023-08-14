@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { Input } from 'components/input';
 
 export const Card = styled.div`
-  padding: 25px 25px 0;
+  padding: 25px 25px 28px;
   min-width: 300px;
   max-width: 334px;
   border-radius: 20px;
@@ -14,7 +14,7 @@ export const Card = styled.div`
 `;
 
 export const Title = styled.span`
-  margin-left: 13px;
+  margin-left: 7px;
   color: #29a5d4;
   font-size: 19px;
   font-style: normal;
@@ -27,13 +27,14 @@ export const CategoryTitle = styled.span<{ isOpen: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 12px;
   font-size: 19px;
   line-height: normal;
   cursor: pointer;
 `;
 
 export const Categories = styled.div`
-  padding: 20px 0 7px 13px;
+  padding: 20px 0 0 11px;
   margin-top: 10px;
   border-top: 1px solid #d1d1d1;
 `;
@@ -45,49 +46,59 @@ export const Triangle = styled.span<{ isOpen: boolean }>`
   border-left-width: 8px;
   border-right-width: 8px;
   border-top: 10px solid #71c2da;
-  transition: all 0.5s;
+  transition: all 0.4s ease;
 
   ${({ isOpen }) => css`
     transform: ${isOpen && `rotate(180deg)`};
   `}
 `;
 
+export const ScrollWrapper = styled.div`
+  max-height: 300px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 10px;
+    border: 1px solid white;
+    background: #d9d9d9;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    height: 100px;
+    border-radius: 10px;
+    background: #71c2da;
+  }
+`;
+
 export const SubCategories = styled.div<{
   type?: string;
   isOpen: boolean;
-  isScroll: boolean;
 }>`
-  margin: 6px 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-in;
+  transition: all 0.4s ease;
 
-  ${({ isOpen, type, isScroll }) => css`
-    max-height: ${isOpen ? '300px' : '0'};
+  ${({ isOpen, type }) => css`
+    max-height: ${isOpen ? '1000px' : '0'};
 
     ${type !== 'checkbox' &&
     type !== 'input' &&
     type !== 'radio' &&
-    css`
-      margin: 10px 0;
-    `}
-
-    ${isScroll &&
     isOpen &&
     css`
-      overflow-y: auto;
+      margin: 8px 0 20px;
+    `}
 
-      &::-webkit-scrollbar {
-        width: 5px;
-        border-radius: 10px;
-        border: 1px solid white;
-        background: #d9d9d9;
-      }
+    ${type === 'checkbox' &&
+    isOpen &&
+    css`
+      margin: 0 0 8px;
+    `}
 
-      &::-webkit-scrollbar-thumb {
-        height: 100px;
-        border-radius: 10px;
-        background: #71c2da;
-      }
+    ${type === 'radio' &&
+    isOpen &&
+    css`
+      margin: 0 0 12px;
     `}
   `}
 `;
@@ -124,8 +135,8 @@ export const Cross = styled.div<{ type?: string }>`
 
 export const SubCategory = styled.div<{ type?: string; isActive: boolean }>`
   position: relative;
-  padding: 6px 10px;
-  margin: 6px 17px 6px 10px;
+  padding: 6px 14px;
+  margin: 0 16px 4px 12px;
   border-radius: 5px;
   color: #777;
   font-size: 14px;
@@ -143,13 +154,13 @@ export const SubCategory = styled.div<{ type?: string; isActive: boolean }>`
     ${type === 'input' &&
     css`
       padding: 0;
-      margin: 16px 10px 16px 0;
+      margin: 0 16px 20px 0;
     `}
 
     ${type === 'checkbox' &&
     css`
       padding: 0;
-      margin: 16px 17px 16px 10px;
+      margin: 8px 17px 16px 10px;
     `}
 
     ${type === 'radio' &&
@@ -187,6 +198,8 @@ export const SubCategory = styled.div<{ type?: string; isActive: boolean }>`
 `;
 
 export const CustomInput = styled(Input)`
+  padding: 6px 14px;
+  height: 36px;
   border-radius: 5px;
   background: #dedede;
 `;
