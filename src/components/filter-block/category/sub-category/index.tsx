@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import { CheckBox } from 'components/checkbox';
+// import { CheckBox } from 'components/checkbox';
+import FormikCheckbox from 'components/checkbox-for-formik';
 import { ISubCategory } from 'components/filter-block/types';
 
 import * as Styles from '../../styles';
@@ -13,20 +14,20 @@ export const SubCategory = ({ name, type }: ISubCategory) => {
       key={name}
       type={type}
       isActive={isActive}
-      onClick={() => {
-        setIsActive(!isActive);
-      }}
+      onClick={() => setIsActive(!isActive)}
     >
       {!type && <span>{name}</span>}
-      {type === 'checkbox' && <CheckBox text={name} name="name" />}
+      {type === 'checkbox' && (
+        <FormikCheckbox name={`${name}`} label={name} value={[]} />
+      )}
       {type === 'radio' && (
-        <Styles.RadioDiv>
-          <input type="radio" name="name" id={name} value={name} />
-          <label htmlFor={name}>{name}</label>
-        </Styles.RadioDiv>
+        <Styles.RadioBlock>
+          <input id={name} type="radio" value={name} name="radio" />
+          <label htmlFor="radio">{name}</label>
+        </Styles.RadioBlock>
       )}
       {type === 'input' && (
-        <Styles.CustomInput name="name" placeholder={name} />
+        <Styles.FilterInput name={`${name}`} placeholder={name} />
       )}
       <Styles.Cross type={type} />
     </Styles.SubCategory>

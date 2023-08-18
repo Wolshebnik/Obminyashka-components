@@ -54,7 +54,7 @@ export const CategoryData = {
       ],
     },
     {
-      categoryTitle: 'Foys',
+      categoryTitle: 'Toys',
       subCategories: [
         {
           name: 'Toys for babies',
@@ -162,10 +162,10 @@ export const FilterData = {
       type: 'input',
       subCategories: [
         {
-          name: 'region',
+          name: 'Region:',
         },
         {
-          name: 'city',
+          name: 'City:',
         },
       ],
     },

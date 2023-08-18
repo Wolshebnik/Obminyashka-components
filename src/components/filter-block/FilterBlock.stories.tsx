@@ -7,7 +7,6 @@ import { CategoryData, FilterData } from './mock';
 const meta = {
   title: 'FilterBlock',
   component: FilterBlock,
-  //   argTypes,
 } satisfies Meta<typeof FilterBlock>;
 
 export default meta;
@@ -17,14 +16,14 @@ const Template = (args: any) => {
   return <FilterBlock {...args} />;
 };
 
-export const FilterBlockDefault: Story = {
+export const BlockCategory: Story = {
   args: {
     data: { ...CategoryData },
   },
   render: (args) => <Template {...args} />,
 };
 
-export const FilterBlockDefault2: Story = {
+export const BlockFilter: Story = {
   args: {
     data: { ...FilterData },
   },

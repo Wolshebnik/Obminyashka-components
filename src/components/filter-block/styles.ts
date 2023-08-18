@@ -155,6 +155,10 @@ export const SubCategory = styled.div<{ type?: string; isActive: boolean }>`
     css`
       padding: 0;
       margin: 0 16px 20px 0;
+
+      input:focus {
+        border: 2px solid black;
+      }
     `}
 
     ${type === 'checkbox' &&
@@ -197,14 +201,14 @@ export const SubCategory = styled.div<{ type?: string; isActive: boolean }>`
   `}
 `;
 
-export const CustomInput = styled(Input)`
+export const FilterInput = styled(Input)`
   padding: 6px 14px;
   height: 36px;
   border-radius: 5px;
   background: #dedede;
 `;
 
-export const RadioDiv = styled.div`
+export const RadioBlock = styled.div`
   display: flex;
   align-items: center;
 
