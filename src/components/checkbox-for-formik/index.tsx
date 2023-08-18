@@ -10,7 +10,7 @@ interface ICustomCheckboxProps extends Omit<IInput, 'ref'> {
   value: string[];
 }
 
-const FormikCheckbox = ({
+export const FormikCheckbox = ({
   name,
   value,
   label,
@@ -38,5 +38,3 @@ const FormikCheckbox = ({
     </Field>
   );
 };
-
-export default FormikCheckbox;

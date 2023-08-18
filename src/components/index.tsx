@@ -10,6 +10,7 @@ export { Deals } from './deals';
 export { EllipsisText } from './ellipsis-text';
 export { FilterBlock } from './filter-block';
 export { Footer } from './footer';
+export { FormikCheckbox } from './checkbox-for-formik';
 export { HelpChildren } from './help-children';
 export { Image } from './image';
 export { InboxMessage } from './inbox-message';
