@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import { FormikCheckbox } from 'components/checkbox-for-formik';
 import { ISubCategory } from 'components/filter-block/types';
+import { FormikCheckbox } from 'components/checkbox-for-formik';
 
 import * as Styles from '../../styles';
 
