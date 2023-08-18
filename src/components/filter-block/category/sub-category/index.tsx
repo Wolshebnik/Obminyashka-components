@@ -18,7 +18,7 @@ export const SubCategory = ({ name, type }: ISubCategory) => {
     >
       {!type && <span>{name}</span>}
       {type === 'checkbox' && (
-        <FormikCheckbox name={`${name}`} label={name} value={[]} />
+        <FormikCheckbox name={`${name}`} label={name} values={[]} />
       )}
       {type === 'radio' && (
         <Styles.RadioBlock>

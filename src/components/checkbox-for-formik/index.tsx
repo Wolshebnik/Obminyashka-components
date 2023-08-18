@@ -7,16 +7,16 @@ import { IInput } from 'components/checkbox/types';
 interface ICustomCheckboxProps extends Omit<IInput, 'ref'> {
   name: string;
   label: string;
-  value: string[];
+  values: string[];
 }
 
 export const FormikCheckbox = ({
   name,
-  value,
+  values,
   label,
   ...props
 }: ICustomCheckboxProps) => {
-  const isChecked = value.includes(label);
+  const isChecked = values.includes(label);
 
   return (
     <Field name={name}>
@@ -28,8 +28,8 @@ export const FormikCheckbox = ({
           checked={isChecked}
           onChange={() => {
             const setValues = isChecked
-              ? value.filter((item) => item !== label)
-              : [...value, label];
+              ? values.filter((item) => item !== label)
+              : [...values, label];
             form.setFieldValue(name, setValues);
           }}
           {...props}
