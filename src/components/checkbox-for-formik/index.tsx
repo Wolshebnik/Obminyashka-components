@@ -17,6 +17,8 @@ export const FormikCheckbox = ({
   ...props
 }: ICustomCheckboxProps) => {
   const isChecked = values.includes(label);
+  // eslint-disable-next-line no-console
+  console.log(values);
 
   return (
     <Field name={name}>
