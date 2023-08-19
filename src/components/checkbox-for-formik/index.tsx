@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import { Field, FieldProps } from 'formik';
 
@@ -12,12 +13,11 @@ interface ICustomCheckboxProps extends Omit<IInput, 'ref'> {
 
 export const FormikCheckbox = ({
   name,
-  values,
   label,
+  values,
   ...props
 }: ICustomCheckboxProps) => {
   const isChecked = values.includes(label);
-  // eslint-disable-next-line no-console
   console.log(values);
 
   return (
