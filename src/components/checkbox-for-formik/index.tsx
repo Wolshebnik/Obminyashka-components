@@ -19,7 +19,7 @@ export const FormikCheckbox = ({
   ...props
 }: ICustomCheckboxProps) => {
   const isChecked = values.includes(label);
-  console.log(values);
+  console.log('Values', values);
 
   return (
     <Field name={name}>
@@ -34,7 +34,7 @@ export const FormikCheckbox = ({
             let setValues;
             if (type === 'checkbox') {
               setValues = isChecked
-                ? values.filter((item) => item !== label)
+                ? values.filter((value) => value !== label)
                 : [...values, label];
             } else if (type === 'radio') {
               setValues = [label];
