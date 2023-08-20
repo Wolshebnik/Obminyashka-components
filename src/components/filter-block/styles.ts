@@ -133,8 +133,9 @@ export const Cross = styled.div<{ type?: string }>`
   `}
 `;
 
-export const SubCategory = styled.div<{ type?: string; isActive: boolean }>`
+export const SubCategory = styled.label<{ type?: string; isActive: boolean }>`
   position: relative;
+  display: flex;
   padding: 6px 14px;
   margin: 0 16px 4px 12px;
   border-radius: 5px;
@@ -206,34 +207,4 @@ export const FilterInput = styled(Input)`
   height: 36px;
   border-radius: 5px;
   background: #dedede;
-`;
-
-export const RadioBlock = styled.div`
-  display: flex;
-  align-items: center;
-
-  ${({ theme }) => css`
-    ${theme.responsive.isDesktop &&
-    css`
-      label {
-        font-size: 16px;
-      }
-    `}
-
-    label {
-      margin-left: 10px;
-      cursor: pointer;
-    }
-
-    input {
-      cursor: pointer;
-    }
-
-    &:has(input:checked) {
-      label {
-        color: black;
-        font-weight: 700;
-      }
-    }
-  `}
 `;
