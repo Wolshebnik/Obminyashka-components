@@ -13,6 +13,7 @@ interface ICustomCheckboxProps extends Omit<IInput, 'ref'> {
 
 export const FormikCheckbox = ({
   name,
+  type,
   label,
   values,
   ...props
@@ -25,13 +26,19 @@ export const FormikCheckbox = ({
       {({ form }: FieldProps) => (
         <CheckBox
           id={label}
+          type={type}
           name={name}
           text={label}
           checked={isChecked}
           onChange={() => {
-            const setValues = isChecked
-              ? values.filter((item) => item !== label)
-              : [...values, label];
+            let setValues;
+            if (type === 'checkbox') {
+              setValues = isChecked
+                ? values.filter((item) => item !== label)
+                : [...values, label];
+            } else if (type === 'radio') {
+              setValues = [label];
+            }
             form.setFieldValue(name, setValues);
           }}
           {...props}
