@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 //TODO fix the name check on line 21
 import { ISubCategory } from 'components/filter-block/types';
-import { FilterCheckbox } from 'components/filter-checkbox';
+import { FilterInput } from 'components/filter-inputs';
 
 import * as Styles from '../../styles';
 
@@ -12,9 +12,9 @@ export const SubCategory = ({
   hiddenCheckbox,
 }: ISubCategory) => {
   return (
-    <Styles.SubCategory type={type}>
+    <Styles.SubCategory type={type} hiddenCheckbox={hiddenCheckbox}>
       {type !== 'input' && type !== undefined && (
-        <FilterCheckbox
+        <FilterInput
           type={type}
           label={label}
           name={name ? name : ''}
@@ -23,10 +23,10 @@ export const SubCategory = ({
       )}
 
       {type === 'input' && (
-        <Styles.FilterInput
+        <Styles.InputLocation
           placeholder={label}
           name={name ? name : ''}
-        ></Styles.FilterInput>
+        ></Styles.InputLocation>
       )}
     </Styles.SubCategory>
   );

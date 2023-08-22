@@ -103,7 +103,10 @@ export const SubCategories = styled.div<{
   `}
 `;
 
-export const SubCategory = styled.div<{ type?: string }>`
+export const SubCategory = styled.div<{
+  type?: string;
+  hiddenCheckbox?: boolean;
+}>`
   position: relative;
   display: flex;
   margin: 0;
@@ -114,7 +117,7 @@ export const SubCategory = styled.div<{ type?: string }>`
   line-height: normal;
   cursor: pointer;
 
-  ${({ theme, type }) => css`
+  ${({ theme, type, hiddenCheckbox }) => css`
     ${theme.responsive.isDesktop &&
     css`
       font-size: 16px;
@@ -136,6 +139,13 @@ export const SubCategory = styled.div<{ type?: string }>`
       margin: 8px 17px 16px 10px;
     `}
 
+    ${type === 'checkbox' &&
+    hiddenCheckbox &&
+    css`
+      padding: 0;
+      margin: 0;
+    `}
+
     ${type === 'radio' &&
     css`
       padding: 0;
@@ -144,7 +154,7 @@ export const SubCategory = styled.div<{ type?: string }>`
   `}
 `;
 
-export const FilterInput = styled.input`
+export const InputLocation = styled.input`
   padding: 6px 14px;
   margin-right: 16px;
   width: 100%;

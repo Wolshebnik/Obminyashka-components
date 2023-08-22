@@ -5,7 +5,7 @@ import { CheckBox } from 'components/checkbox';
 import * as Styles from './styles';
 import { IFilterCheckbox } from './types';
 
-export const FilterCheckbox = ({
+export const FilterInput = ({
   name,
   type,
   label,

@@ -5,7 +5,7 @@ export const categoryData: ICategoryData = {
   categories: [
     {
       categoryTitle: 'clothes',
-      type: 'withOutCheckbox',
+      type: 'checkbox',
       hiddenCheckbox: true,
       subCategories: [
         {
@@ -39,7 +39,7 @@ export const categoryData: ICategoryData = {
     },
     {
       categoryTitle: 'shoes',
-      type: 'withOutCheckbox',
+      type: 'checkbox',
       hiddenCheckbox: true,
       subCategories: [
         {
@@ -61,7 +61,7 @@ export const categoryData: ICategoryData = {
     },
     {
       categoryTitle: 'toys',
-      type: 'withOutCheckbox',
+      type: 'checkbox',
       hiddenCheckbox: true,
       subCategories: [
         {
@@ -83,7 +83,7 @@ export const categoryData: ICategoryData = {
     },
     {
       categoryTitle: 'furniture',
-      type: 'withOutCheckbox',
+      type: 'checkbox',
       hiddenCheckbox: true,
       subCategories: [
         {
@@ -108,7 +108,7 @@ export const categoryData: ICategoryData = {
     },
     {
       categoryTitle: 'transport for children',
-      type: 'withOutCheckbox',
+      type: 'checkbox',
       hiddenCheckbox: true,
       subCategories: [
         {
@@ -124,7 +124,7 @@ export const categoryData: ICategoryData = {
     },
     {
       categoryTitle: 'books',
-      type: 'withOutCheckbox',
+      type: 'checkbox',
       hiddenCheckbox: true,
       subCategories: [
         {
@@ -146,7 +146,7 @@ export const categoryData: ICategoryData = {
     },
     {
       categoryTitle: 'carnival costumes',
-      type: 'withOutCheckbox',
+      type: 'checkbox',
       hiddenCheckbox: true,
       subCategories: [
         {

@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { FilterCheckbox } from '.';
+import { FilterInput } from '.';
 import { ButtonNew } from 'components/button-new';
 import { Form, Formik, FormikValues } from 'formik';
 
 import { checkboxes, initialValues } from './config';
 
 const meta: Meta = {
-  title: 'FilterCheckbox',
-  component: FilterCheckbox,
-} satisfies Meta<typeof FilterCheckbox>;
+  title: 'FilterInput',
+  component: FilterInput,
+} satisfies Meta<typeof FilterInput>;
 
 export default meta;
-type Story = StoryObj<typeof FilterCheckbox>;
+type Story = StoryObj<typeof FilterInput>;
 
 const Template = () => {
   const onSubmit = (values: FormikValues) => {
@@ -24,7 +24,7 @@ const Template = () => {
       <Form style={{ height: '90px', width: '200px' }}>
         {checkboxes.map((item) => (
           <div style={{ marginBottom: '10px' }}>
-            <FilterCheckbox {...item} key={item.label} />
+            <FilterInput {...item} key={item.label} />
           </div>
         ))}
 

@@ -8,7 +8,7 @@ export interface ICategory {
   categoryTitle: string;
   hiddenCheckbox?: boolean;
   subCategories: ISubCategory[];
-  type?: 'radio' | 'checkbox' | 'input' | 'withOutCheckbox';
+  type?: 'radio' | 'checkbox' | 'input';
 }
 export interface ICategoryData {
   title: string;
