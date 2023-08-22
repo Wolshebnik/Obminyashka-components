@@ -4,7 +4,12 @@ import * as Styles from '../styles';
 import { ICategory } from '../types';
 import { SubCategory } from './sub-category';
 
-export const Category = ({ categoryTitle, subCategories, type }: ICategory) => {
+export const Category = ({
+  type,
+  categoryTitle,
+  subCategories,
+  hiddenCheckbox,
+}: ICategory) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
@@ -22,7 +27,13 @@ export const Category = ({ categoryTitle, subCategories, type }: ICategory) => {
       <Styles.ScrollWrapper>
         <Styles.SubCategories type={type} isOpen={isOpen}>
           {subCategories.map((props, index) => (
-            <SubCategory {...props} type={type} key={index + props.name} />
+            <SubCategory
+              {...props}
+              type={type}
+              name={categoryTitle}
+              key={index + props.label}
+              hiddenCheckbox={hiddenCheckbox}
+            />
           ))}
         </Styles.SubCategories>
       </Styles.ScrollWrapper>

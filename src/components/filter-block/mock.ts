@@ -1,160 +1,166 @@
-export const CategoryData = {
+export const categoryData = {
   title: 'Category',
   categories: [
     {
-      categoryTitle: 'Clothes',
+      categoryTitle: 'clothes',
+      type: 'checkbox',
+      hiddenCheckbox: true,
       subCategories: [
         {
-          name: 'Blouses, shirts',
+          label: 'Blouses, shirts',
         },
         {
-          name: 'Pants, jeans, shorts',
+          label: 'Pants, jeans, shorts',
         },
         {
-          name: 'Upper robe',
+          label: 'Upper robe',
         },
         {
-          name: 'Hats, scarves, mittens',
+          label: 'Hats, scarves, mittens',
         },
         {
-          name: 'Cloths, sundresses, beddings',
+          label: 'Clothes, sundresses, beddings',
         },
         {
-          name: 'Light, sweaters',
+          label: 'Light, sweaters',
         },
         {
-          name: 'T-shirts, tops, t-shirts',
+          label: 'T-shirts, tops, t-shirts',
         },
         {
-          name: 'Tracksuits',
+          label: 'Tracksuits',
         },
         {
-          name: 'School uniform',
+          label: 'School uniform',
         },
       ],
     },
     {
-      categoryTitle: 'Shoes',
+      categoryTitle: 'shoes',
+      type: 'checkbox',
+      hiddenCheckbox: true,
       subCategories: [
         {
-          name: 'Crosses, keds',
+          label: 'Crosses, keds',
         },
         {
-          name: 'Boots',
+          label: 'Boots',
         },
         {
-          name: 'Sandals, slippers',
+          label: 'Sandals, slippers',
         },
         {
-          name: 'Shoes, moccasins',
+          label: 'Shoes, moccasins',
         },
         {
-          name: 'Other',
+          label: 'Other',
         },
       ],
     },
     {
-      categoryTitle: 'Toys',
+      categoryTitle: 'toys',
+      type: 'checkbox',
+      hiddenCheckbox: true,
       subCategories: [
         {
-          name: 'Toys for babies',
+          label: 'Toys for babies',
         },
         {
-          name: 'Machines and equipment',
+          label: 'Machines and equipment',
         },
         {
-          name: 'Stuffed animals',
+          label: 'Stuffed animals',
         },
         {
-          name: 'Constructors',
+          label: 'Constructors',
         },
         {
-          name: 'Dolls, figurines',
+          label: 'Dolls, figurines',
         },
       ],
     },
-    {
-      categoryTitle: 'Furniture',
-      subCategories: [
-        {
-          name: 'Baby cots',
-        },
-        {
-          name: 'Bunk beds',
-        },
-        {
-          name: 'Manege',
-        },
-        {
-          name: 'Tables, chairs',
-        },
-        {
-          name: 'Feeding chair',
-        },
-        {
-          name: 'Car seat',
-        },
-      ],
-    },
-    {
-      categoryTitle: 'Transport for children',
-      subCategories: [
-        {
-          name: 'Strollers',
-        },
-        {
-          name: 'Scooters, bicycles',
-        },
-        {
-          name: 'Machines',
-        },
-      ],
-    },
-    {
-      categoryTitle: 'Books',
-      subCategories: [
-        {
-          name: 'Toy books',
-        },
-        {
-          name: 'Cognitive books',
-        },
-        {
-          name: 'Fiction',
-        },
-        {
-          name: 'School books',
-        },
-        {
-          name: 'Encyclopedias',
-        },
-      ],
-    },
-    {
-      categoryTitle: 'Carnival costumes',
-      subCategories: [
-        {
-          name: 'Animals (bunny, bear, fox)',
-        },
-        {
-          name: 'Professions (Cook, fireman, policeman)',
-        },
-        {
-          name: 'Cartoon characters',
-        },
-        {
-          name: 'Other',
-        },
-      ],
-    },
-    {
-      categoryTitle: 'Other',
-      subCategories: [],
-    },
+    // {
+    //   categoryTitle: 'furniture',
+    //   subCategories: [
+    //     {
+    //       label: 'Baby cots',
+    //     },
+    //     {
+    //       label: 'Bunk beds',
+    //     },
+    //     {
+    //       label: 'Manege',
+    //     },
+    //     {
+    //       label: 'Tables, chairs',
+    //     },
+    //     {
+    //       label: 'Feeding chair',
+    //     },
+    //     {
+    //       label: 'Car seat',
+    //     },
+    //   ],
+    // },
+    // {
+    //   categoryTitle: 'transport for children',
+    //   subCategories: [
+    //     {
+    //       label: 'Strollers',
+    //     },
+    //     {
+    //       label: 'Scooters, bicycles',
+    //     },
+    //     {
+    //       label: 'Machines',
+    //     },
+    //   ],
+    // },
+    // {
+    //   categoryTitle: 'books',
+    //   subCategories: [
+    //     {
+    //       label: 'Toy books',
+    //     },
+    //     {
+    //       label: 'Cognitive books',
+    //     },
+    //     {
+    //       label: 'Fiction',
+    //     },
+    //     {
+    //       label: 'School books',
+    //     },
+    //     {
+    //       label: 'Encyclopedias',
+    //     },
+    //   ],
+    // },
+    // {
+    //   categoryTitle: 'carnival costumes',
+    //   subCategories: [
+    //     {
+    //       label: 'Animals (bunny, bear, fox)',
+    //     },
+    //     {
+    //       label: 'Professions (Cook, fireman, policeman)',
+    //     },
+    //     {
+    //       label: 'Cartoon characters',
+    //     },
+    //     {
+    //       label: 'Other',
+    //     },
+    //   ],
+    // },
+    // {
+    //   categoryTitle: 'other',
+    //   subCategories: [],
+    // },
   ],
 };
 
-export const FilterData = {
+export const filterData = {
   title: 'Filter',
   categories: [
     {
@@ -162,10 +168,10 @@ export const FilterData = {
       type: 'input',
       subCategories: [
         {
-          name: 'Region:',
+          label: 'Region:',
         },
         {
-          name: 'City:',
+          label: 'City:',
         },
       ],
     },
@@ -174,13 +180,13 @@ export const FilterData = {
       type: 'radio',
       subCategories: [
         {
-          name: 'Boy',
+          label: 'Boy',
         },
         {
-          name: 'Girl',
+          label: 'Girl',
         },
         {
-          name: 'Will suit everyone',
+          label: 'Will suit everyone',
         },
       ],
     },
@@ -189,22 +195,22 @@ export const FilterData = {
       type: 'checkbox',
       subCategories: [
         {
-          name: '0',
+          label: '0',
         },
         {
-          name: '1 - 2',
+          label: '1 - 2',
         },
         {
-          name: '2 - 4',
+          label: '2 - 4',
         },
         {
-          name: '5 - 7',
+          label: '5 - 7',
         },
         {
-          name: '8 - 11',
+          label: '8 - 11',
         },
         {
-          name: '11 - 14',
+          label: '11 - 14',
         },
       ],
     },
@@ -213,22 +219,22 @@ export const FilterData = {
       type: 'checkbox',
       subCategories: [
         {
-          name: '50 -80 см',
+          label: '50 -80 см',
         },
         {
-          name: '80 -92 см',
+          label: '80 -92 см',
         },
         {
-          name: '92 - 110 см',
+          label: '92 - 110 см',
         },
         {
-          name: '110 - 122 см',
+          label: '110 - 122 см',
         },
         {
-          name: '122 - 146 см',
+          label: '122 - 146 см',
         },
         {
-          name: '146 - 164 см',
+          label: '146 - 164 см',
         },
       ],
     },
@@ -237,49 +243,49 @@ export const FilterData = {
       type: 'checkbox',
       subCategories: [
         {
-          name: '9,5 см - 16',
+          label: '9,5 см - 16',
         },
         {
-          name: '10 см - 16,5',
+          label: '10 см - 16,5',
         },
         {
-          name: '10,5 см - 17',
+          label: '10,5 см - 17',
         },
         {
-          name: '11 см - 18',
+          label: '11 см - 18',
         },
         {
-          name: '11,5 см - 19',
+          label: '11,5 см - 19',
         },
         {
-          name: '12 см - 20',
+          label: '12 см - 20',
         },
         {
-          name: '12,5 см - 21',
+          label: '12,5 см - 21',
         },
         {
-          name: '13 см - 22',
+          label: '13 см - 22',
         },
         {
-          name: '13,5 см - 23',
+          label: '13,5 см - 23',
         },
         {
-          name: '14 см - 24',
+          label: '14 см - 24',
         },
         {
-          name: '14,5 см - 25',
+          label: '14,5 см - 25',
         },
         {
-          name: '15 см - 26',
+          label: '15 см - 26',
         },
         {
-          name: '15,5 см - 27',
+          label: '15,5 см - 27',
         },
         {
-          name: '16 см - 28',
+          label: '16 см - 28',
         },
         {
-          name: '16,5 см - 29',
+          label: '16,5 см - 29',
         },
       ],
     },
@@ -288,13 +294,13 @@ export const FilterData = {
       type: 'checkbox',
       subCategories: [
         {
-          name: 'Demi-season',
+          label: 'Demi-season',
         },
         {
-          name: 'Summer',
+          label: 'Summer',
         },
         {
-          name: 'Winter',
+          label: 'Winter',
         },
       ],
     },

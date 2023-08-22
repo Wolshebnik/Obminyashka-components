@@ -1,8 +1,10 @@
 //TODO Typescript types
+import { Formik, Form, FormikValues } from 'formik';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { FilterBlock } from '.';
-import { CategoryData, FilterData } from './mock';
+import { categoryData } from './mock';
+import { initialValues } from './config';
 
 const meta = {
   title: 'FilterBlock',
@@ -12,20 +14,20 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof FilterBlock>;
 
-const Template = (args: any) => {
-  return <FilterBlock {...args} />;
+const onSubmit = (values: FormikValues) => {
+  alert(JSON.stringify(values));
+};
+
+const Template = () => {
+  return (
+    <Formik initialValues={initialValues} onSubmit={onSubmit}>
+      <Form>
+        <FilterBlock data={categoryData} />
+      </Form>
+    </Formik>
+  );
 };
 
 export const BlockCategory: Story = {
-  args: {
-    data: { ...CategoryData },
-  },
-  render: (args) => <Template {...args} />,
-};
-
-export const BlockFilter: Story = {
-  args: {
-    data: { ...FilterData },
-  },
-  render: (args) => <Template {...args} />,
+  render: () => <Template />,
 };

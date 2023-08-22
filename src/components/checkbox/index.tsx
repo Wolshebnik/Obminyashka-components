@@ -20,7 +20,7 @@ export const CheckBox = ({
     checked={checked}
     fontSize={fontSize}
   >
-    <Styles.Checkbox checked={checked} type={type}>
+    <Styles.Checkbox type={type} checked={checked}>
       <Styles.Input
         name={name}
         type={type}

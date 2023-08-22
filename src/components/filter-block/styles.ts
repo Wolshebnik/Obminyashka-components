@@ -103,42 +103,9 @@ export const SubCategories = styled.div<{
   `}
 `;
 
-export const Cross = styled.div<{ type?: string }>`
-  ${({ theme, type }) => css`
-    ${type !== 'checkbox' &&
-    type !== 'input' &&
-    type !== 'radio' &&
-    css`
-      &:before,
-      &:after {
-        content: '';
-        position: absolute;
-        top: 48%;
-        right: 10px;
-        width: 16px;
-        height: 1.5px;
-        background: ${theme.colors.white};
-      }
-
-      &:before {
-        webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-      }
-
-      &:after {
-        webkit-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-      }
-    `}
-  `}
-`;
-
-export const SubCategory = styled.label<{ type?: string; isActive: boolean }>`
+export const SubCategory = styled.div<{ type?: string }>`
   position: relative;
   display: flex;
-  padding: 6px 14px;
-  margin: 0 16px 4px 12px;
-  border-radius: 5px;
   color: #777;
   font-size: 14px;
   font-style: normal;
@@ -146,7 +113,7 @@ export const SubCategory = styled.label<{ type?: string; isActive: boolean }>`
   line-height: normal;
   cursor: pointer;
 
-  ${({ theme, type, isActive }) => css`
+  ${({ theme, type }) => css`
     ${theme.responsive.isDesktop &&
     css`
       font-size: 16px;
@@ -172,32 +139,6 @@ export const SubCategory = styled.label<{ type?: string; isActive: boolean }>`
     css`
       padding: 0;
       margin: 16px 17px 16px 10px;
-    `}
-
-    ${isActive &&
-    type !== 'checkbox' &&
-    type !== 'input' &&
-    type !== 'radio' &&
-    css`
-      background: #7ecde4;
-      color: ${theme.colors.white};
-    `}
-
-    ${!isActive &&
-    type !== 'checkbox' &&
-    type !== 'input' &&
-    type !== 'radio' &&
-    css`
-      &:hover {
-        background: #b8e9fa;
-        color: black;
-      }
-
-      &:has(${Cross}):hover {
-        ${Cross}::before, ${Cross}::after {
-          background: black;
-        }
-      }
     `}
   `}
 `;

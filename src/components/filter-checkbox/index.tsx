@@ -1,11 +1,16 @@
-/* eslint-disable no-console */
 import { Field, FieldProps } from 'formik';
 
 import { CheckBox } from 'components/checkbox';
 
-import { INewCheckbox } from './types';
+import * as Styles from './styles';
+import { IFilterCheckbox } from './types';
 
-export const FilterCheckbox = ({ name, type, label }: INewCheckbox) => {
+export const FilterCheckbox = ({
+  name,
+  type,
+  label,
+  hiddenCheckbox,
+}: IFilterCheckbox) => {
   const isRadio = type === 'radio';
 
   return (
@@ -31,13 +36,25 @@ export const FilterCheckbox = ({ name, type, label }: INewCheckbox) => {
 
         return (
           <>
-            <CheckBox
-              name={name}
-              type={type}
-              text={label}
-              onChange={onChange}
-              checked={isChecked}
-            />
+            {hiddenCheckbox ? (
+              <Styles.StyledLabel isChecked={isChecked}>
+                {label}
+                <Styles.HiddenCheckbox
+                  name={name}
+                  onChange={onChange}
+                  checked={isChecked}
+                />
+                <Styles.Cross />
+              </Styles.StyledLabel>
+            ) : (
+              <CheckBox
+                name={name}
+                type={type}
+                text={label}
+                onChange={onChange}
+                checked={isChecked}
+              />
+            )}
           </>
         );
       }}

@@ -1,11 +1,11 @@
-import { FormValues, INewCheckbox } from './types';
+import { FormValues, IFilterCheckbox } from './types';
 
 export const initialValues: FormValues = {
   gender: '',
   size: [],
 };
 
-export const checkboxes: INewCheckbox[] = [
+export const checkboxes: IFilterCheckbox[] = [
   {
     name: 'gender',
     label: 'both',
@@ -35,5 +35,17 @@ export const checkboxes: INewCheckbox[] = [
     name: 'size',
     label: 'size 30',
     type: 'checkbox',
+  },
+  {
+    name: 'size',
+    label: 'size 40',
+    type: 'checkbox',
+    hiddenCheckbox: true,
+  },
+  {
+    name: 'size',
+    label: 'size 50',
+    type: 'checkbox',
+    hiddenCheckbox: true,
   },
 ];

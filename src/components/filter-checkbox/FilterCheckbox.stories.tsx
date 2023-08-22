@@ -21,7 +21,7 @@ const Template = () => {
 
   return (
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
-      <Form style={{ height: '90px' }}>
+      <Form style={{ height: '90px', width: '200px' }}>
         {checkboxes.map((item) => (
           <div style={{ marginBottom: '10px' }}>
             <FilterCheckbox {...item} key={item.label} />

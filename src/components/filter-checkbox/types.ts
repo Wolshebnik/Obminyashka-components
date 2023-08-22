@@ -3,8 +3,9 @@ export interface FormValues {
   size: string[];
 }
 
-export interface INewCheckbox {
+export interface IFilterCheckbox {
   name: string;
   label: string;
-  type: 'radio' | 'checkbox';
+  hiddenCheckbox?: boolean;
+  type?: 'radio' | 'checkbox';
 }
