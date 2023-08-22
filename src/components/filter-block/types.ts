@@ -2,27 +2,15 @@ export interface ISubCategory {
   name?: string;
   label: string;
   hiddenCheckbox?: boolean;
-  type?: 'radio' | 'checkbox';
+  type?: 'radio' | 'checkbox' | 'input';
 }
 export interface ICategory {
   categoryTitle: string;
   hiddenCheckbox?: boolean;
-  type?: 'radio' | 'checkbox';
   subCategories: ISubCategory[];
+  type?: 'radio' | 'checkbox' | 'input' | 'withOutCheckbox';
 }
 export interface ICategoryData {
   title: string;
   categories: ICategory[];
 }
-
-// export interface FormValues {
-//   gender: string;
-//   size: string[];
-// }
-
-// export interface IFilterCheckbox {
-//   name: string;
-//   label: string;
-//   hiddenCheckbox?: boolean;
-//   type?: 'radio' | 'checkbox';
-// }

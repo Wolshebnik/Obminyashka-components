@@ -3,8 +3,9 @@ import { Formik, Form, FormikValues } from 'formik';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { FilterBlock } from '.';
-import { categoryData } from './mock';
+import { categoryData, filterData } from './mock';
 import { initialValues } from './config';
+import { ButtonNew } from 'components/button-new';
 
 const meta = {
   title: 'FilterBlock',
@@ -23,6 +24,12 @@ const Template = () => {
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
       <Form>
         <FilterBlock data={categoryData} />
+        <div style={{ margin: '10px' }}></div>
+        <FilterBlock data={filterData} />
+
+        <div style={{ margin: '10px 0', width: '334px' }}>
+          <ButtonNew colorType={'blue'} styleType={'default'} text="submit" />
+        </div>
       </Form>
     </Formik>
   );

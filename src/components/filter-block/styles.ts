@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Input } from 'components/input';
+// import { Input } from 'components/input';
 
 export const Card = styled.div`
   padding: 25px 25px 28px;
@@ -106,6 +106,7 @@ export const SubCategories = styled.div<{
 export const SubCategory = styled.div<{ type?: string }>`
   position: relative;
   display: flex;
+  margin: 0;
   color: #777;
   font-size: 14px;
   font-style: normal;
@@ -122,7 +123,7 @@ export const SubCategory = styled.div<{ type?: string }>`
     ${type === 'input' &&
     css`
       padding: 0;
-      margin: 0 16px 20px 0;
+      margin: 0 0 20px 0;
 
       input:focus {
         border: 2px solid black;
@@ -143,9 +144,16 @@ export const SubCategory = styled.div<{ type?: string }>`
   `}
 `;
 
-export const FilterInput = styled(Input)`
+export const FilterInput = styled.input`
   padding: 6px 14px;
+  margin-right: 16px;
+  width: 100%;
   height: 36px;
+  border: none;
   border-radius: 5px;
   background: #dedede;
+
+  &:focus {
+    border: 1px solid black;
+  }
 `;

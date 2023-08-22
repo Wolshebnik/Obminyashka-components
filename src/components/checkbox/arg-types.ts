@@ -10,13 +10,6 @@ export const argTypes: IArgTypes<IInput> = {
     control: { type: 'string' },
   },
 
-  hiddenCheckbox: {
-    name: 'hiddenCheckbox',
-    type: { name: 'boolean' },
-    description: 'Without input',
-    control: { type: 'boolean' },
-  },
-
   onChange: {
     name: 'onChange',
     type: { name: 'function' },

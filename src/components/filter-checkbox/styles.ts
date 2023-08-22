@@ -30,6 +30,7 @@ export const StyledLabel = styled.label<{ isChecked: boolean }>`
   display: flex;
   padding: 6px 14px;
   margin: 0 16px 4px 12px;
+  width: 100%;
   border-radius: 5px;
   color: #777;
   font-size: 14px;

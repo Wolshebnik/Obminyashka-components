@@ -57,15 +57,9 @@ export const Checkbox = styled.div<ICheckbox>`
   cursor: pointer;
   transition: all ease-in-out 0.3s;
 
-  ${({ theme, checked, type, hiddenCheckbox }) => css`
+  ${({ theme, checked, type }) => css`
     ${checked && `background-color: ${theme.colors.btnBlue}`};
     ${checked ? '' : `border: 3px solid ${theme.colors.colorGrey}`};
     border-radius: ${type === 'radio' ? '50%' : '0'};
-
-    ${hiddenCheckbox &&
-    css`
-      position: absolute;
-      opacity: 0;
-    `}
   `}
 `;

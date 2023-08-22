@@ -1,9 +1,11 @@
-export const categoryData = {
+import { ICategoryData } from './types';
+
+export const categoryData: ICategoryData = {
   title: 'Category',
   categories: [
     {
       categoryTitle: 'clothes',
-      type: 'checkbox',
+      type: 'withOutCheckbox',
       hiddenCheckbox: true,
       subCategories: [
         {
@@ -37,7 +39,7 @@ export const categoryData = {
     },
     {
       categoryTitle: 'shoes',
-      type: 'checkbox',
+      type: 'withOutCheckbox',
       hiddenCheckbox: true,
       subCategories: [
         {
@@ -59,7 +61,7 @@ export const categoryData = {
     },
     {
       categoryTitle: 'toys',
-      type: 'checkbox',
+      type: 'withOutCheckbox',
       hiddenCheckbox: true,
       subCategories: [
         {
@@ -79,88 +81,96 @@ export const categoryData = {
         },
       ],
     },
-    // {
-    //   categoryTitle: 'furniture',
-    //   subCategories: [
-    //     {
-    //       label: 'Baby cots',
-    //     },
-    //     {
-    //       label: 'Bunk beds',
-    //     },
-    //     {
-    //       label: 'Manege',
-    //     },
-    //     {
-    //       label: 'Tables, chairs',
-    //     },
-    //     {
-    //       label: 'Feeding chair',
-    //     },
-    //     {
-    //       label: 'Car seat',
-    //     },
-    //   ],
-    // },
-    // {
-    //   categoryTitle: 'transport for children',
-    //   subCategories: [
-    //     {
-    //       label: 'Strollers',
-    //     },
-    //     {
-    //       label: 'Scooters, bicycles',
-    //     },
-    //     {
-    //       label: 'Machines',
-    //     },
-    //   ],
-    // },
-    // {
-    //   categoryTitle: 'books',
-    //   subCategories: [
-    //     {
-    //       label: 'Toy books',
-    //     },
-    //     {
-    //       label: 'Cognitive books',
-    //     },
-    //     {
-    //       label: 'Fiction',
-    //     },
-    //     {
-    //       label: 'School books',
-    //     },
-    //     {
-    //       label: 'Encyclopedias',
-    //     },
-    //   ],
-    // },
-    // {
-    //   categoryTitle: 'carnival costumes',
-    //   subCategories: [
-    //     {
-    //       label: 'Animals (bunny, bear, fox)',
-    //     },
-    //     {
-    //       label: 'Professions (Cook, fireman, policeman)',
-    //     },
-    //     {
-    //       label: 'Cartoon characters',
-    //     },
-    //     {
-    //       label: 'Other',
-    //     },
-    //   ],
-    // },
-    // {
-    //   categoryTitle: 'other',
-    //   subCategories: [],
-    // },
+    {
+      categoryTitle: 'furniture',
+      type: 'withOutCheckbox',
+      hiddenCheckbox: true,
+      subCategories: [
+        {
+          label: 'Baby cots',
+        },
+        {
+          label: 'Bunk beds',
+        },
+        {
+          label: 'Manege',
+        },
+        {
+          label: 'Tables, chairs',
+        },
+        {
+          label: 'Feeding chair',
+        },
+        {
+          label: 'Car seat',
+        },
+      ],
+    },
+    {
+      categoryTitle: 'transport for children',
+      type: 'withOutCheckbox',
+      hiddenCheckbox: true,
+      subCategories: [
+        {
+          label: 'Strollers',
+        },
+        {
+          label: 'Scooters, bicycles',
+        },
+        {
+          label: 'Machines',
+        },
+      ],
+    },
+    {
+      categoryTitle: 'books',
+      type: 'withOutCheckbox',
+      hiddenCheckbox: true,
+      subCategories: [
+        {
+          label: 'Toy books',
+        },
+        {
+          label: 'Cognitive books',
+        },
+        {
+          label: 'Fiction',
+        },
+        {
+          label: 'School books',
+        },
+        {
+          label: 'Encyclopedias',
+        },
+      ],
+    },
+    {
+      categoryTitle: 'carnival costumes',
+      type: 'withOutCheckbox',
+      hiddenCheckbox: true,
+      subCategories: [
+        {
+          label: 'Animals (bunny, bear, fox)',
+        },
+        {
+          label: 'Professions (Cook, fireman, policeman)',
+        },
+        {
+          label: 'Cartoon characters',
+        },
+        {
+          label: 'Other',
+        },
+      ],
+    },
+    {
+      categoryTitle: 'other',
+      subCategories: [],
+    },
   ],
 };
 
-export const filterData = {
+export const filterData: ICategoryData = {
   title: 'Filter',
   categories: [
     {
