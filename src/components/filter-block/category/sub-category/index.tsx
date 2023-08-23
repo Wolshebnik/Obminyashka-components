@@ -13,21 +13,12 @@ export const SubCategory = ({
 }: ISubCategory) => {
   return (
     <Styles.SubCategory type={type} hiddenCheckbox={hiddenCheckbox}>
-      {type !== 'input' && type !== undefined && (
-        <FilterInput
-          type={type}
-          label={label}
-          name={name ? name : ''}
-          hiddenCheckbox={hiddenCheckbox}
-        />
-      )}
-
-      {type === 'input' && (
-        <Styles.InputLocation
-          placeholder={label}
-          name={name ? name : ''}
-        ></Styles.InputLocation>
-      )}
+      <FilterInput
+        type={type}
+        name={name}
+        label={label}
+        hiddenCheckbox={hiddenCheckbox}
+      />
     </Styles.SubCategory>
   );
 };

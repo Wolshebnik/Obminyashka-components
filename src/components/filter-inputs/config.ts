@@ -3,6 +3,7 @@ import { FormValues, IFilterCheckbox } from './types';
 export const initialValues: FormValues = {
   gender: '',
   size: [],
+  text: '',
 };
 
 export const checkboxes: IFilterCheckbox[] = [
@@ -47,5 +48,10 @@ export const checkboxes: IFilterCheckbox[] = [
     label: 'size 50',
     type: 'checkbox',
     hiddenCheckbox: true,
+  },
+  {
+    name: 'text',
+    label: 'text',
+    type: 'input',
   },
 ];

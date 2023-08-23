@@ -35,6 +35,6 @@ const Template = () => {
   );
 };
 
-export const BlockCategory: Story = {
+export const Filter: Story = {
   render: () => <Template />,
 };

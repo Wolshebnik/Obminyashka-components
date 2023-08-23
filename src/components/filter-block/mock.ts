@@ -165,6 +165,8 @@ export const categoryData: ICategoryData = {
     },
     {
       categoryTitle: 'other',
+      type: 'checkbox',
+      hiddenCheckbox: true,
       subCategories: [],
     },
   ],

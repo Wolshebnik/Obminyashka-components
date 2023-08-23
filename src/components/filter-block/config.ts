@@ -8,6 +8,7 @@ export const initialValues = {
   shoes: [],
   season: [],
   clothes: [],
+  location: [],
   furniture: [],
   'size(shoes)': [],
   'size(clothes)': [],

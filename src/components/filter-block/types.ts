@@ -1,14 +1,21 @@
+interface Types {
+  type: 'radio' | 'checkbox' | 'input';
+}
+
 export interface ISubCategory {
-  name?: string;
+  name: string;
   label: string;
   hiddenCheckbox?: boolean;
-  type?: 'radio' | 'checkbox' | 'input';
+  type: Types;
+}
+export interface IDataSubCategory {
+  label: string;
 }
 export interface ICategory {
   categoryTitle: string;
   hiddenCheckbox?: boolean;
-  subCategories: ISubCategory[];
-  type?: 'radio' | 'checkbox' | 'input';
+  subCategories: IDataSubCategory[];
+  type: Types;
 }
 export interface ICategoryData {
   title: string;

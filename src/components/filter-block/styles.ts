@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-// import { Input } from 'components/input';
 
 export const Card = styled.div`
   padding: 25px 25px 28px;
@@ -152,18 +151,4 @@ export const SubCategory = styled.div<{
       margin: 16px 17px 16px 10px;
     `}
   `}
-`;
-
-export const InputLocation = styled.input`
-  padding: 6px 14px;
-  margin-right: 16px;
-  width: 100%;
-  height: 36px;
-  border: none;
-  border-radius: 5px;
-  background: #dedede;
-
-  &:focus {
-    border: 1px solid black;
-  }
 `;
