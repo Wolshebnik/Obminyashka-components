@@ -9,7 +9,7 @@ export { CheckBox } from './checkbox';
 export { Deals } from './deals';
 export { EllipsisText } from './ellipsis-text';
 export { FilterBlock } from './filter-block';
-export { FilterInput } from './filter-inputs';
+export { CheckboxRadioField } from './checkbox-radio-field';
 export { Footer } from './footer';
 export { HelpChildren } from './help-children';
 export { Image } from './image';

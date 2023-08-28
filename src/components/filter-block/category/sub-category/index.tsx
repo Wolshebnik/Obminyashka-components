@@ -1,7 +1,5 @@
-/* eslint-disable no-console */
-//TODO fix the name check on line 21
 import { ISubCategory } from 'components/filter-block/types';
-import { FilterInput } from 'components/filter-inputs';
+import { CheckboxRadioField } from 'components/checkbox-radio-field';
 
 import * as Styles from '../../styles';
 
@@ -13,7 +11,7 @@ export const SubCategory = ({
 }: ISubCategory) => {
   return (
     <Styles.SubCategory type={type} hiddenCheckbox={hiddenCheckbox}>
-      <FilterInput
+      <CheckboxRadioField
         type={type}
         name={name}
         label={label}

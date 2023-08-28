@@ -4,7 +4,7 @@ import { InputLocation } from './input';
 import { IFilterCheckbox } from './types';
 import { CheckBox } from 'components/checkbox';
 
-export const FilterInput = ({
+export const CheckboxRadioField = ({
   name,
   type,
   label,
