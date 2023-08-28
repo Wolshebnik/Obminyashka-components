@@ -23,3 +23,25 @@ export const disappearAnimation = keyframes`
     transform: scale(0);
   }
 `;
+
+export const cycleAnimation = keyframes`
+  20% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  30% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  70% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  80% {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;

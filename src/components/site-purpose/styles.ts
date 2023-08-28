@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 import * as Image from 'components/img';
 
+import * as Animation from './animation';
+
 export const PresentSection = styled.section`
   position: relative;
   width: 100%;
@@ -14,7 +16,7 @@ export const PresentSection = styled.section`
     width: 100%;
     height: 100%;
     background: linear-gradient(136deg, #a3dee5 23.74%, #34a2ce 100%);
-    z-index: -1;
+    z-index: -2;
   }
 
   &::after {
@@ -22,6 +24,7 @@ export const PresentSection = styled.section`
     position: absolute;
     width: 100%;
     height: 100%;
+    top: 0px;
     background-image: url(${Image.newMaskCloud});
     background-size: contain;
     background-repeat: no-repeat;
@@ -33,6 +36,8 @@ export const ContainerRainbowAnimation = styled.div`
   display: flex;
   justify-content: center;
   max-width: 1830px;
+  height: 100%;
+  animation: ${Animation.cycleAnimation} 15s infinite;
 `;
 
 // export const ShowAnimation = styled.div<IAnimation>`
