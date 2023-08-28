@@ -7,7 +7,7 @@ export const InputWrapper = styled.div<{ open: boolean }>`
   border-radius: 5px;
   border: 2px dashed #7ecde4;
   background: #fff;
-  transition: all 0.4s ease;
+  transition: all 0.4s 0.2s ease;
 `;
 
 export const SelectInput = styled.input<{ open: boolean }>`
