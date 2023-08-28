@@ -11,8 +11,8 @@ export const InputWrapper = styled.div<{ open: boolean }>`
 `;
 
 export const SelectInput = styled.input<{ open: boolean }>`
-  padding: 10px 0;
   box-sizing: border-box;
+  padding: 10px 0;
   width: 100%;
   border: none;
   border-bottom: ${({ open }) => open && '1px solid #d1d1d1'};
