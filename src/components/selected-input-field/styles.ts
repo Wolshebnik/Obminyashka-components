@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const InputWrapper = styled.div<{ open: boolean }>`
   box-sizing: border-box;
   padding: ${({ open }) => (open ? '0 15px 27px' : '0 15px')};
+  margin-right: 16px;
   width: 300px;
   border-radius: 5px;
   border: 2px dashed #7ecde4;
@@ -22,6 +23,7 @@ export const SelectInput = styled.input<{ open: boolean }>`
   font-weight: 400;
   line-height: normal;
   outline: none;
+  transition: all 0s ease;
 `;
 
 export const Scroll = styled.div<{ open: boolean }>`

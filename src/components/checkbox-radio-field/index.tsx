@@ -1,6 +1,5 @@
 import { Field, FieldProps } from 'formik';
 
-import { InputLocation } from './input';
 import { IFilterCheckbox } from './types';
 import { CheckBox } from 'components/checkbox';
 
@@ -19,13 +18,9 @@ export const CheckboxRadioField = ({
           ? field.value === label
           : field.value.includes(label);
 
-        const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const onChange = () => {
           if (isRadio) {
             form.setFieldValue(name, label);
-            return;
-          }
-          if (type === 'input') {
-            form.setFieldValue(name, e.target.value);
             return;
           }
 
@@ -38,27 +33,14 @@ export const CheckboxRadioField = ({
         };
 
         return (
-          <>
-            {type !== 'input' && (
-              <CheckBox
-                name={name}
-                type={type}
-                text={label}
-                onChange={onChange}
-                checked={isChecked}
-                hiddenCheckbox={hiddenCheckbox}
-              />
-            )}
-
-            {type === 'input' && (
-              <InputLocation
-                name={name}
-                label={label}
-                onChange={onChange}
-                value={field.value}
-              />
-            )}
-          </>
+          <CheckBox
+            name={name}
+            type={type}
+            text={label}
+            onChange={onChange}
+            checked={isChecked}
+            hiddenCheckbox={hiddenCheckbox}
+          />
         );
       }}
     </Field>

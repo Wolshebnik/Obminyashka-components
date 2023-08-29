@@ -52,22 +52,39 @@ export const Triangle = styled.span<{ isOpen: boolean }>`
   `}
 `;
 
-export const ScrollWrapper = styled.div`
+export const ScrollWrapper = styled.div<{ type?: string }>`
   max-height: 300px;
   overflow-y: auto;
 
-  &::-webkit-scrollbar {
-    width: 5px;
-    border-radius: 10px;
-    border: 1px solid white;
-    background: #d9d9d9;
-  }
+  ${({ type }) => css`
+    &::-webkit-scrollbar {
+      width: 5px;
+      border-radius: 10px;
+      border: 1px solid white;
+      background: #d9d9d9;
+      opacity: 0;
+    }
 
-  &::-webkit-scrollbar-thumb {
-    height: 100px;
-    border-radius: 10px;
-    background: #71c2da;
-  }
+    &::-webkit-scrollbar-thumb {
+      height: 100px;
+      border-radius: 10px;
+      background: #71c2da;
+      opacity: 0;
+    }
+
+    ${type === 'input' &&
+    css`
+      max-height: 1000px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        display: none;
+      }
+    `}
+  `}
 `;
 
 export const SubCategories = styled.div<{
@@ -126,10 +143,6 @@ export const SubCategory = styled.div<{
     css`
       padding: 0;
       margin: 0 0 20px 0;
-
-      input:focus {
-        border: 2px solid black;
-      }
     `}
 
     ${type === 'checkbox' &&

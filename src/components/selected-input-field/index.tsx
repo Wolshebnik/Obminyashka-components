@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState } from 'react';
 
 import { cities } from './mock';
@@ -6,26 +7,43 @@ import { Field, FieldProps } from 'formik';
 
 export interface ISelectedInput {
   name: string;
+  placeholder: string;
 }
 
-const SelectedInputField = ({ name }: ISelectedInput) => {
+const SelectedInputField = ({ name, placeholder }: ISelectedInput) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [filteredCities, setFilteredCities] = useState<string[]>(cities);
 
   return (
     <Field name={name}>
       {({ form, field }: FieldProps) => {
-        const handleCityClick = (city: string) => {
+        const onFocus = () => {
+          setIsOpen(!isOpen);
+
+          if (field.value.length === 0) {
+            setFilteredCities(cities);
+          }
+        };
+
+        const onBlur = () => {
+          setIsOpen(false);
+
+          if (!filteredCities.includes(field.value)) {
+            form.setFieldValue(name, '');
+          }
+        };
+
+        const onClick = (city: string) => {
           form.setFieldValue(name, city);
         };
 
-        const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-          const inputValue = e.target.value;
-          form.setFieldValue(name, inputValue);
+        const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+          const initialValue = e.target.value;
+          form.setFieldValue(name, initialValue);
 
-          if (inputValue.trim() !== '') {
+          if (initialValue.trim() !== '') {
             const filtered = cities.filter((city) =>
-              city.toLowerCase().startsWith(inputValue.toLowerCase())
+              city.toLowerCase().startsWith(initialValue.toLowerCase())
             );
             setFilteredCities(filtered);
           } else {
@@ -33,26 +51,25 @@ const SelectedInputField = ({ name }: ISelectedInput) => {
           }
         };
 
+        console.log(field.value);
+
         return (
           <Styles.InputWrapper open={isOpen}>
             <Styles.SelectInput
               type="text"
               name={name}
               open={isOpen}
+              onBlur={onBlur}
+              onFocus={onFocus}
               value={field.value}
-              placeholder="Region"
-              onChange={handleInputChange}
-              onBlur={() => setIsOpen(false)}
-              onFocus={() => setIsOpen(!isOpen)}
+              onChange={onChange}
+              placeholder={placeholder}
             />
 
             <Styles.Scroll open={isOpen}>
               <Styles.SelectItemWrapper open={isOpen}>
                 {filteredCities.map((city) => (
-                  <Styles.SelectItem
-                    key={city}
-                    onClick={() => handleCityClick(city)}
-                  >
+                  <Styles.SelectItem key={city} onClick={() => onClick(city)}>
                     {city}
                   </Styles.SelectItem>
                 ))}

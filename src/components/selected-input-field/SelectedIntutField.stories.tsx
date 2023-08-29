@@ -15,6 +15,7 @@ type Story = StoryObj<typeof SelectedInputField>;
 export const SelectedInput: Story = {
   args: {
     name: 'region',
+    placeholder: 'Region',
   },
   render: (args) => {
     const onSubmit = (values: FormikValues) => {

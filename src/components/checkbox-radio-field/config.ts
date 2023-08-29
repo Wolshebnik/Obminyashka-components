@@ -49,9 +49,4 @@ export const checkboxes: IFilterCheckbox[] = [
     type: 'checkbox',
     hiddenCheckbox: true,
   },
-  {
-    name: 'text',
-    label: 'text',
-    type: 'input',
-  },
 ];

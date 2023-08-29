@@ -8,5 +8,5 @@ export interface IFilterCheckbox {
   name: string;
   label: string;
   hiddenCheckbox?: boolean;
-  type: 'checkbox' | 'radio' | 'input';
+  type?: 'checkbox' | 'radio' | 'input';
 }

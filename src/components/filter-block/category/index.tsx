@@ -6,7 +6,7 @@ import { SubCategory } from './sub-category';
 
 export const Category = ({
   type,
-  categoryTitle,
+  categoryName,
   subCategories,
   hiddenCheckbox,
 }: ICategory) => {
@@ -20,19 +20,19 @@ export const Category = ({
           setIsOpen(!isOpen);
         }}
       >
-        {categoryTitle}
+        {categoryName}
         <Styles.Triangle isOpen={isOpen} />
       </Styles.CategoryTitle>
 
-      <Styles.ScrollWrapper>
+      <Styles.ScrollWrapper type={type}>
         <Styles.SubCategories type={type} isOpen={isOpen}>
-          {subCategories.map((props, index) => (
+          {subCategories.map((subCategory, index) => (
             <SubCategory
-              {...props}
               type={type}
-              name={categoryTitle}
-              key={index + props.label}
+              categoryName={categoryName}
+              key={index + subCategory.name}
               hiddenCheckbox={hiddenCheckbox}
+              subCategoryName={subCategory.name}
             />
           ))}
         </Styles.SubCategories>
