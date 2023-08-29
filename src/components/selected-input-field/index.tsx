@@ -20,7 +20,7 @@ const SelectedInputField = ({ name, placeholder }: ISelectedInput) => {
         const onFocus = () => {
           setIsOpen(!isOpen);
 
-          if (field.value.length === 0) {
+          if (field.value === '') {
             setFilteredCities(cities);
           }
         };
