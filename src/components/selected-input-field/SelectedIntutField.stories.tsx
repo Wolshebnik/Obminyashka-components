@@ -1,9 +1,8 @@
-//TODO Typescript types
 import { Formik, Form, FormikValues } from 'formik';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import SelectedInputField from '.';
-// import { cities } from './mock';
+import { ButtonNew } from 'components/button-new';
 
 const meta = {
   title: 'SelectedInputField',
@@ -13,20 +12,30 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof SelectedInputField>;
 
-const onSubmit = (values: FormikValues) => {
-  alert(JSON.stringify(values));
-};
-
-const Template = () => {
-  return (
-    <Formik initialValues={[]} onSubmit={onSubmit}>
-      <Form>
-        <SelectedInputField />
-      </Form>
-    </Formik>
-  );
-};
-
 export const SelectedInput: Story = {
-  render: () => <Template />,
+  args: {
+    name: 'region',
+  },
+  render: (args) => {
+    const onSubmit = (values: FormikValues) => {
+      alert(JSON.stringify(values));
+    };
+
+    return (
+      <Formik initialValues={{ region: '' }} onSubmit={onSubmit}>
+        <Form>
+          <SelectedInputField {...args} />
+
+          <div style={{ width: '300px', marginTop: '10px' }}>
+            <ButtonNew
+              text="SUBMIT"
+              type="submit"
+              colorType="blue"
+              styleType="default"
+            ></ButtonNew>
+          </div>
+        </Form>
+      </Formik>
+    );
+  },
 };

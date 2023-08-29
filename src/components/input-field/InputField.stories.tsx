@@ -16,8 +16,7 @@ type Story = StoryObj<typeof InputField>;
 export const Fields: Story = {
   render: () => {
     const onSubmit = (values: FormikValues) => {
-      // eslint-disable-next-line no-console
-      console.log(values);
+      alert(values);
     };
 
     return (
