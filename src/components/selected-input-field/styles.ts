@@ -16,7 +16,7 @@ export const SelectInput = styled.input<{ open: boolean }>`
   padding: 10px 0;
   width: 100%;
   border: none;
-  border-bottom: ${({ open }) => open && '1px solid #d1d1d1'};
+  border-bottom: ${({ open }) => open && '2px solid #d1d1d1'};
   color: #777;
   font-size: 16px;
   font-style: normal;

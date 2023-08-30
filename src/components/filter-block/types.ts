@@ -15,7 +15,7 @@ export interface ISubCategory {
 
 export interface ICategoryFilterData {
   title: string;
-  categories: ICategoryData[];
+  categoryFilterData: ICategoryData[];
 }
 export interface ICategoryData {
   id: number;

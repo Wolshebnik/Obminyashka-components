@@ -1,14 +1,9 @@
-/* eslint-disable no-console */
 import React, { useState } from 'react';
 
 import { cities } from './mock';
 import * as Styles from './styles';
+import { ISelectedInput } from './types';
 import { Field, FieldProps } from 'formik';
-
-export interface ISelectedInput {
-  name: string;
-  placeholder: string;
-}
 
 const SelectedInputField = ({ name, placeholder }: ISelectedInput) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -50,8 +45,6 @@ const SelectedInputField = ({ name, placeholder }: ISelectedInput) => {
             setFilteredCities(cities);
           }
         };
-
-        console.log(field.value);
 
         return (
           <Styles.InputWrapper open={isOpen}>
