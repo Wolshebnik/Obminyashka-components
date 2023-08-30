@@ -23,9 +23,9 @@ const Template = () => {
   return (
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
       <Form>
-        <FilterBlock title={'Categories'} categories={categoryData} />
+        <FilterBlock title={'Categories'} categoryFilterData={categoryData} />
         <div style={{ margin: '10px' }}></div>
-        <FilterBlock title={'Filter'} categories={filterData} />
+        <FilterBlock title={'Filter'} categoryFilterData={filterData} />
 
         <div style={{ margin: '10px 0', width: '334px' }}>
           <ButtonNew colorType={'blue'} styleType={'default'} text="submit" />
