@@ -23,7 +23,15 @@ export const SelectedInput: Story = {
     };
 
     return (
-      <Formik initialValues={{ region: '' }} onSubmit={onSubmit}>
+      <Formik
+        initialValues={{
+          region: {
+            region: '',
+            regionInput: '',
+          },
+        }}
+        onSubmit={onSubmit}
+      >
         <Form>
           <SelectedInputField {...args} />
 

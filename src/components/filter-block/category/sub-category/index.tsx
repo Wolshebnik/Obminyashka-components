@@ -18,6 +18,7 @@ export const SubCategory = ({
           placeholder={subCategoryName}
         />
       ) : (
+        // <h1>Input</h1>
         <CheckboxRadioField
           type={type}
           name={categoryName}

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 //TODO Typescript types
 import { Formik, Form, FormikValues } from 'formik';
 import type { Meta, StoryObj } from '@storybook/react';
@@ -20,6 +21,7 @@ const onSubmit = (values: FormikValues) => {
 };
 
 const Template = () => {
+  // console.log({ initialValues, filterData, categoryData });
   return (
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
       <Form>

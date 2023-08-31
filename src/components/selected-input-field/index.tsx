@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { cities } from './mock';
 import * as Styles from './styles';
@@ -11,40 +11,39 @@ const SelectedInputField = ({ name, placeholder }: ISelectedInput) => {
 
   return (
     <Field name={name}>
-      {({ form, field }: FieldProps) => {
+      {({ form, field: { value } }: FieldProps) => {
         const onFocus = () => {
           setIsOpen(!isOpen);
 
-          if (field.value === '') {
+          if (value.regionInput === '') {
             setFilteredCities(cities);
           }
         };
 
         const onBlur = () => {
           setIsOpen(false);
-
-          if (!filteredCities.includes(field.value)) {
-            form.setFieldValue(name, '');
-          }
         };
 
         const onClick = (city: string) => {
-          form.setFieldValue(name, city);
+          form.setFieldValue(name, { region: city, regionInput: city });
         };
 
         const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-          const initialValue = e.target.value;
-          form.setFieldValue(name, initialValue);
+          form.setFieldValue(name, { region: '', regionInput: e.target.value });
+        };
 
-          if (initialValue.trim() !== '') {
-            const filtered = cities.filter((city) =>
-              city.toLowerCase().startsWith(initialValue.toLowerCase())
-            );
-            setFilteredCities(filtered);
-          } else {
+        useEffect(() => {
+          if (value.regionInput.trim() === '') {
             setFilteredCities(cities);
           }
-        };
+
+          if (value.regionInput.trim() !== '') {
+            const filtered = cities.filter((city) =>
+              city.toLowerCase().startsWith(value.regionInput.toLowerCase())
+            );
+            setFilteredCities(filtered);
+          }
+        }, [value.regionInput]);
 
         return (
           <Styles.InputWrapper open={isOpen}>
@@ -54,8 +53,9 @@ const SelectedInputField = ({ name, placeholder }: ISelectedInput) => {
               open={isOpen}
               onBlur={onBlur}
               onFocus={onFocus}
-              value={field.value}
+              autoComplete="off"
               onChange={onChange}
+              value={value.regionInput}
               placeholder={placeholder}
             />
 

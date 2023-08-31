@@ -214,11 +214,18 @@ export const filterData: ICategoryData[] = [
     subCategories: [
       {
         id: 52,
-        name: 'Region:',
+        name: 'region',
+        // selectData: [
+        //   {
+        //     id: 100,
+        //     name: 'Kyiv obl',
+        //   },
+        // ],
       },
       {
         id: 53,
-        name: 'City:',
+        name: 'city',
+        // selectData: [],
       },
     ],
   },

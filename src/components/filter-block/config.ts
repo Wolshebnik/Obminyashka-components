@@ -1,14 +1,18 @@
-import {} from './types';
-
 export const initialValues = {
   age: [],
   sex: '',
-  city: [],
+  city: {
+    region: '',
+    regionInput: '',
+  },
   toys: [],
   books: [],
   shoes: [],
   season: [],
-  region: [],
+  region: {
+    region: '',
+    regionInput: '',
+  },
   clothes: [],
   furniture: [],
   'size(shoes)': [],
