@@ -18,7 +18,7 @@ export interface ICategoryFilterData {
   categoryFilterData: ICategoryData[];
 }
 export interface ICategoryData {
-  id: number;
+  id: string;
   name: string;
   type?: Types;
   hiddenCheckbox?: boolean;
@@ -26,6 +26,11 @@ export interface ICategoryData {
 }
 
 export interface ISubCategoryData {
-  id: number;
+  id: string;
+  name: string;
+}
+
+export interface ISelectedData {
+  id: string;
   name: string;
 }

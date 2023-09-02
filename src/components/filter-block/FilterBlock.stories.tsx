@@ -21,7 +21,6 @@ const onSubmit = (values: FormikValues) => {
 };
 
 const Template = () => {
-  // console.log({ initialValues, filterData, categoryData });
   return (
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
       <Form>
