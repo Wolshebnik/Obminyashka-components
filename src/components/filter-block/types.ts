@@ -5,17 +5,21 @@ export interface ICategory {
   categoryName: string;
   hiddenCheckbox?: boolean;
   subCategories: ISubCategoryData[];
+  getCities?: (id: string) => Promise<ISubCategoryData[]>;
 }
 export interface ISubCategory {
   type?: Types;
   categoryName: string;
+  containerName?: string;
   subCategoryName: string;
   hiddenCheckbox?: boolean;
+  getCities?: (id: string) => Promise<ISubCategoryData[]>;
 }
 
 export interface ICategoryFilterData {
   title: string;
   categoryFilterData: ICategoryData[];
+  getCities?: (id: string) => Promise<ISubCategoryData[]>;
 }
 export interface ICategoryData {
   id: string;
@@ -28,6 +32,7 @@ export interface ICategoryData {
 export interface ISubCategoryData {
   id: string;
   name: string;
+  containerName?: string;
 }
 
 export interface ISelectedData {

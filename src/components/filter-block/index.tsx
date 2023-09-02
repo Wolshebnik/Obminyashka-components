@@ -4,6 +4,7 @@ import { ICategoryFilterData } from './types';
 
 export const FilterBlock = ({
   title,
+  getCities,
   categoryFilterData,
 }: ICategoryFilterData) => {
   return (
@@ -14,6 +15,7 @@ export const FilterBlock = ({
         {categoryFilterData.map((category, index) => (
           <Category
             type={category.type}
+            getCities={getCities}
             key={index + category.name}
             categoryName={category.name}
             subCategories={category.subCategories}

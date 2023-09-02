@@ -49,7 +49,7 @@ const SelectedInputField = ({
         };
 
         const setData = async () => {
-          if (!getCities || !containerName) return;
+          if (!getCities || !containerName || name === 'city') return;
 
           try {
             setIsLoading(true);
@@ -93,33 +93,35 @@ const SelectedInputField = ({
         }, [value.inputValue, value.id, value.location]);
 
         return (
-          <Styles.InputWrapper open={isOpen}>
-            <Styles.SelectInput
-              type="text"
-              name={name}
-              open={isOpen}
-              onBlur={onBlur}
-              onFocus={onFocus}
-              autoComplete="off"
-              onChange={onChange}
-              value={value.inputValue}
-              placeholder={placeholder}
-              disabled={!value.location?.length}
-            />
+          <>
+            <Styles.InputWrapper open={isOpen}>
+              <Styles.SelectInput
+                type="text"
+                name={name}
+                open={isOpen}
+                onBlur={onBlur}
+                onFocus={onFocus}
+                autoComplete="off"
+                onChange={onChange}
+                value={value.inputValue}
+                placeholder={placeholder}
+                disabled={!value.location?.length}
+              />
 
-            <Styles.Scroll open={isOpen}>
-              <Styles.SelectItemWrapper open={isOpen}>
-                {filteredCities?.map((city) => (
-                  <Styles.SelectItem
-                    key={city.id + city.name}
-                    onClick={() => onClick(city.id, city.name)}
-                  >
-                    {city.name}
-                  </Styles.SelectItem>
-                ))}
-              </Styles.SelectItemWrapper>
-            </Styles.Scroll>
-          </Styles.InputWrapper>
+              <Styles.Scroll open={isOpen}>
+                <Styles.SelectItemWrapper open={isOpen}>
+                  {filteredCities?.map((city) => (
+                    <Styles.SelectItem
+                      key={city.id + city.name}
+                      onClick={() => onClick(city.id, city.name)}
+                    >
+                      {city.name}
+                    </Styles.SelectItem>
+                  ))}
+                </Styles.SelectItemWrapper>
+              </Styles.Scroll>
+            </Styles.InputWrapper>
+          </>
         );
       }}
     </Field>

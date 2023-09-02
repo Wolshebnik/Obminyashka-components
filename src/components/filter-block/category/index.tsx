@@ -6,6 +6,7 @@ import { SubCategory } from './sub-category';
 
 export const Category = ({
   type,
+  getCities,
   categoryName,
   subCategories,
   hiddenCheckbox,
@@ -29,10 +30,12 @@ export const Category = ({
           {subCategories.map((subCategory, index) => (
             <SubCategory
               type={type}
+              getCities={getCities}
               categoryName={categoryName}
               key={index + subCategory.name}
               hiddenCheckbox={hiddenCheckbox}
               subCategoryName={subCategory.name}
+              containerName={subCategory.containerName}
             />
           ))}
         </Styles.SubCategories>

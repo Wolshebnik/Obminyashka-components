@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import SelectedInputField from '.';
 import { ButtonNew } from 'components/button-new';
-import { cities } from './mock';
+import { regions, cities } from './mock';
 
 const meta = {
   title: 'SelectedInputField',
@@ -26,7 +26,7 @@ export const SelectedInput: Story = {
     const getCities = async (id: string) => {
       alert(`пошел запрос с id ${id}`);
       await setTimeout(() => {
-        alert('ответ');
+        alert(`ответ по id ${id}`);
       }, 300);
 
       return cities;
@@ -50,7 +50,7 @@ export const SelectedInput: Story = {
           region: {
             id: '',
             inputValue: '',
-            location: cities,
+            location: regions,
           },
           city: {
             id: '',

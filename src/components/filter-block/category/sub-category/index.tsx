@@ -6,7 +6,9 @@ import * as Styles from '../../styles';
 
 export const SubCategory = ({
   type,
+  getCities,
   categoryName,
+  containerName,
   hiddenCheckbox,
   subCategoryName,
 }: ISubCategory) => {
@@ -14,8 +16,10 @@ export const SubCategory = ({
     <Styles.SubCategory type={type} hiddenCheckbox={hiddenCheckbox}>
       {type === 'input' ? (
         <SelectedInputField
+          getCities={getCities}
           name={subCategoryName}
           placeholder={subCategoryName}
+          containerName={containerName}
         />
       ) : (
         <CheckboxRadioField
