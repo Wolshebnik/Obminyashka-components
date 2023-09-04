@@ -9,7 +9,7 @@ import { ICategoryNav } from './types';
 const NavCategory = ({
   delay,
   isOpen,
-  setOpen,
+  // setOpen,
   childRef,
   categoryInfo = [],
 }: ICategoryNav) => {
@@ -34,7 +34,7 @@ const NavCategory = ({
             <Styles.NavbarLinkContainer
               to={link}
               key={text}
-              onClick={() => setOpen(false)}
+              // onClick={() => setOpen(false)}
               onMouseEnter={() => handleMouseEnter(index)}
             >
               <Styles.NavbarLinkBody>
