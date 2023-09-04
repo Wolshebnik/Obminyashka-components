@@ -9,6 +9,7 @@ import { ICategoryNav } from './types';
 const NavCategory = ({
   delay,
   isOpen,
+  setOpen,
   childRef,
   categoryInfo = [],
 }: ICategoryNav) => {
@@ -24,7 +25,7 @@ const NavCategory = ({
   };
 
   return (
-    <Styles.List ref={childRef} isOpen={isOpen} delay={delay}>
+    <Styles.List delay={delay} ref={childRef} isOpen={isOpen}>
       <Styles.Wrapper onMouseLeave={() => setVisibleSun(true)}>
         {categoryInfo.map(({ text, link }, index) => {
           const { img, sun } = images[index];
@@ -33,6 +34,7 @@ const NavCategory = ({
             <Styles.NavbarLinkContainer
               to={link}
               key={text}
+              onClick={() => setOpen(false)}
               onMouseEnter={() => handleMouseEnter(index)}
             >
               <Styles.NavbarLinkBody>
