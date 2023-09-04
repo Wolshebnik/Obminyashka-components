@@ -3,7 +3,8 @@ import * as Icon from '../../icon';
 import { ISearchProps } from '../types';
 
 const SearchInput = ({ value, onClick, ...props }: ISearchProps) => {
-  const isNotEmpty = (value as string).length !== 0;
+  // const isNotEmpty = (value as string).length !== 0;
+  const isNotEmpty = typeof value === 'string' && value.length !== 0;
 
   const inputCleaning = () => props.onChange && props.onChange('');
 
