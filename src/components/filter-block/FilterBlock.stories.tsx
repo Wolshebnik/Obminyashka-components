@@ -32,7 +32,6 @@ const onSubmit = (values: FormikValues) => {
     city: values.city.id,
   };
   alert(JSON.stringify(sendData));
-  console.log(sendData);
 };
 
 const Template = () => {

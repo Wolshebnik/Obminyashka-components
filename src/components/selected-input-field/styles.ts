@@ -24,6 +24,10 @@ export const SelectInput = styled.input<{ open: boolean }>`
   line-height: normal;
   outline: none;
   transition: all 0s ease;
+
+  &:disabled {
+    opacity: 0.5;
+  }
 `;
 
 export const Scroll = styled.div<{ open: boolean }>`

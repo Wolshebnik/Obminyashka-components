@@ -240,7 +240,6 @@ export const filterData: ICategoryData[] = [
       {
         id: '53',
         name: 'city',
-        containerName: 'city',
       },
     ],
   },

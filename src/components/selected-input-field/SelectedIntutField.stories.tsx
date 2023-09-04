@@ -1,8 +1,9 @@
 import { Formik, Form, FormikValues } from 'formik';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import SelectedInputField from '.';
 import { ButtonNew } from 'components/button-new';
+
+import SelectedInputField from '.';
 import { regions, cities } from './mock';
 
 const meta = {

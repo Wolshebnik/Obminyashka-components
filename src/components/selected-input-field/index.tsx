@@ -26,6 +26,14 @@ const SelectedInputField = ({
 
         const onBlur = () => {
           setIsOpen(false);
+
+          if (value.id === '') {
+            form.setFieldValue(name, {
+              ...value,
+              id: '',
+              inputValue: '',
+            });
+          }
         };
 
         const onClick = (id: string, city: string) => {
@@ -49,7 +57,7 @@ const SelectedInputField = ({
         };
 
         const setData = async () => {
-          if (!getCities || !containerName || name === 'city') return;
+          if (!getCities || !containerName) return;
 
           try {
             setIsLoading(true);
