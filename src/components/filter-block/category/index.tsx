@@ -4,7 +4,6 @@ import { useState } from 'react';
 import * as Styles from '../styles';
 import { ICategory } from '../types';
 import { SubCategory } from './sub-category';
-import { useParams } from 'react-router-dom';
 
 export const Category = ({
   type,
@@ -15,12 +14,8 @@ export const Category = ({
 }: ICategory) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const params = useParams();
-  console.log('params', params);
-
   return (
     <>
-      {params?.id === categoryName && setIsOpen(true)}
       <Styles.CategoryTitle
         isOpen={isOpen}
         onClick={() => {
