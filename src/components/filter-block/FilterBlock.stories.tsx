@@ -26,8 +26,21 @@ const getCities = async (id: string) => {
 };
 
 const onSubmit = (values: FormikValues) => {
+  const result: Record<string, string | string[]> = {};
+
+  for (const key in values) {
+    const value = values[key];
+
+    if (
+      (typeof value === 'string' && value !== '') ||
+      (Array.isArray(value) && value.length > 0)
+    ) {
+      result[key] = value;
+    }
+  }
+
   const sendData = {
-    ...values,
+    ...result,
     region: values.region.id,
     city: values.city.id,
   };
@@ -38,7 +51,11 @@ const Template = () => {
   return (
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
       <Form>
-        <FilterBlock title={'Categories'} categoryFilterData={categoryData} />
+        <FilterBlock
+          title={'Categories'}
+          categoryActive="Shoes"
+          categoryFilterData={categoryData}
+        />
         <div style={{ margin: '10px' }}></div>
         <FilterBlock
           title={'Filter'}

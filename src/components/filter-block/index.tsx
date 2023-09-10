@@ -5,6 +5,7 @@ import { ICategoryFilterData } from './types';
 export const FilterBlock = ({
   title,
   getCities,
+  categoryActive,
   categoryFilterData,
 }: ICategoryFilterData) => {
   return (
@@ -18,6 +19,7 @@ export const FilterBlock = ({
             getCities={getCities}
             key={index + category.name}
             categoryName={category.name}
+            categoryActive={categoryActive}
             subCategories={category.subCategories}
             hiddenCheckbox={category.hiddenCheckbox}
           />

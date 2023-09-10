@@ -30,6 +30,11 @@ export const CategoryTitle = styled.span<{ isOpen: boolean }>`
   font-size: 19px;
   line-height: normal;
   cursor: pointer;
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
 `;
 
 export const Categories = styled.div`

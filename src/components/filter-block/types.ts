@@ -3,6 +3,7 @@ type Types = 'radio' | 'checkbox' | 'input';
 export interface ICategory {
   type?: Types;
   categoryName: string;
+  categoryActive?: string;
   hiddenCheckbox?: boolean;
   subCategories: ISubCategoryData[];
   getCities?: (id: string) => Promise<ISubCategoryData[]>;
@@ -18,6 +19,7 @@ export interface ISubCategory {
 
 export interface ICategoryFilterData {
   title: string;
+  categoryActive?: string;
   categoryFilterData: ICategoryData[];
   getCities?: (id: string) => Promise<ISubCategoryData[]>;
 }
