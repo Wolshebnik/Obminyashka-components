@@ -23,7 +23,8 @@ export const cities = [
 export const categoryData: ICategoryData[] = [
   {
     id: '1',
-    name: 'clothes',
+    name: 'category',
+    title: 'clothes',
     hiddenCheckbox: true,
     subCategories: [
       {
@@ -66,7 +67,8 @@ export const categoryData: ICategoryData[] = [
   },
   {
     id: '2',
-    name: 'shoes',
+    name: 'category',
+    title: 'shoes',
     hiddenCheckbox: true,
     subCategories: [
       {
@@ -93,7 +95,8 @@ export const categoryData: ICategoryData[] = [
   },
   {
     id: '3',
-    name: 'toys',
+    name: 'category',
+    title: 'toys',
     hiddenCheckbox: true,
     subCategories: [
       {
@@ -120,7 +123,8 @@ export const categoryData: ICategoryData[] = [
   },
   {
     id: '4',
-    name: 'furniture',
+    name: 'category',
+    title: 'furniture',
     hiddenCheckbox: true,
     subCategories: [
       {
@@ -151,7 +155,8 @@ export const categoryData: ICategoryData[] = [
   },
   {
     id: '5',
-    name: 'transport for children',
+    name: 'category',
+    title: 'transport for children',
     hiddenCheckbox: true,
     subCategories: [
       {
@@ -170,7 +175,8 @@ export const categoryData: ICategoryData[] = [
   },
   {
     id: '6',
-    name: 'books',
+    name: 'category',
+    title: 'books',
     hiddenCheckbox: true,
     subCategories: [
       {
@@ -197,7 +203,8 @@ export const categoryData: ICategoryData[] = [
   },
   {
     id: '7',
-    name: 'carnival costumes',
+    name: 'category',
+    title: 'carnival costumes',
     hiddenCheckbox: true,
     subCategories: [
       {
@@ -220,7 +227,8 @@ export const categoryData: ICategoryData[] = [
   },
   {
     id: '8',
-    name: 'other',
+    name: 'category',
+    title: 'other',
     hiddenCheckbox: true,
     subCategories: [],
   },
@@ -230,6 +238,7 @@ export const filterData: ICategoryData[] = [
   {
     id: '9',
     name: 'location',
+    title: 'location',
     type: 'input',
     subCategories: [
       {
@@ -246,6 +255,7 @@ export const filterData: ICategoryData[] = [
   {
     id: '10',
     name: 'sex',
+    title: 'sex',
     type: 'radio',
     subCategories: [
       {
@@ -265,6 +275,7 @@ export const filterData: ICategoryData[] = [
   {
     id: '11',
     name: 'age',
+    title: 'age',
     type: 'checkbox',
     subCategories: [
       {
@@ -296,6 +307,7 @@ export const filterData: ICategoryData[] = [
   {
     id: '12',
     name: 'size(clothes)',
+    title: 'size(clothes)',
     type: 'checkbox',
     subCategories: [
       {
@@ -327,6 +339,7 @@ export const filterData: ICategoryData[] = [
   {
     id: '13',
     name: 'size(shoes)',
+    title: 'size(shoes)',
     type: 'checkbox',
     subCategories: [
       {
@@ -394,6 +407,7 @@ export const filterData: ICategoryData[] = [
   {
     id: '14',
     name: 'season',
+    title: 'season',
     type: 'checkbox',
     subCategories: [
       {

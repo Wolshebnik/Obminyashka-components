@@ -2,12 +2,14 @@ import { Field, FieldProps } from 'formik';
 
 import { IFilterCheckbox } from './types';
 import { CheckBox } from 'components/checkbox';
+import { useEffect } from 'react';
 
 export const CheckboxRadioField = ({
   name,
   type,
   label,
   hiddenCheckbox,
+  isOpenCategory,
 }: IFilterCheckbox) => {
   const isRadio = type === 'radio';
 
@@ -17,6 +19,12 @@ export const CheckboxRadioField = ({
         const isChecked = isRadio
           ? field.value === label
           : field.value.includes(label);
+
+        useEffect(() => {
+          if (hiddenCheckbox && !isOpenCategory) {
+            form.setFieldValue(name, '');
+          }
+        }, [isOpenCategory]);
 
         const onChange = () => {
           if (isRadio) {

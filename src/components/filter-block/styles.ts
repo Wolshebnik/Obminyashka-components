@@ -6,10 +6,6 @@ export const Card = styled.div`
   max-width: 334px;
   border-radius: 20px;
   border: 2px dashed #71c2da;
-
-  ${({ theme }) => css`
-    ${theme.responsive.isDesktop && css``}
-  `}
 `;
 
 export const Title = styled.span`
@@ -22,7 +18,7 @@ export const Title = styled.span`
   text-transform: uppercase;
 `;
 
-export const CategoryTitle = styled.span<{ isOpen: boolean }>`
+export const CategoryTitle = styled.span`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,11 +26,6 @@ export const CategoryTitle = styled.span<{ isOpen: boolean }>`
   font-size: 19px;
   line-height: normal;
   cursor: pointer;
-
-  &.disabled {
-    pointer-events: none;
-    opacity: 0.5;
-  }
 `;
 
 export const Categories = styled.div`

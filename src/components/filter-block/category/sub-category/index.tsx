@@ -10,6 +10,7 @@ export const SubCategory = ({
   categoryName,
   containerName,
   hiddenCheckbox,
+  isOpenCategory,
   subCategoryName,
 }: ISubCategory) => {
   return (
@@ -26,6 +27,7 @@ export const SubCategory = ({
           type={type}
           name={categoryName}
           label={subCategoryName}
+          isOpenCategory={isOpenCategory}
           hiddenCheckbox={hiddenCheckbox}
         />
       )}

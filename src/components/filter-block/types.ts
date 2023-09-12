@@ -2,9 +2,13 @@ type Types = 'radio' | 'checkbox' | 'input';
 
 export interface ICategory {
   type?: Types;
+  open: number;
   categoryName: string;
+  categoryIndex: number;
+  categoryBlock?: boolean;
   categoryActive?: string;
   hiddenCheckbox?: boolean;
+  setOpen: (num: number) => void;
   subCategories: ISubCategoryData[];
   getCities?: (id: string) => Promise<ISubCategoryData[]>;
 }
@@ -13,12 +17,14 @@ export interface ISubCategory {
   categoryName: string;
   containerName?: string;
   subCategoryName: string;
+  isOpenCategory: boolean;
   hiddenCheckbox?: boolean;
   getCities?: (id: string) => Promise<ISubCategoryData[]>;
 }
 
 export interface ICategoryFilterData {
   title: string;
+  categoryBlock?: boolean;
   categoryActive?: string;
   categoryFilterData: ICategoryData[];
   getCities?: (id: string) => Promise<ISubCategoryData[]>;
@@ -27,6 +33,7 @@ export interface ICategoryData {
   id: string;
   name: string;
   type?: Types;
+  title: string;
   hiddenCheckbox?: boolean;
   subCategories: ISubCategoryData[];
 }

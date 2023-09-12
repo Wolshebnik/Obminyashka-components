@@ -13,6 +13,10 @@ export const initialValues = {
   'size(clothes)': [],
   'carnival costumes': [],
   'transport for children': [],
+  // category: {
+  //   id: '',
+  //   subcategories: [],
+  // },
   region: {
     id: '',
     location: regions,

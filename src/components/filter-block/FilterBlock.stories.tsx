@@ -52,6 +52,7 @@ const Template = () => {
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
       <Form>
         <FilterBlock
+          categoryBlock
           title={'Categories'}
           categoryActive="Shoes"
           categoryFilterData={categoryData}
