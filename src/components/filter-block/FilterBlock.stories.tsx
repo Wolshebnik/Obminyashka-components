@@ -26,19 +26,6 @@ const getCities = async (id: string) => {
 };
 
 const onSubmit = (values: FormikValues) => {
-  // const result: Record<string, string | string[]> = {};
-
-  // for (const key in values) {
-  //   const value = values[key];
-
-  //   if (
-  //     (typeof value === 'string' && value !== '') ||
-  //     (Array.isArray(value) && value.length > 0)
-  //   ) {
-  //     result[key] = value;
-  //   }
-  // }
-
   const sendData = {
     ...values,
     category: {
