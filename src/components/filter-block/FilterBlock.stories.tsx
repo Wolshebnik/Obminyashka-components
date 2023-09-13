@@ -26,21 +26,25 @@ const getCities = async (id: string) => {
 };
 
 const onSubmit = (values: FormikValues) => {
-  const result: Record<string, string | string[]> = {};
+  // const result: Record<string, string | string[]> = {};
 
-  for (const key in values) {
-    const value = values[key];
+  // for (const key in values) {
+  //   const value = values[key];
 
-    if (
-      (typeof value === 'string' && value !== '') ||
-      (Array.isArray(value) && value.length > 0)
-    ) {
-      result[key] = value;
-    }
-  }
+  //   if (
+  //     (typeof value === 'string' && value !== '') ||
+  //     (Array.isArray(value) && value.length > 0)
+  //   ) {
+  //     result[key] = value;
+  //   }
+  // }
 
   const sendData = {
-    ...result,
+    ...values,
+    category: {
+      id: values.category.id,
+      subcategories: values.category.subcategories,
+    },
     region: values.region.id,
     city: values.city.id,
   };
@@ -54,7 +58,7 @@ const Template = () => {
         <FilterBlock
           categoryBlock
           title={'Categories'}
-          categoryActive="Shoes"
+          categoryActive="2"
           categoryFilterData={categoryData}
         />
         <div style={{ margin: '10px' }}></div>

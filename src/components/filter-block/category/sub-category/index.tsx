@@ -6,8 +6,10 @@ import * as Styles from '../../styles';
 
 export const SubCategory = ({
   type,
+  name,
   getCities,
-  categoryName,
+  categoryId,
+  subCategoryId,
   containerName,
   hiddenCheckbox,
   isOpenCategory,
@@ -25,8 +27,10 @@ export const SubCategory = ({
       ) : (
         <CheckboxRadioField
           type={type}
-          name={categoryName}
+          name={name}
+          categoryId={categoryId}
           label={subCategoryName}
+          subCategoryId={subCategoryId}
           isOpenCategory={isOpenCategory}
           hiddenCheckbox={hiddenCheckbox}
         />

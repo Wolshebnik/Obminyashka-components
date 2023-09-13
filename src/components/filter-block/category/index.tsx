@@ -8,9 +8,11 @@ import { SubCategory } from './sub-category';
 export const Category = ({
   type,
   open,
+  name,
+  title,
   setOpen,
   getCities,
-  categoryName,
+  categoryId,
   categoryIndex,
   subCategories,
   categoryBlock,
@@ -21,10 +23,7 @@ export const Category = ({
   const isOpenCategory = open === categoryIndex;
 
   useEffect(() => {
-    if (
-      categoryActive &&
-      categoryName.toLowerCase() === categoryActive.toLowerCase()
-    ) {
+    if (categoryActive && categoryId === categoryActive) {
       setOpen(categoryIndex);
     }
   }, []);
@@ -40,7 +39,7 @@ export const Category = ({
           }
         }}
       >
-        {categoryName}
+        {title}
         <Styles.Triangle isOpen={categoryBlock ? isOpenCategory : isOpen} />
       </Styles.CategoryTitle>
 
@@ -52,8 +51,10 @@ export const Category = ({
           {subCategories.map((subCategory, index) => (
             <SubCategory
               type={type}
+              name={name}
               getCities={getCities}
-              categoryName={categoryName}
+              categoryId={categoryId}
+              subCategoryId={subCategory.id}
               key={index + subCategory.name}
               isOpenCategory={isOpenCategory}
               hiddenCheckbox={hiddenCheckbox}

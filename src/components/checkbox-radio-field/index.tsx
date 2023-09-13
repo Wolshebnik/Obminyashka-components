@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { Field, FieldProps } from 'formik';
 
 import { IFilterCheckbox } from './types';
@@ -8,6 +9,8 @@ export const CheckboxRadioField = ({
   name,
   type,
   label,
+  categoryId,
+  subCategoryId,
   hiddenCheckbox,
   isOpenCategory,
 }: IFilterCheckbox) => {
@@ -18,11 +21,19 @@ export const CheckboxRadioField = ({
       {({ form, field }: FieldProps) => {
         const isChecked = isRadio
           ? field.value === label
-          : field.value.includes(label);
+          : (Array.isArray(field.value) &&
+              field.value.includes(subCategoryId)) ||
+            (typeof field.value === 'object' &&
+              Array.isArray(field.value.subcategories) &&
+              field.value.subcategories.includes(subCategoryId));
 
         useEffect(() => {
-          if (hiddenCheckbox && !isOpenCategory) {
-            form.setFieldValue(name, '');
+          if (typeof field.value === 'object' && !isOpenCategory) {
+            form.setFieldValue(name, { id: '', subcategories: [] });
+          }
+
+          if (Array.isArray(field.value)) {
+            form.setFieldValue(name, []);
           }
         }, [isOpenCategory]);
 
@@ -32,12 +43,41 @@ export const CheckboxRadioField = ({
             return;
           }
 
-          if (!isChecked) form.setFieldValue(name, [...field.value, label]);
+          if (!isChecked) {
+            if (typeof field.value === 'object') {
+              form.setFieldValue(name, {
+                id: categoryId,
+                subcategories: [
+                  ...(field.value.subcategories || []),
+                  subCategoryId,
+                ],
+              });
+            }
 
-          if (isChecked)
-            form.setFieldValue(name, [
-              ...field.value.filter((item: string) => item !== label),
-            ]);
+            if (Array.isArray(field.value)) {
+              form.setFieldValue(name, [...field.value, subCategoryId]);
+            }
+          }
+
+          if (isChecked) {
+            if (typeof field.value === 'object') {
+              form.setFieldValue(name, {
+                id: categoryId,
+                subcategories: [
+                  ...(field.value.subcategories || []).filter(
+                    (id: string) => id !== subCategoryId
+                  ),
+                ],
+              });
+            }
+
+            if (Array.isArray(field.value)) {
+              form.setFieldValue(
+                name,
+                field.value.filter((id: string) => id !== subCategoryId)
+              );
+            }
+          }
         };
 
         return (

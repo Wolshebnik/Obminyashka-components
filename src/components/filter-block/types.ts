@@ -3,7 +3,9 @@ type Types = 'radio' | 'checkbox' | 'input';
 export interface ICategory {
   type?: Types;
   open: number;
-  categoryName: string;
+  name: string;
+  title: string;
+  categoryId: string;
   categoryIndex: number;
   categoryBlock?: boolean;
   categoryActive?: string;
@@ -14,7 +16,9 @@ export interface ICategory {
 }
 export interface ISubCategory {
   type?: Types;
-  categoryName: string;
+  name: string;
+  categoryId: string;
+  subCategoryId: string;
   containerName?: string;
   subCategoryName: string;
   isOpenCategory: boolean;

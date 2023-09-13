@@ -22,11 +22,13 @@ export const FilterBlock = ({
           <Category
             open={open}
             setOpen={setOpen}
+            name={category.name}
             type={category.type}
             categoryIndex={index}
             getCities={getCities}
+            title={category.title}
+            categoryId={category.id}
             key={index + category.name}
-            categoryName={category.name}
             categoryBlock={categoryBlock}
             categoryActive={categoryActive}
             subCategories={category.subCategories}

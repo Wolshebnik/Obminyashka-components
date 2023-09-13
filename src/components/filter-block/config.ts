@@ -3,20 +3,13 @@ import { regions } from './mock';
 export const initialValues = {
   age: [],
   sex: '',
-  toys: [],
-  books: [],
-  shoes: [],
   season: [],
-  clothes: [],
-  furniture: [],
   'size(shoes)': [],
   'size(clothes)': [],
-  'carnival costumes': [],
-  'transport for children': [],
-  // category: {
-  //   id: '',
-  //   subcategories: [],
-  // },
+  category: {
+    id: '',
+    subcategories: [],
+  },
   region: {
     id: '',
     location: regions,

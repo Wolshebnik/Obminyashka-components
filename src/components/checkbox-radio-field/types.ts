@@ -1,5 +1,4 @@
 export interface FormValues {
-  text: string;
   gender: string;
   size: string[];
 }
@@ -7,6 +6,8 @@ export interface FormValues {
 export interface IFilterCheckbox {
   name: string;
   label: string;
+  categoryId: string;
+  subCategoryId: string;
   isOpenCategory?: boolean;
   hiddenCheckbox?: boolean;
   type?: 'checkbox' | 'radio' | 'input';
