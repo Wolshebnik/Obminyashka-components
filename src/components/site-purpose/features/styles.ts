@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import * as Animation from '../animation';
+
 const textStyles = css`
   font-size: 35px;
   font-weight: 400;
@@ -10,8 +12,11 @@ const textStyles = css`
 
 export const FeaturesSection = styled.div`
   position: absolute;
+  /* bottom: -100%; */
+  bottom: 0;
   width: 100%;
   height: 100%;
+  /* animation: ${Animation.featuresAnimation} 15s infinite; */
 `;
 
 export const FirstFeatures = styled.div``;
@@ -24,6 +29,14 @@ export const Furniture = styled.img`
   height: 332px;
 `;
 
+// export const FirstBlock = styled.div`
+//   position: absolute;
+//   bottom: 104px;
+//   left: 20%;
+//   width: 428px;
+//   height: 342px;
+// `;
+
 export const ThingsText = styled.p`
   ${textStyles};
 
@@ -33,6 +46,13 @@ export const ThingsText = styled.p`
   width: 280px;
   height: 122px;
   z-index: 1;
+  animation: ${Animation.stretchAndFall} 0.5s forwards;
+  /* position: relative;
+  top: 0;
+  left: 24%;
+  width: 280px;
+  height: 122px;
+  z-index: 1; */
 `;
 
 export const FirstKeg = styled.img`
@@ -41,6 +61,13 @@ export const FirstKeg = styled.img`
   left: 20%;
   width: 428px;
   height: 220px;
+  animation: ${Animation.stretchAndFall} 0.5s forwards;
+  /* position: absolute;
+  top: 140px;
+  left: 7%;
+  width: 280px;
+  height: 122px;
+  z-index: 1; */
 `;
 
 export const SecondFeatures = styled.div``;
@@ -61,6 +88,7 @@ export const RegText = styled.p`
   left: 41%;
   width: 370px;
   height: 124px;
+  animation: ${Animation.stretchAndFall} 0.5s forwards 0.5s;
 `;
 
 export const SecondKeg = styled.img`
@@ -70,6 +98,7 @@ export const SecondKeg = styled.img`
   width: 428px;
   height: 300px;
   z-index: -1;
+  animation: ${Animation.stretchAndFall} 0.5s forwards 0.5s;
 `;
 
 export const ThirdFeatures = styled.div``;
@@ -90,6 +119,7 @@ export const TradeText = styled.p`
   top: 57%;
   width: 383px;
   height: 157px;
+  animation: ${Animation.stretchAndFall} 0.5s forwards 1s;
 `;
 
 export const ThirdKeg = styled.img`
@@ -98,4 +128,5 @@ export const ThirdKeg = styled.img`
   left: 61%;
   width: 428px;
   height: 220px;
+  animation: ${Animation.stretchAndFall} 0.5s forwards 1s;
 `;

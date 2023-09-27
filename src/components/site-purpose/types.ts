@@ -5,3 +5,8 @@ export interface ISitePurpose {
   thingsText: string;
   showRainbow?: boolean;
 }
+
+export interface IAnimation {
+  isHide: boolean;
+  showRainbow: boolean;
+}
