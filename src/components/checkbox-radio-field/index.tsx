@@ -29,7 +29,11 @@ export const CheckboxRadioField = ({
 
         useEffect(() => {
           if (typeof field.value === 'object' && !isOpenCategory) {
-            form.setFieldValue(name, { id: '', subcategories: [] });
+            form.setFieldValue(name, {
+              id: '',
+              subcategories: [],
+              activeCategory: form.values.category.activeCategory,
+            });
           }
 
           if (Array.isArray(field.value)) {
@@ -51,6 +55,7 @@ export const CheckboxRadioField = ({
                   ...(field.value.subcategories || []),
                   subCategoryId,
                 ],
+                activeCategory: categoryId,
               });
             }
 
@@ -62,12 +67,13 @@ export const CheckboxRadioField = ({
           if (isChecked) {
             if (typeof field.value === 'object') {
               form.setFieldValue(name, {
-                id: categoryId,
+                id: field.value.subcategories?.length === 0 ? categoryId : '',
                 subcategories: [
                   ...(field.value.subcategories || []).filter(
                     (id: string) => id !== subCategoryId
                   ),
                 ],
+                activeCategory: form.values.category.activeCategory,
               });
             }
 

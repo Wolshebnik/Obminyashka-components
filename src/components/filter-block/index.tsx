@@ -1,8 +1,7 @@
-import { useState } from 'react';
-
 import * as Styles from './styles';
 import { Category } from './category';
 import { ICategoryFilterData } from './types';
+import { useState } from 'react';
 
 export const FilterBlock = ({
   title,
@@ -11,7 +10,7 @@ export const FilterBlock = ({
   categoryActive,
   categoryFilterData,
 }: ICategoryFilterData) => {
-  const [open, setOpen] = useState<number>(-1);
+  const [openCategory, setOpenCategory] = useState<string[]>([]);
 
   return (
     <Styles.Card>
@@ -20,11 +19,10 @@ export const FilterBlock = ({
       <Styles.Categories>
         {categoryFilterData.map((category, index) => (
           <Category
-            open={open}
-            setOpen={setOpen}
+            openCategory={openCategory}
+            setOpenCategory={setOpenCategory}
             name={category.name}
             type={category.type}
-            categoryIndex={index}
             getCities={getCities}
             title={category.title}
             categoryId={category.id}

@@ -9,6 +9,7 @@ export const initialValues = {
   category: {
     id: '',
     subcategories: [],
+    activeCategory: '',
   },
   region: {
     id: '',

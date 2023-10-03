@@ -11,6 +11,7 @@ const buttonBlue = '#12b6ed';
 const buttonBlueActive = '#0094ff';
 const buttonBlueHover = '#00bfff';
 const curiousBlue = `#29A5D4`;
+const charlotte = `#b8e9fa`;
 const endeavour = '#0666ab';
 const foam = `#d9f6fd`;
 const footerBlue = '#3DB4D7';
@@ -276,6 +277,20 @@ const logo = Object.freeze({
   blue: buttonBlue,
 });
 
+const categoryFilter = Object.freeze({
+  border: viking,
+  hiddenCheckbox: {
+    bgChecked: aquamarineBlue,
+    bgNoCheckedHover: charlotte,
+  },
+  title: curiousBlue,
+  triangle: aquamarineBlue,
+  scrollBgGrey: alto,
+  scrollBgBlue: viking,
+  locationBorder: aquamarineBlue,
+  inputBorderBottom: alto,
+});
+
 const modalColors = Object.freeze({
   background: modalBackground,
   cross: crossBtn,
@@ -319,6 +334,7 @@ const COLORS = Object.freeze({
   inboxMessage,
   searchResult,
   newTextColors,
+  categoryFilter,
   buttonGradient,
   ellipsisShadow,
   productOwnerData,

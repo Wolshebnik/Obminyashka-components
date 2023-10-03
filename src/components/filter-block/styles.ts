@@ -5,12 +5,12 @@ export const Card = styled.div`
   min-width: 300px;
   max-width: 334px;
   border-radius: 20px;
-  border: 2px dashed #71c2da;
+  border: 2px dashed ${({ theme }) => theme.colors.categoryFilter.border};
 `;
 
 export const Title = styled.span`
   margin-left: 7px;
-  color: #29a5d4;
+  color: ${({ theme }) => theme.colors.categoryFilter.title};
   font-size: 19px;
   font-style: normal;
   font-weight: 700;
@@ -18,7 +18,9 @@ export const Title = styled.span`
   text-transform: uppercase;
 `;
 
-export const CategoryTitle = styled.span`
+export const CategoryTitle = styled.span<{
+  disabled: boolean;
+}>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,12 +28,21 @@ export const CategoryTitle = styled.span`
   font-size: 19px;
   line-height: normal;
   cursor: pointer;
+
+  ${({ disabled }) => css`
+    ${disabled &&
+    css`
+      opacity: 0.4;
+      pointer-events: none;
+    `}
+  `}
 `;
 
 export const Categories = styled.div`
   padding: 20px 0 0 11px;
   margin-top: 10px;
-  border-top: 1px solid #d1d1d1;
+  border-top: 1px solid
+    ${({ theme }) => theme.colors.categoryFilter.scrollBgGrey};
 `;
 
 export const Triangle = styled.span<{ isOpen: boolean }>`
@@ -40,10 +51,10 @@ export const Triangle = styled.span<{ isOpen: boolean }>`
   border: 0 solid transparent;
   border-left-width: 8px;
   border-right-width: 8px;
-  border-top: 10px solid #71c2da;
   transition: all 0.4s ease;
 
-  ${({ isOpen }) => css`
+  ${({ theme, isOpen }) => css`
+    border-top: 10px solid ${theme.colors.categoryFilter.triangle};
     transform: ${isOpen && `rotate(180deg)`};
   `}
 `;
@@ -52,19 +63,19 @@ export const ScrollWrapper = styled.div<{ type?: string }>`
   max-height: 300px;
   overflow-y: auto;
 
-  ${({ type }) => css`
+  ${({ theme, type }) => css`
     &::-webkit-scrollbar {
       width: 5px;
       border-radius: 10px;
       border: 1px solid white;
-      background: #d9d9d9;
+      background: ${theme.colors.categoryFilter.scrollBgGrey};
       opacity: 0;
     }
 
     &::-webkit-scrollbar-thumb {
       height: 100px;
       border-radius: 10px;
-      background: #71c2da;
+      background: ${theme.colors.categoryFilter.scrollBgBlue};
       opacity: 0;
     }
 
@@ -122,7 +133,6 @@ export const SubCategory = styled.div<{
   position: relative;
   display: flex;
   margin: 0;
-  color: #777;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -130,6 +140,8 @@ export const SubCategory = styled.div<{
   cursor: pointer;
 
   ${({ theme, type, hiddenCheckbox }) => css`
+    color: ${theme.colors.colorGrey};
+
     ${theme.responsive.isDesktop &&
     css`
       font-size: 16px;

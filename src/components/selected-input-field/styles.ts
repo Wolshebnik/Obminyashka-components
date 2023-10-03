@@ -1,14 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const InputWrapper = styled.div<{ open: boolean }>`
   box-sizing: border-box;
-  padding: ${({ open }) => (open ? '0 15px 27px' : '0 15px')};
   margin-right: 16px;
   width: 300px;
   border-radius: 5px;
-  border: 2px dashed #7ecde4;
-  background: #fff;
   transition: all 0.4s 0.2s ease;
+
+  ${({ theme, open }) => css`
+    background: ${theme.colors.white};
+    padding: ${open ? '0 15px 27px' : '0 15px'};
+    border: 2px dashed ${theme.colors.categoryFilter.locationBorder};
+  `}
 `;
 
 export const SelectInput = styled.input<{ open: boolean }>`
@@ -16,8 +19,6 @@ export const SelectInput = styled.input<{ open: boolean }>`
   padding: 10px 0;
   width: 100%;
   border: none;
-  border-bottom: ${({ open }) => open && '2px solid #d1d1d1'};
-  color: #777;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -25,29 +26,38 @@ export const SelectInput = styled.input<{ open: boolean }>`
   outline: none;
   transition: all 0s ease;
 
-  &:disabled {
-    opacity: 0.5;
-  }
+  ${({ theme, open }) => css`
+    border-bottom: ${open &&
+    `2px solid ${theme.colors.categoryFilter.inputBorderBottom}`};
+    color: ${theme.colors.colorGrey};
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  `}
 `;
 
 export const Scroll = styled.div<{ open: boolean }>`
-  margin-top: ${({ open }) => open && '18px'};
   max-height: 160px;
   overflow-y: auto;
   transition: all 0.4s 0.2s ease;
 
-  &::-webkit-scrollbar {
-    width: 5px;
-    border-radius: 10px;
-    border: 1px solid white;
-    background: #d9d9d9;
-  }
+  ${({ theme, open }) => css`
+    margin-top: ${open && '18px'};
 
-  &::-webkit-scrollbar-thumb {
-    height: 100px;
-    border-radius: 10px;
-    background: #71c2da;
-  }
+    &::-webkit-scrollbar {
+      width: 5px;
+      border-radius: 10px;
+      border: 1px solid white;
+      background: ${theme.colors.categoryFilter.scrollBgGrey};
+    }
+
+    &::-webkit-scrollbar-thumb {
+      height: 100px;
+      border-radius: 10px;
+      background: ${theme.colors.categoryFilter.scrollBgBlue};
+    }
+  `}
 `;
 
 export const SelectItemWrapper = styled.div<{ open: boolean }>`
@@ -58,7 +68,7 @@ export const SelectItemWrapper = styled.div<{ open: boolean }>`
 
 export const SelectItem = styled.div`
   margin: 16px 0;
-  color: #777;
+  color: ${({ theme }) => theme.colors.colorGrey};
   font-size: 16px;
   font-style: normal;
   font-weight: 400;

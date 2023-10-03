@@ -2,16 +2,15 @@ type Types = 'radio' | 'checkbox' | 'input';
 
 export interface ICategory {
   type?: Types;
-  open: number;
   name: string;
   title: string;
   categoryId: string;
-  categoryIndex: number;
+  openCategory: string[];
   categoryBlock?: boolean;
   categoryActive?: string;
   hiddenCheckbox?: boolean;
-  setOpen: (num: number) => void;
   subCategories: ISubCategoryData[];
+  setOpenCategory: (str: string[]) => void;
   getCities?: (id: string) => Promise<ISubCategoryData[]>;
 }
 export interface ISubCategory {

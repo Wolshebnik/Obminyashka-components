@@ -76,7 +76,7 @@ export const Label = styled.label<LabelArg>`
       margin: 0 16px 4px 12px;
       width: 100%;
       border-radius: 5px;
-      color: #777;
+      color: ${theme.colors.colorGrey};
       font-size: 14px;
       font-style: normal;
       font-weight: 400;
@@ -92,20 +92,22 @@ export const Label = styled.label<LabelArg>`
 
       ${checked &&
       css`
-        background: #7ecde4;
+        background: ${theme.colors.categoryFilter.hiddenCheckbox.bgChecked};
         color: ${theme.colors.white};
       `}
 
       ${!checked &&
       css`
         &:hover {
-          background: #b8e9fa;
+          background: ${theme.colors.categoryFilter.hiddenCheckbox
+            .bgNoCheckedHover};
           color: black;
         }
 
         &:has(${Cross}):hover {
           ${Cross}::before, ${Cross}::after {
-            background: #b8e9fa;
+            background: ${theme.colors.categoryFilter.hiddenCheckbox
+              .bgNoCheckedHover};
           }
         }
       `}

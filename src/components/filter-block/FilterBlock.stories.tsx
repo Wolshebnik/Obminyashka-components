@@ -7,6 +7,7 @@ import { FilterBlock } from '.';
 import { initialValues } from './config';
 import { ButtonNew } from 'components/button-new';
 import { categoryData, cities, filterData } from './mock';
+// import { useState } from 'react';
 
 const meta = {
   title: 'FilterBlock',
@@ -44,8 +45,8 @@ const Template = () => {
       <Form>
         <FilterBlock
           categoryBlock
-          title={'Categories'}
           categoryActive="2"
+          title={'Categories'}
           categoryFilterData={categoryData}
         />
         <div style={{ margin: '10px' }}></div>
