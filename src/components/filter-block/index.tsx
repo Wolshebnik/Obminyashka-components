@@ -19,16 +19,16 @@ export const FilterBlock = ({
       <Styles.Categories>
         {categoryFilterData.map((category, index) => (
           <Category
-            openCategory={openCategory}
-            setOpenCategory={setOpenCategory}
             name={category.name}
             type={category.type}
             getCities={getCities}
             title={category.title}
             categoryId={category.id}
+            openCategory={openCategory}
             key={index + category.name}
             categoryBlock={categoryBlock}
             categoryActive={categoryActive}
+            setOpenCategory={setOpenCategory}
             subCategories={category.subCategories}
             hiddenCheckbox={category.hiddenCheckbox}
           />
