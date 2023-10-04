@@ -1,3 +1,4 @@
+//TODO make one state per category and filter
 import { useEffect, useState } from 'react';
 
 import * as Styles from '../styles';
@@ -50,16 +51,11 @@ export const Category = ({
         }, []);
 
         useEffect(() => {
-          if (form.values.category.activeCategory !== '1') {
+          if (isDisabled) {
             if (!categoryBlock) {
-              setOpenCategory([...openCategory.filter((id) => id !== '12')]);
+              setIsOpenFilter(false);
             }
-          }
-
-          if (form.values.category.activeCategory !== '2') {
-            if (!categoryBlock) {
-              setOpenCategory([...openCategory.filter((id) => id !== '13')]);
-            }
+            form.setFieldValue(name, []);
           }
         }, [form.values.category.activeCategory]);
 
@@ -77,16 +73,10 @@ export const Category = ({
               });
             }
           } else {
-            //TODO make one state per category and filter
-            // if (!open.includes(categoryId)) {
-            //   setOpen([...open, categoryId]);
-            // } else {
-            //   setOpen([...open.filter((id) => id !== categoryId)]);
-            // }
-            // console.log('Hi');
             setIsOpenFilter(!isOpenFilter);
           }
         };
+
         return (
           <>
             <Styles.CategoryTitle disabled={isDisabled} onClick={handleClick}>
