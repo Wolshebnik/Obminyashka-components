@@ -12,14 +12,18 @@ const textStyles = css`
 
 export const FeaturesSection = styled.div`
   position: absolute;
-  /* bottom: -100%; */
-  bottom: 0;
+  bottom: -100%;
+  /* bottom: 0; */
   width: 100%;
   height: 100%;
-  /* animation: ${Animation.featuresAnimation} 15s infinite; */
+  animation: ${Animation.featuresAnimation} 15s infinite;
 `;
 
-export const FirstFeatures = styled.div``;
+export const FirstFeatures = styled.div`
+  /* position: absolute;
+  bottom: -100%;
+  animation: ${Animation.featuresAnimation} 15s infinite; */
+`;
 
 export const Furniture = styled.img`
   position: absolute;
@@ -27,47 +31,34 @@ export const Furniture = styled.img`
   left: 19%;
   width: 276px;
   height: 332px;
+  animation: ${Animation.appearanceFirstImages} 15s infinite;
 `;
 
-// export const FirstBlock = styled.div`
-//   position: absolute;
-//   bottom: 104px;
-//   left: 20%;
-//   width: 428px;
-//   height: 342px;
-// `;
+export const FirstBlock = styled.div`
+  position: absolute;
+  /* bottom: -100%; */
+  bottom: 104px;
+  left: 20%;
+  width: 428px;
+  height: 342px;
+  animation: ${Animation.stretchFirstColumn} 15s infinite;
+`;
 
 export const ThingsText = styled.p`
   ${textStyles};
 
-  position: absolute;
-  top: 63%;
-  left: 24%;
-  width: 280px;
-  height: 122px;
-  z-index: 1;
-  animation: ${Animation.stretchAndFall} 0.5s forwards;
-  /* position: relative;
+  position: relative;
   top: 0;
   left: 24%;
   width: 280px;
   height: 122px;
-  z-index: 1; */
+  z-index: 1;
 `;
 
 export const FirstKeg = styled.img`
   position: absolute;
-  top: 74%;
-  left: 20%;
-  width: 428px;
-  height: 220px;
-  animation: ${Animation.stretchAndFall} 0.5s forwards;
-  /* position: absolute;
   top: 140px;
-  left: 7%;
-  width: 280px;
-  height: 122px;
-  z-index: 1; */
+  left: 0%;
 `;
 
 export const SecondFeatures = styled.div``;
@@ -78,27 +69,31 @@ export const Laptop = styled.img`
   left: 42%;
   width: 318px;
   height: 270px;
+  animation: ${Animation.appearanceSecondImages} 15s infinite;
+`;
+
+export const SecondBlock = styled.div`
+  position: absolute;
+  top: 67%;
+  left: 40%;
+  width: 428px;
+  height: 342px;
+  animation: ${Animation.stretchSecondColumn} 15s infinite;
 `;
 
 export const RegText = styled.p`
   ${textStyles};
 
   position: absolute;
-  top: 56%;
-  left: 41%;
+  top: -36%;
+  left: 6%;
   width: 370px;
   height: 124px;
-  animation: ${Animation.stretchAndFall} 0.5s forwards 0.5s;
 `;
 
 export const SecondKeg = styled.img`
   position: absolute;
-  top: 67%;
-  left: 40%;
-  width: 428px;
-  height: 300px;
   z-index: -1;
-  animation: ${Animation.stretchAndFall} 0.5s forwards 0.5s;
 `;
 
 export const ThirdFeatures = styled.div``;
@@ -109,24 +104,28 @@ export const Toys = styled.img`
   left: 69%;
   width: 273px;
   height: 235px;
+  animation: ${Animation.appearanceThirdImages} 15s infinite;
+`;
+
+export const ThirdBlock = styled.div`
+  position: absolute;
+  top: 72%;
+  left: 61%;
+  width: 428px;
+  height: 342px;
+  animation: ${Animation.stretchThirdColumn} 15s infinite;
 `;
 
 export const TradeText = styled.p`
   ${textStyles};
 
   position: absolute;
-  left: 62%;
-  top: 57%;
+  left: 7%;
+  bottom: 103%;
   width: 383px;
   height: 157px;
-  animation: ${Animation.stretchAndFall} 0.5s forwards 1s;
 `;
 
 export const ThirdKeg = styled.img`
   position: absolute;
-  top: 72%;
-  left: 61%;
-  width: 428px;
-  height: 220px;
-  animation: ${Animation.stretchAndFall} 0.5s forwards 1s;
 `;
