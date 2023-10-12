@@ -49,7 +49,9 @@ const Template = () => {
           title={'Categories'}
           categoryFilterData={categoryData}
         />
+
         <div style={{ margin: '10px' }}></div>
+
         <FilterBlock
           title={'Filter'}
           getCities={getCities}
