@@ -102,7 +102,7 @@ export const SubCategories = styled.div<{
   transition: all 0.4s ease;
 
   ${({ isOpen, type }) => css`
-    max-height: ${isOpen ? '1000px' : '0'};
+    max-height: ${isOpen ? '2000px' : '0'};
 
     ${type !== 'checkbox' &&
     type !== 'input' &&

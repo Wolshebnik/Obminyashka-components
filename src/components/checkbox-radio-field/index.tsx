@@ -26,7 +26,7 @@ export const CheckboxRadioField = ({
               field.value.includes(paramToSet || label)) ||
             (typeof field.value === 'object' &&
               Array.isArray(field.value.subcategories) &&
-              field.value.subcategories.includes(paramToSet || label));
+              field.value.subcategories.includes(subCategoryId));
 
         useEffect(() => {
           if (typeof field.value === 'object' && !isOpenCategory) {
