@@ -37,10 +37,10 @@ export const CheckBox = ({
         {...props}
       />
 
-      <Icon.Check />
+      {checked && <Icon.Check />}
     </Styles.Checkbox>
 
     {text && <span>{text}</span>}
-    {hiddenCheckbox && <Styles.Cross />}
+    {hiddenCheckbox && checked && <Styles.Cross />}
   </Styles.Label>
 );
