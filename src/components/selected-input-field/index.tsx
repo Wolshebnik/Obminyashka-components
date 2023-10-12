@@ -62,7 +62,7 @@ const SelectedInputField = ({
           try {
             setIsLoading(true);
 
-            const response = await getCities(value.id);
+            const response = await getCities(value.id ? value.id : '');
 
             form.setFieldValue(containerName, {
               ...form.values.city,
@@ -121,7 +121,7 @@ const SelectedInputField = ({
                   {filteredCities?.map((city) => (
                     <Styles.SelectItem
                       key={city.id + city.name}
-                      onClick={() => onClick(city.id, city.name)}
+                      onClick={() => onClick(city.id ? city.id : '', city.name)}
                     >
                       {city.name}
                     </Styles.SelectItem>

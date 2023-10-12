@@ -4,7 +4,7 @@ export interface ICategory {
   type?: Types;
   name: string;
   title: string;
-  categoryId: string;
+  categoryId?: string;
   openCategory: string[];
   categoryBlock?: boolean;
   categoryActive?: string;
@@ -16,8 +16,9 @@ export interface ICategory {
 export interface ISubCategory {
   type?: Types;
   name: string;
-  categoryId: string;
-  subCategoryId: string;
+  categoryId?: string;
+  paramToSet?: string;
+  subCategoryId?: string;
   containerName?: string;
   subCategoryName: string;
   isOpenCategory: boolean;
@@ -33,7 +34,7 @@ export interface ICategoryFilterData {
   getCities?: (id: string) => Promise<ISubCategoryData[]>;
 }
 export interface ICategoryData {
-  id: string;
+  id?: string;
   name: string;
   type?: Types;
   title: string;
@@ -42,8 +43,9 @@ export interface ICategoryData {
 }
 
 export interface ISubCategoryData {
-  id: string;
+  id?: string;
   name: string;
+  paramToSet?: string;
   containerName?: string;
 }
 

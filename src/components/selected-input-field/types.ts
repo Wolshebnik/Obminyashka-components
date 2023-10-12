@@ -6,6 +6,6 @@ export interface ISelectedInput {
 }
 
 export interface ICityData {
-  id: string;
+  id?: string;
   name: string;
 }

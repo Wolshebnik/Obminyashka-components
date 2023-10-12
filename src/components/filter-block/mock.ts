@@ -253,174 +253,167 @@ export const filterData: ICategoryData[] = [
     ],
   },
   {
-    id: '10',
     name: 'sex',
     title: 'sex',
     type: 'radio',
     subCategories: [
       {
-        id: '54',
         name: 'Boy',
+        paramToSet: 'MALE',
       },
       {
-        id: '55',
         name: 'Girl',
+        paramToSet: 'FEMALE',
       },
       {
-        id: '56',
         name: 'Will suit everyone',
+        paramToSet: 'UNSELECTED',
       },
     ],
   },
   {
-    id: '11',
     name: 'age',
     title: 'age',
     type: 'checkbox',
     subCategories: [
       {
-        id: '57',
         name: '0',
       },
       {
-        id: '58',
         name: '1 - 2',
       },
       {
-        id: '59',
         name: '2 - 4',
       },
       {
-        id: '60',
         name: '5 - 7',
       },
       {
-        id: '61',
         name: '8 - 11',
       },
       {
-        id: '62',
         name: '11 - 14',
       },
     ],
   },
   {
-    id: '12',
     name: 'size(clothes)',
     title: 'size(clothes)',
     type: 'checkbox',
     subCategories: [
       {
-        id: '63',
-        name: '50 -80 см',
+        name: '50 - 80 cm',
+        paramToSet: '50 - 80',
       },
       {
-        id: '64',
-        name: '80 -92 см',
+        name: '80 - 92 cm',
+        paramToSet: '80 - 92',
       },
       {
-        id: '65',
-        name: '92 - 110 см',
+        name: '92 - 110 cm',
+        paramToSet: '92 - 110',
       },
       {
-        id: '66',
-        name: '110 - 122 см',
+        name: '110 - 122 cm',
+        paramToSet: '110 - 122',
       },
       {
-        id: '67',
-        name: '122 - 146 см',
+        name: '122 - 146 cm',
+        paramToSet: '122 - 146',
       },
       {
-        id: '68',
-        name: '146 - 164 см',
+        name: '146 - 164 cm',
+        paramToSet: '146 - 164',
       },
     ],
   },
   {
-    id: '13',
     name: 'size(shoes)',
     title: 'size(shoes)',
     type: 'checkbox',
     subCategories: [
       {
-        id: '69',
-        name: '9,5 см - 16',
+        name: '9,5 - 16 cm',
+        paramToSet: '9,5 - 16',
       },
       {
-        id: '70',
-        name: '10 см - 16,5',
+        name: '10 - 16,5 cm',
+        paramToSet: '10 - 16,5',
       },
       {
-        id: '71',
-        name: '10,5 см - 17',
+        name: '10,5 - 17 cm',
+        paramToSet: '10,5 - 17',
       },
       {
-        id: '72',
-        name: '11 см - 18',
+        name: '11 - 18 cm',
+        paramToSet: '11 - 18',
       },
       {
-        id: '73',
-        name: '11,5 см - 19',
+        name: '11,5 - 19 cm',
+        paramToSet: '11,5 - 19',
       },
       {
-        id: '74',
-        name: '12 см - 20',
+        name: '12 - 20 cm',
+        paramToSet: '12 - 20',
       },
       {
-        id: '75',
-        name: '12,5 см - 21',
+        name: '12,5 - 21 cm',
+        paramToSet: '12,5 - 21',
       },
       {
-        id: '76',
-        name: '13 см - 22',
+        name: '13 - 22 cm',
+        paramToSet: '13 - 22',
       },
       {
-        id: '77',
-        name: '13,5 см - 23',
+        name: '13,5 - 23 cm',
+        paramToSet: '13,5 - 23',
       },
       {
-        id: '78',
-        name: '14 см - 24',
+        name: '14 - 24 cm',
+        paramToSet: '14 - 24',
       },
       {
-        id: '79',
-        name: '14,5 см - 25',
+        name: '14,5 - 25 cm',
+        paramToSet: '14,5 - 25',
       },
       {
-        id: '80',
-        name: '15 см - 26',
+        name: '15 - 26 cm',
+        paramToSet: '15 - 26',
       },
       {
-        id: '81',
-        name: '15,5 см - 27',
+        name: '15,5 - 27 cm',
+        paramToSet: '15,5 - 27',
       },
       {
-        id: '82',
-        name: '16 см - 28',
+        name: '16 - 28 cm',
+        paramToSet: '16 - 28',
       },
       {
-        id: '83',
-        name: '16,5 см - 29',
+        name: '16,5 - 29 cm',
+        paramToSet: '16,5 - 29',
       },
     ],
   },
   {
-    id: '14',
     name: 'season',
     title: 'season',
     type: 'checkbox',
     subCategories: [
       {
-        id: '84',
         name: 'Demi-season',
+        paramToSet: 'DEMI_SEASON',
       },
       {
-        id: '85',
         name: 'Summer',
+        paramToSet: 'SUMMER',
       },
       {
-        id: '86',
         name: 'Winter',
+        paramToSet: 'WINTER',
+      },
+      {
+        name: 'All seasons',
+        paramToSet: 'NO_SEASONS',
       },
     ],
   },

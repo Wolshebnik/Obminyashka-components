@@ -6,8 +6,9 @@ export interface FormValues {
 export interface IFilterCheckbox {
   name: string;
   label: string;
-  categoryId: string;
-  subCategoryId: string;
+  categoryId?: string;
+  paramToSet?: string;
+  subCategoryId?: string;
   isOpenCategory?: boolean;
   hiddenCheckbox?: boolean;
   type?: 'checkbox' | 'radio' | 'input';

@@ -20,15 +20,16 @@ export const Category = ({
   setOpenCategory,
 }: ICategory) => {
   const [isOpenFilter, setIsOpenFilter] = useState<boolean>(false);
-  const isOpenCategory = openCategory.includes(categoryId);
+  const isOpenCategory = openCategory.includes(categoryId ? categoryId : '');
 
   return (
     <Field name={name}>
       {({ form, field }: FieldProps) => {
         const isDisabled =
           (form.values.category.activeCategory !== '1' &&
-            categoryId === '12') ||
-          (form.values.category.activeCategory !== '2' && categoryId === '13');
+            name === 'size(clothes)') ||
+          (form.values.category.activeCategory !== '2' &&
+            name === 'size(shoes)');
 
         useEffect(() => {
           if (
@@ -61,7 +62,7 @@ export const Category = ({
 
         const handleClick = () => {
           if (categoryBlock) {
-            setOpenCategory([categoryId]);
+            setOpenCategory([categoryId ? categoryId : '']);
 
             if (
               !Array.isArray(field.value) &&
@@ -100,6 +101,7 @@ export const Category = ({
                     isOpenCategory={isOpenCategory}
                     hiddenCheckbox={hiddenCheckbox}
                     subCategoryName={subCategory.name}
+                    paramToSet={subCategory.paramToSet}
                     containerName={subCategory.containerName}
                   />
                 ))}

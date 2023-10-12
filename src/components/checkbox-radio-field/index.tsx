@@ -9,6 +9,7 @@ export const CheckboxRadioField = ({
   name,
   type,
   label,
+  paramToSet,
   categoryId,
   subCategoryId,
   hiddenCheckbox,
@@ -20,12 +21,12 @@ export const CheckboxRadioField = ({
     <Field name={name}>
       {({ form, field }: FieldProps) => {
         const isChecked = isRadio
-          ? field.value === label
+          ? field.value === paramToSet
           : (Array.isArray(field.value) &&
-              field.value.includes(subCategoryId)) ||
+              field.value.includes(paramToSet || label)) ||
             (typeof field.value === 'object' &&
               Array.isArray(field.value.subcategories) &&
-              field.value.subcategories.includes(subCategoryId));
+              field.value.subcategories.includes(paramToSet || label));
 
         useEffect(() => {
           if (typeof field.value === 'object' && !isOpenCategory) {
@@ -43,7 +44,7 @@ export const CheckboxRadioField = ({
 
         const onChange = () => {
           if (isRadio) {
-            form.setFieldValue(name, label);
+            form.setFieldValue(name, paramToSet);
             return;
           }
 
@@ -60,7 +61,10 @@ export const CheckboxRadioField = ({
             }
 
             if (Array.isArray(field.value)) {
-              form.setFieldValue(name, [...field.value, subCategoryId]);
+              form.setFieldValue(name, [
+                ...field.value,
+                paramToSet ? paramToSet : label,
+              ]);
             }
           }
 
@@ -80,7 +84,9 @@ export const CheckboxRadioField = ({
             if (Array.isArray(field.value)) {
               form.setFieldValue(
                 name,
-                field.value.filter((id: string) => id !== subCategoryId)
+                field.value.filter((item: string) =>
+                  name === 'age' ? item !== label : item !== paramToSet
+                )
               );
             }
           }

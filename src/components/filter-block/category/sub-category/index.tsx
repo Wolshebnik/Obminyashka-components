@@ -9,6 +9,7 @@ export const SubCategory = ({
   name,
   getCities,
   categoryId,
+  paramToSet,
   subCategoryId,
   containerName,
   hiddenCheckbox,
@@ -28,6 +29,7 @@ export const SubCategory = ({
         <CheckboxRadioField
           type={type}
           name={name}
+          paramToSet={paramToSet}
           categoryId={categoryId}
           label={subCategoryName}
           subCategoryId={subCategoryId}
