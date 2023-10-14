@@ -4,8 +4,8 @@ export const initialValues = {
   age: [],
   sex: '',
   season: [],
-  'size(shoes)': [],
-  'size(clothes)': [],
+  shoesSize: [],
+  clothingSizes: [],
   category: {
     id: '',
     subcategories: [],

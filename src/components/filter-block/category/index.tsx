@@ -27,9 +27,8 @@ export const Category = ({
       {({ form, field }: FieldProps) => {
         const isDisabled =
           (form.values.category.activeCategory !== '1' &&
-            name === 'size(clothes)') ||
-          (form.values.category.activeCategory !== '2' &&
-            name === 'size(shoes)');
+            name === 'clothingSizes') ||
+          (form.values.category.activeCategory !== '2' && name === 'shoesSize');
 
         useEffect(() => {
           if (

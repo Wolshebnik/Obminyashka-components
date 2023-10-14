@@ -297,7 +297,7 @@ export const filterData: ICategoryData[] = [
     ],
   },
   {
-    name: 'size(clothes)',
+    name: 'clothingSizes',
     title: 'size(clothes)',
     type: 'checkbox',
     subCategories: [
@@ -328,7 +328,7 @@ export const filterData: ICategoryData[] = [
     ],
   },
   {
-    name: 'size(shoes)',
+    name: 'shoesSize',
     title: 'size(shoes)',
     type: 'checkbox',
     subCategories: [
