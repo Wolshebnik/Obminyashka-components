@@ -58,16 +58,17 @@ export const featuresAnimation = keyframes`
 }
 `;
 
-/* const xxx = `  
-  60% {
-    transform: scaleY(1);
-  }
-  62% {
-    transform: scaleY(1.5);
-  }
-  64% {
-    transform: scaleY(1);
-  }`; */
+// const transformForColumns = keyframes`
+//   60% {
+//     transform: scaleY(1);
+//   }
+//   62% {
+//     transform: scaleY(1.5);
+//   }
+//   64% {
+//     transform: scaleY(1);
+//   }
+// `;
 
 export const stretchFirstColumn = keyframes`
   0% {
@@ -77,7 +78,7 @@ export const stretchFirstColumn = keyframes`
     transform: scaleY(1);
   }
   35% {
-    transform: scaleY(1.3);
+    transform: scaleY(1.2);
   }
   37% {
     transform: scaleY(1);
@@ -86,7 +87,7 @@ export const stretchFirstColumn = keyframes`
     transform: scaleY(1);
   }
   62% {
-    transform: scaleY(1.3);
+    transform: scaleY(1.2);
   }
   64% {
     transform: scaleY(1);
@@ -110,7 +111,7 @@ export const stretchSecondColumn = keyframes`
     transform: scaleY(1);
   }
   62% {
-    transform: scaleY(1.3);
+    transform: scaleY(1.2);
   }
   64% {
     transform: scaleY(1);
@@ -134,7 +135,7 @@ export const stretchThirdColumn = keyframes`
     transform: scaleY(1);
   }
   62% {
-    transform: scaleY(1.3);
+    transform: scaleY(1.2);
   }
   64% {
     transform: scaleY(1);
@@ -142,15 +143,15 @@ export const stretchThirdColumn = keyframes`
 `;
 
 export const appearanceFirstImages = keyframes`
-25% {
+35% {
   opacity: 0;
   transform: scale(0) rotate(0deg);
 }
-30% {
+37% {
   opacity: 1;
   transform: scale(1) rotate(0deg);
 }
-45% {
+50% {
   opacity: 1;
   transform: scale(1) rotate(-5deg);
 }
@@ -165,15 +166,15 @@ export const appearanceFirstImages = keyframes`
 `;
 
 export const appearanceSecondImages = keyframes`
-25% {
+42% {
   opacity: 0;
   transform: scale(0) rotate(0deg);
 }
-40% {
+45% {
   opacity: 1;
   transform: scale(1) rotate(0deg);
 }
-45% {
+57% {
   opacity: 1;
   transform: scale(1) rotate(5deg);
 }
@@ -188,15 +189,15 @@ export const appearanceSecondImages = keyframes`
 `;
 
 export const appearanceThirdImages = keyframes`
-25% {
+48% {
   opacity: 0;
   transform: scale(0) rotate(0deg);
 }
-45% {
+50% {
   opacity: 1;
   transform: scale(1) rotate(0deg);
 }
-55% {
+57% {
   opacity: 1;
   transform: scale(1) rotate(5deg);
 }

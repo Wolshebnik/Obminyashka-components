@@ -30,6 +30,7 @@ export const PresentSection = styled.section`
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center bottom;
+    z-index: 5;
   }
 `;
 

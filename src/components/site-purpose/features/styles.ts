@@ -19,16 +19,12 @@ export const FeaturesSection = styled.div`
   animation: ${Animation.featuresAnimation} 15s infinite;
 `;
 
-export const FirstFeatures = styled.div`
-  /* position: absolute;
-  bottom: -100%;
-  animation: ${Animation.featuresAnimation} 15s infinite; */
-`;
+export const FirstFeatures = styled.div``;
 
 export const Furniture = styled.img`
   position: absolute;
-  top: 32%;
-  left: 19%;
+  top: 30%;
+  left: 18%;
   width: 276px;
   height: 332px;
   animation: ${Animation.appearanceFirstImages} 15s infinite;
@@ -36,20 +32,20 @@ export const Furniture = styled.img`
 
 export const FirstBlock = styled.div`
   position: absolute;
-  /* bottom: -100%; */
   bottom: 104px;
-  left: 20%;
+  left: 21%;
   width: 428px;
   height: 342px;
   animation: ${Animation.stretchFirstColumn} 15s infinite;
+  z-index: 1;
 `;
 
 export const ThingsText = styled.p`
   ${textStyles};
 
   position: relative;
-  top: 0;
-  left: 24%;
+  top: 7%;
+  left: 17%;
   width: 280px;
   height: 122px;
   z-index: 1;
@@ -100,8 +96,8 @@ export const ThirdFeatures = styled.div``;
 
 export const Toys = styled.img`
   position: absolute;
-  top: 30%;
-  left: 69%;
+  top: 29%;
+  left: 71%;
   width: 273px;
   height: 235px;
   animation: ${Animation.appearanceThirdImages} 15s infinite;
@@ -121,7 +117,7 @@ export const TradeText = styled.p`
 
   position: absolute;
   left: 7%;
-  bottom: 103%;
+  bottom: 101%;
   width: 383px;
   height: 157px;
 `;
