@@ -8,23 +8,10 @@ const cloudStyles = css`
   background-size: cover;
 `;
 
-export const LeftWrapper = styled.div`
-  position: absolute;
-  width: 50%;
+export const WrapperForClouds = styled.div`
+  width: 100%;
   height: 100%;
   overflow: hidden;
-  bottom: 0;
-  /* animation: ${Animation.moveLeftWrapper} 15s linear infinite; */
-`;
-
-export const RightWrapper = styled.div`
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  bottom: 0;
-  right: 0;
-  overflow: hidden;
-  /* animation: ${Animation.moveRightWrapper} 15s linear infinite; */
 `;
 
 export const FirstLeftCloud = styled.img`
@@ -40,18 +27,19 @@ export const FirstLeftCloud = styled.img`
 export const SecondSmallTopCloud = styled.img`
   ${cloudStyles};
 
-  top: 12%;
-  right: 5%;
+  top: -6%;
+  left: 29%;
   width: 120px;
   height: 65px;
   animation: ${Animation.move2} 15s linear infinite;
+  z-index: -1;
 `;
 
 export const ThirdLeftCloud = styled.img`
   ${cloudStyles};
 
   top: 44%;
-  left: 10%;
+  left: 0;
   width: 226px;
   height: 144px;
   animation: ${Animation.move3} 15s linear infinite;
@@ -75,7 +63,6 @@ export const RightTopCloud = styled.img`
   width: 230px;
   height: 130px;
 
-  /* transform: translateX(100%); */
   animation: ${Animation.move5} 15s linear infinite;
 `;
 
@@ -83,7 +70,7 @@ export const RightMiddleCloud = styled.img`
   ${cloudStyles};
 
   top: 30%;
-  left: 23%;
+  right: 25%;
   width: 120px;
   height: 65px;
   animation: ${Animation.move6} 15s linear infinite;
@@ -94,7 +81,7 @@ export const RightBottomCloud = styled.img`
   ${cloudStyles};
 
   top: 70%;
-  left: 82%;
+  left: 100%;
   width: 120px;
   height: 60px;
   animation: ${Animation.move7} 15s linear infinite;
@@ -105,7 +92,8 @@ export const HappySun = styled.img`
   ${cloudStyles}
 
   top: 6%;
-  left: 20%;
+  left: -8%;
   width: 145px;
   height: 145px;
+  animation: ${Animation.move8} 15s linear infinite;
 `;

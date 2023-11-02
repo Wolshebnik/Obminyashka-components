@@ -16,7 +16,7 @@ export const PresentSection = styled.section`
     width: 100%;
     height: 100%;
     background: linear-gradient(136deg, #a3dee5 23.74%, #34a2ce 100%);
-    z-index: -2;
+    z-index: -1;
   }
 
   &::after {
@@ -25,7 +25,6 @@ export const PresentSection = styled.section`
     top: 0;
     width: 100%;
     height: 100%;
-    top: 0px;
     background-image: url(${Image.newMaskCloud});
     background-size: contain;
     background-repeat: no-repeat;
