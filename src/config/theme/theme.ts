@@ -16,8 +16,11 @@ const LIGHT_THEME: DefaultTheme = Object.freeze({
     isDesktop: false,
     isTabletBG: false,
     isPortrait: false,
-    isMobile: false,
+    isTabletUp: false,
     isLandscape: false,
+    isDesktopBS: false,
+    isDesktopLG: false,
+    isDesktopMD: false,
   },
 });
 
