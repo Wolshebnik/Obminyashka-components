@@ -7,11 +7,12 @@ export const move1 = keyframes`
 
   29% {
     opacity: 0;
+    left: -9%;
   }
 
   30% {
     opacity: 1;
-    left: 0;
+    left: -4%;
   }
 
   60% {
@@ -39,6 +40,7 @@ export const move2 = keyframes`
 
   29% {
     opacity: 0;
+    top: 5%;
   }
 
   30% {
@@ -79,11 +81,12 @@ export const move3 = keyframes`
 
   29% {
     opacity: 0;
+    left: 0;
   }
 
   30% {
     opacity: 1;
-    transform: scale(1.3);
+    transform: scale(1.5);
     left: 10%;
   }
 
@@ -109,11 +112,13 @@ export const move4 = keyframes`
 
   29% {
     opacity: 0;
+    left: 0;
   }
 
   30% {
     opacity: 1;
     transform: scale(1.5);
+    left: 15%;
   }
 
   32%{
@@ -126,7 +131,7 @@ export const move4 = keyframes`
 
   74%{
     opacity: 0;
-    left: -20%;
+    left: -6%;
   }
 
   100% {
@@ -141,6 +146,7 @@ export const move5 = keyframes`
 
   29% {
     opacity: 0;
+    right: -9%;
   }
 
   30% {
@@ -181,21 +187,34 @@ export const move6 = keyframes`
 
   29% {
     opacity: 0;
+    top: 10%;
   }
 
   30% {
     opacity: 1;
     transform: scale(1.5);
+    top: 30%;
   }
 
   32% {
     transform: scale(1);
-    right: 27%;
+    right: 30%;
+    top: 32%;
+  }
+
+  40% {
+    right: 35%;
+    top: 34%;
   }
 
   60% {
     right: 40%;
-    top: 5%;
+    top: 25%;
+  }
+
+  70% {
+    right: 45%;
+    top: 15%;
   }
 
   73.9% {
@@ -219,12 +238,13 @@ export const move7 = keyframes`
 
   29% {
     opacity: 0;
+    left: 98%;
   }
 
   30% {
     opacity: 1;
-    left: 95%;
-    transform: scale(1.5);
+    left: 93%;
+    transform: scale(2);
   }
 
   32% {
@@ -266,12 +286,12 @@ export const move8 = keyframes`
 
   29% {
     opacity: 0;
-    left: 5%;
+    left: 0;
   }
 
   30% {
     opacity: 1;
-    transform: scale(1.5);
+    transform: scale(2);
     left: 12%;
   }
 
@@ -298,7 +318,7 @@ export const move8 = keyframes`
 
   73.8% {
     opacity: 1;
-    transform: scale(1.5);
+    transform: scale(2);
     left: -8%;
   }
 

@@ -40,32 +40,3 @@ export const ContainerRainbowAnimation = styled.div`
   height: 100%;
   animation: ${Animation.cycledAnimation} 15s infinite;
 `;
-
-// export const ShowAnimation = styled.div<IAnimation>`
-// ${({ isHide, showRainbow }) => css`
-//   animation: ${showRainbow && !isHide ? Animation.appearAnimation : 'none'} 2s
-//     ease-in-out forwards;
-
-//   ${isHide &&
-//   css`
-//     animation: ${showRainbow ? Animation.disappearAnimation : 'none'} 2s
-//       ease-in-out forwards;
-//   `}
-// `}
-// `;
-
-// export const ContainerRainbowAnimation = styled.div<IAnimation>`
-//   display: flex;
-//   justify-content: center;
-//   max-width: 1830px;
-//   ${({ isHide, showRainbow }) => css`
-//     animation: ${showRainbow && !isHide ? Animation.appearAnimation : 'none'} 2s
-//       ease-in-out forwards;
-
-//     ${isHide &&
-//     css`
-//       animation: ${showRainbow ? Animation.disappearAnimation : 'none'} 2s
-//         ease-in-out forwards;
-//     `}
-//   `}
-// `;
