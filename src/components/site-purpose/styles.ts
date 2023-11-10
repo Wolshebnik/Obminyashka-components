@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import * as Image from 'components/img';
 import * as Animation from './animation';
@@ -6,7 +6,7 @@ import * as Animation from './animation';
 export const PresentSection = styled.section`
   position: relative;
   width: 100%;
-  height: 1140px;
+  height: 630px;
   overflow: hidden;
   z-index: 0;
 
@@ -31,6 +31,21 @@ export const PresentSection = styled.section`
     background-position: center bottom;
     z-index: 5;
   }
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      height: 555px;
+    `}
+    ${theme.responsive.isTabletUp &&
+    css`
+      height: 740px;
+    `}
+    ${theme.responsive.isDesktop &&
+    css`
+      height: 1040px;
+    `}
+  `}
 `;
 
 export const ContainerRainbowAnimation = styled.div`
@@ -38,5 +53,5 @@ export const ContainerRainbowAnimation = styled.div`
   justify-content: center;
   max-width: 1830px;
   height: 100%;
-  animation: ${Animation.cycledAnimation} 15s infinite;
+  /* animation: ${Animation.cycledAnimation} 15s infinite; */
 `;

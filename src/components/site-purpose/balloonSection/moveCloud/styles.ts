@@ -1,11 +1,13 @@
 import styled, { css } from 'styled-components';
 
+import * as Image from 'components/img';
 import * as Animation from './animation';
 
 const cloudStyles = css`
   position: absolute;
   background-repeat: no-repeat;
   background-size: cover;
+  background-image: url(${Image.cloud});
 `;
 
 export const Wrapper = styled.div`
@@ -15,7 +17,7 @@ export const Wrapper = styled.div`
   overflow: hidden;
 `;
 
-export const FirstCloud = styled.img`
+export const FirstCloud = styled.div`
   ${cloudStyles};
 
   top: 4%;
@@ -25,7 +27,7 @@ export const FirstCloud = styled.img`
   animation: ${Animation.move1} 7s linear infinite;
 `;
 
-export const SecondCloud = styled.img`
+export const SecondCloud = styled.div`
   ${cloudStyles};
 
   top: 22%;
@@ -35,7 +37,7 @@ export const SecondCloud = styled.img`
   animation: ${Animation.move2} 12s linear infinite;
 `;
 
-export const ThirdCloud = styled.img`
+export const ThirdCloud = styled.div`
   ${cloudStyles};
 
   top: 12%;
@@ -45,7 +47,7 @@ export const ThirdCloud = styled.img`
   animation: ${Animation.move3} 7s linear infinite;
 `;
 
-export const FourthCloud = styled.img`
+export const FourthCloud = styled.div`
   ${cloudStyles};
 
   top: 35%;
@@ -56,7 +58,7 @@ export const FourthCloud = styled.img`
   z-index: -1;
 `;
 
-export const FifthCloud = styled.img`
+export const FifthCloud = styled.div`
   ${cloudStyles};
 
   top: 40%;
@@ -67,7 +69,7 @@ export const FifthCloud = styled.img`
   z-index: -1;
 `;
 
-export const SixthCloud = styled.img`
+export const SixthCloud = styled.div`
   ${cloudStyles};
 
   top: 80%;
@@ -78,7 +80,7 @@ export const SixthCloud = styled.img`
   z-index: -1;
 `;
 
-export const SeventhCloud = styled.img`
+export const SeventhCloud = styled.div`
   ${cloudStyles};
 
   top: 64%;
