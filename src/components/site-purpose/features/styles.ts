@@ -144,7 +144,7 @@ export const ThingsText = styled.p`
     ${theme.responsive.isTablet &&
     css`
       top: -115px;
-      left: 213px;
+      left: 138px;
       width: 150px;
       height: 65px;
     `}
@@ -152,8 +152,10 @@ export const ThingsText = styled.p`
     ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
-      top: -98%;
-      left: 48%;
+      /* top: -98%;
+      left: 48%; */
+      top: -101%;
+      left: 43%;
     `}
     
     ${theme.responsive.isDesktop &&
@@ -177,14 +179,14 @@ export const FirstKeg = styled.img`
     ${theme.responsive.isTablet &&
     css`
       top: -47px;
-      left: 172px;
+      left: 98px;
     `}
 
     ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
-      top: -49%;
-      left: 26%;
+      left: 56px;
+      top: -66px;
     `}
     
     ${theme.responsive.isDesktop &&
@@ -200,18 +202,47 @@ export const SecondFeatures = styled.div``;
 
 export const Laptop = styled.img`
   position: absolute;
-  top: 26%;
-  left: 42%;
-  width: 318px;
-  height: 270px;
-  animation: ${Animation.appearanceSecondImages} 15s infinite;
+  top: 50%;
+  left: 43%;
+  width: 91px;
+  height: 78px;
+  transform: rotate(-15deg);
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      top: 33%;
+      left: 40%;
+      width: 170px;
+      height: 145px;
+      transform: rotate(0);
+    `}
+
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
+    css`
+      top: 34%;
+      left: 46%;
+      width: 170px;
+      height: 145px;
+      transform: rotate(0);
+    `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      top: 26%;
+      left: 42%;
+      width: 318px;
+      height: 270px;
+      animation: ${Animation.appearanceSecondImages} 15s infinite;
+    `}
+  `}
 `;
 
 export const SecondBlock = styled.div`
   position: absolute;
   top: 67%;
   left: 40%;
-  /* width: 135px; */
   height: 178px;
 
   ${blockProperties}
@@ -242,47 +273,213 @@ export const RegText = styled.p`
   ${textStyles};
 
   position: absolute;
-  top: -36%;
-  left: 6%;
-  width: 370px;
-  height: 124px;
+  top: 18px;
+  left: 3px;
+  width: 117px;
+  height: 55px;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      top: -47px;
+      left: 10px;
+      width: 197px;
+      height: 66px;
+    `}
+
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
+    css`
+      top: -16%;
+      left: 12%;
+      width: 197px;
+      height: 66px;
+    `}
+    
+    ${theme.responsive.isDesktop &&
+    css`
+      top: -39%;
+      left: 87%;
+      width: 370px;
+      height: 124px;
+    `}
+  `}
 `;
 
 export const SecondKeg = styled.img`
   position: absolute;
   z-index: -1;
+
+  ${blockProperties}
+
+  top: 77px;
+  left: -10px;
+  height: 113px;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      top: 23px;
+      left: -9px;
+      height: 180px;
+    `}
+
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
+    css`
+      top: 23px;
+      left: -9px;
+      height: 180px;
+    `}
+    
+    ${theme.responsive.isDesktop &&
+    css`
+      height: 254px;
+      top: -1px;
+      left: 81%;
+      animation: ${Animation.stretchSecondColumn} 15s infinite;
+    `}
+  `}
 `;
 
 export const ThirdFeatures = styled.div``;
 
 export const Toys = styled.img`
   position: absolute;
-  top: 29%;
-  left: 71%;
-  width: 273px;
-  height: 235px;
-  animation: ${Animation.appearanceThirdImages} 15s infinite;
+  top: 55%;
+  left: 68%;
+  width: 120px;
+  height: 103px;
+  transform: rotate(18deg);
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      top: 33%;
+      left: 40%;
+      width: 170px;
+      height: 145px;
+    `}
+
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
+    css`
+      top: 40%;
+      left: 73%;
+      width: 170px;
+      height: 145px;
+      transform: rotate(9deg);
+    `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      top: 30%;
+      left: 71%;
+      width: 318px;
+      height: 270px;
+      animation: ${Animation.appearanceThirdImages} 15s infinite;
+    `}
+  `}
 `;
 
 export const ThirdBlock = styled.div`
   position: absolute;
   top: 72%;
   left: 61%;
-  width: 428px;
-  height: 342px;
-  animation: ${Animation.stretchThirdColumn} 15s infinite;
+  height: 168px;
+
+  ${blockProperties}
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      height: 195px;
+    `}
+
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
+    css`
+      height: 258px;
+    `}
+    
+    ${theme.responsive.isDesktop &&
+    css`
+      height: 419px;
+      bottom: 104px;
+      left: 21%;
+      animation: ${Animation.stretchThirdColumn} 15s infinite;
+    `}
+  `}
 `;
 
 export const TradeText = styled.p`
   ${textStyles};
 
   position: absolute;
-  left: 7%;
-  bottom: 101%;
-  width: 383px;
-  height: 157px;
+  top: 10px;
+  left: 3px;
+  width: 130px;
+  height: 63px;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      top: -49px;
+      left: 43px;
+      width: 204px;
+      height: 84px;
+    `}
+
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
+    css`
+      top: -20%;
+      left: 20%;
+      width: 204px;
+      height: 84px;
+    `}
+    
+    ${theme.responsive.isDesktop &&
+    css`
+      left: 184%;
+      top: -45%;
+      width: 383px;
+      height: 157px;
+    `}
+  `}
 `;
 
 export const ThirdKeg = styled.img`
   position: absolute;
+
+  ${blockProperties}
+
+  top: 66px;
+  left: -3px;
+  height: 110px;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      top: 18px;
+      left: 28px;
+      height: 180px;
+    `}
+
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
+    css`
+      top: 18px;
+      left: 13px;
+      height: 180px;
+    `}
+    
+    ${theme.responsive.isDesktop &&
+    css`
+      height: 254px;
+      top: -19px;
+      left: 177%;
+      animation: ${Animation.stretchThirdColumn} 15s infinite;
+    `}
+  `}
 `;
