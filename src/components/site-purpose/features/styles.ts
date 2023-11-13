@@ -58,7 +58,14 @@ export const FeaturesSection = styled.div`
   bottom: 0;
   width: 100%;
   height: 100%;
-  /* animation: ${Animation.featuresAnimation} 15s infinite; */
+
+  ${({ theme }) => css`
+    ${theme.responsive.isDesktop &&
+    css`
+      bottom: -100%;
+      animation: ${Animation.featuresAnimation} 15s infinite;
+    `}
+  `}
 `;
 
 export const FirstFeatures = styled.div``;
@@ -90,7 +97,7 @@ export const Furniture = styled.img`
 
     ${theme.responsive.isDesktop &&
     css`
-      top: 28%;
+      top: 21%;
       left: 18%;
       width: 276px;
       height: 332px;
@@ -102,7 +109,7 @@ export const Furniture = styled.img`
 export const FirstBlock = styled.div`
   position: absolute;
   top: 86%;
-  left: 18px;
+  left: 7px;
   height: 85px;
   z-index: 1;
 
@@ -135,7 +142,7 @@ export const ThingsText = styled.p`
 
   position: relative;
   top: -42%;
-  left: 10%;
+  left: 2%;
   width: 106px;
   height: 49px;
   z-index: 1;
@@ -203,7 +210,7 @@ export const SecondFeatures = styled.div``;
 export const Laptop = styled.img`
   position: absolute;
   top: 50%;
-  left: 43%;
+  left: 37%;
   width: 91px;
   height: 78px;
   transform: rotate(-15deg);
@@ -230,7 +237,7 @@ export const Laptop = styled.img`
 
     ${theme.responsive.isDesktop &&
     css`
-      top: 26%;
+      top: 19%;
       left: 42%;
       width: 318px;
       height: 270px;
@@ -242,7 +249,7 @@ export const Laptop = styled.img`
 export const SecondBlock = styled.div`
   position: absolute;
   top: 67%;
-  left: 40%;
+  left: 34%;
   height: 178px;
 
   ${blockProperties}
@@ -274,8 +281,8 @@ export const RegText = styled.p`
 
   position: absolute;
   top: 18px;
-  left: 3px;
-  width: 117px;
+  left: 10px;
+  width: 88px;
   height: 55px;
 
   ${({ theme }) => css`
@@ -373,7 +380,7 @@ export const Toys = styled.img`
 
     ${theme.responsive.isDesktop &&
     css`
-      top: 30%;
+      top: 20%;
       left: 71%;
       width: 318px;
       height: 270px;

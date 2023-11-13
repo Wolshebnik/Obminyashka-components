@@ -53,5 +53,11 @@ export const ContainerRainbowAnimation = styled.div`
   justify-content: center;
   max-width: 1830px;
   height: 100%;
-  /* animation: ${Animation.cycledAnimation} 15s infinite; */
+
+  ${({ theme }) => css`
+    ${theme.responsive.isDesktop &&
+    css`
+      animation: ${Animation.cycledAnimation} 15s infinite;
+    `}
+  `}
 `;
