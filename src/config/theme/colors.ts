@@ -11,7 +11,7 @@ const buttonBlue = '#12b6ed';
 const buttonBlueActive = '#0094ff';
 const buttonBlueHover = '#00bfff';
 const curiousBlue = `#29A5D4`;
-const charlotte = `#b8e9fa`;
+// const charlotte = `#b8e9fa`;
 const endeavour = '#0666ab';
 const foam = `#d9f6fd`;
 const footerBlue = '#3DB4D7';
@@ -43,7 +43,7 @@ const buttonGreyHover = '#6b6b6b';
 const buttonGreyActive = '#5e5e5e';
 
 //General state
-const buttonDisabled = '#DADADA';
+const disabled = '#DADADA';
 const magnolia = '#fdfcff';
 const colorGrey = '#8E8E8E';
 const colorError = '#ff4c4c';
@@ -214,19 +214,19 @@ const button = {
     bg: buttonBlue,
     hover: buttonBlueHover,
     active: buttonBlueActive,
-    disable: buttonDisabled,
+    disable: disabled,
   },
   green: {
     bg: buttonGreen,
     hover: buttonGreenHover,
     active: buttonGreenActive,
-    disable: buttonDisabled,
+    disable: disabled,
   },
   grey: {
     bg: buttonGrey,
     hover: buttonGreyHover,
     active: buttonGreyActive,
-    disable: buttonDisabled,
+    disable: disabled,
   },
 };
 
@@ -242,11 +242,12 @@ const colorsDefault = Object.freeze({
   colorError,
   colorGrey,
   colorRed: '#ff0000',
-  btnGbDisabled: buttonDisabled,
+  btnGbDisabled: disabled,
   colorTextDisabled,
   rightColorText,
   blackColorText,
   bgContent: '#E5E5E5',
+  silver,
   activeColor,
   scrollbarBg: '#f1f1f1',
   white,
@@ -280,8 +281,7 @@ const logo = Object.freeze({
 const categoryFilter = Object.freeze({
   border: viking,
   hiddenCheckbox: {
-    bgChecked: aquamarineBlue,
-    bgNoCheckedHover: charlotte,
+    bgCheckedAndHover: aquamarineBlue,
   },
   title: curiousBlue,
   triangle: aquamarineBlue,

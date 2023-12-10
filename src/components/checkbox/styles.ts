@@ -41,6 +41,9 @@ export const Label = styled.label<LabelArg>`
   align-items: center;
   width: fit-content;
   line-height: 17px;
+  font-size: 16px;
+  font-weight: 400;
+
   cursor: pointer;
 
   ${({ theme, gap, checked, fontSize, hiddenCheckbox, type }) => css`
@@ -49,6 +52,11 @@ export const Label = styled.label<LabelArg>`
     color: ${checked
       ? theme.colors.blackColorText
       : theme.colors.colorTextDisabled};
+
+    ${checked &&
+    css`
+      font-weight: 700;
+    `}
 
     & > svg {
       display: block;
@@ -65,7 +73,6 @@ export const Label = styled.label<LabelArg>`
       & > svg {
         & > path {
           opacity: 1;
-          fill: ${!checked && theme.colors.colorGrey};
         }
       }
     }
@@ -92,7 +99,8 @@ export const Label = styled.label<LabelArg>`
 
       ${checked &&
       css`
-        background: ${theme.colors.categoryFilter.hiddenCheckbox.bgChecked};
+        background: ${theme.colors.categoryFilter.hiddenCheckbox
+          .bgCheckedAndHover};
         color: ${theme.colors.white};
       `}
 
@@ -100,14 +108,14 @@ export const Label = styled.label<LabelArg>`
       css`
         &:hover {
           background: ${theme.colors.categoryFilter.hiddenCheckbox
-            .bgNoCheckedHover};
+            .bgCheckedAndHover};
           color: black;
         }
 
         &:has(${Cross}):hover {
           ${Cross}::before, ${Cross}::after {
             background: ${theme.colors.categoryFilter.hiddenCheckbox
-              .bgNoCheckedHover};
+              .bgCheckedAndHover};
           }
         }
       `}
@@ -127,7 +135,7 @@ export const Checkbox = styled.div<ICheckbox>`
 
   ${({ theme, checked, type, hiddenCheckbox }) => css`
     ${checked && `background-color: ${theme.colors.btnBlue}`};
-    ${checked ? '' : `border: 3px solid ${theme.colors.colorGrey}`};
+    ${checked ? '' : `border: 3px solid ${theme.colors.silver}`};
     border-radius: ${type === 'radio' ? '50%' : '0'};
 
     ${hiddenCheckbox &&

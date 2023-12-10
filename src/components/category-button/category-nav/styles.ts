@@ -150,8 +150,8 @@ export const Wrapper = styled.div`
       grid-template-rows: 165px;
       grid-row-gap: 65px;
       padding: 94px 0 163px;
-      max-width: 926px;
       margin-inline: auto;
+      max-width: 926px;
     `}
 
     ${theme.responsive.isDesktop &&
