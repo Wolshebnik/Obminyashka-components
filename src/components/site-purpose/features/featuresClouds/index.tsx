@@ -1,21 +1,21 @@
 import * as Styles from './styles';
 
-const Clouds = () => {
+const FeaturesClouds = () => {
   return (
     <>
       <Styles.WrapperForClouds>
-        <Styles.HappySun />
+        {/* <Styles.HappySun /> */}
         <Styles.FirstLeftCloud />
-        <Styles.SecondSmallTopCloud />
+        {/* <Styles.SecondSmallTopCloud />
         <Styles.ThirdLeftCloud />
         <Styles.BottomLeftSmallCloud />
 
         <Styles.RightTopCloud />
         <Styles.RightMiddleCloud />
-        <Styles.RightBottomCloud />
+        <Styles.RightBottomCloud /> */}
       </Styles.WrapperForClouds>
     </>
   );
 };
 
-export { Clouds };
+export { FeaturesClouds };

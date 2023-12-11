@@ -1,16 +1,16 @@
-import * as Styles from '../styles';
+import * as Styles from './styles';
 import { Rainbow } from './rainbow';
-import { MoveCloud } from './moveCloud';
+import { BalloonClouds } from './balloonClouds';
 import { Responsive } from 'components';
 
 const BalloonSection = () => {
   return (
     <>
       <Responsive.NotMobile>
-        <Styles.ContainerRainbowAnimation>
+        <Styles.BalloonWrapper>
           <Rainbow />
-          <MoveCloud />
-        </Styles.ContainerRainbowAnimation>
+          <BalloonClouds />
+        </Styles.BalloonWrapper>
       </Responsive.NotMobile>
     </>
   );

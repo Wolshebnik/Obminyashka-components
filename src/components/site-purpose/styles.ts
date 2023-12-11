@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 
 import * as Image from 'components/img';
-import * as Animation from './animation';
 
 export const PresentSection = styled.section`
   position: relative;
@@ -44,20 +43,6 @@ export const PresentSection = styled.section`
     ${theme.responsive.isDesktop &&
     css`
       height: 1040px;
-    `}
-  `}
-`;
-
-export const ContainerRainbowAnimation = styled.div`
-  display: flex;
-  justify-content: center;
-  max-width: 1830px;
-  height: 100%;
-
-  ${({ theme }) => css`
-    ${theme.responsive.isDesktop &&
-    css`
-      animation: ${Animation.cycledAnimation} 15s infinite;
     `}
   `}
 `;

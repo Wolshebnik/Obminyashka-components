@@ -12,19 +12,19 @@ export const appearAnimation = keyframes`
   }
 `;
 
-export const disappearAnimation = keyframes`
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
+// export const disappearAnimation = keyframes`
+//   from {
+//     opacity: 1;
+//     transform: scale(1);
+//   }
 
-  to {
-    opacity: 0;
-    transform: scale(0);
-  }
-`;
+//   to {
+//     opacity: 0;
+//     transform: scale(0);
+//   }
+// `;
 
-export const cycledAnimation = keyframes`
+export const balloonAnimation = keyframes`
 20% {
   opacity: 1;
   transform: scale(1);
@@ -50,10 +50,10 @@ export const featuresAnimation = keyframes`
 30% {
   bottom: 0;
 }
-70% {
+69% {
   bottom: 0;
 }
-80% {
+75% {
   bottom: -100%;
 }
 `;
@@ -155,11 +155,11 @@ export const appearanceFirstImages = keyframes`
   opacity: 1;
   transform: scale(1) rotate(-5deg);
 }
-65% {
+67% {
   opacity: 1;
   transform: scale(1) rotate(5deg);
 }
-77% {
+72% {
   opacity: 0;
   transform: scale(0);
 }
@@ -178,11 +178,11 @@ export const appearanceSecondImages = keyframes`
   opacity: 1;
   transform: scale(1) rotate(5deg);
 }
-65% {
+67% {
   opacity: 1;
   transform: scale(1) rotate(-5deg);
 }
-77% {
+72% {
   opacity: 0;
   transform: scale(0);
 }
@@ -201,11 +201,11 @@ export const appearanceThirdImages = keyframes`
   opacity: 1;
   transform: scale(1) rotate(5deg);
 }
-65% {
+67% {
   opacity: 1;
   transform: scale(1) rotate(-5deg);
 }
-77% {
+72% {
   opacity: 0;
   transform: scale(0);
 }

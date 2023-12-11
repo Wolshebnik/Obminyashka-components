@@ -1,6 +1,6 @@
 import * as Styles from './styles';
 
-const MoveCloud = () => {
+const BalloonClouds = () => {
   return (
     <Styles.Wrapper>
       <Styles.FirstCloud />
@@ -14,4 +14,4 @@ const MoveCloud = () => {
   );
 };
 
-export { MoveCloud };
+export { BalloonClouds };
