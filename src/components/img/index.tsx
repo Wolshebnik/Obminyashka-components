@@ -90,3 +90,4 @@ export { default as toySlider } from '../../assets/img/slider/toy.png';
 export { default as transportForChildren } from '../../assets/img/navItems/transport-for-children.png';
 export { default as vector } from '../../assets/img/MySettings/vector.png';
 export { default as vectorHover } from '../../assets/img/MySettings/vector-hover.png';
+export { default as cartoonBird } from '../../assets/img/bird.png';
