@@ -63,15 +63,26 @@ export const FeaturesSection = styled.div`
   ${({ theme }) => css`
     ${theme.responsive.isDesktop &&
     css`
-      /* bottom: -100%;
-      animation: ${Animation.featuresAnimation} 15s infinite; */
+      bottom: -100%;
+      animation: ${Animation.featuresAnimation} 15s infinite;
     `}
   `}
 `;
 
 export const FeaturesWrapper = styled.div`
   position: relative;
-  width: 1155px;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      width: 640px;
+    `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      width: 1155px;
+    `}
+  `}
 `;
 
 export const Furniture = styled.img`
@@ -84,8 +95,8 @@ export const Furniture = styled.img`
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      top: 43%;
-      left: 17%;
+      top: 23%;
+      left: 2%;
       width: 145px;
       height: 170px;
     `}
@@ -93,8 +104,8 @@ export const Furniture = styled.img`
     ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
-      top: 39%;
-      left: 20%;
+      top: 36%;
+      left: 6%;
       width: 148px;
       height: 177px;
     `}
@@ -112,6 +123,11 @@ export const Furniture = styled.img`
     css`
       top: 22%;
     `}
+
+    ${theme.responsive.isDesktopBS &&
+    css`
+      left: -5%;
+    `}
   `}
 `;
 
@@ -127,6 +143,7 @@ export const FirstBlock = styled.div`
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
+      left: -75px;
       height: 110px;
     `}
 
@@ -159,7 +176,7 @@ export const ThingsText = styled.p`
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      top: -115px;
+      top: -147px;
       left: 138px;
       width: 150px;
       height: 65px;
@@ -168,23 +185,16 @@ export const ThingsText = styled.p`
     ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
-      /* top: -98%;
-      left: 48%; */
-      top: -101%;
+      top: -118%;
       left: 43%;
     `}
     
     ${theme.responsive.isDesktop &&
     css`
-      top: -64%;
+      top: -70%;
       left: 14%;
       width: 280px;
       height: 122px;
-    `}
-
-    ${theme.responsive.isDesktopMD &&
-    css`
-      top: -70%;
     `}
 
     ${theme.responsive.isDesktopLG &&
@@ -204,7 +214,7 @@ export const FirstKeg = styled.img`
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      top: -47px;
+      top: -80px;
       left: 98px;
     `}
 
@@ -212,23 +222,13 @@ export const FirstKeg = styled.img`
     theme.responsive.isLandscape &&
     css`
       left: 56px;
-      top: -66px;
+      top: -80px;
     `}
     
     ${theme.responsive.isDesktop &&
     css`
-      top: -80px;
-      left: -6%;
-    `}
-
-    ${theme.responsive.isDesktopMD &&
-    css`
-      top: -28%;
-    `}
-
-    ${theme.responsive.isDesktopMD &&
-    css`
       top: -31%;
+      left: -6%;
     `}
 
     ${theme.responsive.isDesktopLG &&
@@ -254,8 +254,8 @@ export const Laptop = styled.img`
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      top: 33%;
-      left: 40%;
+      top: 17%;
+      left: 37%;
       width: 170px;
       height: 145px;
       transform: rotate(0);
@@ -264,8 +264,8 @@ export const Laptop = styled.img`
     ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
-      top: 34%;
-      left: 46%;
+      top: 32%;
+      left: 40%;
       width: 170px;
       height: 145px;
       transform: rotate(0);
@@ -329,7 +329,7 @@ export const RegText = styled.p`
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      top: -47px;
+      top: -90px;
       left: 10px;
       width: 197px;
       height: 66px;
@@ -338,8 +338,8 @@ export const RegText = styled.p`
     ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
-      top: -16%;
-      left: 12%;
+      top: -25%;
+      left: 5%;
       width: 197px;
       height: 66px;
     `}
@@ -350,11 +350,6 @@ export const RegText = styled.p`
       left: 87%;
       width: 370px;
       height: 124px;
-    `}
-
-    ${theme.responsive.isDesktopMD &&
-    css`
-      top: -36%;
     `}
 
     ${theme.responsive.isDesktopLG &&
@@ -377,7 +372,7 @@ export const SecondKeg = styled.img`
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      top: 23px;
+      top: -22px;
       left: -9px;
       height: 180px;
     `}
@@ -385,8 +380,8 @@ export const SecondKeg = styled.img`
     ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
-      top: 23px;
-      left: -9px;
+      top: 5px;
+      left: -25px;
       height: 180px;
     `}
 
@@ -397,11 +392,6 @@ export const SecondKeg = styled.img`
       left: 81%;
       height: 254px;
     `}
-
-    ${theme.responsive.isDesktopMD &&
-    css`
-      top: 10px;
-    `} 
 
     ${theme.responsive.isDesktopLG &&
     css`
@@ -426,8 +416,8 @@ export const Toys = styled.img`
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      top: 33%;
-      left: 40%;
+      top: 22%;
+      left: 77%;
       width: 170px;
       height: 145px;
     `}
@@ -435,8 +425,8 @@ export const Toys = styled.img`
     ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
-      top: 40%;
-      left: 73%;
+      top: 37%;
+      left: 75%;
       width: 170px;
       height: 145px;
       transform: rotate(9deg);
@@ -444,16 +434,17 @@ export const Toys = styled.img`
 
     ${theme.responsive.isDesktop &&
     css`
-      top: 24%;
+      top: 21%;
       left: 71%;
       width: 318px;
       height: 270px;
       animation: ${Animation.appearanceThirdImages} 15s infinite;
     `}
 
-    ${theme.responsive.isDesktop &&
+    ${theme.responsive.isDesktopBS &&
     css`
       top: 21%;
+      left: 80%;
     `}
   `}
 `;
@@ -500,35 +491,34 @@ export const TradeText = styled.p`
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      top: -49px;
-      left: 43px;
+      top: -100px;
+      left: 30px;
       width: 204px;
       height: 84px;
     `}
 
-    ${theme.responsive.isTablet &&
+    ${theme.responsive.isTabletBG &&
+    css`
+      top: -100px;
+      left: 43px;
+    `}
+
+    ${theme.responsive.isTabletBG &&
     theme.responsive.isLandscape &&
     css`
-      top: -20%;
-      left: 20%;
-      width: 204px;
-      height: 84px;
+      top: -30%;
+      left: 26%;
     `}
     
     ${theme.responsive.isDesktop &&
     css`
       left: 184%;
-      top: -39%;
+      top: -42%;
       width: 383px;
       height: 157px;
     `}
 
-    ${theme.responsive.isDesktopMD &&
-    css`
-      top: -42%;
-    `}
-
-    ${theme.responsive.isDesktopMD &&
+    ${theme.responsive.isDesktopLG &&
     css`
       top: -47%;
     `}
@@ -536,10 +526,9 @@ export const TradeText = styled.p`
 `;
 
 export const ThirdKeg = styled.img`
-  position: absolute;
-
   ${blockProperties}
 
+  position: absolute;
   top: 66px;
   left: -3px;
   height: 110px;
@@ -547,17 +536,22 @@ export const ThirdKeg = styled.img`
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      top: 18px;
-      left: 28px;
+      top: -30px;
+      left: 14px;
       height: 180px;
     `}
 
-    ${theme.responsive.isTablet &&
+    ${theme.responsive.isTabletBG &&
+    css`
+      top: -30px;
+      left: 28px;
+    `}
+
+    ${theme.responsive.isTabletBG &&
     theme.responsive.isLandscape &&
     css`
-      top: 18px;
-      left: 13px;
-      height: 180px;
+      top: -7px;
+      left: 35px;
     `}
     
     ${theme.responsive.isDesktop &&
@@ -565,11 +559,6 @@ export const ThirdKeg = styled.img`
       height: 254px;
       left: 177%;
     `}
-
-    ${theme.responsive.isDesktopMD &&
-    css`
-      top: 0px;
-    `} 
 
     ${theme.responsive.isDesktopLG &&
     css`

@@ -5,14 +5,21 @@ export const move1 = keyframes`
     opacity: 0;
   }
 
-  29% {
+  23% {
     opacity: 0;
-    left: -9%;
   }
 
-  30% {
+  24% {
     opacity: 1;
-    left: -4%;
+    left: -20%;
+    transform: scale(3.1);
+  }
+
+  27% {
+    opacity: 1;
+    left: 7%;
+    transform: scale(1.1);
+
   }
 
   60% {
@@ -38,22 +45,25 @@ export const move2 = keyframes`
     opacity: 0;
   }
 
-  29% {
+  23% {
     opacity: 0;
-    top: 5%;
   }
 
-  30% {
+  24% {
     opacity: 1;
-    transform: scale(1.5);
+    top: -10%;
+    transform: scale(3.1);
+  }
+
+  27% {
+    opacity: 1;
+    transform: scale(1.1);
     top: 12%;
   }
-  33% {
-    transform: scale(1);
-  }
 
-  60% {
-    left: 10%;
+  69.9% {
+    left: 20%;
+    transform: scale(1.1);
   }
 
   70% {
@@ -61,12 +71,13 @@ export const move2 = keyframes`
   }
 
   73.9% {
+    top: -10%;
+    transform: scale(3.1);
     opacity: 1;
   }
   
   74%{
-    top: -10%;
-    transform: scale(1.5);
+    opacity: 0;
   }
 
   100% {
@@ -79,28 +90,38 @@ export const move3 = keyframes`
     opacity: 0;
   }
 
-  29% {
+  21% {
     opacity: 0;
-    left: 0;
   }
 
-  30% {
+  22% {
+    left: -30%;
+    transform: scale(4.1);
     opacity: 1;
-    transform: scale(1.5);
-    left: 10%;
   }
 
-  32% {
-    transform: scale(1);
-  }
-
-  70% {
-    left: -10%;
+  27% {
+    left: 15%;
+    transform: scale(1.1);
     opacity: 1;
+  }
+  
+  69.9% {
+    left: -5%;
+    transform: scale(1.1);
+  }
+
+  73.9% {
+    left: -30%;
+    transform: scale(4.1);
+    opacity: 1;
+  }
+
+  74%{
+    opacity: 0;
   }
 
   100% {
-    left: -100%;
     opacity: 0;
   }
 `;
@@ -110,28 +131,35 @@ export const move4 = keyframes`
     opacity: 0;
   }
 
-  29% {
+  21% {
     opacity: 0;
-    left: 0;
   }
 
-  30% {
+  22% {
+    left: -20%;
+    transform: scale(3.1);
     opacity: 1;
-    transform: scale(1.5);
+  }
+
+  27% {
+    opacity: 1;
+    transform: scale(1.1);
     left: 15%;
   }
-
-  32%{
-    transform: scale(1);
+  
+  69.9%{
+    left: -2%;
+    transform: scale(1.1);
   }
 
   73.9% {
+    left: -20%;
+    transform: scale(3.1);
     opacity: 1;
   }
 
   74%{
     opacity: 0;
-    left: -6%;
   }
 
   100% {
@@ -144,35 +172,34 @@ export const move5 = keyframes`
     opacity: 0;
   }
 
-  29% {
+  21% {
     opacity: 0;
-    right: -9%;
   }
 
-  30% {
+  22% {
+    right: -20%;
+    transform: scale(3.1);
     opacity: 1;
-    right: 0;
-    transform: scale(1.5);
   }
 
-  32% {
-    transform: scale(1);
+  27% {
+    right: 1%;
+    transform: scale(1.1);
   }
- 
-  70% {
-    right: 20%;
-    transform: scale(1);
+
+  69.9% {
+    right: 15%;
+    transform: scale(1.1);
   }
 
   73.9% {
+    right: -20%;
+    transform: scale(3.1);
     opacity: 1;
-    transform: scale(2);
   }
 
-  74%{
-    opacity: 0;
-    right: -10%;
-   
+  74% {
+    opacity: 0;   
   }
 
   100% {
@@ -185,45 +212,37 @@ export const move6 = keyframes`
     opacity: 0;
   }
 
-  29% {
+  21% {
     opacity: 0;
-    top: 10%;
   }
 
-  30% {
+  22% {
+    top: -20%;
+    transform: scale(3.1);
     opacity: 1;
-    transform: scale(1.5);
+  }
+  
+  27% {
     top: 30%;
-  }
-
-  32% {
-    transform: scale(1);
     right: 30%;
-    top: 32%;
+    transform: scale(1.1);
   }
 
-  40% {
-    right: 35%;
-    top: 34%;
-  }
-
-  60% {
+  69.9% {
+    top: 30%;
     right: 40%;
-    top: 25%;
-  }
-
-  70% {
-    right: 45%;
-    top: 15%;
+    transform: scale(1.1);
   }
 
   73.9% {
+    top: -20%;
+    right: 30%;
+    transform: scale(3.1);
     opacity: 1;
   }
-
-  74%{
+  
+  74% {
     opacity: 0;
-    top: -10%;
   }
 
   100% {
@@ -236,42 +255,35 @@ export const move7 = keyframes`
     opacity: 0;
   }
 
-  29% {
+  21% {
     opacity: 0;
-    left: 98%;
   }
 
-  30% {
+  22% {
+    right: -10%;
+    transform: scale(3.1);
     opacity: 1;
-    left: 93%;
-    transform: scale(2);
   }
 
-  32% {
-    transform: scale(1);
+  27% {
+    right: 2%;
+    transform: scale(1.1);
+    opacity: 1;
   }
-
-  60% {
-    left: 55%;
-  }
-
-  70% {
-    transform: scale(1);
-    left: 55%;
-  }
-
-  72% {
-    transform: scale(1.5);
+  
+  69.9% {
+    right: 25%;
+    transform: scale(1.1);
   }
 
   73.9% {
+    right: -10%;
+    transform: scale(3.1);
     opacity: 1;
-    transform: scale(2);
   }
 
   74%{
     opacity: 0;
-    left: 95%;
   }
 
   100% {
@@ -279,52 +291,53 @@ export const move7 = keyframes`
   }
 `;
 
-export const move8 = keyframes`
+export const moveSun = keyframes`
   0% {
     opacity: 0;
   }
 
-  29% {
+  21% {
     opacity: 0;
-    left: 0;
   }
 
-  30% {
+  22% {
+    left: -20%;
+    transform: scale(3.1);
     opacity: 1;
-    transform: scale(2);
+  }
+
+  27% {
+    opacity: 1;
+    transform: scale(1.1);
     left: 12%;
   }
 
-  32% {
-    transform: scale(1);
+  41% {
+    top: 6%;
+    left: 14%;
+    transform: rotate(15deg);
+  }
+  
+  55% {
+    top: 4%;
+    left: 8%;
+    transform: rotate(-15deg);
   }
 
-  36% {
-    transform: translate(20px, 30px);
+  69.9% {
+    top: 12%;
+    left: 10%;
+    transform: scale(1.1);
   }
 
-  40% {
-    transform: translate(40px, 20px);
-  }
-
-  50% {
-    transform: translate(20px, 30px);
-  }
-
-  70% {
-    transform: scale(1);
-    left: 12%;
-  }
-
-  73.8% {
+  73.9% {
+    left: -20%;
+    transform: scale(3.1);
     opacity: 1;
-    transform: scale(2);
-    left: -8%;
   }
 
   74%{
     opacity: 0;
-    left: -65%;
   }
 
   100% {

@@ -54,7 +54,7 @@ const mainSunMove = keyframes`
   }
 
   66% {
-    transform: scale(1) rotate(5deg) translate(3px,-3px);;
+    transform: scale(1) rotate(5deg) translate(3px,-3px);
   }
   
   100% {

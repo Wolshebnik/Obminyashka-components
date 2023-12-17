@@ -36,10 +36,13 @@ export const PresentSection = styled.section`
     css`
       height: 555px;
     `}
-    ${theme.responsive.isTabletUp &&
+
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
     css`
       height: 740px;
     `}
+    
     ${theme.responsive.isDesktop &&
     css`
       height: 1040px;
