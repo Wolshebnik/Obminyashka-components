@@ -28,6 +28,7 @@ export { ProductOwnerData } from './product-owner-data';
 export { ProductPostData } from './product-post-data';
 export { Search } from './search';
 export { Subtitle } from './subtitle';
+export { Success } from './successful-verification';
 export { Swiper } from './swiper';
 export { Title } from './title';
 export { Toast, showMessage } from './toast';
