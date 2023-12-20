@@ -71,8 +71,23 @@ export const FeaturesSection = styled.div`
 
 export const FeaturesWrapper = styled.div`
   position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow: hidden;
 
   ${({ theme }) => css`
+    & > div {
+      ${theme.responsive.isMobile &&
+      css`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        width: 100%;
+      `}
+    }
     ${theme.responsive.isTablet &&
     css`
       width: 640px;
@@ -86,15 +101,13 @@ export const FeaturesWrapper = styled.div`
 `;
 
 export const Furniture = styled.img`
-  position: absolute;
-  top: 51%;
-  left: 3%;
-  width: 110px;
-  height: 133px;
+  width: 150px;
+  height: 200px;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
+      position: absolute;
       top: 23%;
       left: 2%;
       width: 145px;
@@ -132,9 +145,8 @@ export const Furniture = styled.img`
 `;
 
 export const FirstBlock = styled.div`
-  position: absolute;
-  top: 86%;
-  left: 7px;
+  display: flex;
+  justify-content: center;
   height: 85px;
   z-index: 1;
 
@@ -143,6 +155,8 @@ export const FirstBlock = styled.div`
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
+      position: absolute;
+      top: 86%;
       left: -75px;
       height: 110px;
     `}
@@ -166,9 +180,6 @@ export const FirstBlock = styled.div`
 export const ThingsText = styled.p`
   ${textStyles};
 
-  position: relative;
-  top: -42%;
-  left: 2%;
   width: 106px;
   height: 49px;
   z-index: 1;
@@ -176,6 +187,7 @@ export const ThingsText = styled.p`
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
+      position: absolute;
       top: -147px;
       left: 138px;
       width: 150px;
@@ -207,13 +219,13 @@ export const ThingsText = styled.p`
 export const FirstKeg = styled.img`
   ${blockProperties}
 
-  position: absolute;
-  top: 6%;
-  left: 0;
+  display: none;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
+      position: absolute;
+      display: block;
       top: -80px;
       left: 98px;
     `}
@@ -244,9 +256,6 @@ export const FirstKeg = styled.img`
 `;
 
 export const Laptop = styled.img`
-  position: absolute;
-  top: 50%;
-  left: 37%;
   width: 91px;
   height: 78px;
   transform: rotate(-15deg);
@@ -254,6 +263,7 @@ export const Laptop = styled.img`
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
+      position: absolute;
       top: 17%;
       left: 37%;
       width: 170px;
@@ -288,16 +298,16 @@ export const Laptop = styled.img`
 `;
 
 export const SecondBlock = styled.div`
-  position: absolute;
-  top: 67%;
-  left: 34%;
-  height: 178px;
-
   ${blockProperties}
+
+  height: 178px;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
+      position: absolute;
+      top: 67%;
+      left: 34%;
       height: 176px;
     `}
 
@@ -320,15 +330,13 @@ export const SecondBlock = styled.div`
 export const RegText = styled.p`
   ${textStyles};
 
-  position: absolute;
-  top: 18px;
-  left: 10px;
   width: 88px;
   height: 55px;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
+      position: absolute;
       top: -90px;
       left: 10px;
       width: 197px;
@@ -360,18 +368,16 @@ export const RegText = styled.p`
 `;
 
 export const SecondKeg = styled.img`
-  position: absolute;
-  z-index: -1;
-
   ${blockProperties}
 
-  top: 77px;
-  left: -10px;
+  display: none;
   height: 113px;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
+      position: absolute;
+      display: block;
       top: -22px;
       left: -9px;
       height: 180px;
@@ -406,9 +412,6 @@ export const SecondKeg = styled.img`
 `;
 
 export const Toys = styled.img`
-  position: absolute;
-  top: 55%;
-  left: 68%;
   width: 120px;
   height: 103px;
   transform: rotate(18deg);
@@ -416,6 +419,7 @@ export const Toys = styled.img`
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
+      position: absolute;
       top: 22%;
       left: 77%;
       width: 170px;
@@ -450,16 +454,16 @@ export const Toys = styled.img`
 `;
 
 export const ThirdBlock = styled.div`
-  position: absolute;
-  top: 72%;
-  left: 61%;
-  height: 168px;
-
   ${blockProperties}
+
+  height: 168px;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
+      position: absolute;
+      top: 72%;
+      left: 61%;
       height: 195px;
     `}
 
@@ -482,15 +486,13 @@ export const ThirdBlock = styled.div`
 export const TradeText = styled.p`
   ${textStyles};
 
-  position: absolute;
-  top: 10px;
-  left: 3px;
   width: 130px;
   height: 63px;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
+      position: absolute;
       top: -100px;
       left: 30px;
       width: 204px;
@@ -528,14 +530,14 @@ export const TradeText = styled.p`
 export const ThirdKeg = styled.img`
   ${blockProperties}
 
-  position: absolute;
-  top: 66px;
-  left: -3px;
+  display: none;
   height: 110px;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
+      position: absolute;
+      display: block;
       top: -30px;
       left: 14px;
       height: 180px;
@@ -543,7 +545,6 @@ export const ThirdKeg = styled.img`
 
     ${theme.responsive.isTabletBG &&
     css`
-      top: -30px;
       left: 28px;
     `}
 

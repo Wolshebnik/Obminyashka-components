@@ -5,7 +5,7 @@ import * as Image from 'components/img';
 export const PresentSection = styled.section`
   position: relative;
   width: 100%;
-  height: 630px;
+  height: 450px;
   overflow: hidden;
   z-index: 0;
 
@@ -32,9 +32,9 @@ export const PresentSection = styled.section`
   }
 
   ${({ theme }) => css`
-    ${theme.responsive.isTablet &&
+    ${theme.responsive.isMobileBG &&
     css`
-      height: 555px;
+      height: 550px;
     `}
 
     ${theme.responsive.isTablet &&

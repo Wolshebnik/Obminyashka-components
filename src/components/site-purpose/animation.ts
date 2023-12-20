@@ -12,18 +12,6 @@ export const appearAnimation = keyframes`
   }
 `;
 
-// export const disappearAnimation = keyframes`
-//   from {
-//     opacity: 1;
-//     transform: scale(1);
-//   }
-
-//   to {
-//     opacity: 0;
-//     transform: scale(0);
-//   }
-// `;
-
 export const balloonAnimation = keyframes`
 20% {
   opacity: 1;
@@ -58,16 +46,37 @@ export const featuresAnimation = keyframes`
 }
 `;
 
-// const transformForColumns = keyframes`
-//   60% {
-//     transform: scaleY(1);
-//   }
-//   62% {
-//     transform: scaleY(1.5);
-//   }
-//   64% {
-//     transform: scaleY(1);
-//   }
+// export const featuresAnimationMobile = keyframes`
+// 0% {
+//   left: 0;
+// }
+// 22% {
+//   left: 0;
+// }
+// 25% {
+//   left: -100%;
+// }
+
+// 47% {
+//   left: -100%;
+// }
+// 50% {
+//   left: -200%;
+// }
+
+// 72% {
+//   left: -200%;
+// }
+// 75% {
+//   left: -100%;
+// }
+
+// 97% {
+//   left: -100%;
+// }
+// 100% {
+//   left: 0;
+// }
 // `;
 
 export const stretchFirstColumn = keyframes`

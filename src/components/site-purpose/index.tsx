@@ -4,12 +4,15 @@ import { ISitePurpose } from './types';
 import { FeaturesSection } from './features';
 import { BalloonSection } from './balloonSection';
 import { FeaturesClouds } from './features/featuresClouds';
+import { Responsive } from 'components';
 
 const SitePurpose = ({ regText, tradeText, thingsText }: ISitePurpose) => {
   return (
     <>
       <Styles.PresentSection>
-        <BalloonSection />
+        <Responsive.Desktop>
+          <BalloonSection />
+        </Responsive.Desktop>
 
         <FeaturesClouds />
 
