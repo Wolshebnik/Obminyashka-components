@@ -6,32 +6,32 @@ const FeaturesSection = ({ thingsText, regText, tradeText }: IFeatures) => {
   return (
     <Styles.FeaturesSection>
       <Styles.FeaturesWrapper>
-        <div>
+        <Styles.ColumnOne>
           <Styles.Furniture src={Image.newFurniture} />
 
           <Styles.FirstBlock>
             <Styles.ThingsText>{thingsText}</Styles.ThingsText>
             <Styles.FirstKeg src={Image.firstKeg} />
           </Styles.FirstBlock>
-        </div>
+        </Styles.ColumnOne>
 
-        <div>
+        <Styles.ColumnTwo>
           <Styles.Laptop src={Image.newLaptop} />
 
           <Styles.SecondBlock>
             <Styles.RegText>{regText}</Styles.RegText>
             <Styles.SecondKeg src={Image.secondKeg} />
           </Styles.SecondBlock>
-        </div>
+        </Styles.ColumnTwo>
 
-        <div>
+        <Styles.ColumnTree>
           <Styles.Toys src={Image.newToys} />
 
           <Styles.ThirdBlock>
             <Styles.TradeText>{tradeText}</Styles.TradeText>
             <Styles.ThirdKeg src={Image.thirdKeg} />
           </Styles.ThirdBlock>
-        </div>
+        </Styles.ColumnTree>
       </Styles.FeaturesWrapper>
     </Styles.FeaturesSection>
   );

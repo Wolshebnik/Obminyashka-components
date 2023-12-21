@@ -30,8 +30,25 @@ const textStyles = css`
   `}
 `;
 
+const colunmsStyles = css`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 100%;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      position: static;
+    `}
+  `}
+`;
+
 const blockProperties = css`
-  width: 135px;
+  width: 245px;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
@@ -77,20 +94,10 @@ export const FeaturesWrapper = styled.div`
   overflow: hidden;
 
   ${({ theme }) => css`
-    & > div {
-      ${theme.responsive.isMobile &&
-      css`
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        flex: 0 0 auto;
-        width: 100%;
-      `}
-    }
     ${theme.responsive.isTablet &&
     css`
       width: 640px;
+      overflow: visible;
     `}
 
     ${theme.responsive.isDesktop &&
@@ -100,7 +107,22 @@ export const FeaturesWrapper = styled.div`
   `}
 `;
 
+export const ColumnOne = styled.div`
+  ${colunmsStyles}
+
+  top: 90px;
+  animation: ${Animation.ColunmAnimation1} 10s infinite;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      animation: none;
+    `}
+  `}
+`;
+
 export const Furniture = styled.img`
+  margin-bottom: 20px;
   width: 150px;
   height: 200px;
 
@@ -147,7 +169,7 @@ export const Furniture = styled.img`
 export const FirstBlock = styled.div`
   display: flex;
   justify-content: center;
-  height: 85px;
+  height: 80px;
   z-index: 1;
 
   ${blockProperties}
@@ -180,8 +202,9 @@ export const FirstBlock = styled.div`
 export const ThingsText = styled.p`
   ${textStyles};
 
-  width: 106px;
-  height: 49px;
+  width: 160px;
+  height: 80px;
+  font-size: 22px;
   z-index: 1;
 
   ${({ theme }) => css`
@@ -192,6 +215,7 @@ export const ThingsText = styled.p`
       left: 138px;
       width: 150px;
       height: 65px;
+      font-size: 18px;
     `}
 
     ${theme.responsive.isTablet &&
@@ -255,9 +279,30 @@ export const FirstKeg = styled.img`
   `}
 `;
 
+export const ColumnTwo = styled.div`
+  ${colunmsStyles}
+
+  left: 200%;
+  bottom: -20px;
+  animation: ${Animation.ColunmAnimation2} 10s infinite;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isMobileBG &&
+    css`
+      bottom: 50px;
+    `}
+
+    ${theme.responsive.isTablet &&
+    css`
+      animation: none;
+    `}
+  `}
+`;
+
 export const Laptop = styled.img`
-  width: 91px;
-  height: 78px;
+  margin-bottom: 40px;
+  width: 140px;
+  height: 120px;
   transform: rotate(-15deg);
 
   ${({ theme }) => css`
@@ -300,6 +345,8 @@ export const Laptop = styled.img`
 export const SecondBlock = styled.div`
   ${blockProperties}
 
+  display: flex;
+  justify-content: center;
   height: 178px;
 
   ${({ theme }) => css`
@@ -330,8 +377,9 @@ export const SecondBlock = styled.div`
 export const RegText = styled.p`
   ${textStyles};
 
-  width: 88px;
+  width: 140px;
   height: 55px;
+  font-size: 22px;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
@@ -341,6 +389,7 @@ export const RegText = styled.p`
       left: 10px;
       width: 197px;
       height: 66px;
+      font-size: 18px;
     `}
 
     ${theme.responsive.isTablet &&
@@ -411,9 +460,30 @@ export const SecondKeg = styled.img`
   `}
 `;
 
+export const ColumnTree = styled.div`
+  ${colunmsStyles}
+
+  left: 200%;
+  bottom: -10px;
+  animation: ${Animation.ColunmAnimation3} 10s infinite;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isMobileBG &&
+    css`
+      bottom: 70px;
+    `}
+
+    ${theme.responsive.isTablet &&
+    css`
+      animation: none;
+    `}
+  `}
+`;
+
 export const Toys = styled.img`
-  width: 120px;
-  height: 103px;
+  margin: 0 0 20px 15px;
+  width: 205px;
+  height: 190px;
   transform: rotate(18deg);
 
   ${({ theme }) => css`
@@ -456,6 +526,9 @@ export const Toys = styled.img`
 export const ThirdBlock = styled.div`
   ${blockProperties}
 
+  display: flex;
+  justify-content: center;
+  width: 245px;
   height: 168px;
 
   ${({ theme }) => css`
@@ -486,8 +559,9 @@ export const ThirdBlock = styled.div`
 export const TradeText = styled.p`
   ${textStyles};
 
-  width: 130px;
+  width: 245px;
   height: 63px;
+  font-size: 22px;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
@@ -497,6 +571,7 @@ export const TradeText = styled.p`
       left: 30px;
       width: 204px;
       height: 84px;
+      font-size: 18px;
     `}
 
     ${theme.responsive.isTabletBG &&

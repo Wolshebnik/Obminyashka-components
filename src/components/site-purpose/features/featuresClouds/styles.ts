@@ -268,7 +268,7 @@ export const RightBottomCloud = styled.div`
 export const HappySun = styled.div`
   position: absolute;
   top: 14%;
-  left: 37%;
+  left: 5%;
   height: 83px;
   width: 83px;
   background-image: url(${Image.sun});
