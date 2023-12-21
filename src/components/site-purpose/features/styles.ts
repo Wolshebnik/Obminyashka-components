@@ -110,10 +110,15 @@ export const FeaturesWrapper = styled.div`
 export const ColumnOne = styled.div`
   ${colunmsStyles}
 
-  top: 90px;
+  bottom: 55px;
   animation: ${Animation.ColunmAnimation1} 10s infinite;
 
   ${({ theme }) => css`
+    ${theme.responsive.isMobileBG &&
+    css`
+      bottom: 100px;
+    `}
+
     ${theme.responsive.isTablet &&
     css`
       animation: none;
@@ -289,7 +294,7 @@ export const ColumnTwo = styled.div`
   ${({ theme }) => css`
     ${theme.responsive.isMobileBG &&
     css`
-      bottom: 50px;
+      bottom: 35px;
     `}
 
     ${theme.responsive.isTablet &&
@@ -470,7 +475,7 @@ export const ColumnTree = styled.div`
   ${({ theme }) => css`
     ${theme.responsive.isMobileBG &&
     css`
-      bottom: 70px;
+      bottom: 45px;
     `}
 
     ${theme.responsive.isTablet &&

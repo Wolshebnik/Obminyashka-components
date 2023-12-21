@@ -5,7 +5,7 @@ import * as Image from 'components/img';
 export const PresentSection = styled.section`
   position: relative;
   width: 100%;
-  height: 450px;
+  height: 500px;
   overflow: hidden;
   z-index: 0;
 

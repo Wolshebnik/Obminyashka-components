@@ -344,3 +344,57 @@ export const moveSun = keyframes`
     opacity: 0;
   }
 `;
+
+export const SunMobile = keyframes`
+  27% {
+    top: 10%;
+    left: 10%;
+  }
+
+  33% {
+    left: 37%;
+  }
+
+  60% {
+    left: 37%;
+  }
+
+  66% {
+    left: 70%;
+  }
+  
+  93% {
+    left: 70%;
+  }
+
+  99% {
+    left: 10%;
+  }
+`;
+
+export const SunMobileBG = keyframes`
+  27% {
+    top: 10%;
+    left: 10%;
+  }
+
+  33% {
+    left: 42%;
+  }
+
+  60% {
+    left: 42%;
+  }
+
+  66% {
+    left: 80%;
+  }
+  
+  93% {
+    left: 80%;
+  }
+
+  99% {
+    left: 10%;
+  }
+`;

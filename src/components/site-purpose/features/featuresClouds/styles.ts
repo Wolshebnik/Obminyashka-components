@@ -267,22 +267,29 @@ export const RightBottomCloud = styled.div`
 
 export const HappySun = styled.div`
   position: absolute;
-  top: 14%;
-  left: 5%;
+  top: 10%;
+  left: 10%;
   height: 83px;
   width: 83px;
   background-image: url(${Image.sun});
   background-repeat: no-repeat;
   background-size: cover;
+  animation: ${Animation.SunMobile} 10s infinite;
   z-index: 1;
 
   ${({ theme }) => css`
+    ${theme.responsive.isMobileBG &&
+    css`
+      animation: ${Animation.SunMobileBG} 10s infinite;
+    `}
+
     ${theme.responsive.isTablet &&
     css`
-      top: 9%;
-      left: 10%;
+      top: 5%;
+      left: 5%;
       width: 80px;
       height: 80px;
+      animation: none;
     `}
 
     ${theme.responsive.isTablet &&

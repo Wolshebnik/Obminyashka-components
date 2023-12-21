@@ -184,40 +184,7 @@ export const featuresAnimationMobile = keyframes`
 100% {
   left: 0;
 }
-
 `;
-// export const featuresAnimationMobile = keyframes`
-// 0% {
-//   left: 0;
-// }
-// 22% {
-//   left: 0;
-// }
-// 25% {
-//   left: -100%;
-// }
-
-// 47% {
-//   left: -100%;
-// }
-// 50% {
-//   left: -200%;
-// }
-
-// 72% {
-//   left: -200%;
-// }
-// 75% {
-//   left: -100%;
-// }
-
-// 97% {
-//   left: -100%;
-// }
-// 100% {
-//   left: 0;
-// }
-// `;
 
 export const stretchFirstColumn = keyframes`
   0% {
