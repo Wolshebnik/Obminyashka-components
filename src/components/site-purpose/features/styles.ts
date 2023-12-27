@@ -30,7 +30,7 @@ const textStyles = css`
   `}
 `;
 
-const colunmsStyles = css`
+const ColunmsStyles = css`
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -47,7 +47,7 @@ const colunmsStyles = css`
   `}
 `;
 
-const blockProperties = css`
+const BlockProperties = css`
   width: 245px;
 
   ${({ theme }) => css`
@@ -108,7 +108,7 @@ export const FeaturesWrapper = styled.div`
 `;
 
 export const ColumnOne = styled.div`
-  ${colunmsStyles}
+  ${ColunmsStyles}
 
   bottom: 55px;
   animation: ${Animation.ColunmAnimation1} 10s infinite;
@@ -177,7 +177,7 @@ export const FirstBlock = styled.div`
   height: 80px;
   z-index: 1;
 
-  ${blockProperties}
+  ${BlockProperties}
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
@@ -246,7 +246,7 @@ export const ThingsText = styled.p`
 `;
 
 export const FirstKeg = styled.img`
-  ${blockProperties}
+  ${BlockProperties}
 
   display: none;
 
@@ -285,7 +285,7 @@ export const FirstKeg = styled.img`
 `;
 
 export const ColumnTwo = styled.div`
-  ${colunmsStyles}
+  ${ColunmsStyles}
 
   left: 200%;
   bottom: -20px;
@@ -348,7 +348,7 @@ export const Laptop = styled.img`
 `;
 
 export const SecondBlock = styled.div`
-  ${blockProperties}
+  ${BlockProperties}
 
   display: flex;
   justify-content: center;
@@ -422,7 +422,7 @@ export const RegText = styled.p`
 `;
 
 export const SecondKeg = styled.img`
-  ${blockProperties}
+  ${BlockProperties}
 
   display: none;
   height: 113px;
@@ -466,7 +466,7 @@ export const SecondKeg = styled.img`
 `;
 
 export const ColumnTree = styled.div`
-  ${colunmsStyles}
+  ${ColunmsStyles}
 
   left: 200%;
   bottom: -10px;
@@ -529,7 +529,7 @@ export const Toys = styled.img`
 `;
 
 export const ThirdBlock = styled.div`
-  ${blockProperties}
+  ${BlockProperties}
 
   display: flex;
   justify-content: center;
@@ -608,7 +608,7 @@ export const TradeText = styled.p`
 `;
 
 export const ThirdKeg = styled.img`
-  ${blockProperties}
+  ${BlockProperties}
 
   display: none;
   height: 110px;
