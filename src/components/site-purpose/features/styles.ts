@@ -444,8 +444,6 @@ export const SecondKeg = styled.img`
       left: -25px;
       height: 180px;
     `}
-
-    
     
     ${theme.responsive.isDesktop &&
     css`
@@ -585,7 +583,7 @@ export const TradeText = styled.p`
       left: 43px;
     `}
 
-    ${theme.responsive.isTabletBG &&
+    ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
       top: -30%;
@@ -628,7 +626,7 @@ export const ThirdKeg = styled.img`
       left: 28px;
     `}
 
-    ${theme.responsive.isTabletBG &&
+    ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
       top: -7px;

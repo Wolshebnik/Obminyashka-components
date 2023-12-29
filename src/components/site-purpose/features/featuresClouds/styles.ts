@@ -34,7 +34,7 @@ export const FirstLeftCloud = styled.div`
     ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
-      top: 15%;
+      top: 7%;
       width: 160px;
       height: 80px;
     `}
@@ -61,8 +61,8 @@ export const SecondSmallTopCloud = styled.div`
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      top: 53%;
-      left: -5%;
+      top: 40%;
+      left: -2%;
       width: 133px;
       height: 77px;
     `}
@@ -70,8 +70,8 @@ export const SecondSmallTopCloud = styled.div`
     ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
-      top: 21%;
-      left: 47%;
+      top: 40%;
+      left: 10%;
     `}
 
     ${theme.responsive.isDesktop &&
@@ -97,7 +97,7 @@ export const ThirdLeftCloud = styled.div`
     ${theme.responsive.isTablet &&
     css`
       top: 75%;
-      left: 10%;
+      left: 12%;
       width: 65px;
       height: 35px;
     `}
@@ -130,7 +130,7 @@ export const BottomLeftSmallCloud = styled.div`
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      top: 33%;
+      top: 14%;
       left: 27%;
       width: 65px;
       height: 35px;
@@ -166,8 +166,8 @@ export const RightTopCloud = styled.div`
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      top: 80%;
-      right: 89%;
+      top: 10%;
+      right: 5%;
       width: 120px;
       height: 70px;
     `}
@@ -202,7 +202,7 @@ export const RightMiddleCloud = styled.div`
     ${theme.responsive.isTablet &&
     css`
       top: 34%;
-      right: 22%;
+      right: 25%;
       width: 65px;
       height: 35px;
     `}
@@ -240,9 +240,9 @@ export const RightBottomCloud = styled.div`
     ${theme.responsive.isTablet &&
     css`
       top: 75%;
-      right: 20%;
-      width: 151px;
-      height: 78px;
+      right: 1%;
+      width: 65px;
+      height: 35px;
       transform: rotate(10deg);
     `}
 
@@ -250,7 +250,7 @@ export const RightBottomCloud = styled.div`
     theme.responsive.isLandscape &&
     css`
       top: 70%;
-      right: 26%;
+      right: 10%;
     `}
 
     ${theme.responsive.isDesktop &&

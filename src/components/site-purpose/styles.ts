@@ -40,7 +40,7 @@ export const PresentSection = styled.section`
     ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
-      height: 740px;
+      height: 700px;
     `}
     
     ${theme.responsive.isDesktop &&
