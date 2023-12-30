@@ -1,8 +1,22 @@
+import { useNavigate } from 'react-router-dom';
+
 import * as Styles from './styles';
 import { IFeatures } from './types';
 import * as Image from 'components/img';
 
-const FeaturesSection = ({ thingsText, regText, tradeText }: IFeatures) => {
+const FeaturesSection = ({
+  regText,
+  tradeText,
+  thingsText,
+  regTextTwo,
+  regTextLink,
+  regTextRoute,
+  tradeTextLink,
+  tradeTextRoute,
+  thingsTextLink,
+  thingsTextRoute,
+}: IFeatures) => {
+  const navigate = useNavigate();
   return (
     <Styles.FeaturesSection>
       <Styles.FeaturesWrapper>
@@ -10,7 +24,12 @@ const FeaturesSection = ({ thingsText, regText, tradeText }: IFeatures) => {
           <Styles.Furniture src={Image.newFurniture} />
 
           <Styles.FirstBlock>
-            <Styles.ThingsText>{thingsText}</Styles.ThingsText>
+            <Styles.ThingsText>
+              <span>{thingsText}</span>
+              <Styles.ThingsTextLink onClick={() => navigate(thingsTextRoute)}>
+                {thingsTextLink}
+              </Styles.ThingsTextLink>
+            </Styles.ThingsText>
             <Styles.FirstKeg src={Image.firstKeg} />
           </Styles.FirstBlock>
         </Styles.ColumnOne>
@@ -19,7 +38,13 @@ const FeaturesSection = ({ thingsText, regText, tradeText }: IFeatures) => {
           <Styles.Laptop src={Image.newLaptop} />
 
           <Styles.SecondBlock>
-            <Styles.RegText>{regText}</Styles.RegText>
+            <Styles.RegText>
+              <span>{regText}</span>
+              <Styles.RegTextLink onClick={() => navigate(regTextRoute)}>
+                {regTextLink}
+              </Styles.RegTextLink>
+              <span>{regTextTwo}</span>
+            </Styles.RegText>
             <Styles.SecondKeg src={Image.secondKeg} />
           </Styles.SecondBlock>
         </Styles.ColumnTwo>
@@ -28,7 +53,12 @@ const FeaturesSection = ({ thingsText, regText, tradeText }: IFeatures) => {
           <Styles.Toys src={Image.newToys} />
 
           <Styles.ThirdBlock>
-            <Styles.TradeText>{tradeText}</Styles.TradeText>
+            <Styles.TradeText>
+              <Styles.TradeTextLink onClick={() => navigate(tradeTextRoute)}>
+                {tradeTextLink}
+              </Styles.TradeTextLink>
+              <span>{tradeText}</span>
+            </Styles.TradeText>
             <Styles.ThirdKeg src={Image.thirdKeg} />
           </Styles.ThirdBlock>
         </Styles.ColumnTree>

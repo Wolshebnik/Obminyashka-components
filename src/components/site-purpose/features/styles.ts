@@ -30,6 +30,15 @@ const textStyles = css`
   `}
 `;
 
+const stylesLinkText = css`
+  font-weight: 700;
+  cursor: pointer;
+
+  ${({ theme }) => css`
+    color: ${theme.colors.navCategory.colorHoveredText};
+  `}
+`;
+
 const ColunmsStyles = css`
   position: absolute;
   display: flex;
@@ -204,12 +213,11 @@ export const FirstBlock = styled.div`
   `}
 `;
 
-export const ThingsText = styled.p`
+export const ThingsText = styled.div`
   ${textStyles};
 
   width: 160px;
   height: 80px;
-  font-size: 22px;
   z-index: 1;
 
   ${({ theme }) => css`
@@ -220,7 +228,6 @@ export const ThingsText = styled.p`
       left: 138px;
       width: 150px;
       height: 65px;
-      font-size: 18px;
     `}
 
     ${theme.responsive.isTablet &&
@@ -243,6 +250,10 @@ export const ThingsText = styled.p`
       top: -76%;
     `}
   `}
+`;
+
+export const ThingsTextLink = styled.span`
+  ${stylesLinkText}
 `;
 
 export const FirstKeg = styled.img`
@@ -366,6 +377,7 @@ export const SecondBlock = styled.div`
     ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
+      top: 68%;
       height: 270px;
     `}
     
@@ -379,12 +391,11 @@ export const SecondBlock = styled.div`
   `}
 `;
 
-export const RegText = styled.p`
+export const RegText = styled.div`
   ${textStyles};
 
   width: 140px;
   height: 55px;
-  font-size: 22px;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
@@ -394,7 +405,6 @@ export const RegText = styled.p`
       left: 10px;
       width: 197px;
       height: 66px;
-      font-size: 18px;
     `}
 
     ${theme.responsive.isTablet &&
@@ -408,7 +418,7 @@ export const RegText = styled.p`
     
     ${theme.responsive.isDesktop &&
     css`
-      top: -35%;
+      top: -38%;
       left: 87%;
       width: 370px;
       height: 124px;
@@ -419,6 +429,10 @@ export const RegText = styled.p`
       top: -41%;
     `}
   `}
+`;
+
+export const RegTextLink = styled.span`
+  ${stylesLinkText}
 `;
 
 export const SecondKeg = styled.img`
@@ -538,8 +552,8 @@ export const ThirdBlock = styled.div`
     ${theme.responsive.isTablet &&
     css`
       position: absolute;
-      top: 72%;
-      left: 61%;
+      top: 73%;
+      right: 0%;
       height: 195px;
     `}
 
@@ -553,18 +567,17 @@ export const ThirdBlock = styled.div`
     css`
       height: 419px;
       bottom: 104px;
-      left: 0;
+      right: 20%;
       animation: ${Animation.stretchThirdColumn} 15s infinite;
     `}
   `}
 `;
 
-export const TradeText = styled.p`
+export const TradeText = styled.div`
   ${textStyles};
 
   width: 245px;
   height: 63px;
-  font-size: 22px;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
@@ -574,7 +587,6 @@ export const TradeText = styled.p`
       left: 30px;
       width: 204px;
       height: 84px;
-      font-size: 18px;
     `}
 
     ${theme.responsive.isTabletBG &&
@@ -592,8 +604,8 @@ export const TradeText = styled.p`
     
     ${theme.responsive.isDesktop &&
     css`
-      left: 184%;
-      top: -42%;
+      left: 36%;
+      top: -43%;
       width: 383px;
       height: 157px;
     `}
@@ -603,6 +615,10 @@ export const TradeText = styled.p`
       top: -47%;
     `}
   `}
+`;
+
+export const TradeTextLink = styled.span`
+  ${stylesLinkText}
 `;
 
 export const ThirdKeg = styled.img`
@@ -636,7 +652,7 @@ export const ThirdKeg = styled.img`
     ${theme.responsive.isDesktop &&
     css`
       height: 254px;
-      left: 177%;
+      left: 27%;
     `}
 
     ${theme.responsive.isDesktopLG &&

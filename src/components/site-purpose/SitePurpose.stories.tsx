@@ -12,8 +12,12 @@ type Story = StoryObj<typeof SitePurpose>;
 
 export const MainSitePurpose: Story = {
   args: {
-    thingsText: 'Накопичилося багато дитячих речей? ',
-    regText: 'Просто зарееструйся та розмісти оголошення! ',
-    tradeText: 'Обміняйтесь з іншими користувачами на шось кльове та корисне!',
+    regText: 'Просто ',
+    regTextLink: 'зарееструйся ',
+    tradeTextLink: 'Обміняйтесь ',
+    thingsTextLink: 'дитячих речей? ',
+    thingsText: 'Накопичилося багато ',
+    regTextTwo: 'та розмісти оголошення! ',
+    tradeText: 'з іншими користувачами на шось кльове та корисне!',
   },
 };
