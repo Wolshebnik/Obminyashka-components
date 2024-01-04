@@ -15,20 +15,19 @@ export const PresentSection = styled.section`
     width: 100%;
     height: 100%;
     background: linear-gradient(136deg, #a3dee5 23.74%, #34a2ce 100%);
-    z-index: -1;
   }
 
   &::after {
     content: '';
     position: absolute;
-    top: 0;
+    bottom: 0;
     width: 100%;
-    height: 100%;
+    height: 25%;
     background-image: url(${Image.newMaskCloud});
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center bottom;
-    z-index: 5;
+    z-index: 1;
   }
 
   ${({ theme }) => css`

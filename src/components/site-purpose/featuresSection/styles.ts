@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom';
+
 import styled, { css } from 'styled-components';
 
 import * as Animation from '../animation';
-import { Link } from 'react-router-dom';
 
 const textStyles = css`
   font-size: 12px;
@@ -178,12 +179,12 @@ export const Furniture = styled.img`
 `;
 
 export const FirstBlock = styled.div`
+  ${BlockProperties}
+
   display: flex;
   justify-content: center;
   height: 80px;
   z-index: 1;
-
-  ${BlockProperties}
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
