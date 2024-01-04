@@ -239,7 +239,7 @@ export const ThingsText = styled.div`
     css`
       top: -70%;
       left: 14%;
-      width: 280px;
+      width: 290px;
       height: 122px;
     `}
 
