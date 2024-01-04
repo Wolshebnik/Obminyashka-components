@@ -1,10 +1,10 @@
 import * as Styles from './styles';
 
 import { ISitePurpose } from './types';
-import { FeaturesSection } from './features';
-import { BalloonSection } from './balloonSection';
-import { FeaturesClouds } from './features/featuresClouds';
 import { Responsive } from 'components';
+import { BalloonSection } from './balloonSection';
+import { FeaturesSection } from './featuresSection';
+import { FeaturesClouds } from './featuresSection/featuresClouds';
 
 const SitePurpose = ({
   regText,
