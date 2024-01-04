@@ -429,7 +429,7 @@ export const RegText = styled.div`
   `}
 `;
 
-export const RegTextLink = styled.span`
+export const RegTextLink = styled(Link)`
   ${stylesLinkText}
 `;
 
@@ -615,7 +615,7 @@ export const TradeText = styled.div`
   `}
 `;
 
-export const TradeTextLink = styled.span`
+export const TradeTextLink = styled(Link)`
   ${stylesLinkText}
 `;
 

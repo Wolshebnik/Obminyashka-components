@@ -1,5 +1,3 @@
-import { useNavigate } from 'react-router-dom';
-
 import * as Styles from './styles';
 import { IFeatures } from './types';
 import * as Image from 'components/img';
@@ -16,8 +14,6 @@ const FeaturesSection = ({
   thingsTextLink,
   thingsTextRoute,
 }: IFeatures) => {
-  const navigate = useNavigate();
-
   return (
     <Styles.FeaturesSection>
       <Styles.FeaturesWrapper>
@@ -41,7 +37,7 @@ const FeaturesSection = ({
           <Styles.SecondBlock>
             <Styles.RegText>
               <span>{regText}</span>
-              <Styles.RegTextLink onClick={() => navigate(regTextRoute)}>
+              <Styles.RegTextLink to={regTextRoute}>
                 {regTextLink}
               </Styles.RegTextLink>
               <span>{regTextTwo}</span>
@@ -55,7 +51,7 @@ const FeaturesSection = ({
 
           <Styles.ThirdBlock>
             <Styles.TradeText>
-              <Styles.TradeTextLink onClick={() => navigate(tradeTextRoute)}>
+              <Styles.TradeTextLink to={tradeTextRoute}>
                 {tradeTextLink}
               </Styles.TradeTextLink>
               <span>{tradeText}</span>
