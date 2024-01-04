@@ -1,13 +1,13 @@
 import styled, { css } from 'styled-components';
 
 import * as Animation from '../animation';
+import { Link } from 'react-router-dom';
 
 const textStyles = css`
   font-size: 12px;
   font-weight: 400;
   text-align: center;
   line-height: normal;
-  color: ${({ theme }) => theme.colors.white};
 
   ${({ theme }) => css`
     color: ${theme.colors.white};
@@ -32,11 +32,8 @@ const textStyles = css`
 
 const stylesLinkText = css`
   font-weight: 700;
+  color: ${({ theme }) => theme.colors.navCategory.colorHoveredText};
   cursor: pointer;
-
-  ${({ theme }) => css`
-    color: ${theme.colors.navCategory.colorHoveredText};
-  `}
 `;
 
 const ColunmsStyles = css`
@@ -252,7 +249,7 @@ export const ThingsText = styled.div`
   `}
 `;
 
-export const ThingsTextLink = styled.span`
+export const ThingsTextLink = styled(Link)`
   ${stylesLinkText}
 `;
 

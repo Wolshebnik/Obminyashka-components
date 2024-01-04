@@ -17,6 +17,7 @@ const FeaturesSection = ({
   thingsTextRoute,
 }: IFeatures) => {
   const navigate = useNavigate();
+
   return (
     <Styles.FeaturesSection>
       <Styles.FeaturesWrapper>
@@ -26,7 +27,7 @@ const FeaturesSection = ({
           <Styles.FirstBlock>
             <Styles.ThingsText>
               <span>{thingsText}</span>
-              <Styles.ThingsTextLink onClick={() => navigate(thingsTextRoute)}>
+              <Styles.ThingsTextLink to={thingsTextRoute}>
                 {thingsTextLink}
               </Styles.ThingsTextLink>
             </Styles.ThingsText>
