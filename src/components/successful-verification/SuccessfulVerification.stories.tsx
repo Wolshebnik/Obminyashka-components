@@ -21,6 +21,7 @@ export const SuccessDefault: Story = {
         nameWebsite="Obminyashka"
         text="Верифікація пройшла успішно."
         textButton="Головна сторінка"
+        href="#"
       />
     </div>
   ),

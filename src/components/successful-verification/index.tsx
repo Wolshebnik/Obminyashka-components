@@ -4,7 +4,13 @@ import * as Styles from './styles';
 import { ISuccess } from './types';
 import { MoveCloud } from './moveCloud';
 
-export const Success = ({ text, title, textButton, nameWebsite }: ISuccess) => {
+export const Success = ({
+  text,
+  title,
+  textButton,
+  nameWebsite,
+  href,
+}: ISuccess) => {
   return (
     <Styles.Box>
       <Styles.Title>{title}</Styles.Title>
@@ -15,7 +21,7 @@ export const Success = ({ text, title, textButton, nameWebsite }: ISuccess) => {
         <Styles.PhotoCartoon src={Image.cartoonBird} />
       </Styles.PhotoWrapper>
 
-      <Styles.Btn to="/asd">{textButton}</Styles.Btn>
+      <Styles.Btn to={href}>{textButton}</Styles.Btn>
 
       <MoveCloud />
     </Styles.Box>

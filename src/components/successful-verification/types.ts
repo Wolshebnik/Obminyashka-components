@@ -3,4 +3,5 @@ export interface ISuccess {
   title: string;
   textButton: string;
   nameWebsite: string;
+  href: string;
 }
