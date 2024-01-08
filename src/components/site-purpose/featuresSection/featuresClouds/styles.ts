@@ -16,13 +16,14 @@ export const WrapperForClouds = styled.div`
   overflow: hidden;
 `;
 
-export const FirstLeftCloud = styled.div`
+export const FirstTopLeftCloud = styled.div`
   ${cloudStyles};
 
   top: 3%;
+  left: 2%;
   width: 72px;
   height: 40px;
-  left: 2%;
+  animation: ${Animation.FirstTopLeftCloudMobile} 15s linear infinite;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
@@ -44,94 +45,23 @@ export const FirstLeftCloud = styled.div`
       top: 3%;
       width: 225px;
       height: 120px;
-      animation: ${Animation.move1} 15s linear infinite;
+      animation: ${Animation.FirstTopLeftCloud} 15s linear infinite;
     `}
   `}
 `;
 
-export const SecondSmallTopCloud = styled.div`
+export const SecondTopLeftCloud = styled.div`
   ${cloudStyles};
 
-  top: 36%;
-  left: 2%;
-  width: 60px;
-  height: 32px;
-  z-index: -1;
-
-  ${({ theme }) => css`
-    ${theme.responsive.isTablet &&
-    css`
-      top: 40%;
-      left: -2%;
-      width: 133px;
-      height: 77px;
-    `}
-
-    ${theme.responsive.isTablet &&
-    theme.responsive.isLandscape &&
-    css`
-      top: 40%;
-      left: 10%;
-    `}
-
-    ${theme.responsive.isDesktop &&
-    css`
-      top: -10%;
-      left: 60%;
-      width: 120px;
-      height: 65px;
-      animation: ${Animation.move2} 15s linear infinite;
-    `}
-  `}
-`;
-
-export const ThirdLeftCloud = styled.div`
-  ${cloudStyles};
-
-  top: 74%;
-  left: 15%;
-  width: 30px;
-  height: 16px;
-
-  ${({ theme }) => css`
-    ${theme.responsive.isTablet &&
-    css`
-      top: 75%;
-      left: 12%;
-      width: 65px;
-      height: 35px;
-    `}
-
-    ${theme.responsive.isTablet &&
-    theme.responsive.isLandscape &&
-    css`
-      top: 70%;
-      left: 6%;
-    `}
-
-    ${theme.responsive.isDesktop &&
-    css`
-      top: 44%;
-      width: 245px;
-      height: 144px;
-      animation: ${Animation.move3} 15s linear infinite;
-    `}
-  `}
-`;
-
-export const BottomLeftSmallCloud = styled.div`
-  ${cloudStyles};
-
-  top: 50%;
-  left: -20%;
+  top: 14%;
+  left: 27%;
   width: 60px;
   height: 30px;
+  animation: ${Animation.SecondTopLeftCloudMobile} 15s linear infinite;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      top: 14%;
-      left: 27%;
       width: 65px;
       height: 35px;
     `}
@@ -149,7 +79,74 @@ export const BottomLeftSmallCloud = styled.div`
       left: -6%;
       width: 120px;
       height: 65px;
-      animation: ${Animation.move4} 15s linear infinite;
+      animation: ${Animation.SecondTopLeftCloud} 15s linear infinite;
+    `}
+  `}
+`;
+
+export const ThirdMiddleLeftCloud = styled.div`
+  ${cloudStyles};
+
+  top: 40%;
+  left: -2%;
+  width: 60px;
+  height: 32px;
+  animation: ${Animation.ThirdMiddleLeftCloudMobile} 15s linear infinite;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      width: 133px;
+      height: 77px;
+    `}
+
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
+    css`
+      top: 40%;
+      left: 10%;
+    `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      top: -10%;
+      left: 60%;
+      width: 120px;
+      height: 65px;
+      animation: ${Animation.ThirdMiddleLeftCloud} 15s linear infinite;
+    `}
+  `}
+`;
+
+export const BottomLeftCloud = styled.div`
+  ${cloudStyles};
+
+  top: 74%;
+  left: 12%;
+  width: 30px;
+  height: 16px;
+  animation: ${Animation.BottomLeftCloudMobile} 15s linear infinite;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      width: 65px;
+      height: 35px;
+    `}
+
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
+    css`
+      top: 70%;
+      left: 6%;
+    `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      top: 44%;
+      width: 245px;
+      height: 144px;
+      animation: ${Animation.BottomLeftCloud} 15s linear infinite;
     `}
   `}
 `;
@@ -158,16 +155,15 @@ export const RightTopCloud = styled.div`
   ${cloudStyles};
 
   top: 9%;
-  right: -6%;
+  right: 5%;
   width: 103px;
   height: 60px;
   transform: rotate(10deg);
+  animation: ${Animation.RightTopCloudMobile} 15s linear infinite;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      top: 10%;
-      right: 5%;
       width: 120px;
       height: 70px;
     `}
@@ -185,7 +181,7 @@ export const RightTopCloud = styled.div`
       right: -20%;
       width: 230px;
       height: 130px;
-      animation: ${Animation.move5} 15s linear infinite;
+      animation: ${Animation.RightTopCloud} 15s linear infinite;
     `}
   `}
 `;
@@ -193,16 +189,15 @@ export const RightTopCloud = styled.div`
 export const RightMiddleCloud = styled.div`
   ${cloudStyles};
 
-  top: 45%;
-  right: 9%;
+  top: 34%;
+  right: 25%;
   width: 60px;
   height: 32px;
+  animation: ${Animation.RightMiddleCloudMobile} 15s linear infinite;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      top: 34%;
-      right: 25%;
       width: 65px;
       height: 35px;
     `}
@@ -223,7 +218,7 @@ export const RightMiddleCloud = styled.div`
       right: 30%;
       width: 120px;
       height: 65px;
-      animation: ${Animation.move6} 15s linear infinite;
+      animation: ${Animation.RightMiddleCloud} 15s linear infinite;
     `}
   `}
 `;
@@ -231,16 +226,15 @@ export const RightMiddleCloud = styled.div`
 export const RightBottomCloud = styled.div`
   ${cloudStyles};
 
-  right: -9%;
-  bottom: 20%;
+  right: 1%;
+  top: 75%;
   width: 30px;
   height: 16px;
+  animation: ${Animation.RightBottomCloudMobile} 12s linear infinite;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      top: 75%;
-      right: 1%;
       width: 65px;
       height: 35px;
       transform: rotate(10deg);
@@ -259,8 +253,7 @@ export const RightBottomCloud = styled.div`
       right: -10%;
       width: 120px;
       height: 60px;
-      animation: ${Animation.move7} 15s linear infinite;
-      z-index: -1;
+      animation: ${Animation.RightBottomCloud} 15s linear infinite;
     `}
   `}
 `;
@@ -305,7 +298,7 @@ export const HappySun = styled.div`
       left: 12%;
       width: 145px;
       height: 145px;
-      animation: ${Animation.moveSun} 15s linear infinite;
+      animation: ${Animation.SunDesktop} 15s linear infinite;
     `}
   `}
 `;

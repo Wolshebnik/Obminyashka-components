@@ -1,6 +1,6 @@
 import { keyframes } from 'styled-components';
 
-export const move1 = keyframes`
+export const FirstTopLeftCloud = keyframes`
   0% {
     opacity: 0;
   }
@@ -19,7 +19,6 @@ export const move1 = keyframes`
     opacity: 1;
     left: 7%;
     transform: scale(1.1);
-
   }
 
   60% {
@@ -40,7 +39,48 @@ export const move1 = keyframes`
   }
 `;
 
-export const move2 = keyframes`
+export const SecondTopLeftCloud = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  21% {
+    opacity: 0;
+  }
+
+  22% {
+    left: -20%;
+    transform: scale(3.1);
+    opacity: 1;
+  }
+
+  27% {
+    opacity: 1;
+    transform: scale(1.1);
+    left: 15%;
+  }
+  
+  69.9%{
+    left: -2%;
+    transform: scale(1.1);
+  }
+
+  73.9% {
+    left: -20%;
+    transform: scale(3.1);
+    opacity: 1;
+  }
+
+  74%{
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+`;
+
+export const ThirdMiddleLeftCloud = keyframes`
   0% {
     opacity: 0;
   }
@@ -85,7 +125,7 @@ export const move2 = keyframes`
   }
 `;
 
-export const move3 = keyframes`
+export const BottomLeftCloud = keyframes`
   0% {
     opacity: 0;
   }
@@ -126,48 +166,7 @@ export const move3 = keyframes`
   }
 `;
 
-export const move4 = keyframes`
-  0% {
-    opacity: 0;
-  }
-
-  21% {
-    opacity: 0;
-  }
-
-  22% {
-    left: -20%;
-    transform: scale(3.1);
-    opacity: 1;
-  }
-
-  27% {
-    opacity: 1;
-    transform: scale(1.1);
-    left: 15%;
-  }
-  
-  69.9%{
-    left: -2%;
-    transform: scale(1.1);
-  }
-
-  73.9% {
-    left: -20%;
-    transform: scale(3.1);
-    opacity: 1;
-  }
-
-  74%{
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
-`;
-
-export const move5 = keyframes`
+export const RightTopCloud = keyframes`
   0% {
     opacity: 0;
   }
@@ -207,7 +206,7 @@ export const move5 = keyframes`
   }
 `;
 
-export const move6 = keyframes`
+export const RightMiddleCloud = keyframes`
   0% {
     opacity: 0;
   }
@@ -250,7 +249,7 @@ export const move6 = keyframes`
   }
 `;
 
-export const move7 = keyframes`
+export const RightBottomCloud = keyframes`
   0% {
     opacity: 0;
   }
@@ -291,7 +290,7 @@ export const move7 = keyframes`
   }
 `;
 
-export const moveSun = keyframes`
+export const SunDesktop = keyframes`
   0% {
     opacity: 0;
   }
@@ -396,5 +395,215 @@ export const SunMobileBG = keyframes`
 
   99% {
     left: 10%;
+  }
+`;
+
+export const FirstTopLeftCloudMobile = keyframes`
+  0% {
+    left: 2%;
+  }
+
+  13% {
+    left: -13%;
+    opacity: 1;
+  }
+
+  13.1% {
+    left: -13%;
+    opacity: 0;
+  }
+
+  13.2% {
+    left: 100%;
+    opacity: 0;
+  }  
+
+  13.3% {
+    left: 100%;
+    opacity: 1;
+  }  
+
+  100% {
+    left: 2%;
+  }
+`;
+
+export const SecondTopLeftCloudMobile = keyframes`
+  0% {
+    left: 27%;
+  }
+
+  27% {
+    left: -7%;
+    opacity: 1;
+  }
+
+  27.1% {
+    left: -7%;
+    opacity: 0;
+  }
+
+  27.2% {
+    left: 100%;
+    opacity: 0;
+  }  
+
+  27.3% {
+    left: 100%;
+    opacity: 1;
+  }  
+
+  100% {
+    left: 27%;
+  }
+`;
+
+export const ThirdMiddleLeftCloudMobile = keyframes`
+  0% {
+    left: -2%;
+  }
+
+  10% {
+    left: -15%;
+    opacity: 1;
+  }
+
+  10.1% {
+    left: -15%;
+    opacity: 0;
+  }
+
+  10.2% {
+    left: 100%;
+    opacity: 0;
+  }  
+
+  10.3% {
+    left: 100%;
+    opacity: 1;
+  }  
+
+  100% {
+    left: -2%;
+  }
+`;
+
+export const BottomLeftCloudMobile = keyframes`
+  0% {
+    left: 12%;
+  }
+
+  12% {
+    left: -7%;
+    opacity: 1;
+  }
+
+  12.1% {
+    left: -7%;
+    opacity: 0;
+  }
+
+  12.2% {
+    left: 100%;
+    opacity: 0;
+  }  
+
+  12.3% {
+    left: 100%;
+    opacity: 1;
+  }  
+
+  100% {
+    left: 12%;
+  }
+`;
+
+export const RightTopCloudMobile = keyframes`
+  0% {
+    right: 5%;
+  }
+
+  88% {
+    right: 100%;
+    opacity: 1;
+  }
+
+  88.1% {
+    right: 100%;
+    opacity: 0;
+  }
+
+  88.2% {
+    right: -10%;
+    opacity: 0;
+  }  
+
+  88.3% {
+    right: -10%;
+    opacity: 1;
+  }  
+
+  100% {
+    right: 5%;
+  }
+`;
+
+export const RightMiddleCloudMobile = keyframes`
+  0% {
+    right: 25%;
+  }
+
+  72% {
+    right: 100%;
+    opacity: 1;
+  }
+
+  72.1% {
+    right: 100%;
+    opacity: 0;
+  }
+
+  72.2% {
+    right: -6%;
+    opacity: 0;
+  }  
+
+  72.3% {
+    right: -6%;
+    opacity: 1;
+  }  
+
+  100% {
+    right: 25%;
+  }
+`;
+
+export const RightBottomCloudMobile = keyframes`
+  0% {
+    right: 1%;
+  }
+
+  95% {
+    right: 100%;
+    opacity: 1;
+  }
+
+  95.1% {
+    right: 100%;
+    opacity: 0;
+  }
+
+  95.2% {
+    right: -6%;
+    opacity: 0;
+  }  
+
+  95.3% {
+    right: -6%;
+    opacity: 1;
+  }  
+
+  100% {
+    right: 1%;
   }
 `;

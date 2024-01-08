@@ -5,10 +5,10 @@ const FeaturesClouds = () => {
     <>
       <Styles.WrapperForClouds>
         <Styles.HappySun />
-        <Styles.FirstLeftCloud />
-        <Styles.SecondSmallTopCloud />
-        <Styles.ThirdLeftCloud />
-        <Styles.BottomLeftSmallCloud />
+        <Styles.FirstTopLeftCloud />
+        <Styles.SecondTopLeftCloud />
+        <Styles.ThirdMiddleLeftCloud />
+        <Styles.BottomLeftCloud />
 
         <Styles.RightTopCloud />
         <Styles.RightMiddleCloud />
