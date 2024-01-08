@@ -191,7 +191,7 @@ export const FirstCloud = styled.span`
   right: 23%;
   width: 60px;
   height: 32px;
-  animation: ${moveClouds1} 20s linear infinite;
+  animation: ${moveClouds1} 32s linear infinite;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
@@ -223,7 +223,7 @@ export const SecondCloud = styled.span`
   left: 16%;
   width: 60px;
   height: 32px;
-  animation: ${moveClouds2} 20s linear infinite;
+  animation: ${moveClouds2} 33s linear infinite;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
@@ -257,7 +257,7 @@ export const ThirdCloud = styled.span`
   left: 0%;
   width: 94px;
   height: 55px;
-  animation: ${moveClouds3} 20s linear infinite;
+  animation: ${moveClouds3} 15s linear infinite;
 
   ${({ theme }) => css`
     ${theme.responsive.isMobileBG &&
@@ -341,7 +341,7 @@ export const FifthCloud = styled.span`
   right: 6%;
   width: 91px;
   height: 55px;
-  animation: ${moveClouds5} 20s linear infinite;
+  animation: ${moveClouds5} 22s linear infinite;
 
   ${({ theme }) => css`
     ${theme.responsive.isMobileBG &&
@@ -411,7 +411,7 @@ export const SeventhCloud = styled.span`
   left: 22%;
   width: 98px;
   height: 51px;
-  animation: ${moveClouds7} 20s linear infinite;
+  animation: ${moveClouds7} 26s linear infinite;
 
   ${({ theme }) => css`
     ${theme.responsive.isTabletBG &&
@@ -436,7 +436,7 @@ export const EighthCloud = styled.span`
   right: 2%;
   width: 87px;
   height: 53px;
-  animation: ${moveClouds8} 20s linear infinite;
+  animation: ${moveClouds8} 40s linear infinite;
 
   ${({ theme }) => css`
     ${theme.responsive.isTabletBG &&
