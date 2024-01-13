@@ -5,14 +5,17 @@ export const balloonAnimation = keyframes`
   opacity: 1;
   transform: scale(1);
 }
+
 30% {
   opacity: 0;
   transform: scale(0);
 }
+
 70% {
   opacity: 0;
   transform: scale(0);
 }
+
 80% {
   opacity: 1;
   transform: scale(1);
@@ -23,12 +26,15 @@ export const featuresAnimation = keyframes`
 20% {
   bottom: -100%;
 }
+
 30% {
   bottom: 0;
 }
+
 69% {
   bottom: 0;
 }
+
 75% {
   bottom: -100%;
 }
@@ -145,9 +151,11 @@ export const featuresAnimationMobile = keyframes`
 0% {
   left: 0;
 }
+
 22% {
   left: 0;
 }
+
 25% {
   left: -100%;
 }
@@ -155,6 +163,7 @@ export const featuresAnimationMobile = keyframes`
 47% {
   left: -100%;
 }
+
 50% {
   left: -200%;
 }
@@ -162,6 +171,7 @@ export const featuresAnimationMobile = keyframes`
 72% {
   left: -200%;
 }
+
 75% {
   left: -100%;
 }
@@ -169,6 +179,7 @@ export const featuresAnimationMobile = keyframes`
 97% {
   left: -100%;
 }
+
 100% {
   left: 0;
 }
@@ -178,21 +189,27 @@ export const stretchFirstColumn = keyframes`
   0% {
     transform: scaleY(1);
   }
+
   33% {
     transform: scaleY(1);
   }
+
   35% {
     transform: scaleY(1.2);
   }
+
   37% {
     transform: scaleY(1);
   }
+
   60% {
     transform: scaleY(1);
   }
+
   62% {
     transform: scaleY(1.2);
   }
+
   64% {
     transform: scaleY(1);
   }
@@ -202,21 +219,27 @@ export const stretchSecondColumn = keyframes`
   0% {
     transform: scaleY(1);
   }
+
   40% {
     transform: scaleY(1);
   }
+
   42% {
     transform: scaleY(1.2);
   }
+
   44% {
     transform: scaleY(1);
   }
+
   60% {
     transform: scaleY(1);
   }
+
   62% {
     transform: scaleY(1.2);
   }
+
   64% {
     transform: scaleY(1);
   }
@@ -226,21 +249,27 @@ export const stretchThirdColumn = keyframes`
   0% {
     transform: scaleY(1);
   }
+
   46% {
     transform: scaleY(1);
   }
+
   48% {
     transform: scaleY(1.2);
   }
+
   50% {
     transform: scaleY(1);
   }
+
   60% {
     transform: scaleY(1);
   }
+
   62% {
     transform: scaleY(1.2);
   }
+
   64% {
     transform: scaleY(1);
   }
@@ -251,18 +280,22 @@ export const appearanceFirstImages = keyframes`
   opacity: 0;
   transform: scale(0) rotate(0deg);
 }
+
 37% {
   opacity: 1;
   transform: scale(1) rotate(0deg);
 }
+
 50% {
   opacity: 1;
   transform: scale(1) rotate(-5deg);
 }
+
 67% {
   opacity: 1;
   transform: scale(1) rotate(5deg);
 }
+
 72% {
   opacity: 0;
   transform: scale(0);
@@ -274,18 +307,22 @@ export const appearanceSecondImages = keyframes`
   opacity: 0;
   transform: scale(0) rotate(0deg);
 }
+
 45% {
   opacity: 1;
   transform: scale(1) rotate(0deg);
 }
+
 57% {
   opacity: 1;
   transform: scale(1) rotate(5deg);
 }
+
 67% {
   opacity: 1;
   transform: scale(1) rotate(-5deg);
 }
+
 72% {
   opacity: 0;
   transform: scale(0);
@@ -297,18 +334,22 @@ export const appearanceThirdImages = keyframes`
   opacity: 0;
   transform: scale(0) rotate(0deg);
 }
+
 50% {
   opacity: 1;
   transform: scale(1) rotate(0deg);
 }
+
 57% {
   opacity: 1;
   transform: scale(1) rotate(5deg);
 }
+
 67% {
   opacity: 1;
   transform: scale(1) rotate(-5deg);
 }
+
 72% {
   opacity: 0;
   transform: scale(0);
