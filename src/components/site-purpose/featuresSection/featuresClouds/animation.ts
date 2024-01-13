@@ -10,15 +10,15 @@ export const FirstTopLeftCloud = keyframes`
   }
 
   24% {
-    opacity: 1;
     left: -20%;
     transform: scale(3.1);
+    opacity: 1;
   }
 
   27% {
-    opacity: 1;
     left: 7%;
     transform: scale(1.1);
+    opacity: 1;
   }
 
   60% {
@@ -30,8 +30,8 @@ export const FirstTopLeftCloud = keyframes`
   }
 
   74%{
-    opacity: 0;
     left: -20%;
+    opacity: 0;
   }
 
   100% {
@@ -55,9 +55,9 @@ export const SecondTopLeftCloud = keyframes`
   }
 
   27% {
-    opacity: 1;
-    transform: scale(1.1);
     left: 15%;
+    transform: scale(1.1);
+    opacity: 1;
   }
   
   69.9%{
@@ -90,15 +90,15 @@ export const ThirdMiddleLeftCloud = keyframes`
   }
 
   24% {
-    opacity: 1;
     top: -10%;
     transform: scale(3.1);
+    opacity: 1;
   }
 
   27% {
-    opacity: 1;
-    transform: scale(1.1);
     top: 12%;
+    transform: scale(1.1);
+    opacity: 1;
   }
 
   69.9% {
