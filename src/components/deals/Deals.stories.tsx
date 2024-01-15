@@ -33,3 +33,9 @@ export const GoodDealLinkWithBg: Story = {
     text: 'Good deal',
   },
 };
+
+export const AddAdvMobile: Story = {
+  args: {
+    text: 'Add advertisement',
+  },
+};

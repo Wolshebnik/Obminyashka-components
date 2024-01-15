@@ -27,6 +27,7 @@ export { ProductDescription } from './product-description';
 export { ProductOwnerData } from './product-owner-data';
 export { ProductPostData } from './product-post-data';
 export { Search } from './search';
+export { SitePurpose } from './site-purpose';
 export { Subtitle } from './subtitle';
 export { Success } from './successful-verification';
 export { Swiper } from './swiper';
