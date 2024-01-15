@@ -5,11 +5,11 @@ import { ISuccess } from './types';
 import { MoveCloud } from './moveCloud';
 
 export const Success = ({
+  href,
   text,
   title,
   textButton,
   nameWebsite,
-  href,
 }: ISuccess) => {
   return (
     <Styles.Box>
