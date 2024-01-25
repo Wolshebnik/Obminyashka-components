@@ -24,6 +24,8 @@ declare module 'styled-components' {
       isTablet: boolean;
       isTabletBG: boolean;
       isTabletUp: boolean;
+      isMobile: boolean;
+      isLandscape: boolean;
     };
   }
 }
