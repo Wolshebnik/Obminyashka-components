@@ -6,6 +6,7 @@ export { ButtonNew } from './button-new';
 export { CancelEverything } from './cancel-everything';
 export { CategoryButton } from './category-button';
 export { CheckBox } from './checkbox';
+export { Confirmation } from './confirmation';
 export { Deals } from './deals';
 export { EllipsisText } from './ellipsis-text';
 export { Footer } from './footer';
