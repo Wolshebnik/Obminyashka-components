@@ -12,22 +12,32 @@ export const swiperParams = {
     disableOnInteraction: false,
   },
   breakpoints: {
+    560: {
+      spaceBetween: 20,
+      slidesPerView: 2,
+    },
+
     1024: {
-      spaceBetween: 28,
+      spaceBetween: 44,
       slidesPerView: 2,
     },
 
     1366: {
-      spaceBetween: 25,
+      spaceBetween: 20,
       slidesPerView: 3,
     },
 
-    1600: {
-      spaceBetween: 30,
+    1563: {
+      spaceBetween: 16,
       slidesPerView: 3,
     },
 
-    1920: {
+    1721: {
+      spaceBetween: 20,
+      slidesPerView: 3,
+    },
+
+    1921: {
       spaceBetween: 42,
       slidesPerView: 4,
     },

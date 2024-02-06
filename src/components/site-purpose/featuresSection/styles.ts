@@ -222,7 +222,7 @@ export const ThingsText = styled.div`
     ${theme.responsive.isTablet &&
     css`
       position: absolute;
-      top: -147px;
+      top: -135px;
       left: 138px;
       width: 150px;
       height: 65px;
@@ -264,7 +264,7 @@ export const FirstKeg = styled.img`
     css`
       position: absolute;
       display: block;
-      top: -80px;
+      top: -65px;
       left: 98px;
     `}
 
@@ -416,7 +416,7 @@ export const RegText = styled.div`
     
     ${theme.responsive.isDesktop &&
     css`
-      top: -38%;
+      top: -35%;
       left: 87%;
       width: 370px;
       height: 124px;
@@ -459,6 +459,7 @@ export const SecondKeg = styled.img`
     
     ${theme.responsive.isDesktop &&
     css`
+      top: 23px;
       left: 81%;
       height: 254px;
     `}
@@ -649,6 +650,7 @@ export const ThirdKeg = styled.img`
     
     ${theme.responsive.isDesktop &&
     css`
+      top: -3px;
       height: 254px;
       left: 27%;
     `}
