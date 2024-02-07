@@ -24,7 +24,7 @@ export const PresentSection = styled.section`
     width: 250%;
     height: 20%;
     background-image: url(${Image.newMaskCloud});
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: left bottom;
     z-index: 1;
