@@ -307,14 +307,12 @@ export const SunCategory = styled.img<ISunCategory>`
         css`
           top: -10px;
           left: -45px;
-          /* left: -75px; */
         `}
 
         ${variant === 1 &&
         css`
           top: -10px;
           left: 125px;
-          /* left: 110px; */
         `}
           
           ${variant === 2 &&
