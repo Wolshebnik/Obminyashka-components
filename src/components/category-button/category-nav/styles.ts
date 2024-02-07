@@ -38,7 +38,7 @@ const sunClose = keyframes`
 const mainSunDisplaced = keyframes`
   100% {
     top: -70px;
-    left: -135px;
+    left: -110px;
     transform: scale(1);
     visibility: visible;
   }
@@ -87,7 +87,7 @@ const sunMove = keyframes`
 const sun = keyframes`
   100% {
     transform: scale(5);
-    visibility: visible; 
+    visibility: visible;
   }
 `;
 
@@ -306,49 +306,51 @@ export const SunCategory = styled.img<ISunCategory>`
         ${variant === 0 &&
         css`
           top: -10px;
-          left: -75px;
+          left: -45px;
+          /* left: -75px; */
         `}
 
         ${variant === 1 &&
         css`
           top: -10px;
-          left: 110px;
+          left: 125px;
+          /* left: 110px; */
         `}
           
           ${variant === 2 &&
         css`
-          top: -5px;
-          left: 120px;
+          top: 0;
+          left: 130px;
         `}
           
           ${variant === 3 &&
         css`
           top: 55px;
-          left: 135px;
+          left: 165px;
         `} 
           
           ${variant === 4 &&
         css`
           top: 125px;
-          left: -90px;
+          left: -70px;
         `} 
           
           ${variant === 5 &&
         css`
           top: -5px;
-          left: 115px;
+          left: 140px;
         `}
           
           ${variant === 6 &&
         css`
           top: 165px;
-          left: 115px;
+          left: 140px;
         `}
           
           ${variant === 7 &&
         css`
           top: 65px;
-          left: -100px;
+          left: -80px;
         `}
       `}
     `}
