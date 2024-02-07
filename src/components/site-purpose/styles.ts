@@ -21,12 +21,12 @@ export const PresentSection = styled.section`
     content: '';
     position: absolute;
     bottom: -1px;
-    width: 100%;
-    height: 25%;
+    width: 250%;
+    height: 20%;
     background-image: url(${Image.newMaskCloud});
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center bottom;
+    background-position: left bottom;
     z-index: 1;
   }
 

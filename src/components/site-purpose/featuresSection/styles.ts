@@ -273,12 +273,14 @@ export const FirstKeg = styled.img`
     css`
       left: 56px;
       top: -80px;
+      height: 170px;
     `}
-    
-    ${theme.responsive.isDesktop &&
+      
+      ${theme.responsive.isDesktop &&
     css`
       top: -31%;
       left: -6%;
+      height: 210px;
     `}
 
     ${theme.responsive.isDesktopLG &&
@@ -446,7 +448,7 @@ export const SecondKeg = styled.img`
       display: block;
       top: -22px;
       left: -9px;
-      height: 180px;
+      height: 190px;
     `}
 
     ${theme.responsive.isTablet &&
@@ -454,14 +456,14 @@ export const SecondKeg = styled.img`
     css`
       top: 5px;
       left: -25px;
-      height: 180px;
+      height: 190px;
     `}
     
     ${theme.responsive.isDesktop &&
     css`
       top: 23px;
       left: 81%;
-      height: 254px;
+      height: 280px;
     `}
 
     ${theme.responsive.isDesktopLG &&
