@@ -20,13 +20,13 @@ export const PresentSection = styled.section`
   &::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 25%;
+    bottom: -1px;
+    width: 250%;
+    height: 20%;
     background-image: url(${Image.newMaskCloud});
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center bottom;
+    background-position: left bottom;
     z-index: 1;
   }
 

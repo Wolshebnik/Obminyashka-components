@@ -222,7 +222,7 @@ export const ThingsText = styled.div`
     ${theme.responsive.isTablet &&
     css`
       position: absolute;
-      top: -147px;
+      top: -135px;
       left: 138px;
       width: 150px;
       height: 65px;
@@ -264,7 +264,7 @@ export const FirstKeg = styled.img`
     css`
       position: absolute;
       display: block;
-      top: -80px;
+      top: -65px;
       left: 98px;
     `}
 
@@ -273,12 +273,14 @@ export const FirstKeg = styled.img`
     css`
       left: 56px;
       top: -80px;
+      height: 170px;
     `}
-    
-    ${theme.responsive.isDesktop &&
+      
+      ${theme.responsive.isDesktop &&
     css`
       top: -31%;
       left: -6%;
+      height: 210px;
     `}
 
     ${theme.responsive.isDesktopLG &&
@@ -416,7 +418,7 @@ export const RegText = styled.div`
     
     ${theme.responsive.isDesktop &&
     css`
-      top: -38%;
+      top: -35%;
       left: 87%;
       width: 370px;
       height: 124px;
@@ -446,7 +448,7 @@ export const SecondKeg = styled.img`
       display: block;
       top: -22px;
       left: -9px;
-      height: 180px;
+      height: 190px;
     `}
 
     ${theme.responsive.isTablet &&
@@ -454,13 +456,14 @@ export const SecondKeg = styled.img`
     css`
       top: 5px;
       left: -25px;
-      height: 180px;
+      height: 190px;
     `}
     
     ${theme.responsive.isDesktop &&
     css`
+      top: 23px;
       left: 81%;
-      height: 254px;
+      height: 280px;
     `}
 
     ${theme.responsive.isDesktopLG &&
@@ -649,6 +652,7 @@ export const ThirdKeg = styled.img`
     
     ${theme.responsive.isDesktop &&
     css`
+      top: -3px;
       height: 254px;
       left: 27%;
     `}
