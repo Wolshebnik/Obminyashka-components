@@ -7,22 +7,15 @@ import { IWindowWidth } from './types';
 export const SwiperWrapper = styled.div<IWindowWidth>`
   margin: 50px 0;
 
-  ${({ theme, windowWidth }) => css`
+  ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      margin: 72px 0;
+      margin: 70px 0;
     `}
 
     ${theme.responsive.isDesktop &&
     css`
       margin: 130px 0;
-    `}
-    
-    ${windowWidth > 1365 &&
-    windowWidth < 1600 &&
-    theme.responsive.isDesktop &&
-    css`
-      margin: 72px 0;
     `}
   `}
 `;

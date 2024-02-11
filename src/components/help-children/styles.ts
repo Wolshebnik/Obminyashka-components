@@ -15,7 +15,7 @@ export const HelpChildren = styled.div`
   grid-template-rows: 55px min-content 280px 80px;
   justify-items: center;
   padding: 59px 0 82px;
-  margin: 0 auto;
+  margin: 50px auto;
   max-width: 1830px;
   border-radius: 130px;
 
@@ -33,17 +33,18 @@ export const HelpChildren = styled.div`
       grid-template-rows: 70px min-content;
       justify-items: center;
       padding: 42px 42px 47px 52px;
+      margin: 70px auto;
     `}
-
-    ${theme.responsive.isTabletBG &&
+      
+      ${theme.responsive.isTabletBG &&
     css`
       grid-template-columns: 400px 1fr;
       grid-template-rows: 70px min-content 51px;
       justify-items: start;
       padding: 42px 52px 86px;
     `}
-
-    ${theme.responsive.isTabletBG &&
+      
+      ${theme.responsive.isTabletBG &&
     theme.responsive.isLandscape &&
     css`
       grid-template-columns: 600px 1fr;
@@ -51,18 +52,19 @@ export const HelpChildren = styled.div`
       justify-items: start;
       padding: 42px 110px 86px 52px;
     `}
-
-    ${theme.responsive.isDesktop &&
+      
+      ${theme.responsive.isDesktop &&
     css`
       grid-template-columns: 400px 1fr;
       grid-template-rows: 80px min-content 51px;
       justify-items: start;
       padding: 58px 89px 58px 108px;
+      margin: 130px auto;
       height: 516px;
     `}
-
-
-    ${theme.responsive.isDesktopMD &&
+      
+      
+      ${theme.responsive.isDesktopMD &&
     css`
       padding: 58px 122px 58px;
     `}
