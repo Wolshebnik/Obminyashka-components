@@ -15,7 +15,7 @@ export const HelpChildren = styled.div`
   grid-template-rows: 55px min-content 280px 80px;
   justify-items: center;
   padding: 59px 0 82px;
-  margin: 50px auto;
+  margin: 0 auto;
   max-width: 1830px;
   border-radius: 130px;
 
@@ -33,7 +33,6 @@ export const HelpChildren = styled.div`
       grid-template-rows: 70px min-content;
       justify-items: center;
       padding: 42px 42px 47px 52px;
-      margin: 70px auto;
     `}
       
       ${theme.responsive.isTabletBG &&
@@ -59,7 +58,6 @@ export const HelpChildren = styled.div`
       grid-template-rows: 80px min-content 51px;
       justify-items: start;
       padding: 58px 89px 58px 108px;
-      margin: 130px auto;
       height: 516px;
     `}
       

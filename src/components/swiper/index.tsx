@@ -12,7 +12,7 @@ const Swiper = ({ data }: IMainSwiper) => {
   const size = useWindowWidth();
 
   return (
-    <Styles.SwiperWrapper windowWidth={size}>
+    <div>
       <MainSwiper {...swiperParams}>
         {[...data, ...data].map((item, index) => (
           <SwiperSlide key={index}>
@@ -34,7 +34,7 @@ const Swiper = ({ data }: IMainSwiper) => {
           </SwiperSlide>
         ))}
       </MainSwiper>
-    </Styles.SwiperWrapper>
+    </div>
   );
 };
 
