@@ -221,7 +221,6 @@ export const CardContent = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 25px 23px;
-  width: 100%;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&

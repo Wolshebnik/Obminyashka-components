@@ -1,5 +1,7 @@
 import { Responsive } from 'components';
 
+import { useWindowWidth } from 'hooks';
+
 import * as Icon from '../icon';
 import * as Styles from './styles';
 import { Button } from '../button';
@@ -19,23 +21,25 @@ const ProductCard = ({
   isFavorite,
   inboxMessage,
 }: IProductCardProps) => {
+  const width = useWindowWidth();
+
   return (
     <Styles.Card margin={margin}>
       <Styles.CardContainer>
         <Styles.FavoriteMarker isFavorite={isFavorite}>
           {avatar ? (
             <Styles.StylizedAvatar>
-              <Responsive.Mobile>
+              {width <= 768 && (
                 <Avatar width={18} height={18} source={avatar} />
-              </Responsive.Mobile>
+              )}
 
-              <Responsive.Tablet>
+              {width >= 768 && width <= 1366 && (
                 <Avatar width={35} height={35} source={avatar} />
-              </Responsive.Tablet>
+              )}
 
-              <Responsive.Desktop>
+              {width >= 1367 && (
                 <Avatar width={42} height={42} source={avatar} />
-              </Responsive.Desktop>
+              )}
             </Styles.StylizedAvatar>
           ) : (
             <Styles.FavoriteStarWrapper isFavorite={isFavorite}>
@@ -54,13 +58,9 @@ const ProductCard = ({
               <Icon.Location width={7} height={10} />
             </Responsive.Mobile>
 
-            <Responsive.Tablet>
+            <Responsive.NotMobile>
               <Icon.Location />
-            </Responsive.Tablet>
-
-            <Responsive.Desktop>
-              <Icon.Location />
-            </Responsive.Desktop>
+            </Responsive.NotMobile>
 
             <Styles.City>
               <EllipsisText width={250} position="right">
