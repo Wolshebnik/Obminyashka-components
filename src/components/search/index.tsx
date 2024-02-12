@@ -1,30 +1,35 @@
-import * as Icon from '../icon';
-import * as Responsive from '../responsive';
-import { useDelayAnimation } from '../../hooks/useDelayAnimation';
+import { useDelayAnimation } from 'hooks';
 
+import * as Icon from '../icon';
 import * as Styles from './styles';
 import { ISearchProps } from './types';
+import * as Responsive from '../responsive';
 import { SearchInput } from './search-input';
 
 const Search = (props: ISearchProps) => {
-  const { isOpen, isAnimation, setOpen } = useDelayAnimation(600);
+  const { isOpen, setOpen, isAnimation } = useDelayAnimation(600);
   return (
     <>
-      <Responsive.NotDesktop>
-        <Styles.WrapIcon onClick={() => setOpen()}>
+      <Responsive.NotDesktopMD>
+        <Styles.WrapIcon onClick={() => setOpen(!isOpen)}>
           <Icon.SearchNew />
         </Styles.WrapIcon>
 
         {isOpen && (
           <Styles.WrapDeviceSearch isSearchActive={isAnimation}>
             <SearchInput {...props} />
+            <Styles.CloseBtn>
+              <Responsive.Desktop>
+                <Icon.Close onClick={() => setOpen(!isOpen)} />
+              </Responsive.Desktop>
+            </Styles.CloseBtn>
           </Styles.WrapDeviceSearch>
         )}
-      </Responsive.NotDesktop>
+      </Responsive.NotDesktopMD>
 
-      <Responsive.Desktop>
+      <Responsive.DesktopMD>
         <SearchInput {...props} />
-      </Responsive.Desktop>
+      </Responsive.DesktopMD>
     </>
   );
 };

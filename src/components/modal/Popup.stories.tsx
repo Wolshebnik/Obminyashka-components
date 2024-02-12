@@ -1,7 +1,7 @@
-import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ChildrenProps } from 'types';
+import { useDelayAnimation } from 'hooks';
 
 import { Modal } from '.';
 import { IModal } from './types';
@@ -19,13 +19,22 @@ export default meta;
 type Story = StoryObj<typeof Modal>;
 
 const Template = (args: ChildrenProps<IModal>) => {
-  const [isOpen, onClose] = useState(false);
+  const { duration } = args;
+  const checkedDuration = duration ? duration : 500;
+  const { isOpen, isAnimation, setOpen } = useDelayAnimation(checkedDuration);
+
   const { children, ...rest } = args;
 
   return (
     <>
-      <Button onClick={() => onClose(true)} text="Open" />
-      <Modal {...rest} isOpen={isOpen} onClose={onClose}>
+      <Button onClick={() => setOpen(true)} text="Open" />
+      <Modal
+        {...rest}
+        isOpen={isOpen}
+        isAnimation={isAnimation}
+        duration={checkedDuration}
+        onClose={() => setOpen(false)}
+      >
         {children}
       </Modal>
     </>

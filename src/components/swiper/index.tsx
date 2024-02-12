@@ -1,20 +1,28 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper as MainSwiper, SwiperSlide } from 'swiper/react';
 
-import 'swiper/css';
+import { useWindowWidth } from 'hooks';
 
 import * as Styles from './styles';
 import { IMainSwiper } from './types';
 import { swiperParams } from './params';
 
-const MainSwiper = ({ data }: IMainSwiper) => {
+import 'swiper/css';
+
+const Swiper = ({ data }: IMainSwiper) => {
+  const size = useWindowWidth();
+
   return (
-    <Styles.SwiperWrapper>
-      <Swiper {...swiperParams}>
+    <div>
+      <MainSwiper {...swiperParams}>
         {[...data, ...data].map((item, index) => (
           <SwiperSlide key={index}>
             <Styles.SlideWrapper>
               <Styles.SlideLink to={item.href}>
-                <Styles.SlideImage src={item.src} alt={item.title} />
+                <Styles.SlideImage
+                  src={item.src}
+                  alt={item.title}
+                  windowWidth={size}
+                />
 
                 <Styles.SlideText>
                   {item.subtitle}
@@ -25,9 +33,9 @@ const MainSwiper = ({ data }: IMainSwiper) => {
             </Styles.SlideWrapper>
           </SwiperSlide>
         ))}
-      </Swiper>
-    </Styles.SwiperWrapper>
+      </MainSwiper>
+    </div>
   );
 };
 
-export { MainSwiper };
+export { Swiper };

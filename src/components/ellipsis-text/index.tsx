@@ -1,28 +1,25 @@
 import { useRef, useEffect, useState } from 'react';
-import { Tooltip } from 'react-tooltip';
 
 import { ChildrenProps } from 'types';
+import { useDelayTooltip } from 'hooks';
 
+import * as Styles from './styles';
 import { ITooltipProps } from './types';
-import 'react-tooltip/dist/react-tooltip.css';
-import { EllipsisDiv, WrapTooltip } from './styles';
-
-const delay = 300;
 
 export const EllipsisText = ({
-  id,
+  gap,
   children,
+  delay = 500,
   width = 200,
-  noArrow = true,
   cursor = 'auto',
-  place = 'bottom',
-  delayHide = delay,
-  delayShow = delay,
-  className = 'custom-tooltip',
-  ...props
+  position = 'bottom',
+  justifyContent = 'center',
 }: ChildrenProps<ITooltipProps>) => {
   const ref = useRef<HTMLDivElement | null>(null);
-  const [hasToolTip, setToolTip] = useState<boolean>(false);
+  const [open, setOpen] = useDelayTooltip(delay);
+  const [widthEl, setWidthEl] = useState<number | null>(null);
+  const [heightEl, setHeightEl] = useState<number | null>(null);
+  const [isTooltipVisible, setIsTooltipVisible] = useState<boolean>(false);
 
   const deps: (number | undefined)[] = [
     ref?.current?.offsetWidth,
@@ -39,34 +36,49 @@ export const EllipsisText = ({
     const widthRatio: number = scrollWidth / offsetWidth;
     const heightRatio: number = scrollHeight / offsetHeight;
 
-    if (widthRatio > 1.0 || heightRatio > 1.5) {
-      setToolTip(true);
-    } else {
-      setToolTip(false);
+    setIsTooltipVisible(widthRatio > 1.0 || heightRatio > 1.5 ? true : false);
+
+    if (ref?.current) {
+      const { height, width: widthCurrent } =
+        ref.current.getBoundingClientRect();
+
+      setHeightEl(height || 0);
+      setWidthEl(widthCurrent || 0);
     }
   }, [deps]);
 
-  return (
-    <>
-      <EllipsisDiv ref={ref} data-tooltip-id={id} cursor={cursor}>
-        <>{children}</>
-      </EllipsisDiv>
+  const handleMouseEnter = () => {
+    if (isTooltipVisible) setOpen(true);
+  };
 
-      {hasToolTip && (
-        <WrapTooltip width={width}>
-          <Tooltip
-            id={id}
-            place={place}
-            noArrow={noArrow}
-            delayShow={delayShow}
-            delayHide={delayHide}
-            className={className}
-            {...props}
-          >
-            {children}
-          </Tooltip>
-        </WrapTooltip>
+  const handleMouseLeave = () => {
+    setOpen(false);
+  };
+
+  return (
+    <Styles.Wrapper justifyContent={justifyContent}>
+      <Styles.EllipsisText
+        ref={ref}
+        cursor={cursor}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {children}
+      </Styles.EllipsisText>
+
+      {open && (
+        <Styles.Tooltip
+          gap={gap}
+          width={width}
+          position={position}
+          widthEl={widthEl || 0}
+          heightEl={heightEl || 0}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          {children}
+        </Styles.Tooltip>
       )}
-    </>
+    </Styles.Wrapper>
   );
 };

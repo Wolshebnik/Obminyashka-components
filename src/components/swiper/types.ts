@@ -8,3 +8,7 @@ export interface Data {
   title: string;
   subtitle: string;
 }
+
+export interface IWindowWidth {
+  windowWidth: number;
+}
