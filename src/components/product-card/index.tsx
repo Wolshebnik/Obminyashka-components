@@ -29,7 +29,7 @@ const ProductCard = ({
         <Styles.FavoriteMarker isFavorite={isFavorite}>
           {avatar ? (
             <Styles.StylizedAvatar>
-              {width <= 767 && (
+              {width <= 768 && (
                 <Avatar width={18} height={18} source={avatar} />
               )}
 
@@ -63,7 +63,7 @@ const ProductCard = ({
             </Responsive.NotMobile>
 
             <Styles.City>
-              <EllipsisText width={250} position="top">
+              <EllipsisText width={250} position="right">
                 {city}
               </EllipsisText>
             </Styles.City>
