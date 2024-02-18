@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
-export const WrapperWithLink = styled(Link)<{ inFooterOAuth?: boolean }>`
+import { DealsLink } from './deals-link';
+
+export const WrapperWithLink = styled(DealsLink)<{ inFooterOAuth?: boolean }>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -70,7 +71,9 @@ export const Text = styled.div`
   `}
 `;
 
-export const WrapperWithBackground = styled(Link)<{ inFooterOAuth?: boolean }>`
+export const WrapperWithBackground = styled(DealsLink)<{
+  inFooterOAuth?: boolean;
+}>`
   ${({ theme, inFooterOAuth }) => css`
     display: flex;
     flex-direction: row;
