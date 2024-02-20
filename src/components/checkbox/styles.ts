@@ -99,23 +99,20 @@ export const Label = styled.label<LabelArg>`
 
       ${checked &&
       css`
-        background: ${theme.colors.categoryFilter.hiddenCheckbox
-          .bgCheckedAndHover};
+        background: ${theme.colors.categoryFilter.checkedCategory};
         color: ${theme.colors.white};
       `}
 
       ${!checked &&
       css`
         &:hover {
-          background: ${theme.colors.categoryFilter.hiddenCheckbox
-            .bgCheckedAndHover};
+          background: ${theme.colors.categoryFilter.hoverCategory};
           color: black;
         }
 
         &:has(${Cross}):hover {
           ${Cross}::before, ${Cross}::after {
-            background: ${theme.colors.categoryFilter.hiddenCheckbox
-              .bgCheckedAndHover};
+            background: ${theme.colors.categoryFilter.checkedCategory};
           }
         }
       `}
