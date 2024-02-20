@@ -11,7 +11,7 @@ const buttonBlue = '#12b6ed';
 const buttonBlueActive = '#0094ff';
 const buttonBlueHover = '#00bfff';
 const curiousBlue = `#29A5D4`;
-// const charlotte = `#b8e9fa`;
+const charlotte = `#b8e9fa`;
 const endeavour = '#0666ab';
 const foam = `#d9f6fd`;
 const footerBlue = '#3DB4D7';
@@ -280,9 +280,8 @@ const logo = Object.freeze({
 
 const categoryFilter = Object.freeze({
   border: viking,
-  hiddenCheckbox: {
-    bgCheckedAndHover: aquamarineBlue,
-  },
+  checkedCategory: aquamarineBlue,
+  hoverCategory: charlotte,
   title: curiousBlue,
   triangle: aquamarineBlue,
   scrollBgGrey: alto,
