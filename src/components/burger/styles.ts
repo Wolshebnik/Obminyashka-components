@@ -74,7 +74,7 @@ export const BurgerMenu = styled.div<{
   isOpen?: boolean;
   isAnimation?: boolean;
 }>`
-  position: absolute;
+  position: fixed;
   top: -100%;
   left: 0;
   width: 100%;
