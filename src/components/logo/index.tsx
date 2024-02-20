@@ -1,5 +1,4 @@
 import * as Icon from '../icon';
-
 import { ILogo } from './types';
 import * as Styles from './styles';
 import * as Responsive from '../responsive';

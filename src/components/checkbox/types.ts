@@ -14,23 +14,24 @@ export interface IInput extends Omit<CustomInput, 'ref'> {
   text?: string;
   fontSize?: number;
   type?: TypeOfInput;
-  hiddenCheckbox?: boolean;
 }
 
 export interface InputArg {
   checked: boolean;
   type: TypeOfInput;
-  hiddenCheckbox?: boolean;
 }
 
 export interface LabelArg extends InputArg {
   gap?: number;
   fontSize?: number;
-  hiddenCheckbox?: boolean;
 }
 
 export interface ICheckbox {
   type: string;
   checked: boolean;
-  hiddenCheckbox?: boolean;
+}
+
+export interface ICheckbox {
+  type: string;
+  checked: boolean;
 }

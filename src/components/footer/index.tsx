@@ -49,10 +49,10 @@ export const Footer = ({
             </Styles.LogoWrap>
 
             <Deals
-              background
               heartIcon
-              to={toDeals}
+              background
               text={text}
+              to={toDeals}
               inFooterOAuth={inFooterOAuth}
             />
           </Styles.Lists>

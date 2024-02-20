@@ -19,7 +19,7 @@ export const ButtonBlock = styled.div`
 
 export const Card = styled.div<{ margin?: string }>`
   position: relative;
-  width: 164px;
+  width: 165px;
   height: 260px;
   border-radius: 10px;
 
@@ -30,16 +30,20 @@ export const Card = styled.div<{ margin?: string }>`
 
     ${theme.responsive.isTablet &&
     css`
-      width: 300px;
+      width: 335px;
       height: 330px;
       border: 2px dashed ${theme.colors.productCard.borderCard};
       border-radius: 20px;
     `}
 
+    ${theme.responsive.isTabletBG &&
+    css`
+      width: 300px;
+    `}
+
     ${theme.responsive.isDesktop &&
     css`
-      height: 416px;
-      height: 416px;
+      height: 420px;
       border: 2px dashed ${theme.colors.productCard.borderCard};
       border-radius: 20px;
 
@@ -65,24 +69,19 @@ export const Card = styled.div<{ margin?: string }>`
         z-index: 2;
       }
 
-      ${theme.responsive.isDesktop &&
-      css`
-        width: 296px;
-      `}
-
       ${theme.responsive.isDesktopMD &&
       css`
-        width: 330px;
+        width: 335px;
       `}
 
       ${theme.responsive.isDesktopLG &&
       css`
-        width: 366px;
+        width: 370px;
       `}
 
       ${theme.responsive.isDesktopBS &&
       css`
-        width: 330px;
+        width: 335px;
       `}
 
       &:hover {
@@ -221,7 +220,6 @@ export const CardContent = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 25px 23px;
-  width: 100%;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&

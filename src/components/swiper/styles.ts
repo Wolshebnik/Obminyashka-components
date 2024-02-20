@@ -4,29 +4,6 @@ import { Link } from 'react-router-dom';
 
 import { IWindowWidth } from './types';
 
-export const SwiperWrapper = styled.div<IWindowWidth>`
-  margin: 50px 0;
-
-  ${({ theme, windowWidth }) => css`
-    ${theme.responsive.isTablet &&
-    css`
-      margin: 72px 0;
-    `}
-
-    ${theme.responsive.isDesktop &&
-    css`
-      margin: 130px 0;
-    `}
-    
-    ${windowWidth > 1365 &&
-    windowWidth < 1600 &&
-    theme.responsive.isDesktop &&
-    css`
-      margin: 72px 0;
-    `}
-  `}
-`;
-
 export const SlideWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -35,42 +12,27 @@ export const SlideWrapper = styled.div`
 
 export const SlideLink = styled(Link)`
   position: relative;
+  width: 100%;
   outline: none;
 `;
 
 export const SlideImage = styled.img<IWindowWidth>`
-  ${({ theme, windowWidth }) => css`
+  width: 100%;
+
+  ${({ theme }) => css`
     ${theme.responsive.isMobile &&
     css`
-      width: 345px;
-      height: 176px;
+      height: 200px;
     `}
 
     ${theme.responsive.isTablet &&
     css`
-      width: 450px;
-      height: 230px;
+      height: 284px;
     `}
 
     ${theme.responsive.isDesktop &&
     css`
-      width: 426px;
       height: 310px;
-    `}
-
-    ${windowWidth < 1600 &&
-    theme.responsive.isDesktop &&
-    css`
-      width: 402px;
-      height: 230px;
-    `}
-
-    ${windowWidth > 1599 &&
-    windowWidth < 1920 &&
-    theme.responsive.isDesktop &&
-    css`
-      width: 420px;
-      height: 270px;
     `}
   `}
 `;
@@ -120,5 +82,6 @@ export const SlideTitle = styled.b`
 `;
 
 export const StoryWrapper = styled.div`
+  margin: 0 auto;
   max-width: 1830px;
 `;

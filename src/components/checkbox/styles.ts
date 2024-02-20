@@ -11,31 +11,6 @@ export const Input = styled.input<InputArg>`
   -webkit-box-sizing: border-box;
 `;
 
-export const Cross = styled.div<{ type?: string }>`
-  ${({ theme }) => css`
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      top: 43%;
-      right: 22px;
-      width: 16px;
-      height: 1.5px;
-      background: ${theme.colors.white};
-    }
-
-    &:before {
-      webkit-transform: rotate(45deg);
-      transform: rotate(45deg);
-    }
-
-    &:after {
-      webkit-transform: rotate(-45deg);
-      transform: rotate(-45deg);
-    }
-  `}
-`;
-
 export const Label = styled.label<LabelArg>`
   display: flex;
   align-items: center;
@@ -46,7 +21,7 @@ export const Label = styled.label<LabelArg>`
 
   cursor: pointer;
 
-  ${({ theme, gap, checked, fontSize, hiddenCheckbox, type }) => css`
+  ${({ theme, gap, checked, fontSize }) => css`
     gap: ${gap || 20}px;
     font-size: ${fontSize || 14}px;
     color: ${checked
@@ -60,8 +35,8 @@ export const Label = styled.label<LabelArg>`
 
     & > svg {
       display: block;
-      width: 15px;
-      height: 15px;
+      width: 10px;
+      height: 8px;
 
       & > path {
         opacity: ${checked ? 1 : 0};
@@ -73,50 +48,10 @@ export const Label = styled.label<LabelArg>`
       & > svg {
         & > path {
           opacity: 1;
+          fill: ${!checked && theme.colors.colorGrey};
         }
       }
     }
-
-    ${hiddenCheckbox &&
-    type === 'checkbox' &&
-    css`
-      margin: 0 16px 4px 12px;
-      width: 100%;
-      border-radius: 5px;
-      color: ${theme.colors.colorGrey};
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 400;
-
-      &.padding {
-        padding: 6px 14px;
-      }
-
-      ${theme.responsive.isDesktop &&
-      css`
-        font-size: 16px;
-      `}
-
-      ${checked &&
-      css`
-        background: ${theme.colors.categoryFilter.checkedCategory};
-        color: ${theme.colors.white};
-      `}
-
-      ${!checked &&
-      css`
-        &:hover {
-          background: ${theme.colors.categoryFilter.hoverCategory};
-          color: black;
-        }
-
-        &:has(${Cross}):hover {
-          ${Cross}::before, ${Cross}::after {
-            background: ${theme.colors.categoryFilter.checkedCategory};
-          }
-        }
-      `}
-    `}
   `}
 `;
 
@@ -130,15 +65,9 @@ export const Checkbox = styled.div<ICheckbox>`
   cursor: pointer;
   transition: all ease-in-out 0.3s;
 
-  ${({ theme, checked, type, hiddenCheckbox }) => css`
+  ${({ theme, checked, type }) => css`
     ${checked && `background-color: ${theme.colors.btnBlue}`};
-    ${checked ? '' : `border: 3px solid ${theme.colors.silver}`};
+    border: 3px solid ${checked ? theme.colors.btnBlue : theme.colors.colorGrey};
     border-radius: ${type === 'radio' ? '50%' : '0'};
-
-    ${hiddenCheckbox &&
-    css`
-      position: absolute;
-      opacity: 0;
-    `}
   `}
 `;

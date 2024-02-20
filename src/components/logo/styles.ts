@@ -1,9 +1,11 @@
-import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
+import { LogoLink, LogoLinkProps } from './logo-link';
 import { IFooterStyles } from './types';
 
-export const Logo = styled(Link)<{ inFooter?: boolean }>`
+export const Logo: React.FC<LogoLinkProps> = styled(LogoLink)<{
+  inFooter?: boolean;
+}>`
   display: flex;
   flex-direction: column;
   align-items: center;

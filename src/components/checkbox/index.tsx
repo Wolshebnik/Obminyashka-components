@@ -9,7 +9,6 @@ export const CheckBox = ({
   style,
   fontSize,
   onChange,
-  hiddenCheckbox,
   checked = false,
   type = 'checkbox',
   ...props
@@ -19,28 +18,20 @@ export const CheckBox = ({
     type={type}
     style={style}
     checked={checked}
-    className="padding"
     fontSize={fontSize}
-    hiddenCheckbox={hiddenCheckbox}
   >
-    <Styles.Checkbox
-      type={type}
-      checked={checked}
-      hiddenCheckbox={hiddenCheckbox}
-    >
+    <Styles.Checkbox checked={checked} type={type}>
       <Styles.Input
         name={name}
         type={type}
         checked={checked}
         onChange={onChange}
-        hiddenCheckbox={hiddenCheckbox}
         {...props}
       />
 
-      {checked && <Icon.Check />}
+      <Icon.Check />
     </Styles.Checkbox>
 
     {text && <span>{text}</span>}
-    {hiddenCheckbox && checked && <Styles.Cross />}
   </Styles.Label>
 );
