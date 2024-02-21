@@ -94,7 +94,7 @@ export const SubCategory = styled.div<{ isCheck?: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 7px 20px 7px 14px;
+  padding: 7px 35px 7px 14px;
   margin: 0 16px 0 12px;
   border-radius: 5px;
   font-size: 14px;
