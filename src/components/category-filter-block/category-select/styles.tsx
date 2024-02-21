@@ -65,7 +65,7 @@ export const SubCategories = styled.div<{
 `;
 
 export const Cross = styled.div`
-  ${({ theme }) => css`
+  ${({}) => css`
     &:before,
     &:after {
       content: '';
@@ -74,7 +74,7 @@ export const Cross = styled.div`
       right: 14px;
       width: 16px;
       height: 1.5px;
-      background: ${theme.colors.white};
+      background: transparent;
     }
 
     &:before {
@@ -94,7 +94,7 @@ export const SubCategory = styled.div<{ isCheck?: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 7px 14px;
+  padding: 7px 20px 7px 14px;
   margin: 0 16px 0 12px;
   border-radius: 5px;
   font-size: 14px;
@@ -119,6 +119,10 @@ export const SubCategory = styled.div<{ isCheck?: boolean }>`
       &:hover {
         background: ${theme.colors.categoryFilter.checkedCategory};
       }
+
+      ${Cross}::before, ${Cross}::after {
+        background: ${theme.colors.white};
+      }
     `} 
 
     ${!isCheck &&
@@ -126,10 +130,6 @@ export const SubCategory = styled.div<{ isCheck?: boolean }>`
       &:hover {
         background: ${theme.colors.categoryFilter.hoverCategory};
         color: ${theme.colors.blackColorText};
-
-        ${Cross}::before, ${Cross}::after {
-          background: ${theme.colors.blackColorText};
-        }
       }
     `}
   `}

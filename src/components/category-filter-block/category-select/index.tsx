@@ -6,11 +6,13 @@ import { ICategoriesData } from './types';
 export const CategorySelect = ({
   id,
   title,
-  openCategory,
-  subCategories,
-  setOpenCategory,
+  isOpen,
+  options,
+  setOpen,
 }: ICategoriesData) => {
   const [checkedCategory, setCheckedCategory] = useState<string[]>([]);
+  // eslint-disable-next-line no-console
+  console.log(options);
 
   const handleCheck = (name: string) => {
     setCheckedCategory((prevCheckCategory) => {
@@ -24,20 +26,20 @@ export const CategorySelect = ({
 
   return (
     <>
-      <Styles.CategoryTitle onClick={() => setOpenCategory(id)}>
+      <Styles.CategoryTitle onClick={() => setOpen(id)}>
         {title}
-        <Styles.Triangle isOpen={openCategory === id && true} />
+        <Styles.Triangle isOpen={isOpen} />
       </Styles.CategoryTitle>
 
       <Styles.ScrollWrapper>
-        <Styles.SubCategories isOpen={openCategory === id && true}>
-          {subCategories.map((subCategory, ind) => (
+        <Styles.SubCategories isOpen={isOpen}>
+          {options.map((option, idx) => (
             <Styles.SubCategory
-              isCheck={checkedCategory.includes(subCategory.name) && true}
-              key={subCategory.name + ind}
-              onClick={() => handleCheck(subCategory.name)}
+              key={option.name + idx}
+              onClick={() => handleCheck(option.name)}
+              isCheck={checkedCategory.includes(option.name)}
             >
-              {subCategory.name}
+              {option.name}
 
               <Styles.Cross />
             </Styles.SubCategory>

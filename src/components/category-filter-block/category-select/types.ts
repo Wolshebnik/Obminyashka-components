@@ -1,9 +1,9 @@
 export interface ICategoriesData {
   id: number;
   title: string;
-  openCategory: number;
-  subCategories: ISubCategoriesData[];
-  setOpenCategory: (num: number) => void;
+  isOpen: boolean;
+  options: ISubCategoriesData[];
+  setOpen: (num: number) => void;
 }
 
 export interface ISubCategoriesData {
@@ -14,5 +14,5 @@ export interface ISubCategoriesData {
 export interface MockData {
   id: number;
   title: string;
-  subCategories: ISubCategoriesData[];
+  options: ISubCategoriesData[];
 }
