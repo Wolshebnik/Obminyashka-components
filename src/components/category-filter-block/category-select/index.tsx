@@ -11,8 +11,6 @@ export const CategorySelect = ({
   setOpen,
 }: ICategoriesData) => {
   const [checkedCategory, setCheckedCategory] = useState<string[]>([]);
-  // eslint-disable-next-line no-console
-  console.log(options);
 
   const handleCheck = (name: string) => {
     setCheckedCategory((prevCheckCategory) => {
