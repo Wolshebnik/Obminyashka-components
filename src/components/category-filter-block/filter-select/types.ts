@@ -1,18 +1,20 @@
-export interface ICategoriesData {
+export interface IFilterData {
   id: number;
+  type: 'input' | 'checkbox' | 'radio';
   title: string;
-  isOpen: boolean;
+  // isOpen: boolean;
   options: ISubCategoriesData[];
-  setOpen: (num: number) => void;
+  // setOpen: (num: number) => void;
 }
 
 export interface ISubCategoriesData {
-  id: number;
+  id?: number;
   name: string;
 }
 
 export interface MockData {
-  id: number;
+  id?: number;
+  type: string;
   title: string;
   options: ISubCategoriesData[];
 }

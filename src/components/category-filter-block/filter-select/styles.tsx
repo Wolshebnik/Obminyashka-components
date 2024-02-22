@@ -64,32 +64,7 @@ export const SubCategories = styled.div<{
   `}
 `;
 
-export const Cross = styled.div`
-  ${({}) => css`
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      top: 47%;
-      right: 14px;
-      width: 16px;
-      height: 1.5px;
-      background: transparent;
-    }
-
-    &:before {
-      webkit-transform: rotate(45deg);
-      transform: rotate(45deg);
-    }
-
-    &:after {
-      webkit-transform: rotate(-45deg);
-      transform: rotate(-45deg);
-    }
-  `}
-`;
-
-export const SubCategory = styled.div<{ isCheck?: boolean }>`
+export const SubCategory = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -103,34 +78,12 @@ export const SubCategory = styled.div<{ isCheck?: boolean }>`
   line-height: normal;
   cursor: pointer;
 
-  ${({ theme, isCheck }) => css`
+  ${({ theme }) => css`
     color: ${theme.colors.colorGrey};
 
     ${theme.responsive.isDesktop &&
     css`
       font-size: 16px;
-    `}
-
-    ${isCheck &&
-    css`
-      background: ${theme.colors.categoryFilter.checkedCategory};
-      color: ${theme.colors.white};
-
-      &:hover {
-        background: ${theme.colors.categoryFilter.checkedCategory};
-      }
-
-      ${Cross}::before, ${Cross}::after {
-        background: ${theme.colors.white};
-      }
-    `} 
-
-    ${!isCheck &&
-    css`
-      &:hover {
-        background: ${theme.colors.categoryFilter.hoverCategory};
-        color: ${theme.colors.blackColorText};
-      }
     `}
   `}
 `;
