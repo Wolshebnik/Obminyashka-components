@@ -1,12 +1,12 @@
 export interface ICategoriesData {
   id: number;
   title: string;
-  isOpen?: boolean;
   disabled?: string[];
-  isClothesShoes?: string;
+  isOpenCategory?: boolean;
+  selectedCategory?: string;
   options: ISubCategoriesData[];
-  setOpen?: (num: number) => void;
-  setIsClothesShoes?: (str: string) => void;
+  setIsOpenCategory?: (num: number) => void;
+  setIsSelectedCategory?: (str: string) => void;
   type: 'input' | 'checkbox' | 'radio' | 'category';
 }
 

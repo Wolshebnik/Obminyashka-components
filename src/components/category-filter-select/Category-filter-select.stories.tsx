@@ -15,8 +15,8 @@ export default meta;
 type Story = StoryObj<typeof CategoryFilterSelect>;
 
 const Template = () => {
-  const [isOpen, setIsOpen] = useState<number>(0);
-  const [isClothesShoes, setIsClothesShoes] = useState<string>('');
+  const [isOpenCategory, setIsOpenCategory] = useState<number>(0);
+  const [selectedCategory, setIsSelectedCategory] = useState<string>('');
 
   const disabledSelects = ['size(clothes)', 'size(shoes)'];
 
@@ -26,13 +26,13 @@ const Template = () => {
         {categoryData.map((category: MockData) => (
           <CategoryFilterSelect
             id={category.id}
-            setOpen={setIsOpen}
             type={category.type}
             key={category.title}
             title={category.title}
             options={category.options}
-            isOpen={isOpen === category.id}
-            setIsClothesShoes={setIsClothesShoes}
+            setIsOpenCategory={setIsOpenCategory}
+            setIsSelectedCategory={setIsSelectedCategory}
+            isOpenCategory={isOpenCategory === category.id}
           />
         ))}
       </div>
@@ -46,7 +46,7 @@ const Template = () => {
             title={category.title}
             options={category.options}
             disabled={disabledSelects}
-            isClothesShoes={isClothesShoes}
+            selectedCategory={selectedCategory}
           />
         ))}
       </div>

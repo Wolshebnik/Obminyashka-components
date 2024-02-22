@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 
 export const CategoryTitle = styled.span<{
-  disabled?: boolean;
-  isClothesShoes?: string;
   open?: string;
+  disabled?: boolean;
+  selectedCategory?: string;
 }>`
   display: flex;
   justify-content: space-between;
@@ -13,7 +13,7 @@ export const CategoryTitle = styled.span<{
   line-height: normal;
   cursor: pointer;
 
-  ${({ disabled, isClothesShoes, open }) => css`
+  ${({ disabled, selectedCategory, open }) => css`
     ${disabled &&
     css`
       pointer-events: none;
@@ -21,14 +21,14 @@ export const CategoryTitle = styled.span<{
     `}
 
     ${open === 'size(clothes)' &&
-    isClothesShoes === 'clothes' &&
+    selectedCategory === 'clothes' &&
     css`
       pointer-events: visible;
       opacity: 1;
     `}
     
     ${open === 'size(shoes)' &&
-    isClothesShoes === 'shoes' &&
+    selectedCategory === 'shoes' &&
     css`
       pointer-events: visible;
       opacity: 1;
@@ -116,6 +116,7 @@ export const Cross = styled.div`
 `;
 
 export const SubCategory = styled.div<{
+  type?: string;
   isCheck?: boolean;
 }>`
   position: relative;
@@ -131,7 +132,7 @@ export const SubCategory = styled.div<{
   line-height: normal;
   cursor: pointer;
 
-  ${({ theme, isCheck }) => css`
+  ${({ theme, isCheck, type }) => css`
     color: ${theme.colors.colorGrey};
 
     ${theme.responsive.isDesktop &&
@@ -140,6 +141,7 @@ export const SubCategory = styled.div<{
     `}
 
     ${isCheck &&
+    type === 'category' &&
     css`
       background: ${theme.colors.categoryFilter.checkedCategory};
       color: ${theme.colors.white};
@@ -154,6 +156,7 @@ export const SubCategory = styled.div<{
     `} 
 
     ${!isCheck &&
+    type === 'category' &&
     css`
       &:hover {
         background: ${theme.colors.categoryFilter.hoverCategory};
