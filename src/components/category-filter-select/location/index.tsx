@@ -75,7 +75,7 @@ const Location = ({
     };
     // console.log('hi');
     setData();
-  }, [setLocationId]);
+  }, []);
 
   useEffect(() => {
     if (value.trim() === '') {
