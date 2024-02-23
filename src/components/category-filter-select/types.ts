@@ -25,13 +25,7 @@ export interface MockData {
   type: 'input' | 'checkbox' | 'radio' | 'category';
 }
 
-interface ILocationWithId {
+interface ILocation {
   id: string;
   name: string;
 }
-
-interface ILocationWithoutId {
-  name: string;
-}
-
-export type ILocation = ILocationWithId | ILocationWithoutId;

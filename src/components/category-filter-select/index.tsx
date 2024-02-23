@@ -117,7 +117,6 @@ export const CategoryFilterSelect = ({
                       getRegions={getRegions}
                       placeholder={option.name}
                       setLocationId={setLocationId}
-                      id={option.id !== undefined ? option.id.toString() : ''}
                     />
                   )}
                 </Styles.SubCategory>
