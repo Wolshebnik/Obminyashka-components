@@ -85,7 +85,7 @@ export const SubCategories = styled.div<{
 
     ${isOpen &&
     css`
-      margin: 0 0 8px;
+      margin: 0 0 15px;
     `}
   `}
 `;
@@ -163,11 +163,17 @@ export const SubCategory = styled.div<{
         color: ${theme.colors.blackColorText};
       }
     `}
+
+    ${type === 'input' &&
+    css`
+      padding: 0;
+      margin: 0;
+    `}
   `}
 `;
 
 export const StoryWrapper = styled.div`
   display: grid;
   gap: 40px;
-  width: 250px;
+  width: 230px;
 `;

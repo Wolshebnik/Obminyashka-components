@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { CheckBox } from 'components/checkbox';
 
+import Location from './location';
 import * as Styles from './styles';
 import { ICategoriesData } from './types';
 
@@ -11,6 +12,9 @@ export const CategoryFilterSelect = ({
   title,
   options,
   disabled,
+  getCities,
+  getRegions,
+  setLocationId,
   isOpenCategory,
   selectedCategory,
   setIsOpenCategory,
@@ -21,7 +25,7 @@ export const CategoryFilterSelect = ({
 
   const isOpen = isOpenCategory ? isOpenCategory : isOpenFilter;
   const isCheckboxRadio = type === 'checkbox' || type === 'radio';
-  const isFilter = type === 'checkbox' || type === 'radio' || type === 'input';
+  const isFilter = isCheckboxRadio || type === 'input';
 
   useEffect(() => {
     if (
@@ -95,7 +99,7 @@ export const CategoryFilterSelect = ({
           {isFilter && (
             <>
               {options.map((option, idx) => (
-                <Styles.SubCategory key={option.name + idx}>
+                <Styles.SubCategory key={option.name + idx} type={type}>
                   {isCheckboxRadio && (
                     <CheckBox
                       type={type}
@@ -106,7 +110,16 @@ export const CategoryFilterSelect = ({
                     />
                   )}
 
-                  {type === 'input' && <div>location</div>}
+                  {type === 'input' && (
+                    <Location
+                      name={option.name}
+                      getCities={getCities}
+                      getRegions={getRegions}
+                      placeholder={option.name}
+                      setLocationId={setLocationId}
+                      id={option.id !== undefined ? option.id.toString() : ''}
+                    />
+                  )}
                 </Styles.SubCategory>
               ))}
             </>

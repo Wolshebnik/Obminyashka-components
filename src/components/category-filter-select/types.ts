@@ -5,14 +5,17 @@ export interface ICategoriesData {
   isOpenCategory?: boolean;
   selectedCategory?: string;
   options: ISubCategoriesData[];
+  setLocationId?: (str: string) => void;
+  getCities?: () => Promise<ILocation[]>;
+  getRegions?: () => Promise<ILocation[]>;
   setIsOpenCategory?: (num: number) => void;
   setIsSelectedCategory?: (str: string) => void;
   type: 'input' | 'checkbox' | 'radio' | 'category';
 }
 
 export interface ISubCategoriesData {
-  id?: number;
   name: string;
+  id?: number | string;
 }
 
 export interface MockData {
@@ -21,3 +24,14 @@ export interface MockData {
   options: ISubCategoriesData[];
   type: 'input' | 'checkbox' | 'radio' | 'category';
 }
+
+interface ILocationWithId {
+  id: string;
+  name: string;
+}
+
+interface ILocationWithoutId {
+  name: string;
+}
+
+export type ILocation = ILocationWithId | ILocationWithoutId;
