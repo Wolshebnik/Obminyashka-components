@@ -75,11 +75,14 @@ const Location = ({
     };
     // console.log('hi');
     setData();
-  }, []);
+  }, [setLocationId]);
 
   useEffect(() => {
     if (value.trim() === '') {
       setFilteredLocation(location);
+      if (setLocationId) {
+        setLocationId('');
+      }
     }
 
     setFilteredLocation(location);
