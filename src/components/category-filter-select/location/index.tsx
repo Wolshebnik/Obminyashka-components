@@ -7,8 +7,8 @@ import { ISelectedInput } from './types';
 
 const Location = ({
   name,
-  getCities,
-  getRegions,
+  cities,
+  regions,
   placeholder,
   setLocationId,
 }: ISelectedInput) => {
@@ -17,6 +17,36 @@ const Location = ({
   // const [isLoading, setIsLoading] = useState<boolean>(false);
   const [location, setLocation] = useState<ILocation[]>([]);
   const [filteredLocation, setFilteredLocation] = useState<ILocation[]>([]);
+
+  useEffect(() => {
+    if (name === 'region' && regions) {
+      setLocation(regions);
+    }
+
+    if (name === 'city' && cities) {
+      setLocation(cities);
+    }
+  }, [cities]);
+
+  useEffect(() => {
+    if (value.trim() === '') {
+      setFilteredLocation(location);
+      if (setLocationId) {
+        setLocationId('');
+      }
+    }
+
+    setFilteredLocation(location);
+
+    if (value.trim() !== '') {
+      const filtered = location?.length
+        ? location.filter((loc) =>
+            loc.name.toLowerCase().startsWith(value.toLowerCase())
+          )
+        : [];
+      setFilteredLocation(filtered);
+    }
+  }, [value, location]);
 
   const onFocus = () => {
     setIsOpen(true);
@@ -52,50 +82,7 @@ const Location = ({
     }
   };
 
-  useEffect(() => {
-    const setData = async () => {
-      try {
-        // setIsLoading(true);
-
-        if (name === 'region' && getRegions) {
-          const response = await getRegions();
-          setLocation(response);
-          console.log(location);
-        }
-
-        if (name === 'city' && getCities) {
-          const response = await getCities();
-          setLocation(response);
-        }
-      } catch (err) {
-        console.log(err);
-      } finally {
-        // setIsLoading(false);
-      }
-    };
-    // console.log('hi');
-    setData();
-  }, []);
-
-  useEffect(() => {
-    if (value.trim() === '') {
-      setFilteredLocation(location);
-      if (setLocationId) {
-        setLocationId('');
-      }
-    }
-
-    setFilteredLocation(location);
-
-    if (value.trim() !== '') {
-      const filtered = location?.length
-        ? location.filter((loc) =>
-            loc.name.toLowerCase().startsWith(value.toLowerCase())
-          )
-        : [];
-      setFilteredLocation(filtered);
-    }
-  }, [value, location]);
+  // console.log(name === 'city' && 'location', location);
 
   return (
     <>

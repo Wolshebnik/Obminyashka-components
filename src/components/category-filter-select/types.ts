@@ -2,12 +2,12 @@ export interface ICategoriesData {
   id: number;
   title: string;
   disabled?: string[];
+  cities?: ILocation[];
+  regions?: ILocation[];
   isOpenCategory?: boolean;
   selectedCategory?: string;
   options: ISubCategoriesData[];
   setLocationId?: (str: string) => void;
-  getCities?: () => Promise<ILocation[]>;
-  getRegions?: () => Promise<ILocation[]>;
   setIsOpenCategory?: (num: number) => void;
   setIsSelectedCategory?: (str: string) => void;
   type: 'input' | 'checkbox' | 'radio' | 'category';

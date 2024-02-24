@@ -10,10 +10,10 @@ export const CategoryFilterSelect = ({
   id,
   type,
   title,
+  cities,
+  regions,
   options,
   disabled,
-  getCities,
-  getRegions,
   setLocationId,
   isOpenCategory,
   selectedCategory,
@@ -112,9 +112,9 @@ export const CategoryFilterSelect = ({
 
                   {type === 'input' && (
                     <Location
+                      cities={cities}
+                      regions={regions}
                       name={option.name}
-                      getCities={getCities}
-                      getRegions={getRegions}
                       placeholder={option.name}
                       setLocationId={setLocationId}
                     />

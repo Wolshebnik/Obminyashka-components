@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { MockData } from './types';
@@ -7,6 +7,7 @@ import * as Styles from './styles';
 import { CategoryFilterSelect } from './index';
 import { categoryData, filterData } from './mock';
 import { cities, regions } from './location/mock';
+import { ILocation } from './location/types';
 
 const meta = {
   title: 'CategoryFilterSelect',
@@ -17,9 +18,12 @@ export default meta;
 type Story = StoryObj<typeof CategoryFilterSelect>;
 
 const Template = () => {
-  const [locationId, setLocationId] = useState<string>('');
   const [isOpenCategory, setIsOpenCategory] = useState<number>(0);
   const [selectedCategory, setIsSelectedCategory] = useState<string>('');
+
+  const [locationId, setLocationId] = useState<string>('');
+  const [receivedCities, setReceivedCities] = useState<ILocation[]>([]);
+  const [receivedRegions, setReceivedRegions] = useState<ILocation[]>([]);
 
   const disabledSelects = ['size(clothes)', 'size(shoes)'];
 
@@ -27,14 +31,32 @@ const Template = () => {
     return regions;
   };
 
-  const getCities = async () => {
-    if (locationId) {
+  const getCities = async (id: string) => {
+    if (id) {
       return cities;
     }
     return [];
   };
 
-  console.log('locationId', locationId);
+  useEffect(() => {
+    (async () => {
+      try {
+        const responseRegions = await getRegions();
+        const responseCities = await getCities(locationId);
+
+        if (receivedRegions.length === 0) {
+          setReceivedRegions(responseRegions);
+        }
+
+        setReceivedCities(responseCities);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, [locationId]);
+
+  // console.log('!receivedRegions', !receivedRegions);
+  // console.log('responseCities', receivedCities);
 
   return (
     <Styles.StoryWrapper>
@@ -59,9 +81,9 @@ const Template = () => {
             id={category.id}
             type={category.type}
             key={category.title}
-            getCities={getCities}
             title={category.title}
-            getRegions={getRegions}
+            cities={receivedCities}
+            regions={receivedRegions}
             options={category.options}
             disabled={disabledSelects}
             setLocationId={setLocationId}

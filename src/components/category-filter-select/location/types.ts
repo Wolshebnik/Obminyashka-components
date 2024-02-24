@@ -1,9 +1,9 @@
 export interface ISelectedInput {
   name: string;
   placeholder: string;
+  cities?: ILocation[];
+  regions?: ILocation[];
   setLocationId?: (str: string) => void;
-  getCities?: () => Promise<ILocation[]>;
-  getRegions?: () => Promise<ILocation[]>;
 }
 
 export interface ILocation {
