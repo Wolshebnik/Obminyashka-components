@@ -53,7 +53,7 @@ export const Title = styled.input<{
     outline: none;
   }
 
-  ${({ disabled, filtration, isOpen }) => css`
+  ${({ theme, disabled, filtration, isOpen }) => css`
     ${disabled &&
     css`
       pointer-events: none;
@@ -69,7 +69,7 @@ export const Title = styled.input<{
       ${filtration &&
     isOpen &&
     css`
-      border-bottom: 1px solid gray;
+      border-bottom: 2px solid ${theme.colors.categoryFilter.scrollBgGrey};
     `}
   `}
 `;
@@ -127,7 +127,7 @@ export const SubCategories = styled.div<{
   transition: all 0.4s ease;
 
   ${({ isOpen, filtration }) => css`
-    max-height: ${isOpen ? '2000px' : '0'};
+    max-height: ${isOpen ? '400px' : '0'};
 
     ${isOpen &&
     !filtration &&
