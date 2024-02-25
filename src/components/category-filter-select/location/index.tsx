@@ -102,14 +102,15 @@ const Location = ({
 
         <Styles.Scroll open={isOpen}>
           <Styles.SelectItemWrapper open={isOpen}>
-            {filteredLocation?.map((loc) => (
-              <Styles.SelectItem
-                key={loc.id + loc.name}
-                onClick={() => onClick(loc.name, loc.id)}
-              >
-                {loc.name}
-              </Styles.SelectItem>
-            ))}
+            {filteredLocation &&
+              filteredLocation?.map((loc) => (
+                <Styles.SelectItem
+                  key={loc.id + loc.name}
+                  onClick={() => onClick(loc.name, loc.id)}
+                >
+                  {loc.name}
+                </Styles.SelectItem>
+              ))}
           </Styles.SelectItemWrapper>
         </Styles.Scroll>
       </Styles.InputWrapper>

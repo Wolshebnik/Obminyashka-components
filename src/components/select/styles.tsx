@@ -1,37 +1,75 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
-export const CategoryTitle = styled.span<{
-  open?: string;
+const rotate = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+  `;
+
+export const Wrapper = styled.div<{ filtration?: boolean; isOpen?: boolean }>`
+  position: relative;
+
+  ${({ filtration, isOpen, theme }) => css`
+    ${filtration &&
+    css`
+      padding: 0 10px;
+      border-radius: 5px;
+      border: 2px dashed ${theme.colors.categoryFilter.locationBorder};
+    `}
+
+    ${isOpen &&
+    filtration &&
+    css`
+      padding: 0 15px 20px;
+    `}
+  `}
+`;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const Title = styled.input<{
+  isOpen?: boolean;
   disabled?: boolean;
-  selectedCategory?: string;
+  filtration?: boolean;
 }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  padding: 7px 0;
+  width: 100%;
+  border: white;
   font-size: 19px;
   line-height: normal;
   cursor: pointer;
 
-  ${({ disabled, selectedCategory, open }) => css`
+  &:focus {
+    outline: none;
+  }
+
+  ${({ disabled, filtration, isOpen }) => css`
     ${disabled &&
     css`
       pointer-events: none;
       opacity: 0.5;
     `}
 
-    ${open === 'size(clothes)' &&
-    selectedCategory === 'clothes' &&
+    ${!disabled &&
     css`
       pointer-events: visible;
       opacity: 1;
     `}
-    
-    ${open === 'size(shoes)' &&
-    selectedCategory === 'shoes' &&
+      
+      ${filtration &&
+    isOpen &&
     css`
-      pointer-events: visible;
-      opacity: 1;
+      border-bottom: 1px solid gray;
     `}
   `}
 `;
@@ -50,11 +88,13 @@ export const Triangle = styled.span<{ isOpen?: boolean }>`
   `}
 `;
 
-export const ScrollWrapper = styled.div`
+export const ScrollWrapper = styled.div<{
+  filtration?: boolean;
+}>`
   max-height: 300px;
   overflow-y: auto;
 
-  ${({ theme }) => css`
+  ${({ theme, filtration }) => css`
     &::-webkit-scrollbar {
       width: 5px;
       border-radius: 10px;
@@ -69,23 +109,35 @@ export const ScrollWrapper = styled.div`
       background: ${theme.colors.categoryFilter.scrollBgBlue};
       opacity: 0;
     }
+
+    ${filtration &&
+    css`
+      margin-top: 15px;
+    `}
   `}
 `;
 
 export const SubCategories = styled.div<{
   isOpen?: boolean;
+  filtration?: boolean;
 }>`
   display: grid;
   gap: 4px;
   overflow: hidden;
   transition: all 0.4s ease;
 
-  ${({ isOpen }) => css`
-    max-height: ${isOpen ? '1000px' : '0'};
+  ${({ isOpen, filtration }) => css`
+    max-height: ${isOpen ? '2000px' : '0'};
 
     ${isOpen &&
+    !filtration &&
     css`
       margin: 0 0 15px;
+    `}
+
+    ${filtration &&
+    css`
+      gap: 15px;
     `}
   `}
 `;
@@ -116,8 +168,9 @@ export const Cross = styled.div`
 `;
 
 export const SubCategory = styled.div<{
-  type?: string;
   isCheck?: boolean;
+  filtration?: boolean;
+  notCheckbox?: boolean;
 }>`
   position: relative;
   display: flex;
@@ -132,7 +185,7 @@ export const SubCategory = styled.div<{
   line-height: normal;
   cursor: pointer;
 
-  ${({ theme, isCheck, type }) => css`
+  ${({ theme, isCheck, notCheckbox, filtration }) => css`
     color: ${theme.colors.colorGrey};
 
     ${theme.responsive.isDesktop &&
@@ -141,7 +194,8 @@ export const SubCategory = styled.div<{
     `}
 
     ${isCheck &&
-    type === 'category' &&
+    notCheckbox &&
+    !filtration &&
     css`
       background: ${theme.colors.categoryFilter.checkedCategory};
       color: ${theme.colors.white};
@@ -156,7 +210,8 @@ export const SubCategory = styled.div<{
     `} 
 
     ${!isCheck &&
-    type === 'category' &&
+    notCheckbox &&
+    !filtration &&
     css`
       &:hover {
         background: ${theme.colors.categoryFilter.hoverCategory};
@@ -164,7 +219,7 @@ export const SubCategory = styled.div<{
       }
     `}
 
-    ${type === 'input' &&
+    ${filtration &&
     css`
       padding: 0;
       margin: 0;
@@ -172,8 +227,27 @@ export const SubCategory = styled.div<{
   `}
 `;
 
-export const StoryWrapper = styled.div`
-  display: grid;
-  gap: 40px;
-  width: 230px;
+export const LoaderContainer = styled.div`
+  display: inline-block;
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 25px;
+  height: 25px;
+`;
+
+export const LoaderCircle = styled.div`
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  animation: ${rotate} 0.5s linear infinite;
+
+  ${({ theme }) => css`
+    border: 5px solid ${theme.colors.categoryFilter.locationBorder};
+    border-color: ${theme.colors.categoryFilter.locationBorder} transparent
+      transparent transparent;
+  `}
 `;
