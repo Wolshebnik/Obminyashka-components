@@ -226,26 +226,25 @@ export const categoryData: ISelectMock[] = [
 ];
 
 export const filterData: ISelectMock[] = [
-  {
-    value: '9',
-    title: 'location',
-    filtration: true,
-    saveOnClose: true,
-    options: [
-      {
-        value: '52',
-        text: 'region',
-      },
-      {
-        value: '53',
-        text: 'city',
-      },
-    ],
-  },
+  // {
+  //   value: '9',
+  //   title: 'location',
+  //   filtration: true,
+  //   saveOnClose: true,
+  //   options: [
+  //     {
+  //       value: '52',
+  //       text: 'region',
+  //     },
+  //     {
+  //       value: '53',
+  //       text: 'city',
+  //     },
+  //   ],
+  // },
   {
     value: '10',
     title: 'sex',
-    saveOnClose: true,
     options: [
       {
         text: 'Boy',
@@ -262,7 +261,6 @@ export const filterData: ISelectMock[] = [
     value: '11',
     title: 'age',
     multiple: true,
-    saveOnClose: true,
     options: [
       {
         text: '0',
@@ -289,7 +287,6 @@ export const filterData: ISelectMock[] = [
     title: 'size(clothes)',
     disabled: 0,
     multiple: true,
-    saveOnClose: true,
     options: [
       {
         text: '50 - 80 cm',
@@ -316,7 +313,6 @@ export const filterData: ISelectMock[] = [
     title: 'size(shoes)',
     disabled: 1,
     multiple: true,
-    saveOnClose: true,
     options: [
       {
         text: '9,5 - 16 cm',
@@ -369,7 +365,6 @@ export const filterData: ISelectMock[] = [
     value: '14',
     title: 'season',
     multiple: true,
-    saveOnClose: true,
     options: [
       {
         text: 'Demi-season',

@@ -30,7 +30,7 @@ const Template = () => {
   return (
     <div style={{ width: '300px' }}>
       <div>
-        <h1>Category</h1>
+        <h1>Categories</h1>
 
         {categoryData.map((el, index) => {
           return (

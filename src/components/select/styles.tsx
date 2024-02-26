@@ -227,6 +227,10 @@ export const SubCategory = styled.div<{
   `}
 `;
 
+export const OptionText = styled.div`
+  width: 100%;
+`;
+
 export const LoaderContainer = styled.div`
   display: inline-block;
   position: relative;

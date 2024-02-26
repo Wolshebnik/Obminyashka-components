@@ -73,8 +73,6 @@ export const Select = ({
     if (!include) {
       setChosenOptions([...chosenOptions, option]);
     }
-
-    console.log(include);
   };
 
   const onChangeFiltration = (e: ChangeEvent<HTMLInputElement>) => {
@@ -126,7 +124,7 @@ export const Select = ({
     }
   }, [isOpen, isActive, chosenOptions]);
 
-  // console.log(title, isOpenOptions);
+  console.log(chosenOptions);
 
   return (
     <Styles.Wrapper ref={ref} isOpen={isOpenOptions} filtration={filtration}>
@@ -180,15 +178,17 @@ export const Select = ({
                 )}
 
                 {!filtration && notCheckbox && (
-                  <div onClick={() => setOptions(option)}>
+                  <Styles.OptionText onClick={() => setOptions(option)}>
                     {option.text}
 
                     <Styles.Cross />
-                  </div>
+                  </Styles.OptionText>
                 )}
 
                 {filtration && (
-                  <div onClick={() => setOptions(option)}>{option.text}</div>
+                  <Styles.OptionText onClick={() => setOptions(option)}>
+                    {option.text}
+                  </Styles.OptionText>
                 )}
               </Styles.SubCategory>
             ))}
