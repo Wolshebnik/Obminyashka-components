@@ -2,7 +2,8 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { select } from './mock';
+import { categoryData } from './mock';
+import { filterData } from './mock';
 // import * as Styles from './styles';
 import { Select } from './index';
 
@@ -31,29 +32,39 @@ const Template = () => {
       <div>
         <h1>Category</h1>
 
-        <Select
-          // multiple
-          // isLoading
-          {...select}
-          filtration
-          // notCheckbox
-          saveOnClose
-          isActive={open === 0}
-          setIsActive={() => setOpenCategory(0)}
-          onChange={(values) => console.log(values)}
-        />
+        {categoryData.map((el, index) => {
+          return (
+            <Select
+              {...el}
+              disabled={false}
+              multiple={el.multiple}
+              key={'category' + index}
+              isActive={open === index}
+              setIsActive={() => setOpenCategory(index)}
+              onChange={() => null}
+            />
+          );
+        })}
       </div>
 
       <div>
         <h1>Filter</h1>
 
-        <Select
-          multiple
-          {...select}
-          // disabled={!(open === 0)}
-          onChange={(values) => console.log(values)}
-        />
-        <Select {...select} onChange={(values) => console.log(values)} />
+        {filterData.map((el, index) => {
+          return (
+            <Select
+              {...el}
+              key={'filter' + index}
+              multiple={el.multiple}
+              filtration={el.filtration}
+              saveOnClose={el.saveOnClose}
+              disabled={
+                el.disabled === undefined ? undefined : !(open === el.disabled)
+              }
+              onChange={() => null}
+            />
+          );
+        })}
       </div>
     </div>
   );

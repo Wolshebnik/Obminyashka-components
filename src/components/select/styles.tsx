@@ -118,7 +118,7 @@ export const ScrollWrapper = styled.div<{
 `;
 
 export const SubCategories = styled.div<{
-  isOpen?: boolean;
+  isOpen: boolean;
   filtration?: boolean;
 }>`
   display: grid;

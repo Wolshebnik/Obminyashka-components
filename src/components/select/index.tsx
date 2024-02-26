@@ -38,8 +38,6 @@ export const Select = ({
 
   const ref = useRef<HTMLDivElement | null>(null);
 
-  console.log(filtrationValue);
-
   const setOpen = () => {
     if (isDisabled) {
       return;
@@ -75,6 +73,8 @@ export const Select = ({
     if (!include) {
       setChosenOptions([...chosenOptions, option]);
     }
+
+    console.log(include);
   };
 
   const onChangeFiltration = (e: ChangeEvent<HTMLInputElement>) => {
@@ -82,21 +82,23 @@ export const Select = ({
   };
 
   const onBlur = () => {
-    const matchesOption = chosenOptions.filter(
-      ({ text }) => text === filtrationValue
-    )[0];
+    if (filtration) {
+      const matchesOption = chosenOptions.filter(
+        ({ text }) => text === filtrationValue
+      )[0];
 
-    if (matchesOption) {
-      setFiltrationValue(matchesOption.text);
-      setChosenOptions([matchesOption]);
+      if (matchesOption) {
+        setFiltrationValue(matchesOption.text);
+        setChosenOptions([matchesOption]);
+      }
+
+      if (!matchesOption) {
+        setFiltrationValue('');
+        setChosenOptions([]);
+      }
+
+      setIsOpen(false);
     }
-
-    if (!matchesOption) {
-      setFiltrationValue('');
-      setChosenOptions([]);
-    }
-
-    setIsOpen(false);
   };
 
   useOutsideClick(onBlur, ref);
@@ -119,23 +121,25 @@ export const Select = ({
       (setIsActive && !isActive && saveOnClose) ||
       (!isOpen && !setIsActive && saveOnClose)
     ) {
-      onChange({ value: value || '', chosenOptions: [...chosenOptions] });
       setFiltrationValue(filtrationValue);
+      onChange({ value: value || '', chosenOptions: [...chosenOptions] });
     }
   }, [isOpen, isActive, chosenOptions]);
+
+  // console.log(title, isOpenOptions);
 
   return (
     <Styles.Wrapper ref={ref} isOpen={isOpenOptions} filtration={filtration}>
       <Styles.TitleContainer>
         <Styles.Title
           type="text"
-          disabled={disabled}
           placeholder={title}
+          disabled={isDisabled}
           isOpen={isOpenOptions}
           readOnly={!filtration}
           filtration={filtration}
-          onClick={() => (!filtration ? setOpen() : null)}
           value={filtration ? filtrationValue : title}
+          onClick={() => (!filtration ? setOpen() : null)}
           onFocus={() => (!filtration ? null : setIsOpen(true))}
           onChange={(e) => (filtration ? onChangeFiltration(e) : null)}
         />
@@ -176,15 +180,15 @@ export const Select = ({
                 )}
 
                 {!filtration && notCheckbox && (
-                  <p onClick={() => setOptions(option)}>
+                  <div onClick={() => setOptions(option)}>
                     {option.text}
 
                     <Styles.Cross />
-                  </p>
+                  </div>
                 )}
 
                 {filtration && (
-                  <p onClick={() => setOptions(option)}>{option.text}</p>
+                  <div onClick={() => setOptions(option)}>{option.text}</div>
                 )}
               </Styles.SubCategory>
             ))}

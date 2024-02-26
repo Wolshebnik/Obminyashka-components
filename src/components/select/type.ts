@@ -1,6 +1,6 @@
 export interface ISelectOption {
   text: string;
-  value: string;
+  value?: string;
 }
 
 export interface IOnChangeValue {
@@ -18,7 +18,7 @@ export interface ISelectProps {
   filtration?: boolean;
   notCheckbox?: boolean;
   saveOnClose?: boolean;
-  setIsActive?: () => void;
   options?: ISelectOption[];
+  setIsActive?: (num?: number) => void;
   onChange: (onChangeValue: IOnChangeValue) => void;
 }
