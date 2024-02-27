@@ -67,7 +67,7 @@ export const Select = ({
     }
 
     if (include) {
-      setChosenOptions(chosenOptions.filter((el) => el.value !== option.value));
+      setChosenOptions(chosenOptions.filter((el) => el.text !== option.text));
     }
 
     if (!include) {
