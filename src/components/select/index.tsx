@@ -20,7 +20,6 @@ export const Select = ({
   isLoading,
   filtration,
   setIsActive,
-  saveOnClose,
   notCheckbox,
 }: ISelectProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -88,14 +87,29 @@ export const Select = ({
       if (matchesOption) {
         setFiltrationValue(matchesOption.text);
         setChosenOptions([matchesOption]);
+        onChange({
+          value: value ? value : '',
+          chosenOptions: chosenOptions,
+        });
       }
 
-      if (!matchesOption) {
+      if (!matchesOption && chosenOptions.length) {
         setFiltrationValue('');
         setChosenOptions([]);
+        onChange({ value: '', chosenOptions: [] });
       }
 
       setIsOpen(false);
+    }
+
+    if (notCheckbox && !isActive && setIsActive) {
+      setChosenOptions([]);
+    }
+
+    if (!notCheckbox && multiple) {
+      if (disabled && chosenOptions.length) {
+        setChosenOptions([]);
+      }
     }
   };
 
@@ -103,28 +117,29 @@ export const Select = ({
 
   useEffect(() => {
     if (isOpen || isActive) {
-      onChange({ value: value ? value : '', chosenOptions: chosenOptions });
+      onChange({
+        value: value && chosenOptions.length ? value : '',
+        chosenOptions: chosenOptions,
+      });
     }
 
-    if (
-      (setIsActive && !isActive && !saveOnClose) ||
-      (!isOpen && !setIsActive && !saveOnClose)
-    ) {
-      onChange({ value: '', chosenOptions: [] });
-      setFiltrationValue('');
-    }
+    // if (
+    //   (setIsActive && !isActive && !saveOnClose) ||
+    //   (!isOpen && !setIsActive && !saveOnClose)
+    // ) {
+    //   onChange({ value: '', chosenOptions: [] });
+    //   setFiltrationValue('');
+    // }
 
-    if (
-      //TODO изминить логику при первой загрузки не должно сетать значение
-      (setIsActive && !isActive && saveOnClose) ||
-      (!isOpen && !setIsActive && saveOnClose)
-    ) {
-      setFiltrationValue(filtrationValue);
-      onChange({ value: value || '', chosenOptions: [...chosenOptions] });
-    }
-  }, [isOpen, isActive, chosenOptions]);
-
-  console.log(chosenOptions);
+    // if (
+    //   //TODO изминить логику при первой загрузки не должно сетать значение
+    //   (setIsActive && !isActive && saveOnClose) ||
+    //   (!isOpen && !setIsActive && saveOnClose)
+    // ) {
+    //   setFiltrationValue(filtrationValue);
+    //   onChange({ value: value || '', chosenOptions: [...chosenOptions] });
+    // }
+  }, [chosenOptions]);
 
   return (
     <Styles.Wrapper ref={ref} isOpen={isOpenOptions} filtration={filtration}>
@@ -142,7 +157,7 @@ export const Select = ({
           onChange={(e) => (filtration ? onChangeFiltration(e) : null)}
         />
 
-        {isLoading && (
+        {filtration && isLoading && (
           <Styles.LoaderContainer>
             <Styles.LoaderCircle />
           </Styles.LoaderContainer>

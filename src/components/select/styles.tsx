@@ -127,7 +127,7 @@ export const SubCategories = styled.div<{
   transition: all 0.4s ease;
 
   ${({ isOpen, filtration }) => css`
-    max-height: ${isOpen ? '400px' : '0'};
+    max-height: ${isOpen ? '2000px' : '0'};
 
     ${isOpen &&
     !filtration &&
@@ -232,8 +232,8 @@ export const OptionText = styled.div`
 `;
 
 export const LoaderContainer = styled.div`
-  display: inline-block;
   position: relative;
+  display: inline-block;
   top: 0;
   right: 0;
   width: 25px;
@@ -241,9 +241,9 @@ export const LoaderContainer = styled.div`
 `;
 
 export const LoaderCircle = styled.div`
+  position: absolute;
   box-sizing: border-box;
   display: block;
-  position: absolute;
   width: 25px;
   height: 25px;
   border-radius: 50%;

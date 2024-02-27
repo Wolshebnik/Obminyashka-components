@@ -37,10 +37,10 @@ const Template = () => {
             <Select
               {...el}
               disabled={false}
-              onChange={() => null}
               multiple={el.multiple}
               key={'category' + index}
               isActive={open === index}
+              onChange={(values) => console.log(el.title, values)}
               setIsActive={() => setOpenCategory(index)}
             />
           );
@@ -54,11 +54,11 @@ const Template = () => {
           return (
             <Select
               {...el}
-              onChange={() => null}
               key={'filter' + index}
               multiple={el.multiple}
               filtration={el.filtration}
               saveOnClose={el.saveOnClose}
+              onChange={(values) => console.log(el.title, values)}
               disabled={
                 el.disabled === undefined ? undefined : !(open === el.disabled)
               }

@@ -226,22 +226,22 @@ export const categoryData: ISelectMock[] = [
 ];
 
 export const filterData: ISelectMock[] = [
-  // {
-  //   value: '9',
-  //   title: 'location',
-  //   filtration: true,
-  //   saveOnClose: true,
-  //   options: [
-  //     {
-  //       value: '52',
-  //       text: 'region',
-  //     },
-  //     {
-  //       value: '53',
-  //       text: 'city',
-  //     },
-  //   ],
-  // },
+  {
+    value: '9',
+    title: 'location',
+    filtration: true,
+    saveOnClose: true,
+    options: [
+      {
+        value: '52',
+        text: 'region',
+      },
+      {
+        value: '53',
+        text: 'city',
+      },
+    ],
+  },
   {
     value: '10',
     title: 'sex',
