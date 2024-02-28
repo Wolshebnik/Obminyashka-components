@@ -11,11 +11,13 @@ const rotate = keyframes`
 
 export const Wrapper = styled.div<{ filtration?: boolean; isOpen?: boolean }>`
   position: relative;
+  width: 100%;
 
   ${({ filtration, isOpen, theme }) => css`
     ${filtration &&
     css`
       padding: 0 10px;
+      margin-right: 16px;
       border-radius: 5px;
       border: 2px dashed ${theme.colors.categoryFilter.locationBorder};
     `}
@@ -91,7 +93,7 @@ export const Triangle = styled.span<{ isOpen?: boolean }>`
 export const ScrollWrapper = styled.div<{
   filtration?: boolean;
 }>`
-  max-height: 300px;
+  max-height: 320px;
   overflow-y: auto;
 
   ${({ theme, filtration }) => css`
@@ -113,6 +115,7 @@ export const ScrollWrapper = styled.div<{
     ${filtration &&
     css`
       margin-top: 15px;
+      max-height: 160px;
     `}
   `}
 `;
@@ -122,22 +125,24 @@ export const SubCategories = styled.div<{
   filtration?: boolean;
 }>`
   display: grid;
+  box-sizing: border-box;
   gap: 4px;
   overflow: hidden;
   transition: all 0.4s ease;
 
   ${({ isOpen, filtration }) => css`
-    max-height: ${isOpen ? '2000px' : '0'};
+    max-height: ${isOpen ? '1000px' : '0'};
 
     ${isOpen &&
-    !filtration &&
     css`
-      margin: 0 0 15px;
+      margin: 10px 0;
     `}
 
     ${filtration &&
+    isOpen &&
     css`
       gap: 15px;
+      width: 100%;
     `}
   `}
 `;
@@ -217,6 +222,12 @@ export const SubCategory = styled.div<{
         background: ${theme.colors.categoryFilter.hoverCategory};
         color: ${theme.colors.blackColorText};
       }
+    `}
+
+    ${!notCheckbox &&
+    !filtration &&
+    css`
+      padding: 7px 35px 7px 0;
     `}
 
     ${filtration &&

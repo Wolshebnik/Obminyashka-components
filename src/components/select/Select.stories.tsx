@@ -2,10 +2,9 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { categoryData } from './mock';
-import { filterData } from './mock';
-// import * as Styles from './styles';
 import { Select } from './index';
+import * as Styles from './styles';
+import { categoryData, cities, filterData, regions } from './mock';
 
 const meta = {
   title: 'Select',
@@ -17,6 +16,7 @@ type Story = StoryObj<typeof Select>;
 
 const Template = () => {
   const [open, setOpen] = useState<number>(-1);
+  const [isOpenLocation, setIsOpenLocation] = useState<boolean>(false);
 
   const setOpenCategory = (id: number) => {
     if (open === id) {
@@ -49,6 +49,40 @@ const Template = () => {
 
       <div>
         <h1>Filter</h1>
+
+        <Styles.TitleContainer>
+          <Styles.Title
+            readOnly
+            value={'location'}
+            onClick={() => setIsOpenLocation(!isOpenLocation)}
+          />
+
+          <Styles.Triangle isOpen={isOpenLocation} />
+        </Styles.TitleContainer>
+
+        <Styles.ScrollWrapper>
+          <Styles.SubCategories filtration isOpen={isOpenLocation}>
+            <Styles.SubCategory filtration>
+              <Select
+                value="99"
+                filtration
+                title="region"
+                options={regions}
+                onChange={(values) => console.log(values)}
+              />
+            </Styles.SubCategory>
+
+            <Styles.SubCategory filtration>
+              <Select
+                value="100"
+                filtration
+                title="city"
+                options={cities}
+                onChange={(values) => console.log(values)}
+              />
+            </Styles.SubCategory>
+          </Styles.SubCategories>
+        </Styles.ScrollWrapper>
 
         {filterData.map((el, index) => {
           return (

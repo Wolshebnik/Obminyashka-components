@@ -225,23 +225,46 @@ export const categoryData: ISelectMock[] = [
   },
 ];
 
+// export const locationData: ISelectMock[] = [
+//   {
+//     value: '9',
+//     title: 'location',
+//     filtration: true,
+//     saveOnClose: true,
+//     options: [
+//       {
+//         value: '52',
+//         text: 'region',
+//       },
+//       {
+//         value: '53',
+//         text: 'city',
+//       },
+//     ],
+//   },
+// ];
+
+export const regions = [
+  { value: '90', text: 'Kyivska' },
+  { value: '91', text: 'Dneprovska' },
+  { value: '92', text: 'Kharkivska' },
+  { value: '93', text: 'Odesska' },
+  { value: '94', text: 'Lvivska' },
+  { value: '95', text: 'Poltavska' },
+  { value: '96', text: 'Zaporizska' },
+];
+
+export const cities = [
+  { value: '97', text: 'Kyiv' },
+  { value: '98', text: 'Dnepr' },
+  { value: '99', text: 'Kharkiv' },
+  { value: '100', text: 'Odessa' },
+  { value: '101', text: 'Lviv' },
+  { value: '102', text: 'Poltava' },
+  { value: '103', text: 'Zaporizia' },
+];
+
 export const filterData: ISelectMock[] = [
-  {
-    value: '9',
-    title: 'location',
-    filtration: true,
-    saveOnClose: true,
-    options: [
-      {
-        value: '52',
-        text: 'region',
-      },
-      {
-        value: '53',
-        text: 'city',
-      },
-    ],
-  },
   {
     value: '10',
     title: 'sex',
