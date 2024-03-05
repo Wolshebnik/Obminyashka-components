@@ -122,23 +122,6 @@ export const Select = ({
         chosenOptions: chosenOptions,
       });
     }
-
-    // if (
-    //   (setIsActive && !isActive && !saveOnClose) ||
-    //   (!isOpen && !setIsActive && !saveOnClose)
-    // ) {
-    //   onChange({ value: '', chosenOptions: [] });
-    //   setFiltrationValue('');
-    // }
-
-    // if (
-    //   //TODO изминить логику при первой загрузки не должно сетать значение
-    //   (setIsActive && !isActive && saveOnClose) ||
-    //   (!isOpen && !setIsActive && saveOnClose)
-    // ) {
-    //   setFiltrationValue(filtrationValue);
-    //   onChange({ value: value || '', chosenOptions: [...chosenOptions] });
-    // }
   }, [chosenOptions]);
 
   return (
