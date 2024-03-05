@@ -40,8 +40,8 @@ const Template = () => {
               multiple={el.multiple}
               key={'category' + index}
               isActive={open === index}
-              onChange={(values) => console.log(el.title, values)}
               setIsActive={() => setOpenCategory(index)}
+              onChange={(values) => console.log(el.title, values)}
             />
           );
         })}
