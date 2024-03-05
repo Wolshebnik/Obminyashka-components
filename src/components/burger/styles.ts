@@ -74,7 +74,7 @@ export const BurgerMenu = styled.div<{
   isOpen?: boolean;
   isAnimation?: boolean;
 }>`
-  position: absolute;
+  position: fixed;
   top: -100%;
   left: 0;
   width: 100%;
@@ -161,12 +161,13 @@ export const BurgerMenuClose = styled.div`
 `;
 
 export const BurgerContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 56px;
   width: 100%;
-  z-index: -1;
+  z-index: 1;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&

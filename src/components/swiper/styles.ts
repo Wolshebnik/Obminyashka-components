@@ -4,22 +4,6 @@ import { Link } from 'react-router-dom';
 
 import { IWindowWidth } from './types';
 
-// export const SwiperWrapper = styled.div<IWindowWidth>`
-//   margin: 50px 0;
-
-//   ${({ theme }) => css`
-//     ${theme.responsive.isTablet &&
-//     css`
-//       margin: 70px 0;
-//     `}
-
-//     ${theme.responsive.isDesktop &&
-//     css`
-//       margin: 130px 0;
-//     `}
-//   `}
-// `;
-
 export const SlideWrapper = styled.div`
   display: flex;
   justify-content: center;
