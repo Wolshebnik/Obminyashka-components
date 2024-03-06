@@ -1,6 +1,6 @@
 import { InputHTMLAttributes, DetailedHTMLProps } from 'react';
 
-type TypeOfInput = 'radio' | 'checkbox';
+type TypeOfInput = 'radio' | 'checkbox' | 'input';
 
 export interface CustomInput
   extends DetailedHTMLProps<
@@ -24,6 +24,11 @@ export interface InputArg {
 export interface LabelArg extends InputArg {
   gap?: number;
   fontSize?: number;
+}
+
+export interface ICheckbox {
+  type: string;
+  checked: boolean;
 }
 
 export interface ICheckbox {

@@ -150,8 +150,8 @@ export const Wrapper = styled.div`
       grid-template-rows: 165px;
       grid-row-gap: 65px;
       padding: 94px 0 163px;
-      max-width: 926px;
       margin-inline: auto;
+      max-width: 926px;
     `}
 
     ${theme.responsive.isDesktop &&
@@ -348,7 +348,11 @@ export const SunCategory = styled.img<ISunCategory>`
           ${variant === 7 &&
         css`
           top: 65px;
+<<<<<<< HEAD
+          left: -100px;
+=======
           left: -80px;
+>>>>>>> develop_2
         `}
       `}
     `}

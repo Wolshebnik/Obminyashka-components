@@ -16,6 +16,9 @@ export const Label = styled.label<LabelArg>`
   align-items: center;
   width: fit-content;
   line-height: 17px;
+  font-size: 16px;
+  font-weight: 400;
+
   cursor: pointer;
 
   ${({ theme, gap, checked, fontSize }) => css`
@@ -24,6 +27,11 @@ export const Label = styled.label<LabelArg>`
     color: ${checked
       ? theme.colors.blackColorText
       : theme.colors.colorTextDisabled};
+
+    ${checked &&
+    css`
+      font-weight: 700;
+    `}
 
     & > svg {
       display: block;

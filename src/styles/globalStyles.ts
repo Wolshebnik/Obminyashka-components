@@ -23,7 +23,7 @@ export const GlobalStyles = createGlobalStyle`
     color: inherit;
     line-height: inherit;
     cursor: pointer;
-  }
+  }  
 
   input {
     font-weight: 400;
