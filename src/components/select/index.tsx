@@ -118,7 +118,7 @@ export const Select = ({
   useEffect(() => {
     if (isOpen || isActive) {
       onChange({
-        value: value && chosenOptions.length ? value : '',
+        value: value ? value : '',
         chosenOptions: chosenOptions,
       });
     }

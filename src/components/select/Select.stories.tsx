@@ -4,6 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Select } from './index';
 import * as Styles from './styles';
+import { IOnChangeValue } from './type';
 import { categoryData, cities, filterData, regions } from './mock';
 
 const meta = {
@@ -17,6 +18,7 @@ type Story = StoryObj<typeof Select>;
 const Template = () => {
   const [open, setOpen] = useState<number>(-1);
   const [isOpenLocation, setIsOpenLocation] = useState<boolean>(false);
+  const [data, setData] = useState<IOnChangeValue[] | []>([]);
 
   const setOpenCategory = (id: number) => {
     if (open === id) {
@@ -26,6 +28,33 @@ const Template = () => {
 
     setOpen(id);
   };
+
+  const onChange = (setValues: IOnChangeValue) => {
+    if (!data.length) {
+      setData([setValues]);
+      return;
+    }
+
+    data.map((obj) => {
+      if (obj.value !== setValues.value) {
+        setData([...data, setValues]);
+      }
+
+      if (obj.value === setValues.value) {
+        if (!setValues.chosenOptions.length) {
+          setData([...data.filter((el) => el.value !== setValues.value)]);
+          return;
+        }
+
+        setData([
+          ...data.filter((el) => el.value !== setValues.value),
+          setValues,
+        ]);
+      }
+    });
+  };
+
+  console.log('DATA', data);
 
   return (
     <div style={{ width: '300px' }}>
@@ -41,7 +70,7 @@ const Template = () => {
               key={'category' + index}
               isActive={open === index}
               setIsActive={() => setOpenCategory(index)}
-              onChange={(values) => console.log(el.title, values)}
+              onChange={onChange}
             />
           );
         })}
@@ -92,7 +121,7 @@ const Template = () => {
               multiple={el.multiple}
               filtration={el.filtration}
               saveOnClose={el.saveOnClose}
-              onChange={(values) => console.log(el.title, values)}
+              onChange={onChange}
               disabled={
                 el.disabled === undefined ? undefined : !(open === el.disabled)
               }
