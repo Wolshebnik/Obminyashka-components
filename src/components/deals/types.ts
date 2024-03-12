@@ -4,5 +4,6 @@ export interface IDeals {
   heartIcon?: boolean;
   background?: boolean;
   puzzleIcon?: boolean;
+  onClose?: () => void;
   inFooterOAuth?: boolean;
 }
