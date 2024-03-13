@@ -6,6 +6,7 @@ import * as Responsive from '../responsive';
 const Deals = ({
   to,
   text,
+  onClose,
   heartIcon,
   background,
   puzzleIcon,
@@ -16,7 +17,11 @@ const Deals = ({
     : Styles.WrapperWithLink;
 
   return (
-    <WrapperWithCondition to={to} inFooterOAuth={inFooterOAuth}>
+    <WrapperWithCondition
+      to={to}
+      inFooterOAuth={inFooterOAuth}
+      onClick={() => (onClose ? onClose() : null)}
+    >
       {puzzleIcon && (
         <Responsive.Desktop>
           <Styles.PuzzleIconWrapper>

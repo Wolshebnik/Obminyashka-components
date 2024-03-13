@@ -44,10 +44,16 @@ const Burger = ({ data, lang, onSelectLanguage, duration = 600 }: IBurger) => {
                       to={item.to}
                       text={item.text}
                       heartIcon={item.icon}
+                      onClose={() => setOpen(false)}
                     />
                   </Responsive.Mobile>
                 ) : (
-                  <Deals text={item.text} to={item.to} heartIcon={item.icon} />
+                  <Deals
+                    to={item.to}
+                    text={item.text}
+                    heartIcon={item.icon}
+                    onClose={() => setOpen(false)}
+                  />
                 )}
               </React.Fragment>
             ))}
