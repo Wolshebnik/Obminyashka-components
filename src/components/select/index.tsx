@@ -157,50 +157,48 @@ export const Select = ({
         {!filtration && <Styles.Triangle isOpen={isOpenOptions} />}
       </Styles.TitleContainer>
 
-      {isOpenOptions && (
-        <Styles.ScrollWrapper>
-          <Styles.SubCategories isOpen={isOpenOptions}>
-            {filtered?.map((option, idx) => (
-              <Styles.SubCategory
-                filtration={filtration}
-                notCheckbox={notCheckbox}
-                key={`select-${idx}-${option.value}`}
-                isCheck={includes({
-                  arr: chosenOptions,
-                  objectCheck: option,
-                })}
-              >
-                {!filtration && !notCheckbox && (
-                  <CheckBox
-                    name={option.text}
-                    text={option.text}
-                    onChange={() => setOptions(option)}
-                    type={multiple ? 'checkbox' : 'radio'}
-                    checked={includes({
-                      arr: chosenOptions,
-                      objectCheck: option,
-                    })}
-                  />
-                )}
+      <Styles.ScrollWrapper>
+        <Styles.SubCategories isOpen={isOpenOptions}>
+          {filtered?.map((option, idx) => (
+            <Styles.SubCategory
+              filtration={filtration}
+              notCheckbox={notCheckbox}
+              key={`select-${idx}-${option.value}`}
+              isCheck={includes({
+                arr: chosenOptions,
+                objectCheck: option,
+              })}
+            >
+              {!filtration && !notCheckbox && (
+                <CheckBox
+                  name={option.text}
+                  text={option.text}
+                  onChange={() => setOptions(option)}
+                  type={multiple ? 'checkbox' : 'radio'}
+                  checked={includes({
+                    arr: chosenOptions,
+                    objectCheck: option,
+                  })}
+                />
+              )}
 
-                {!filtration && notCheckbox && (
-                  <Styles.OptionText onClick={() => setOptions(option)}>
-                    {option.text}
+              {!filtration && notCheckbox && (
+                <Styles.OptionText onClick={() => setOptions(option)}>
+                  {option.text}
 
-                    <Styles.Cross />
-                  </Styles.OptionText>
-                )}
+                  <Styles.Cross />
+                </Styles.OptionText>
+              )}
 
-                {filtration && (
-                  <Styles.OptionText onClick={() => setOptions(option)}>
-                    {option.text}
-                  </Styles.OptionText>
-                )}
-              </Styles.SubCategory>
-            ))}
-          </Styles.SubCategories>
-        </Styles.ScrollWrapper>
-      )}
+              {filtration && (
+                <Styles.OptionText onClick={() => setOptions(option)}>
+                  {option.text}
+                </Styles.OptionText>
+              )}
+            </Styles.SubCategory>
+          ))}
+        </Styles.SubCategories>
+      </Styles.ScrollWrapper>
     </Styles.Wrapper>
   );
 };

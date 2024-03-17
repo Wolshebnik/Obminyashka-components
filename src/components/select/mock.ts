@@ -20,47 +20,38 @@ export const categoryData: ISelectMock[] = [
     notCheckbox: true,
     options: [
       {
-        parent: 'clothes',
         value: '15',
         text: 'Blouses, shirts',
       },
       {
-        parent: 'clothes',
         value: '16',
         text: 'Pants, jeans, shorts',
       },
       {
-        parent: 'clothes',
         value: '17',
         text: 'Upper robe',
       },
       {
-        parent: 'clothes',
         value: '18',
         text: 'Hats, scarves, mittens',
       },
       {
-        parent: 'clothes',
         value: '19',
         text: 'Clothes, sundresses, beddings',
       },
       {
-        parent: 'clothes',
         value: '20',
         text: 'Light, sweaters',
       },
       {
-        parent: 'clothes',
         value: '21',
         text: 'T-shirts, tops, t-shirts',
       },
       {
-        parent: 'clothes',
         value: '22',
         text: 'Tracksuits',
       },
       {
-        parent: 'clothes',
         value: '23',
         text: 'School uniform',
       },
@@ -241,25 +232,6 @@ export const categoryData: ISelectMock[] = [
     options: [],
   },
 ];
-
-// export const locationData: ISelectMock[] = [
-//   {
-//     value: '9',
-//     title: 'location',
-//     filtration: true,
-//     deleteOnClose: true,
-//     options: [
-//       {
-//         value: '52',
-//         text: 'region',
-//       },
-//       {
-//         value: '53',
-//         text: 'city',
-//       },
-//     ],
-//   },
-// ];
 
 export const regions = [
   { value: '90', text: 'Kyivska' },
