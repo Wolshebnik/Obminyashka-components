@@ -40,12 +40,12 @@ const Template = () => {
         setData([...data, setValues]);
       }
 
-      if (obj.value === setValues.value) {
-        if (!setValues.chosenOptions.length) {
-          setData([...data.filter((el) => el.value !== setValues.value)]);
-          return;
-        }
+      if (!setValues.chosenOptions.length) {
+        setData([...data.filter((el) => el.value !== setValues.value)]);
+        return;
+      }
 
+      if (obj.value === setValues.value) {
         setData([
           ...data.filter((el) => el.value !== setValues.value),
           setValues,
@@ -53,6 +53,10 @@ const Template = () => {
       }
     });
   };
+
+  // const handleChange = (values: IOnChangeValue, category: string) => {
+  //   console.log({ values, category });
+  // };
 
   console.log('DATA', data);
 
@@ -69,8 +73,10 @@ const Template = () => {
               multiple={el.multiple}
               key={'category' + index}
               isActive={open === index}
+              deleteOnClose={el.deleteOnClose}
               setIsActive={() => setOpenCategory(index)}
               onChange={onChange}
+              // onChange={(values) => handleChange(values, 'category')}
             />
           );
         })}
@@ -119,8 +125,6 @@ const Template = () => {
               {...el}
               key={'filter' + index}
               multiple={el.multiple}
-              filtration={el.filtration}
-              saveOnClose={el.saveOnClose}
               onChange={onChange}
               disabled={
                 el.disabled === undefined ? undefined : !(open === el.disabled)

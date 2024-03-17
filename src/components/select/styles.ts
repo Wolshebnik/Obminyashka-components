@@ -46,7 +46,8 @@ export const Title = styled.input<{
   align-items: center;
   padding: 7px 0;
   width: 100%;
-  border: white;
+  border: transparent;
+  background-color: transparent;
   font-size: 19px;
   line-height: normal;
   cursor: pointer;

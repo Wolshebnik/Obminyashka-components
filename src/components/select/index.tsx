@@ -21,6 +21,7 @@ export const Select = ({
   filtration,
   setIsActive,
   notCheckbox,
+  deleteOnClose,
 }: ISelectProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [chosenOptions, setChosenOptions] = useState<ISelectOption[] | []>([]);
@@ -102,27 +103,32 @@ export const Select = ({
       setIsOpen(false);
     }
 
-    if (notCheckbox && !isActive && setIsActive) {
-      setChosenOptions([]);
-    }
-
     if (!notCheckbox && multiple) {
       if (disabled && chosenOptions.length) {
         setChosenOptions([]);
       }
+    }
+
+    if (isActive || isOpen) {
+      return;
+    }
+
+    if (deleteOnClose && chosenOptions.length && (!isActive || !isOpen)) {
+      setChosenOptions([]);
+      onChange({ value: value ? value : '', chosenOptions: [] });
     }
   };
 
   useOutsideClick(onBlur, ref);
 
   useEffect(() => {
-    if (isOpen || isActive) {
+    if ((isOpen || isActive) && chosenOptions.length) {
       onChange({
         value: value ? value : '',
         chosenOptions: chosenOptions,
       });
     }
-  }, [chosenOptions]);
+  }, [chosenOptions, isActive, isOpen]);
 
   return (
     <Styles.Wrapper ref={ref} isOpen={isOpenOptions} filtration={filtration}>

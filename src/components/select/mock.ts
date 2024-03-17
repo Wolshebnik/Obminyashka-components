@@ -7,7 +7,7 @@ export interface ISelectMock {
   multiple?: boolean;
   filtration?: boolean;
   notCheckbox?: boolean;
-  saveOnClose?: boolean;
+  deleteOnClose?: boolean;
   options?: ISelectOption[];
 }
 
@@ -16,41 +16,51 @@ export const categoryData: ISelectMock[] = [
     value: '1',
     title: 'clothes',
     multiple: true,
+    deleteOnClose: true,
     notCheckbox: true,
     options: [
       {
+        parent: 'clothes',
         value: '15',
         text: 'Blouses, shirts',
       },
       {
+        parent: 'clothes',
         value: '16',
         text: 'Pants, jeans, shorts',
       },
       {
+        parent: 'clothes',
         value: '17',
         text: 'Upper robe',
       },
       {
+        parent: 'clothes',
         value: '18',
         text: 'Hats, scarves, mittens',
       },
       {
+        parent: 'clothes',
         value: '19',
         text: 'Clothes, sundresses, beddings',
       },
       {
+        parent: 'clothes',
         value: '20',
         text: 'Light, sweaters',
       },
       {
+        parent: 'clothes',
         value: '21',
         text: 'T-shirts, tops, t-shirts',
       },
       {
+        parent: 'clothes',
         value: '22',
         text: 'Tracksuits',
       },
       {
+        parent: 'clothes',
         value: '23',
         text: 'School uniform',
       },
@@ -61,6 +71,7 @@ export const categoryData: ISelectMock[] = [
     title: 'shoes',
     multiple: true,
     notCheckbox: true,
+    deleteOnClose: true,
     options: [
       {
         value: '24',
@@ -89,6 +100,7 @@ export const categoryData: ISelectMock[] = [
     title: 'toys',
     multiple: true,
     notCheckbox: true,
+    deleteOnClose: true,
     options: [
       {
         value: '29',
@@ -117,6 +129,7 @@ export const categoryData: ISelectMock[] = [
     title: 'furniture',
     multiple: true,
     notCheckbox: true,
+    deleteOnClose: true,
     options: [
       {
         value: '34',
@@ -149,6 +162,7 @@ export const categoryData: ISelectMock[] = [
     title: 'transport for children',
     multiple: true,
     notCheckbox: true,
+    deleteOnClose: true,
     options: [
       {
         value: '40',
@@ -169,6 +183,7 @@ export const categoryData: ISelectMock[] = [
     title: 'books',
     multiple: true,
     notCheckbox: true,
+    deleteOnClose: true,
     options: [
       {
         value: '43',
@@ -197,6 +212,7 @@ export const categoryData: ISelectMock[] = [
     title: 'carnival costumes',
     multiple: true,
     notCheckbox: true,
+    deleteOnClose: true,
     options: [
       {
         value: '48',
@@ -221,6 +237,7 @@ export const categoryData: ISelectMock[] = [
     title: 'other',
     multiple: true,
     notCheckbox: true,
+    deleteOnClose: true,
     options: [],
   },
 ];
@@ -230,7 +247,7 @@ export const categoryData: ISelectMock[] = [
 //     value: '9',
 //     title: 'location',
 //     filtration: true,
-//     saveOnClose: true,
+//     deleteOnClose: true,
 //     options: [
 //       {
 //         value: '52',
