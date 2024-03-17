@@ -76,7 +76,6 @@ export const BtnOpen = styled(Link)`
   line-height: 24px;
   text-align: center;
   text-transform: uppercase;
-  z-index: 2;
 `;
 
 export const BtnSend = styled(Link)`
