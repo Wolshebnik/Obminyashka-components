@@ -130,6 +130,8 @@ export const Select = ({
     }
   }, [chosenOptions, isActive, isOpen]);
 
+  console.log(title, isOpenOptions);
+
   return (
     <Styles.Wrapper ref={ref} isOpen={isOpenOptions} filtration={filtration}>
       <Styles.TitleContainer>
@@ -156,8 +158,8 @@ export const Select = ({
       </Styles.TitleContainer>
 
       {isOpenOptions && (
-        <Styles.ScrollWrapper filtration={filtration}>
-          <Styles.SubCategories isOpen={isOpenOptions} filtration={filtration}>
+        <Styles.ScrollWrapper>
+          <Styles.SubCategories isOpen={isOpenOptions}>
             {filtered?.map((option, idx) => (
               <Styles.SubCategory
                 filtration={filtration}

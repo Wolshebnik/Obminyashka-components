@@ -9,7 +9,7 @@ const rotate = keyframes`
   }
   `;
 
-export const Wrapper = styled.div<{ filtration?: boolean; isOpen?: boolean }>`
+export const Wrapper = styled.div<{ filtration?: boolean; isOpen: boolean }>`
   position: relative;
   width: 100%;
 
@@ -133,11 +133,7 @@ export const SubCategories = styled.div<{
 
   ${({ isOpen, filtration }) => css`
     max-height: ${isOpen ? '1000px' : '0'};
-
-    ${isOpen &&
-    css`
-      margin: 10px 0;
-    `}
+    margin: ${isOpen ? '10px 0' : '0'};
 
     ${filtration &&
     isOpen &&
