@@ -92,12 +92,13 @@ export const Triangle = styled.span<{ isOpen?: boolean }>`
 `;
 
 export const ScrollWrapper = styled.div<{
+  isOpen?: boolean;
   filtration?: boolean;
 }>`
-  max-height: 320px;
+  max-height: 330px;
   overflow-y: auto;
 
-  ${({ theme, filtration }) => css`
+  ${({ theme, filtration, isOpen }) => css`
     &::-webkit-scrollbar {
       width: 5px;
       border-radius: 10px;
@@ -114,6 +115,7 @@ export const ScrollWrapper = styled.div<{
     }
 
     ${filtration &&
+    isOpen &&
     css`
       margin-top: 15px;
       max-height: 160px;
@@ -132,7 +134,7 @@ export const SubCategories = styled.div<{
   transition: all 0.4s ease;
 
   ${({ isOpen, filtration }) => css`
-    max-height: ${isOpen ? '1000px' : '0'};
+    max-height: ${isOpen ? '2000px' : '0'};
     margin: ${isOpen ? '10px 0' : '0'};
 
     ${filtration &&

@@ -84,7 +84,6 @@ const Template = () => {
 
       <div>
         <h1>Filter</h1>
-
         <Styles.TitleContainer>
           <Styles.Title
             readOnly
@@ -95,7 +94,7 @@ const Template = () => {
           <Styles.Triangle isOpen={isOpenLocation} />
         </Styles.TitleContainer>
 
-        <Styles.ScrollWrapper>
+        <Styles.ScrollWrapper filtration>
           <Styles.SubCategories filtration isOpen={isOpenLocation}>
             <Styles.SubCategory filtration>
               <Select

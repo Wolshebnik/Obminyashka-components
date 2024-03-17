@@ -157,8 +157,8 @@ export const Select = ({
         {!filtration && <Styles.Triangle isOpen={isOpenOptions} />}
       </Styles.TitleContainer>
 
-      <Styles.ScrollWrapper>
-        <Styles.SubCategories isOpen={isOpenOptions}>
+      <Styles.ScrollWrapper isOpen={isOpenOptions} filtration={filtration}>
+        <Styles.SubCategories isOpen={isOpenOptions} filtration={filtration}>
           {filtered?.map((option, idx) => (
             <Styles.SubCategory
               filtration={filtration}
