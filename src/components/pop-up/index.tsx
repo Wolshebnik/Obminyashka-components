@@ -1,11 +1,15 @@
-import { useState } from 'react';
-import * as Styles from './styles';
+import { Modal } from './modal';
 import { IPopUpProps } from './types';
 
-import { Modal } from './modal';
+import * as Styles from './styles';
 
-export const PopUp = ({ title, href, textButton }: IPopUpProps) => {
-  const [modalActive, setModalActive] = useState(false);
+export const PopUp = ({
+  href,
+  title,
+  textButton,
+  modalActive,
+  setModalActive,
+}: IPopUpProps) => {
   return (
     <Styles.Box>
       <Modal active={modalActive} setActive={setModalActive}>

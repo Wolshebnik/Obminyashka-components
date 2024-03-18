@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { PopUp } from '.';
+import { useState } from 'react';
 
 const meta = {
   title: 'PopUp',
@@ -9,18 +10,26 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof PopUp>;
 
-export const PopUpDefault: Story = {
-  render: () => (
+const Template = () => {
+  const [modalActive, setModalActive] = useState(false);
+
+  return (
     <div
       style={{
         margin: '0 auto',
       }}
     >
       <PopUp
-        title="Повторне відправлення посилання"
-        textButton="open"
         href="#"
+        textButton="open"
+        modalActive={modalActive}
+        setModalActive={setModalActive}
+        title="Повторне відправлення посилання"
       />
     </div>
-  ),
+  );
+};
+
+export const PopUpDefault: Story = {
+  render: () => <Template />,
 };
