@@ -8,6 +8,7 @@ export interface ISelectMock {
   filtration?: boolean;
   notCheckbox?: boolean;
   deleteOnClose?: boolean;
+  paramToSetTitle?: string;
   options?: ISelectOption[];
 }
 
@@ -18,6 +19,7 @@ export const categoryData: ISelectMock[] = [
     multiple: true,
     deleteOnClose: true,
     notCheckbox: true,
+    paramToSetTitle: 'clothes',
     options: [
       {
         value: '15',
@@ -62,6 +64,7 @@ export const categoryData: ISelectMock[] = [
     title: 'shoes',
     multiple: true,
     notCheckbox: true,
+    paramToSetTitle: 'shoes',
     deleteOnClose: true,
     options: [
       {
@@ -91,6 +94,7 @@ export const categoryData: ISelectMock[] = [
     title: 'toys',
     multiple: true,
     notCheckbox: true,
+    paramToSetTitle: 'toys',
     deleteOnClose: true,
     options: [
       {
@@ -120,6 +124,7 @@ export const categoryData: ISelectMock[] = [
     title: 'furniture',
     multiple: true,
     notCheckbox: true,
+    paramToSetTitle: 'furniture',
     deleteOnClose: true,
     options: [
       {
@@ -153,6 +158,7 @@ export const categoryData: ISelectMock[] = [
     title: 'transport for children',
     multiple: true,
     notCheckbox: true,
+    paramToSetTitle: 'transport for children',
     deleteOnClose: true,
     options: [
       {
@@ -174,6 +180,7 @@ export const categoryData: ISelectMock[] = [
     title: 'books',
     multiple: true,
     notCheckbox: true,
+    paramToSetTitle: 'books',
     deleteOnClose: true,
     options: [
       {
@@ -203,6 +210,7 @@ export const categoryData: ISelectMock[] = [
     title: 'carnival costumes',
     multiple: true,
     notCheckbox: true,
+    paramToSetTitle: 'carnival costumes',
     deleteOnClose: true,
     options: [
       {
@@ -228,6 +236,7 @@ export const categoryData: ISelectMock[] = [
     title: 'other',
     multiple: true,
     notCheckbox: true,
+    paramToSetTitle: 'other',
     deleteOnClose: true,
     options: [],
   },

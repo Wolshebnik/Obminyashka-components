@@ -3,9 +3,10 @@ import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Select } from './index';
-import * as Styles from './styles';
 import { IOnChangeValue } from './types';
 import { categoryData, cities, filterData, regions } from './mock';
+
+import * as Styles from './styles';
 
 const meta = {
   title: 'Select',
@@ -22,7 +23,6 @@ const Template = () => {
 
   const setOpenCategory = (id: number) => {
     if (open === id) {
-      setOpen(-1);
       return;
     }
 
@@ -58,7 +58,7 @@ const Template = () => {
   //   console.log({ values, category });
   // };
 
-  console.log('DATA', data);
+  // console.log('DATA', data);
 
   return (
     <div style={{ width: '300px' }}>
@@ -84,6 +84,7 @@ const Template = () => {
 
       <div>
         <h1>Filter</h1>
+
         <Styles.TitleContainer>
           <Styles.Title
             readOnly
