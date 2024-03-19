@@ -7,7 +7,7 @@ export const ModalWrapper = styled.div<{ active: boolean }>`
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(115, 181, 206, 0.4);
   top: 0;
   left: 0;
   opacity: 0;
