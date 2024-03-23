@@ -132,7 +132,7 @@ export const Select = ({
   useOutsideClick(onBlur, ref);
 
   useEffect(() => {
-    if (isOpen || isActive) {
+    if ((isOpen || isActive) && !disabled) {
       onChange({
         value: value ? value : '',
         chosenOptions: chosenOptions,
