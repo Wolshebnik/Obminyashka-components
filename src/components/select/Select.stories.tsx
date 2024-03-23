@@ -58,7 +58,7 @@ const Template = () => {
   //   console.log({ values, category });
   // };
 
-  console.log('DATA', data);
+  // console.log('DATA', data);
 
   return (
     <div style={{ width: '300px' }}>
@@ -73,7 +73,7 @@ const Template = () => {
               multiple={el.multiple}
               key={'category' + index}
               isActive={open === index}
-              // deleteOnClose={el.deleteOnClose}
+              deleteOnClose={el.deleteOnClose}
               setIsActive={() => setOpenCategory(index)}
               onChange={onChange}
               // onChange={(values) => handleChange(values, 'category')}
