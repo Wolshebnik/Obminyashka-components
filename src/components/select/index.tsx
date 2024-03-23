@@ -121,11 +121,11 @@ export const Select = ({
 
     if (deleteOnClose && chosenOptions.length && (!isActive || !isOpen)) {
       setChosenOptions([]);
-      onChange({
-        chosenOptions: [],
-        value: value ? value : '',
-        paramToSetTitle: paramToSetTitle,
-      });
+      // onChange({
+      //   chosenOptions: [],
+      //   value: value ? value : '',
+      //   paramToSetTitle: paramToSetTitle,
+      // });
     }
   };
 
