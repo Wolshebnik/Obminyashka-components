@@ -151,23 +151,24 @@ export const Select = ({
   // }, []);
 
   useEffect(() => {
-    if (paramsFilteredOptions?.length) {
+    if (paramsFilteredOptions) {
       if (notCheckbox) {
         setOpen();
       } else {
         setIsOpen(true);
       }
 
-      setChosenOptions(paramsFilteredOptions);
-      console.log('Category or Filter');
+      setChosenOptions(
+        paramsFilteredOptions?.length ? paramsFilteredOptions : []
+      );
+
+      console.log(
+        'paramsFilteredOptions',
+        value,
+        paramsFilteredOptions && paramsFilteredOptions
+      );
     }
   }, []);
-
-  console.log(
-    'paramsFilteredOptions',
-    value,
-    paramsFilteredOptions && paramsFilteredOptions
-  );
 
   return (
     <Styles.Wrapper ref={ref} isOpen={isOpenOptions} filtration={filtration}>
