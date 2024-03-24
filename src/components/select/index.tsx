@@ -134,11 +134,7 @@ export const Select = ({
   }, [chosenOptions, isActive, isOpen]);
 
   useEffect(() => {
-    if (paramsFilteredOptions?.length && notCheckbox) {
-      setChosenOptions(paramsFilteredOptions);
-    }
-
-    if (paramsFilteredOptions?.length && !notCheckbox) {
+    if (paramsFilteredOptions?.length) {
       setOpen();
 
       setChosenOptions(paramsFilteredOptions);
