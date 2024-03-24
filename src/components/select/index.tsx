@@ -135,9 +135,7 @@ export const Select = ({
 
   useEffect(() => {
     if (paramsFilteredOptions) {
-      if (setIsActive) {
-        setIsActive();
-      } else {
+      if (setIsOpen) {
         setIsOpen(true);
       }
 
