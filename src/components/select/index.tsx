@@ -135,10 +135,6 @@ export const Select = ({
 
   useEffect(() => {
     if (paramsFilteredOptions) {
-      if (setIsOpen) {
-        setIsOpen(true);
-      }
-
       setChosenOptions(paramsFilteredOptions);
     }
   }, []);
