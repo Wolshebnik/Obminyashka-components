@@ -142,11 +142,11 @@ export const Select = ({
       setIsOpen(true);
 
       setChosenOptions(paramsFilteredOptions);
-      console.log(paramsFilteredOptions);
+      console.log('paramsFilteredOptions', paramsFilteredOptions);
     }
   }, []);
 
-  console.log(chosenOptions);
+  // console.log(chosenOptions);
 
   return (
     <Styles.Wrapper ref={ref} isOpen={isOpenOptions} filtration={filtration}>
