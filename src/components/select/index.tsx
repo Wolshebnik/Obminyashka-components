@@ -150,6 +150,11 @@ export const Select = ({
     }
   }, []);
 
+  console.log(
+    'paramsFilteredOptions',
+    paramsFilteredOptions && paramsFilteredOptions
+  );
+
   return (
     <Styles.Wrapper ref={ref} isOpen={isOpenOptions} filtration={filtration}>
       <Styles.TitleContainer>
