@@ -119,12 +119,17 @@ const Template = () => {
         </Styles.ScrollWrapper>
 
         {filterData.map((el, index) => {
+          let x = [];
+          if (el.value === 'age') {
+            x.push({ value: '1 - 2', text: '1 - 2' });
+          }
           return (
             <Select
               {...el}
               onChange={onChange}
               key={'filter' + index}
               multiple={el.multiple}
+              paramsFilteredOptions={x}
               disabled={
                 el.disabled === undefined ? undefined : !(open === el.disabled)
               }

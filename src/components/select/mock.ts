@@ -259,12 +259,15 @@ export const filterData: ISelectMock[] = [
     title: 'sex',
     options: [
       {
+        value: 'Boy',
         text: 'Boy',
       },
       {
+        value: 'Girl',
         text: 'Girl',
       },
       {
+        value: 'Will suit everyone',
         text: 'Will suit everyone',
       },
     ],
@@ -275,21 +278,27 @@ export const filterData: ISelectMock[] = [
     multiple: true,
     options: [
       {
+        value: '0',
         text: '0',
       },
       {
+        value: '1 - 2',
         text: '1 - 2',
       },
       {
+        value: '2 - 4',
         text: '2 - 4',
       },
       {
+        value: '5 - 7',
         text: '5 - 7',
       },
       {
+        value: '8 - 11',
         text: '8 - 11',
       },
       {
+        value: '11 - 14',
         text: '11 - 14',
       },
     ],
@@ -301,21 +310,27 @@ export const filterData: ISelectMock[] = [
     multiple: true,
     options: [
       {
+        value: '50 - 80 cm',
         text: '50 - 80 cm',
       },
       {
+        value: '80 - 92 cm',
         text: '80 - 92 cm',
       },
       {
+        value: '92 - 110 cm',
         text: '92 - 110 cm',
       },
       {
+        value: '110 - 122 cm',
         text: '110 - 122 cm',
       },
       {
+        value: '122 - 146 cm',
         text: '122 - 146 cm',
       },
       {
+        value: '146 - 164 cm',
         text: '146 - 164 cm',
       },
     ],
@@ -327,48 +342,63 @@ export const filterData: ISelectMock[] = [
     multiple: true,
     options: [
       {
+        value: '9,5 - 16 cm',
         text: '9,5 - 16 cm',
       },
       {
+        value: '10 - 16,5 cm',
         text: '10 - 16,5 cm',
       },
       {
+        value: '10,5 - 17 cm',
         text: '10,5 - 17 cm',
       },
       {
+        value: '11 - 18 cm',
         text: '11 - 18 cm',
       },
       {
+        value: '11,5 - 19 cm',
         text: '11,5 - 19 cm',
       },
       {
+        value: '12 - 20 cm',
         text: '12 - 20 cm',
       },
       {
+        value: '12,5 - 21 cm',
         text: '12,5 - 21 cm',
       },
       {
+        value: '13 - 22 cm',
         text: '13 - 22 cm',
       },
       {
+        value: '13,5 - 23 cm',
         text: '13,5 - 23 cm',
       },
       {
+        value: '14 - 24 cm',
         text: '14 - 24 cm',
       },
       {
+        value: '14,5 - 25 cm',
         text: '14,5 - 25 cm',
       },
       {
+        value: '15 - 26 cm',
         text: '15 - 26 cm',
       },
       {
+        value: '15,5 - 27 cm',
         text: '15,5 - 27 cm',
       },
       {
+        value: '16 - 28 cm',
         text: '16 - 28 cm',
       },
       {
+        value: '16,5 - 29 cm',
         text: '16,5 - 29 cm',
       },
     ],
@@ -379,15 +409,19 @@ export const filterData: ISelectMock[] = [
     multiple: true,
     options: [
       {
+        value: 'Demi-season',
         text: 'Demi-season',
       },
       {
+        value: 'Summer',
         text: 'Summer',
       },
       {
+        value: 'Winter',
         text: 'Winter',
       },
       {
+        value: 'All seasons',
         text: 'All seasons',
       },
     ],
