@@ -139,7 +139,7 @@ export const Select = ({
 
       setChosenOptions(paramsFilteredOptions);
     }
-  }, []);
+  }, [paramsFilteredOptions]);
 
   return (
     <Styles.Wrapper ref={ref} isOpen={isOpenOptions} filtration={filtration}>
