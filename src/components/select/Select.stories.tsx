@@ -122,9 +122,9 @@ const Template = () => {
           return (
             <Select
               {...el}
+              onChange={onChange}
               key={'filter' + index}
               multiple={el.multiple}
-              onChange={onChange}
               disabled={
                 el.disabled === undefined ? undefined : !(open === el.disabled)
               }
