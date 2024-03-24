@@ -135,11 +135,17 @@ export const Select = ({
 
   useEffect(() => {
     if (paramsFilteredOptions) {
+      if (setIsActive) {
+        setIsActive();
+      } else {
+        setIsOpen(true);
+      }
+
       setChosenOptions(paramsFilteredOptions);
     }
   }, []);
 
-  console.log(chosenOptions);
+  // console.log(chosenOptions);
 
   return (
     <Styles.Wrapper ref={ref} isOpen={isOpenOptions} filtration={filtration}>
