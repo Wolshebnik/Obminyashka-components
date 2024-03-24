@@ -133,27 +133,45 @@ export const Select = ({
     }
   }, [chosenOptions, isActive, isOpen]);
 
+  // useEffect(() => {
+  //   if (paramsFilteredOptions?.length && notCheckbox && !chosenOptions.length) {
+  //     setOpen();
+
+  //     setChosenOptions(paramsFilteredOptions);
+  //     console.log('category');
+  //     return;
+  //   }
+
+  //   if (paramsFilteredOptions?.length && !chosenOptions.length) {
+  //     setIsOpen(true);
+
+  //     setChosenOptions(paramsFilteredOptions);
+  //     console.log('filter');
+  //   }
+  // }, []);
+
   useEffect(() => {
-    if (paramsFilteredOptions?.length && notCheckbox && !chosenOptions.length) {
-      setOpen();
-
+    // Проверяем, что paramsFilteredOptions есть и оно не пустое
+    // А также проверяем условия для фильтрации
+    if (
+      paramsFilteredOptions?.length &&
+      ((!notCheckbox && !chosenOptions.length) ||
+        (notCheckbox && !chosenOptions.length && !disabled))
+    ) {
+      // Выполняем нужные действия для фильтрации
+      if (notCheckbox) {
+        setOpen();
+      } else {
+        setIsOpen(true);
+      }
       setChosenOptions(paramsFilteredOptions);
-      console.log('category');
-      return;
-    }
-
-    if (paramsFilteredOptions?.length && !chosenOptions.length) {
-      setIsOpen(true);
-
-      setChosenOptions(paramsFilteredOptions);
-      console.log('filter');
+      console.log('Category or Filter');
     }
   }, []);
-
-  console.log(
-    'paramsFilteredOptions',
-    paramsFilteredOptions && paramsFilteredOptions
-  );
+  // console.log(
+  //   'paramsFilteredOptions',
+  //   paramsFilteredOptions && paramsFilteredOptions
+  // );
 
   return (
     <Styles.Wrapper ref={ref} isOpen={isOpenOptions} filtration={filtration}>
