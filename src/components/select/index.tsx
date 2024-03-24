@@ -133,23 +133,6 @@ export const Select = ({
     }
   }, [chosenOptions, isActive, isOpen]);
 
-  // useEffect(() => {
-  //   if (paramsFilteredOptions?.length && notCheckbox && !chosenOptions.length) {
-  //     setOpen();
-
-  //     setChosenOptions(paramsFilteredOptions);
-  //     console.log('category');
-  //     return;
-  //   }
-
-  //   if (paramsFilteredOptions?.length && !chosenOptions.length) {
-  //     setIsOpen(true);
-
-  //     setChosenOptions(paramsFilteredOptions);
-  //     console.log('filter');
-  //   }
-  // }, []);
-
   useEffect(() => {
     if (paramsFilteredOptions) {
       if (notCheckbox) {
@@ -158,12 +141,10 @@ export const Select = ({
         setIsOpen(true);
       }
 
-      setChosenOptions(
-        paramsFilteredOptions?.length ? paramsFilteredOptions : []
-      );
+      setChosenOptions(paramsFilteredOptions);
 
       console.log(
-        'paramsFilteredOptions',
+        'filteredOptions',
         value,
         paramsFilteredOptions && paramsFilteredOptions
       );
