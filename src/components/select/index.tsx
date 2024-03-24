@@ -138,6 +138,7 @@ export const Select = ({
       setOpen();
 
       setChosenOptions(paramsFilteredOptions);
+      console.log('category');
       return;
     }
 
@@ -145,6 +146,7 @@ export const Select = ({
       setIsOpen(true);
 
       setChosenOptions(paramsFilteredOptions);
+      console.log('filter');
     }
   }, []);
 
