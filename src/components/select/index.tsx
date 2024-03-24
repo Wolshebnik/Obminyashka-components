@@ -135,6 +135,8 @@ export const Select = ({
 
   useEffect(() => {
     if (paramsFilteredOptions?.length && notCheckbox && !chosenOptions.length) {
+      setOpen();
+
       setChosenOptions(paramsFilteredOptions);
       return;
     }
@@ -144,7 +146,7 @@ export const Select = ({
 
       setChosenOptions(paramsFilteredOptions);
     }
-  }, [paramsFilteredOptions]);
+  }, []);
 
   return (
     <Styles.Wrapper ref={ref} isOpen={isOpenOptions} filtration={filtration}>
