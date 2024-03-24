@@ -151,7 +151,7 @@ export const Select = ({
   // }, []);
 
   useEffect(() => {
-    if (paramsFilteredOptions?.length && !chosenOptions.length) {
+    if (paramsFilteredOptions?.length) {
       if (notCheckbox) {
         setOpen();
       } else {
