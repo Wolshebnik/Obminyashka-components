@@ -20,8 +20,8 @@ export interface ISelectProps {
   filtration?: boolean;
   notCheckbox?: boolean;
   deleteOnClose?: boolean;
-  paramToSetTitle?: string;
   options?: ISelectOption[];
   setIsActive?: (num?: number) => void;
+  paramsFilteredOptions?: ISelectOption[];
   onChange: (values: IOnChangeValue) => void;
 }

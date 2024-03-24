@@ -22,7 +22,7 @@ export const Select = ({
   setIsActive,
   notCheckbox,
   deleteOnClose,
-  paramToSetTitle,
+  paramsFilteredOptions,
 }: ISelectProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [chosenOptions, setChosenOptions] = useState<ISelectOption[] | []>([]);
@@ -92,7 +92,6 @@ export const Select = ({
         onChange({
           value: value ? value : '',
           chosenOptions: chosenOptions,
-          paramToSetTitle: paramToSetTitle,
         });
       }
 
@@ -102,7 +101,6 @@ export const Select = ({
         onChange({
           value: '',
           chosenOptions: [],
-          paramToSetTitle: paramToSetTitle,
         });
       }
 
@@ -121,11 +119,6 @@ export const Select = ({
 
     if (deleteOnClose && chosenOptions.length && (!isActive || !isOpen)) {
       setChosenOptions([]);
-      // onChange({
-      //   chosenOptions: [],
-      //   value: value ? value : '',
-      //   paramToSetTitle: paramToSetTitle,
-      // });
     }
   };
 
@@ -136,12 +129,17 @@ export const Select = ({
       onChange({
         value: value ? value : '',
         chosenOptions: chosenOptions,
-        paramToSetTitle: paramToSetTitle,
       });
     }
   }, [chosenOptions, isActive, isOpen]);
 
-  // console.log(title, isOpenOptions);
+  useEffect(() => {
+    if (paramsFilteredOptions) {
+      setChosenOptions(paramsFilteredOptions);
+    }
+  }, []);
+
+  console.log(chosenOptions);
 
   return (
     <Styles.Wrapper ref={ref} isOpen={isOpenOptions} filtration={filtration}>

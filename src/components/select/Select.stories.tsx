@@ -70,13 +70,12 @@ const Template = () => {
             <Select
               {...el}
               disabled={false}
+              onChange={onChange}
               multiple={el.multiple}
               key={'category' + index}
               isActive={open === index}
               deleteOnClose={el.deleteOnClose}
               setIsActive={() => setOpenCategory(index)}
-              onChange={onChange}
-              // onChange={(values) => handleChange(values, 'category')}
             />
           );
         })}
