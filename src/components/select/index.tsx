@@ -142,6 +142,7 @@ export const Select = ({
       setIsOpen(true);
 
       setChosenOptions(paramsFilteredOptions);
+      console.log(paramsFilteredOptions);
     }
   }, []);
 
