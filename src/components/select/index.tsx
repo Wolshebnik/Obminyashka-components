@@ -151,27 +151,23 @@ export const Select = ({
   // }, []);
 
   useEffect(() => {
-    // Проверяем, что paramsFilteredOptions есть и оно не пустое
-    // А также проверяем условия для фильтрации
-    if (
-      paramsFilteredOptions?.length &&
-      ((!notCheckbox && !chosenOptions.length) ||
-        (notCheckbox && !chosenOptions.length && !disabled))
-    ) {
-      // Выполняем нужные действия для фильтрации
+    if (paramsFilteredOptions?.length && !chosenOptions.length) {
       if (notCheckbox) {
         setOpen();
       } else {
         setIsOpen(true);
       }
+
       setChosenOptions(paramsFilteredOptions);
       console.log('Category or Filter');
     }
   }, []);
-  // console.log(
-  //   'paramsFilteredOptions',
-  //   paramsFilteredOptions && paramsFilteredOptions
-  // );
+
+  console.log(
+    'paramsFilteredOptions',
+    value,
+    paramsFilteredOptions && paramsFilteredOptions
+  );
 
   return (
     <Styles.Wrapper ref={ref} isOpen={isOpenOptions} filtration={filtration}>
