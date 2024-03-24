@@ -304,7 +304,7 @@ export const filterData: ISelectMock[] = [
     ],
   },
   {
-    value: 'size(clothes',
+    value: 'sizeClothes',
     title: 'size(clothes)',
     disabled: 0,
     multiple: true,
@@ -336,7 +336,7 @@ export const filterData: ISelectMock[] = [
     ],
   },
   {
-    value: 'size(shoes)',
+    value: 'sizeShoes',
     title: 'size(shoes)',
     disabled: 1,
     multiple: true,
