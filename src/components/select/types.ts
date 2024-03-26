@@ -22,6 +22,6 @@ export interface ISelectProps {
   deleteOnClose?: boolean;
   options?: ISelectOption[];
   setIsActive?: (num?: number) => void;
-  paramsFilteredOptions?: ISelectOption[];
+  filteredParameterOptions?: ISelectOption[];
   onChange: (values: IOnChangeValue) => void;
 }

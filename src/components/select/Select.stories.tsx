@@ -60,14 +60,6 @@ const Template = () => {
         <h1>Categories</h1>
 
         {categoryData.map((el, index) => {
-          let x = [];
-          if (el.value === '2') {
-            x.push({
-              value: '27',
-              text: 'Shoes, moccasins',
-            });
-          }
-
           return (
             <Select
               {...el}
@@ -76,7 +68,6 @@ const Template = () => {
               multiple={el.multiple}
               key={'category' + index}
               isActive={open === index}
-              paramsFilteredOptions={x}
               deleteOnClose={el.deleteOnClose}
               setIsActive={() => setOpenCategory(index)}
             />
@@ -122,20 +113,12 @@ const Template = () => {
         </Styles.ScrollWrapper>
 
         {filterData.map((el, index) => {
-          let x = [];
-          if (el.value === 'sizeShoes') {
-            x.push({
-              value: '9,5 - 16 cm',
-              text: '9,5 - 16 cm',
-            });
-          }
           return (
             <Select
               {...el}
               onChange={onChange}
               key={'filter' + index}
               multiple={el.multiple}
-              paramsFilteredOptions={x}
               disabled={
                 el.disabled === undefined ? undefined : !(open === el.disabled)
               }

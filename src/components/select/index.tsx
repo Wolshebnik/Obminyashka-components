@@ -22,7 +22,7 @@ export const Select = ({
   setIsActive,
   notCheckbox,
   deleteOnClose,
-  paramsFilteredOptions,
+  filteredParameterOptions,
 }: ISelectProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [chosenOptions, setChosenOptions] = useState<ISelectOption[] | []>([]);
@@ -134,22 +134,23 @@ export const Select = ({
   }, [chosenOptions, isActive, isOpen]);
 
   useEffect(() => {
-    if (paramsFilteredOptions) {
-      if (notCheckbox) {
-        setOpen();
-      } else {
-        setIsOpen(true);
-      }
-
-      setChosenOptions(paramsFilteredOptions);
-
-      console.log(
-        'filteredOptions',
-        value,
-        paramsFilteredOptions && paramsFilteredOptions
-      );
+    if (disabled && chosenOptions.length > 0) {
+      setChosenOptions([]);
+      setIsOpen(false);
     }
-  }, []);
+  }, [disabled, chosenOptions]);
+
+  useEffect(() => {
+    if (
+      filteredParameterOptions &&
+      filteredParameterOptions.length > 0 &&
+      !chosenOptions.length
+    ) {
+      setOpen();
+
+      setChosenOptions(filteredParameterOptions);
+    }
+  }, [!notCheckbox && filteredParameterOptions]);
 
   return (
     <Styles.Wrapper ref={ref} isOpen={isOpenOptions} filtration={filtration}>
