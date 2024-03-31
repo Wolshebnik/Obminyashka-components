@@ -12,6 +12,7 @@ import * as Styles from './styles';
 export const Select = ({
   value,
   title,
+  params,
   options,
   multiple,
   isActive,
@@ -25,7 +26,9 @@ export const Select = ({
   filteredParameterOptions,
 }: ISelectProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [chosenOptions, setChosenOptions] = useState<ISelectOption[] | []>([]);
+  const [chosenOptions, setChosenOptions] = useState<ISelectOption[] | []>(
+    filteredParameterOptions ? filteredParameterOptions : []
+  );
   const [filtrationValue, setFiltrationValue] = useState<string>('');
 
   const isDisabled = isLoading || disabled || !options?.length;
@@ -107,12 +110,6 @@ export const Select = ({
       setIsOpen(false);
     }
 
-    if (!notCheckbox && multiple) {
-      if (disabled && chosenOptions.length) {
-        setChosenOptions([]);
-      }
-    }
-
     if (isActive || isOpen) {
       return;
     }
@@ -123,6 +120,18 @@ export const Select = ({
   };
 
   useOutsideClick(onBlur, ref);
+
+  useEffect(() => {
+    if (
+      filteredParameterOptions &&
+      filteredParameterOptions.length > 0 &&
+      !chosenOptions.length
+    ) {
+      setOpen();
+
+      setChosenOptions(filteredParameterOptions);
+    }
+  }, [params]);
 
   useEffect(() => {
     if ((isOpen || isActive) && !disabled) {
@@ -139,18 +148,6 @@ export const Select = ({
       setIsOpen(false);
     }
   }, [disabled, chosenOptions]);
-
-  useEffect(() => {
-    if (
-      filteredParameterOptions &&
-      filteredParameterOptions.length > 0 &&
-      !chosenOptions.length
-    ) {
-      setOpen();
-
-      setChosenOptions(filteredParameterOptions);
-    }
-  }, [!notCheckbox && filteredParameterOptions]);
 
   return (
     <Styles.Wrapper ref={ref} isOpen={isOpenOptions} filtration={filtration}>
