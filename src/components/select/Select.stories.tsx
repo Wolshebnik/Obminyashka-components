@@ -88,29 +88,33 @@ const Template = () => {
           <Styles.Triangle isOpen={isOpenLocation} />
         </Styles.TitleContainer>
 
-        <Styles.ScrollWrapper filtration>
-          <Styles.SubCategories filtration isOpen={isOpenLocation}>
-            <Styles.SubCategory filtration>
-              <Select
-                value="99"
-                filtration
-                title="region"
-                options={regions}
-                onChange={(values) => console.log(values)}
-              />
-            </Styles.SubCategory>
+        <Styles.LocationSubCategories filtration isOpen={isOpenLocation}>
+          <Styles.LocationSubCategory filtration>
+            <Select
+              value="99"
+              filtration
+              title="region"
+              options={regions}
+              onChange={(values) => console.log(values)}
+            />
+          </Styles.LocationSubCategory>
 
-            <Styles.SubCategory filtration>
-              <Select
-                value="100"
-                filtration
-                title="city"
-                options={cities}
-                onChange={(values) => console.log(values)}
-              />
-            </Styles.SubCategory>
-          </Styles.SubCategories>
-        </Styles.ScrollWrapper>
+          <Styles.LocationSubCategory
+            filtration
+            style={{
+              top: '55px',
+              zIndex: '99',
+            }}
+          >
+            <Select
+              value="100"
+              filtration
+              title="city"
+              options={cities}
+              onChange={(values) => console.log(values)}
+            />
+          </Styles.LocationSubCategory>
+        </Styles.LocationSubCategories>
 
         {filterData.map((el, index) => {
           return (

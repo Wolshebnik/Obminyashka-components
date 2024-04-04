@@ -17,7 +17,7 @@ export const Wrapper = styled.div<{ filtration?: boolean; isOpen: boolean }>`
     ${filtration &&
     css`
       padding: 0 10px;
-      margin-right: 16px;
+      background-color: white;
       border-radius: 5px;
       border: 2px dashed ${theme.colors.categoryFilter.locationBorder};
     `}
@@ -118,7 +118,6 @@ export const ScrollWrapper = styled.div<{
     isOpen &&
     css`
       margin-top: 15px;
-      max-height: 160px;
     `}
   `}
 `;
@@ -142,8 +141,14 @@ export const SubCategories = styled.div<{
     css`
       gap: 15px;
       width: 100%;
+      overflow: visible;
     `}
   `}
+`;
+
+export const LocationSubCategories = styled(SubCategories)`
+  position: relative;
+  height: 97px;
 `;
 
 export const Cross = styled.div`
@@ -235,6 +240,13 @@ export const SubCategory = styled.div<{
       margin: 0;
     `}
   `}
+`;
+
+export const LocationSubCategory = styled(SubCategory)`
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 999;
 `;
 
 export const OptionText = styled.div`
