@@ -118,6 +118,7 @@ export const ScrollWrapper = styled.div<{
     isOpen &&
     css`
       margin-top: 15px;
+      max-height: 230px;
     `}
   `}
 `;

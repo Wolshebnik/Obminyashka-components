@@ -3,24 +3,25 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
   flex-wrap: wrap;
   gap: 55px 20px;
-  margin: 50px 0 65px;
+  margin-bottom: 65px;
 `;
 
 export const StylesForPagination = styled.div`
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 0;
+  height: 100%;
   font-size: 22px;
 
   ul,
   ol {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     margin: 0;
-    padding: 5px 0;
     list-style: none;
   }
 
