@@ -19,10 +19,11 @@ export const Container = styled.div`
     css`
       gap: 55px 40px;
     `}
-
-    ${theme.responsive.isDesktopBS &&
+      
+      ${theme.responsive.isDesktopBS &&
     css`
       grid-template-columns: repeat(4, 1fr);
+      gap: 55px 20px;
     `}
   `}
 `;
