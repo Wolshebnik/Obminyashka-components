@@ -6,6 +6,25 @@ export const Container = styled.div`
   flex-wrap: wrap;
   gap: 55px 20px;
   margin-bottom: 65px;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isDesktop &&
+    css`
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 55px 30px;
+    `}
+
+    ${theme.responsive.isDesktopMD &&
+    css`
+      gap: 55px 40px;
+    `}
+
+    ${theme.responsive.isDesktopBS &&
+    css`
+      grid-template-columns: repeat(4, 1fr);
+    `}
+  `}
 `;
 
 export const StylesForPagination = styled.div`
