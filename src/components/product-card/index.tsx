@@ -4,7 +4,6 @@ import { useWindowWidth } from 'hooks';
 
 import * as Icon from '../icon';
 import * as Styles from './styles';
-// import { Button } from '../button';
 import { Avatar } from '../avatar';
 import { IProductCardProps } from './types';
 import { EllipsisText } from '../ellipsis-text';
