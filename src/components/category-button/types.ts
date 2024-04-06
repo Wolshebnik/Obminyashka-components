@@ -6,5 +6,6 @@ export interface ICategoryInfo {
 export interface IBtnCategoryProps {
   delay?: number;
   textBtn: string;
+  isDisabled?: boolean;
   categoryInfo: ICategoryInfo[];
 }
