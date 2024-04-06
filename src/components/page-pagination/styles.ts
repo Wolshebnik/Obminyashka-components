@@ -58,8 +58,8 @@ export const StylesForPagination = styled.div`
     cursor: pointer;
 
     ${({ theme }) => css`
-      color: ${theme.colors.btnBlue};
-      border: 1px solid ${theme.colors.btnBlue};
+      color: ${theme.colors.newButton.default.blue.bg};
+      border: 1px solid ${theme.colors.newButton.default.blue.bg};
     `}
 
     :hover {
@@ -69,14 +69,14 @@ export const StylesForPagination = styled.div`
     :focus {
       ${({ theme }) => css`
         color: ${theme.colors.white};
-        background-color: ${theme.colors.btnBlue};
+        background-color: ${theme.colors.newButton.default.blue.bg};
       `}
     }
 
     &-active {
       ${({ theme }) => css`
         color: ${theme.colors.white};
-        background-color: ${theme.colors.btnBlue};
+        background-color: ${theme.colors.newButton.default.blue.bg};
       `}
 
       :hover {
@@ -98,8 +98,8 @@ export const StylesForPagination = styled.div`
       cursor: pointer;
 
       ${({ theme }) => css`
-        color: ${theme.colors.btnBlue};
-        border: 1px solid ${theme.colors.btnBlue};
+        color: ${theme.colors.newButton.default.blue.bg};
+        border: 1px solid ${theme.colors.newButton.default.blue.bg};
       `}
 
       :hover {
