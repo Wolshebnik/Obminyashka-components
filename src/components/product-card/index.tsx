@@ -1,10 +1,10 @@
-import { Responsive } from 'components';
+import { ButtonNew, Responsive } from 'components';
 
 import { useWindowWidth } from 'hooks';
 
 import * as Icon from '../icon';
 import * as Styles from './styles';
-import { Button } from '../button';
+// import { Button } from '../button';
 import { Avatar } from '../avatar';
 import { IProductCardProps } from './types';
 import { EllipsisText } from '../ellipsis-text';
@@ -71,10 +71,11 @@ const ProductCard = ({
 
           <Responsive.Desktop>
             <Styles.ButtonBlock>
-              <Button
+              <ButtonNew
                 onClick={onClick}
                 text={buttonText}
-                width={inboxMessage ? 190 : 254}
+                colorType={'blue'}
+                styleType={'default'}
               />
 
               {inboxMessage && <InboxMessage inboxMessage={inboxMessage} />}
