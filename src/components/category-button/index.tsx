@@ -50,6 +50,7 @@ const CategoryButton = ({
           delay={delay}
           childRef={childRef}
           isOpen={isAnimation}
+          setOpen={setOpen}
           categoryInfo={categoryInfo}
         />
       )}

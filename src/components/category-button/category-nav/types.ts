@@ -6,6 +6,7 @@ export interface ICategoryNav {
   delay: number;
   isOpen: boolean;
   categoryInfo: ICategoryInfo[];
+  setOpen: (bol: boolean) => void;
   childRef: RefObject<HTMLDivElement> | null;
 }
 
