@@ -20,8 +20,7 @@ const Template = (args: IBtnCategoryProps) => {
   return (
     <div
       style={{
-        height: '1500px',
-        backgroundColor: '#53b2d4',
+        height: '100vh',
       }}
     >
       <PresentationHeader>
