@@ -111,7 +111,12 @@ export const List = styled.div<IList>`
   ${({ theme, isOpen, delay }) => css`
     ${theme.responsive.isTablet &&
     css`
-      max-height: 550px;
+      max-height: 520px;
+    `}
+
+    ${theme.responsive.isTabletBG &&
+    css`
+      max-height: 650px;
     `}
 
     ${theme.responsive.isDesktop &&
@@ -151,6 +156,7 @@ export const Wrapper = styled.div`
     css`
       grid-template-columns: repeat(4, 1fr);
       grid-row-gap: 46px;
+      margin-bottom: 30px;
       max-width: 687px;
     `}
 
