@@ -101,6 +101,7 @@ export const List = styled.div<IList>`
   position: absolute;
   display: flex;
   align-items: center;
+  left: 0;
   padding: 0 20px;
   width: 100vw;
   height: 85vh;
