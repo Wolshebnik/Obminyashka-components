@@ -124,7 +124,7 @@ export const List = styled.div<IList>`
     css`
       padding: 0 200px;
       height: 89vh;
-      max-height: 1040px;
+      max-height: 1000px;
     `}
 
     ${isOpen &&
