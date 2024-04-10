@@ -119,6 +119,12 @@ export const List = styled.div<IList>`
       max-height: 650px;
     `}
 
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
+    css`
+      max-height: 700px;
+    `}
+
     ${theme.responsive.isDesktop &&
     css`
       padding: 0 200px;
