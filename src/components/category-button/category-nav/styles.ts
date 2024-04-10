@@ -114,15 +114,10 @@ export const List = styled.div<IList>`
       max-height: 520px;
     `}
 
-    ${theme.responsive.isTabletBG &&
-    css`
-      max-height: 650px;
-    `}
-
     ${theme.responsive.isTablet &&
     theme.responsive.isLandscape &&
     css`
-      max-height: 700px;
+      max-height: 670px;
     `}
 
     ${theme.responsive.isDesktop &&
