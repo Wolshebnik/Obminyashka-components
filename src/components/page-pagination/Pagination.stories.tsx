@@ -32,6 +32,7 @@ export const Pagination: Story = {
     return (
       <PagePagination
         {...args}
+        text="загрузить еще"
         onChange={updatePage}
         current={currentPage}
         total={allData.length}

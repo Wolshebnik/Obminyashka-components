@@ -8,6 +8,7 @@ import { IPagination } from './types';
 import { ButtonNew } from 'components/button-new';
 
 const PagePagination = ({
+  text,
   total,
   current,
   children,
@@ -33,8 +34,8 @@ const PagePagination = ({
 
         <div style={{ width: '200px' }}>
           <ButtonNew
+            text={text}
             colorType={'blue'}
-            text="загрузить еще"
             styleType={'outline'}
             onClick={handleShowMore}
           ></ButtonNew>

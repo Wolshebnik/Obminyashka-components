@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
 export interface IPagination {
+  text: string;
   total: number;
   current: number;
   pageSize: number;
