@@ -9,5 +9,6 @@ export interface IPagination {
   nextIcon: ReactNode;
   prevIcon: ReactNode;
   showLessItems?: boolean;
+  handleShowMore: () => void;
   onChange: (page: number) => void;
 }

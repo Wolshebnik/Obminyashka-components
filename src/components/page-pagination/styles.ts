@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+export const ChildrenContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -26,6 +26,12 @@ export const Container = styled.div`
       gap: 55px 20px;
     `}
   `}
+`;
+
+export const PaginationContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const StylesForPagination = styled.div`
@@ -131,8 +137,8 @@ export const StylesForPagination = styled.div`
     }
   }
 
-  .rc-pagination-disabled {
-    opacity: 0;
+  .rc-pagination:disabled {
+    opacity: 0.5;
     pointer-events: none;
   }
 `;
