@@ -79,7 +79,12 @@ export const StylesForPagination = styled.div`
       `}
     }
 
-    &-active {
+    &.disabled {
+      pointer-events: none;
+    }
+
+    &-active,
+    &.disabled {
       ${({ theme }) => css`
         color: ${theme.colors.white};
         background-color: ${theme.colors.newButton.default.blue.bg};
