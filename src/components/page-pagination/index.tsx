@@ -14,7 +14,7 @@ const PagePagination = ({
   children,
   onChange,
   pageSize,
-  handleShowMore,
+  showMore,
 }: ChildrenProps<IPagination>) => {
   return (
     <Styles.StylesForPagination>
@@ -35,9 +35,9 @@ const PagePagination = ({
         <div style={{ width: '200px' }}>
           <ButtonNew
             text={text}
+            onClick={showMore}
             colorType={'blue'}
             styleType={'outline'}
-            onClick={handleShowMore}
           ></ButtonNew>
         </div>
       </Styles.PaginationContainer>
