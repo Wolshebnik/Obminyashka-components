@@ -1,18 +1,28 @@
 import styled, { css } from 'styled-components';
 
 export const ChildrenContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   flex-direction: row;
   flex-wrap: wrap;
   gap: 55px 20px;
   margin-bottom: 65px;
 
   ${({ theme }) => css`
-    ${theme.responsive.isDesktop &&
+    ${theme.responsive.isMobileBG &&
     css`
-      display: grid;
       grid-template-columns: repeat(3, 1fr);
+    `}
+
+    ${theme.responsive.isTablet &&
+    css`
+      grid-template-columns: repeat(2, 1fr);
       gap: 55px 30px;
+    `}
+
+    ${theme.responsive.isTabletBG &&
+    css`
+      grid-template-columns: repeat(3, 1fr);
     `}
 
     ${theme.responsive.isDesktopMD &&
