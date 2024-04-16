@@ -38,8 +38,8 @@ const PagePagination = ({
             onClick={showMore}
             colorType={'blue'}
             styleType={'outline'}
-            height={window.innerWidth < 560 ? '30px' : '50px'}
-            width={window.innerWidth < 560 ? '160px' : '225px'}
+            height={window.innerWidth < 768 ? '30px' : '50px'}
+            width={window.innerWidth < 768 ? '160px' : '225px'}
           ></ButtonNew>
         </Styles.ButtonContainer>
       </Styles.PaginationContainer>
