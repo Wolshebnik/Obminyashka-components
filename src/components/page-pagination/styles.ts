@@ -175,7 +175,6 @@ export const StylesForPagination = styled.div`
 
 export const ButtonContainer = styled.div`
   margin-bottom: 40px;
-  width: 200px;
   order: -1;
 
   ${({ theme }) => css`
