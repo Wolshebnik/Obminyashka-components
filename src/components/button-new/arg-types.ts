@@ -3,6 +3,22 @@ import { IArgTypes } from 'types';
 import { IButtonNew } from './types';
 
 export const argTypes: IArgTypes<IButtonNew> = {
+  width: {
+    name: 'width',
+    type: { name: 'string' },
+    description: 'Sets the width',
+    table: {
+      type: { summary: 'string' },
+    },
+  },
+  height: {
+    name: 'height',
+    type: { name: 'string' },
+    description: 'Sets the height',
+    table: {
+      type: { summary: 'string' },
+    },
+  },
   text: {
     name: 'text',
     type: { name: 'string', required: true },
