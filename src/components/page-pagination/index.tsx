@@ -35,6 +35,7 @@ const PagePagination = ({
         <Styles.ButtonContainer>
           <ButtonNew
             text={text}
+            height="50px"
             onClick={showMore}
             colorType={'blue'}
             styleType={'outline'}

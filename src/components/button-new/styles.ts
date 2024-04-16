@@ -16,8 +16,6 @@ export const Button = styled.button<IStyledButtonNew>`
   justify-content: center;
   align-items: center;
   padding: 0 15px;
-  width: 100%;
-  height: 40px;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -25,10 +23,12 @@ export const Button = styled.button<IStyledButtonNew>`
   border-radius: 40px;
   border: none;
 
-  ${({ theme, colorType, animated, styleType, square }) => {
+  ${({ theme, colorType, animated, styleType, square, width, height }) => {
     const styleTheme = theme.colors.newButton[styleType][colorType];
 
     return css`
+      width: ${width ? `${width}` : '100%'};
+      height: ${height ? `${height}` : '40px'};
       color: ${styleTheme.text};
       background: ${styleTheme.bg};
 

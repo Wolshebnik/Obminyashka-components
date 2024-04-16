@@ -71,6 +71,7 @@ const ProductCard = ({
           <Responsive.Desktop>
             <Styles.ButtonBlock>
               <ButtonNew
+                height="50px"
                 onClick={onClick}
                 text={buttonText}
                 colorType={'blue'}
