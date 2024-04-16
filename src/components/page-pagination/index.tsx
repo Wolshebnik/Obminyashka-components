@@ -32,14 +32,14 @@ const PagePagination = ({
           prevIcon={<Icon.Prev />}
         />
 
-        <div style={{ width: '200px' }}>
+        <Styles.ButtonContainer>
           <ButtonNew
             text={text}
             onClick={showMore}
             colorType={'blue'}
             styleType={'outline'}
           ></ButtonNew>
-        </div>
+        </Styles.ButtonContainer>
       </Styles.PaginationContainer>
     </Styles.StylesForPagination>
   );

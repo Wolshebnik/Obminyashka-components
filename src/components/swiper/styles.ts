@@ -18,6 +18,8 @@ export const SlideLink = styled(Link)`
 
 export const SlideImage = styled.img<IWindowWidth>`
   width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
 
   ${({ theme }) => css`
     ${theme.responsive.isMobile &&

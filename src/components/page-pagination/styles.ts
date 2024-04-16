@@ -42,6 +42,14 @@ export const PaginationContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: column;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      flex-direction: row;
+    `}
+  `}
 `;
 
 export const StylesForPagination = styled.div`
@@ -137,7 +145,14 @@ export const StylesForPagination = styled.div`
   .rc-pagination-prev,
   .rc-pagination-jump-prev,
   .rc-pagination-jump-next {
-    margin-right: 10px;
+    margin-right: 5px;
+
+    ${({ theme }) => css`
+      ${theme.responsive.isTablet &&
+      css`
+        margin-right: 10px;
+      `}
+    `}
   }
 
   .rc-pagination-prev,
@@ -156,4 +171,19 @@ export const StylesForPagination = styled.div`
     opacity: 0.5;
     pointer-events: none;
   }
+`;
+
+export const ButtonContainer = styled.div`
+  margin-bottom: 40px;
+  width: 200px;
+  order: -1;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      flex-direction: row;
+      margin-bottom: 0;
+      order: 2;
+    `}
+  `}
 `;

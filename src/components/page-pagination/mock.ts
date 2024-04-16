@@ -19,4 +19,12 @@ export const allData = [
     id: 5,
     title: 'Advertisement 5',
   },
+  {
+    id: 6,
+    title: 'Advertisement 6',
+  },
+  {
+    id: 7,
+    title: 'Advertisement 7',
+  },
 ];
