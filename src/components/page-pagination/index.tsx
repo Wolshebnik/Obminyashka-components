@@ -6,6 +6,7 @@ import * as Icon from '../icon';
 import * as Styles from './styles';
 import { IPagination } from './types';
 import { ButtonNew } from 'components/button-new';
+import { Responsive } from 'components';
 
 const PagePagination = ({
   text,
@@ -15,6 +16,7 @@ const PagePagination = ({
   onChange,
   pageSize,
   showMore,
+  isLoading,
 }: ChildrenProps<IPagination>) => {
   return (
     <Styles.StylesForPagination>
@@ -33,10 +35,15 @@ const PagePagination = ({
         />
 
         <Styles.ButtonContainer>
+          <Responsive.NotMobile>
+            <Styles.Logo isLoading={isLoading} />
+          </Responsive.NotMobile>
+
           <ButtonNew
             text={text}
             onClick={showMore}
             colorType={'blue'}
+            disabled={isLoading}
             styleType={'outline'}
             height={window.innerWidth < 768 ? '30px' : '50px'}
             width={window.innerWidth < 768 ? '160px' : '225px'}

@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components';
 
+import { rotateAnimation } from './animation';
+
+import * as Icon from '../icon';
+
 export const ChildrenContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -174,7 +178,11 @@ export const StylesForPagination = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 40px;
+  width: 285px;
   order: -1;
 
   ${({ theme }) => css`
@@ -183,6 +191,18 @@ export const ButtonContainer = styled.div`
       flex-direction: row;
       margin-bottom: 0;
       order: 2;
+    `}
+  `}
+`;
+
+export const Logo = styled(Icon.Logo)<{ isLoading: boolean }>`
+  width: 48px;
+  height: 48px;
+
+  ${({ isLoading }) => css`
+    ${isLoading &&
+    css`
+      animation: ${rotateAnimation} 0.5s infinite linear;
     `}
   `}
 `;

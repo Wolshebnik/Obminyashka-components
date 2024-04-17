@@ -5,6 +5,7 @@ export interface IPagination {
   total: number;
   current: number;
   pageSize: number;
+  isLoading: boolean;
   children: ReactNode;
   showTitle?: boolean;
   nextIcon: ReactNode;
