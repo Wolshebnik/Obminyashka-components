@@ -36,7 +36,9 @@ const PagePagination = ({
 
         <Styles.ButtonContainer>
           <Responsive.NotMobile>
-            <Styles.Logo isLoading={isLoading} />
+            <Styles.LogoContainer isLoading={isLoading}>
+              <Icon.Logo width={48} height={48} />
+            </Styles.LogoContainer>
           </Responsive.NotMobile>
 
           <ButtonNew

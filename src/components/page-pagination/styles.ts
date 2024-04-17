@@ -2,8 +2,6 @@ import styled, { css } from 'styled-components';
 
 import { rotateAnimation } from './animation';
 
-import * as Icon from '../icon';
-
 export const ChildrenContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -195,10 +193,7 @@ export const ButtonContainer = styled.div`
   `}
 `;
 
-export const Logo = styled(Icon.Logo)<{ isLoading: boolean }>`
-  width: 48px;
-  height: 48px;
-
+export const LogoContainer = styled.div<{ isLoading: boolean }>`
   ${({ isLoading }) => css`
     ${isLoading &&
     css`

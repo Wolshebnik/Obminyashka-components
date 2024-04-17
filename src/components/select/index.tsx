@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
 
 import { useOutsideClick } from 'hooks';
