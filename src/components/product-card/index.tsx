@@ -24,7 +24,9 @@ const ProductCard = ({
 
   return (
     <Styles.Card margin={margin}>
-      <Styles.CardContainer>
+      <Styles.CardContainer
+        onClick={window.innerWidth < 1366 ? onClick : () => {}}
+      >
         <Styles.FavoriteMarker isFavorite={isFavorite}>
           {avatar ? (
             <Styles.StylizedAvatar>
