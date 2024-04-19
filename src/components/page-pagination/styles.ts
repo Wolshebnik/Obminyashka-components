@@ -1,26 +1,73 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
-  display: flex;
+import { rotateAnimation } from './animation';
+
+export const ChildrenContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   flex-direction: row;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 55px 20px;
-  margin: 50px 0 65px;
+  gap: 25px 20px;
+  margin-bottom: 65px;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isMobileBG &&
+    css`
+      grid-template-columns: repeat(3, 1fr);
+    `}
+
+    ${theme.responsive.isTablet &&
+    css`
+      grid-template-columns: repeat(2, 1fr);
+      gap: 55px 30px;
+    `}
+
+    ${theme.responsive.isTabletBG &&
+    css`
+      grid-template-columns: repeat(3, 1fr);
+    `}
+
+    ${theme.responsive.isDesktopMD &&
+    css`
+      gap: 55px 40px;
+    `}
+      
+      ${theme.responsive.isDesktopBS &&
+    css`
+      grid-template-columns: repeat(4, 1fr);
+      gap: 55px 20px;
+    `}
+  `}
+`;
+
+export const PaginationContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      flex-direction: row;
+    `}
+  `}
 `;
 
 export const StylesForPagination = styled.div`
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 0;
+  height: 100%;
   font-size: 22px;
 
   ul,
   ol {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     margin: 0;
-    padding: 5px 0;
     list-style: none;
   }
 
@@ -37,8 +84,8 @@ export const StylesForPagination = styled.div`
     cursor: pointer;
 
     ${({ theme }) => css`
-      color: ${theme.colors.btnBlue};
-      border: 1px solid ${theme.colors.btnBlue};
+      color: ${theme.colors.newButton.default.blue.bg};
+      border: 1px solid ${theme.colors.newButton.default.blue.bg};
     `}
 
     :hover {
@@ -48,14 +95,19 @@ export const StylesForPagination = styled.div`
     :focus {
       ${({ theme }) => css`
         color: ${theme.colors.white};
-        background-color: ${theme.colors.btnBlue};
+        background-color: ${theme.colors.newButton.default.blue.bg};
       `}
     }
 
-    &-active {
+    &.disabled {
+      pointer-events: none;
+    }
+
+    &-active,
+    &.disabled {
       ${({ theme }) => css`
         color: ${theme.colors.white};
-        background-color: ${theme.colors.btnBlue};
+        background-color: ${theme.colors.newButton.default.blue.bg};
       `}
 
       :hover {
@@ -77,8 +129,8 @@ export const StylesForPagination = styled.div`
       cursor: pointer;
 
       ${({ theme }) => css`
-        color: ${theme.colors.btnBlue};
-        border: 1px solid ${theme.colors.btnBlue};
+        color: ${theme.colors.newButton.default.blue.bg};
+        border: 1px solid ${theme.colors.newButton.default.blue.bg};
       `}
 
       :hover {
@@ -95,7 +147,14 @@ export const StylesForPagination = styled.div`
   .rc-pagination-prev,
   .rc-pagination-jump-prev,
   .rc-pagination-jump-next {
-    margin-right: 10px;
+    margin-right: 5px;
+
+    ${({ theme }) => css`
+      ${theme.responsive.isTablet &&
+      css`
+        margin-right: 10px;
+      `}
+    `}
   }
 
   .rc-pagination-prev,
@@ -110,8 +169,35 @@ export const StylesForPagination = styled.div`
     }
   }
 
-  .rc-pagination-disabled {
-    opacity: 0;
+  .rc-pagination:disabled {
+    opacity: 0.5;
     pointer-events: none;
   }
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  width: 285px;
+  order: -1;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      flex-direction: row;
+      margin-bottom: 0;
+      order: 2;
+    `}
+  `}
+`;
+
+export const LogoContainer = styled.div<{ isLoading: boolean }>`
+  ${({ isLoading }) => css`
+    ${isLoading &&
+    css`
+      animation: ${rotateAnimation} 0.5s infinite linear;
+    `}
+  `}
 `;

@@ -10,4 +10,12 @@ export const argTypes: IArgTypes<IBtnCategoryProps> = {
       type: { summary: 'string' },
     },
   },
+  isDisabled: {
+    name: 'isDisabled',
+    type: { name: 'boolean' },
+    description: 'makes button disabled',
+    table: {
+      type: { summary: 'boolean' },
+    },
+  },
 };

@@ -5,21 +5,21 @@ import { IList, ISunCategory } from './types';
 
 const open = keyframes`
   0% {
-    top: -550%;
+    top: -1000%;
   }
 
   100% {
-    top: 130px;
+    top: 100px;
   }
 `;
 
 const close = keyframes`
   0% {
-    top: 130px;
+    top: 100px;
   }
 
   100% {
-    top: -550%;
+    top: -1000%;
   }
 `;
 
@@ -99,14 +99,32 @@ const text = keyframes`
 
 export const List = styled.div<IList>`
   position: absolute;
-  width: 100vw;
+  display: flex;
+  align-items: center;
   left: 0;
+  padding: 0 20px;
+  width: 100vw;
+  height: 85vh;
+  background: linear-gradient(136deg, #a3dee5 23.74%, #34a2ce 100%);
   z-index: -1;
 
   ${({ theme, isOpen, delay }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      max-height: 520px;
+    `}
+
+    ${theme.responsive.isTablet &&
+    theme.responsive.isLandscape &&
+    css`
+      max-height: 670px;
+    `}
+
     ${theme.responsive.isDesktop &&
     css`
       padding: 0 200px;
+      height: 89vh;
+      max-height: 1000px;
     `}
 
     ${isOpen &&
@@ -125,22 +143,22 @@ export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-row-gap: 22px;
+  margin-bottom: 20px;
+  margin-inline: auto;
+  width: 100%;
 
   ${({ theme }) => css`
     ${theme.responsive.isMobile &&
     css`
       max-width: 400px;
-      margin-inline: auto;
-      padding: 16px 40px 95px;
     `}
 
     ${theme.responsive.isTablet &&
     css`
       grid-template-columns: repeat(4, 1fr);
       grid-row-gap: 46px;
-      padding: 50px 0 128px;
+      margin-bottom: 30px;
       max-width: 687px;
-      margin-inline: auto;
     `}
 
     ${theme.responsive.isTablet &&
@@ -149,19 +167,16 @@ export const Wrapper = styled.div`
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: 165px;
       grid-row-gap: 65px;
-      padding: 94px 0 163px;
       max-width: 926px;
-      margin-inline: auto;
     `}
-
-    ${theme.responsive.isDesktop &&
+      
+      ${theme.responsive.isDesktop &&
     css`
       grid-template-columns: repeat(4, 1fr);
       grid-row-gap: 109px;
       justify-content: space-between;
-      padding: 136px 0 270px;
       max-width: 1500px;
-      margin-inline: auto;
+      margin-bottom: 50px;
     `}
   `}
 `;

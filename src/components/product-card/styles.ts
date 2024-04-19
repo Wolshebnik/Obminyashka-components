@@ -13,7 +13,6 @@ const shimmerAnimation = keyframes`
 
 export const ButtonBlock = styled.div`
   display: flex;
-  margin: 0 auto;
   order: 3;
 `;
 

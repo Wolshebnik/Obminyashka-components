@@ -5,6 +5,8 @@ const ButtonNew = ({
   text,
   plus,
   icon,
+  width,
+  height,
   square,
   onClick,
   animated,
@@ -14,6 +16,8 @@ const ButtonNew = ({
 }: IButtonNew) => {
   return (
     <Styles.Button
+      width={width}
+      height={height}
       square={square}
       onClick={onClick}
       animated={animated}
