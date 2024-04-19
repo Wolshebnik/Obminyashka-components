@@ -17,12 +17,13 @@ const PagePagination = ({
   pageSize,
   showMore,
   isLoading,
+  isShowButtons,
 }: ChildrenProps<IPagination>) => {
   return (
     <Styles.StylesForPagination>
       <Styles.ChildrenContainer>{children}</Styles.ChildrenContainer>
 
-      <Styles.PaginationContainer>
+      <Styles.PaginationContainer isShowButtons={isShowButtons}>
         <Pagination
           showLessItems
           total={total}

@@ -40,16 +40,21 @@ export const ChildrenContainer = styled.div`
   `}
 `;
 
-export const PaginationContainer = styled.div`
+export const PaginationContainer = styled.div<{ isShowButtons?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
 
-  ${({ theme }) => css`
+  ${({ theme, isShowButtons }) => css`
     ${theme.responsive.isTablet &&
     css`
       flex-direction: row;
+    `}
+
+    ${isShowButtons &&
+    css`
+      display: none;
     `}
   `}
 `;
@@ -177,7 +182,7 @@ export const StylesForPagination = styled.div`
 
 export const ButtonContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-bottom: 40px;
   width: 285px;
@@ -187,6 +192,7 @@ export const ButtonContainer = styled.div`
     ${theme.responsive.isTablet &&
     css`
       flex-direction: row;
+      justify-content: space-between;
       margin-bottom: 0;
       order: 2;
     `}

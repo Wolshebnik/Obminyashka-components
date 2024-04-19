@@ -12,5 +12,6 @@ export interface IPagination {
   prevIcon: ReactNode;
   showMore: () => void;
   showLessItems?: boolean;
+  isShowButtons?: boolean;
   onChange: (page: number) => void;
 }
