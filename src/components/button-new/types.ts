@@ -11,6 +11,8 @@ interface ICustomButton
 
 export interface IButtonNew extends Omit<ICustomButton, 'ref'> {
   text?: string;
+  width?: string;
+  height?: string;
   plus?: boolean;
   icon?: ReactNode;
   square?: boolean;
@@ -20,6 +22,8 @@ export interface IButtonNew extends Omit<ICustomButton, 'ref'> {
 }
 
 export interface IStyledButtonNew {
+  width?: string;
+  height?: string;
   square?: boolean;
   animated?: boolean;
   colorType: ColorType;

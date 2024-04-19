@@ -10,7 +10,7 @@ export const H2 = styled.h2`
   font-family: Caveat, cursive;
 
   ${({ theme }) => css`
-    color: ${theme.colors.activeColor};
+    color: ${theme.colors.categoryFilter.title};
 
     ${theme.responsive.isMobile &&
     css`
@@ -38,6 +38,6 @@ export const Span = styled.span<{ hiddenDots?: boolean }>`
 
   ${({ hiddenDots, theme }) => css`
     display: ${hiddenDots ? 'none' : 'inline-block'};
-    background-color: ${theme.colors.btnBlue};
+    background-color: ${theme.colors.categoryFilter.title};
   `}
 `;

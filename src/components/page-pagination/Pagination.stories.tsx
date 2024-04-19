@@ -5,11 +5,11 @@ import { allData } from './mock';
 import { PagePagination } from '.';
 import { argTypes } from './arg-types';
 
-const meta = {
+const meta: Meta<typeof PagePagination> = {
   title: 'PagePagination',
   component: PagePagination,
   argTypes,
-} satisfies Meta<typeof PagePagination>;
+};
 
 export default meta;
 type Story = StoryObj<typeof PagePagination>;
@@ -17,7 +17,7 @@ type Story = StoryObj<typeof PagePagination>;
 export const Pagination: Story = {
   render: (args) => {
     const countPerPage = 1;
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState<number>(1);
     const [collection, setCollection] = useState(
       Object.assign(allData.slice(0, countPerPage))
     );
@@ -32,6 +32,7 @@ export const Pagination: Story = {
     return (
       <PagePagination
         {...args}
+        text="загрузить еще"
         onChange={updatePage}
         current={currentPage}
         total={allData.length}
