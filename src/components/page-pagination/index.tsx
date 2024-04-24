@@ -44,12 +44,12 @@ const PagePagination = ({
 
           <ButtonNew
             text={text}
+            height="50px"
+            width="225px"
             onClick={showMore}
             colorType={'blue'}
             disabled={isLoading}
             styleType={'outline'}
-            height={window.innerWidth < 768 ? '30px' : '50px'}
-            width={window.innerWidth < 768 ? '160px' : '225px'}
           ></ButtonNew>
         </Styles.ButtonContainer>
       </Styles.PaginationContainer>
