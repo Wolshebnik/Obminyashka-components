@@ -83,10 +83,7 @@ export const Select = ({
       if (!matchesOption && chosenOptions.length) {
         setFiltrationValue('');
         setChosenOptions([]);
-        onChange({
-          value: '',
-          chosenOptions: [],
-        });
+        onChange({ value: '', chosenOptions: [] });
       }
 
       setIsOpen(false);
