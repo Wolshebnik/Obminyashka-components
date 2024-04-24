@@ -77,10 +77,7 @@ export const Select = ({
       if (matchesOption) {
         setFiltrationValue(matchesOption.text);
         setChosenOptions([matchesOption]);
-        onChange({
-          value: value ? value : '',
-          chosenOptions: chosenOptions,
-        });
+        onChange({ value: value || '', chosenOptions });
       }
 
       if (!matchesOption && chosenOptions.length) {
