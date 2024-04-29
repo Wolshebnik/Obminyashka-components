@@ -53,9 +53,9 @@ const CategoryButton = ({
       {isOpen && (
         <NavCategory
           delay={delay}
+          setOpen={setOpen}
           childRef={childRef}
           isOpen={isAnimation}
-          setOpen={setOpen}
           categoryInfo={categoryInfo}
         />
       )}
