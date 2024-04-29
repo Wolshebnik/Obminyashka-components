@@ -11,11 +11,13 @@ const ButtonNew = ({
   onClick,
   animated,
   disabled,
+  type = 'button',
   colorType = 'blue',
   styleType = 'default',
 }: IButtonNew) => {
   return (
     <Styles.Button
+      type={type}
       width={width}
       height={height}
       square={square}
