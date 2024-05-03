@@ -1,3 +1,4 @@
+const mainGradient = `linear-gradient(105.33deg, #97D7E3 21.37%, #39A5CF 113.49%)`;
 const buttonGradient =
   '90deg,rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5)';
 //White
@@ -314,6 +315,10 @@ const dealsColors = Object.freeze({
   aquamarineBlue,
 });
 
+const defaultGradients = Object.freeze({
+  mainGradient: mainGradient,
+});
+
 const COLORS = Object.freeze({
   logo,
   auth,
@@ -336,6 +341,7 @@ const COLORS = Object.freeze({
   categoryFilter,
   buttonGradient,
   ellipsisShadow,
+  defaultGradients,
   productOwnerData,
   ...colorsDefault,
 });
