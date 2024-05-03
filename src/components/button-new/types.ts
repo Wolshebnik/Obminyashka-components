@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react';
 
-export type ColorType = 'blue' | 'green';
+export type ColorType = 'blue' | 'green' | 'white';
 export type StyleType = 'default' | 'outline';
 
 interface ICustomButton
