@@ -28,6 +28,7 @@ export { ProductOwnerData } from './product-owner-data';
 export { ProductPostData } from './product-post-data';
 export { Search } from './search';
 export { Select } from './select';
+export { SendingConfirmationPage } from './sending-confirmation-page';
 export { SitePurpose } from './site-purpose';
 export { Subtitle } from './subtitle';
 export { Success } from './successful-verification';
