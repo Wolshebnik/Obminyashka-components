@@ -109,6 +109,20 @@ const newButton = Object.freeze({
         bgDisabled: `linear-gradient(45deg, ${eagle} 35%, ${white} 50%, ${eagle} 65%)`,
       },
     },
+    white: {
+      text: viking,
+      disabledText: doveGray,
+      bg: white,
+      outline: white,
+      outlineDisabled: tropicalBlue,
+      bgHover: white,
+      bgDisabled: tropicalBlue,
+      animated: {
+        bg: `linear-gradient(45deg, ${aquamarineBlue} 35%, #BCD9E3 50%, ${aquamarineBlue} 65%)`,
+        bgHover: `linear-gradient(45deg, ${pelorus} 35%, #C9DDE4 50%, ${pelorus} 65%)`,
+        bgDisabled: `linear-gradient(45deg, ${tropicalBlue} 35%, #F5FCFF 50%, ${tropicalBlue} 65%)`,
+      },
+    },
   },
   outline: {
     blue: {
@@ -137,6 +151,20 @@ const newButton = Object.freeze({
         bg: `linear-gradient(45deg, ${olivine} 35%, #eefddc 50%, ${olivine} 65%)`,
         bgHover: `linear-gradient(45deg, ${lima} 35%, #EFFEDE 50%, ${lima} 65%)`,
         bgDisabled: `linear-gradient(45deg, ${eagle} 35%, ${white} 50%, ${eagle} 65%)`,
+      },
+    },
+    white: {
+      text: white,
+      disabledText: silverRgba,
+      bg: 'transparent',
+      outline: white,
+      outlineDisabled: silverRgba,
+      bgHover: white,
+      bgDisabled: 'transparent',
+      animated: {
+        bg: `linear-gradient(45deg, ${aquamarineBlue} 35%, #BCD9E3 50%, ${aquamarineBlue} 65%)`,
+        bgHover: `linear-gradient(45deg, ${pelorus} 35%, #C9DDE4 50%, ${pelorus} 65%)`,
+        bgDisabled: `linear-gradient(45deg, ${tropicalBlue} 35%, #F5FCFF 50%, ${tropicalBlue} 65%)`,
       },
     },
   },
