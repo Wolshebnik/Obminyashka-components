@@ -1,33 +1,47 @@
-import { Modal } from './modal';
 import { IPopUpProps } from './types';
+import { InputField } from 'components/input-field';
 
 import * as Styles from './styles';
+import { ButtonNew } from 'components/button-new';
 
 export const PopUp = ({
-  href,
   title,
-  textButton,
+  label,
+  onClick,
+  btnText,
+  isLoading,
   modalActive,
   setModalActive,
 }: IPopUpProps) => {
   return (
-    <Styles.Box>
-      <Modal active={modalActive} setActive={setModalActive}>
+    <Styles.ModalWrapper
+      active={modalActive}
+      onClick={() => setModalActive(false)}
+    >
+      <Styles.ModalContent
+        active={modalActive}
+        onClick={(e) => e.stopPropagation()}
+      >
         <Styles.Body>
-          <div>{title}</div>
-          <span />
-          <form>
-            <label>Введіть Ваш E-mail</label>
-            <input type="email"></input>
-          </form>
+          <Styles.Title>{title}</Styles.Title>
 
-          <Styles.BtnSend to={'#'}>{`Відправити`}</Styles.BtnSend>
+          <Styles.Line />
+
+          <Styles.Input>
+            <InputField type="text" name="email" label={label} />
+          </Styles.Input>
+
+          <Styles.BtnWrapper>
+            <ButtonNew
+              text={btnText}
+              onClick={onClick}
+              colorType={'blue'}
+              styleType={'default'}
+              disabled={isLoading ? true : false}
+            />
+          </Styles.BtnWrapper>
         </Styles.Body>
-      </Modal>
-
-      <Styles.BtnOpen to={href} onClick={() => setModalActive(true)}>
-        {textButton}
-      </Styles.BtnOpen>
-    </Styles.Box>
+      </Styles.ModalContent>
+    </Styles.ModalWrapper>
   );
 };

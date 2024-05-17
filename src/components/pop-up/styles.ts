@@ -1,25 +1,46 @@
-import { Link } from 'react-router-dom';
+import styled, { css } from 'styled-components';
 
-import styled from 'styled-components';
-
-export const Box = styled.div`
-  position: relative;
+export const ModalWrapper = styled.div<{ active: boolean }>`
+  position: fixed;
   display: flex;
   align-items: center;
-  flex-direction: column;
-  justify-content: flex-end;
-  margin: 0 auto;
+  justify-content: center;
+  width: 100vw;
   height: 100vh;
-  background: linear-gradient(105.33deg, #97d7e3 21.37%, #39a5cf 113.49%);
-  overflow: hidden;
+  background-color: rgba(115, 181, 206, 0.4);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+
+  ${({ active }) => css`
+    ${active &&
+    css`
+      opacity: 1;
+      pointer-events: all;
+    `}
+  `}
+`;
+
+export const ModalContent = styled.div<{ active: boolean }>`
+  transform: scale(0.5);
+  transition: 0.4s all;
+
+  ${({ active }) => css`
+    ${active &&
+    css`
+      transform: scale(1);
+    `}
+  `}
 `;
 
 export const Body = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 42vw;
-  height: 55vh;
+  width: 345px;
+  height: 250px;
   background-color: #ffffff;
   color: #29a5d4;
   border-radius: 24px;
@@ -28,23 +49,6 @@ export const Body = styled.div`
   line-height: 24px;
   text-align: center;
   z-index: 2;
-
-  div {
-    padding: 58px 0 11px;
-    text-transform: uppercase;
-  }
-
-  span {
-    height: 2px;
-    background: #29a5d4;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 45px;
-  }
 
   label {
     width: 89%;
@@ -55,43 +59,85 @@ export const Body = styled.div`
     text-align: left;
   }
 
-  input {
-    padding: 10px;
-    height: 47px;
-    width: 89%;
-    color: #8e8e8e;
-    border-radius: 2px;
-  }
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      width: 545px;
+      height: 390px;
+    `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      width: 800px;
+      height: 570px;
+    `}
+  `}
 `;
 
-export const BtnOpen = styled(Link)`
+export const Title = styled.div`
+  padding: 25px 0 11px;
+  text-transform: uppercase;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      padding: 58px 0 11px;
+    `}
+  `}
+`;
+
+export const Line = styled.div`
+  height: 2px;
+  background: #29a5d4;
+`;
+
+export const Input = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      margin-top: 50px;
+    `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      margin-top: 50px;
+    `}
+  `}
+`;
+
+export const BtnOpen = styled.div`
   padding: 8px 0;
-  margin-bottom: 68px;
   width: 263px;
   border-radius: 24px;
-  background: white;
-  color: #81cbde;
+  background: #81cbde;
+  color: white;
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
   text-align: center;
   text-transform: uppercase;
+  cursor: pointer;
 `;
 
-export const BtnSend = styled(Link)`
+export const BtnWrapper = styled.div`
   display: block;
-  padding: 13px 74px;
-  margin: auto;
-  border-radius: 24px;
-  background: linear-gradient(
-    262.27deg,
-    #7ecde4 45.38%,
-    #f1f1f1 51.37%,
-    #7ecde4 56.85%
-  );
-  color: white;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 24px;
-  text-transform: uppercase;
+  padding: 15px 75px;
+  margin-top: 15px;
+
+  ${({ theme }) => css`
+    ${theme.responsive.isTablet &&
+    css`
+      margin-top: 75px;
+    `}
+
+    ${theme.responsive.isDesktop &&
+    css`
+      margin-top: 160px;
+    `}
+  `}
 `;

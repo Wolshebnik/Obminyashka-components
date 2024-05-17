@@ -1,9 +1,11 @@
 import { ReactElement } from 'react';
 
 export interface IPopUpProps {
-  href: string;
   title: string;
-  textButton: string;
+  label: string;
+  btnText: string;
+  isLoading: boolean;
+  onClick: () => void;
   modalActive: boolean;
   setModalActive: (bool: boolean) => void;
 }
