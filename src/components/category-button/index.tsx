@@ -10,6 +10,7 @@ import { NavCategory } from './category-nav';
 
 const CategoryButton = ({
   textBtn,
+  isDisabled,
   delay = 500,
   categoryInfo,
 }: IBtnCategoryProps) => {
@@ -31,6 +32,7 @@ const CategoryButton = ({
       <Responsive.Desktop>
         <Styles.CategoriesDesktop
           isOpen={isAnimation}
+          isDisabled={isDisabled}
           onClick={() => setOpen(!isOpen)}
         >
           <Styles.CategoriesText>{textBtn}</Styles.CategoriesText>
@@ -40,7 +42,10 @@ const CategoryButton = ({
       </Responsive.Desktop>
 
       <Responsive.NotDesktop>
-        <Styles.Categories onClick={() => setOpen(!isOpen)}>
+        <Styles.Categories
+          isDisabled={isDisabled}
+          onClick={() => setOpen(!isOpen)}
+        >
           <Icon.CategoriesButton />
         </Styles.Categories>
       </Responsive.NotDesktop>
@@ -48,6 +53,7 @@ const CategoryButton = ({
       {isOpen && (
         <NavCategory
           delay={delay}
+          setOpen={setOpen}
           childRef={childRef}
           isOpen={isAnimation}
           categoryInfo={categoryInfo}

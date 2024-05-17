@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const CategoriesDesktop = styled.div<{
   isOpen: boolean;
+  isDisabled?: boolean;
 }>`
   position: relative;
   display: flex;
@@ -17,7 +18,7 @@ export const CategoriesDesktop = styled.div<{
   border: 2px dashed ${({ theme }) => theme.colors.categoryBtn.border};
   cursor: pointer;
 
-  ${({ theme }) => css`
+  ${({ theme, isDisabled }) => css`
     ${theme.responsive.isDesktopMD &&
     css`
       padding: 0 12px;
@@ -39,6 +40,12 @@ export const CategoriesDesktop = styled.div<{
       padding: 0 24px;
       width: 222px;
       font-size: 24px;
+    `}
+
+    ${isDisabled &&
+    css`
+      pointer-events: none;
+      opacity: 0.5;
     `}
   `}
 `;
@@ -65,16 +72,25 @@ export const triangle = styled.span<{ isOpen: boolean }>`
   `}
 `;
 
-export const Categories = styled.div`
+export const Categories = styled.div<{
+  isDisabled?: boolean;
+}>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
 
-  ${({ theme }) =>
-    theme.responsive.isMobile &&
+  ${({ theme, isDisabled }) => css`
+    ${theme.responsive.isMobile &&
     css`
       height: 30px;
       width: 30px;
     `}
+
+    ${isDisabled &&
+    css`
+      pointer-events: none;
+      opacity: 0.5;
+    `}
+  `}
 `;

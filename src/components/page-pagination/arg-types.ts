@@ -76,4 +76,22 @@ export const argTypes: IArgTypes<IPagination> = {
       type: { summary: '<Icon.Prev />' },
     },
   },
+  isLoading: {
+    name: 'isLoading',
+    type: { name: 'boolean' },
+    description: 'If isLoading, the disabled button and scrolling logos',
+    table: {
+      defaultValue: { summary: 'false' },
+      type: { summary: 'boolean' },
+    },
+  },
+  isShowButtons: {
+    name: 'isShowButtons',
+    type: { name: 'boolean' },
+    description: 'If isLoading, the disabled button and scrolling logos',
+    table: {
+      defaultValue: { summary: 'false' },
+      type: { summary: 'boolean' },
+    },
+  },
 };

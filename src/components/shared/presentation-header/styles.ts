@@ -24,7 +24,7 @@ export const Container = styled.div`
 
     ${theme.responsive.isDesktop &&
     css`
-      height: 168px;
+      height: 100px;
     `}
   `}
 `;
