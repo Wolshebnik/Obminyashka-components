@@ -37,6 +37,8 @@ export const VerificationModal = ({
 
         <Styles.BtnWrapper>
           <ButtonNew
+            width="290px"
+            height="50px"
             text={btnText}
             onClick={onClick}
             colorType={'blue'}

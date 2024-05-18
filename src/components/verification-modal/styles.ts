@@ -125,7 +125,8 @@ export const BtnOpen = styled.div`
 `;
 
 export const BtnWrapper = styled.div`
-  display: block;
+  display: flex;
+  justify-content: center;
   padding: 15px 75px;
   margin-top: 15px;
 
