@@ -1,13 +1,14 @@
 import { ReactElement } from 'react';
 
-export interface IPopUpProps {
+export interface IVerificationModal {
   title: string;
   label: string;
   btnText: string;
+  isOpen: boolean;
   isLoading: boolean;
+  isAnimation: boolean;
   onClick: () => void;
-  modalActive: boolean;
-  setModalActive: (bool: boolean) => void;
+  setOpen: (bool: boolean) => void;
 }
 
 export interface IModalProps {

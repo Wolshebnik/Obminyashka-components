@@ -7,6 +7,7 @@ import * as Styles from './styles';
 import { Overlay } from '../overlay';
 
 const Modal = ({
+  maxWidth,
   isOpen,
   onClose,
   children,
@@ -27,6 +28,7 @@ const Modal = ({
     >
       <Styles.ModalWindow
         ref={ref}
+        maxWidth={maxWidth}
         duration={duration}
         isCloseAnimation={isAnimation}
       >

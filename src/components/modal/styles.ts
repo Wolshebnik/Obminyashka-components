@@ -24,13 +24,15 @@ const moveBelow = keyframes`
 
 export const ModalWindow = styled.div<IModalWindow>`
   position: relative;
+  display: flex;
+  justify-content: center;
   top: 50%;
   left: 50%;
-  max-width: 600px;
   max-height: 80%;
   transform: translate(-50%, -50%);
 
-  ${({ isCloseAnimation, duration }) => css`
+  ${({ isCloseAnimation, duration, maxWidth }) => css`
+    max-width: ${maxWidth ? `${maxWidth}` : '600px'};
     animation: ${isCloseAnimation ? moveDown : moveBelow} ${duration}ms linear;
   `};
 `;

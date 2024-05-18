@@ -1,8 +1,8 @@
 import { IArgTypes } from 'types';
 
-import { IPopUpProps } from './types';
+import { IVerificationModal } from './types';
 
-export const argTypes: IArgTypes<IPopUpProps> = {
+export const argTypes: IArgTypes<IVerificationModal> = {
   title: {
     name: 'title',
     type: { name: 'string' },

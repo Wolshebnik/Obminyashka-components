@@ -1,6 +1,7 @@
 export interface IModal {
   isOpen: boolean;
   duration: number;
+  maxWidth?: string;
   withoutBg?: boolean;
   onClose: () => void;
   isAnimation: boolean;
@@ -9,5 +10,6 @@ export interface IModal {
 
 export interface IModalWindow {
   duration: number;
+  maxWidth?: string;
   isCloseAnimation?: boolean;
 }

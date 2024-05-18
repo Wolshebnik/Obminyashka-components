@@ -1,21 +1,22 @@
 import { Formik } from 'formik';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { PopUp } from '.';
-import { useState } from 'react';
+import { useDelayAnimation } from 'hooks';
+
+import { VerificationModal } from '.';
 
 import * as Styles from './styles';
 
 const meta = {
-  title: 'PopUp',
-  component: PopUp,
-} satisfies Meta<typeof PopUp>;
+  title: 'VerificationModal',
+  component: VerificationModal,
+} satisfies Meta<typeof VerificationModal>;
 
 export default meta;
-type Story = StoryObj<typeof PopUp>;
+type Story = StoryObj<typeof VerificationModal>;
 
 const Template = () => {
-  const [modalActive, setModalActive] = useState(false);
+  const { isOpen, isAnimation, setOpen } = useDelayAnimation(500);
 
   return (
     <Formik initialValues={{}} validationSchema={''} onSubmit={() => {}}>
@@ -24,17 +25,16 @@ const Template = () => {
           margin: '0 auto',
         }}
       >
-        <Styles.BtnOpen onClick={() => setModalActive(true)}>
-          OPEN
-        </Styles.BtnOpen>
+        <Styles.BtnOpen onClick={() => setOpen(true)}>OPEN</Styles.BtnOpen>
 
-        <PopUp
+        <VerificationModal
+          isOpen={isOpen}
           isLoading={false}
+          setOpen={setOpen}
           btnText="Отправить"
           onClick={() => {}}
+          isAnimation={isAnimation}
           label="Введіть Ваш E-mail"
-          modalActive={modalActive}
-          setModalActive={setModalActive}
           title="Повторне відправлення посилання"
         />
       </div>
