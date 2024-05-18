@@ -42,6 +42,6 @@ const Template = () => {
   );
 };
 
-export const PopUpDefault: Story = {
+export const VerificationModalDefault: Story = {
   render: () => <Template />,
 };
