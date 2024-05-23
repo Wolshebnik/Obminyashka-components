@@ -116,7 +116,7 @@ const newButton = Object.freeze({
       bg: white,
       outline: white,
       outlineDisabled: tropicalBlue,
-      bgHover: white,
+      bgHover: olivine,
       bgDisabled: tropicalBlue,
       animated: {
         bg: `linear-gradient(45deg, ${aquamarineBlue} 35%, #BCD9E3 50%, ${aquamarineBlue} 65%)`,

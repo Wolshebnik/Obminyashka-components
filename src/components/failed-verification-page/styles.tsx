@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 import { cloud, egg } from '../img';
@@ -14,21 +14,21 @@ const CloudStyles = `
   background-image: url(${cloud});
 `;
 
-const BtnStyles = `
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  width: 290px;
-  height: 99px;
-  border-radius: 25px;
-  background: white;
-  color: #81CBDE;
-  font-size: 20px;
-  font-weight: 700;
-  text-transform: none;
-  z-index: 2;
-`;
+//const BtnStyles = `
+//  display: flex;
+//  justify-content: center;
+//  align-items: center;
+//  margin: 0 auto;
+//  width: 290px;
+//  height: 99px;
+//  border-radius: 25px;
+//  background: white;
+//  color: #81CBDE;
+//  font-size: 20px;
+//  font-weight: 700;
+//  text-transform: none;
+//  z-index: 2;
+//`;
 
 export const BackGround = styled.div`
   position: relative;
@@ -158,23 +158,22 @@ export const BtnBlock = styled.div`
   `}
 `;
 
-export const BtnRegistration = styled(Link)`
-  ${BtnStyles}
+//export const BtnRegistration = styled(Link)`
+//  ${BtnStyles}
+//  ${({ theme }) => css`
+//    color: ${theme.colors.newButton.default.blue.bg};
+//    background: ${theme.colors.newButton.default.blue.text};
+//  `}
+//`;
+//
+//export const BtnPopup = styled.div`
+//  ${BtnStyles}
 
-  ${({ theme }) => css`
-    color: ${theme.colors.newButton.default.blue.bg};
-    background: ${theme.colors.newButton.default.blue.text};
-  `}
-`;
-
-export const BtnPopup = styled.div`
-  ${BtnStyles}
-
-  ${({ theme }) => css`
-    color: ${theme.colors.newButton.default.blue.disabledText};
-    background: ${theme.colors.newButton.default.blue.text};
-  `}
-`;
+//  ${({ theme }) => css`
+//    color: ${theme.colors.newButton.default.blue.disabledText};
+//    background: ${theme.colors.newButton.default.blue.text};
+//  `}
+//`;
 
 export const CloudNull = styled.div`
   ${CloudStyles}
@@ -207,18 +206,17 @@ export const CloudOne = styled.div`
   top: 20%;
   width: 136px;
   transform: rotateY(180deg);
-  animation: ${Animation.cloudsAnimationMirror} 13s ease-out -9s infinite;
+  animation: ${Animation.cloudsAnimationMirror} 20s ease-out -9s infinite;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
     css`
-      //top: clamp(190px, 35vh, 500px);
       animation: ${Animation.cloudsAnimationMirror} 36s ease-out infinite;
     `}
 
     ${theme.responsive.isDesktop &&
     css`
-      animation: ${Animation.cloudsAnimationMirror} 55s ease-out -5s infinite;
+      animation: ${Animation.cloudsAnimationMirror} 65s ease-out -5s infinite;
     `}
   `}
 `;
@@ -231,7 +229,7 @@ export const CloudTwo = styled.div`
   right: calc(100% + 300px);
   transform: rotateY(180deg);
   width: 228px;
-  animation: ${Animation.cloudsAnimationMirror} 16s ease-out 3s infinite;
+  //animation: ${Animation.cloudsAnimationMirror} 16s ease-out 3s infinite;
 
   ${({ theme }) => css`
     ${theme.responsive.isDesktop &&
@@ -240,7 +238,7 @@ export const CloudTwo = styled.div`
       top: 30%;
       //clamp(400px, 48vh, 600px);
       width: 244px;
-      animation: ${Animation.cloudsAnimationMirror} 60s linear -43s infinite;
+      animation: ${Animation.cloudsAnimationMirror} 35s linear -43s infinite;
     `}
   `}
 `;
@@ -257,17 +255,17 @@ export const CloudThree = styled.div`
     css`
       display: flex;
       top: 2%;
-      animation: ${Animation.cloudsAnimation} 25s ease-in-out 5s infinite;
+      animation: ${Animation.cloudsAnimation} 15s ease-in-out 5s infinite;
     `}
 
     ${theme.responsive.isTablet &&
     css`
-      animation: ${Animation.cloudsAnimation} 42s ease-in-out 15s infinite;
+      animation: ${Animation.cloudsAnimation} 23s ease-in-out 15s infinite;
     `}
 
     ${theme.responsive.isDesktop &&
     css`
-      animation: ${Animation.cloudsAnimation} 65s ease-in-out -48s infinite;
+      animation: ${Animation.cloudsAnimation} 40s ease-in-out -48s infinite;
     `}
   `}
 `;
@@ -279,7 +277,7 @@ export const CloudFour = styled.div`
   bottom: 3%;
   right: calc(100% + 220px);
   width: 120px;
-  animation: ${Animation.cloudsAnimation} 19s linear -3s infinite;
+  animation: ${Animation.cloudsAnimation} 25s linear -3s infinite;
 
   ${({ theme }) => css`
     ${theme.responsive.isTablet &&
@@ -289,7 +287,7 @@ export const CloudFour = styled.div`
 
     ${theme.responsive.isDesktop &&
     css`
-      animation: ${Animation.cloudsAnimation} 70s linear -50s infinite;
+      animation: ${Animation.cloudsAnimation} 80s linear -50s infinite;
     `}
   `}
 `;
