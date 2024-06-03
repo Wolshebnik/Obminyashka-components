@@ -1,4 +1,3 @@
-//import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 import { cloud, egg } from '../img';
@@ -14,32 +13,16 @@ const CloudStyles = `
   background-image: url(${cloud});
 `;
 
-//const BtnStyles = `
-//  display: flex;
-//  justify-content: center;
-//  align-items: center;
-//  margin: 0 auto;
-//  width: 290px;
-//  height: 99px;
-//  border-radius: 25px;
-//  background: white;
-//  color: #81CBDE;
-//  font-size: 20px;
-//  font-weight: 700;
-//  text-transform: none;
-//  z-index: 2;
-//`;
-
 export const BackGround = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   padding-top: clamp(10px, 5vh, 92px);
   padding-bottom: clamp(10px, 8.2vh, 152px);
   width: 100%;
-  max-height: 1132px;
+  height: 100vh;
   text-align: center;
   overflow: hidden;
 
@@ -87,7 +70,6 @@ export const Text = styled.div`
   display: flex;
   margin: 0 auto;
   padding: 0 6%;
-  //color: #ffffff;
   font-size: 22px;
   font-weight: 400;
   z-index: 2;
@@ -158,23 +140,6 @@ export const BtnBlock = styled.div`
   `}
 `;
 
-//export const BtnRegistration = styled(Link)`
-//  ${BtnStyles}
-//  ${({ theme }) => css`
-//    color: ${theme.colors.newButton.default.blue.bg};
-//    background: ${theme.colors.newButton.default.blue.text};
-//  `}
-//`;
-//
-//export const BtnPopup = styled.div`
-//  ${BtnStyles}
-
-//  ${({ theme }) => css`
-//    color: ${theme.colors.newButton.default.blue.disabledText};
-//    background: ${theme.colors.newButton.default.blue.text};
-//  `}
-//`;
-
 export const CloudNull = styled.div`
   ${CloudStyles}
 
@@ -229,14 +194,12 @@ export const CloudTwo = styled.div`
   right: calc(100% + 300px);
   transform: rotateY(180deg);
   width: 228px;
-  //animation: ${Animation.cloudsAnimationMirror} 16s ease-out 3s infinite;
 
   ${({ theme }) => css`
     ${theme.responsive.isDesktop &&
     css`
       display: flex;
       top: 30%;
-      //clamp(400px, 48vh, 600px);
       width: 244px;
       animation: ${Animation.cloudsAnimationMirror} 35s linear -43s infinite;
     `}
