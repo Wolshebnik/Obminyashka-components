@@ -73,6 +73,16 @@ export const Button = styled.button<IStyledButtonNew>`
         }
       `}
 
+      ${colorType === 'white' &&
+      css`
+        &:hover {
+          font-size: 22px;
+          border: dashed 2px ${styleTheme.bg};
+          color: ${styleTheme.bg};
+          background: ${styleTheme.bgHover};
+        }
+      `}
+
       ${square &&
       css`
         padding: 0;
