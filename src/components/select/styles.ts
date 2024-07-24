@@ -134,7 +134,7 @@ export const SubCategories = styled.div<{
   transition: all 0.4s ease;
 
   ${({ isOpen, filtration }) => css`
-    max-height: ${isOpen ? '2000px' : '0'};
+    max-height: ${isOpen ? '250px' : '0'};
     margin: ${isOpen ? '10px 0' : '0'};
 
     ${filtration &&
